@@ -1,0 +1,3861 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" 
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+ 
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-GB" xml:lang="en-GB">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=ISO-8859-1" />
+	<meta name="viewport" content="width=device-width, initial-scale = 1" />
+	<title>Audacity 2.2.0 Guide</title>
+	
+	<meta name="description" content="A guide to Audacity 2.2.0 for users of
+	the Jaws screen reader. Also useful for users of other screen readers." />
+
+	<style type="text/css">
+	
+	body {
+		font-size: 100%;
+		font-family: verdana, sans-serif;
+		line-height: 1.4;
+		margin: 0;
+		padding: 0;
+	}
+	
+	#page {
+		margin: 0 auto;
+		width: 90%;
+		max-width: 40em;
+	}
+	
+	h1 {
+		font-size: 2.1em;
+		line-height: 1.2;	
+		margin: 0.6em 0 0.4em 0;
+	}
+	
+	h2 {
+		font-size: 1.7em;
+		line-height: 1.2;
+		margin: 1.0em 0 0.3em 0;
+	}
+	
+	h3 {
+		font-size: 1.2em;
+		line-height: 1.4;
+		margin: 0.8em 0 0.3em 0;
+	}
+	
+	h4 {
+		font-size: 1em;
+		line-height: 1.4;
+		margin: 1.0em 0 0.5em 0;
+	}
+	
+	p {
+		margin: 0 0 0.75em 0;
+	}
+	
+	ul, ol {
+		margin-top: 0;
+		margin-bottom: 0;
+	}
+	
+	li {
+		margin: 0.5em 0 0.5em 0;
+	}
+	
+	li p {
+		margin: 0.5em 0 0.5em 0;
+	}
+	
+	th {
+		text-align: left;
+	}
+	th, td {
+		padding: 0.2em 1em;
+		width: 18em;
+	}
+	</style>
+	
+	<style type="text/css" media="print">
+	body {
+		font-family: arial, sans-serif;
+		line-height: 1.4;
+	}
+	
+	#page {
+		width: 100%;
+		max-width: none;
+	}
+	</style>	
+
+</head> 
+
+<body>
+<div id="page">
+
+	<h1>Audacity 2.2.0 Guide</h1>
+	
+	<p>A guide for users of the Jaws screen reader, written by David Bailes.
+	More guides are available on the
+	<a href="http://vip.chowo.co.uk/jaws-guides/">Jaws Guides page</a>
+	of the VIP Software Guides website.</p>
+	
+	
+	<h2>Contents</h2>
+	
+	<ul>
+		<li><a href="#introduction">Introduction</a></li>	
+		<li><a href="#main-window">Main window</a></li>
+		<li><a href="#opening-audio-file">Opening an audio file</a></li>
+		<li><a href="#saving-audio">Saving audio</a></li>
+		<li><a href="#playback">Playback</a></li>
+		<li><a href="#toolbars">Toolbars</a></li>
+		<li><a href="#track-table">Track table</a></li>
+		<li><a href="#selection-bar">Selection bar</a></li>
+		<li><a href="#moving-the-cursor">Moving the cursor</a></li>
+		<li><a href="#selecting-audio">Selecting audio</a></li>
+		<li><a href="#basic-editing">Basic editing</a></li>
+		<li><a href="#more-advanced-editing">More advanced editing</a></li>
+		<li><a href="#labels">Labels</a></li>
+		<li><a href="#clips">Clips</a></li>
+		<li><a href="#metadata-tags-editor">Metadata tags editor</a></li>		
+		<li><a href="#recording">Recording</a></li>
+		<li><a href="#preferences">Preferences</a></li>
+		<li><a href="#sound-dialog-in-windows">Sound dialog in Windows</a></li>		
+		<li><a href="#keystrokes">Keystrokes</a></li>		
+	</ul>
+
+	
+	<h2 id="introduction">Introduction</h2>
+	
+	<p>Warning: this is a guide to Audacity 2.2.0 which has not yet been released.
+	In addition, this guide is still a work in progress.</p>
+
+	<p>This is a guide for the 2.2.0 version of Audacity, which is a free
+	multi-track audio editor. You can use it for recording, simple editing
+	of single tracks, or more advanced editing involving multiple tracks.</p>
+	
+	<p>Audacity 2.2.0 can be downloaded from the
+	<a href="http://audacityteam.org/">home page of Audacity's website</a>.</p>
+	
+	<p>The remaining sections of the introduction are as follows. There are introductions
+	to Projects and the cursor in Audacity, and descriptions of the welcome message
+	box, and how to get help. There is then an outline of some new features and
+	changes in this version of Audacity which are relevant to users of screen readers.
+	Some of these changes are very significant. There
+	are then sections on Audacity's two sets of default shortcuts, some advice
+	if you are using a non US/UK keyboard, and details of where to get the
+	Jaws script for Audacity.</p>
+
+		
+	<h3>Projects</h3>
+	
+	<p>The objects which Audacity edits are known as projects. So projects
+	are equivalent to documents in Microsoft Word, and workbooks in
+	Microsoft Excel.</p>
+	
+	<p>An Audacity project simply consists of a number of tracks, and there
+	are a number of different types of track in Audacity: audio, label,
+	and time. However, time track are not accessible to users of screen readers,
+	and so won't be described in this guide.
+	For many simple tasks you'll probably only have one track in a project.</p>
+	
+	<p>You can save an Audacity project using the Audacity project
+	file format, and this preserves all the tracks in the project.
+	However, you only need to save a project in this format if you
+	intend to continue working on the project in the future.</p>
+	
+	
+	<h3>Cursor</h3>
+	
+	<p>Audacity has a cursor to specify a particular time during the
+	audio, and this is similar to the cursor in Microsoft Word. The
+	cursor in Audacity is used for defining times such as: the start
+	of playback, the position where you want to start selecting a time range,
+	and the place where audio is pasted from the clipboard.</p>
+	
+		
+	<h3>Welcome message box</h3>
+	
+	<p>When you open Audacity, a Welcome message box opens, and this
+	contains an HTML window which contains some information on how to
+	obtain help for Audacity. Unfortunately the links in this text
+	can't be opened using keyboard navigation, but details of the
+	available help are given in the next section. The message box
+	also contains a &ldquo;Don't show this again at start up&rdquo; check box.
+	To stop the message box appearing in future, just check the check box,
+	and press the OK button.</p>
+	
+	
+	<h3>Help</h3>
+	
+	<p>Audacity is an extremely powerful program, and this is only
+	an introductory guide. For more information see:</p>
+	
+	<ul>
+		<li><a href="http://wiki.audacityteam.org/wiki/Audacity_Wiki_Home_Page">The Audacity Wiki</a>.</li>
+		
+		<li>The installed Audacity user manual which can be opened in your
+		default browser by choosing Manual on the Help menu.</li>
+		
+		<li>The <a href="http://www.freelists.org/list/audacity4blind">Audacity4Blind mailing list</a>.
+		On this web page you can subscribe to the mailing list: type your
+		email address into to the &ldquo;your email address&rdquo; edit box,
+		<strong>Tab</strong> to the Go button and press it. You will receive
+		an email to confirm the subscription. Simply reply to this email without
+		adding any additional text.</li>	
+	</ul>
+	
+	
+	<h3>New features and changes</h3>
+	
+	<p>The new features and changes in this version of Audacity which are relevant
+	to users of screen readers include:</p>
+	
+	<ul>
+		<li>Clips are now accessible for users of screen readers. There are new commands
+		for moving the cursor to clip boundaries, selecting clips, and moving clips.
+		These are described in the <a href="#clips">Clip section</a>, along with
+		various existing commands which involve clips.</li>
+		
+		<li>When recording, appending the recorded audio to an existing track is now the default,
+		rather than inserting the audio in a new track. So pressing <strong>R</strong> adds
+		the audio to an existing track, and pressing <strong>Shift + R</strong> inserts the
+		audio in a new track. However, there is an option to have recording in a new track
+		as the default, as it was in previous versions of Audacity. For more details, see the
+		<a href="recording-controls">Recording controls section</a>.</li>
+		
+		<li>More options for the selection details shown in the
+		<a href="#selection-bar">Selection bar</a>. In addition
+		to the previous options of start and then either length or end, there are
+		now options for end and length, and centre and length.</li>
+		
+		<li>There is now a choice of two sets of default shortcuts, standard and full,
+		as described in the next section.</li>
+		
+		<li>The menus have been reorganized. The changes include a new Select menu,
+		and two <a href="#extra-menus">Extra menus</a>, which contain commands which were previously
+		not included in the menus.</li>
+	</ul>
+	
+	
+	<h3>Default shortcuts</h3>
+	
+	<p>If you run Audacity 2.2.0 in an account in which previous versions of the program have not
+	been run, then by default, there are less shortcuts available than in previous versions
+	of the program. However, you can change to using a fuller set of shortcuts, and this
+	is described in the
+	<a href="#standard-and-full">Standard and full sets of default shortcuts section</a>
+	of the Preferences section. The remainder of this guide assumes you are using
+	the full set.</p>
+	
+	
+	<h3>Using keyboards other than US, UK, or Irish</h3>
+	
+	<p>If you're using a keyboard other than a US, UK, or Irish keyboard, then a couple
+	of important keystrokes won't work if you're using Audacity's default settings.
+	To fix this, see the
+	<a href="#the-and-shortcuts">The [ and ] shortcuts on keyboards other than US, UK or Irish section</a>
+	which is in the Customizing section.</p>
+	
+	
+	<h3>Jaws Script</h3>
+	
+	<p>There's a Jaws script for Audacity, and its uses include giving additional feedback, and providing
+	convenient ways of obtaining information. Full details of its functionality can be found on the
+	<a href="https://github.com/campg2j003/JAWS-Script-for-Audacity">Jaws Script for Audacity website</a>.
+	A direct link to to the installer for version 2.1.0 of this script is:
+	<a href="https://github.com/campg2j003/JAWS-Script-for-Audacity/releases/download/rel2.1.0/Jaws-Script-for-Audacity_2_1_0.exe">Jaws-Script-for-Audacity_2_1_0.exe</a>.</p>
+	
+	<p>Note that the remainder of the guide does not assume that this script is installed.</p>
+	
+	
+	
+	<h2 id="main-window">Main window</h2>
+	
+	<h3>Main components</h3>
+	
+	<ul>
+		<li>Title bar. When the window contains an unnamed project,
+		for example, when you first start Audacity, then the text in the title bar
+		is Audacity. When the window contains a named project,
+		then the text is the name of the project. To read the
+		title bar press <strong>Insert + T</strong>.</li>
+		
+		<li>Menu bar. There are two <a href="#extra-menus">extra menus</a>extra
+		which can be shown in the menu bar, but which are not shown by default.</li>
+		
+		<li><a href="#toolbars">Toolbars</a>.</li>
+		
+		<li><a href="#track-table">Track table</a>.
+		This contains the tracks which make up the project.</li>
+		
+		<li><a href="#selection-bar">Selection bar</a>.
+		This contains controls for reading and setting the cursor position
+		and the start and end/length of any selected time range.</li>
+		
+		<li>Status bar, which is divided into 3 sections. The first section
+		is probably of the most interest, and contains the transport status,
+		that is, whether Audacity is stopped, playing, recording and so on.
+		To read the status bar, press <strong>Insert + Page Down</strong>.</li>
+	</ul>
+	
+	
+	<h3>Moving around the window</h3>
+
+	<ul>
+		<li>As in any window, to move to the menu bar press <strong>Alt</strong>,
+		and to leave it press <strong>Esc</strong> of <strong>Alt</strong>.</li>
+
+		<li>Pressing <strong>Ctrl + F6</strong> moves you around the following
+		components: Toolbars, Track table, Selection bar, Toolbars, etc.
+		Pressing <strong>Ctrl + Shift + F6</strong> moves you around in the
+		opposite direction.</li>
+	</ul>
+	
+	
+	<h2 id="opening-audio-file">Opening an audio file</h2>
+	
+	<p>To open either an audacity project file or a standard audio file,
+	use the Open dialog, which is on the File menu (<strong>Ctrl + O</strong>).
+	The dialog's title is &ldquo;Select one or more audio files...&rdquo;,
+	and its structure is similar to the standard Windows XP Open dialog.
+	The types of standard audio files which Audacity can open described
+	in the next section.</p>
+	
+	<p>When you first open Audacity, the window contains an empty
+	track table, and so when you open an audio file, it opens in
+	this initial window. After opening a standard audio file,
+	the track table contains a single track, whereas after opening an Audacity
+	project file, the track table contains all the tracks in the saved project.
+	If you then open any other audio files, then they
+	each open in a new window. (If you want to deliberately create
+	a new window with an empty project, choose New from the File menu,
+	or press <strong>Ctrl + N</strong>.)</p>
+	
+	<p>In addition to opening standard audio files, you can also import one or
+	more standard audio files into the current project. In this case, a new
+	track is added to the track table for each of the files. For details,
+	see the <a href="#importing-audio-files">Importing audio files section</a>.</p>
+	
+	
+	<h3>Opening standard audio files</h3>
+	
+    <p>The default installation of Audacity can open audio files in the following standard
+    formats: WAV, AIFF, AU, MP3, MP2/MPEG, Ogg Vorbis, and FLAC.
+	In addition, you can open files in some other formats, including
+	wma and m4a if you download and install the FFmpeg library,
+	as described in the
+	<a href="#ffmpeg-library">FFmpeg library section</a>. This is not included in the
+	installation of Audacity due to legal issues about patents.</p>
+	
+	<p>An alternative to using the FFmpeg library for opening files
+	in other formats is to use another
+    program to convert the file to one of the formats the default installation of Audacity
+    can open. There are several audio format conversion programs
+    available, for example, <a href="http://www.nch.com.au/switch/">Switch</a>
+    which is free in its basic version, or 
+	<a href="http://www.dbpoweramp.com/dmc.htm">dBpoweramp Music Converter</a>.</p>
+   
+    <p>If you open a compressed file, such as an MP3 file, then
+    after you press the open button in the Open dialog an Import
+    dialog opens which gives the progress of Audacity decompressing
+    the file.</p>
+
+	
+	<h2 id="saving-audio">Saving audio</h2>
+	
+	<p>You can save the audio in a project in either the audacity project
+	format, or one of the standard audio formats, as described in the following sections.
+	The Audacity project format preserves all the tracks in the project.
+	You only need to save a project in the audacity project format
+	if you intend to continue working on the project in the future.
+	In contrast, when you save in one of the standard audio formats,
+	Audacity automatically mixes all the tracks down to a single track.</p>
+	
+	<p>When you close Audacity, if you haven't saved your changes to
+	an Audacity project file, then a Save changes? dialog opens asking
+	you whether you want to save changes before closing. The default
+	button is Yes, but unless you want to save the project as an
+	Audacity project file, just <strong>Tab</strong> to the NO button
+	and press it.</p>
+	
+	
+	<h3>Saving audio in the audacity project format</h3>
+	
+	<p>To save in this format, choose Save Project... from the File menu. The first
+	time you do this, you get a Warning dialog box telling you that
+	only Audacity can read these project files. The dialog box contains
+	a check box which you can check if you don't want this warning again.
+	If you press the OK button, you then get a Save Project As dialog.</p>
+	
+	
+	<h3>Saving audio in one of the standard audio formats</h3>
+	
+	<p>The default installation of Audacity can save in the following
+	standard formats: WAV, Ogg Vorbis, FLAC, and MP2. In addition,
+	you can save in some other formats if you download and install some
+	additional libraries which are not included with Audacity because
+	of legal issues with patents:</p>
+	
+	<ul>
+		<li>You can save in the MP3 format if you download and install
+		the LAME MP3 library, as described in the
+		<a href="#lame-mp3-encoder-library">LAME MP3 encoder library section</a>.</li>
+		
+		<li>You can save in formats including wma and m4a if you download
+		and install the FFmpeg library, and described in the
+		<a href="#ffmpeg-library">FFmpeg library section</a>.</li>
+	</ul>
+	
+	
+	<p>To save audio in one of the standard audio formats:</p>
+	
+	<ol>
+		<li>To save all the audio, open the File menu, open the Save Other
+		sub menu, and choose Export Audio (<strong>Ctrl + Shift + E</strong>).
+		Alternatively, so save only the selected audio, choose Export Selected
+		Audio from the same sub menu.</li>	
+		
+		<li>The Export Audio dialog opens, and its structure is very
+		similar to a standard Windows XP Save As dialog.</li>
+		
+		<li>To set the file format which you want to use for saving
+		the audio, there's a Save as type combo box, which is the next
+		control after the File name edit box, which is the initial focus.
+		Note that all the formats which use the FFmpeg library, have
+		FFmpeg in parenthesis after their name.</li>
+		
+		<li>After choosing the file format, you can set the options for
+		the encoding used by that format by tabbing to the controls which
+		appear after the Cancel button. Since
+		the MP3 format is often used, the numerous options for MP3 encoding are
+		described in the following section.</li>
+		
+		<li>The Metadata tags editor dialog opens. This enables you to edit
+		various items of information about the audio data, such as the
+		Artist name, and the Track title, and is described in detail in the
+		<a href="#metadata-tags-editor">Metadata tags editor section</a> later in the guide.
+		If you don't want to edit any of the information, then you
+		can just press <strong>Enter</strong> to press the default OK button.
+		Note that if you cancel the dialog,
+		as well as cancelling any edits in this dialog, this also cancels the saving
+		of the audio. If you don't want the Metadata editor to automatically
+		open each time you save audio, then you can turn this option
+		off, as described in the
+		<a href="#metadata-tags-editor-opens-during-export">Metadata tags editor opens during export section</a>,
+		which is in the Preferences section.</li>
+		
+		<li>Note that if you've tried to save in
+		the MP3 format, but haven't installed the Lame MP3 library, then
+		a Locate Lame dialog opens. Similarly, if you've tried to save
+		in any of the formats included in the FFmpeg library, then a message
+		box opens telling you that it needs to be configured.</li>			
+	</ol>
+	
+	<p>The Save Other sub menu on the File menu also contains commands for opening dialogs for
+	Exporting as MP3, Wav, and OGG. These commands open the Export Audio dialog with the
+	Save as type combo box already set to the appropriate format. However, given that the Export
+	Audio dialog remembers the last format that was used, and that the more specific commands
+	do not have default shortcuts, you may find is more convenient just to use the Export Audio
+	dialog.</p>
+
+	
+	<h4>MP3 options</h4>
+	
+	<p>This section describes the controls for specifying the MP3
+	options when exporting in that format, and gives some recommendations for setting them.
+	These controls appear after the Cancel button in both the
+	Export Audio and the Export Selected audio dialogs, if the
+	Save as Type combo box is set to MP3, and also in the
+	Export as MP3 dialog.</p>
+	
+	<ul>
+		<li>Bit Rate Mode, a set of 4 radio buttons:
+		Preset, Variable, Average, and Constant.</li>
+		
+		<li>Quality combo box.</li>
+		
+		<li>Variable Speed combo box, which only appears for some
+		of the bit rate modes.</li>
+		
+		<li>Channel mode, a set of two radio buttons: Joint Stereo,
+		and Stereo. This does not appear if the bit rate mode is set
+		to Preset.</li>
+	</ul>
+	
+	<p>These are some recommended settings:</p>
+	
+	<ul>
+		<li>For music:
+			<ul>
+				<li>Set the Bit Rate Mode to Variable</li>
+				<li>the Quality to either 6, 5, or 4 (the lower the number
+				the higher the quality).</li>
+				<li>Variable Speed to Fast</li>
+				<li>Channel Mode to Joint Stereo.</li>
+			</ul>
+		</li>
+		
+		<li>For speech, or when there's a requirement for small file
+		sizes:
+			<ul>
+				<li>Set the Bit Rate Mode to Average</li>
+				<li>The Quality to 64, 80 or 96 kbps (the higher the number
+				the higher the quality).</li>
+				<li>Channel Mode to Joint Stereo.</li>
+			</ul>
+		</li>
+	</ul>
+	
+	<p>For a full description of the options for the LAME MP3 encoder see the
+	<a href="http://wiki.hydrogenaud.io/index.php?title=LAME">Lame page of the Hydrogen Audio wiki</a>.</p>
+	
+	
+	<h2 id="playback">Playback</h2>
+	
+	<p>Playback depends on whether there is a time range selected
+	(see the <a href="#selecting-audio">Selecting audio section</a>):
+	if there is no selection, then playback starts at the cursor position;
+	if there is a selection, then playback starts at the start of the selection,
+	and stops at the end of the selection.</p>
+	
+	<p>The volume of the playback is controlled by the playback
+	slider which is on the Mixer toolbar in the Toolbars.</p>
+	
+	<p>Keystrokes for playback:</p>
+	
+	<ul>
+		<li>To start or stop, press <strong>Spacebar</strong>.</li>
+		
+		<li>To start or stop and move the cursor, press <strong>X</strong>.
+		When you use this keystroke to stop playback, the cursor is moved to
+		position where the playback was stopped.</li>
+	
+		<li>Pause or resume, press <strong>P</strong>.</li>
+	
+		<li>Seeking/Jumping. Whilst playing, if the focus is in the Track
+		table, you can jump forward or backward
+		by either a short or long period. To jump backward or forward by
+		a short period press <strong>Left Arrow</strong> or
+		<strong>Right Arrow</strong> respectively. To jump backward or forward
+		by a long period, press <strong>Shift + Left Arrow</strong> or
+		<strong>Shift + Right Arrow</strong> respectively. The size of both
+		the short and long periods can be set in the Preferences dialog,
+		as described in the <a href="#seek-times">Seek times section</a>.</li>
+		
+		<li>To play looped, that is to continuously repeat, press
+		<strong>Shift + Spacebar</strong>.</li>
+	</ul>
+	
+	<p>The playback status, is the first item in the status bar, which you can read by
+	pressing <strong>Insert + Page Down</strong></p>
+	
+	
+	<h2 id="toolbars">Toolbars</h2>
+	
+	<p>The Toolbars section contains several different toolbars. You
+	can navigate to all the controls in the Toolbars just by using the
+	<strong>Tab</strong> key. You can press any of the buttons in the toolbars
+	by pressing <strong>Enter</strong>.
+	However, you can't use <strong>Spacebar</strong> as this key is used for
+	starting and stopping playback. The toolbars section also contains an unpinned recording/playback
+	button, which sets how the waveform scrolls during recording and playback,
+	and so isn't of much interest to most screen reader users.</p>
+	
+	<p>These are the toolbars which are shown by default:</p>
+	
+	<ul>
+		<li>Transport. This contains buttons for playback and recording,
+		and all the commands are also available on the Transport
+		menu, and have keyboard shortcuts.</li>
+		
+		<li>Tools. This contains tool buttons for editing which involve the
+		use of the mouse.</li>
+		
+		<li>Recording meter and Playback meter. Each of these contains a drop down
+		button which opens a menu for controlling the meter.</li>
+		
+		<li>Mixer. This contains the recording and playback volume sliders.</li>
+		
+		<li>Edit. This contains buttons for Cut, Paste, etc. These
+		commands are also available on either the Edit or View menu,
+		and all have keyboard shortcuts.</li>
+		
+		<li>Transcription. This contains a play at selected speed button and a playback
+		speed slider.</li>
+		
+		<li>Device. This contains combo boxes for Audio host, the
+		recording device, the number of recording channels, and the playback device. Note that
+		if one of these combo boxes is the focus, and you press a character key which
+		is an Audacity shortcut, then the key is used for the shortcut, rather
+		than selecting an option beginning with that character. So selecting
+		an option using its first character is not recommended. In addition,
+		if you start playback or recording, then the focus is then automatically
+		moved to the Track table.
+		
+		<p>All these
+		settings can also be made either in individual dialogs, or in the Devices
+		category of the						
+		<a href="#preferences">Preferences dialog</a>. The keystrokes for the
+		individual dialogs are <strong>Shift + H</strong> for audio host,
+		<strong>Shift + I</strong> for recording device, <strong>Shift + N</strong>
+		for number of recording channels, and <strong>Shift + O</strong> for playback
+		device.</p>
+		</li>
+	</ul>
+	
+	<p>You can show and hide all these toolbars using the Toolbars sub-menu
+	on the View Menu. Only showing the toolbars you're likely
+	to use, such as the Mixer Toolbar, has the advantage of greatly reducing
+	the number of <strong>Tab</strong>s needed to find a particular control.</p>
+	
+	<p><strong>Bug warning</strong>: if you show a toolbar which was not being shown
+	when you opened Audacity, the toolbar will be shown as a floating toolbar
+	somewhere in the Audacity window, and you will not be able to tab to it.
+	To work around this, choose reset toolbars on the Toolbars sub menu.
+	You can then set which toolbars are displayed.</p>
+
+
+	<h2 id="track-table">Track table</h2>
+	
+	<p>The Track table contains the tracks which make up the project.
+	The table just has one column, and a row for each of the tracks.
+	Each track has a name, and Jaws reads this when you move to the
+	track, or press <strong>Insert + Up Arrow</strong> to read the
+	current line.</p>
+	
+	<p>An audio track is a container for audio data, and this is
+	displayed as a waveform. Often the audio data starts at time zero,
+	but after editing, this is not always the case. At the left hand end
+	of an audio track there is a small area containing various controls,
+	which include a menu, and controls
+	for track gain and pan. Using these controls is described in the
+	<a href="#more-advanced-editing">More advanced editing section</a> of this guide.</p>
+	
+	<p>The Cursor is displayed in the track table as a vertical line,
+	as is the playback position during playback. The positions of
+	both the cursor and the playback position are available to Jaws users
+	via the Selection Start and Audio Position spin boxes in the
+	<a href="#selection-bar">Selection Bar</a>.</p>
+	
+	
+	<h3>Track focus</h3>
+	
+	<p>Whenever the focus is within the track table, and the table
+	contains one or more tracks (rows), then one of the tracks has
+	the focus, and you can move to the next or previous track by pressing
+	<strong>Down Arrow</strong> or <strong>Up Arrow</strong>, respectively.
+	You can also move to the first or last track by pressing
+	<strong>Ctrl + Home</strong> or <strong>Ctrl + End</strong>, respectively.</p>
+	
+	
+	<h3 id="track-selection">Track selection</h3>
+	
+	<p>You need to be able to select tracks:</p>
+	
+	<ul>
+		<li>For operations such as aligning tracks which can be found
+		on the Tracks menu.</li>
+		
+		<li>As part of the process of selecting some audio, as described
+		in the <a href="#selecting-audio">Selecting audio section</a>.</li>
+	</ul>
+	
+	<p>There are a number of ways of selecting and deselecting tracks:</p>
+	
+	<ul>
+		<li>To toggle the selection of the focused track, press
+		<strong>Enter</strong>.</li>
+		
+		<li>To select all the tracks (and a time range which includes all the
+		audio, as described in the
+		<a href="#selecting-audio">Selecting audio section</a>), open the
+		Edit menu, open the Select sub menu and choose All (<strong>Ctrl + A</strong>)</li>
+		
+		<li>To deselect all the tracks (and any time-range), open
+		the Edit menu, open the Select sub menu and choose None (<strong>Ctrl + Shift + A</strong>).</li>
+		
+		<li>To select all the tracks, open the Edit menu, open the Select sub menu,
+		and choose In all tracks (<strong>Ctrl + Shift + K</strong>).</li>
+	</ul>
+
+	<p>Jaws tells you whether a track is selected, if you do any of the following:</p>
+	
+	<ul>
+		<li>Move the focus to the track.</li>
+		
+		<li>Press <strong>Insert + Up Arrow</strong> to read the current line.</li>
+		
+		<li>Toggle the selection of the track, by pressing <strong>Enter</strong>.</li>
+	</ul>
+
+	<p>More precisely, if you do any of the above, then:</p>
+
+	<ul>
+		<li>If the track is not selected, then Jaws says
+		table &ldquo;the name of the track&rdquo; row</li>
+
+		<li>If the track is selected, then Jaws says
+		table &ldquo;the name of the track&rdquo; select on row.</li>
+	</ul>
+		
+
+	
+	<h2 id="selection-bar">Selection bar</h2>
+
+	<p>There are six controls on the Selection bar, and you can cycle forwards
+	or backwards around these controls using <strong>Tab</strong> or
+	<strong>Shift + Tab</strong> respectively.</p>
+
+	<ul>	
+		<li>Project Rate edit-combo box. This is the sampling rate of the project.</li>
+		
+		<li>Snap To combo box, which is described below.</li>
+		
+		<li>Audio Position edit spin box. This gives the position of playback
+		or recording.</li>
+		
+		<li>An unnamed combo box which determines which details of any selected time
+		range are shown in the two edit spin boxes, which are the next two controls
+		in the toolbar.
+		The options for the details which are shown are: start and end, start and length,
+		length and end, and length and center. Although this combo box has no name,
+		in this guide it will be referred to as the selection details combo box.</li>
+		
+		<li>Two edit spin boxes, which give the details of the selected time range,
+		which have been specified by the preceding combo box.
+		If there is no time range selected, then the start, end, or center edit spin
+		boxes give the position of the cursor.</li>	
+	</ul>		
+
+	
+	<h3 id="edit-spin-boxes">Edit spin boxes</h3>
+
+	<p>Each of the spin boxes contains a time which can be in a number of different
+	formats. You can change the format by choosing on the options on a
+	spin box's context menu, and this changes the format of all the spin boxes.
+	The default format is hh:mm:ss, but the format hh:mm:ss + hundredths is
+	normally more useful, as it allows you to change the time by smaller amounts.
+	Nearly all the examples in this guide will use this format.</p>
+	
+	<p>The time can be considered to be made up of one or more
+	sections, depending on the format used. For example, when using
+	the hh:mm:ss format, the time consists of three sections each
+	consisting of two digits: hours, minutes, and seconds. Alternatively,
+	when using the hh:mm:ss + hundredths format, the time
+	consists of four sections: hours, minutes, seconds, and centi-seconds (hundredths
+	of seconds), again each consisting of two digits.</p>
+
+	<p>If you move to a spin box by tabbing, then Jaws reads the entire
+	contents of the spin box, for example, 00h13m04.73s, that is 0 hours, 13 minutes, and
+	4.73 seconds.</p>
+
+	<p>Within a spin box, one of the digits is the focus. When you first
+	move to a spin box after opening Audacity, the first digit is the
+	focus, but if you subsequently return to the spin box, then the digit
+	which was the focus when you left the spin box is the focus.
+	The keystrokes for moving the focus are:</p>
+	
+	<ul>
+		<li><strong>Home</strong> or <strong>End</strong> move you to
+		the first or last digit in the spin box respectively.</li>
+
+		<li><strong>Left Arrow</strong> or <strong>Right Arrow</strong>
+		cycle you through the digits to the left or right respectively.</li>
+	</ul>
+	
+	<p>When you use one of these keystrokes, Jaw reads the digit which
+	is now the focus. In addition, if you've moved to a different
+	section of the time, then Jaws reads the new section before reading
+	the digit. For example, if the time is 01h42m38.46s and the focus
+	is the second of the minutes digits (the digit 2), then if you press
+	<strong>Right arrow</strong> Jaws says 38s, 3. Alternatively, if you
+	press <strong>End</strong> then Jaws says 46 centi-seconds, 6.</p>
+
+	<p>There are a couple of ways of changing the value of the time:</p>
+	
+	<ul>
+		<li>Increasing or decreasing the value of the control by one unit
+		of the focussed digit using
+		<strong>Up Arrow</strong> or <strong>Down Arrow</strong>. This is a
+		way is useful for increasing or decreasing the value by a given amount of
+		time. After each of these keystrokes, Jaws reads the value of the current
+		section. For example, if you want to
+		increase the time by 3 tenths of a second, and
+		assuming that the format is set to hh:mm:ss + hundredths: press <strong>End</strong>
+		to move to the last digit, press <strong>Left arrow</strong>
+		to move to the tenths of a second digit, and press <strong>Up Arrow</strong>
+		three times.</li>
+		
+		<li>Type in digits. This way is useful for setting a time which not
+		connected to the current value. If you type a digit (0 to 9), then the value of the
+		focussed digit is replaced by this, and the next digit becomes the focus.
+		If the last digit is the initial focus, then after you type a digit,
+		then the first digit is the focus. After typing a digit, Jaws reads the
+		section containing the focussed digit. For example, if you want to set a control
+		to 32 minutes, and again assuming the control has the hh:mm::ss + hundredths
+		format: press <strong>Home</strong> to move to the first
+		digit, and then type the following 8 digits: 0,0,3,2,0,0,0,0. This
+		completely replaces the existing time with the time of 32 minutes.</li>
+	</ul>
+	
+	<p>To read the entire time, press <strong>Insert + Up Arrow</strong>.</p>
+	
+	
+	
+	<h3 id="snap-to-combo-box">Snap To combo box</h3>
+	
+	<p>The Snap to combo box contains three options: Off, which is the default, Nearest,
+	and Prior. If the combo box is set to either Nearest and Prior, then this has two effects on
+	using the left and right arrow keys to move the cursor or the start or end of a selected time range.</p>
+	
+	<p>The first effect is that if Snap combo box to is set to Nearest, then you move the cursor
+	or the start or end of a selected time range, then its position is always automatically adjusted to the
+	nearest whole number of the smallest unit in the format of the edit spin boxes. For example,
+	if format is hh:mm:ss, then a position of 1.3 seconds would be adjusted to 1 second,
+	and a time of 1.8 seconds would be adjusted to 2 seconds. In a similar manner,
+	if the Snap to combo box is set to Prior, then the times 1.3 seconds and 1.8 seconds
+	would both be adjusted to 1 second.</p>
+	
+	<p>If the Snap to combo box is set to Nearest or Prior, the second effect is that
+	the minimum amount that the position of the cursor or the selection start or end
+	changes by is the smallest unit in the format of the edit spin boxes. So, for
+	example, if the format is set to hh:mm:ss, and you press <strong>Right arrow</strong>
+	to move the cursor to the right, the minimum change in position is 1 second.</p>
+
+	
+	<h2 id="moving-the-cursor">Moving the cursor</h2>
+	
+	<p>Audacity has a cursor to specify a particular time during the
+	audio, for example, the start of playback, the position where you
+	want to start selecting a time range,
+	or the position where audio is pasted from the clipboard.</p>
+	
+	<p>Reading the current position of the cursor is described in the next section,
+	and the ways of moving the cursor are as follows:</p>
+
+	<ul>
+		<li>To move the cursor to the start of the tracks (time zero),
+		press <strong>Home</strong>.</li>
+		
+		<li>To move the cursor to the end of all the audio, press <strong>End</strong>.</li>
+		
+		<li>To move the cursor to the start or end of the audio in
+		the selected tracks press <strong>J</strong> or <strong>K</strong>
+		respectively.</li>		
+		
+		<li>You can move backward or forward by either a short or long period,
+		as long as the focus is in the Track table. To move backward or
+		forward by a short period, press <strong>Comma</strong> or
+		<strong>Period</strong> respectively. To move backward or forward
+		by a long period, press <strong>Shift + Comma</strong> or
+		<strong>Shift + Period</strong> respectively. These short and
+		long periods share the same values as the short and long periods
+		used for seeking/jumping during playback, which was described
+		in the <a href="#playback">Playback section</a>. The size of
+		both the short and long periods can be set in the Preferences
+		dialog, as described in the <a href="#seek-times">Seek times section</a>.</li>
+		
+		<li><strong>Left Arrow</strong> and <strong>Right Arrow</strong> keys.
+		If the focus is in the Track table, then pressing
+		<strong>Left Arrow</strong> or <strong>Right Arrow</strong> moves
+		the cursor to the left or right by a small amount respectively.
+		Adjusting the step size is described in the
+		<a href="#step-size">Step size of the left an right arrow keys</a> section
+		below.</li>			
+		
+		<li>The <strong>[</strong> key during playback. If during playback
+		you press <strong>[</strong> and then <strong>Spacebar</strong> to stop,
+		the cursor is moved to the point in the audio where you pressed
+		the <strong>[</strong> key. In practice, the following method is
+		more flexible:
+		<ol>
+			<li>During playback, press <strong>P</strong> to pause when you reach the position
+			where you want to move to cursor to.</li>
+			<li>If you're unhappy with this position, pres <strong>P</strong> to resume and using
+			the Seeking/Jumping keys have another attempt to pause in the
+			right place.</li>
+			<li>Press <strong>[</strong> to mark the new cursor position.</li>
+			<li>Press <strong>Spacebar</strong> to stop.</li>
+		</ol>
+		</li>
+		
+		<li>Pressing <strong>X</strong> stops playback, and moves the cursor
+		to the position where the playback stopped. You can also use this keystroke
+		to start playback.</li>
+				
+		<li>The Selection Start spin box on the
+		<a href="#selection-bar">Selection bar</a>. This is described in detail
+		in the
+		<a href="#moving-the-cursor-with-the-selection-start-control">Moving the cursor with the selection start control</a> section below.</li>
+	</ul>
+
+	
+	<h3>Reading the position of the cursor</h3>
+	
+	<p>There are a couple of ways of reading the cursor position. The first
+	is to read the Selection start control on the Selection bar:</p>
+	
+	<ol>
+		<li>Assuming that the Track table is the focus, press <strong>Ctrl + F6</strong>
+		to move to the Selection bar.</li>
+		
+		<li>If necessary, <strong>Tab</strong> until you get to the start control,
+		which contains the cursor position, and which Jaws reads out. Note
+		that when returning to the Selection bar, the control that was previously
+		the focus is the focus again, so you often don't have to <strong>Tab</strong>
+		to the Selection start control.</li>
+		
+		<li>Press <strong>Ctrl + F6</strong> twice or <strong>Ctrl + Shift + F6</strong>
+		to return to the Track table.</li>
+	</ol>
+	
+	<p>The second way of reading the cursor position is to open the Set left
+	selection boundary dialog:</p>
+	
+	<ol>
+		<li>Whilst there is no playback, press the <strong>[</strong> key to open the Set left selection
+		boundary dialog.</li>
+		
+		<li>The position control is the initial focus, and its value is
+		the cursor position. Press <strong>Esc</strong> to close the dialog.</li>
+	</ol>	
+	
+	
+	<h3 id="moving-the-cursor-with-the-selection-start-control">Moving the cursor using the selection start control</h3>
+	
+   <ol>
+       <li>Press <strong>Ctrl + F6</strong> to move to the Selection bar.</li>
+      
+       <li><strong>Tab</strong> to the Selection details combo box, and make
+       sure that the Start and length of selection option is selected. If it's set to
+	   Start and end of selection, then you can accidentally select a time range,
+	   instead of moving the cursor, as described below.</li>
+      
+       <li><strong>Tab</strong> to the start control, and change its
+	   value, as described below.</li>
+      
+       <li>To return to the Track table, press <strong>Ctrl + F6</strong>
+       twice.</li>
+   </ol>
+	
+	<p>As described in the
+	<a href="#edit-spin-boxes">Edit spin boxes section</a>, there are a couple a ways of changing
+	the values of the controls like the start control:</p>
+	
+	<ul>
+		<li>Incrementing or decrementing the value of the control by one unit
+		of the focussed digit using
+		<strong>Up Arrow</strong> or <strong>Down Arrow</strong>. For example,
+		to move the cursor forward by 2 minutes,
+		assuming that the format is set to hh:mm:ss + hundredths: press <strong>End</strong>
+		to move to the last digit, which is hundredths of seconds, then press
+		<strong>Left Arrow</strong> 4 times to move to the minutes digit,
+		and then press <strong>Up Arrow</strong> 2 times.</li>
+		
+		<li>Typing in digits. For example, to move the cursor to the time 45 minutes,
+		again assuming the format is set to hh:mm:ss + hundredths,
+		press <strong>Home</strong> to move to the first digit, and then type
+		the following 8 digits: 0,0,4,5,0,0,0,0.</li>
+	</ul>
+	
+	
+	<h4>Reason for setting the length option</h4>
+	
+	<p>With no time range selected, consider the two cases:</p>
+	
+	<ul>
+		<li>Selection details combo box set to Start and length of selection. The start control
+		displays the cursor position, and the length control displays
+		zero. If you change value of the start control, then the
+		length control always remains unchanged at zero.</li>
+		
+		<li>Selection details combo box set to Start and end of selection. The start and
+		end controls both display the same value, which is the cursor position.
+		If you increase the value of the start control, then the
+		value of the end control is automatically increased to the same
+		value. However, if you decrease the value of the start control,
+		then the end control remains unchanged. So you've accidentally
+		selected a time range.</li>
+	</ul>
+	
+	
+	<h3 id="step-size">Step size of the left and right arrow keys</h3>
+	
+	<p>This section describes how the step size of the left and right
+	arrow keys depend on the horizontal zoom of the audio data, and how
+	to set the amount of zoom so that the step size has suitable values. The same step sizes
+	are also used by the <strong>Shift + Left or Right Arrow</strong> and
+	<strong>Ctrl + Shift + Left or Right Arrow</strong> keystrokes for
+	expanding or contracting selected time ranges.</p>
+	
+	<p>Audacity has the ability to vary the amount by which the audio data is zoomed in the
+	horizontal direction. This allows sighted users to view the audio data in
+	either more or less detail, depending on the task.</p>
+	
+	<p>Pressing <strong>Right Arrow</strong> or <strong>Left Arrow</strong>
+	moves the cursor by the same physical distance on the screen, whatever the
+	amount of horizontal zoom. So if the amount of zoom is increased, then
+	the time by which the cursor is moved is decreased. Similarly, if the
+	amount of zoom is decreased, then the time by which the cursor is moved
+	is increased.</p>
+	
+	<p>After opening or importing a file, the horizontal zoom is adjusted
+	so that the longest track in the project takes up the available space in
+	the track in the window. So the initial amount of zoom, and so the step
+	size of the arrow keys depends on the length of the tracks.</p>
+	
+	<p>However, you can set the horizontal zoom to a predefined amount. You
+	can do this by opening the view menu, opening the zoom sub menu,
+	and choosing Zoom Normal (<strong>Ctrl + 2</strong>).
+	When the zoom is set to normal, then the left and right arrow keys move
+	the cursor by slightly more than one hundredth of a second. This step
+	size is normally too small to be useful. However, you can easily
+	adjust the step size using the zoom in and zoom out commands which
+	are also available on the Zoom sub menu on the View menu:</p>
+	
+	<ul>
+		<li>Zoom In (<strong>Ctrl + 1</strong>). This doubles the zoom, and
+		so halves the step size of the left and right arrow keys.</li>
+		
+		<li>Zoom Out (<strong>Ctrl + 3</strong>). This halves the zoom,
+		and so doubles the step size of the left and right arrow keys.</li>
+	</ul>
+	
+	<p>So, for example, after setting the zoom to normal (<strong>Ctrl + 2</strong>),
+	which sets the step size to slightly more than one hundredth of a second,
+	if you zoom out (<strong>Ctrl + 3</strong>) three times, this multiplies the
+	step size by 8, resulting in a step size which is slightly less
+	than a tenth of a second. As another example, if you press <strong>Ctrl + 2</strong>,
+	and then <strong>Ctrl + 3</strong> 7 times, then the step size is about
+	one and a half seconds.</p>
+	
+
+		 	
+	<h2 id="selecting-audio">Selecting audio</h2>
+
+	<p>In the case of an audio editor which can only edit a single audio track,
+	then selecting audio simply consists of specifying the start and end times
+	of the audio which you want to select, that is, a time range. For example
+	you might want to select the audio between the times 1 minute 2 seconds and
+	5 minutes 23 seconds.</p>
+
+	<p>However, Audacity is a multi-track editor. If the project consists of a number
+	of tracks, then you may want to select the audio on only some of the tracks for
+	a given time range. So in Audacity, as well as having to select a time range,
+	you also have to specify which tracks are selected. The selection of
+	tracks was described in the
+	<a href="#track-selection">track selection</a> section above, and
+	selecting a time range is described in one of the following sections.</p>
+	
+	
+	<h3 id="auto-select-option">Auto-select option</h3>
+	
+	<p>There is an option for auto-selection, if a selection is required,
+	and this option is on by default. This option affects what happens,
+	for example, if you try to apply an effect when no audio is selected,
+	that is either no tracks are selected and/or no time range is selected.
+	If this option is off, then a dialog opens telling you that no audio is selected.
+	However, if this option is on, the
+	effect is applied to either some or all of the audio in the project, depending
+	on whether any tracks were selected and whether a time range was selected.</p>
+	
+	<p>Because the automatic selection of tracks and time-ranges occur with
+	no audible feedback, then for users of screen readers it's recommended
+	that you turn this option off, as described in the
+	<a href="#auto-select">Auto-select section</a>
+	of the Preferences section. All the instructions in the remainder
+	of this guide assume that the option is off.</p>
+	
+	
+	<h3>Selecting a time range</h3>
+	
+	<p>A quick way of selecting all of the audio in the project is to
+	use the shortcut <strong>Ctrl + A</strong>: this selects all the
+	tracks, and selects a time range which includes all the audio.</p>
+	
+	<p>There are two general ways of selecting a time range. One of these
+	is described in the remainder of this section, and the other
+	method, is described in the
+	<a href="#selecting-a-time-range-using">Selecting a time range using the stored cursor position</a>
+	section below.</p>
+	
+	<p>The first general way of selecting a time range consists of two steps:</p>
+	
+	<ol>
+		<li>Move the cursor to where you want to start or end the selection, using
+		one of the methods described in the
+		<a href="#moving-the-cursor">Moving the cursor section</a> above.</li>
+		
+		<li>Set the other end of the selection using one of the methods described
+		below.</li>
+	</ol>
+	
+	<p>Note that when a time range is selected, playback plays the selected
+	time range. There are also a number of additional playback commands which
+	are described in the
+	<a href="#playback-commands-for-checking">Playback commands for checking a selected time range section</a>.</p>
+	
+	<p>You can use any of the following methods for setting the other end of the selection:</p>
+	
+	<ul>
+		<li>With the cursor at the position where you want the start of the
+		selection, to set the end of the selection at the end of all the audio,
+		press <strong>Shift + End</strong>.</li>
+		
+		<li>With the cursor positioned where you want the end of the selection,
+		to set the start of the selection at the start of the tracks (time zero),
+		press <strong>Shift + Home</strong>.</li>
+
+		<li>Set the end of the selection using the <strong>]</strong> key during playback.
+		If during playback you press <strong>]</strong> and then <strong>Spacebar</strong> to stop,
+		the end of the selection is set at the point in the audio where you pressed
+		the <strong>]</strong> key. In practice, the following method is
+		more flexible:
+		<ol>
+			<li>During playback, press <strong>P</strong> to pause when you reach the position
+			which you want to be the end of the selection.</li>
+			<li>If you're unhappy with this position, press <strong>P</strong> to resume and using
+			the Seeking/Jumping keys have another attempt to pause in the
+			right place.</li>
+			<li>Press <strong>]</strong> to mark the position for the
+			end of the selection.</li>
+			<li>Press <strong>Spacebar</strong> to stop.</li>
+		</ol>
+		</li>
+		
+		<li>With the cursor at the position where you want the start of the
+		selection, to set the end of the selection at the end of the audio in the
+		selected tracks, press <strong>Shift + K</strong>.</li>
+		
+		<li>With the cursor positioned where you want the end of the selection,
+		to set the start of the selection at the start of the audio in the selected tracks,
+		press <strong>Shift + J</strong>.</li>
+		
+		<li>Using the selection controls on the selection bar, as described
+		in the next section.</li>
+		
+		<li>Using <strong>Shift + Left Arrow</strong> or <strong>Shift + Right Arrow</strong>.
+		With the cursor positioned where you want the start of the selection,
+		you can press <strong>Shift + Right Arrow</strong> one or more times
+		to move the end of the selection to the right in small steps.
+		Similarly, with the cursor position where you want the end of the
+		selection, you can press <strong>Shift + Left Arrow</strong> one or more
+		times to move the start of the selection to the left. Adjusting the step size
+		is described in the
+		<a href="#step-size">Step size of the left an right arrow keys section</a>
+		above. Note that Track table must be the focus to use these keystrokes.</li>
+	</ul>
+	
+	
+	<h4>Setting the start or end of the selection using the selection controls</h4>
+	
+	<p>With the cursor positioned where you want to start the selection,
+	to set the end of the selection:</p>
+
+	<ol>
+		<li>Press <strong>Ctrl + F6</strong> to move to the Selection bar.</li>
+		
+		<li><strong>Tab</strong> to the selection details combo box, and set it
+		to either start and end of selection, or start and length of selection.
+		If you increase the value of either the length, or the End control, then the value of the
+		start control remains unchanged at the initial cursor
+		position.</li>
+		
+		<li><strong>Tab</strong> to the end or length control.</li>
+		
+		<li>If it's the End control, then increase its value. For
+		example if you want to move the end of the selection to five
+		seconds after the start of the selection, and assuming the format
+		is set to hh:mm:ss + hundredths, then: press <strong>End</strong>
+		to move to the last digit, press <strong>Left Arrow</strong> twice
+		times to move to the seconds digit, and then press <strong>Up Arrow</strong>
+		five times.</li>
+		
+		<li>If it's the Length control, then you can increase the
+		value of the length by either by using <strong>Up Arrow</strong>,
+		or by typing in digits, as described in the
+		<a href="#edit-spin-boxes">Edit spin boxes</a> section,
+		which is in the Selection bar section.</li>
+		
+		<li>Press <strong>Ctrl + F6</strong> twice to return to the Track table.</li>			
+	</ol>
+	
+	
+	<p>With the cursor positioned where you want the end of the selection,
+	to set the start of the selection:</p>
+	
+	<ol>
+		<li>Press <strong>Ctrl + F6</strong> to move to the Selection bar</li>
+		
+		<li><strong>Tab</strong> to the selection details combo box, and set it
+		to either start and end of selection, or length and end of selection.
+		If you increase the value of either the length, or the start control, then the value of the
+		end control remains unchanged at the initial cursor position.</li>
+		
+		<li><strong>Tab</strong> to the start or length control.</li>
+		
+		<li>If it's the start control, then decrease
+		its value. For example, if you wanted to move the start of the selection
+		to ten seconds before the end of the selection, and assuming that
+		the format of the selection controls is set to hh:mm:ss + hundredths:
+		press <strong>End</strong> to move to the last digit, then press
+		<strong>Left Arrow</strong> three times to move to the tens of seconds digit,
+		and then press <strong>Down Arrow</strong> once to decrease the
+		time by 10 seconds.</li>
+		
+		<li>If it's the Length control, then you can increase the
+		value of the length by either by using <strong>Up Arrow</strong>,
+		or by typing in digits, as described in the
+		<a href="#edit-spin-boxes">Edit spin boxes</a> section,
+		which is in the Selection bar section.</li>
+		
+		<li>Press <strong>Ctrl + F6</strong> twice to return to the Track table.</li>
+	</ol>
+	
+	
+	<h3 id="selecting-a-time-range-using">Selecting a time range using the stored cursor position</h3>
+	
+	<p>The second general method of selecting a time range consists of four steps:</p>
+	
+	<ol>
+		<li>Move the cursor to where you want to start or end the selection, using
+		one of the methods described in the
+		<a href="#moving-the-cursor">Moving the cursor section</a> above.</li>
+		
+		<li>Open the Select menu, and choose Store Cursor position.</li>
+		
+		<li>Set the other end of the selection, again using
+		using one of the methods described in the
+		<a href="#moving-the-cursor">Moving the cursor section</a> above.</li>
+		
+		<li>Open the Select menu, and choose Cursor to Stored Cursor position.</li>
+	</ol>
+	
+	<p>In some circumstances, this method is easier to use than the method described in
+	the previous section. Having stored the cursor position, you can use what ever method
+	you want to position the cursor at the other end of the time range you want to select,
+	without any danger that you'll loose the other end of the selection.</p>
+	
+	<p>Note that during playback, including when paused, the Store Cursor position command stores
+	the position of the playback cursor, rather than the cursor used for editing. However, it's normally
+	easier to position the edit cursor precisely where you want it, and so for selecting a time
+	range, you probably won't want to store the position of the playback cursor very often.
+	Similarly, during playback, including when paused,  the &ldquo;Cursor to Stored Cursor
+	position&rdquo; on the Select sub menu selects from the position of the playback cursor
+	to the stored cursor position.</p>
+	
+	
+	<h3 id = "playback-commands-for-checking">Playback commands for checking a selected time range</h3>
+	
+	<p>When a time range is selected, then if you press <strong>Spacebar</strong> for playback,
+	only the audio in the selected time range is played. In addition you can use
+	the following playback commands to check that you've selected the time range which you want:</p>
+	
+	<ul>
+		<li>To play a short period before or after selection start, press <strong>Shift + F5</strong>
+		or <strong>Shift + F6</strong> respectively.</li>
+		
+		<li>To play a short period before or after selection end, press <strong>Shift + F7</strong>
+		or <strong>Shift + F8</strong> respectively.</li>
+		
+		<li>To play a cut preview, press <strong>C</strong>. This plays back a short period before selection
+		start, and then a short period after selection end. The selected time range itself is omitted.</li>
+	</ul>
+	
+	<p>The settings for the length of these periods all share the settings of the play
+	cut preview command, and can be set in the playback category of Preferences.</p>
+	
+		
+	<h3>Adjusting a selected time range</h3>
+	
+	<p>There are a couple of ways of making small adjustments to
+	a selected time range, and they are described in the next two sections.</p>
+	
+
+	<h4>Adjusting the selected time range using keystrokes to move the start or end of the selection</h4>
+	
+	<p>You can use the following keystrokes to move the start or end
+	of the selection by a small amount. Adjusting the step size
+	is described in the
+	<a href="#step-size">Step size of the left an right arrow keys section</a> above.</p>
+		
+	<ul>
+		<li>To move the end of the selection to the right, so
+		expanding the time range, press <strong>Shift + Right Arrow</strong>.</li>
+		
+		<li>To move the end of the selection to the left, so
+		contracting the time range, press <strong>Ctrl + Shift + Left Arrow</strong>.</li>
+		
+		<li>To move the start of the selection to the right, so
+		contracting the time range, press <strong>Ctrl + Shift + Right Arrow</strong>.</li>
+		
+		<li>To move the start of the selection to the left, so
+		expanding the time range, press <strong>Shift + Left Arrow</strong>.</li>
+	</ul>
+			
+	<p>Note that the two keystrokes that use <strong>Ctrl</strong>
+	contract the selected time range, and the other two keystrokes expand
+	the selected time range.</p>
+
+	
+	<h4 id="adjusting-using-the-selection-controls">Adjusting the selected time-range using the selection controls</h4>
+	
+	<ol>
+		<li>If the current focus is the Track table, then press
+		<strong>Ctrl + F6</strong> to move to the Selection bar.</li>
+		
+		<li><strong>Tab</strong> to the selection details combo box, and set the
+		Start and end of selection option. This allows you to adjust the Start or the End of the
+		selection without affecting the other one.</li>
+		
+		<li><strong>Tab</strong> to either the start or the
+		end control. If the format isn't already set to
+		hh:mm:ss + hundredths, then you probably want to do this so that
+		you can make small adjustments to the times. The format can
+		be changed using the context menu of the control.</li>
+		
+		<li>If, for example, you want to adjust the time in tenths of a
+		second, press <strong>End</strong> to move to the last digit,
+		and then press <strong>Left Arrow</strong> to move to the
+		tenths of a second digit. You can then press <strong>Up Arrow</strong>
+		or <strong>Down Arrow</strong> to increase or decrease the time by
+		a tenth of a second respectively.</li>
+		
+		<li>Adjust the other selection control if desired.</li>
+		
+		<li>Press <strong>Ctrl + F6</strong> twice to return to the tracks.</li>
+	</ol>
+	
+	
+	<h3>Deselecting a selected time range</h3>
+
+	<p>If you press any of the following keystrokes which move the cursor,
+	then any selected time range is deselected: <strong>Home</strong>, <strong>End</strong>,
+	<strong>J</strong>, <strong>K</strong>, <strong>Left Arrow</strong>,
+	<strong>Right Arrow</strong>, <strong>Comma</strong>, and <strong>Period</strong>.
+	After you have pressed <strong>Left Arrow</strong>
+	or <strong>Right Arrow</strong>, then the cursor position
+	is at the start or end of the selection which has just been deselected.</p>
+	
+	<p>To deselect all the tracks, and deselect any time-range, press
+	<strong>Ctrl + Shift + A</strong>. The new cursor position is at
+	the start of the selection which has just been deselected.</p>
+	
+	
+	<h2 id="basic-editing">Basic editing</h2>
+	
+	<h3>Undo and redo</h3>
+	
+	<p>To undo press <strong>Ctrl + Z</strong>,
+	and to redo press <strong>Ctrl + Y</strong>.</p>
+	
+
+	<h3>Deleting audio</h3>
+
+	<p>To delete the selected audio, press the <strong>Delete</strong> key.</p>
+	
+	<p>If you want a preview of the audio after deletion,
+	press <strong>C</strong> which plays back from a short time before
+	the selected audio to a short time after the selected audio, but
+	omitting the selected audio. The length of the times of playback before
+	and after the selection can be set in the Cut Preview section of
+	the Playback category in the Preferences dialog.</p>
+	
+	
+	<h3>Cut</h3>
+	
+	<p>To cut the selected audio, press <strong>Ctrl+ X</strong>. The selected audio
+	is removed from the tracks, and placed on the Audacity clipboard.</p>
+	
+	<p>As in the case of deleting audio, you can preview the effect of your cut by
+	pressing <strong>C</strong> for Play cut preview.</p>
+	
+	
+	<h3>Copy</h3>
+	
+	<p>To copy the selected audio onto the Audacity clipboard, press <strong>Ctrl + C</strong>.</p>
+	
+	
+	<h3 id="paste">Paste</h3>
+	
+	<p>To paste the audio on the Audacity clipboard into the selected track or tracks,
+	press <strong>Ctrl + V</strong>. There are two cases:</p>
+	
+	<ul>
+		<li>If a time range is not selected, and so no audio is selected,
+		then the audio is inserted at the position of the cursor.</li>
+		
+		<li>If some audio is selected, the selected audio is replaced
+		by the pasted audio.</li>
+	</ul>
+	
+	<p>There are a couple of convenient playback commands which can be used
+	for checking that the transition at the start and end of the pasted audio sounds alright:</p>
+	
+	<ul>
+		<li>To play a short period before and after selection start,
+		press <strong>Ctrl + Shift + F5</strong></li>
+		
+		<li>To play a short period before and after selection end,
+		press <strong>Ctrl + Shift + F7</strong></li>
+	</ul>
+	
+	<p>The settings for the length of these periods share the settings of the play
+	cut preview command, and can be set in the playback category of Preferences.</p>
+
+	
+	<h3>Replace with silence</h3>
+
+	<p>To replace the selected audio with the same length of silence,
+	on the Edit Menu, open the Remove Special sub menu, and choose
+	Silence Audio (<strong>Ctrl + L</strong>).</p>
+
+
+	<h3>Insert silence</h3>
+	
+	<p>To insert a period of silence into the selected tracks:</p>
+
+	<ol>
+		<li>Move the cursor to where you want to insert the silence.</li>
+
+		<li>Choose Silence from the Generate menu.</li>
+
+		<li>A Silence Generator dialog opens, and the focus is a spin box
+		which allows you to specify the length of the silence. The spin box
+		is identical to the spin boxes used on the Selection bar, though the
+		first non-zero digit is the initial focus, rather than the first digit.
+			
+		 	<p>Set the time that you want,
+			and then press <strong>Enter</strong> to press the default OK button.
+			The period of silence is inserted, and a time-range which covers
+			this period is selected.</p>
+		</li>
+	</ol>
+
+	<p>Note that all the commands on the Generate menu have the following behaviour.
+	If one or more tracks are selected, but no time-range, then the generated
+	audio is inserted at the cursor. However, if a time-range is also selected,
+	then the selected audio is replaced by the generated audio. Also, all the spin
+	boxes in the dialogs which are opened from the Generate menu have a default
+	format of seconds, and the first non-zero digit is the initial focus, rather
+	than the first digit.</p>
+
+
+	<h3 id="effects">Effects</h3>
+
+	<p>Audacity provides a large number of effects which are available on the
+	Effects menu. Some of the commands, like fade in or fade out,
+	simply execute the effect on the selected audio, but most of them
+	open a dialog box so that you can adjust the parameters for the
+	effect.</p>
+	
+	<p>If an effect does not support real-time preview, which is
+	described in the next section, then its dialog nearly always
+	contains a Preview button which
+	allows you to hear a short sample of the effect applied to the
+	selected audio. By default, the length of the preview is 6 seconds, but you
+	can change this in the Preferences dialog, where in the Playback
+	category there's a Length of preview edit box.</p>
+	
+	<p>The effect's dialog also contains a Manage button, which
+	opens a menu which includes commands for presets.</p>
+	
+	
+	<h4>Effects with real-time preview</h4>
+	
+	<p>Some of the effects which can be used Audacity include real-time
+	preview &ndash; where you can change the settings of an effect during
+	playback. A small number of the effects included with Audacity's installation,
+	for example, the bass and treble effect and the wahwah effect,
+	have this feature. In addition, if you have downloaded
+	any VST or LADSPA effects, then these have real-time preview.</p>
+	
+	<p>The dialogs of effects which include real-time preview include the
+	following controls, all of which have access keys:</p>
+	
+	<ul>
+		<li>Apply button, which applies the effect to the selected audio,
+		and is the dialog's default button. Note that as with any other
+		Apply button, it doesn't close the dialog.</li>
+		
+		<li>Close button (<strong>Esc</strong>).</li>
+		
+		<li>Manage button. This opens a menu which includes commands for presets,
+		and opening an options dialog.</li>
+		
+		<li>Start/Stop Playback button. If you press Stop Playback during
+		playback, and then press Start Playback, then playback resumes from
+		where it was stopped.</li>
+		
+		<li>Skip Backward button. During playback, pressing this seeks backward
+		by a short period. Otherwise, pressing it ensures that the next playback
+		starts at the start of the selected time range.</li>
+		
+		<li>Skip Forward button. During playback, pressing this seeks forward
+		by a short period. Otherwise, pressing it causes the next playback to
+		start at the end of the selected time range.</li>
+		
+		<li>Enable check box. This sets whether the effect is enabled, and is
+		checked by default. Unchecking this allows you to quickly compare the
+		audio with and without the effect.</li>
+	</ul>
+	
+	<p>After opening one of these effect dialogs, you can return to the main
+	Audacity window without closing it. Dialogs with this behaviour are known
+	as modeless dialogs. You can cycle round the Audacity main window and any
+	open modeless dialogs by pressing <strong>Alt + F6</strong>. Because these
+	effect dialogs have their own playback controls, you may not need to make
+	use of the behaviour very often.</p>
+
+	
+	<h3>Deleting tracks</h3>
+	
+	<ul>
+		<li>To delete the focused track, press <strong>Shift + C</strong>.</li>
+		
+		<li>To delete the selected track or tracks, choose Remove Tracks
+		from the Tracks menu. This provides a quick way of deleting all
+		the tracks if you first press <strong>Ctrl + A</strong>
+		to make sure that all the tracks are selected.</li>
+	</ul>
+	
+	
+	<h3>Avoiding introducing clicks when editing</h3>
+	
+	<p>If you delete or cut part of the audio in a track, and if the beginning or
+	end of this part hasn't zero amplitude, then this can result if sudden changes
+	in the amplitude of the audio. If the size of these sudden changes are large enough,
+	then you'll hear them as clicks. A similar problem can occur if you copy and paste audio.</p>
+	
+	<p>You can avoid introducing these clicks by using the &ldquo;At Zero Crossings&rdquo;
+	command, which is on the Select menu, and has the shortcut <strong>Z</strong>.
+	If a track is selected, but there isn't a selected time range,
+	then if you apply this command, the position of the cursor is moved to
+	the nearest position where the amplitude of the audio in the selected track is zero.
+	The change is position is very small, so you don't have to worry that this will make
+	a large change to the cursor position. In a similar manner, if there's a selected time range,
+	the positions of both the start and the end of the time range are adjusted so that the
+	amplitude of the audio in the selected track is zero.</p>
+	
+	<p>So to avoid introducing clicks:</p>
+	
+	<ul>
+		<li>After selecting part of the audio in a track, and before cutting, deleting or
+		copying, apply the At Zero Crossings command.</li>
+		
+		<li>After you've positioned the cursor for pasting audio into a track, and
+		before pasting, apply the At Zero Crossings command.</li>
+	</ul>
+	
+
+	<h2 id="more-advanced-editing">More advanced editing</h2>
+	
+	<h3>Adding a new empty track</h3>
+	
+	<p>To add a new empty track, choose an option from the Add New
+	sub-menu which is on the Tracks menu.</p>
+
+	
+	<h3 id="importing-audio-files">Importing audio files</h3>
+	
+	<p>You can import one or more audio files,
+	and these become new tracks in the existing project. 
+	To import standard audio file(s), open the
+	File menu, and choose Audio from the Import sub-menu (<strong>Ctrl + Shift + I</strong>).
+	A &ldquo;Select one or more audio files&rdquo; dialog opens, which
+	has the same structure as a standard Windows XP Open dialog. Select one or
+	more files, and press <strong>Enter</strong> to press the OK button.</p>
+	
+	<p>Note that immediately after the import, the last track in the
+	project is selected, and all other tracks are unselected.</p>
+
+	
+	<h3>Duplicate</h3>
+	
+	<p>To duplicate the selected audio into new track or tracks, open
+	the Edit menu and choose Duplicate (<strong>Ctrl + D</strong>).
+	The duplicated audio retains the same timings as the original selected audio,
+	so in the new track or tracks the audio data starts at the start of the selected
+	time range.</p>
+    
+    
+    <h3 id="align-the-audio-in-the-tracks-end-to-end">Align the audio in tracks end to end</h3>
+    
+    <p>If you select two or more tracks, you can align the audio in these
+    tracks so that the audio in a track starts at the end of the audio
+    in the previous track. To do this, open the tracks menu, open the
+    Align tracks sub menu, and choose Align end to end. Notes:</p>
+    
+    <ul>
+        <li>The order in which the audio in the selected tracks is aligned is the same
+        as the order of these tracks in the track table. If you need to
+        change the order of the tracks in the table, you can do this using
+        commands on a track's <a href="#track-menu">track menu</a>.</li>
+        
+        <li>The position of the audio in the first selected track remains
+        unchanged.</li>
+    </ul>
+
+	
+	<h3>Time shift</h3>
+	
+	<p>Time shift clips???</p>
+	
+	<p>You can time shift the audio data in one or more selected tracks so that
+	either the start or the end of the audio is at some desired position.
+	You can specify this position either with the cursor, or the start or
+	end of a selected time range. All the commands for moving the audio
+	are available on the Align Tracks sub menu which is on the Tracks menu,
+	and some examples of using them are given below.</p>
+	
+	<p>There are a couple of convenient playback commands which can be used
+	for checking the position of the shifted audio:</p>
+	
+	<ul>
+		<li>To play a short period before and after the cursor, or selection start,
+		press <strong>Ctrl + Shift + F5</strong></li>
+		
+		<li>To play a short period before and after selection end,
+		press <strong>Ctrl + Shift + F7</strong></li>
+	</ul>
+	
+	<p>The settings for the length of these periods share the settings of the play
+	cut preview command, and can be set in the playback category of Preferences.</p>
+	
+	<h4>Examples</h4>
+	
+	<p>To move the audio in one or more tracks so that it
+	starts at some desired time:</p>
+	
+	<ol>
+		<li>Move the cursor to the desired time, using any of the methods
+		described in the
+		<a href="#moving-the-cursor">Moving the cursor section</a>.</li>
+		
+		<li>Select the tracks containing the audio you want to move,
+		and make sure that the other tracks are not selected.</li>
+		
+		<li>Open the Align Tracks sub menu on the Tracks menu, and choose
+		Start to Cursor/Selection Start. Note that if more than one track has been selected,
+		and the audio in these tracks start at different times, then the
+		audio in all the tracks is moved by the same amount, so that the
+		earliest audio in the tracks is positioned at the cursor.</li>
+	</ol>
+	
+	<p>If you'd wanted to move the audio in one or more tracks so that it
+	ended at some desired time, then you'd simply change step three to use
+	the End to Cursor/Selection Start command, instead of Start to Cursor/Selection Start.</p>
+	
+	<p>As another example, if you want to time shift one or more tracks by a certain amount
+	of time, then:</p>
+	
+	<ol>
+		<li>Select one or more tracks that you want to time shift, and make
+		sure that the other tracks are not selected.</li>
+		
+		<li>Press <strong>J</strong> to  move the cursor to the start of the
+		audio in the selected tracks.</li>
+		
+		<li>Press <strong>Ctrl + F6</strong> to move to the Selection bar, and
+		then <strong>Tab</strong> to the End/Length radio buttons. Make sure
+		that the Length option is selected.</li>
+		
+		<li><strong>Tab</strong> to the Selection Start spin-box.</li>
+		
+		<li>Depending on whether you want to time shift forward or backward,
+		you now need to move the cursor forward or backward by incrementing
+		or decrementing the time in the spin-box. For example,
+		if you want to move the audio forward by 1.5 seconds, then
+		use the following keystrokes to increment the time : <strong>End</strong> moves you to
+		right most digit, which is hundredths of seconds; <strong>Left Arrow</strong>
+		moves you to the tenths of second digit;
+		<strong>Up Arrow</strong> five times increments this digit by five;
+		<strong>Left Arrow</strong> moves you to the seconds digit;
+		and finally, <strong>Up Arrow</strong> increments this digit by one.</li>
+		
+		<li>Go to the Align tracks sub-menu on the Tracks menu, and choose
+		Start to Cursor/Selection Start. This moves the data in the selected selected tracks,
+		so that is now starts at the modified cursor position.</li>
+	</ol>
+	
+	<p>Note that if you're wanting to move a track which you've recorded and
+	which doesn't line up with the existing tracks, then you may need to move
+	the start of the audio to earlier than
+	time zero. Because you can't move the cursor before time zero,
+	the above method has to be modified so that
+	in step two, you press <strong>K</strong> to move to the end of the audio
+	in the selected tracks, and then in step five, you use the End to Cursor/Selection Start
+	command. Note that Audacity does have an automatic
+	<a href="#latency-correction">latency correction</a>.</p>
+
+
+	<h3 id="track-menu">Track menu</h3>
+	
+	<p>You can open the menu of a focused track by pressing <strong>Shift + M</strong>,
+	or the <strong>Application key</strong>.
+	The commands on the menu include renaming the track, and moving
+    the track, and the latter is described in the next section.</p>
+	
+	
+	<h3 id="moving-a-track">Moving a track</h3>
+	
+	<p>On the <a href="#track-menu">Track menu</a> there are commands for moving
+	a track up, down, to the top, and to the bottom of the tracks. By default,
+	these commands to not have keystrokes assigned to them, but you can assign
+	your own keystrokes in the keyboard category of Preferences, which is described
+	in the
+	<a href="#keyboard-shortcuts">Keyboard shortcuts section</a>, which is in
+	the Preferences section. The names of
+	the commands are move focused track up, down, to top, and to bottom.
+	Keystrokes which are not currently used and are suitable include <strong>Ctrl + Shift + Up Arrow</strong>,
+	<strong>Ctrl + Shift + Down Arrow</strong>, <strong>Ctrl + Shift + Home</strong>,
+	and <strong>Ctrl + Shift + End</strong>.</p>
+
+	
+	<h3>Track gain</h3>
+	
+	<p>To change the gain of the focused track, press <strong>Shift + G</strong>.
+	A Gain dialog opens which contains both an edit box and a slider for changing the gain.
+	The range of gain (db) is -36 to +36.</p>
+	
+	<p>The gain of a track is applied to the whole track, and is only
+	applied during playback, or when the track is exported to a file, or when you
+	use the mix and render command. Changing the gain doesn't affect
+	the amplitude of the audio data in the track.</p>
+	
+	
+	<h3>Track pan</h3>
+	
+	<p>To change the pan of the focused track, press
+	<strong>Shift + P</strong>. A Pan dialog opens which contains both
+	an edit box and a slider for changing the pan.
+ 	The range of pan is -1 to 1, corresponding to left and right.</p>
+	
+	<h3>Track Mute and Solo</h3>
+	
+	<p>Each track has a mute setting which can be on or off, and
+	a solo setting which can also be on or off. These settings are
+	used to control which tracks contribute to playback, and in addition
+	the mute settings, but not the solo settings, affect which tracks contribute to audio
+	saved in one of the standard formats. By default, the mute and
+	solo settings for each track are off. After reading the name of the track,
+	Jaws says mute on, if the mute setting is on, and solo on,
+	is the solo setting is on.</p>
+	
+	
+	<h4>Mute</h4>
+	
+	<p>If a track's mute setting is on, then it doesn't contribute to playback, or
+	to the audio saved in one of the standard formats. You can either
+	change the mute setting of an individual track or the settings of
+	all the tracks:</p>
+	
+	<ul>
+		<li>To toggle the Mute setting of the focused track, press
+		<strong>Shift + U</strong>.</li>
+		
+		<li>To mute all the tracks, press <strong>Ctrl + U</strong>.</li>
+		
+		<li>To set mute off for all the tracks, press
+		<strong>Ctrl + Shift + U</strong>.</li>
+	</ul>
+	
+	
+	<h4>Solo</h4>
+	
+	<p>If one or more tracks have their solo setting on, then only these
+	tracks contribute to playback, regardless of the Mute settings of all of
+	the tracks. To toggle the Solo setting of the focussed track,
+	press <strong>Shift + S</strong>.</p>
+	
+	<p>There are a number of options for the solo setting and its interaction with
+	the mute setting:</p>
+	
+	<ul>
+		<li>Simple, which is the default. when you turn on the Solo setting of
+		a track, then the mute and solo settings of the tracks are adjusted so that
+		the mute setting of the soloed track is off, and for all the remaining tracks,
+		the mute setting is on, and the solo setting is off. If you turn off the solo setting
+		of a track, then for all the remaining tracks, the mute setting is turned off.</li>
+		
+		<li>Multi-track. The mute and solo settings are completely independent.</li>
+		
+		<li>None. There's no solo setting, just a mute setting.</li>
+	</ul>
+	
+	<p>The setting which has these options can be found by going to the Tracks Behaviors
+	category of the Preferences dialog, where there is a Solo button combo box.</p>
+	
+	
+	<h4 id="sync-lock-tracks">Sync lock tracks</h4>
+	
+	<p>The idea of sync-lock tracks is to try and keep a group of tracks time
+	synchronized with each other when some operation, such as deleting, affects
+	the timing of one or more tracks in the group.</p>
+ 
+	<p>Say you just had two audio tracks, and they were sync-locked. If you select
+	one track and a time range, and delete the selected audio, then the audio in that
+	time range in the unselected track is also deleted, so that all the remaining audio
+	in the two tracks is still in sync with each other. Similarly with just two tracks
+	which are sync locked, then if you select one track, and paste some audio into that
+	track at the cursor position, then silence, with the same duration as the pasted audio,
+	is pasted into the unselected track at the cursor position.</p>
+	
+	<p>You switch sync lock tracks on and off in the tracks menu, and by default it's off.
+	If there are only audio tracks in the project, then there's just one group of sync-locked
+	tracks. The tracks in a project can be divided up into more than one group using label
+	tracks. Each audio track which follows immediately after a label track starts a new group.</p>
+		 
+	<p>When you select one or more tracks in a sync locked group, then an appropriate icon
+	is shown in the track for sighted users, and the phrase "sync lock selected" is added to the
+	name of the track for screen reader users.</p>
+	
+
+	<h2 id="labels">Labels</h2>
+	
+	<p>A label represents either a specific time position or a specific time range, and it can
+	have a name. A label representing
+	a specific time is referred to as a point label, and a label representing a
+	specific time range is referred to as a region label.</p>
+	
+	<p>Labels are stored in Label tracks. There can be more than one Label track in a project,
+	but normally a single label track is all that is needed. When a label track is the focus,
+	then by default, pressing any letter or number automatically creates a new label,
+	which normally isn't very helpful for users of screen readers. However there is a setting
+	which allows you to turn this off, and it is highly recommended that you do this.
+	In the Preferences dialog, in the Tracks category, there is a &ldquo;Type to create
+	a label&rdquo; check box, which is checked by default, and which you can uncheck.</p>
+	
+	<p>You can label positions or time ranges as described in the next section,
+	and then easily return to these later on in your editing using the commands
+	described in the <a href="#moving-to-labels">Moving to labels section</a>.
+	In addition, a number of the tools on the Analyze menu add a label track to
+	the project which contains their results. For example, the Find clipping tool produces
+	a label track containing labels at points where the audio has clipped.</p>
+	
+	
+	<h3>Creating labels</h3>
+	
+	<p>There are two commands for creating labels, and both are on the Labels sub menu
+	on the Edit menu:</p>
+	
+	<ul>
+		<li>Add Label at Selection (<strong>Ctrl + B</strong>). With no time range selected, this
+		creates a point label for the position of the Cursor. If there is a selected
+		time range, then it creates a region label for the time range.</li>
+		
+		<li>Add Label at Playback position (<strong>Ctrl + M</strong>), which creates
+		a point label at the Playback position.</li>
+	</ul>
+	
+	<p>To use either of these commands:</p>
+	
+	<ul>
+		<li>Either choose one of them from the Tracks menu, or press its keystroke.
+		If the focused track isn't a label track, then the first label track below this
+		track becomes the focused track, if such a track exists. If there isn't one,
+		a new label track is appended to the existing tracks, and becomes the focused track.
+		In the focused label track a new label is created, and an edit box is opened for entering
+		a name for the label. Unfortunately Jaws does not say that the focus is now this
+		edit box.</li>
+		
+		<li>Type in a name for the label (optional), and then press <strong>Enter</strong>
+		to close the edit box.</li>
+	</ul>
+	
+	
+	<h3 id="moving-to-labels">Moving to labels</h3>
+	
+	<p>There are two commands for moving to labels. For the purposes of working out which is the nearest
+	label, the position of a region label is taken to be the start of its time range.</p>
+	
+	<ul>
+		<li>Move to next label (<strong>Alt + Right Arrow</strong>). This moves to the nearest label
+		after the the cursor, or the start of a selected time range. If there's no label after this time,
+		then it wraps round to the first label.</li>
+		
+		<li>Move to previous label (<strong>Alt + Left Arrow</strong>). This moves to the nearest label
+		before the cursor, or the start of a selected time range. If there's no label before this time,
+		then it wraps round to the last label.</li>
+	</ul>
+	
+	<p>Both these commands use the labels in a single label track, not all the label tracks in the project.
+	If there is a single label track in the project, which is the usual case, then the commands use that
+	track whatever track is the focus. If there is more than one label track in the project, then if the
+	focused track is a label track this track is used, otherwise the first label track below the focused track,
+	if one exits, is used.</p>
+	
+	<p>When these commands &ldquo;move to&rdquo; a label: if the label is a point label, then the cursor
+	is set to the label's position; if the label is a region label, then a time range is selected using
+	the label's time range. In both cases, Jaws says the name of the label, if it has one, followed by its
+	position in the label track. If these commands are used during playback, then playback continues
+	using the label's cursor position or time range.</p>
+	
+	<p>Note that if a label track is the focus, then the keystrokes <strong>Tab</strong>, and
+	<strong>Shift + Tab</strong> for moving to the next or previous label are also available. However
+	use of these keystrokes is not recommended. In addition to moving to a label, these keystrokes
+	also open the name of the label for editing in an edit box which is not read properly
+	by screen readers. If you accidentally use one of these keystrokes, then you can close
+	the edit box by pressing <strong>Enter</strong>. If you need to edit the name of a label,
+	you can use the Edit labels dialog, which is described in the next section.</p>
+	
+	
+	<h3>Editing labels</h3>
+	
+	<p>The uses of the Edit labels dialog include renaming a label, deleting a label, and as an
+	alternative to the move to label commands. To open
+	the dialog, open the Edit menu, open the Labels sub menu, and choose Edit Labels.
+	The dialog includes the following controls:</p>
+	
+	<ul>
+		<li>A table which contains details the labels in all of the label
+		tracks in the project, and which is described in the next section.</li>
+		
+		<li>Insert before, Insert After, and Remove buttons which can be used for
+		editing the table.</li>
+		
+		<li>Import and Export buttons for importing labels from and exporting labels to a text file.</li>
+	</ul>
+	
+	<p>When you open the dialog, one of the cells in the table is the focus and is selected. Assuming
+	that the project contains at least one label, then one of the names of the
+	labels is selected. In determining which name is selected, the position of a region label is taken
+	as the start of its time range:</p>
+	
+	<ul>
+		<li>If the cursor, or the start of a selected time range is at the position of a label,
+		then the name of that label is selected.</li>
+		
+		<li>Otherwise, the name of the label which is the nearest label before this time is selected.</li>
+		
+		<li>If there is no label before this time, then the name of the first label is selected.</li>
+	</ul>
+	
+	<p>When you close the dialog, either by pressing OK or cancelling it, then either the cursor or a time range
+	is set using the label which is selected in the table, depending on whether the selected label is a point
+	label or a region label.</p>
+		
+	<p>Note that opening the dialog when there are no labels in the project is not
+	recommended. If you do so the table contains a single row, and
+	the name of a label track is the focus and is selected. The name of the label is blank. 
+	If you press the OK button, then a new label track is appended to the tracks in the project,
+	and this track contains a label with a blank name. The best thing
+	to do if you open the dialog in this state is to press <strong>Esc</strong> to cancel it. However
+	even if you cancel, the cursor is set to time zero, and so you loose the previous position
+	of the cursor.</p>
+	
+	
+	<h4>The table</h4>
+	
+	<p>The table has six columns: the name of the label track, name of the label,
+	start and end times, and low and high frequencies. If a label is a point label,
+	then the start and end time have the same value. The low and high frequencies
+	are for spectral selection, and are not covered in this guide.</p>
+	
+	<p>There are a number of ways of selecting a cell in the table:</p>
+	
+	<ul>
+		<li>To select the next cell in the table, press
+		<strong>Tab</strong> or <strong>Right Arrow</strong>. If the last
+		cell is selected, pressing <strong>Tab</strong> moves you to the
+		next control, which is the Add button.</li>
+		
+		<li>To select the previous cell in the table, press
+		<strong>Shift + Tab</strong> or <strong>Left Arrow</strong>.
+		If the first cell is selected, then pressing <strong>Shift + Tab</strong>
+		moves you to the previous control which is the Cancel button at
+		the bottom of the dialog.</li>
+		
+		<li>To select the cell directly below or above the current cell,
+		press <strong>Down Arrow</strong> or <strong>Up Arrow</strong> respectively.</li>
+		
+		<li>To select the first or last cell, press <strong>Ctrl + Home</strong>
+		or <strong>Ctrl + End</strong> respectively.</li>
+	</ul>
+	
+	<p> Note that because <strong>Tab</strong> can be used for selecting a cell
+	in the table, there are a couple of keystrokes which move you
+	directly out of the table. From any cell in the table, <strong>Ctrl + tab</strong>,
+	and <strong>Ctrl + Shift + Tab</strong> move to to the next or previous control.</p>
+	
+	
+	<h4>Deleting a label</h4>
+	
+	<ol>
+		<li>Select any of the cells in the row representing the label.</li>
+		
+		<li>There are then two alternatives. The first is to press <strong>Ctrl + Tab</strong>
+		to move to the first control after the table, <strong>Tab</strong> to the Remove button
+		and press it. The second is to make use of the Remove button's access key, and to simply
+		press <strong>Alt + R</strong>.</li>
+	</ol>
+	
+	
+	<h4>Editing cells</h4>
+	
+	<p>Jaws reads all the cells as if they were edit boxes. Just ignore this. None of the
+	cells behave like standard edit boxes, and the way you edit a cell depends on the type
+	of value it contains. The editing of the names of labels and the start and end times
+	are described in the next two sections. In both cases you can confirm the edit by
+	pressing <strong>Enter</strong> or <strong>Tab</strong>. The difference between
+	the two is that <strong>Enter</strong> moves you the cell immediately below the current
+	cell, and <strong>Tab</strong> moves you to the next cell. In addition, in both
+	cases you can cancel the edit by pressing <strong>Esc</strong>.</p>
+	
+	
+	<h4>Editing the name of the label</h4>
+	
+	<p>You can either overwrite or edit the current name:</p>
+	
+	<ul>
+		<li>To overwrite the current name, simply type in some text, and
+		then press <strong>Tab</strong> or <strong>Enter</strong> to confirm the edit,
+		or <strong>Esc</strong> to cancel the edit.</li>
+		
+		<li>To edit the existing name, press <strong>F2</strong>, which
+		selects the existing text. To deselect the text before editing,
+		press <strong>Right Arrow</strong> or <strong>End</strong>
+		which positions the current
+		character immediately after the existing text, or press
+		<strong>Home</strong> which makes the current character
+		the first character in the text. To confirm the edit press
+		<strong>Tab</strong> or <strong>Enter</strong>, or to cancel the edit press
+		<strong>Esc</strong>.</li>
+	</ul>
+	
+	
+	<h4>Editing the start or end time</h4>
+	
+	<ol>
+		<li>Press <strong>F2</strong>. You can now edit the time in exactly
+		the same way as you can edit the time controls such as Selection
+		start in the Selection bar.</li>
+		
+		<li>To confirm the edit press <strong>Tab</strong> or <strong>Enter</strong>,
+		or to cancel the edit press <strong>Esc</strong>.</li>
+	</ol>
+	
+	<p>Note that by default, the time format of the start and end times is the
+	same as the time format of the time controls in the selection bar. You
+	can temporarily change the time format by using the context menu
+	of one the times when it is being edited. This changed format only
+	applies to the time controls in the dialog, and the temporary change
+	is not saved when then dialog is closed.</p>
+	
+	
+	<h2 id="clips">Clips</h2>
+	
+	<p>In most of the rest of this guide, it has been assumed that an audio track contains
+	a singe section of audio data. However, an audio track can contain a number of
+	separate sections, and these are referred to as clips. In Audacity, clips can not
+	overlap.</p>
+	
+	<p>There are a number of ways you can end up with more than one clip on a track:</p>
+	
+	<ul>
+		<li>When you record at the end of an existing clip, then the recorded audio is
+		added as a separate clip.</li>
+		
+		<li>Spit a clip into two clips.</li>
+		
+		<li>Paste some audio into a track which already contains a clip, and at a position
+		which does not lie within the existing clip.</li>
+		
+		<li>Use of the various other commands.</li>
+	</ul>
+	
+	
+	
+	<h3>Moving the cursor</h3>
+	
+	<p>There are commands for moving both to the next and previous clip boundary,
+	and these commands appear on the Cursor to sub menu of the Transport menu.
+	The command to move the cursor to the next clip boundary moves the cursor to the next
+	clip boundary after the cursor, or the end of the selected time range. The command
+	to move the cursor to the previous clip boundary, moves the cursor to the previous
+	clip boundary before the cursor, or the start of the selected time range.</p>
+	
+	<p>If any audio tracks are selected, then these commands find clip boundaries in
+	these selected tracks. Otherwise, the commands find clip boundaries in all the audio tracks.</p>
+	
+	<p>When the cursor is moved to a clip boundary, Jaws says either start or end, followed by
+	the number of the clip, followed by the name of the track. In the case where two clips
+	are immediately next to each other, and the clip boundary is both the end of one clip
+	and the start of the next, then Jaws says this.</p>
+	
+	
+	<h3>Selecting a time range</h3>
+	
+	<p>There are two sets of commands for selecting time ranges which involve clip boundaries,
+	and these are described in the next two sections. In both cases, if any audio tracks
+	are selected, then the commands use the clips in the selected tracks. Otherwise,
+	the commands use the clips in all the audio tracks.</p>
+
+	
+	<h4>Selecting previous or next clip</h4>
+	
+	<p>There are commands for both selecting the previous clip, and selecting the
+	the next clip.They can be found on the Clip Boundaries sub menu of the Select
+	menu, and they have shortcuts <strong>Alt + P</strong>, and <strong>Alt + N</strong>
+	respectively. When a clip is selected, Jaws says the position of the clip in the
+	track, followed by the name of the track.</p>
+	
+	<p>Note that you can also easily use these commands for moving to clip boundaries.
+	Just select the relevant clip, and then press <strong>Left Arrow</strong> or
+	<strong>Right Arrow</strong> to deselect the selection, and position the cursor
+	at either the start or the end of the clip respectively.</p>
+	
+	<p>For those that are interested, the precise rules for determining which
+	clips are selected when these commands are used are follows.</p>
+	
+	<p>For the Select next clip command:</p>
+	
+	<ul>
+		<li>If there is no selected time range, then the first clip which starts
+		either at or after the cursor position is selected.</li>
+		
+		<li>If the is a selected time range, then if the start of the selection is
+		positioned at the start of the clip, and the end of the selection is before
+		the end of the clip, then that clip is selected. Otherwise the first clip
+		which starts after the start of the selection is selected.</li>
+	</ul>
+	
+	<p>For the Select previous clip command:</p>
+	
+	<ul>
+		<li>If there is no selected time range, the first clip
+		which starts before the cursor is selected.</li>
+		
+		<li>If there is a time range selected, then if the start of the selection is
+		positioned at the start of a clip, and the end of the selection is after
+		the end of the clip, then that clip is selected. Otherwise, the first clip
+		which starts before the start of the selection is selected.</li>
+	</ul>
+	
+	
+	<h4>Selecting using clip boundaries</h4>
+	
+	<p>The two commands for selecting using clip boundaries can be used in more cases
+	than the commands for selecting the next and previous clip which were described
+	in the previous selection. They are also found on the Clip Boundaries sub menu
+	on the Select menu, but they do not have keystrokes assigned to them by default.</p>
+	
+	<ul>
+		<li>Previous Clip Boundary to Cursor, sets the start of the selected time range
+		to the previous clip boundary.</li>
+		
+		<li>Cursor to Next Clip Boundary, sets the end of the selected time range
+		to the next clip boundary.</li>
+	</ul>
+	
+	<p>When the start or the end of the selected time range is set to a clip boundary
+	using these commands, Jaws gives the details of the clip boundary, in exactly
+	the same way as when the commands for moving the cursor to a clip boundary are used.</p>
+
+
+	<h3>Various split commands</h3>
+		
+	<h4>Split</h4>
+	
+	<p>To split a clip into two clips in a selected track:</p>
+	
+	<ol>
+		<li>Position the cursor where you want to split the clip.</li>
+		
+		<li>On the Edit menu, open the Split Boundaries sub menu, and choose Split.</li>
+	</ol>
+	
+	<p>You can also split a clip into three parts using this method, if you select a time range.</p>
+	
+	
+	<h4>Split delete, and Split cut</h4>
+	
+	<p>You can use the split delete and split cut commands to delete or cut the selected audio,
+	without affecting the position of the contents of the track after the audio which was
+	deleted or cut. This is in contrast to the standard
+	cut and delete commands, which do cause subsequent contents to move.</p>
+	
+	<p>The effect of the the split delete command is as follows. For each track which is selected,
+	any audio data in the selected time range is
+	removed, and so the track becomes empty in that time range, and the position of
+	any subsequent audio data in the track is left unchanged.</p>
+	
+	<p>For example, if in a selected track, the selected time range lies within a a clip, this
+	clip is split into two clips. The first clip ends at the start of the selected time
+	range. There is then a section of empty track, which is the length of the time range,
+	and then the second clip starts at the end of the time range.</p>
+	
+	<p>As another example, if the start of the selected time range lies within the clip, and the
+	end of the time range is at the end of the clip, then the clip is shortened &ndash; no
+	new clips are created.</p>
+	
+	<p>The effect of the split cut command is the same as the split delete command, except that
+	the audio that is removed is placed on the clipboard, rather than just being deleted.</p>
+	
+	
+	<h4>Split New</h4>
+	
+	<p>The Split New command moves the selected audio to a new track or tracks, without affecting the
+	position of any subsequent audio in the original track.</p>
+	
+	<p>For each track which is selected, any audio data in the selected time range is removed,
+	and so the track becomes empty in the time range, and the position of the any
+	subsequent audio data in the track is left unchanged. A new track is added after the
+	last track, and the removed audio is pasted into this track at it's original position.</p>
+	
+	<p>You can think of Split new as being equivalent to Split cut, followed by the cut audio
+	being pasted into a new track at the same position as the original selected audio.</p>
+	
+	
+	<h4>Detach at silences</h4>
+	
+	<p>If the selected audio contains sections of complete silence, that is the amplitude of the
+	audio is zero, then the Detach at Silences command can be used remove those
+	sections of audio, leaving clips which separated from each other by the
+	resulting sections of empty track.</p>
+	
+	<p>For each section in the selected audio where the amplitude of the audio is
+	zero, the audio data is removed, resulting in a section of empty track,
+	and the position of any subsequent audio data in the track is left unchanged.</p>
+	
+	<p>The detach at silences command is used to remove sections of audio where the
+	amplitude is zero, and leave clips which don't con</p>
+	
+	
+	<h3>Merging clips</h3>
+	
+	<p>To merge two clips in a selected track:</p>
+	
+	<ul>
+		<li>Select a time range such that the start of the time range is before the end of the first clip,
+		and the end of the time range is after the start of the second clip. So for example, you could
+		arrange for the start of the time range to be the start of the first clip, and the end of the time
+		range to be the end of the second clip.</li>
+		
+		<li>On the Edit menu, open the Clip Boundaries sub menu, and choose Join (<strong>Ctrl+J</strong>).
+		The clips are joined together, and any space between the clips is replaced by silence.</li>
+	</ul>
+	
+	<p>In the above method, if there are other clips between the two clips, then they also will
+	be merged into the final clip.</p>
+	
+	
+	<h3>Time shifting clips</h3>
+	
+	<p>There are a couple of commands which can be used either to move a single clip,
+	or a number of clips. The commands are Clip Left and Clip Right, and they appear
+	on the Cursor sub menu of the Ext-Command menu, which is one of the
+	<a href="#extra-menus">Extra menus</a>. By defaults no shortcuts are assigned to
+	these commands, but if you use these commands frequently, you'll probably want to
+	assign your own keystrokes.</p>
+	
+	<p>The Clip Left and Clip Right Commands move the clip or clips by a small amount to
+	the left or right respectively. As in the case of using the arrow keys to move the cursor,
+	the amount of movement depends on the Zoom setting, and the step size can be adjusted,
+	as described in the <a href="#step-size">Step size of the left and right arrow keys section</a>
+	of the Moving the Cursor section.</p>
+	
+	
+	<h4>Moving a single clip</h4>
+	
+	<ol>
+		<li>Move to the track which contains the clip which you want to move.</li>
+		
+		<li>Move the cursor so that it lies within the clip.</li>
+		
+		<li>Clip Left or Clip Right move both the clip and the cursor by a small amount. If the
+		clip can not be moved, because it is immediately next to another clip, then Jaws says
+		&ldquo;clip can not be moved&rdquo;</li>
+	</ol>
+	
+	<p>If the cursor is positioned at a clip boundary which is both the end of one clip and the
+	start of the next clip, then for the purposes of moving clips, the cursor is considered
+	to be within the second clip, and this is the clip which the commands use. Because
+	of this, when you are placing the cursor within a clip to move it, it's recommended
+	that you don't position the cursor at the end of the clip. If the cursor is at the end
+	of a clip, then if you repeatedly use the Clip right command and the clip becomes
+	immediately adjacent to the next clip, then the cursor will then be considered
+	to lie within the next clip, and it is this clip, rather than the original clip
+	that will move. This is unlikely to be what you want.</p>
+	
+
+	<h4>Moving a number of adjacent clips</h4>
+	
+	<p>To move a number of adjacent clips in a track:</p>
+	
+	<ol>
+		<li>Move to the track which contains the clips which you want to move.</li>
+		
+		<li>Select the track &ndash; the other tracks should not be selected.</li>
+		
+		<li>You then need to select a time range such that the start of the selection lies within
+		the first clip you want to move, and the end of the selection lies within the last clip.
+		So, for example you could move the cursor to the start of the first clip, and then
+		set the end of the selection to the end of the last clip.</li>
+	</ol>
+	
+	<p>In the case where other tracks are selected, in addition to the focused track, then in these
+	tracks, all clips which include selected audio are also moved.</p>
+	
+	
+	<h4>Moving clips when Sync lock tracks is enabled</h4>
+	
+	<p>The use of sync-lock tracks to keeps a group of tracks time synchronized was described
+	in the
+	<a href="#sync-lock-tracks">Sync lock tracks section</a>, which in the More advanced
+	editing section. If sync lock tracks is enabled when you move either a single clip
+	or a group of clips, then additional clips and labels may be moved. We will refer
+	to the clips that would be moved if sync lock tracks was disabled, as the original
+	set of clips to be moved.</p>
+	
+	<ul>
+		<li>If a clip overlaps in time one of the clips to be moved, then it also will be moved.
+		In fact, the rule is more general than this. For any clip, there exists a series of
+		clips, starting with this clip and ending which a clip which will be moved, such that
+		each pair of adjacent clips in this series overlap in time, then that clip will
+		also be moved.</li>
+		
+		<li>If there are one or more label tracks in the sync locked group, then all the labels
+		in those tracks will be moved, though it is not clear why this should be the case.</li>
+	</ul>
+	
+	
+	<p>These are some notes on the functionality of the clip left and clip right commands. The aim is that they
+	have similar functionality to using the mouse with the shift tool. So Clip left/right is roughly equivalent
+	to clicking in the focused track at the time given by selection start, and dragging one pixel to the
+	left/right. To be more precise:</p>
+	
+	<ul>
+		<li>If the focused track does not contain selected audio, then if selection start lies with a clip,
+		that clip is moved, and selection start/the selection is also moved. (Using a mouse, selection
+		start/the selection isn't moved.)</li>
+		
+		<li>If the focused track contains selected audio, then if selection start lies within a clip, then that clip,
+		along with all the other clips in any track which include audio which is selected, are moved, and the
+		selected time range is moved.</li>
+		
+		<li>If Sync lock tracks is one, then the relevant additional clips are moved.</li>
+	</ul>
+	
+	
+	
+	<h2 id="metadata-tags-editor">Metadata tags editor</h2>
+	
+	<p>Metadata is data which describes other data, and the
+	metadata for audio files consists of a number of tags,
+	where each tag is made up of a tag name and a tag value. The Metadata
+	tags editor in Audacity allows you both to edit the values of a number
+	of preset tags, and also to create your own custom tags.</p>
+	
+	<p>You can open the Metadata tags editor at any time by choosing
+	Metadata from the Edit menu. In addition, if you save audio
+	in one of the standard formats, then unless you've turned the
+	appropriate option off, the Metadata tags editor
+	automatically opens, as described in the
+	<a href="#saving-audio">Saving audio section</a> above.</p>
+	
+	<p>The Metadata tags editor contains the following controls:</p>
+	
+	<ul>
+		<li>A table which contains the names and values of the tags,
+		and is described in the next section.</li>
+		
+		<li>Add, Remove, and Clear buttons which are used for editing the
+		table. Pressing the Clear button deletes all the values
+		of the preset tags, and all names and values of any custom tags.
+		The Add and Remove buttons are described in the
+		<a href="#creating-and-editing-custom-tags">creating and editing custom tags</a> section.</li>
+		
+		<li>A genres section, consisting of Edit and Reset buttons which
+		are used for editing the preset list of genres, as described in the
+		<a href="#editing-the-list-of-genres">Editing the list of genres section</a>
+		below.</li>
+		
+		<li>A template section, which won't be described in this guide.</li>
+	</ul>
+	
+	
+	<h3>The table</h3>
+	
+	<p>The table has two columns: Tag and Value, and the
+	first 7 cells in the Tag column contain preset tag names
+	such as Artist Name and Track Title. Jaws indicates that these preset
+	tag names are not editable by saying unavailable after their names.</p>
+	
+	<p>There are a number of ways of selecting a cell in the table:</p>
+	
+	<ul>
+		<li>To select the next cell in the table, press
+		<strong>Tab</strong> or <strong>Right Arrow</strong>. If the last
+		cell is selected, pressing <strong>Tab</strong> moves you to the
+		next control, which is the Add button.</li>
+		
+		<li>To select the previous cell in the table, press
+		<strong>Shift + Tab</strong> or <strong>Left Arrow</strong>.
+		If the first cell is selected, then pressing <strong>Shift + Tab</strong>
+		move you to the previous control which is the Cancel button at
+		the bottom of the dialog.</li>
+		
+		<li>To select the cell directly below or above the current cell,
+		press <strong>Down Arrow</strong> or <strong>Up Arrow</strong>.</li>
+		
+		<li>To select the first or last cell, press <strong>Ctrl + Home</strong>
+		or <strong>Ctrl + End</strong> respectively.</li>
+	</ul>
+	
+	<p> Note that because <strong>Tab</strong> can be used for selecting a cell
+	in the table, there are a couple of keystrokes which move you
+	directly out of the table. From any cell in the table, <strong>Ctrl + tab</strong>,
+	and <strong>Ctrl + Shift + Tab</strong> move to to the next or previous control.</p>
+
+	
+	<h3>Editing tag values</h3>
+	
+	<p>All the tag values except the genre tag value are edited using
+	an edit box, but the genre tag value is edited with an edit combo
+	box, which allows you to quickly choose from a list of genres.</p>
+	
+	<p>To edit any tag value, except the genre tag value,
+	there are two options: either overwriting or editing the current value,
+	as described below.
+	Both involve using the keystrokes <strong>Enter</strong> or
+	<strong>Tab</strong> to confirm the edit. <strong>Enter</strong> selects
+	the cell immediately below the current cell, and
+	<strong>Tab</strong> selects the next cell, which is the tag
+	name in the next row.</p>
+	
+	<ul>
+		<li>To overwrite the current value, simply type in some text, and
+		then press <strong>Tab</strong> or <strong>Enter</strong> to confirm the edit,
+		or <strong>Esc</strong> to cancel the edit.</li>
+		
+		<li>To edit the existing value, press <strong>F2</strong>, which
+		selects the existing text. To deselect the text before editing,
+		press <strong>Right Arrow</strong> or <strong>End</strong>
+		which positions the current
+		character immediately after the existing text, or press
+		<strong>Home</strong> which makes the current character
+		the first character in the text. To confirm the edit press
+		<strong>Tab</strong> or <strong>Enter</strong>, or to cancel the edit press
+		<strong>Esc</strong>.</li>
+	</ul>
+	
+	<p>To edit the genre tag value:</p>
+	
+	<ul>
+		<li>As in the case of other tag values, you can start the edit
+		either by just starting to type, or by pressing <strong>F2</strong>.</li>
+		
+		<li>You can use the <strong>Up Arrow</strong> and <strong>Down Arrow</strong>
+		keys to select a genre from the preset list of genres. To quickly
+		find a genre beginning with a given letter, type this letter,
+		and then press <strong>Down Arrow</strong> to move through all
+		the genres beginning with that letter.</li>
+		
+		<li>To confirm the edit press <strong>Tab</strong> or <strong>Enter</strong>, and to
+		cancel the edit press <strong>Esc</strong>.</li>
+	</ul>
+	
+	
+	<h3 id="creating-and-editing-custom-tags">Creating and editing custom tags</h3>
+	
+	<p>You can use the rows in the table after the preset tags to create
+	your own custom tags. In these rows you can edit both the tag
+	name and the tag value.</p>
+	
+	<p>For a new set of metadata, there's one spare row after the
+	preset tags. You can add and remove rows from the table using
+	the Add and Remove buttons which follow the table. The
+	Add button appends a row, and the Remove button removes the current
+	custom row.</p>
+	
+	
+	<h3 id="editing-the-list-of-genres">Editing the list of genres</h3>
+	
+	<p>To edit the list of genres which is available in the edit-combo
+	box when you edit the genre value:</p>
+	
+	<ol>
+		<li>Press the Edit button in the Genres section.</li>
+		
+		<li>An Edit Genres dialog opens. The first control is a multi-line
+		edit box which contains the genres, one genre on each line.
+		Note that when you first open the dialog, all the genres are
+		selected, so unless you type a text navigation keystroke first,
+		for example <strong>Right Arrow</strong>, you'll overwrite all
+		the genres. To move to the top or bottom of the list press
+		<strong>Ctrl + Home</strong> or <strong>Ctrl + End</strong>
+		respectively.</li>
+		
+		<li>When you've finished editing, <strong>Tab</strong> to the
+		OK button and press it.</li>
+	</ol>
+	
+	<p>To reset the list of genres to the default list of genres,
+	press the Reset button in the Genres section. A Reset Genres
+	message box opens, asking you whether you're sure that you want
+	to reset the list. Press <strong>Enter</strong> to press the
+	default OK button.</p>
+	
+	
+
+	
+	
+	<h2 id="recording">Recording</h2>
+	
+	<p>The next three sections on settings, recording controls, and
+	adjusting the recording level cover material which is relevant to
+	nearly all recording. After that there's a latency correction
+	section, which describes how Audacity can correct for the
+	delay in the recorded audio when recording a
+	vocal track whilst listening to existing tracks.</p>
+	
+
+	<h3 id="recording-settings">Recording settings</h3>
+	
+	<p>There are a number of settings which may need changing before
+	you make a recording, and they're described in the following sections. Note
+	that a number of these settings can be made either in the Devices section
+	of the Preferences dialog or an individual dialog, or the Device Toolbar.</p>
+    
+    
+	<h4 id="audio-interface">Audio interface</h4>
+    
+    <p>Audacity provides a number of options for the software interface which
+    Audacity uses to interact with the playback and recording devices:</p>
+    
+    <ul>
+        <li>MME (Multimedia extensions). This is the default interface.</li>
+        
+        <li>Windows DirectSound.</li>
+        
+        <li>Windows WASAPI (Windows audio session API), which is only available
+        in Windows Vista and later. When using this interface, the recording
+		devices also include the so called loopback versions of
+        the playback devices. Using these, you can record the audio which is
+        sent to one of these playback devices. This offers an alternative to
+        the &ldquo;stereo mix&rdquo; recording device which may or may not be
+        provided by your sound card.</li>
+    </ul>
+	
+	<p>You can set this option using either the Interface host combo box in
+	the Devices category of the Preferences dialog, or the Audio host
+	combo box in the Select Audio Host dialog (<strong>Shift + H</strong>),
+	or the Audio Host combo box on the Device toolbar. Note that when you
+	change this option, the settings of the recording and playback devices may
+	change, and so you should check these settings.</p>
+
+
+	<h4>Recording device</h4>
+	
+    <p>You can select the recording device using either the recording device
+    combo box in the Devices category in the Preferences dialog, or the recording
+	device combo box in the Select Recording Device dialog (<strong>Shift + I</strong>),
+	or the recording device combo box on the Device toolbar.</p>
+	
+	<p>If an onboard sound chip or an internal sound card has a number of
+	possible inputs, such as microphone or line in, then each of these
+	inputs is listed as a separate device in the combo boxes. In addition,
+    if you're using either the MME or the DirectSound audio interface, then the
+	available devices may also include either &ldquo;Microsoft Sound Mapper - Input&rdquo;
+	or &ldquo;Primary Sound Captive Driver&rdquo;, respectively. Both of these correspond to
+	the device which has been set as the default recording device in Windows.</p>
+	
+	<p>In Windows 7 and later these combo boxes list all the recording devices
+	which were plugged in and enabled when audacity was opened. If a device
+	isn't listed, then check the Recording
+	page of Windows Sound dialog to see if the device is enabled. This
+	dialog is described in the
+	<a href="#sound-dialog-in-windows">Sound dialog in Windows  section</a>, for those
+	unfamiliar with this dialog.</p>
+	
+	
+	<h4 id="recording-level">Recording level</h4>
+	
+	<p>This section describes which control to use to adjust the recording level. How to adjust
+	the recording level so that you don't get too much noise or clipping is described in the
+    <a href="#adjusting-the-recording-level">Adjusting the recording level section</a>
+    below.</p>
+    
+    <p>If Audacity can control the level of the recording device, then you can
+    use either Audacity's recording slider, or the appropriate Windows control.
+    It's normally easier to use the recording slider in Audacity,
+    which is in the Mixer toolbar in the Toolbars section
+    of Audacity's main window. To move to it from the Track table, press
+    <strong>Ctrl + F6</strong> twice, and then <strong>Tab</strong> or
+    <strong>Shift + Tab</strong> until you get to the recording slider.</p>
+    
+    <p>When Audacity can't control the level of the recording device, this
+    is indicated by the recording slider being unavailable.
+	For sighted users, the slider appears greyed out, and for users of
+	screen readers, you can't Tab to it. In these cases you have to use the appropriate
+    control which is part of Windows, as described below.</p>
+    
+    <p>Whether Audacity can control the recording level depends to a large extent on
+    the audio interface which you are using:</p>
+        
+    <ul>
+        <li>MME or Direct Sound. For many recording devices, you can use
+        Audacity's recording slider.</li>
+		
+        <li>WASAPI. For the loopback devices provided by the WASAPI interface,
+        the recording level depends only on the volume levels set in the programs
+        which are sending their output to the playback device which you're recording.
+        It doesn't depend on the Windows volume of the playback device,
+        or the recording and playback sliders in Audacity.</li>
+    </ul>
+		
+	<p>The location of the Windows' control to adjust the level of a recording
+    device is described in the
+	<a href="#sound-dialog-in-windows">Sound dialog in Windows section</a>.</p>
+	
+	
+	<h4>Number of recording channels</h4>
+	
+	<p>The number of channels of the recording device can be set using either
+	the recording channels combo box in the Devices category of the Preferences
+	dialog, or the recording channels combo box in the Select Recording Channels
+	dialog (<strong>Shift + N</strong>), or the Recording Channels combo box in
+	the Device toolbar. If you're recording using a microphone, then the
+	appropriate setting depends whether it's a mono or stereo microphone.</p>
+	
+	
+	<h4>Sampling</h4>
+	
+	<p>The default sampling rate for a new project is 44100Hz, and the default
+	sampling format is 32-bit float. These should be fine, but they can be
+	changed in the Quality category of the Preferences dialog, as described in
+	the <a href="#sampling">Sampling section</a> of the Preferences section.</p>
+	
+	
+	<h4>Overdub option</h4>
+	
+    <p>The Overdub option controls whether Audacity plays any
+    existing tracks while recording a new one. You can check or
+    uncheck this option either on the Transport Options sub menu on the Transport menu,
+	or in the Recording category of the Preferences dialog.</p>
+	
+	
+	<h4>Software Playthrough option</h4>
+	
+    <p>The Software Playthrough option controls whether Audacity
+    plays the new track while it is being recorded. Normally this
+    option should be off, but it's useful if you want to hear what
+    you're recording from a device such a USB turntable. It can
+    be checked or unchecked either on the Transport Options sub menu on the Transport menu,
+	or in the Recording category of the Preferences dialog.</p>	
+	
+	
+	<h3 id="recording-controls">Recording controls</h3>
+	
+	<p>When you record, there are two options for where the recorded
+	audio is placed. It can be placed either in a newly created track,
+	or appended to an existing track. Please note that in Audacity 2.2.0
+	the two corresponding recording commands have changed, and their
+	shortcuts have been swapped round. However, there is an option for having
+	the original commands and shortcuts, and this will be described
+	below.</p>
+	
+	<p>The recording controls using default settings are:</p>
+
+	<ul>
+		<li>To start recording, with the recorded audio appended to the audio in
+		an existing track, press <strong>R</strong>, or on the Transport menu,
+		open the Record sub menu, and choose Record.  If the project already
+		contains one or more audio tracks, then recorded audio is appended
+		to either the first selected audio track, or if no tracks are selected,
+		the first audio track. So if there's just a single
+		audio track in the project, then the recorded audio is appended
+		to this track, whether or not the track is selected. If the project
+		contains no audio tracks, then the recorded audio is inserted into
+		a new track.</li>
+		
+		<li>To start recording, with the recorded audio inserted into
+		a new track, press <strong>Shift + R</strong> or on the Transport menu,
+		open the Record sub menu, and choose Record New Track. A new track is
+		automatically added to the project, and the default name
+		of the new track is &ldquo;Audio Track&rdquo;. Note that Jaws reads
+		this name as Track n, where n is the row number of the track.
+		The recorded audio is inserted at the cursor position. (If
+		there are initially no tracks in the project, then the cursor
+		position is normally at time zero.) The new track is initially
+		not selected.</li>
+	
+		<li>To pause or resume recording, press <strong>P</strong>.</li>
+
+		<li>To stop recording, press <strong>Spacebar</strong>.</li>
+	</ul>
+	
+	<p>Note that during a recording, the second section of the status bar contains
+	the maximum length of recording you can make given your free disk space.</p>
+	
+	<p>As mentioned above, there is an option to have the original recording commands
+	and shortcuts, and those of you that have used Audacity for some time may well find
+	it less confusing to continue using them. In the Recording category of Preferences,
+	there is an &ldquo;Always record on a new track&rdquo; check box, which is not checked
+	by default. If this check box is checked then the two commands to start recording are:</p>
+	
+	<ul>
+		<li>To start recording with the recorded audio inserted into a new track,
+		press <strong>R</strong>, or on the Transport menu, open the Record
+		sub menu, and choose Record.</li>
+		
+		<li>To Start recording, with the recorded audio appended to the audio in
+		an existing track, press <strong>Shift + R</strong>, or on the Transport menu,
+		open the Record sub menu, and choose Append Record.</li>
+	</ul>
+	
+	
+	<h3 id="adjusting-the-recording-level">Adjusting the recording level</h3>
+	
+	<p>There is a Recording meter in the Toolbars section of the Audacity window
+	for helping to set up the recording level. The meter contains a Record meter
+	drop down button, and you can move to this button by pressing <strong>Ctrl + F6</strong>
+	twice to move to the toolbars, and then pressing <strong>Tab</strong> until you get to it.</p>
+	
+	<p>If you press this button by pressing <strong>Enter</strong>, then a menu opens
+	which contains commands for controlling the meter. You can start and stop monitoring
+	using this menu, and the meter also automatically monitors the input
+	signal during recording. To make the meter accessible for screen reader users, the
+	following information is included in the name of the drop down button
+	which is read out by screen readers:</p>
+	
+	<ul>
+		<li>The peak level. This is the maximum amplitude during the monitoring session,
+		and it is automatically reset when monitoring starts.</li>
+		
+		<li>The word monitoring, if monitoring is in progress.</li>
+	</ul>
+	
+	<p>The peak level can be given using two different scales:</p>
+	
+	<ul>
+		<li>A linear scale, where the values are in the range 0 to 1.</li>
+		
+		<li>A logarithmic scale, where the maximum value is 0 decibels (dB),
+		and lower values are increasingly negative. For example a value of
+		0.5 on the linear scale corresponds to -6 dB.</li>
+	</ul>
+	
+	<p>By default, the peak value is given in dB, but you can change this by:</p>
+	
+	<ol>
+		<li>Press the record meter drop down button by pressing <strong>Enter</strong>.</li>
+		
+		<li>Choose Options. The Recording Meter Options dialog opens.</li>
+		
+		<li>Set the Meter Type radio buttons to dB or linear.</li>
+	</ol>
+	
+	<p>To adjust the recording level using the recording meter, go round the following loop
+	until you are happy with the setting:</p>
+	
+	<ol>
+		<li>Change the recording level. If this is the first time round
+		this loop, set the level to your best guess.</li>
+		
+		<li>Press the record meter drop down button, and choose Start monitoring.</li>
+		
+		<li>Make some representative noises for a short while.</li>
+		
+		<li>Press the record meter drop down button, and choose Stop monitoring. The
+		name of the drop down button now includes the peak level of this monitoring
+		session. On the basis of this value, decide if you need to repeat this loop with
+		a different setting of the recording level as discussed below.</li>
+	</ol>
+	
+	<p>Normally a good value of the peak level to aim for is about -6db, which corresponds to
+	0.5 on the linear scale. This should ensure
+	that the recording level is both low enough so that distortion or clipping doesn't occur,
+	and high enough so that you don't get an unnecessary amount of noise.</p>
+    
+	
+	<h3 id="latency-correction">Latency correction</h3>
+	
+	<p>If you record a vocal track whilst listening to one or more existing tracks,
+	then due to various delays, the newly recorded track won't be in
+	sync with the original tracks. The total delay is known as the
+	latency and some of the factors which affect its size are:
+	the recording and playback devices, the size of the audio buffers
+	within Audacity, and the audio interface being used (for example, MME or
+	DirectSound).</p>
+	
+	<p>Audacity can automatically correct for the latency, once the
+	latency has been measured, as described below. In the
+	Preferences dialog, under the Recording category, there's a
+	Latency correction edit box, where the units of the correction
+	are milliseconds. If you record audio in a new track, then
+	the audio is automatically moved later in time by this latency
+	correction. So to shift the audio earlier in time to offset the
+	latency, the number should be negative.</p>
+	
+	<p>The default value of the latency correction is -130 milliseconds.
+    The default value will be only roughly correct for a particular recording
+	set up, and it's recommended that you measure the actual latency.</p>
+	
+	<p>The following method for measuring the latency when using
+	a microphone for recording is accurate to about 10ms, which normally
+	should be good enough. It consists of the following three parts,
+	which will be described in detail in the following sections:</p>
+	
+	<ol>
+		<li>Generate a rhythm track, which consists of a series of
+		clicks with 1 second spacing.</li>
+		
+		<li>Record this rhythm track. Due to latency and its current
+		correction, the clicks in the recorded track may occur before
+		or after the clicks in the original track.</li>
+		
+		<li>With the help of the selection start spin box in the
+		Selection bar, find the position of the click in the recorded track
+		which corresponds to the click at 1 second in the generated track,
+		and work out a new correction.</li>
+	</ol>
+	
+	
+	<h4>Generate a rhythm track</h4>
+	
+	<ol>
+		<li>Choose Rhythm Track from the Generate menu.</li>
+		
+		<li>The second control is the Tempo [beats per minute] edit
+		box, and its default value is 120. Type 60, and then
+		press <strong>Tab</strong> twice to move to the next edit
+		box.</li>
+		
+		<li>The Beats per measure [bar] edit box has a default value
+		of 4. Type in the number 1, and then press <strong>Enter</strong>
+		to press the default OK button.</li>
+		
+		<li>The rhythm track is created. The track is initially selected,
+		and a time range is selected which includes all the audio.</li>
+	</ol>
+	
+	
+	<h4>Record the rhythm track</h4>
+	
+	<p>To record the rhythm track being played back through your headphones,
+	you'll obviously need to take them off temporarily. If you're using
+	a separate microphone, rather than a headset microphone, then position
+	it close to the headphones so that it can pick up the clicks.
+	Start recording in a new track (<strong>Shift + R</strong>, by default), and then press
+	<strong>Spacebar</strong> to stop the recording after a handful
+	of clicks.</p>
+	
+	<p>With the first track still being the focus, press 
+	<strong>Shift + U</strong> to mute it, and then playback the
+	recorded track. If the clicks are very quiet
+	compared to Jaws, then amplify the track:</p>
+	
+	<ol>
+		<li>Deselect the first track, and select the second track</li>
+		
+		<li>Press <strong>Home</strong>, then <strong>Shift + End</strong>
+		to select a time range.</li>
+		
+		<li>Choose Amplify from the effects menu.</li>
+		
+		<li>In the Amplify dialog, just press <strong>Enter</strong>
+		to accept the default amplification.</li>
+	</ol>
+	
+	
+	<h4>Find the position of a click in the recorded track</h4>
+	
+	<p>The following instructions describe how to find the position
+	of the recorded click which corresponds to the click which occurs
+	at 1 second in the generated track, and then update Audacity's
+	latency correction. It's assumed that the original track is still
+	muted from when you checked the level of the recorded track above.</p>
+	
+	<ol>
+		<li>Press <strong>Home</strong> to set both the selection
+		start and selection end/length spin boxes in the selection bar
+		to zero.</li>
+		
+		<li>Press <strong>Ctrl + F6</strong> to move to the selection
+		bar. <strong>Tab</strong> to the End/Length radio buttons, and
+		make sure that the Length option is selected.</li>	
+		
+		<li>Then <strong>Tab</strong> to the Selection Start spin box,
+		and  change the format to hh:mm:ss + milliseconds using
+		its context menu.</li>
+		
+		<li>To set the selection start to 1 second, press <strong>End</strong>
+		to move to the last digit (milliseconds), press
+		<strong>Left Arrow</strong> three to move to the seconds
+		digit, and then press <strong>Up Arrow</strong> to increment it to one.</li>
+		
+		<li>Press <strong>Spacebar</strong> to listen to the first few clicks.
+		There are two cases: if the recorded click is later than the
+		original click at 1 second, then time to the first click is much less than
+		the one second spacing of the remaining clicks; if the recorded click
+		is earlier than original click, then the time
+		to the first click is roughly the same as the one second spacing
+		between the remaining clicks. Finding the position of the recorded
+		click, and modifying Audacity's latency correction is described for
+		these two cases in the following steps.</li>
+		
+		<li>To find the position of the recorded click when it's later
+		than the original click, move to the 10 millisecond digit by
+		pressing <strong>End</strong> to move to the last digit, and then
+		pressing <strong>Left Arrow</strong>. Then go round the loop of incrementing the
+		selection start by 10 milliseconds by pressing <strong>Up Arrow</strong> and then pressing
+		<strong>Spacebar</strong> to check the time to the first click.
+		When you've just gone past the click, the time to the first click will suddenly change
+		to roughly a second. Decrement the selection start by 10 milliseconds
+		so that you can still hear the first click almost immediately,
+		and then press <strong>Insert + Up Arrow</strong> to read the
+		number of milliseconds. Adjust the latency correction by subtracting
+		this number from it. For example, if the initial correction was
+		-130ms, and the recorded click was 40ms late, then the latency
+		correction should be changed to -170ms.</li>
+		
+		<li>To find the position of the recorded click when it's earlier
+		than the original click, move to the 10 millisecond digit by
+		pressing <strong>End</strong> to move to the last digit, and then
+		pressing <strong>Left Arrow</strong>. Then go round the loop of decrementing the
+		selection start by 10 milliseconds by pressing <strong>Down Arrow</strong>, and then pressing
+		<strong>Spacebar</strong> to check the time to the first click.
+		When you move to just before the click, or during it, the click
+		will suddenly sound immediately. Press <strong>Up Arrow</strong>,
+		followed by <strong>Down Arrow</strong> to leave the time unchanged, but to get Jaws
+		to read the number of milliseconds. Subtract this number from
+		1000 to get the number of milliseconds by which the recorded click
+		was early. Then adjust the latency correction by adding this
+		number to it. For example, if the initial correction was -130ms
+		and the recorded click was 20ms early, then the latency correction
+		should be changed to -110ms.</li>
+	</ol>
+    
+    
+	
+	<h2 id="preferences">Preferences</h2>
+	
+	<p>The Audacity Preferences dialog allows you to adjust many
+	of the settings in Audacity. After a brief description of the
+	dialog box, the following sections describe some of the more
+	common settings.</p>
+
+	<h3>Audacity Preferences dialog box</h3>
+
+	<p>To open this dialog box, choose Preferences on the Edit menu
+	(<strong>Ctrl + P</strong>).</p>
+
+	<p>On the left hand side of the dialog is a tree view which contains
+	a list of categories. To the right of this tree view are controls
+	for setting the options which correspond to the category which is selected
+	in the tree view. The dialog's default button is the OK button.</p>
+	
+	
+	<h3 id="extra-menus">Extra menus</h3>
+	
+	<p>There are two extra menus which are not shown in the menu bar by default:</p>
+	
+	<ul>
+		<li>The Ext-Bar menu, which contains commands associated with the toolbars,
+		but which are not included in the standard menus.</li>
+		
+		<li>The Ext-Command menu, which contains the other commands which are
+		not included in the standard menus.</li>
+	</ul>
+	
+	<p>You can change whether or not these menus are shown either by using the
+	Extra menus option in the View menu, or by using a setting in Preferences:</p>
+	
+	<ol>
+		<li>In the Audacity Preferences dialog, select the Interface category.</li>
+		
+		<li><strong>Tab</strong> to the Show Extra Menus check box, and either
+		check or uncheck it.</li>
+	</ol>
+	
+
+	<h3 id="seek-times">Seek times</h3>
+
+	<p>Whilst playing, you can jump (seek) forward or backward by either
+	a short or long period. To set the values of the short and long periods:</p>
+
+	<ol>
+		<li>In the Audacity Preferences dialog, select the Playback category.</li>
+		
+		<li><strong>Tab</strong> to the Seek Time when playing section
+		which contains two edit boxes: Short period and Long period.
+		Both times are in given in seconds.</li>
+	</ol>
+	
+	
+	<h3 id="auto-select">Auto-select</h3>
+	
+	<p>The Auto-select option is described in the
+	<a href="#auto-select-option">Auto-select option section</a> of the
+	Selecting audio section above. This option is on by default, but
+	for users of screen readers, it's recommended that it is
+	turned off. To set this option either on or off:</p>
+	
+	<ol>
+		<li>In the Audacity Preferences dialog, select the Tracks Behaviors category.</li>
+		
+		<li>Set the &ldquo;Auto-select, if selection required&rdquo;
+		check box to be either checked or unchecked.</li>
+	</ol> 
+	
+	
+	<h3 id="lame-mp3-encoder-library">LAME MP3 encoder library</h3>
+	
+	<p>Until recently, there were legal issues about patents which meant
+	that Audacity could not include an MP3 encoder as part of its default
+	installation. These patents have now expired, but Audacity has not
+	been updated to take advantage of this, and you still have to
+	download a separate library.</p>
+
+	<p>To download and install the LAME library:</p>	
+	
+	<ol>
+		<li>Go the website whose address is
+		<a href="http://lame.buanzo.org/#lamewindl">lame.buanzo.org/#lamewindl</a> .</li>
+		
+		<li>On this page, find the link which starts with lame and
+		ends with windows.exe, and then open it to download
+		a file  which has the same name as the link.</li>
+		
+		<li>Open the downloaded file, and a setup wizard opens. The
+		default location for the LAME library is a newly created
+		Lame for Audacity folder in either the Program Files (x86) folder on
+		64-bit Windows, or the Program Files folder on 32-bit Windows.</li>
+	</ol>
+	
+	
+	<h3 id="ffmpeg-library">FFmpeg library</h3>
+	
+	<p>The FFmpeg library contains decoders and encoders which enable
+	Audacity to open and save files in formats which are not
+	supported by the standard installation of Audacity. The FFmpeg
+	library is not included with Audacity due to legal issues
+	about patents. Nearly all encoders are covered by one or more
+	patents, but these patents aren't recognized in all countries. The
+	<a href="http://www.ffmpeg.org/legal.html">FFmpeg License and Legal Considerations page</a>
+	of the FFmpeg website contains a few comments on these issues.</p>
+	
+	<p>To download and install the FFmpeg library:</p>
+	
+	<ol>
+		<li>Go the website whose address is
+		<a href="http://lame.buanzo.org/#lamewindl">lame.buanzo.org/#lamewindl</a> .</li>
+		
+		<li>On this page, find the link ffmpeg-win-2.2.2.exe, and then open it to download
+		a file  which has the same name as the link. Note that if the link on the page is
+		to a version later than 2.2.2 then that will be OK too.</li>
+		
+		<li>Open the downloaded file, and a setup wizard opens. The
+		default location for the FFmpeg library is a newly created
+		FFmpeg for Audacity folder in either the Program Files (x86) folder on 64-bit Windows,
+		or the Program Files folder on 32-bit Windows.</li> 
+	</ol>	
+	
+	<p>Then, the next time Audacity is opened, it automatically finds the
+	FFmpeg library.</p>
+		
+	
+	<h3 id="metadata-tags-editor-opens-during-export">Metadata tags editor opens during export</h3>
+	
+	<p>To set whether the Metadata tags editor automatically opens each
+	time you export audio:</p>
+	
+	<ol>
+		<li>In the Audacity Preferences dialog, select the Import/Export
+		category.</li>
+		
+		<li>Move to the &ldquo;Show Metadata tags Editor prior to export step&rdquo;
+		check box, which is in the When exporting tracks to an audio file
+		section. This check box is checked by default.</li>
+	</ol>
+	
+	
+	<h3 id="sampling">Sampling</h3>
+	
+	<p>To set the sampling rate and format for a new project:</p>
+	
+	<ol>
+		<li>In the Audacity Preferences dialog, select the Quality category.</li>
+		<li><strong>Tab</strong> to the Sampling: Default Sample Rate combo box. For music,
+		set the rate to 44100 Hz, but for speech 22050 Hz is OK if you
+		you need to keep file sizes to a minimum.</li>
+		<li><strong>Tab</strong> to the next control which is the
+		Sampling: Default Sample Format combo box. Audacity recommend that
+		you leave this on 32-bit float, but for speech 16-bit is fine.</li>
+	</ol>
+	
+	
+	<h3 id="type-to-create-a-label">Type to create a label</h3>
+	
+	<p>The Type to create a label option is described in the
+	<a href="#labels">Labels section</a>. This option is checked by default, but
+	for users of screen readers, it's recommended that it is unchecked:</p>
+	
+	<ol>
+		<li>In the Audacity Preferences dialog, select the Tracks Behaviors category.</li>
+		
+		<li>Uncheck the &ldquo;Type to create a label&rdquo;
+		check box.</li>
+	</ol>
+	
+	
+	<h3>Recording options</h3>
+	
+	<p>A number of recording options can be set in the Preferences dialog,
+	and these are described in the
+	<a href="#recording-settings">Recording settings section</a> of the
+	Recording section.</p>
+	
+	
+	<h3 id="keyboard-shortcuts">Keyboard shortcuts</h3>
+	
+	<p>The Keyboard category of Audacity Preferences enables you to
+	change the keyboard shortcut for any of the commands in Audacity.</p>
+	
+	<p>The first three controls are:</p>
+	
+	<ul>
+		<li>A group of radio buttons which controls how the commands and
+		associated shortcuts are displayed: View by Tree, Name, and Key.
+		These are described in the next three sections.</li>
+		
+		<li>An edit box, which allow you to search for commands
+		and shortcuts, as described in the <a href="#searching">Searching section</a>.
+		The name of this edit box is Search if the View by setting is Tree or Name,
+		and Hotkey if the setting is Key.</li>
+		
+		<li>A tree view or a list of commands, depending
+		on which View by radio button is selected.</li>
+	</ul>
+
+	
+	<h4>View by tree</h4>
+	
+	<p>The commands are displayed as a tree view, and if a command has a shortcut
+	associated with it, then this appears after the name of the command.</p>
+	
+	<p>The tree view contains the following items:</p>
+	
+	<ul>
+		<li>Each of the menus in the menu bar. Each menu contains
+		the commands in than menu, and any sub-menus contain the
+		commands that sub menu.</li>
+		
+		<li>Command, which contains the commands which are not
+		included in the menus in the menu bar.</li>
+	</ul>
+	
+	
+	<h4>View by name</h4>
+	
+	<p>The commands are displayed as a list which is sorted alphabetically
+	be the name of the command. If a command has a shortcut assigned to
+	it, then this is displayed after the name of the command.
+	Note the if the command appears in a sub menu,
+	then the name of the command is prefixed with the name of the sub menu,
+	for example &ldquo;Add New - Audio Track&rdquo;. This is so that commands
+	which have the same name, but which appear in different sub menus
+	can be distinguished from one another.</p>
+	
+	
+	<h4>View by Key</h4>
+	
+	<p>The commands are displayed using a list of commands, and if the command
+	has a shortcut assigned to it, this is displayed before the name of
+	the command. The commands with shortcuts are listed first, and these are
+	sorted alphabetically by the command's shortcut. The commands without shortcuts
+	are then listed alphabetically by the name of the command.
+	As in the case of View by name, if a command appears in a sub menu, then the name
+	of the command is prefixed with the name of the sub menu.</p>
+	
+	
+	<h4 id="searching">Searching</h4>
+	
+	<p>You can search for a command or commands using the Filter edit box. The
+	search results are shown in the tree view or the list as soon as anything is
+	entered in the edit box &ndash; you don't have to press enter. The details of
+	the search depend on the view:</p>
+	
+	<ul>
+		<li>View by Tree. The text you enter is matched against both the names of
+		the commands and any assigned shortcut.</li>
+		
+		<li>View by Name. The text you enter is matched against only the names of the
+		commands.</li>
+		
+		<li>View by Key. The key or key combination you press is matched only against
+		the shortcuts.</li>
+	</ul>
+	
+	
+	<h4>Changing a shortcut</h4>
+	
+	<p>To set a shortcut:</p>
+	
+	<ol>
+		<li>In the tree view or list, select the command whose shortcut you
+		want to change.</li>
+		
+		<li><strong>Tab</strong> to the short cut edit box,
+		and press a key or key combination for the shortcut.</li>
+		
+		<li><strong>Tab</strong> to the Set button, and press it. If the shortcut
+		is already assigned to another command, then an Error dialog opens which
+		tells you the name of this command. If you press the OK button, then
+		the shortcut will be set a requested, and removed from the other command.</li>
+	</ol>
+	
+	<p>To clear a shortcut:</p>
+	
+	<ol>
+		<li>In the Tree view or list, select the command whose shortcut
+		you want to clear.</li>
+		
+		<li><strong>Tab</strong> to the Clear button, and press it.</li>
+	</ol>
+	
+	
+	<h3 id="standard-and-full">Standard and full sets of default shortcuts</h3>
+	
+	<p>There are two sets of default shortcuts:</p>
+	
+	<ul>
+		<li>The full set includes all the shortcuts which were default shortcuts present in
+		Audacity 2.1.3, and this guide assumes you are using the full set.</li>
+		
+		<li>The standard set, which is new in Audacity 2.2.0. This contains fewer shortcuts
+		than the full set, the idea being to make it easier for people to set their
+		own shortcuts, since there are fewer shortcuts that have already been assigned.</li>
+	</ul>
+	
+	<p>If Audacity 2.2.0 is run in a user account where previous versions of Audacity have
+	not been run, then Audacity users the standard set of shortcuts. However if a previous
+	version has been run, then the full set if used, and there is no need to change which
+	set of default shortcuts is being used.</p>
+	
+	<p>To reset all the shortcuts to either the standard or full set of defaults:</p>
+	
+	<ul>
+		<li>In the Audacity Preferences dialog, select the Keyboard category.</li>
+		
+		<li>Tab to the Defaults button and press it. A menu opens.</li>
+		
+		<li>Choose Standard or Full</li>
+	</ul>
+	
+	
+	<strong>Tab</strong> to the defaults button and press it. A menu opens, and
+	choose either standard or full.
+	
+	
+	
+	<h3 id="the-and-shortcuts">The [ and ] shortcuts on keyboards other than US, UK or Irish</h3>
+	
+	<p>By default, the keyboard shortcuts for moving the cursor to the playback position
+	and setting the end of the selection to be the playback position are [ and ].
+	These shortcuts can also be used to open dialog boxes when there is no playback.</p>
+	
+	<p>On US, UK, and Irish keyboards, you can type [ and ] using the [ and ] keys,
+	which are the two keys to the right of the P key. On nearly all the keyboards
+	used in other countries, the keys used to type [ and ] are in different positions,
+	and you often have to use modifier keys, such as <strong>Ctrl + Alt</strong>
+	to type these characters. Unfortunately, using Audacity's default settings,
+	[ and ] only work as the shortcuts when there are [ and ] keys to the right
+	of the P key.</p>
+	
+	<p>Fortunately, there is a straightforward solution to this problem. All you
+	need to do is set the keyboard shortcuts for the two commands using the
+	method described in the previous section. The letters G and H are currently
+	not used as the shortcuts for any commands, so a suitable option is to set the shortcut for
+	the Left at Playback Position command to be the letter G, and the shortcut
+	for the Right at Playback Position command to be the letter H.</p>
+	
+	<p>Note that you could set the shortcuts to be [ and ], but they often
+	involve modifier keys and keys which aren't in very convenient positions.</p>  
+	
+	
+	<h2 id="sound-dialog-in-windows">Sound dialog in Windows</h2>
+	
+	<p>The Windows sound dialog in Windows 7 and later versions has four pages:
+	Playback, Recording, Sounds, and Communications.
+	The following sections describe how to open this
+	dialog, the controls on the Recording page, and how to open
+	a device's properties dialog where you can adjust the input
+	level of the device.</p>
+	
+	
+	<h3>Opening the Sound dialog</h3>
+	
+	<p>Here are a couple of ways of opening the dialog, and moving
+	to the Recording page. Method one:</p>
+	
+	<ol>
+		<li>Press <strong>Insert + F11</strong> to open the Select a
+		System Tray Icon dialog.</li>
+		
+		<li>Select speakers or headphones, whatever is appropriate. Then press <strong>Enter</strong>
+		to press the default Right Single Click button, and a context menu opens.</li>
+		
+		<li>On this menu choose Recording devices, which has the access key R, and the Sound dialog opens
+		on the Recording page.</li>
+	</ol>
+	
+	<p>Method two:</p>
+	
+	<ol>
+		<li>Press the <strong>Windows Key</strong>.</li>
+		
+		<li>Type sound, then if necessary press <strong>Down Arrow</strong> until you get
+		to Sound in the list of search results, and then press <strong>Enter</strong>.</li>
+		
+		<li>The Sound dialog opens on the Playback page, so you then
+		have to move to the Recording page.</li>
+	</ol>
+	
+	
+	<h3>Recording page</h3>
+	
+	<p>The recording page contains a list of devices, and when appropriate,
+	one or more of the buttons: Configure, Set Default, and Properties.
+	The commands provided by the buttons are also available on the
+	context menus of the devices in the list, and it's normally easier
+	to use these, rather than the buttons.</p>
+	
+	<p>There are two options which control which devices appear on the
+	list, and they appear on the context menu of any of the items in
+	the list. The two options are Show Disabled Devices and Show
+	Disconnected Devices, and by default both options are not checked.
+	If you can't find a device which you think should be there, it
+	may be disabled, and so will show up if the Show Disabled Devices
+	option is checked.</p>
+	
+	<p>For each item on the list there are three lines of text: its
+	name, a short description, and its status, which can be working,
+	disabled, or Not plugged in. Unfortunately, Jaws only reads the
+	the first of these lines. If you need to read the other lines,
+	then you can press <strong>Insert + Numpad Minus</strong> to
+	route the Jaws cursor to the PC cursor, and then use
+	<strong>Up Arrow</strong> and <strong>Down Arrow</strong>. To switch back
+	to using the PC cursor, press <strong>Numpad Plus</strong> or
+	<strong>Insert + Numpad Plus</strong>.
+	One way of telling if a device is disabled without having to
+	use the Jaws cursor, is to open its
+	context menu: if there's an Enable item, then the device is
+	obviously disabled.</p>
+	
+	
+	<h3>Device properties dialog</h3>
+	
+	<p>To open the Properties dialog of a device which is selected in
+	list on the Recording page, press
+	<strong>Spacebar</strong>, or choose Properties from its context
+	menu.</p>
+	
+	<p>The input volume (level) can be set on the Levels page of
+	this dialog. For many devices there's a single slider, but
+	a microphone may also have a microphone boost slider.</p>	
+	
+
+	<h2 id="keystrokes">Keystrokes</h2>
+	
+	<p>These are the keystrokes for the full set of default keystrokes,
+	&ndash; some of these are not included in the standard set. For more information about
+	these two sets of defaults and how to change which set you are using,
+	see the
+	<a href="#standard-and-full">Standard and full sets of default shortcuts section</a>,
+	in the Preferences section.</p>
+	
+	
+	<h3>General</h3>
+	
+	<table summary="general keystroke">
+		<tr>
+			<th>Command</th>
+			<th>Keystroke</th>
+		</tr>
+		<tr>
+			<td>Open audio file</td>
+			<td>Ctrl + O</td>
+		</tr>
+		<tr>
+			<td>Import audio file</td>
+			<td>Ctrl + Shift + I</td>
+		</tr>		
+		<tr>
+			<td>New project</td>
+			<td>Ctrl + N</td>
+		</tr>
+		<tr>
+			<td>Save project</td>
+			<td>Ctrl + S</td>
+		</tr>
+		<tr>
+			<td>Export Audio</td>
+			<td>Ctrl + Shift + E</td>
+		</tr>
+		<tr>
+			<td>Preferences dialog</td>
+			<td>Ctrl + P</td>
+		</tr>				
+		<tr>
+			<td>Cycle forward through Toolbars, Track table, and Selection bar</td>
+			<td>Ctrl + F6</td>
+		</tr>
+		<tr>
+			<td>Cycle backward through Toolbars, Track table, and Selection bar</td>
+			<td>Ctrl + Shift + F6</td>
+		</tr>
+		<tr>
+			<td>Cycle forward through the Audacity main window and any open modeless dialogs</td>
+			<td>Alt + F6</td>
+		</tr>
+		<tr>
+			<td>Cycle backward through the Audacity main window and any open modeless dialogs</td>
+			<td>Alt + Shift + F6</td>
+		</tr>
+		<tr>
+			<td>Zoom normal</td>
+			<td>Ctrl + 2</td>
+		</tr>
+		<tr>
+			<td>Zoom in</td>
+			<td>Ctrl + 1</td>
+		</tr>
+		<tr>
+			<td>Zoom out</td>
+			<td>Ctrl + 3</td>
+		</tr>		
+	</table>
+	
+	
+	<h3>Playback</h3>
+		
+	<table summary="keystrokes for playback">
+		<tr>
+			<th>Command</th>
+			<th>Keystroke</th>
+		</tr>
+		<tr>
+			<td>Start/Stop</td>
+			<td>Spacebar</td>
+		</tr>
+		<tr>
+			<td>Start/Stop and move cursor</td>
+			<td>X</td>
+		</tr>		
+		<tr>
+			<td>Pause/resume</td>
+			<td>P</td>
+		</tr>
+		<tr>
+			<td>Seek backward short period during playback</td>
+			<td>Left Arrow</td>
+		</tr>
+		<tr>
+			<td>Seek forward short period during playback</td>
+			<td>Right Arrow</td>
+		</tr>
+		<tr>
+			<td>Seek backward long period during playback</td>
+			<td>Shift + Left Arrow</td>
+		</tr>
+		<tr>
+			<td>Seek forward long period during playback</td>
+			<td>Shift + Right Arrow</td>
+		</tr>
+		<tr>
+			<td>Play looped</td>
+			<td>Shift + Spacebar</td>
+		</tr>
+		<tr>
+			<td>Select Playback Device dialog</td>
+			<td>Shift + O</td>
+		</tr>
+		<tr>
+			<td>Play cut/delete preview</td>
+			<td>C</td>
+		</tr>
+		<tr>
+			<td>Play short period before selection start</td>
+			<td>Shift + F5</td>
+		</tr>
+		<tr>
+			<td>Play short period after selection start</td>
+			<td>Shift + F6</td>
+		</tr>
+		<tr>
+			<td>Play short period before selection end</td>
+			<td>Shift + F7</td>
+		</tr>
+		<tr>
+			<td>Play short period after selection end</td>
+			<td>Shift + F8</td>
+		</tr>
+		<tr>
+			<td>Play short period before and after selection start</td>
+			<td>Ctrl + Shift + F5</td>
+		</tr>
+		<tr>
+			<td>Play short period before and after selection end</td>
+			<td>Ctrl + Shift + F7</td>
+		</tr>
+	</table>
+	
+
+	<h3>Track table</h3>
+			
+	<table summary="keystrokes for track table">
+		<tr>
+			<th>Command</th>
+			<th>Keystroke</th>
+		</tr>
+		<tr>
+			<td>Move to previous track</td>
+			<td>Up Arrow</td>
+		</tr>
+		<tr>
+			<td>Move to next track</td>
+			<td>Down Arrow</td>
+		</tr>
+		<tr>
+			<td>Move to first track</td>
+			<td>Ctrl + Home</td>
+		</tr>
+		<tr>
+			<td>Move to last track</td>
+			<td>Ctrl + End</td>
+		</tr>
+		<tr>
+			<td>Toggle selection of focused track</td>
+			<td>Enter</td>
+		</tr>
+		<tr>
+			<td>Select all the tracks (and a time range
+			which includes all the audio)</td>
+			<td>Ctrl + A</td>
+		</tr>
+		<tr>
+			<td>Deselect all the tracks (and any time-range)</td>
+			<td>Ctrl + Shift + A</td>
+		</tr>
+		<tr>
+			<td>Select all the tracks</td>
+			<td>Ctrl + Shift + K</td>
+		</tr>
+		<tr>
+			<td>Open menu of focused track</td>
+			<td>Shift + M or Application key</td>
+		</tr>	
+		<tr>
+			<td>Close (Delete) focused track</td>
+			<td>Shift + C</td>
+		</tr>							
+	</table>
+	
+
+	<h3>Audio track</h3>
+	
+	<table summary="keystrokes for audio track">
+		<tr>
+			<th>Command</th>
+			<th>Keystroke</th>
+		</tr>
+		<tr>
+			<td>Change gain of focused track</td>
+			<td>Shift + G</td>
+		</tr>
+		<tr>
+			<td>Change pan of focused track</td>
+			<td>Shift + P</td>
+		</tr>
+		<tr>
+			<td>Mute/Unmute focused track</td>
+			<td>Shift + U</td>
+		</tr>
+		<tr>
+			<td>Mute all tracks</td>
+			<td>Ctrl + U</td>
+		</tr>
+		<tr>
+			<td>Unmute all tracks</td>
+			<td>Ctrl + Shift + U</td>
+		</tr>						
+		<tr>
+			<td>Solo/Unsolo focused track</td>
+			<td>Shift + S</td>
+		</tr>				
+	</table>
+	
+
+	<h3>Moving the cursor</h3>
+	
+	<table summary="keystrokes for moving the cursor">
+		<tr>
+			<th>Command</th>
+			<th>Keystroke</th>
+		</tr>
+		<tr>
+			<td>Move to start of tracks (time zero)</td>
+			<td>Home</td>
+		</tr>
+		<tr>
+			<td>Move to end of all audio</td>
+			<td>End</td>
+		</tr>
+		<tr>
+			<td>Move to start of audio in selected tracks</td>
+			<td>J</td>
+		</tr>
+		<tr>
+			<td>Move to end of audio in selected tracks</td>
+			<td>K</td>
+		</tr>		
+		<tr>
+			<td>New cursor position at playback position</td>
+			<td>[</td>
+		</tr>
+		<tr>
+			<td>Stop playback and move cursor</td>
+			<td>X</td>
+		</tr>		
+		<tr>
+			<td>Move backward short period</td>
+			<td>Comma</td>
+		</tr>
+		<tr>
+			<td>Move forward short period</td>
+			<td>Period</td>
+		</tr>
+		<tr>
+			<td>Move backward long period</td>
+			<td>Shift + Comma</td>
+		</tr>
+		<tr>
+			<td>Move forward long period</td>
+			<td>Shift + Period</td>
+		</tr>						
+		<tr>
+			<td>Cursor left by a small amount</td>
+			<td>Left Arrow</td>
+		</tr>		
+		<tr>
+			<td>Cursor right by a small amount</td>
+			<td>Right Arrow</td>
+		</tr>				
+	</table>	
+	
+	
+	<h3>Selecting a time range</h3>	
+	
+	<table summary="keystrokes for selecting a time range">
+		<tr>
+			<th>Command</th>
+			<th>Keystroke</th>
+		</tr>
+		<tr>
+			<td>Select time range which includes all the audio, and select
+			all tracks</td>
+			<td>Ctrl + A</td>
+		</tr>		
+		<tr>
+			<td>Selection start at start of tracks (time zero)</td>
+			<td>Shift + Home</td>
+		</tr>
+		<tr>
+			<td>Selection end at end of all the audio</td>
+			<td>Shift + End</td>
+		</tr>		
+		<tr>
+			<td>Selection end at playback position</td>
+			<td>]</td>
+		</tr>
+		<tr>
+			<td>Selection start at start of audio in selected tracks</td>
+			<td>Shift + J</td>
+		</tr>
+		<tr>
+			<td>Selection end at end of audio in selected tracks</td>
+			<td>Shift + K</td>
+		</tr>						
+		<tr>
+			<td>To move the end of the selection to the right by a small amount</td>
+			<td>Shift + Right Arrow</td>
+		</tr>		
+		<tr>
+			<td>To move the end of the selection to the left by a small amount</td>
+			<td>Ctrl + Shift + Left Arrow</td>
+		</tr>	
+		<tr>
+			<td>To move the start of the selection to the right by a small amount</td>
+			<td>Ctrl + Shift + Right Arrow</td>
+		</tr>		
+		<tr>
+			<td>To move the start of the selection to the left by a small amount</td>
+			<td>Shift + Left Arrow</td>
+		</tr>					
+	</table>
+	
+
+	<h3>Editing</h3>
+	
+	<table summary="keystrokes for editing">
+		<tr>
+			<th>Command</th>
+			<th>Keystroke</th>
+		</tr>
+		<tr>
+			<td>Undo</td>
+			<td>Ctrl + Z</td>
+		</tr>
+		<tr>
+			<td>Redo</td>
+			<td>Ctrl + Y</td>
+		</tr>
+		<tr>
+			<td>Delete selected audio</td>
+			<td>Delete</td>
+		</tr>		
+		<tr>
+			<td>Cut selected audio</td>
+			<td>Ctrl + X</td>
+		</tr>
+		<tr>
+			<td>Copy selected audio</td>
+			<td>Ctrl + C</td>
+		</tr>		
+		<tr>
+			<td>Paste</td>
+			<td>Ctrl + V</td>
+		</tr>	
+		<tr>
+			<td>Replace selected audio with silence</td>
+			<td>Ctrl + L</td>
+		</tr>
+		<tr>
+			<td>Duplicate the selected audio</td>
+			<td>Ctrl + D</td>
+		</tr>
+		<tr>
+			<td>Close (Delete) focused track</td>
+			<td>Shift + C</td>
+		</tr>
+		<tr>
+			<td>Find zero crossings</td>
+			<td>Z</td>
+		</tr>
+	</table>
+	
+	
+	<h3>Labels</h3>
+	
+	<table summary="keystrokes for labels">
+		<tr>
+			<th>Command</th>
+			<th>Keystroke</th>
+		</tr>
+		<tr>
+			<td>Add label at selection</td>
+			<td>Ctrl + B</td>
+		</tr>
+		<tr>
+			<td>Add label at playback position</td>
+			<td>Ctrl + M</td>
+		</tr>
+		<tr>
+			<td>Move to next label</td>
+			<td>Alt + Right Arrow</td>
+		</tr>
+		<tr>
+			<td>Move to previous label</td>
+			<td>Alt + Left Arrow</td>
+		</tr>		
+	</table>
+	
+	
+	<h3>Clips</h3>
+	
+	<table summary="keystrokes for clips">
+		<tr>
+			<th>Command</th>
+			<th>Keystroke</th>
+		</tr>
+		<tr>
+			<td>Select previous clip</td>
+			<td>Alt + P</td>
+		</tr>
+		<tr>
+			<td>Select next clip</td>
+			<td>Alt + N</td>
+		</tr>
+		<tr>
+			<td>Split</td>
+			<td>Ctrl + I</td>
+		</tr>
+		<tr>
+			<td>Split delete</td>
+			<td>Ctrl + Alt + K</td>
+		</tr>
+		<tr>
+			<td>Split cut</td>
+			<td>Ctrl + Alt + X</td>
+		</tr>
+		<tr>
+			<td>Split New</td>
+			<td>Ctrl + Alt + I</td>
+		</tr>
+		<tr>
+			<td>Detach at silences</td>
+			<td>Ctrl + Alt + J</td>
+		</tr>
+		<tr>
+			<td>Join</td>
+			<td>Ctrl + J</td>
+		</tr>
+	</table>
+			
+
+	<h3>Recording</h3>
+		
+	<table summary="keystrokes for recording">
+		<tr>
+			<th>Command</th>
+			<th>Keystroke</th>
+		</tr>
+		<tr>
+			<td>Append Record</td>
+			<td>R, using default settings</td>
+		</tr>
+		<tr>
+			<td>Record in new Track</td>
+			<td>Shift + R, using default settings</td>
+		</tr>		
+		<tr>
+			<td>Pause/resume</td>
+			<td>P</td>
+		</tr>
+		<tr>
+			<td>Stop</td>
+			<td>Spacebar</td>
+		</tr>
+		<tr>
+			<td>Select Audio Host dialog</td>
+			<td>Shift + H</td>
+		</tr>		
+		<tr>
+			<td>Select Recording Device dialog</td>
+			<td>Shift + I</td>
+		</tr>
+		<tr>
+			<td>Select Recording Channels dialog</td>
+			<td>Shift + N</td>
+		</tr>		
+	</table>		
+</div>
+</body> 
+
+</html>
