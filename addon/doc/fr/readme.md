@@ -21,8 +21,8 @@ Ce module améliore l'accessiblité du logiciel Audacity en apportant:
 
 Cette version du module a été testée avec NVDA 2018.4, NVDA 2018.3.2, NVDA 2018.2.1 et audacity v2.3.0.
 
-Les précédentes versions de NVDA et d'Audacity ne sont pas supportées.
+Les précédentes versions de NVDA et Audacity ne sont pas supportées.
 
-[1]: https://rawgit.com/paulber007/AllMyNVDAAddons/master/Audacity/audacityAccessEnhancement-1.0.nvda-addon
+[1]: https://rawgit.com/paulber007/AllMyNVDAAddons/master/audacity/audacityAccessEnhancement-1.0.nvda-addon
 
 [2]:

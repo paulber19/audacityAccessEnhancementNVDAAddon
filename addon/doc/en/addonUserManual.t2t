@@ -279,6 +279,9 @@ The same mechanisms are put in place in other dialog boxes which are areas of ed
 
 
 + History + 
+++ v1.0.1 (22/12/2018) ++
+Small documentation correction.
+
 ++ v1.0 (20/12/2018) ++
 - version number restarted to 1.0 cause of name change,
 - compatibility with Audacity 2.3.0,

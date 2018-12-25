@@ -277,6 +277,9 @@ Les mêmes mécanismes sont mis en place dans d'autre boites de dialogue qui pr�
 
 
 + Historique +
+++ v1.0.1 (22/12/2018) ++
+Petite correction de documentation.
+
 ++ v1.0 (20/12/2018) ++
 -Le numéro de version repart à 1.0 à cause  du changement du nom du module,
 - compatibilité avec audacity 2.3,
