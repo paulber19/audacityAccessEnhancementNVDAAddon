@@ -1,8 +1,9 @@
 Audacity multi-track: accessibilit- enhancement - user manual 
 Auteur: paulber19 (paulber19@laposte.net)
-Dernière modification: 18/12/2018
 
 
+% add-on version
+%!PostProc (html): ADDON_VERSION 1.0.2
 %!Target: html 
 %!Encoding: UTF-8 
 %!Options: --toc 
@@ -34,10 +35,12 @@ Dernière modification: 18/12/2018
 %!PostProc (html): SHELL_KEY_DISPLAY_USER_MANUAL g 
 %!PostProc (html): SHELL_KEY_DISPLAY_GUIDE control+g 
 %!PostProc (html): SHELL_KEY_HELP h 
-
+Download: [version ADDON_VERSION https://rawgit.com/paulber007/AllMyNVDAAddons/master/audacity/audacityAccessEnhancement-1.0.nvda-addon]
 
 = Summary =[toc] 
 %%toc 
+
+
 
 + Introduction + 
 Sorry, This manual is based on a french user manual's automatic translation .
@@ -279,6 +282,9 @@ The same mechanisms are put in place in other dialog boxes which are areas of ed
 
 
 + History + 
+++ v1.0.2 (28/12/2018) ++
+Correction of bad announcement of selection.
+
 ++ v1.0.1 (22/12/2018) ++
 Small documentation correction.
 

@@ -26,6 +26,6 @@ This addon's version has been tested with NVDA 2018.4,NVDA 2018.3.2, NVDA 2018.2
 
 Previous versions of NVDA and Audacity are not  supported.
 
-[1]: https://rawgit.com/paulber007/AllMyNVDAAddons/master/audacity/audacityAccessEnhancement-1.0.nvda-addon
+[1]: https://rawgit.com/paulber007/AllMyNVDAAddons/master/audacity/audacityAccessEnhancement-1.0.2.nvda-addon
 
-[2]:
+[2]: https://rawgit.com/paulber007/AllMyNVDAAddons/master/audacity/audacityAccessEnhancement-1.0.2.nvda-addon

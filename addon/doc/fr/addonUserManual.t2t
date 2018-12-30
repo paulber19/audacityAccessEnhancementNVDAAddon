@@ -1,8 +1,8 @@
 Éditeur multi-piste  Audacity: complément d'accessibilité - manuel utilisateur
 Auteur: paulber19 (paulber19@laposte.net)
-Dernière modification: 20/12/2018
 
-
+% add-on version
+%!PostProc (html): ADDON_VERSION 1.0.2
 
 %!Target: html
 %!Encoding: UTF-8
@@ -38,7 +38,7 @@ Dernière modification: 20/12/2018
 %!PostProc (html): SHELL_KEY_DISPLAY_GUIDE control+g
 %!PostProc (html): SHELL_KEY_HELP h
 
-
+DTélécharger: [version ADDON_VERSION https://rawgit.com/paulber007/AllMyNVDAAddons/master/audacity/audacityAccessEnhancement-ADDON_VERSION.nvda-addon]
 = Sommaire =[toc]
 %%toc
 
@@ -72,13 +72,15 @@ Pour un bon fonctionnement du module, il est nécessaire de :
 - conserver l'affichage par défaut mise en place lors de l'installation d'audacity, surtout celui des barres d'outils. Audacity permet de réinitialiser l'affichage de celles-ci avec le sou-menu "Reset" du sous-menu "barres d'outils" du menu "Affichage". Mais il est nécessaire de redémarrer Audacity après l'avoir utilisé.
 - Conserver le format  d'affichage du temps défini par défaut ou choisir  parmi un des formats indiqués au chapitre [Vocalisation des zones d'édition du temps dans la boite d'outils Sélection Audacity #HDR103]
 
-autres recommandations  de configuration:
+
+autres recommandations  de configuration(voir pour plus d'information le  ["guide d'Audacity" audacityGuide.html] ):
 - faire afficher le menu "Exra",
 - désactiver la création de marqueur par simple frappe de touche,
 - activer l'affichage  de la boite de dialogue  "Création de marqueur",
--installer le jeu complet de raccourcis,
+- installer le jeu complet de raccourcis,
 - modifier les raccourcis génants pour le clavier de type "Azerty".
 - désactiver la sélection automatique.
+
 
 
 ++ Activation des scripts ++
@@ -277,6 +279,9 @@ Les mêmes mécanismes sont mis en place dans d'autre boites de dialogue qui pr�
 
 
 + Historique +
+++ v1.0.2 (28/12/2018) ++
+Correction de la mauvaise annonce de la sélection.
+
 ++ v1.0.1 (22/12/2018) ++
 Petite correction de documentation.
 

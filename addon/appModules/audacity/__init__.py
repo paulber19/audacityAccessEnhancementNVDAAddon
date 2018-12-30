@@ -82,8 +82,9 @@ def monitorAudioAndSelectionChanges():
 		GB_recordButtonIsPressed = recordButtonIsPressed
 		return msg
 	
-	def getSelectionChangeMessage():
-		global GB_selection
+	def getSelectionChangeMessage (audioChangeMessage):
+		global GB_selection, GB_audioPosition
+
 		from au_configManager import _addonConfigManager
 		selectionTimer = au_timerControl.SelectionTimers()
 		if not selectionTimer.isAvailable:
@@ -103,12 +104,19 @@ def monitorAudioAndSelectionChanges():
 				msgList.append (msg)
 			else:
 				# no
-				audioTimer = au_timerControl.AudioTimerControl()
-				if not audioTimer.isAvailable():
-					return None
-				msg = audioTimer.getIfAudioAtStartOfSelectionMessage (GB_audioPosition, newSelection)
-				if msg is None and selectionStartTime != oldSelectionStartTime:
-					msg = selectionTimer.getSelectionStartMessage(newSelection)
+				if selectionStartTime != oldSelectionStartTime:
+					audioTimer = au_timerControl.AudioTimerControl()
+					if not audioTimer.isAvailable():
+						return None
+					msg = audioTimer.getIfAudioAtStartOfSelectionMessage (GB_audioPosition, newSelection)
+					if msg is not None :
+						if msg != audioChangeMessage:
+							newAudioPosition = audioTimer.getAudioPosition()
+							GB_audioPosition = newAudioPosition
+						else:
+							msg = None
+					else:
+						msg = selectionTimer.getSelectionStartMessage(newSelection)
 					if msg is not None:
 						msgList.append(msg)
 				if selectionEndTime != oldSelectionEndTime:
@@ -155,9 +163,8 @@ def monitorAudioAndSelectionChanges():
 	msg = getAudioChangeMessage()
 	if msg is not None:
 		textList.append(msg)
-	
 	# selectionchange
-	msg = getSelectionChangeMessage()
+	msg = getSelectionChangeMessage(msg)
 	if msg is not None:
 		textList.append(msg)
 	if len(textList):

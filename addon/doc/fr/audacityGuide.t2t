@@ -1,6 +1,6 @@
 Guide d'introduction à Audacity
 Auteur: paulber19 (paulber19@laposte.net)
-Dernière modification: 18/12/2018
+
 
 
 %!Target: html
@@ -24,7 +24,7 @@ Dernière modification: 18/12/2018
 %%toc
 
 + Introduction +
-Ce guide veut être une introduction à l'utilisation du logiciel Audacity  par des personnes mal ou non voyante et utilisant  le lecteur d'écran NVDA.
+Ce guide est une introduction à l'utilisation du logiciel Audacity  par des personnes mal ou non voyante et utilisant  le lecteur d'écran NVDA.
 Il est, au départ, la traduction  du guide écrit par David Bailes pour la version 2.2 d'Audacity et pour les utilisateurs du lecteur d'écran Jaws ([site du guide http://vip.chowo.co.uk/jaws-guides/]).
 Cette traduction a été adaptée pour la version 2.3 D'Audacity.
 
@@ -43,7 +43,7 @@ Les  chapitres de cette introduction sont:
 ++ Projets Audacity ++
 Les objets qui sont édités par Audacity sont connus sous le nom de projet, de sorte que les projets sont équivalents à des documents Microsoft Word ou à des classeurs Microsoft Excel.
 
-Un projet Audacity se compose d'un ensemble de pistes de différentes nature: piste audio, piste de marqueurs, piste de temps. Les pistes de temps n'étant pas accessibles aux utilisateurs de lecteurs d'écran ne seront pas traitées dans ce document.
+Un projet Audacity se compose d'un ensemble de pistes de différentes nature: piste audio, piste de marqueurs, piste de temps. Les pistes de temps n'étant pas accessibles aux utilisateurs de lecteurs d'écran ne seront donc pas traitées dans ce document.
 
 Pour de nombreuses tâches simples, vous n'aurez probablement qu'une seule piste dans un projet.
 
@@ -78,12 +78,17 @@ Les  fonctionnalités intéressantes que l'on peut noter pour les utilisateurs d
 Depuis la version 2.2, Audacity installe, par défaut, un minimum de raccourcis.
 Vous pouvez changer cela et  installer un jeu complet de raccourcis. Ceci est décrit au chapitre "[Jeu de raccourcis standard ou complet #HDR-DefaultShortcutsSet]".
 
-Le reste de ce guide suppose que vous avez installé    le jeu complet. 
+Le reste de ce guide suppose que vous avez installé    le jeu complet.
+
 
 
 ++ Utilisation d'un clavier   de type autre que QWERTY ++
 Si vous utilisez un  clavier  d'un autre type que  QWERTY,  quelques commandes clavier  ne fonctionnent pas si vous utilisez Audacity avec  les paramètres par défaut. 
+
 Pour résoudre ce problème, voir le chapitre "[Les raccourcis gênants #HDR-BracketShortcuts]".
+
+Ce guide étant rédigé en français, nous considérerons  dans le reste du guide que le lecteur l'est aussi,  qu'il utilise un clavier "Azerty" et que les raccourcis de base génants ont été modifiés comme le "[" et "]".
+
 ++ Curseur dans Audacity ++
 
 Audacity a un curseur pour indiquer un temps donné de l'audio, similaire au curseur dans Microsoft Word.
@@ -100,13 +105,13 @@ Les principaux composants de la fenêtre principale d'Audacity sont:
 - La barre d'état: celle-ci est divisé en 3 sections. La première section est probablement la plus intéressante, car elle contient l'état du transport,  à savoir  celui de l'arrêt d’Audacity, de la lecture, de l'enregistrement et ainsi de suite. Pour Lire la barre d'état, appuyez sur "NVDA + fin". 
 
 
-++  Déplacement dans la fenêtre ++
+++ Déplacement dans la fenêtre ++
 Comme dans n'importe quelle fenêtre, pour atteindre la barre de menus, appuyez sur "Alt", et  pour la quitter appuyez sur "Échap" ou  "Alt".
 
 L’appui sur  "Control + F6" vous fait passer d'un élément à un autre parmi:
 - le tableau de piste: NVDA annonce son nom "vue de piste")".
 - la barre d'outils sélection: c'est le nom que l'on lui donne dans ce document car elle n'en a pas.
-- le groupe des Barres d'outils comme Transport, outils d'enregistrement, outils de sélection, outils de niveau, etc).Le groupe n'a pas de nom.
+- le groupe des Barres d'outils comme Transport, outils d'enregistrement, outils de sélection, outils de niveau, etc).Le groupe n'a pas non plus de nom.
 
 
 En appuyant sur "Control + majuscule + F6" vous vous  déplacez   dans l'ordre inverse. 
@@ -129,10 +134,13 @@ Si vous souhaitez délibérément créer une nouvelle fenêtre avec un projet vi
 
 ++ Ouverture  de fichier  audio standards ++
 L'installation par défaut de Audacity permet d'ouvrir des fichiers audio dans les formats audio suivants : WAV, AIFF, AU, MP3, MP2, MPEG, Ogg Vorbis et FLAC.
+
 En outre, vous pouvez ouvrir des fichiers dans d'autres formats, incluant wma et m4a si vous téléchargez et installez la bibliothèque FFmpeg (décrite au chapitre ["Bibliothèque FFmpeg" #HDR-FFMPEGLibrary].
+
 Elle n'est pas incluse dans l'installation d'Audacity en raison de problèmes juridiques sur les brevets. 
 
 Note: Une alternative à l'utilisation de la bibliothèque FFmpeg pour ouvrir des fichiers dans d'autres formats est d'utiliser un autre programme pour convertir le fichier dans un des formats reconnus par   l'installation par défaut d’Audacity. Il y a plusieurs programme  de conversion de format audio    disponibles, comme par exemple "switch"   (gratuit dans sa version de base ou "dBpoweramp Music Converter".
+
 
 Si vous ouvrez un fichier compressé, tel qu'un fichier MP3, et  après avoir appuyé sur le bouton "ouvrir" dans la boîte de dialogue "Ouvrir",  une boîte de dialogue d'Importation s'ouvre qui donne 
 La progression  de la décompression du fichier par Audacity.
@@ -155,7 +163,7 @@ La première fois que vous faites cela, vous obtenez une boîte de dialogue d'Av
 
 ++ Sauvegarde  dans des formats audio ++
 L'installation par défaut de Audacity permet d'enregistrer dans les normes de format audio suivantes: WAV, Ogg Vorbis, FLAC, et MP2.
-En outre, vous pouvez enregistrer dans certains autres formats si vous téléchargez et installez des bibliothèques supplémentaires qui ne sont pas inclus avec Audacity en raison de problèmes juridiques avec les brevets: 
+En outre, vous pouvez enregistrer dans certains autres formats si vous téléchargez et installez des bibliothèques supplémentaires qui ne sont pas incluses dans Audacity en raison de problèmes juridiques avec les brevets: 
 - Vous pouvez enregistrer au format MP3 si vous téléchargez et installez la  bibliothèque LAME MP3, comme décrit dans le chapitre ["Bibliothèque LAME MP3 encoder" #HDR-LAMEMP3Encoder].
 - Vous pouvez enregistrer dans des formats y compris les formats wma et m4a si vous téléchargez et installer la bibliothèque FFmpeg, voir le chapitre ["Bibliothèque FFmpeg" #HDR-FFMPEGLibrary].
 
@@ -164,7 +172,7 @@ Si vous voulez sauvegarder tout l'audio, - utilisez le sous-menu "Exporter sous"
 
 Sinon et si vous voulez sauvegarder uniquement les données audio sélectionnées, choisissez plutôt le sous-menu "Exporter l'Audio Sélectionné" à partir du même sous-menu. 
 
-La boîte de dialogue "Exportation Audio" s'ouvre avec une structure très similaire à  la boîte de dialogue "Enregistrer sous" classique    de Windows.  
+La boîte de dialogue "Exportation Audio" s'ouvre et a  une structure très similaire à  la boîte de dialogue "Enregistrer sous" classique    de Windows.  
 
 Pour définir le format de fichier que vous voulez utiliser pour l'enregistrement de l'audio, utilisez  la zone de liste déroulante "type", situé après la zone d'édition du nom du fichier. Notez que tous les formats qui utilisent la bibliothèque FFmpeg, ont "FFmpeg" entre parenthèses après leur nom. 
 
@@ -237,7 +245,9 @@ L'état de la lecture est le premier élément dans la barre d'état, que vous p
 + Groupe des  Barres d'outils +[HDR-ToolsBarsGroup]
 Le groupe des  Barres d'outils  contient plusieurs différentes barres d'outils, composée chacune de plusieurs éléments.
 
-Vous pouvez accéder à  ces éléments  en utilisant simplement la touche "Tab".
+Ce groupe  s'atteint, quand le focus est dans le tableau de piste,  en tapant deux fois "control+F6"  ou simplement "control+majuscule+F6" .
+
+À l'intérieur de ce groupe, Vous pouvez accéder à  ses éléments  en utilisant simplement la touche "Tab".
 
 Vous pouvez appuyer sur l'un des boutons de la barre d'outils en appuyant sur la touche "Entrée".
 
@@ -256,6 +266,7 @@ Les barres d'outils qui sont affichés par défaut sont:
 
 
 Note: pour cette dernière barre d'outils,  si l'une de ces zones de liste modifiable est sous le focus et que vous appuyez sur   un caractère du clavier qui est un raccourci d'Audacity,  la touche est utilisée pour le raccourci, plutôt que de sélectionner une option commençant par ce caractère. Donc, la sélection d'une option à l'aide de son premier caractère est n'est pas recommandée. 
+
 En outre, si vous démarrez la lecture ou l'enregistrement, le focus est alors automatiquement déplacé vers le Tableau de pistes.
 
 Vous pouvez afficher ou masquer tout ou partie  de ces barres d'outils à l'aide du sous-menu "barre d'outils"  du menu "Affichage". 
@@ -302,11 +313,13 @@ Il y a plusieurs manières de sélectionner ou désélectionner des pistes:
 L'état de sélection (sélectionné ou non sélectionné) d'une piste est indiquée à la suite  de son nom.
 
 + Barre d'outils Sélection +[HDR-SelectionBar]
+Cette barre d'outils s'atteint, quand le focus est dans le panneau de pistes, en tapant "control+F6" ou deux fois "control+majuscule+f6".
+
 Il y a six éléments dans la barre  d'outils  "Sélection" et vous pouvez passer de l'un à l'autre  en avant ou en arrière à l'aide de "Tab" ou "majuscule + Tab" respectivement.
 - la liste déroulante "taux  du projet": définit  la fréquence d'échantillonnage du projet.
 - la zone déroulante "Se coller à":  définit la manière  dont Audacity doit arrondir les temps.
 - La zone d'édition de la Position Audio : Cela donne la position de lecture ou du début de l'enregistrement.
-- une  liste déroulante "affichage"   qui permet de choisir l'option qui fixe la nature des deux éléments suivants dans la barre d'outils. Ces options sont: début et fin, début et  longueur, longueur et fin, longueur et centre.
+- une  liste déroulante "affichage"   qui permet de choisir l'option qui fixe la nature des deux éléments suivants dans la barre d'outils. Le chois se fait parmi: début et fin, début et  longueur, longueur et fin, longueur et centre.
 - deux zone d'édition de temps dont la nature est précisée par la liste "Affichage" précédente.
 
 
@@ -315,9 +328,9 @@ S'il n'y a pas de plage de temps sélectionné, les éléments   "début", "fin"
 ++ Modification des temps ++[HDR-SpinBoxesEdition]
 Chaque zone d'édition contient un temps qui est affiché  dans un certain format. Vous pouvez changer le format en le choisissant dans   une liste de formats  à l'aide du menu contextuel. Cela modifie le format de toutes les zones.
 
-La valeur par défaut est le format "hh:mm:ss", mais le format "hh:mm:ss +centièmes" est normalement plus utile car il vous permet de modifier le temps de manière plus précise.
+La valeur par défaut est le format "secondes",  mais le format "hh:mm:ss +centièmes" est normalement plus utile car il vous permet de modifier le temps de manière plus précise.
 
-Presque tous les exemples de ce guide vont utiliser ce format. 
+La plupart  des exemples de ce guide  utilisera ce format. 
 
 Le temps peut être considéré comme être composé d'une ou plusieurs sections selon le format utilisé. Par exemple, lorsque vous utilisez le format "hh:mm:ss", le temps se compose de trois sections composées chacune de deux chiffres: heures, minutes, et secondes.
 
@@ -363,13 +376,13 @@ Les moyens de déplacement du curseur sont les suivants:
 - utiliser la touche "Début Pour déplacer le curseur au début de la piste (temps zéro).
 - utiliser la touche "Fin" Pour déplacer le curseur à la fin de tout l'audio.
 - utiliser les touches "J" ou K" Pour déplacer le curseur au début ou à la fin respectivement de l'audio de la piste  sélectionnée.
-- utiliser les touches ","  ou "." Pour reculer ou avancer respectivement d'une  courte période.
+- utiliser les touches "," ou "." Pour reculer ou avancer respectivement d'une  courte période.
 - utilisez  les touches "majuscule +,"  ou "majuscule +" pour avancer ou reculer respectivement d'une longue période. Ces courtes et longues périodes partagent  les mêmes valeurs que celles utilisées pour les demandes de saut en cours de lecture et  qui ont étés  décrites au chapitre  ["Lecture audio" #HDR-AudioPlayback]. La durée de courte et longues périodes peut être définie dans la boîte de dialogue "Préférences", comme décrit au  chapitre ["Sauts temporels" #HDR-SeekTimes].
 - utilisez  les touches "flèche gauche" et "flèche droite" pour déplacer le curseur d'un petit saut à gauche ou à droite respectivement.
-- utilisez la touche "[" pour  fixer en vol le curseur à la position de lecture courante. Si pendant la lecture, vous appuyez  sur la touche "[" puis ensuite sur la touche  "Espace" pour arrêter la lecture, le curseur est déplacé à la position   audio où vous avez appuyé sur la touche "[". Dans la pratique, la  méthode suivante est plus souple: 
+- utilisez la touche "g" pour  fixer en vol le curseur à la position de lecture courante. Si pendant la lecture, vous appuyez  sur la touche "g" puis ensuite sur la touche  "Espace" pour arrêter la lecture, le curseur est déplacé à la position   audio où vous avez appuyé sur la touche "[". Dans la pratique, la  méthode suivante est plus souple: 
  - Pendant la lecture, appuyez sur "P" pour mettre en pause la lecture lorsque vous atteignez la position où vous souhaitez déplacer le curseur.
  - Si vous n'êtes pas satisfait avec cette position, appuyez de nouveau sur "P" pour reprendre la lecture,  recherchez le bon endroit à l'aide des touches de   saut   et refaite une pause au bon endroit.
- - Appuyez sur "[" pour  marquer la nouvelle position du curseur.
+ - Appuyez sur "g" pour  marquer la nouvelle position du curseur.
  - Appuyez sur "Espace" pour arrêter.
 - utilisez la touche "x" pour arrêter la lecture et déplacer le curseur  à cette position de lecture. Vous pouvez également utiliser cette touche pour reprendre la lecture.
 - utilisez la zone  d'édition de temps "début" de la barre d'outils Sélection: ceci est décrit en détail dans le chapitre  [" Déplacement  de curseur avec la zone  "début" #HDR-MovingCursorWithSelectionStart] ci-dessous.
@@ -377,7 +390,7 @@ Les moyens de déplacement du curseur sont les suivants:
 
 ++ Lecture de la position du curseur ++
 
-Il y a deux façons de lire  la position du curseur. 
+Il y a deux façons de lire  la position du curseur, après avoir stoppée ou mise en pause la lecture. 
 
 La première est de  lire la position dans la zone "début"  de  la barre d'outils de sélection: 
 - En supposant que le tableau de pistes est sous le focus, appuyez sur "control + F6" pour  se déplacer dans la barre d'outils de sélection.
@@ -386,7 +399,7 @@ La première est de  lire la position dans la zone "début"  de  la barre d'outi
 
 
 La seconde façon de lire  la position du curseur est d'utiliser  la boite de dialogue "Définir la limite gauche de sélection":
-- Bien qu'il n’y ait pas de lecture, appuyez sur la touche "[" pour ouvrir cette boite de dialogue.
+- Bien qu'il n’y ait pas de lecture, appuyez sur la touche "g" pour ouvrir cette boite de dialogue.
 - la position du curseur est dans le premier élément de la boite de dialogue  et c'est justement celui-ci qui reçoit le focus.
 - Appuyez sur "Echapp" pour fermer la boîte de dialogue.
 
@@ -395,7 +408,7 @@ La seconde façon de lire  la position du curseur est d'utiliser  la boite de di
 - Appuyez sur "control + F6" pour amener le focus dans la barre d'outils de sélection".
 - tapez "Tab" pour atteindre la liste déroulante  "Affichage" et assurez-vous que l'option "Début et durée de la sélection" est sélectionnée. Si elle est définie sur "Début et fin de la sélection", vous pouvez accidentellement sélectionnez une plage de temps  au lieu de déplacer le curseur, comme décrit ci-dessous.
 - appuyez sur "Tab" pour atteindre la zone d'édition "Début", et changer sa valeur, comme décrit ci-dessous.
-- Pour revenir au tableau de pistes, appuyez sur "control + F6" deux fois.
+- Pour revenir au tableau de pistes, appuyez sur "control + F6" deux fois ou simplement sur "control+majuscule+f6".
 
 
 Comme décrit dans le chapitre ["Modification des temps" #HDR-SpinBoxesEdition], il Ya deux façons de  changer les valeurs des zone d'édition:
@@ -469,7 +482,7 @@ Si cette option est désactivée, une boîte de dialogue s'ouvre vous informant 
 
 Toutefois, si cette option est activée, l'effet est appliqué à  certaines parties ou à la totalité de l'audio dans le projet, selon la sélection des pistes et la sélection d'un intervalle de temps.
 
-Étant donné que  la sélection automatique de pistes et de temps va se produire sans  rétroaction sonore,  pour les utilisateurs de lecteurs d'écran, il est recommandé de désactivez cette option, comme décrit dans le chapitre  ["Sélection automatique"  #HDR-AutoSelect]  du chapitre "Préférences".
+Étant donné que  la sélection automatique de pistes et de temps va se produire sans  rétroaction sonore,  pour les utilisateurs de lecteurs d'écran, il est vivement recommandé de désactivez cette option, comme décrit dans le chapitre  ["Sélection automatique"  #HDR-AutoSelect]  du chapitre "Préférences".
 
 Toutes les instructions dans le reste de ce guide supposent que l'option est désactivée. 
 
@@ -486,16 +499,16 @@ La première méthode de sélection d'un intervalle de temps se compose de deux 
 - Fixez l'autre extrémité de la sélection à l'aide de l'une des méthodes décrite ci-dessous.
 
 
-Note que lorsqu'un intervalle de temps est sélectionné, la lecture audio se fait à l'intérieur de  cet intervalle de temps.
+Note que lorsqu'un intervalle de temps est sélectionné, la lecture audio se fait uniquement à l'intérieur de  cet intervalle de temps.
 
 Vous pouvez utiliser l'une des méthodes suivantes pour fixer l'autre extrémité de la sélection:
 - Avec le curseur à la position où vous souhaitez le début de la sélection et  pour définir la fin de la sélection à la fin de tout l'audio, appuyez sur "majuscule + Fin".
 - Avec le curseur placé à l'endroit où vous voulez  la fin de la sélection et  pour fixer le début de la sélection au début de la piste (temps zéro), appuyez sur "majuscule + Début".
-- Définir la fin de la sélection à l'aide du raccourci  "]" lors de la lecture. Si au cours de la lecture, vous appuyez sur"]" et  ensuite sur "Espace" pour arrêter la lecture, la fin de la sélection est positionnée à l'endroit de l'audio où vous avez appuyé sur la touche "]". Dans la pratique, la méthode suivante est plus souple:
+- Définir la fin de la sélection à l'aide du raccourci  "h" lors de la lecture. Si au cours de la lecture, vous appuyez sur"h" et  ensuite sur "Espace" pour arrêter la lecture, la fin de la sélection est positionnée à l'endroit de l'audio où vous avez appuyé sur la touche "h". Dans la pratique, la méthode suivante est plus souple:
  - Pendant la lecture, appuyez sur "P" pour mettre en pause lorsque vous atteignez la position que vous voulez être la fin de la sélection.
  - Si vous n'êtes pas satisfait avec cette position, appuyez sur "P" pour reprendre la lecture et avec les raccourcis de  saut,    ajustée la position  avant de refaire  une nouvelle pause.
- - Appuyez sur "]" pour marquer la position de la fin de la sélection.
- - Appuyez sur "Espace" pour arrêter.
+ - Appuyez sur "h" pour marquer la position de la fin de la sélection.
+ - Appuyez sur "Espace" pour positionner le curseur de lecture au début de la sélection si vous voulez écouter l'audio sélectionné ou sur "p" pour continuer la lecture.
 - Avec le curseur à la position où vous souhaitez que soit le début de  sélection et  pour définir la fin de la sélection à la fin de l'audio dans la piste sélectionnée, appuyez sur majuscule + K".
 - Avec le curseur placé à l'endroit où vous voulez la fin de la sélection et  pour placer le début de la sélection au début de l'audio des pistes sélectionnées, appuyez sur "majuscule + J".
 - À l'aide des zones de  sélection  de la barre d'outils de  sélection, tel que décrite dans  la section suivante.
@@ -600,7 +613,6 @@ Pour couper  l'audio sélectionné, appuyez sur "control + X". L'audio sélectio
 Comme dans le cas de la suppression de l'audio, vous pouvez écouter l'effet de votre découpe en appuyant sur "C" pour Jouer un aperçu de la coupe.
 
 ++ Copier ++
-
 Pour copier l'audio  sélectionné dans  le presse-papier d'Audacity, appuyez sur "control + C".
 
 ++ Coller ++
@@ -615,7 +627,7 @@ Il y a un couple de  commandes de lecture  pratiques qui peuvent être utilisée
 - Pour lire une courte période avant et après la fin de la sélection, appuyez sur "control + majuscule + F7».
 
 
-La longueur de la période de lecture avant et après la sélection peut être définie dans le groupe de paramètres "Aperçu de la coupe" situé dans la catégorie "Lecture" des préférences d'Audacity.
+La durée de la période de lecture avant et après la sélection peut être définie dans le groupe de paramètres "Aperçu de la coupe" situé dans la catégorie "Lecture" des préférences d'Audacity.
 
 ++ Remplacer de l'audio par  du silence ++
 Pour remplacer l'audio sélectionné avec la même longueur de silence, dans le  menu "Edition", ouvrez le sous-menu "Suppression spéciale"  et choisir le sous-menu "Silence Audio"  (raccourci "control+l").
@@ -624,7 +636,7 @@ Pour remplacer l'audio sélectionné avec la même longueur de silence, dans le 
 Pour insérer une période de silence dans les pistes sélectionnées:
 - Déplacer le curseur à l'endroit où vous souhaitez insérer le silence.
 - ouvrez le menu " Générer" et choisissez le sous-menu "Silence".
-- la boite de dialogue "Silence" (Un Générateur de Silence) s'ouvre et le focus est mis dans la zone d'édition  qui permet de spécifier la longueur du silence. Cette zone  d'édition est identique aux zones d'édition de temps utilisées dans la barre d'outils Sélection,  bien que le focus soit donné au premier chiffre non nul plutôt qu'au premier chiffre.
+- la boite de dialogue "Silence" (Un Générateur de Silence) s'ouvre et le focus est mis dans la zone d'édition  qui permet de spécifier la durée du silence. Cette zone  d'édition est identique aux zones d'édition de temps utilisées dans la barre d'outils Sélection,  bien que le focus soit donné au premier chiffre non nul plutôt qu'au premier chiffre.
 
 
 Définissez le temps que vous souhaitez, puis appuyez sur Entrée" pour activer, par défaut, le bouton "OK".
@@ -685,7 +697,7 @@ Un problème similaire peut se produire si vous copiez et collez de l'audio.
 
 Vous pouvez éviter l'introduction de ces clics à l'aide du sous-menu  "Rechercher les croisements avec le Zéro», du  menu "sélection",  (raccourci "Z").
 
-Si une piste est sélectionnée, mais il n'y a pas une période sélectionnée,  si vous appliquez cette commande, la position du curseur est déplacé vers la position Lae plus proche  de l'endroit où l'amplitude de l'audio dans la piste sélectionnée est égale à zéro.
+Si une piste est sélectionnée, mais il n'y a pas de période sélectionnée,  si vous appliquez cette commande, la position du curseur est déplacé vers la position Lae plus proche  de l'endroit où l'amplitude de l'audio dans la piste sélectionnée est égale à zéro.
 Le changement de position est très faible, de sorte que vous n'avez pas à vous inquiéter que  cela fasse un grand changement à la position du curseur. 
 De manière semblable, s'il y a une plage de temps sélectionnée, la position du début  et de la fin de la plage sont ajustées de sorte que l'amplitude de l'audio dans la piste sélectionnée est égale à zéro.
 
@@ -1565,7 +1577,6 @@ Le détail de la recherche dépend de la vue:
 
 
 +++ Création ou modification d'un raccourci +++
-
 Pour créer un raccourci: 
 
 - Dans l'arborescence  ou de la liste, sélectionnez la commande  concernée par le  changement. 
@@ -1594,12 +1605,22 @@ Pour réinitialiser tous les raccourcis de l'ensemble standard ou complet  aux v
 
 
 ++ Les Raccourci gênants ++[HDR-BracketShortcuts]
-Par défaut, les raccourcis clavier pour déplacer le curseur à la position de lecture et positionner  la fin de la sélection à la position de lecture sont "[" et "]". Ces raccourcis peuvent également être utilisés pour ouvrir la boîte de dialogue  quand il n'y a pas de lecture. 
-Avec des claviers de type US, UK ou Irish , vous pouvez taper "[" et "]" à l'aide des  touches "[" et "]" qui se trouvent    à droite de la touche "P". 
-Sur presque tous les claviers utilisés dans d’autres pays, les touches de type "[" et "]" se trouvent dans des positions différentes, et vous avez souvent à utiliser les touches de modification comme "control + Alt" pour saisir ces caractères. 
-Audacity installe ces raccourcis par défaut.
+
+les raccourcis clavier, installés par défaut par Audacity, pour déplacer le curseur à la position de lecture et positionner  la fin de la sélection à la position de lecture sont "[" et "]".  Ils correspondent respectivement aux sous-menus (très mal traduits) du sous-menu "région" du menu "Sélectionner": 
+-De la limite droite de la sélection au point de lecture,
+-De la limite gauche de la sélection au point de lecture.
+
+
+
+Ces raccourcis peuvent également être utilisés pour ouvrir la boîte de dialogue  quand il n'y a pas de lecture. 
+
+Avec des claviers de type Qwerty, vous pouvez taper "[" et "]" à l'aide des  touches "[" et "]" qui se trouvent    à droite de la touche "P". 
+
+Mais Sur presque tous les claviers utilisés dans d’autres pays, les touches de type "[" et "]" se trouvent dans des positions différentes, et vous avez souvent à utiliser les touches de modification comme "control + Alt" pour saisir ces caractères. 
+
 Heureusement, il existe une solution simple à ce problème. 
-Tout ce que vous  avez besoin de faire est de modifier ces raccourcis claviers pour les deux commandes en  utilisant la méthode décrite dans la section précédente. 
+Pour les clavier de type Azerty,Tout ce que vous  avez besoin de faire est de modifier ces raccourcis claviers pour les deux commandes en  utilisant la méthode décrite dans la section précédente. 
+
 Les lettres G et H  ne sont pas affectées à des commandes, donc vous pouvez :
 - affecter le raccourci  "g" à la commande "De la limite gauche de sélection à la position de lecture (Mal traduit).
 - affecter le raccourci "h" à la commande "De la limite droite de sélection à la position de lecture" (mal traduit).
