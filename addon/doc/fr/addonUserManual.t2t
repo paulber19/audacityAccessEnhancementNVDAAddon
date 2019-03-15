@@ -2,12 +2,12 @@
 Auteur: paulber19 (paulber19@laposte.net)
 
 % add-on version
-%!PostProc (html): ADDON_VERSION 1.0.2
+%!PostProc (html): ADDON_VERSION 1.1
 
 %!Target: html
 %!Encoding: UTF-8
 %!Options: --toc
-%!style:..\style.css
+%!style:..\style_t2t.css
 % Remove the Table of Contents heading from the toc.
 %!PostProc(html): '^.*\<LI\>\<A HREF="#toc"\>.*\</A\>.*$' ''
 
@@ -44,7 +44,7 @@ DTélécharger: [version ADDON_VERSION https://rawgit.com/paulber007/AllMyNVDAAd
 
 + Introduction +
 ++ Fonctionnalités ++
-Ce module complémentaire  tente d'améliorer l'accessibilité de l'éditeur audio multi-piste Audacity (®) en  apportant les scripts:
+Cette extension  tente d'améliorer l'accessibilité de l'éditeur audio multi-piste Audacity (®) en  apportant les scripts:
 - [Annoncer la position du curseur audio #HDR1],
 - [Annoncer les informations de sélection #HDR2], 
 - [Annoncer l'état des boutons "Lecture" et "Pause" #HDR3],
@@ -62,13 +62,13 @@ Ainsi que les améliorations d'accessibilité suivantes:
 
 
 ++ Compatibilité ++
-Cette version du module  a été testée avec NVDA 2018.4, NVDA 2018.3.2, NVDA 2018.2.1  et  Audacity v2.3.0 .
+Cette  version de l'extension a été testée avec NVDA 2018.4, NVDA 2019.1.0 et  Audacity v2.3.0 .
 
 Les précédentes versions de NVDA et d'Audacity ne sont pas supportées.
 
 
 ++ Recommandations de configuration ++
-Pour un bon fonctionnement du module, il est nécessaire de :
+Pour un bon fonctionnement de l'extension, il est nécessaire de :
 - conserver l'affichage par défaut mise en place lors de l'installation d'audacity, surtout celui des barres d'outils. Audacity permet de réinitialiser l'affichage de celles-ci avec le sou-menu "Reset" du sous-menu "barres d'outils" du menu "Affichage". Mais il est nécessaire de redémarrer Audacity après l'avoir utilisé.
 - Conserver le format  d'affichage du temps défini par défaut ou choisir  parmi un des formats indiqués au chapitre [Vocalisation des zones d'édition du temps dans la boite d'outils Sélection Audacity #HDR103]
 
@@ -86,10 +86,10 @@ autres recommandations  de configuration(voir pour plus d'information le  ["guid
 ++ Activation des scripts ++
 Chaque  script peut être  activé de deux manière:
 - soit à l'aide d'un geste de commande classique ,
-- soit en utilisant l'interpréteur de commandes du module.
+- soit en utilisant l'interpréteur de commandes de l'extension.
 
 
-Dans la boite de dialogue "Gestes de commendes " de NVDA  ,  les scripts apportés par le module sont placées dans la catégorie "Audacity".
+Dans la boite de dialogue "Gestes de commendes " de NVDA  ,  les scripts apportés par l'extension sont placées dans la catégorie "Éditeur multi-piste Audacity: complément d'accessibilité".
 
 Pour les scripts pouvant être lancés par une commande  de l'interpréteur, cell-ci est indiquée à la suite de la description du script.
 
@@ -102,7 +102,7 @@ L'interpréteur de commande  se lance à l'aide du geste de commande "KEY_SHELL"
 
 Aujourd'hui, les commandes ne sont pas modifiables.
 
-La commande "SHELL_KEY_HELP" de l'interpréteur  liste l'ensemble des  commandes et la commande "SHELL_KEY_DISPLAY_USER_MANUAL" affiche le manuel d'utilisation du module.
+La commande "SHELL_KEY_HELP" de l'interpréteur  liste l'ensemble des  commandes et la commande "SHELL_KEY_DISPLAY_USER_MANUAL" affiche le manuel d'utilisation de l'extension.
 
 L'interpréteur de commandes s'arrête soit:
 - en tapant la touche "Echapp",
@@ -110,9 +110,9 @@ L'interpréteur de commandes s'arrête soit:
 
 
 
-+ Configuration du module +
-Le module installe dans le menu "Préférences" de NVDA le sous-menu "Module complémentaire Audacity: compléments d'accessibilité - paramètres".
-Celui-ci permet d'afficher le dialogue de configuration des paramètres du module, à savoir:
++ Configuration de l'extension +
+Cette extension installe dans le menu "Préférences" de NVDA le sous-menu "Éditeur multi-piste Audacity: complément d'accessibilité - Paramètres ...".
+Celui-ci permet d'afficher le dialogue de configuration des paramètres de l'extension, à savoir:
 - la case à cocher "Annoncer automatiquement les changements de la sélection",
 - la case à cocher "utiliser la barre d'espace ou la touche Entrée pour appuyer sur un bouton",
 - la case à cocher "Annoncer le nom des barres d'outils".
@@ -235,7 +235,7 @@ Comme tous les labels annoncés sont ceux qui sont affichés par Audacity, il pe
 
 Ces raccourcis  peuvent être modifiés par l'utilisateur sans impacter ce fonctionnement.
 
-La commande "SHELL_KEY_TOGGLE_AUTOMATIC_SELECTION_REPORT" de l'interpréteur du module  permet d'activer ou de désactiver cette annonce des changements de sélection quand celle-ci devient gênante.
+La commande "SHELL_KEY_TOGGLE_AUTOMATIC_SELECTION_REPORT" de l'interpréteur de l'extension  permet d'activer ou de désactiver cette annonce des changements de sélection quand celle-ci devient gênante.
 Elle fait basculer l'état de l'option "Annoncer automatiquement les changements de sélection" de l'état "coché" à l'état "décoché" ou réciproquement.
 
 ++ Utilisation de la barre d'espace ou de la touche Entrée pour appuyer sur un bouton ++[HDR102]
@@ -255,7 +255,7 @@ L'information est une suite de chiffres . Chaque  chiffre appartient à un group
 
 Pour modifier cette information , il faut se placer sur le chiffre à modifier  (par flèche droite ou gauche)  et l'augmenter ou le diminuer avec les flèches haute ou bas.
 
-Ce module permet une meilleure vocalisation  en indiquant un temps en heure, minute et secondes , en   indiquant la nature du chiffre qui est sélectionné et   la valeur du groupe du chiffre modifié.
+Cette extension permet une meilleure vocalisation  en indiquant un temps en heure, minute et secondes , en   indiquant la nature du chiffre qui est sélectionné et   la valeur du groupe du chiffre modifié.
 
 Sseules les format suivants sont pris en compte:
 - secondes,
@@ -279,6 +279,12 @@ Les mêmes mécanismes sont mis en place dans d'autre boites de dialogue qui pr�
 
 
 + Historique +
+++ v1.1 (16/03/2019) ++
+- modification du manifest.ini pour compatibilité avec NVDA 2019.1.0
+- remplacement du terme "module complémentaire" par "extension" imposé par les traducteurs de NVDA.
+- préparation à la compatibilité avec python 3.
+
+
 ++ v1.0.2 (28/12/2018) ++
 Correction de la mauvaise annonce de la sélection.
 
@@ -286,7 +292,7 @@ Correction de la mauvaise annonce de la sélection.
 Petite correction de documentation.
 
 ++ v1.0 (20/12/2018) ++
--Le numéro de version repart à 1.0 à cause  du changement du nom du module,
+-Le numéro de version repart à 1.0 à cause  du changement du nom de l'extension,
 - compatibilité avec audacity 2.3,
 - affichage des  scripts   sous forme de liste dans le dialogue "Scripts de l'interpréteur" avec la possibilité de lancer le script sélectionné,
 - amélioration de l'accessibilité des zones d'édition des temps dans la boite de dialogue "Enregistrement temporisé",
@@ -295,16 +301,16 @@ Petite correction de documentation.
 
 ++ v3.2 (19/06/2018) ++
 - compatibilité avec NVDA 2018.2,
-- gestion des paramètres  du module à l'installation ou désinstallation du module (mise en place du fichier install.py),
+- gestion des paramètres  de l'extension à l'installation ou désinstallation de l'extension (mise en place du fichier install.py),
 - nettoyage et réorganisation du code.
 
 
 ++ v3.1 (7/01/2018) ++
-- mise en place du module sous la forme addon template et sous dépot github.
+- mise en place de l'extension sous la forme addon template et sous dépot github.
 
 
 ++ v3.0.1 (4/01/2018) ++
-- correction du non affichage menu "Paramètres de configuration du module".
+- correction du non affichage menu "Paramètres de configuration de l'extension".
 - ajout directive pour compatibilité avec python 3.
 
 
@@ -318,13 +324,13 @@ Petite correction de documentation.
  - annoncer la position du centre de la sélection,
 - annoncer la vitesse de lecture,
  - afficher le guide d'Audacity,
-- afficher le manuel utilisateur du module.
+- afficher le manuel utilisateur de l'extension.
 
 
 -  restriction de l'utilisation de certains  scripts à  la vue de piste conformémant à la documentation,
 
 
-- structuration du module pour le dépot sur github.
+- structuration de l'extension pour le dépot sur github.
 - mise à jour du manuel utilisateur.
 
 
@@ -348,7 +354,6 @@ Petite correction de documentation.
 
 
 ++ v1.0 (01/2014) ++
-Création du module complémentaire 
+Création de l'extension.
 
 
-[1]: https://rawgit.com/paulber007/AllMyNVDAAddons/master/Audacity/audacityAccessEnhancement-1.0.nvda-addon

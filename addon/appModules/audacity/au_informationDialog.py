@@ -11,8 +11,8 @@ import speech
 import wx
 import time
 from gui import guiHelper, mainFrame
-from au_NVDAStrings import NVDAString
-from au_utils import isOpened, makeAddonWindowTitle
+from .au_NVDAStrings import NVDAString
+from .au_utils import isOpened, makeAddonWindowTitle
 import os
 
 

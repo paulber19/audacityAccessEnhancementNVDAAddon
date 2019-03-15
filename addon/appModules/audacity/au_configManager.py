@@ -1,4 +1,4 @@
-# appModules/audacity/configManager.py
+# appModules/audacity/au_configManager.py
 # a part of audacityAccessEnhancement add-on
 # Copyright 2018,paulber19
 # released under GPL.
@@ -8,10 +8,16 @@ from logHandler import log
 import addonHandler
 addonHandler.initTranslation()
 import os
-from cStringIO import StringIO
-from configobj import ConfigObj
-from validate import Validator
 import globalVars
+from configobj import ConfigObj
+# ConfigObj 5.1.0 and later integrates validate module.
+try:
+	from configobj.validate import Validator, VdtTypeError
+except ImportError:
+	from validate import Validator, VdtTypeError
+
+from .au_py3Compatibility import importStringIO
+StringIO = importStringIO()
 
 # config section
 SCT_General = "General"
@@ -106,8 +112,8 @@ class AddonConfigurationManager():
 			log.warning("Addon configuration file error")
 			self.addonConfig = None
 			return
-
-		curPath = os.path.dirname(__file__).decode("mbcs")
+		
+		curPath = addonHandler.getCodeAddon().path
 		oldConfigFileName = "addonConfig_old.ini"
 		oldConfigFile = os.path.join(curPath,  oldConfigFileName)
 		if os.path.exists(oldConfigFile):
@@ -123,15 +129,15 @@ class AddonConfigurationManager():
 		log.warning("Merge settings with old configuration")
 		baseConfig = BaseAddonConfiguration(oldConfigFile)
 		version = baseConfig[SCT_General][ID_ConfigVersion]
-		if version not in self._versionToConfiguration.keys():
+		if version not in self._versionToConfiguration:
 			log.warning("Configuration merge error: unknown configuration version")
 			return
 		oldConfig = self._versionToConfiguration[version](oldConfigFile)
 		for sect in self.addonConfig.sections:
-			for k in self.addonConfig[sect].keys():
+			for k in self.addonConfig[sect]:
 				if sect == SCT_General and k == ID_ConfigVersion:
 					continue
-				if sect in oldConfig.sections  and k in oldConfig[sect].keys():
+				if sect in oldConfig.sections  and k in oldConfig[sect]:
 					self.addonConfig[sect][k] = oldConfig[sect][k]
 	
 	def saveSettings(self):
@@ -143,10 +149,9 @@ class AddonConfigurationManager():
 			val = Validator()
 			self.addonConfig.validate(val, copy = True)
 			self.addonConfig.write()
-		
-		except Exception, e:
+		except:
 			log.warning("Could not save configuration - probably read only file system")
-			raise e
+
 	
 	def terminate(self):
 		self.saveSettings()

@@ -13,9 +13,11 @@ import shlobj
 import gui
 import speech
 import wx
-from au_utils import messageBox, makeAddonWindowTitle
-from cStringIO import StringIO
 from configobj import ConfigObj, ConfigObjError
+from .au_py3Compatibility import importStringIO 
+StringIO = importStringIO()
+
+
 _curAddon = addonHandler.getCodeAddon()
 
 
@@ -52,7 +54,7 @@ class ApplicationSettingsManager(object):
 			return None
 		settings = self.getSettings()
 		key = "SelectionFormat"
-		return  settings[key] if key in settings.keys() else None
+		return  settings[key] if key in settings else None
 
 class SettingsFileHandler(object):
 	_fileName = "audacity.cfg"

@@ -8,30 +8,36 @@
 import addonHandler
 addonHandler.initTranslation()
 
+previousNameAndAuthor = ("audacity", "paulber007")
+previousConfigFileName = "audacityAddon.ini"
+saveConfigFileName = "addonConfig_old.ini"
+
 def uninstallPreviousVersion():
 	for addon in addonHandler.getAvailableAddons():
-		if addon.manifest["name"] == "audacity" and addon.manifest["author"] == "paulber007":
+		if (addon.manifest["name"], addon.manifest["author"]) == previousNameAndAuthor:
 			addon.requestRemove()
 			break
-	
+
 def onInstall():
-	import os, globalVars
-	import gui, wx,shutil
+	import os
+	import shutil
+	import globalVars
+	import wx
+	import gui
 	import sys
 	from logHandler import log
 	curPath = os.path.dirname(__file__).decode("mbcs")
 	sys.path.append(curPath)
 	import buildVars
 	addonName = buildVars.addon_info["addon_name"]
+	addonSummary= _(buildVars.addon_info["addon_summary"])
 	del sys.path[-1]
 	# add-on name has  changed. We must uninstall previous version.
 	uninstallPreviousVersion()
 	# save old configuration
 	userConfigPath = globalVars.appArgs.configPath
-	previousVersionAddonConfigFile = os.path.join(userConfigPath, "audacityAddon.ini")
-	previousConfigFileName = "audacityAddon.ini"
-	configFileName = "%sAddon.ini"%addonName
-	for fileName in [configFileName, previousConfigFileName]:
+	curConfigFileName = "%sAddon.ini"%addonName
+	for fileName in [curConfigFileName, previousConfigFileName]:
 		f= os.path.join(userConfigPath, fileName)
 		if not os.path.exists(f):
 			continue
@@ -39,10 +45,10 @@ def onInstall():
 			# Translators: the label of a message box dialog  to ask the user if he wants keep current configuration settings.
 			_("Do you want to keep current add-on configuration settings ?"),
 			# Translators: the title of a message box dialog.
-			_("Audacity access enhancement  add-on installation"),
+			_("%s - installation"%addonSummary),
 			wx.YES|wx.NO|wx.ICON_WARNING)==wx.YES:
 			try:
-				path = os.path.join(curPath, "appModules", "audacity","AddonConfig_old.ini")
+				path = os.path.join(curPath, saveConfigFileName )
 				shutil.copy(f, path)
 				os.remove(f)
 				log.warning("%s file copied and deleted"%f)
@@ -68,6 +74,8 @@ def deleteAddonConfig():
 		log.warning("Error on deletion of%s  file"%configFile)
 	else:
 		log.warning("%s file deleted"%configFile)
+
+	
 def onUninstall():
 	deleteAddonConfig(  )
 

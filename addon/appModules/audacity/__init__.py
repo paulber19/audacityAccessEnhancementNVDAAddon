@@ -1,8 +1,6 @@
-
-# -*- coding: UTF-8 -*-
 #appModules/audacity/___init__.py
 # a part of audacityAccessEnhancement add-on
-#Copyright (C) 2018, Paulber19
+#Copyright (C) 2018-2019, Paulber19
 #This file is covered by the GNU General Public License.
 # Released under GPL 2
 
@@ -25,20 +23,19 @@ import NVDAObjects
 from NVDAObjects.window import Window
 from NVDAObjects.IAccessible import IAccessible
 import time
-from  au_objects import isPressed, isAvailable
-#import au_timerControl
-from  au_timerControl import *
-import au_time
-import au_objects
 from functools import wraps
 import  globalPluginHandler
 import tones
-from au_informationDialog import InformationDialog
 import winInputHook
 from keyboardHandler import internal_keyDownEvent
-from au_configManager import _addonConfigManager
-from au_utils import isOpened, makeAddonWindowTitle
-from au_NVDAStrings import NVDAString
+from . import au_time
+from  . import au_objects 
+from  .au_timerControl import *
+from .au_configManager import _addonConfigManager
+from .au_utils import isOpened, makeAddonWindowTitle
+from .au_NVDAStrings import NVDAString
+from .au_informationDialog import InformationDialog
+from .au_py3Compatibility import _unicode, iterate_items
 
 # to save current winInputHook keyDownCallback function before hook
 _winInputHookKeyDownCallback  = None
@@ -65,7 +62,7 @@ _curAddon = addonHandler.getCodeAddon()
 _addonSummary = _curAddon.manifest['summary']
 _addonVersion = _curAddon.manifest['version']
 _addonName = _curAddon.manifest['name']
-_scriptCategory = unicode(_addonSummary)
+_scriptCategory = _unicode(_addonSummary)
 
 def monitorAudioAndSelectionChanges():
 	global GB_monitorTimer, GB_audioPosition, GB_selection, GB_recordButtonIsPressed
@@ -85,7 +82,7 @@ def monitorAudioAndSelectionChanges():
 	def getSelectionChangeMessage (audioChangeMessage):
 		global GB_selection, GB_audioPosition
 
-		from au_configManager import _addonConfigManager
+		from .au_configManager import _addonConfigManager
 		selectionTimer = au_timerControl.SelectionTimers()
 		if not selectionTimer.isAvailable:
 			return None
@@ -151,7 +148,7 @@ def monitorAudioAndSelectionChanges():
 		return
 	
 	if  (GB_recordButtonIsPressed
-		or (isPressed("play") and not isPressed("pause"))):
+		or (au_objects.isPressed("play") and not au_objects.isPressed("pause"))):
 		# don't speak selection or audio position
 		return
 	if obj.role == ROLE_TRACKVIEW and obj.childCount == 0:
@@ -537,7 +534,7 @@ class TimerControlDigit(NVDAObjects.NVDAObject):
 			digitID = obj.IAccessibleChildID -1
 			digitIDs = TimerControlDigit._selectionFormatToDigitIDs [obj.editFormatID]
 			digitName = _digitNames[digitIDs[digitID]]
-			msg = u"{0} {1}" .format(digitName, name)
+			msg = _unicode("{0} {1}") .format(digitName, name)
 			ui.message(msg)
 
 		stopTaskTimer()
@@ -548,7 +545,7 @@ class TimerControlDigit(NVDAObjects.NVDAObject):
 		
 class SelectionTimerControlDigit(TimerControlDigit):
 	def initOverlayClass(self):
-		from au_applicationSettings import ApplicationSettingsManager
+		from .au_applicationSettings import ApplicationSettingsManager
 		applicationSettingsManager  = ApplicationSettingsManager()
 		self.editFormat = applicationSettingsManager.getSelectionFormat()
 		tc = au_timerControl.TimerControl(self.parent, self.editFormat)
@@ -569,7 +566,7 @@ class TimerRecordDurationControlDigit(TimerControlDigit):
 
 class Button(NVDAObjects.NVDAObject):
 	def initOverlayClass(self):
-		from au_configManager import _addonConfigManager
+		from .au_configManager import _addonConfigManager
 		if _addonConfigManager.toggleUseSpaceBarToPressButtonOption(False):
 			self.bindGesture("kb:space", "spaceKey")
 			self.bindGesture("kb:Enter", "spaceKey")
@@ -658,7 +655,7 @@ class AppModule(appModuleHandler.AppModule):
 		# Translators: Input help mode message for display audacity guide command.
 		"displayAudacityGuide": (_("Display audacity guide"), None),
 		# Translators: Input help mode message for launch module layer command.
-		"moduleLayer":  (_("Launch %s addon 's command shell") %_addonSummary , None),
+		"moduleLayer":  (_("Launch  command shell"), None),
 		# Translators: Input help mode message for display shell command help dialog command.
 		"displayHelp" : (_("Display shell scripts's list"), None),
 	}
@@ -677,7 +674,7 @@ class AppModule(appModuleHandler.AppModule):
 	
 	def installSettingsMenu(self):
 		self.preferencesMenu= gui.mainFrame.sysTrayIcon.preferencesMenu
-		from au_configGui import AudacitySettingsDialog
+		from .au_configGui import AudacitySettingsDialog
 		self.audacityMenu = self.preferencesMenu.Append(wx.ID_ANY,
 			AudacitySettingsDialog.title + " ...",
 			"")
@@ -707,7 +704,7 @@ class AppModule(appModuleHandler.AppModule):
 		super(AppModule, self).terminate()	
 	
 	def onAudacityMenu(self, evt):
-		from au_configGui import AudacitySettingsDialog
+		from .au_configGui import AudacitySettingsDialog
 		gui.mainFrame._popupSettingsDialog(AudacitySettingsDialog)
 	
 	def chooseNVDAObjectOverlayClasses(self, obj, clsList):
@@ -739,38 +736,36 @@ class AppModule(appModuleHandler.AppModule):
 		pass
 	
 	def _bindGestures(self):
-		for script, gestures  in self._mainScriptToGesture.iteritems():
+		for script, gestures  in iterate_items(self._mainScriptToGesture):
 			if gestures is None:
 				continue
 			for gest in gestures:
 				self.bindGesture(gest, script)
 	
 	def _setShellGestures(self):
-		for script, gestures in self._shellScriptToGestures.iteritems():
+		for script, gestures in iterate_items(self._shellScriptToGestures):
 			for gest in gestures:
 				self._shellGestures[gest] = script
 	
 	def installShellScriptDocs(self):
-		for script in self._scriptsToDocsAndCategory .keys():
+		for script in self._scriptsToDocsAndCategory :
 			(doc, category) = self._getScriptDocAndCategory(script)
 			commandText = None
-			if script in self._shellScriptToGestures.keys():
+			if script in self._shellScriptToGestures:
 				gestures =  self._shellScriptToGestures[script]
 				key = gestures[0].split(":")[-1]
 				# Translators: message for indicate shell command in input help mode.
 				commandText = _("(command: %s)")%key
-
-
 			if commandText is not None:
 				doc = "%s %s"%(doc, commandText)
 			scr = "script_%s"%script
 			func = getattr(self, scr)
-			func.im_func.__doc__ = doc
-			func.im_func.category = category
+			func.__func__.__doc__ = doc
+			func.__func__.category = category
 			# we must remove documentation of replaced nvda global commands scripts
 			if  hasattr(func, "removeCommandsScript") and ((featureID is None) or (featureID and not isInstallWithoutGesture(featureID))):
 				globalCommandsFunc = getattr(func, "removeCommandsScript")
-				globalCommandsFunc.im_func.__doc__  = None
+				globalCommandsFunc.__func__.__doc__  = None
 	
 	def _getScriptDocAndCategory(self, script):
 		(doc, category) = self._scriptsToDocsAndCategory [script]
@@ -804,7 +799,7 @@ class AppModule(appModuleHandler.AppModule):
 			self._reportFocusOnToolbar = False
 		nextHandler()
 	def event_focusEntered(self, obj, nextHandler):
-		from au_configManager import _addonConfigManager
+		from .au_configManager import _addonConfigManager
 		if _addonConfigManager.toggleReportToolbarNameOnFocusEnteredOption(False):
 			if obj.name is not None and  obj.role == controlTypes.ROLE_PANE and  obj.name != "panel" and  obj.name != "":
 				speech.speakMessage(obj.name)
@@ -841,7 +836,7 @@ class AppModule(appModuleHandler.AppModule):
 		tones.beep(420, 40)
 	
 	def script_toggleSelectionChangeAutomaticReport(self, gesture):
-		from au_configManager import _addonConfigManager
+		from .au_configManager import _addonConfigManager
 		stopTaskTimer()
 		_addonConfigManager .toggleAutomaticSelectionChangeReportOption()
 		if _addonConfigManager .toggleAutomaticSelectionChangeReportOption(False):
@@ -912,16 +907,16 @@ class AppModule(appModuleHandler.AppModule):
 		if not self.inTrackView(api.getFocusObject()):
 			return
 		pressed = False
-		if isAvailable("record") and isPressed("record"):
+		if au_objects.isAvailable("record") and au_objects.isPressed("record"):
 			# Translators: message to user when button record is pressed.
 			ui.message(_("record button pressed"))
 			pressed = True
 		
-		if isAvailable("play") and isPressed("play"):
+		if au_objects.isAvailable("play") and au_objects.isPressed("play"):
 			# Translators: message to the user when play button is pressed.
 			ui.message(_("play button pressed"))
 			pressed = True
-		if isPressed("pause"):
+		if au_objects.isPressed("pause"):
 			# Translators: message to the user when pause button is pressed.
 			ui.message(_("Pause button pressed"))
 			pressed = True
@@ -1022,7 +1017,7 @@ class AppModule(appModuleHandler.AppModule):
 	
 	def script_test(self, gesture):
 		speech.speakMessage("test audacity")
-		from au_applicationSettings import ApplicationSettingsManager
+		from .au_applicationSettings import ApplicationSettingsManager
 		app = ApplicationSettingsManager()
 		app.getSettings()
 
@@ -1052,7 +1047,7 @@ class ShellScriptsListDialog(wx.Dialog):
 		self.docToScript= {}
 		self.scriptToKey = {}
 		for script in self.appModule._scriptsToDocsAndCategory :
-			if script not in self.appModule._shellScriptToGestures .keys():
+			if script not in self.appModule._shellScriptToGestures :
 				continue
 			gest = self.appModule._shellScriptToGestures [script][0]
 			(doc, category) = self.appModule._scriptsToDocsAndCategory [script]
@@ -1062,7 +1057,7 @@ class ShellScriptsListDialog(wx.Dialog):
 	
 	def doGui(self):
 		self.initList()
-		self.docList = sorted([doc for doc in self.docToScript.keys()])
+		self.docList = sorted([doc for doc in self.docToScript])
 		choice = []
 		for doc in self.docList:
 			script = self.docToScript[doc]

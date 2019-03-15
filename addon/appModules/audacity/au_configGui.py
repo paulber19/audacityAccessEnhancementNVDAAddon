@@ -10,7 +10,7 @@ from logHandler import log
 import wx
 import gui
 from gui.settingsDialogs import SettingsDialog
-from au_configManager import _addonConfigManager
+from .au_configManager import _addonConfigManager
 _curAddon = addonHandler.getCodeAddon()
 _addonSummary = _curAddon.manifest['summary']
 
@@ -19,7 +19,7 @@ class AudacitySettingsDialog(SettingsDialog):
 	title = _("%s add-on - settings")%_addonSummary
 	
 	def makeSettings(self, settingsSizer):
-		from au_configManager import _addonConfigManager
+		from .au_configManager import _addonConfigManager
 		sHelper = gui.guiHelper.BoxSizerHelper(self, sizer=settingsSizer)
 		# Translators: This is the label for a checkbox in the AudacitySettingsDialog.
 		labelText= _("Report automaticaly selection's changes")
@@ -39,7 +39,7 @@ class AudacitySettingsDialog(SettingsDialog):
 		self.AutomaticSelectionChangeReportBox.SetFocus()
 	
 	def saveSettingChanges (self):
-		from au_configManager import _addonConfigManager
+		from .au_configManager import _addonConfigManager
 		if self.AutomaticSelectionChangeReportBox.IsChecked() != _addonConfigManager .toggleAutomaticSelectionChangeReportOption(False):
 			_addonConfigManager .toggleAutomaticSelectionChangeReportOption(True)
 		

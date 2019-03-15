@@ -14,8 +14,8 @@ import api
 from NVDAObjects.window import Window
 from NVDAObjects.IAccessible import IAccessible
 import time
-from au_time import *
-import au_objects
+from .au_time import *
+from . import au_objects
 
 SELFOR_SECONDS = 0
 SELFOR_HHMMSS = 1
@@ -60,7 +60,7 @@ def format_samples(text):
 	l = text.split(" ")
 	return "+" + l[0]
 	
-from  au_objects import isPressed, selectionChoiceObject
+from  .au_objects import isPressed, selectionChoiceObject
 
 def sayMessage(msg):
 	api.processPendingEvents()
@@ -155,7 +155,7 @@ class TimerControl(object):
 class AudioTimerControl(TimerControl):
 	def __init__(self):
 		obj = au_objects.audioPositionObject()
-		from au_applicationSettings import ApplicationSettingsManager
+		from .au_applicationSettings import ApplicationSettingsManager
 		applicationSettingsManager  = ApplicationSettingsManager()
 		editFormat = applicationSettingsManager.getSelectionFormat()
 		super(AudioTimerControl, self).__init__(obj, editFormat)
@@ -207,7 +207,7 @@ class SelectionStartTimerControl(TimerControl):
 		obj = au_objects.selectionStartObject()
 		if obj is None:
 			log.warning ("no selectionStart object")
-		from au_applicationSettings import ApplicationSettingsManager
+		from .au_applicationSettings import ApplicationSettingsManager
 		applicationSettingsManager  = ApplicationSettingsManager()
 		editFormat = applicationSettingsManager.getSelectionFormat()
 		super(SelectionStartTimerControl, self).__init__(obj, editFormat)
@@ -220,7 +220,7 @@ class SelectionEndTimerControl(TimerControl):
 		obj = au_objects.selectionEndObject()
 		if obj is None:
 			log.warning("no selectionEnd object")
-		from au_applicationSettings import ApplicationSettingsManager
+		from .au_applicationSettings import ApplicationSettingsManager
 		applicationSettingsManager  = ApplicationSettingsManager()
 		editFormat = applicationSettingsManager.getSelectionFormat()
 		super(SelectionEndTimerControl, self).__init__(obj, editFormat)
@@ -231,7 +231,7 @@ class SelectionEndTimerControl(TimerControl):
 class SelectionDurationTimerControl(TimerControl):
 	def __init__(self):
 		obj = au_objects.selectionDurationObject()
-		from au_applicationSettings import ApplicationSettingsManager
+		from .au_applicationSettings import ApplicationSettingsManager
 		applicationSettingsManager  = ApplicationSettingsManager()
 		editFormat = applicationSettingsManager.getSelectionFormat()
 		super(SelectionDurationTimerControl, self).__init__(obj, editFormat)
@@ -242,7 +242,7 @@ class SelectionDurationTimerControl(TimerControl):
 class SelectionCenterTimerControl(TimerControl):
 	def __init__(self):
 		obj = au_objects.selectionCenterObject()
-		from au_applicationSettings import ApplicationSettingsManager
+		from .au_applicationSettings import ApplicationSettingsManager
 		applicationSettingsManager  = ApplicationSettingsManager()
 		editFormat = applicationSettingsManager.getSelectionFormat()
 		super(SelectionCenterTimerControl, self).__init__(obj, editFormat)

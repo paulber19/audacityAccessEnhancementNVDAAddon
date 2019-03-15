@@ -3,11 +3,11 @@ Auteur: paulber19 (paulber19@laposte.net)
 
 
 % add-on version
-%!PostProc (html): ADDON_VERSION 1.0.2
+%!PostProc (html): ADDON_VERSION 1.1
 %!Target: html 
 %!Encoding: UTF-8 
 %!Options: --toc 
-%!style:..\style.css 
+%!style:..\style_t2t.css 
 % Remove the Table of Contents heading from the toc. 
 %!PostProc(html): '^.*\<LI\>\<A HREF="#toc"\>.*\</A\>.*$' " 
 
@@ -35,7 +35,7 @@ Auteur: paulber19 (paulber19@laposte.net)
 %!PostProc (html): SHELL_KEY_DISPLAY_USER_MANUAL g 
 %!PostProc (html): SHELL_KEY_DISPLAY_GUIDE control+g 
 %!PostProc (html): SHELL_KEY_HELP h 
-Download: [version ADDON_VERSION https://rawgit.com/paulber007/AllMyNVDAAddons/master/audacity/audacityAccessEnhancement-1.0.nvda-addon]
+Download: [version ADDON_VERSION https://rawgit.com/paulber007/AllMyNVDAAddons/master/audacity/audacityAccessEnhancement-ADDON_VERSION.nvda-addon]
 
 = Summary =[toc] 
 %%toc 
@@ -66,7 +66,7 @@ As well as accessibility improvements:
 
 
 ++ Compatibility ++ 
-Tis version of module has been tested with NVDA 2018.4, NVDA 2018.3.2, NVDA 2018.2.1  and audacity v2.3.0.0.
+Tis version of module has been tested with NVDA 2018.4, NVDA 2019.1.0 and audacity v2.3.0.0.
 
 Previous versions of NVDA and Audacity are not supported. 
 
@@ -91,9 +91,9 @@ Each script can be activated in two ways:
 - either by using the shell of the module. 
 
 
-In the NVDA "Input gestures" dialog, the scripts provided by the module are placed in the category of "Audacity". 
+In the NVDA "Input gestures" dialog, the scripts provided by the module are placed in the category named "Audacity multi-track editor: accessibility enhancement".
 
-For scripts that can be launched by a command interpreter, this is indicated following the description of the script. 
+For scripts that can be launched by a command interpreter, the command is indicated following the description of the script. 
 
 
 By default, the vast majority of scripts that can be run by the shell are not assigned to any input gesture .
@@ -112,14 +112,15 @@ The shell stops is:
 
 
 + Module's Configuration + 
-The module installs in the NVDA's "Preferences" menu,  the "Audacity addon's Settings" sub-menu. 
+The module installs in the NVDA's "Preferences" menu,  the "Audacity multi-track editor: accessibility enhancement add-on - settings ..." sub-menu. 
+
 It allows you to display the configuration dialog settings of the module, namely: 
 - the check box  "Report automatically the selection changes", 
 - the check box "use the space bar or the Enter key to press a button", 
 - the check box "Report toolbars's name". 
 
 
-This configuration is saved in the file "audacityAddon.ini" in the NVDA's user configuration folder.
+This configuration is saved in the file "audacityAccessEnhancementAddon.ini" in the NVDA's user configuration folder.
 
 + Scripts + 
 ++ Report audio position ++[hdr1] 
@@ -282,6 +283,12 @@ The same mechanisms are put in place in other dialog boxes which are areas of ed
 
 
 + History + 
+
+++ v1.1 (16/03/2019) ++
+- Modification of manifest.ini file for compatibility with NVDA 2019.1.0.
+- code changes for compatibility with python 3.
+
+
 ++ v1.0.2 (28/12/2018) ++
 Correction of bad announcement of selection.
 

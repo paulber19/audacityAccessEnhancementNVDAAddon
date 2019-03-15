@@ -4,7 +4,7 @@
 * Télécharger [version stable][1]
 * Télécharger [version de développement][2]
 
-Ce module améliore l'accessiblité du logiciel Audacity en apportant:
+Cette extension améliore l'accessiblité du logiciel Audacity en apportant:
 * un script  pour connaitre la position audio,
 * un script  pour connaitre le début et la fin de la sélection,
 * un script pour annoncer l'état des boutons "Pause" "Lecture" et "enregistrement",
@@ -15,14 +15,13 @@ Ce module améliore l'accessiblité du logiciel Audacity en apportant:
 * un  script pour lire le niveau courant des vu-mètres de crète  en lecture ou enregistrement,
 * un  script pour lire le niveau courant des potentiomètres de lecture ou d'enregistrement,
 * un  script pour lire  la vitesse de lecture,
-* un  script pour afficher le manuel utilisateur du module,
+* un  script pour afficher le manuel utilisateur de cette extension,
 * un script pour afficher le guide d'audacity écrit par  David Bailes.
 
 
-Cette version du module a été testée avec NVDA 2018.4, NVDA 2018.3.2, NVDA 2018.2.1 et audacity v2.3.0.
+Cette version de l'extension a été testée avec NVDA 2018.4, NVDA 2019.1.0   et audacity v2.3.0.
 
 Les précédentes versions de NVDA et Audacity ne sont pas supportées.
 
-[1]: https://rawgit.com/paulber007/AllMyNVDAAddons/master/audacity/audacityAccessEnhancement-1.0.2.nvda-addon
-
-[2]: https://rawgit.com/paulber007/AllMyNVDAAddons/master/audacity/audacityAccessEnhancement-1.0.2.nvda-addon
+[1]: https://rawgit.com/paulber007/AllMyNVDAAddons/master/audacity/audacityAccessEnhancement-1.1.nvda-addon
+[2]: https://rawgit.com/paulber007/AllMyNVDAAddons/master/audacity/audacityAccessEnhancement-1.1.nvda-addon
