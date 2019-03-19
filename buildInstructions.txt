@@ -21,8 +21,8 @@ The build variables dictionary allows you to control the same variables as manif
 After add-on creation, "makeAddon.bat" file does some clean-up.
 
 Update repository:
- the readme.md file of repository must be  the readme.md file of current add-on\doc\en folder and it needs the style_md.css file. So if you do some changes in the readme.md file of the add-on , you must update the repository. Run "updateRepo.bat" batche command.
-makeAddon.bat copy also this file  with "style_md.css" fileinto repository root.
+ the readme.md file of repository must be  the readme.md file of current add-on\doc\en folder and it needs the style.css file. So if you do some changes in the readme.md file of the add-on , you must update the repository. Run "updateRepo.bat" batche command.
+makeAddon.bat copy also this file  with "style.css" fileinto repository root.
 
 To generate the  add-on  pot file, you can use "makePotFile.bat" batche command). 
 If you pull a add-on version, you don't need to run makePotFile.bat to get pot file because this file is  placed  into addon\locale\en folder.
