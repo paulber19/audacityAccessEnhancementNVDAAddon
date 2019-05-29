@@ -3,7 +3,7 @@ Auteur: paulber19 (paulber19@laposte.net)
 
 
 % add-on version
-%!PostProc (html): ADDON_VERSION 1.1
+%!PostProc (html): ADDON_VERSION 1.2
 %!Target: html 
 %!Encoding: UTF-8 
 %!Options: --toc 
@@ -283,6 +283,8 @@ The same mechanisms are put in place in other dialog boxes which are areas of ed
 
 
 + History + 
+++ v1.2 (01/06/2019) ++
+- Modification of manifest.ini file for compatibility with NVDA 2019.2.0.
 
 ++ v1.1 (16/03/2019) ++
 - Modification of manifest.ini file for compatibility with NVDA 2019.1.0.

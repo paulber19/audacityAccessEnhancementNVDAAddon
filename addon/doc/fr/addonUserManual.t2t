@@ -2,7 +2,7 @@
 Auteur: paulber19 (paulber19@laposte.net)
 
 % add-on version
-%!PostProc (html): ADDON_VERSION 1.1
+%!PostProc (html): ADDON_VERSION 1.2
 
 %!Target: html
 %!Encoding: UTF-8
@@ -279,6 +279,9 @@ Les mêmes mécanismes sont mis en place dans d'autre boites de dialogue qui pr�
 
 
 + Historique +
+++ v1.2 (01/06/2019) ++
+Compatibilité avec NVDA 2019.2 (mise à jour du manifest.ini)
+
 ++ v1.1 (16/03/2019) ++
 - modification du manifest.ini pour compatibilité avec NVDA 2019.1.0
 - remplacement du terme "module complémentaire" par "extension" imposé par les traducteurs de NVDA.
