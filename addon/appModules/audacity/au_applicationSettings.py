@@ -2,7 +2,7 @@
 # a part of audacityAccessEnhancement add-on
 # Copyright 2018 paulber19
 #This file is covered by the GNU General Public License.
-#See the file COPYING for more details.
+
 
 import addonHandler
 addonHandler.initTranslation()
@@ -14,11 +14,16 @@ import gui
 import speech
 import wx
 from configobj import ConfigObj, ConfigObjError
-from .au_py3Compatibility import importStringIO 
+
+import sys
+_curAddon = addonHandler.getCodeAddon()
+path = os.path.join(_curAddon.path, "shared")
+sys.path.append(path)
+from au_py3Compatibility import importStringIO 
+del sys.path[-1]
 StringIO = importStringIO()
 
 
-_curAddon = addonHandler.getCodeAddon()
 
 
 class ApplicationSettingsManager(object):

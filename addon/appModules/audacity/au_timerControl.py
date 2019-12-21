@@ -1,4 +1,4 @@
-#appModules/audacity/au_timerControl.py
+#appModules\audacity\au_timerControl.py
 # a part of audacityAccessEnhancement add-on
 #Copyright (C) 2018, Paulber19
 #This file is covered by the GNU General Public License.

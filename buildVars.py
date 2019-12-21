@@ -33,13 +33,13 @@ addon_info = {
 * script to display audacity guide written by David Bailes.
 
 
-This addon's version has been tested with NVDA 2018.4, 2019.1 and audacity v2.3.0.
+This addon's version has been tested with audacity v2.3.2.
 
 Previous versions of Audacity are not  supported.
 """),
 
 	# version
-	"addon_version" : "1.2",
+	"addon_version" : "1.3-dev19",
 	# Author(s)
 	"addon_author" : "paulber19",
 	# URL for the add-on documentation support
@@ -47,9 +47,9 @@ Previous versions of Audacity are not  supported.
 	# Documentation file name
 	"addon_docFileName" : "addonUserManual.html",
 	# Minimum NVDA version supported (e.g. "2018.3")
-	"addon_minimumNVDAVersion" : "2018.4.0",
+	"addon_minimumNVDAVersion" : "2019.1",
 	# Last NVDA version supported/tested (e.g. "2018.4", ideally more recent than minimum version)
-	"addon_lastTestedNVDAVersion" : "2019.2.0",
+	"addon_lastTestedNVDAVersion" : "2019.3",
 	# Add-on update channel (default is stable or None)
 	"addon_updateChannel" : None,
 }
@@ -59,10 +59,12 @@ import os.path
 
 # Define the python files that are the sources of your add-on.
 # You can use glob expressions here, they will be expanded.
-mainPath = os.path.join("addon", "appModules", "audacity")
 pythonSources = [
 os.path.join("addon", "*.py"),
+os.path.join("addon", "shared", "*.py"),
 os.path.join("addon", "appModules", "audacity", "*.py"),
+os.path.join("addon", "globalPlugins", "audacityAccessEnhancement", "*.py"),
+os.path.join("addon", "globalPlugins", "audacityAccessEnhancement", "updateHandler", "*.py"),
 ]
 
 # Files that contain strings for translation. Usually your python sources

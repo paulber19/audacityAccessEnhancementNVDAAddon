@@ -2,8 +2,12 @@
 
 * Author : PaulBer19
 * URL : paulber19@laposte.net
-* Download [stable version][1]
-* Download [developpement version][2]
+* Download:
+	* [stable version][1]
+	* [developpement' versions][2]
+* Compatibility:
+	* Minimum required NVDA version:  2019.1
+	* Last NVDA version tested:  2019.3
 
 
 This add-on adds extra functionality when working with Audacity multi-track editor:
@@ -22,9 +26,7 @@ This add-on adds extra functionality when working with Audacity multi-track edit
 * script to display audacity guide written by David Bailes.
 
 
-This addon's version has been tested with NVDA 2018.4,NVDA 2019.1.0 and audacity v2.3.0.
+Compatible and Tested with Audacity 2.3.2.
 
-Previous versions of NVDA and Audacity are not  supported.
-
-[1]: https://rawgit.com/paulber007/AllMyNVDAAddons/master/audacity/audacityAccessEnhancement-1.1.nvda-addon
-[2]: https://rawgit.com/paulber007/AllMyNVDAAddons/master/audacity/audacityAccessEnhancement-1.1.nvda-addon
+[1]: https://github.com/paulber007/AllMyNVDAAddons/raw/master/audacityAccessEnhancement/audacityAccessEnhancement-1.3.nvda-addon
+[2]: https://github.com/paulber007/AllMyNVDAAddons/tree/master/audacityAccessEnhancement/dev

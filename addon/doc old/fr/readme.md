@@ -1,5 +1,6 @@
 # Éditeur multi-piste Audacity: complément d'accessibilité #
-* Author : PaulBer19
+
+* Author : paulber19
 * URL : paulber19@laposte.net
 * Téléchargement:
 	* [version stable][1]
@@ -10,7 +11,6 @@
 
 
 Cette extension améliore l'accessiblité du logiciel Audacity en apportant:
-
 * un script  pour connaitre la position audio,
 * un script  pour connaitre le début et la fin de la sélection,
 * un script pour annoncer l'état des boutons "Pause" "Lecture" et "enregistrement",
@@ -27,5 +27,7 @@ Cette extension améliore l'accessiblité du logiciel Audacity en apportant:
 
 Elle est Compatible et testée avec Audacity version 2.3.2.
 
+
 [1]: https://github.com/paulber007/AllMyNVDAAddons/raw/master/audacityAccessEnhancement/audacityAccessEnhancement-1.3.nvda-addon
+
 [2]: https://github.com/paulber007/AllMyNVDAAddons/tree/master/audacityAccessEnhancement/dev

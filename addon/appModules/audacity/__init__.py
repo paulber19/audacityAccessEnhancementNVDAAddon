@@ -1,4 +1,4 @@
-#appModules/audacity/___init__.py
+#appModules\audacity\__init__.py
 # a part of audacityAccessEnhancement add-on
 #Copyright (C) 2018-2019, Paulber19
 #This file is covered by the GNU General Public License.
@@ -31,11 +31,17 @@ from keyboardHandler import internal_keyDownEvent
 from . import au_time
 from  . import au_objects 
 from  .au_timerControl import *
-from .au_configManager import _addonConfigManager
+import sys
+_curAddon = addonHandler.getCodeAddon()
+path = os.path.join(_curAddon.path, "shared")
+sys.path.append(path)
+from  au_addonConfigManager import _addonConfigManager
+from au_py3Compatibility import _unicode, iterate_items
+del sys.path[-1]
 from .au_utils import isOpened, makeAddonWindowTitle
 from .au_NVDAStrings import NVDAString
 from .au_informationDialog import InformationDialog
-from .au_py3Compatibility import _unicode, iterate_items
+
 
 # to save current winInputHook keyDownCallback function before hook
 _winInputHookKeyDownCallback  = None
@@ -81,8 +87,6 @@ def monitorAudioAndSelectionChanges():
 	
 	def getSelectionChangeMessage (audioChangeMessage):
 		global GB_selection, GB_audioPosition
-
-		from .au_configManager import _addonConfigManager
 		selectionTimer = au_timerControl.SelectionTimers()
 		if not selectionTimer.isAvailable:
 			return None
@@ -566,7 +570,6 @@ class TimerRecordDurationControlDigit(TimerControlDigit):
 
 class Button(NVDAObjects.NVDAObject):
 	def initOverlayClass(self):
-		from .au_configManager import _addonConfigManager
 		if _addonConfigManager.toggleUseSpaceBarToPressButtonOption(False):
 			self.bindGesture("kb:space", "spaceKey")
 			self.bindGesture("kb:Enter", "spaceKey")
@@ -666,35 +669,13 @@ class AppModule(appModuleHandler.AppModule):
 		self._reportFocusOnToolbar = False
 		self._reportSelectionChange = True
 		self.toggling = False
-		self.installSettingsMenu()
 		self._bindGestures()
 		self._setShellGestures()
 		#wx.CallLater(200,self.installShellScriptDocs)
 		self.installShellScriptDocs()
-	
-	def installSettingsMenu(self):
-		self.preferencesMenu= gui.mainFrame.sysTrayIcon.preferencesMenu
-		from .au_configGui import AudacitySettingsDialog
-		self.audacityMenu = self.preferencesMenu.Append(wx.ID_ANY,
-			AudacitySettingsDialog.title + " ...",
-			"")
-
-		gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU, self.onAudacityMenu, self.audacityMenu)
-	
-	def deleteSettingsMenu(self):
-		try:
-			if wx.version().startswith("4"):
-				# for wxPython 4
-				self.preferencesMenu.Remove (self.audacityMenu )
-			else:
-				# for wxPython 3
-				self.preferencesMenu.RemoveItem (self.audacityMenu )
-		except:
-			pass
 		
 	def terminate (self):
 		global GB_monitorTimer 
-		self.deleteSettingsMenu()
 		if hasattr(self, "checkObjectsTimer") and self.checkObjectsTimer is not None:
 			self.checkObjectsTimer.Stop()
 			self.checkObjectsTimer = None
@@ -702,10 +683,6 @@ class AppModule(appModuleHandler.AppModule):
 			GB_monitorTimer.Stop()
 			GB_monitorTimer = None
 		super(AppModule, self).terminate()	
-	
-	def onAudacityMenu(self, evt):
-		from .au_configGui import AudacitySettingsDialog
-		gui.mainFrame._popupSettingsDialog(AudacitySettingsDialog)
 	
 	def chooseNVDAObjectOverlayClasses(self, obj, clsList):
 		controlID = obj.windowControlID
@@ -799,7 +776,6 @@ class AppModule(appModuleHandler.AppModule):
 			self._reportFocusOnToolbar = False
 		nextHandler()
 	def event_focusEntered(self, obj, nextHandler):
-		from .au_configManager import _addonConfigManager
 		if _addonConfigManager.toggleReportToolbarNameOnFocusEnteredOption(False):
 			if obj.name is not None and  obj.role == controlTypes.ROLE_PANE and  obj.name != "panel" and  obj.name != "":
 				speech.speakMessage(obj.name)
@@ -836,7 +812,6 @@ class AppModule(appModuleHandler.AppModule):
 		tones.beep(420, 40)
 	
 	def script_toggleSelectionChangeAutomaticReport(self, gesture):
-		from .au_configManager import _addonConfigManager
 		stopTaskTimer()
 		_addonConfigManager .toggleAutomaticSelectionChangeReportOption()
 		if _addonConfigManager .toggleAutomaticSelectionChangeReportOption(False):

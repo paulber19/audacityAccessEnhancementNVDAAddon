@@ -1,8 +1,8 @@
-# appModules/audacity/au_py3Compatibility.py
+# shared\audacity\au_py3Compatibility.py
 # a part of audacityAccessEnhancement add-on
 # Copyright 2019 paulber19
 #This file is covered by the GNU General Public License.
-#See the file COPYING for more details.
+
 
 
 import addonHandler
@@ -36,7 +36,7 @@ def importStringIO ():
 		from io import StringIO
 	else:
 		from cStringIO import StringIO
-		return StringIO
+	return StringIO
 def u(s):
 	if py3:
 		return s

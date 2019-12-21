@@ -1,14 +1,17 @@
 ADDON_SUMMARY - manuel utilisateur
 Auteur: ADDON_AUTHOR_NAME
 
+
 %!includeconf: ../addon_userManual.t2tconf
 %!includeconf: addon_informations.t2tconf
 %!includeconf: addon_keys.t2tconf
+
+
 URL: ADDON_AUTHOR_URL
 
 Téléchargement:
-- [Version stable  ADDON_VERSION ADDON_DOWNLOAD_SERVER1]
-- [Version de développement ADDON_DEV_URL]
+- [Version stable  ADDON_VERSION ADDON_DOWNLOAD_SERVER1
+- [Version de développement ADDON_DEV_URL
 
 
 Compatibilité:
@@ -43,7 +46,7 @@ Ainsi que les améliorations d'accessibilité suivantes:
 La mise à jour de l'extension se fait, par défaut, automatiquement peu de temps après le démarrage de NVDA (entre 20 et 600 secondes) et au maximum une fois par jour.
 Il est possible de désactiver cette mise à jour en décochant l'option "Rechercher automatiquement les mises à jour"  se trouvant dans les paramètres de l'extension, élément de menu "Mise à jour".
 La version de l'extension peut être:
-- soit une version stable: son numéro de version est du type "1.0" par exemple.
+-  soit une version stable: son numéro de version est du type "1.0" par exemple.
 - soit une version de  développement: son numéro de version est alors du type "1.0-dev1", ou "1.0-rc1", ou "1.0-beta2".
 
 
@@ -58,20 +61,14 @@ Le bouton "Rechercher une mise à jour" placé dans les paramètres de l'extensi
 ++ Compatibilité ++
 Cette extension a été testée avec Audacity version 2.3.2.
 
-Version minimum de NVDA requise: 2019.1
-
-Dernière version  de NVDA testée: 2019.3
-
-
-
 ++ Recommandations de configuration ++
 Pour un bon fonctionnement de l'extension, il est nécessaire de :
-- conserver l'affichage par défaut mise en place lors de l'installation d'audacity, surtout celui des barres d'outils. Audacity permet de réinitialiser l'affichage de celles-ci avec le sou-menu "Réinitialiser les barres d’outils" du sous-menu "barres d'outils" du menu "Affichage". Mais il est nécessaire de redémarrer Audacity après l'avoir utilisé.
+- conserver l'affichage par défaut mise en place lors de l'installation d'audacity, surtout celui des barres d'outils. Audacity permet de réinitialiser l'affichage de celles-ci avec le sou-menu "Reset" du sous-menu "barres d'outils" du menu "Affichage". Mais il est nécessaire de redémarrer Audacity après l'avoir utilisé.
 - Conserver le format  d'affichage du temps défini par défaut ou choisir  parmi un des formats indiqués au chapitre [Vocalisation des zones d'édition du temps dans la boite d'outils Sélection Audacity #HDR103]
 
 
 autres recommandations  de configuration(voir pour plus d'information le  ["guide d'Audacity" audacityGuide.html] ):
-- faire afficher le menu "Extra",
+- faire afficher le menu "Exra",
 - désactiver la création de marqueur par simple frappe de touche,
 - activer l'affichage  de la boite de dialogue  "Création de marqueur",
 - installer le jeu complet de raccourcis,
@@ -94,7 +91,7 @@ Pour les scripts pouvant être lancés par une commande  de l'interpréteur, cel
 Par défaut, la grande majorité des scripts pouvant être lancer par l'interpréteur de commandes  n'est affectée à aucun geste de commande.
 
 
-L'interpréteur de commande  se lance à l'aide du geste de commande "KEY_SHELL". Un bip sonnore est alors audible.
+L'interpréteur de commande  se lance à l'aide du geste de commande "KEY_SHELL"  . Un bip sonnore est alors audible.
 
 
 Aujourd'hui, les commandes ne sont pas modifiables.
@@ -183,7 +180,7 @@ Ce script se lance par la commande "SHELL_KEY_DISPLAY_GUIDE" de l'interpréteur.
 
 Par défaut, aucun geste de commande ne lui est affecté.
 
-Il permet de faire afficher le guide  d'Audacity écrit par David Bailes pour les utilisateurs du lecteur d'écran JAWS (C).
+Il permet de faire afficher le guide  d'Audacity écrit par David Bailes pour les utilisateurs de l'editeur vocal JAWS (C).
 
 +Améliorations d'accessibilité +
 ++ Annonce automatique de la position audio ++[hdr100]
@@ -201,7 +198,7 @@ En lecture audio ou non, les raccourcis suivants d'Audacity (définis par défau
 
 
 En lecture audio arrêtée et après l'activation du raccourci, l'information de la zone d'édition  "position audio" de la barre d'outils "Sélection" est automatiquement annoncé  si un changement a eu lieu et sous la forme:
-- annonce du label de la zone d'édition "position audio",
+- annonce du label de la zone d'édition ("position audio",
 - annonce du contenu de la zone d'édition avec formatage du temps
 
 
@@ -215,11 +212,11 @@ Les raccourcis suivants d'Audacity (définis par défaut) permettent de définir
 - "Majuscule + début": sélection jusqu'au début,
 - "Majuscule + fin": sélection jusqu'à la fin,
 - "Majuscule + j": sélection du début de la piste jusqu'au curseur,
-- "Majuscule + k": sélection du curseur jusqu'à la fin de la piste,
-- Majuscule + flèche droite": Étendre la sélection à droite,
-- "Majuscule + flèche gauche": Étendre la sélection à gauche ,
-- "Control + Majuscule + flèche droite": Contracter la sélection à gauch,
-- "Control + Majuscule + flèche gauche": Contracter la sélection à droite.
+- "Majuscule + k": sélection du curseur jusqu'à la fin de la piste
+- "Majuscule + flèche gauche": étendre la sélection à gauche , 
+- "Control + Majuscule + flèche droite": réduire la sélection à droite 
+- Majuscule + flèche droite": étendre la sélection à droite,
+- "Control + Majuscule + flèche gauche": réduire la sélection à gauche
 
 
 Si l'option "Annoncer automatiquement les changements de sélection" est cochée,  En lecture arrêtée et après l'activation du raccourci, les   changements de sélection sont annoncés
@@ -254,7 +251,7 @@ Pour modifier cette information , il faut se placer sur le chiffre à modifier  
 
 Cette extension permet une meilleure vocalisation  en indiquant un temps en heure, minute et secondes , en   indiquant la nature du chiffre qui est sélectionné et   la valeur du groupe du chiffre modifié.
 
-Seules les format suivants sont pris en compte:
+Sseules les format suivants sont pris en compte:
 - secondes,
 - HH:MM:SS,,
 - jj:hh:mm:ss  ,
@@ -268,7 +265,7 @@ La touche "NVDA + flèche haut" permet de faire vocaliser l'information de la zo
 
 Les mêmes mécanismes sont mis en place dans d'autre boites de dialogue qui présentent des zones d'édition de temps du même style, comme la boite de dialogue "Enregistrement temporisé".
 
-++ Autres adaptations ++[hdr104]
+++ Autres adapttations ++[hdr104]
 - Les pistes  ne sont plus annoncées comme étant des lignes d'un tableau et la vue de piste comme un tableau.
 - L'état au sens NVDA (sélection par le curseur) "non sélectionné" d'une piste n'est plus vocalisé.
 - l'absence de piste quand le focus arrive dans la vue de piste est annoncée.
@@ -279,8 +276,6 @@ Les mêmes mécanismes sont mis en place dans d'autre boites de dialogue qui pr�
 ++ v1.3 (20/10/2019) ++
 - Compatibilité avec les versions alpha de NVDA 2019.3.
 - recherche de mise à jour automatique.
-- correction de la documentation.
-- traduction de l'extension en Espagnol par Rémy Ruiz, changements par Gunther Melendez.
 
 
 ++ v1.2 (01/06/2019) ++
@@ -295,10 +290,8 @@ Compatibilité avec NVDA 2019.2 (mise à jour du manifest.ini)
 ++ v1.0.2 (28/12/2018) ++
 Correction de la mauvaise annonce de la sélection.
 
-
 ++ v1.0.1 (22/12/2018) ++
 Petite correction de documentation.
-
 
 ++ v1.0 (20/12/2018) ++
 -Le numéro de version repart à 1.0 à cause  du changement du nom de l'extension,
@@ -314,11 +307,11 @@ Petite correction de documentation.
 - nettoyage et réorganisation du code.
 
 
-++ v3.1 (07/01/2018) ++
+++ v3.1 (7/01/2018) ++
 - mise en place de l'extension sous la forme addon template et sous dépot github.
 
 
-++ v3.0.1 (04/01/2018) ++
+++ v3.0.1 (4/01/2018) ++
 - correction du non affichage menu "Paramètres de configuration de l'extension".
 - ajout directive pour compatibilité avec python 3.
 
@@ -336,7 +329,7 @@ Petite correction de documentation.
 - afficher le manuel utilisateur de l'extension.
 
 
--  restriction de l'utilisation de certains  scripts à  la vue de piste conformément à la documentation,
+-  restriction de l'utilisation de certains  scripts à  la vue de piste conformémant à la documentation,
 
 
 - structuration de l'extension pour le dépot sur github.

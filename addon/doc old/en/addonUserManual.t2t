@@ -1,0 +1,360 @@
+ADDON_SUMMARY - user manual 
+Auteur: ADDON_AUTHOR_NAME
+
+
+%!includeconf: ../addon_userManual.t2tconf
+%!includeconf: addon_informations.t2tconf
+%!includeconf: addon_keys.t2tconf
+URL: ADDON_AUTHOR_URL
+Download:
+- [stable version ADDON_VERSION ADDON_DOWNLOAD_SERVER1
+- [developpement's version ADDON_DEV_URL
+
+
+Compatibility:
+- minimum supported NVDA version : MINIMUM_NVDA_VERSION
+- last tested NVDA version: LAST_TESTED_NVDA_VERSION
+
+
+= Summary =[toc] 
+%%toc 
+
+
+
++ Introduction + 
+Sorry, This manual is based on a french user manual's automatic translation .
+
+++ Features ++ 
+This add-on provides scripts: 
+
+- [Report the position of the cursor audio #HDR1], 
+- [Report the selection information #HDR2], 
+- [Report pressed state of the buttons "Play" and "Pause" #HDR3], 
+- [Report the level  of playback or recording  meter peak#hdr4], 
+- [Report the level of  playback or record  sliders #hdr5], 
+- [Display the guide of audacity #hdr6], 
+
+
+As well as accessibility improvements: 
+- [Automatic announcement of the audio position #HDR100], 
+- [Automatic Announcement of the selection #HDR101], 
+- [Use the space bar or the Enter key to press a button #HDR102], 
+- [Vocalization of the edit area of a time of the Selection toolbar Audacity #HDR103], 
+- [various other adaptations #hdr104]. 
+
+++ update ++ 
+The update of the extension is, by default, automatically a short time after the start of NVDA (between 20 and 600 seconds) and a maximum of once per day. 
+It is possible to disable this update by unchecking the option "automatically check for updates" in the extension settings, menu item "Update". 
+The version of the extension can be: 
+- a stable version: its version number is "1.0" for example. 
+- either a development version: the version number is of the type "1.0-dev1", or "1.0-rc1", or "1.0-beta2". 
+
+
+By default, the stable version is updated with a stable version more recent (higher version number). 
+But it is possible to update the stable version running with a development version of the next stable version. Just check the option "Update also update the stable release to the versions of development" located in the settings of the extension, menu item "Update". 
+
+A development version is updated with a development version more recent or stable version. 
+
+The button "Search for update" placed in the extension settings, menu item "Update", allows you to search immediately for an update. 
+
+
+
+
+++ Compatibility ++ 
+Tis version of module has been tested with Audacity version 2.3.2.
+
+Minimum required NVDA version:  2019.1
+
+Last NVDA version tested:  2019.3
+
+
+++ Necessary configuration ++ 
+For proper operation of the module, it is necessary to : 
+- preserve the default display set up during the installation of audacity, and especially the toolbars. Audacity allows you to reset the display with the sub-menu "Reset" sub-menu "toolbars" from the "View"menu. But it is necessary to restart Audacity after you have used it. 
+- Keep the display format of the set time by default, or choose from one of the formats listed in chapter [Text edit boxes of the time in the box with the Selection tool Audacity #HDR103] 
+
+
+
+other configuration recommendations:
+- add the menu "Exra"  on menus bar,
+- disable the creation of labels by simple keystroke, 
+- enable the option to  display of the dialog box "Create label", 
+-install the complete set of shortcuts, 
+- disable the auto select option.
+
+
+++ Activation scripts ++ 
+Each script can be activated in two ways: 
+- either using a classic input gesture, 
+- either by using the shell of the module. 
+
+
+In the NVDA "Input gestures" dialog, the scripts provided by the module are placed in the category named "Audacity multi-track editor: accessibility enhancement".
+
+For scripts that can be launched by a command interpreter, the command is indicated following the description of the script. 
+
+
+By default, the vast majority of scripts that can be run by the shell are not assigned to any input gesture .
+
+
+The command interpreter is launched using the gesture command "KEY_SHELL" . A beep sound is audible. 
+
+
+Today, the commands are not modifiable. 
+
+The command "SHELL_KEY_HELP" of the interpreter lists all of the commands and the command "SHELL_KEY_DISPLAY_USER_MANUAL" displays the user manual of the module. 
+
+The shell stops is: 
+- by typing the key "Esc", 
+- either automatically if a command is typed. If this commend does not correspond to any feature, a beep signals it. 
+
+
++ Module's Configuration + 
+The module installs in the NVDA's "Preferences" menu,  the "Audacity multi-track editor: accessibility enhancement add-on - settings ..." sub-menu. 
+
+It allows you to display the configuration dialog settings of the module, namely: 
+- the check box  "Report automatically the selection changes", 
+- the check box "use the space bar or the Enter key to press a button", 
+- the check box "Report toolbars's name". 
+
+
+This configuration is saved in the file "audacityAccessEnhancementAddon.ini" in the NVDA's user configuration folder.
+
++ Scripts + 
+++ Report audio position ++[hdr1] 
+To use this script, it is necessary that the focus is in the tracks view.
+
+This script is triggered by the command "SHELL_KEY_AUDIO_POSITION" of the interpreter. 
+
+No gesture of command assigned by default. 
+
+It announces the time indicated in the field "audio position" of the toolbar "Audacity selection Toolbar". 
+
+++ Report informations's selection ++[hdr2] 
+To use this script, it is necessary that the focus is in the tracks view.
+
+The selection toolbar provides several items of information: 
+- the boundaries of the selection (start and end), 
+- the length of the selection, 
+- the center of the selection. 
+
+
+It is possible to advertise while remaining in the tracks view with the following scripts: 
+- report position of start and end of the selection: command "SHELL_KEY_SELECTION_LIMITS_REPORT" of the interpreter,
+- report the selection's length : command "SHELL_KEY_SELECTION_DURATION_REPORT" of the interpreter, 
+- report the position of the selection's center: command "SHELL_KEY_SELECTION_CENTER_REPORT"of  the interpreter, 
+- report the position of start and end of  selection. Twice: report the selection's length. Third: report the position of selection's centre: without  interpreter's command. 
+
+
+By default, No input gesture is affected. 
+
+
+++ Report pressed state of the "Pause", "play" or" record" buttons ++[hdr3] 
+To use this script, it is necessary that the focus is in the tracks view.
+
+It is triggered by the command "SHELL_KEY_BUTTONS_STATE" of the interpreter. 
+
+By default, no input gesture is assigned. 
+
+It announces the state "Pressed"of the  "Play", "Pause" and "Record" buttons. 
+
+In the case where no button is pressed, the announcement "No button pressed" is vocalized.
+
+
+++ Report the  level of  playback or recording meter peak ++[hdr4] 
+Audacity présente meters for playback and recording to monitor the peaks of playback or recording with  dropdown button. 
+
+The following scripts make it possible to know the levels of these vu-meters, without moving the focus to the view of the tracks: 
+- report the level  of the play meter  peak: "command SHELL_KEY_PLAYMETERPEAK_REPORT" of the interpreter, 
+- report the level of the record meter peak: command "SHELL_KEY_RECORDMETERPEAK_REPORT"of the interpreter. 
+
+
+By default, no input gesture is assigned.
+
+++ Report the level of the playback and record'sslider ++[hdr5] 
+The toolbar "Audacity mixer Toolbar" presents the  playback and record's sliders allowing you to adjust the levels of playback or recording. 
+
+The following scripts make it possible to know the levels of these sliders without moving the focus to the view of the tracks: 
+- report the level of the playback cursor: command "SHELL_KEY_SLIDERPLAYBACK_REPORT" of the interpreter, 
+- report the level of the recording cursor: command "SHELL_KEY_SLIDERRECORDING_REPORT" of the interpreter. 
+
+By default, no input gesture command is assigned.
+
+
+++ Display Audacity's guide ++[hdr6] 
+This script is triggered by the command "SHELL_KEY_DISPLAY_GUIDE" of the interpreter. 
+
+By default, no input gesture is assigned. 
+
+It allows you to view the guide of Audacity written by David Bailes for the users of the Jaws (c) screen reader and Audacity v2.2.
+
++Accessibility improvements + 
+++ Automatic announcement of the audio position ++[hdr100] 
+In audio playback or not, the following shortcuts from Audacity (set by default) allow you to set or move the cursor audio: 
+- "Shift + a"or "x": play / stop and positioning of the cursor audio 
+- "left arrow": small jump to the left, 
+- "right arrow": small jump to the right, 
+- "the beginning": jump to the beginning, 
+- "end": jump to the end, 
+- ",": small jump to the left, 
+- ".": small jump to the right, 
+- "Shift + ,": big jump to the left, 
+- "Shift + .": big jump to the right, 
+- "space": play /stop 
+
+
+In audio playback stopped and after activation of the shortcut, the field "audio position" of the toolbar "Audacity Selection toolbar" is automatically announced if a change has taken place and in the form: 
+- announcement of the field's label("audio position", 
+- announcement of the contents of the field formatted not to say the zeros. 
+
+
+The return of the audio position in the beginning of the selection is reported. 
+
+These shortcuts can be modified by the user without impacting the operation. 
+
+
+++ Automatic Announcement of the selection ++[hdr101] 
+The following shortcuts from Audacity (set by default) allow you to set or move the start and end of the selection: 
+- "Shift + home": selection to the start, 
+- "Shift + end": selection to the end, 
+- "Shift + j": selection of the start of the track up to the slider, 
+- "Shift-k": selection from the cursor to the end of the track 
+- "Shift + left arrow" to: extend the selection to the left , 
+- "Control + Shift + right arrow": to reduce the selection to the right 
+- Shift + right arrow": extend the selection to the right, 
+- "Control + Shift + left arrow": to reduce the selection to the left 
+
+
+If the option "Report automaticaly the selection changes" is selected, playback is stopped and after the activation of the shortcut, the selection changes are announced 
+Depending on the type of shortcut, one or the other or both of the selection fields of the toolbar in "Selection" are announced in the form: 
+- announcement of the label of the field, 
+- announcement of its contents formatted not to say the zeros. 
+
+
+As all the labels advertised are those that are displayed by Audacity, there may be inconsistencies due to the translation or at the coding .
+
+These shortcuts can be modified by the user without impacting the operation. 
+
+The command "SHELL_KEY_TOGGLE_AUTOMATIC_SELECTION_REPORT" shell module allows you to enable or disable the announcement of the selection changes when it becomes annoying. 
+It toggles the state of the option "Report automatically the selection changes" to the state "checked" to "unchecked" or vice versa. 
+
+++ Use the space bar or the Enter key to press a button ++[HDR102] 
+In Audacity, the bar space is provided to start or stop the audio playback, but not for pressing a button . 
+
+To press the button, it is necessary to use the "Enter" key, but this moves the focus to the next item in the window and no status change of the button is vocalized.
+
+If the option "Use space bar or Enter key to press a button" is checked, it is then possible to press a button with the space bar or the Enter key and the state changes are announced. 
+
+
+++ Vocalization of the edit boxes of the time in the Selection toolbar Audacity ++[HDR103] 
+The "Audacity Selection" toolbar  shows zones for editing time. 
+
+This time is recorded according to a format as you configure the context menu. 
+
+To change this time, it is necessary to be placed on the digit to modify (for right or left arrow) and the increase or the decrease with the arrows high or low. 
+
+This module allows a better vocalization of a hand indicating the time in hours, minutes and seconds, and on the other hand, in indicating the nature of the digit that is changed: 
+- the tens and the units for the hours, minutes, and seconds, 
+- the tenths, hundredths, and thousandths to seconds. 
+
+
+But only the following format are taken into account: 
+
+- seconds,
+- HH:MM:SS, 
+- dd:hh:mm:ss  ,
+- HH:MM:SS,hundredth,
+- HH:MM:SS,mil,
+- hh:mm:ss + samples  ,
+- samples.
+
+
+The "NVDA + upArrow" key command allows you to vocalize the full-time.
+
+The same mechanisms are put in place in other dialog boxes which are areas of editing time in the same style as the  "timer Record" dialog.
+
+++ Other adapttations ++[hdr104] 
+- The tracks are not announced as rows  and the tracks view as a table. 
+- The state "not selected" to a track is no longer vocalized. 
+- the absence of a track when the focus arrives in the view of the track is announced. 
+- The name of the toolbars is announced during the movement of the focus by "control+f6" or "shift+ control+f6" (can be disabled by a configuration option 'Report name of toolbars"). 
+
+
++ History + 
+
+++ v1.3 (01/10/2019) ++
+-Compatibility with NVDA 2019.3.
+- adding automatic update check.
+
+
+++ v1.2 (01/06/2019) ++
+- Modification of manifest.ini file for compatibility with NVDA 2019.2.0.
+
+++ v1.1 (16/03/2019) ++
+- Modification of manifest.ini file for compatibility with NVDA 2019.1.0.
+- code changes for compatibility with python 3.
+
+
+++ v1.0.2 (28/12/2018) ++
+Correction of bad announcement of selection.
+
+++ v1.0.1 (22/12/2018) ++
+Small documentation correction.
+
+++ v1.0 (20/12/2018) ++
+- version number restarted to 1.0 cause of name change,
+- compatibility with Audacity 2.3.0,
+- the scripts of "shell scripts display" dialog  are listed with possibility to run selected script,
+- improvement of the accessibility of the edit boxes of the time in the  "timer Recording" dialog,
+- major overhaul of the code.
+
+
+++ v3.2 (19/06/2018) ++ 
+- compatibility with NVDA 2018.2,
+- settings management on installation or uninstallation (adding install.py file),
+- clean-up and repackaging of code.
+
+
+++ v3.1 (7/01/2018) ++ 
+- addon modified  to be in the addon template form and stored in  git hub repository.
+
+
+++ v3.0.1 (4/01/2018) ++ 
+-  settings addon menu bug fix,
+- adding future directive for python 3 compatibility.
+
+
+
+++ v3.0 (11/2017) ++ 
+- compatibility with Audacity 2.2.0, 
+new - scripts to announce the peak meters and sliders for playback or recording, 
+- new scripts to announce the duration and the position of the center of the selection, 
+- restriction of the use of certain scripts to the tracks view  conformémant to the documentation, 
+- implementation of the command interpreter, 
+- implementation of an interceptor of keyboard keys as a replacement to the watchdog, 
+- implementation of a configuration file, 
+- structuring the module to the repository on github. 
+- update the user manual. 
+
+
+++ v2.3 (08/2017) ++ 
+- script "alt+control+f4" to activate or deactivate the announcement of the selection changes, 
+- compatibility with audacity v2.1.3, 
+- resumption of the code. 
+
+
+++ v2.2 (06/2015) ++ 
+- restructuring of the code 
+
+
+++ v2.1 (10/2014) ++ 
+- compatibility with NVDA 2014.3 
+- compatibility with Audacity v2.06 
+
+
+++ v2.0 (05/2014) ++ 
+- establishment of a supervisory field position and selection to announce the changes. 
+
+
+++ v1.0 (01/2014) ++ 
+Creation of the add-on 

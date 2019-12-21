@@ -3,7 +3,7 @@
 # a part of audacityAccessEnhancement add-on
 # Copyright 2018 paulber19
 #This file is covered by the GNU General Public License.
-#See the file COPYING for more details.
+
 
 import addonHandler
 addonHandler.initTranslation()
@@ -24,14 +24,16 @@ def onInstall():
 	import globalVars
 	import wx
 	import gui
-	import sys
 	from logHandler import log
-	curPath = os.path.dirname(__file__).decode("mbcs")
-	sys.path.append(curPath)
-	import buildVars
-	addonName = buildVars.addon_info["addon_name"]
-	addonSummary= _(buildVars.addon_info["addon_summary"])
-	del sys.path[-1]
+	import sys
+	if sys.version.startswith("3"):
+		curPath = os.path.dirname(__file__)
+	else:
+		curPath = os.path.dirname(__file__).decode("mbcs")
+	from addonHandler import _availableAddons 
+	addon = _availableAddons [curPath]
+	addonName = addon.manifest["name"]
+	addonSummary = addon.manifest["summary"]
 	# add-on name has  changed. We must uninstall previous version.
 	uninstallPreviousVersion()
 	# save old configuration
@@ -61,7 +63,10 @@ def deleteAddonConfig():
 	import globalVars
 	from logHandler import log
 	import sys
-	curPath = os.path.dirname(__file__).decode("mbcs")
+	if sys.version.startswith("3"):
+		curPath = os.path.dirname(__file__)
+	else:
+		curPath = os.path.dirname(__file__).decode("mbcs")
 	sys.path.append(curPath)
 	import buildVars
 	addonName = buildVars.addon_info["addon_name"]

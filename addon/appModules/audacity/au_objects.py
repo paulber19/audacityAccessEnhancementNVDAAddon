@@ -1,9 +1,9 @@
 # -*- coding: UTF-8 -*-
-#appModules/audacity/au_objects.py
+#appModules\audacity\au_objects.py
 # a part of audacityAccessEnhancement add-on
 # Copyright 2018,paulber19
 #This file is covered by the GNU General Public License.
-#See the file COPYING for more details.
+
 
 import addonHandler
 addonHandler.initTranslation()
@@ -13,7 +13,12 @@ import gui
 import wx
 from oleacc import *
 from controlTypes import *
-from .au_py3Compatibility import rangeGen
+import sys
+_curAddon = addonHandler.getCodeAddon()
+path = os.path.join(_curAddon.path, "shared")
+sys.path.append(path)
+from au_py3Compatibility import rangeGen
+del sys.path[-1]
 
 #object hierarchy
 HIE_TrackView= 1
@@ -60,8 +65,6 @@ hie_2300 = {
 	HIE_SelectionEnd : "17", # from HIE_SelectionToolBar object
 	}
 
-
-_curAddon = addonHandler.getCodeAddon()
 _addonSummary = _curAddon.manifest['summary']
 def initialize(appModule):
 	global _audacityHierarchyID
@@ -75,7 +78,7 @@ def initialize(appModule):
 			# Translators: the label of a dialog box message.
 			_("This version %s of Audacity is not  compatible with the add-on")%version,
 			# Translators: the label of a dialog box title.
-			_("%s add-on - warning")%_summary,
+			_("%s add-on - warning")%_addonSummary,
 			wx.OK|wx.ICON_WARNING)
 		id = None
 	_audacityHierarchyID = id

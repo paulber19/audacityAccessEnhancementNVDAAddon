@@ -1,13 +1,13 @@
 # -*- coding: UTF-8 -*-
-#appModules/audacity/au_time.py
+#appModules\audacity\au_time.py
 # a part of audacityAccessEnhancement add-on
 #Copyright (C) 2018, Paulber19
 #This file is covered by the GNU General Public License.
 # Released under GPL 2
 
-import ui
 import addonHandler
 addonHandler.initTranslation()
+import ui
 
 def formatTime (sTime):
 	# to convert a string like:

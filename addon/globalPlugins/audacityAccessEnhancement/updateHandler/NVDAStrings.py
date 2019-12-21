@@ -1,8 +1,8 @@
-#appModules/audacity/NVDAStrings.py
-# a part of audacityAccessEnhancement add-on
-# Author: paulber19
-# Copyright 2018, released under GPL.
+# NVDAStrings.py
+# a common part of  all of my addons.
 
+#Copyright (C) 2019 paulber19
+#This file is covered by the GNU General Public License.
 
 
 def NVDAString(s):

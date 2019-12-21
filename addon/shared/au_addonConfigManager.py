@@ -1,8 +1,8 @@
-# appModules/audacity/au_configManager.py
+# shared\au_addonConfigManager.py
 # a part of audacityAccessEnhancement add-on
 # Copyright 2018,paulber19
 # released under GPL.
-#See the file COPYING for more details.
+
 
 from logHandler import log
 import addonHandler
@@ -16,7 +16,7 @@ try:
 except ImportError:
 	from validate import Validator, VdtTypeError
 
-from .au_py3Compatibility import importStringIO
+from au_py3Compatibility import importStringIO
 StringIO = importStringIO()
 
 # config section
@@ -25,7 +25,8 @@ SCT_Options = "Options"
 
 # general section items
 ID_ConfigVersion = "ConfigVersion"
-
+ID_AutoUpdateCheck = "AutoUpdateCheck"
+ID_UpdateReleaseVersionsToDevVersions  = "UpdateReleaseVersionsToDevVersions"
 # Options items
 ID_AutomaticSelectionChangeReport = "AutomaticSelectionChangeReport"
 ID_ReportToolbarsName = "ReportayToolbarNameOnFocusEntered"
@@ -40,7 +41,7 @@ class BaseAddonConfiguration(ConfigObj):
 	""".format(section = SCT_General,idConfigVersion = ID_ConfigVersion)
 	
 	configspec = ConfigObj(StringIO("""# addon Configuration File
-	{0}""".format(_GeneralConfSpec, )
+	{general}""".format(general = _GeneralConfSpec, )
 	), list_values=False, encoding="UTF-8")
 	
 	def __init__(self,input ) :
@@ -66,7 +67,9 @@ class AddonConfiguration10(BaseAddonConfiguration):
 	_version = "1.0"
 	_GeneralConfSpec = """[{section}]
 	{configVersion} = string(default = {version})
-	""".format(section = SCT_General,configVersion = ID_ConfigVersion, version = _version)
+	{autoUpdateCheck} = boolean(default=True)
+	{updateReleaseVersionsToDevVersions} = boolean(default=False)
+	""".format(section = SCT_General,configVersion = ID_ConfigVersion, version = _version, autoUpdateCheck = ID_AutoUpdateCheck, updateReleaseVersionsToDevVersions    = ID_UpdateReleaseVersionsToDevVersions)
 	
 	_OptionsConfSpec = """[{section}]
 	{automaticSelectionChangeReport} = boolean(default=True)
@@ -76,8 +79,8 @@ class AddonConfiguration10(BaseAddonConfiguration):
 
 	#: The configuration specification
 	configspec = ConfigObj(StringIO("""# addon Configuration File
-{0}\r\n{1}
-""".format(_GeneralConfSpec, _OptionsConfSpec)
+{general}\r\n{options}
+""".format(general = _GeneralConfSpec, options = _OptionsConfSpec)
 ), list_values=False, encoding="UTF-8")
 
 
@@ -170,6 +173,18 @@ class AddonConfigurationManager():
 	def toggleUseSpaceBarToPressButtonOption (self, toggle = True):
 		return self.toggleOption (ID_UseSpaceBarToPressButton, toggle)
 
+	def toggleGeneralOption (self, id, toggle):
+		conf = self.addonConfig
+		if toggle:
+			conf[SCT_General][id] = not conf[SCT_General][id]
+			self.saveSettings()
+		return conf[SCT_General][id]
+
+	def toggleAutoUpdateCheck(self, toggle = True):
+		return self.toggleGeneralOption (ID_AutoUpdateCheck, toggle)
+
+	def toggleUpdateReleaseVersionsToDevVersions     (self, toggle = True):
+		return self.toggleGeneralOption (ID_UpdateReleaseVersionsToDevVersions, toggle)
 
 # singleton for addon config manager
 _addonConfigManager = AddonConfigurationManager()
