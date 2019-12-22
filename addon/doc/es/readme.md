@@ -4,7 +4,7 @@
 * Descargar:
 	* [versión estable][1]
 	* [versión de desarrollo][2]
-* Compatibilitad:
+* Compatibilidad:
 	* Versión mínima de NVDA requerida: 2019.1
 	* Última versión de NVDA probada: 2019.3
 
