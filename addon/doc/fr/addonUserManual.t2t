@@ -276,6 +276,14 @@ Les mêmes mécanismes sont mis en place dans d'autre boites de dialogue qui pr�
 
 
 + Historique +
+++ v1.4.1 (03/04/2020) ++
+Correction de l'historique des changements de l'extension.
+
+++ v1.4 (03/04/2020) ++
+- mise en compatibilité avec NVDA 2020.1,
+- mise en conformité avec NVDA pour le test de compatibilité des extensions avec NVDA.
+
+
 ++ v1.3 (20/10/2019) ++
 - Compatibilité avec les versions alpha de NVDA 2019.3.
 - recherche de mise à jour automatique.
