@@ -7,7 +7,7 @@
 	* [developpement' versions][2]
 * Compatibility:
 	* Minimum required NVDA version:  2019.1
-	* Last NVDA version tested:  2019.3
+	* Last NVDA version tested:  2020.1
 
 
 This add-on adds extra functionality when working with Audacity multi-track editor:
@@ -28,5 +28,5 @@ This add-on adds extra functionality when working with Audacity multi-track edit
 
 Compatible and Tested with Audacity 2.3.2.
 
-[1]: https://github.com/paulber007/AllMyNVDAAddons/raw/master/audacityAccessEnhancement/audacityAccessEnhancement-1.3.nvda-addon
+[1]: https://github.com/paulber007/AllMyNVDAAddons/raw/master/audacityAccessEnhancement/audacityAccessEnhancement-1.4.nvda-addon
 [2]: https://github.com/paulber007/AllMyNVDAAddons/tree/master/audacityAccessEnhancement/dev

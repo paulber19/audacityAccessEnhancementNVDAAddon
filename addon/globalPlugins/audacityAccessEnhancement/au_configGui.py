@@ -58,7 +58,8 @@ class AudacitySettingsDialog(SettingsDialog):
 	
 	def onCheckForUpdate(self, evt):
 		from .updateHandler import addonUpdateCheck
-		wx.CallAfter(addonUpdateCheck, auto = False, releaseToDev = _addonConfigManager.toggleUpdateReleaseVersionsToDevVersions(False))
+		releaseToDevVersion = self.updateReleaseVersionsToDevVersionsCheckBox.IsChecked() # or toggleUpdateReleaseVersionsToDevVersionsGeneralOptions(False)
+		wx.CallAfter(addonUpdateCheck, auto = False, releaseToDev =releaseToDevVersion  )
 		self.Close()
 	
 	def postInit(self):

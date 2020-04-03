@@ -6,7 +6,7 @@
 	* [version de développement][2]
 * Compatibilité:
 	* Version minimum de NVDA requise: 2019.1
-	* Dernière version  de NVDA testée: 2019.3
+	* Dernière version  de NVDA testée: 2020.1
 
 
 Cette extension améliore l'accessiblité du logiciel Audacity en apportant:
