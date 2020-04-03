@@ -39,7 +39,7 @@ Previous versions of Audacity are not  supported.
 """),
 
 	# version
-	"addon_version" : "1.4",
+	"addon_version" : "1.4.1",
 	# Author(s)
 	"addon_author" : "paulber19",
 	# URL for the add-on documentation support

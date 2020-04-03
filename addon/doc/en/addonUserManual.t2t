@@ -284,6 +284,15 @@ The same mechanisms are put in place in other dialog boxes which are areas of ed
 
 + History +
 
+++ Version 1.4.1.1 (03/04/2020) ++
+updating of    history of add-on's changes.
+
+
+++ Version 1.4 (03/04/2020) ++
+- compatibility with NVDA 2020.1,
+- compliance for NVDA extension compatibility test
+
+
 ++ v1.3 (01/10/2019) ++
 -Compatibility with NVDA 2019.3.
 - adding automatic update check.
