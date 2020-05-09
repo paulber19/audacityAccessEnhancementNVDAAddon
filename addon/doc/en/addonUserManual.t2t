@@ -284,7 +284,15 @@ The same mechanisms are put in place in other dialog boxes which are areas of ed
 
 + History +
 
-++ Version 1.4.1.1 (03/04/2020) ++
+++ Version 1.4.3 (08/05/2020) ++
+Bug corrections:
+- bad detection of Transport tools bar.
+- error when  timer in  Speed change dialog gains focus.
+
+
+++ Version 1.4.2.1 (06/04/2020) ++
+Adding arabic translation
+++ Version 1.4.1 (03/04/2020) ++
 updating of    history of add-on's changes.
 
 

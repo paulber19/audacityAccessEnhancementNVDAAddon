@@ -332,9 +332,11 @@ class TimerControlEdit(NVDAObjects.NVDAObject):
 	def event_gainFocus(self):
 		tc = au_timerControl.TimerControl(self)
 		(sLabel, sTime) = tc.getLabelAndTime()
-		msg = "%s %s" %(sLabel,au_time.getTimeMessage(sTime))
-		ui.message(msg)
-
+		try:
+			msg = "%s %s" %(sLabel,au_time.getTimeMessage(sTime))
+			ui.message(msg)
+		except:
+			super(TimerControlEdit, self).event_gainFocus()		
 # digit groups IDs
 DGROUP_HOURS = 1
 DGROUP_MINUTES = 2
@@ -491,9 +493,11 @@ class TimerControlDigit(NVDAObjects.NVDAObject):
 	def event_gainFocus(self):
 		tc = au_timerControl.TimerControl(self, self.editFormat)
 		(sLabel, sTime) = tc.getLabelAndTime()
-		msg = "%s %s" %(sLabel,au_time.getTimeMessage(sTime))
-		ui.message(msg)
-
+		try:
+			msg = "%s %s" %(sLabel,au_time.getTimeMessage(sTime))
+			ui.message(msg)
+		except:
+			super(TimerControlDigit, self).event_gainFocus()
 	
 	def script_sayTimer(self, gesture):
 		tc = au_timerControl.TimerControl(self.parent, self.editFormat)
@@ -686,24 +690,25 @@ class AppModule(appModuleHandler.AppModule):
 	
 	def chooseNVDAObjectOverlayClasses(self, obj, clsList):
 		controlID = obj.windowControlID
+		role = obj.role
 		obj.isATrack = Track.check(obj)
 		if obj.isATrack:
 			clsList.insert(0, Track)
-		elif obj.role == controlTypes.ROLE_TABLE and controlID == 1003:
+		elif role == controlTypes.ROLE_TABLE and controlID == 1003:
 			clsList.insert(0, TrackView)
-		elif obj.role == controlTypes.ROLE_BUTTON:
+		elif role == controlTypes.ROLE_BUTTON:
 			clsList.insert(0, Button)
-		elif controlID in [2705, 2706, 2707, 2708, 2709]:
+		elif role == controlTypes.ROLE_STATICTEXT and controlID in [2705, 2706, 2707, 2708, 2709]:
 			if obj.parent and obj.parent.windowControlID == controlID:
 				clsList.insert(0, SelectionTimerControlDigit)
 			else:
 				clsList.insert(0, TimerControlEdit)
-		elif controlID in [10001, 10003]:
+		elif role == controlTypes.ROLE_STATICTEXT and controlID in [10001, 10003]:
 			if obj.parent.windowControlID == controlID:
 				clsList.insert(0, TimerRecordTimeControlDigit)
 			else:
 				clsList.insert(0, TimerControlEdit)
-		elif controlID == 10004:
+		elif role == controlTypes.ROLE_STATICTEXT and controlID == 10004:
 			if obj.parent.windowControlID == controlID:
 				clsList.insert(0, TimerRecordDurationControlDigit)
 			else:

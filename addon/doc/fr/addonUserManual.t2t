@@ -276,6 +276,13 @@ Les mêmes mécanismes sont mis en place dans d'autre boites de dialogue qui pr�
 
 
 + Historique +
+++ v1.4.3 (08/05/2020) ++
+Corrections de bogues:
+- mauvaise détection de la barre d'outils "Transport".
+- erreur lorsque le focus  arrives sur un timer  dans le dialogue "changer la vitesse".
+
+
+
 ++ v1.4.2 (09/04/2020) ++
 Ajout traduction arabe.
 ++ v1.4.1 (03/04/2020) ++

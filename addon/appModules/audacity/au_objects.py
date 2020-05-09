@@ -43,10 +43,10 @@ HIE_PlayMeterPeak = 19
 HIE_RecordingSlider = 20
 HIE_PlaybackSlider= 21
 
-# for audacity 2.3.0
-hie_2300 = {
-	HIE_TrackView: "3|0", # from mainFrameObject
-	HIE_ToolDock1 : "1|0", # from mainFrameObject
+# for audacity 2.3.3
+hie_2330 = {
+	HIE_TrackView: "1|2", # from mainFrameObject
+	HIE_ToolDock1 : "0|1", # from mainFrameObject
 	HIE_PauseButton : "1", # from HIE_TransportToolBar  object
 	HIE_PlayButton : "2", # from HIE_TransportToolBar
 	HIE_StopButton : "3", # from HIE_TransportToolBar
@@ -65,12 +65,15 @@ hie_2300 = {
 	HIE_SelectionEnd : "17", # from HIE_SelectionToolBar object
 	}
 
+
 _addonSummary = _curAddon.manifest['summary']
 def initialize(appModule):
 	global _audacityHierarchyID
 	version = appModule._get_productVersion()
 	audacityID  = int("".join(version.split(",")))
-	if audacityID >= 2300:
+	if audacityID >= 2330:
+		id = hie_2330
+	elif audacityID >= 2300:
 		id = hie_2300
 	else:
 		log.warning("This version %s of Audacity is not  compatible with the add-on"%version)
