@@ -276,6 +276,9 @@ Les mêmes mécanismes sont mis en place dans d'autre boites de dialogue qui pr�
 
 
 + Historique +
+++ v1.4.4 (11/05/2020) ++
+Ajout traduction turque
+
 ++ v1.4.3 (08/05/2020) ++
 Corrections de bogues:
 - mauvaise détection de la barre d'outils "Transport".
