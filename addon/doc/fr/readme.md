@@ -25,7 +25,7 @@ Cette extension améliore l'accessiblité du logiciel Audacity en apportant:
 * un script pour afficher le guide d'audacity écrit par  David Bailes.
 
 
-Elle est Compatible et testée avec Audacity version 2.3.3.
+Elle est Compatible et testée avec Audacity version 2.3.3 et 2.3.2. Les versions précédentes d'Audacity ne sont pas supportées.
 
-[1]: https://github.com/paulber007/AllMyNVDAAddons/raw/master/audacityAccessEnhancement/audacityAccessEnhancement-1.4.4.nvda-addon
+[1]: https://github.com/paulber007/AllMyNVDAAddons/raw/master/audacityAccessEnhancement/audacityAccessEnhancement-1.4.5.nvda-addon
 [2]: https://github.com/paulber007/AllMyNVDAAddons/tree/master/audacityAccessEnhancement/dev

@@ -64,6 +64,29 @@ hie_2330 = {
 	HIE_SelectionCenter : "16", # from HIE_SelectionToolBar object
 	HIE_SelectionEnd : "17", # from HIE_SelectionToolBar object
 	}
+# for audacity 2.3.2
+hie_2320 = {
+	HIE_TrackView: "3|0", # from mainFrameObject
+	HIE_ToolDock1 : "1|0", # from mainFrameObject
+	HIE_PauseButton : "1", # from HIE_TransportToolBar  object
+	HIE_PlayButton : "2", # from HIE_TransportToolBar
+	HIE_StopButton : "3", # from HIE_TransportToolBar
+	HIE_RecordButton : "6", # from HIE_TransportToolBar
+	HIE_PlaybackSpeedSlider: "2", #  from PlayAtSpeedToolBarObject
+	HIE_RecordMeterPeak: "1", # from HIE_RecordingMeterToolbar
+	HIE_PlayMeterPeak: "1", # from HIE_PlaybackMeterToolbar
+	HIE_RecordingSlider : "2",# from MixerToolbarObject
+	HIE_PlaybackSlider   :"4", # from MixerToolbarObject
+	HIE_ToolDock2 : "2", # from mainFrameObject
+	HIE_AudioPosition : "12", # from HIE_SelectionToolBar object
+	HIE_SelectionChoice : "7", # from  HIE_SelectionToolBar
+	HIE_SelectionStart :  "14", # from  HIE_SelectionToolBar object
+	HIE_SelectionDuration : "15", # from HIE_SelectionToolBar object
+	HIE_SelectionCenter : "16", # from HIE_SelectionToolBar object
+	HIE_SelectionEnd : "17", # from HIE_SelectionToolBar object
+	}
+
+
 
 
 _addonSummary = _curAddon.manifest['summary']
@@ -73,8 +96,8 @@ def initialize(appModule):
 	audacityID  = int("".join(version.split(",")))
 	if audacityID >= 2330:
 		id = hie_2330
-	elif audacityID >= 2300:
-		id = hie_2300
+	elif audacityID >= 2320:
+		id = hie_2320
 	else:
 		log.warning("This version %s of Audacity is not  compatible with the add-on"%version)
 		wx.CallLater(1000, gui.messageBox,

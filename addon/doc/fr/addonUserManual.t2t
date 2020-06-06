@@ -56,11 +56,7 @@ Le bouton "Rechercher une mise à jour" placé dans les paramètres de l'extensi
 
 
 ++ Compatibilité ++
-Cette extension a été testée avec Audacity version 2.3.2.
-
-Version minimum de NVDA requise: 2019.1
-
-Dernière version  de NVDA testée: 2019.3
+Cette extension a été testée avec Audacity version 2.3.2 et 2.3.3. Les versions précédentes d'Audacity ne sont pas soutenues.
 
 
 
@@ -276,6 +272,11 @@ Les mêmes mécanismes sont mis en place dans d'autre boites de dialogue qui pr�
 
 
 + Historique +
+++ v1.4.5 (19/05/2020) ++
+Correction de bugs:
+- mauvais support de la version 2.3.2.
+
+
 ++ v1.4.4 (11/05/2020) ++
 Ajout traduction turque
 

@@ -26,7 +26,7 @@ This add-on adds extra functionality when working with Audacity multi-track edit
 * script to display audacity guide written by David Bailes.
 
 
-Compatible and Tested with Audacity 2.3.3.
+Compatible and Tested with Audacity 2.3.3 and 2.3.2.   Previous versions of Audacity are not supported.
 
-[1]: https://github.com/paulber007/AllMyNVDAAddons/raw/master/audacityAccessEnhancement/audacityAccessEnhancement-1.4.4.nvda-addon
+[1]: https://github.com/paulber007/AllMyNVDAAddons/raw/master/audacityAccessEnhancement/audacityAccessEnhancement-1.4.5.nvda-addon
 [2]: https://github.com/paulber007/AllMyNVDAAddons/tree/master/audacityAccessEnhancement/dev

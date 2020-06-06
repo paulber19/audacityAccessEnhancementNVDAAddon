@@ -63,12 +63,7 @@ The button "Search for update" placed in the extension settings, menu item "Upda
 
 
 ++ Compatibility ++
-Tis version of module has been tested with Audacity version 2.3.2.
-
-Minimum required NVDA version:  2019.1
-
-Last NVDA version tested:  2019.3
-
+Tis version of module has been tested with Audacity version 2.3.3 and 2.3.2. Previous versions of Audacity are not supported.
 
 ++ Necessary configuration ++
 For proper operation of the module, it is necessary to :
@@ -283,6 +278,11 @@ The same mechanisms are put in place in other dialog boxes which are areas of ed
 
 
 + History +
+++ Version 1.4.5 (19/05/2020) ++
+Bugs's correction:
+- bad support of audacity 2.3.2 version.
+
+
 
 ++ Version 1.4.4 (11/05/2020) ++
 Adding turkish translation

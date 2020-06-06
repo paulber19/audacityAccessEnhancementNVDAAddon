@@ -33,13 +33,13 @@ addon_info = {
 * script to display audacity guide written by David Bailes.
 
 
-This addon's version has been tested with audacity v2.3.2.
+This addon's version has been tested with audacity 2.3.3 and 2.3.2. 
 
 Previous versions of Audacity are not  supported.
 """),
 
 	# version
-	"addon_version" : "1.4.4",
+	"addon_version" : "1.4.5",
 	# Author(s)
 	"addon_author" : "paulber19",
 	# URL for the add-on documentation support
