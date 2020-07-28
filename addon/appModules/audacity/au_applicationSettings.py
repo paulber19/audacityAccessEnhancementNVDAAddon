@@ -1,6 +1,6 @@
 # appModules/audacity/au_applicationSettings.py.
 # a part of audacityAccessEnhancement add-on
-# Copyright 2018 paulber19
+# Copyright 2018-2020 paulber19
 #This file is covered by the GNU General Public License.
 
 
@@ -14,6 +14,7 @@ import gui
 import speech
 import wx
 from configobj import ConfigObj, ConfigObjError
+import codecs
 
 import sys
 _curAddon = addonHandler.getCodeAddon()
@@ -51,41 +52,41 @@ class ApplicationSettingsManager(object):
 	def getSettings(self):
 		if not self.initialized:
 			return None
-		settings = SettingsFileHandler(self.settingsDir).settings
+		settings = AudacityCFGFileHandler(self.settingsDir).settings
 		return settings
+	def getAudioTimeFormat (self):
+		settings = self.getSettings()
+		key = "AudioTimeFormat"
+		return  settings[key]
 		
 	def getSelectionFormat (self):
-		if not self.initialized:
-			return None
 		settings = self.getSettings()
 		key = "SelectionFormat"
-		return  settings[key] if key in settings else None
+		return  settings[key]
 
-class SettingsFileHandler(object):
+class AudacityCFGFileHandler(object):
 	_fileName = "audacity.cfg"
+	_defaultSettings = {
+		"SelectionFormat": "hh:mm:ss + milliseconds",
+		"AudioTimeFormat": "hh:mm:ss + milliseconds",
+		}
 	def __init__(self, settingsDir):
-		super(SettingsFileHandler, self).__init__()
-		self.initialized = False
-		self.settingsDir = settingsDir
-		self.filePath = os.path.join(settingsDir, self._fileName)
-		if not os.path.exists(self.filePath):
-			return
-		# read the file
+		super(AudacityCFGFileHandler, self).__init__()
+		self.audacityCFGFilePath = os.path.join(settingsDir, self._fileName)
+		# load audacity settings
 		self.settings= self._load()
-		if self.settings is not None:
-			self.initialized = True
-
-
-	def _load(self):
-		confspec = ConfigObj(StringIO(""), list_values=False, encoding="UTF-8")
-		confspec.newlines = "\r\n"
-		try:
-			settings = ConfigObj(self.filePath, configspec = confspec, indent_type = "\t", encoding="UTF-8")
-		except ConfigObjError as e:
-			log.warning("error: cannot read %s file"%self.filePath)
-			settings = None
-
+	
+	def _load (self):
+		settings = self._defaultSettings.copy()
+		if not os.path.exists(self.audacityCFGFilePath):
+			return settings
+		src = codecs.open( self.audacityCFGFilePath, "r","utf_8",errors="replace")
+		for line in src:
+			l = line.split("=")
+			if len(l) != 2: continue
+			k = l[0].strip()
+			if k in self._defaultSettings:
+				settings[k] = l[1].strip()
 		return settings
-
 
 			

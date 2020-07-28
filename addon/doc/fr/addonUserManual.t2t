@@ -34,14 +34,14 @@ Ainsi que les améliorations d'accessibilité suivantes:
 - [Annonce automatique de la position audio #HDR100],
 - [Annonce automatique de la sélection #HDR101],
 - [Utilisation de la barre d'espace ou la touche Entrée pour appuyer sur un bouton #HDR102],
-- [Vocalisation des zone d'édition d'un temps de la barre d'outils Sélection Audacity  #HDR103],
+- [Vocalisation des zone de sélection numérique d'un temps de la barre d'outils Sélection Audacity  #HDR103],
 - [et diverses autres adaptations #hdr104].
 
 
 
 ++ mise à jour ++
 La mise à jour de l'extension se fait, par défaut, automatiquement peu de temps après le démarrage de NVDA (entre 20 et 600 secondes) et au maximum une fois par jour.
-Il est possible de désactiver cette mise à jour en décochant l'option "Rechercher automatiquement les mises à jour"  se trouvant dans les paramètres de l'extension, élément de menu "Mise à jour".
+Il est possible de désactiver cette mise à jour en décochant l'option "Rechercher automatiquement les mises à jour"  se trouvant dans la catégorie "Mise à jour" des paramètres de l'extension.
 La version de l'extension peut être:
 - soit une version stable: son numéro de version est du type "1.0" par exemple.
 - soit une version de  développement: son numéro de version est alors du type "1.0-dev1", ou "1.0-rc1", ou "1.0-beta2".
@@ -52,18 +52,18 @@ Mais il est possible de mettre à jour la version stable courante avec une versi
 
 Une version de développement  est mise à jour avec une version de développement plus récente ou avec sa version stable.
 
-Le bouton "Rechercher une mise à jour" placé dans les paramètres de l'extension, élément de menu "Mise à jour", permet de rechercher immédiatement une mise à jour.
+Le bouton "Rechercher une mise à jour" placé dans la catégorie "Mise à jour" des paramètres de l'extension, permet de rechercher immédiatement une mise à jour.
 
 
 ++ Compatibilité ++
-Cette extension a été testée avec Audacity version 2.3.2 et 2.3.3. Les versions précédentes d'Audacity ne sont pas soutenues.
+Cette extension a été testée avec Audacity version  2.4.2, 2.4.1, 2.3.3 et 2.3.2. Les versions précédentes d'Audacity ne sont pas soutenues.
 
 
 
 ++ Recommandations de configuration ++
 Pour un bon fonctionnement de l'extension, il est nécessaire de :
 - conserver l'affichage par défaut mise en place lors de l'installation d'audacity, surtout celui des barres d'outils. Audacity permet de réinitialiser l'affichage de celles-ci avec le sou-menu "Réinitialiser les barres d’outils" du sous-menu "barres d'outils" du menu "Affichage". Mais il est nécessaire de redémarrer Audacity après l'avoir utilisé.
-- Conserver le format  d'affichage du temps défini par défaut ou choisir  parmi un des formats indiqués au chapitre [Vocalisation des zones d'édition du temps dans la boite d'outils Sélection Audacity #HDR103]
+- Conserver le format  d'affichage du temps défini par défaut ou choisir  parmi un des formats indiqués au chapitre [Vocalisation des zones d'de sélection numérique du temps dans la boite d'outils Sélection Audacity #HDR103]
 
 
 autres recommandations  de configuration(voir pour plus d'information le  ["guide d'Audacity" audacityGuide.html] ):
@@ -196,9 +196,9 @@ En lecture audio ou non, les raccourcis suivants d'Audacity (définis par défau
 - "espace": lecture /stop
 
 
-En lecture audio arrêtée et après l'activation du raccourci, l'information de la zone d'édition  "position audio" de la barre d'outils "Sélection" est automatiquement annoncé  si un changement a eu lieu et sous la forme:
-- annonce du label de la zone d'édition "position audio",
-- annonce du contenu de la zone d'édition avec formatage du temps
+En lecture audio arrêtée et après l'activation du raccourci, l'information de la zone de sélection numérique  "position audio" de la barre d'outils "Sélection"ou "Temps suivant la version d'Audacity, est automatiquement annoncé  si un changement a eu lieu et sous la forme:
+- annonce du libellé de la zone de sélection numérique "position audio",
+- annonce du contenu de la zone de sélection numérique avec formatage du temps
 
 
 Le retour de la position audio en début de sélection est signalé.
@@ -218,13 +218,13 @@ Les raccourcis suivants d'Audacity (définis par défaut) permettent de définir
 - "Control + Majuscule + flèche gauche": Contracter la sélection à droite.
 
 
-Si l'option "Annoncer automatiquement les changements de sélection" est cochée,  En lecture arrêtée et après l'activation du raccourci, les   changements de sélection sont annoncés
-Suivant le type de raccourci, l'un  ou l'autre ou les deux des zones d'édition de sélection de la barre d'outils "Sélection" sont annoncés sous la forme:
-- annonce du label de la zone d'édition("début", "fin", "centré", "durée" suivant le choix d'affichage),
+Si l'option "Annoncer automatiquement les changements de sélection" de la catégorie "Options" des paramètres de l'extension est cochée,  En lecture arrêtée et après l'activation du raccourci, les   changements de sélection sont annoncés
+Suivant le type de raccourci, l'une  ou/et l'autre  des zones de sélection numérique  de la barre d'outils "Sélection" sont annoncés sous la forme:
+- annonce du libellé de la zone de sélection numérique ("début", "fin", "centré", "durée" suivant le choix d'affichage),
 - annonce de son contenu avec formatage du temps,
 
 
-Comme tous les labels annoncés sont ceux qui sont affichés par Audacity, il peut y avoir des incohérences dues à la traduction  ou au codage (par exemple, sélection fin au lieu de fin de la sélection", "durée sélection" au lieu de "longueur de la sélection").
+Comme tous les libellés annoncés sont ceux qui sont affichés par Audacity, il peut y avoir des incohérences dues à la traduction  ou au codage (par exemple, sélection fin au lieu de fin de la sélection", "durée sélection" au lieu de "longueur de la sélection").
 
 Ces raccourcis  peuvent être modifiés par l'utilisateur sans impacter ce fonctionnement.
 
@@ -236,19 +236,22 @@ Dans Audacity, la barre d'espace est prévue pour lancer ou arrêter la lecture 
 
 Pour appuyer sur le bouton, il faut utiliser la touche "Entrée" mais cela déplace le focus sur l'élément suivant de la fenêtre et aucun changement d'état du bouton n'est vocalisé.
 
-Si l'option "Utiliser la barre d'espace ou la touche Entrée pour appuyer sur un bouton" est cochée, il est alors possible d'appuyer  sur un bouton avec la barre d'espace ou la touche Entrée et les changements sont alors annoncés.
+Si l'option "Utiliser la barre d'espace ou la touche Entrée pour appuyer sur un bouton" de la catégorie "Options" des paramètres de l'extension est cochée, il est alors possible d'appuyer  sur un bouton avec la barre d'espace ou la touche Entrée et les changements sont alors annoncés.
 
 
-++ Vocalisation des zones d'édition du temps dans la barre d'outils Sélection Audacity ++[HDR103]
-La Barre d'outils Sélection Audacity  (ou Audacity Sélection Toolbar non traduit) présente des zones d'édition de position des curseurs  "position audio", "début de sélection", "fin de sélection", "centre de sélection" ou "durée de sélection".
+++ Vocalisation des zones de sélection numérique du temps Audacity ++[HDR103]
+Audacity  présente des zones de sélection numérique pour afficher un temps comme par exemple:   lla position audio, le début de sélection, la fin de sélection, le centre de sélection,  la durée de sélection.
 
-Ces zones d'édition présentent l'information suivant le format défini par l'utilisateur avec le menu contextuel.
+Ces zones d'édition présentent l'information suivant le format défini par l'utilisateur à l'aide du menu contextuel de la zone.
 
 L'information est une suite de chiffres . Chaque  chiffre appartient à un groupe de chiffre comme les heures, minutes, secondes, etc.
 
 Pour modifier cette information , il faut se placer sur le chiffre à modifier  (par flèche droite ou gauche)  et l'augmenter ou le diminuer avec les flèches haute ou bas.
 
-Cette extension permet une meilleure vocalisation  en indiquant un temps en heure, minute et secondes , en   indiquant la nature du chiffre qui est sélectionné et   la valeur du groupe du chiffre modifié.
+Par défaut, Cette extension permet une meilleure vocalisation  en indiquant un temps en heure, minute et secondes , en   indiquant la nature du chiffre qui est sélectionné et   la valeur du groupe du chiffre modifié pour les zones de sélecction numérique citée en exemple ci-dessus.
+
+Ceci peut être désactivé  en décochant l'option "Améliorer l'annonce des zones de sélection numérique" de la catégorie "Options" des paramètres de l'extension.
+
 
 Seules les format suivants sont pris en compte:
 - secondes,
@@ -260,9 +263,9 @@ Seules les format suivants sont pris en compte:
 - échantillons.
 
 
-La touche "NVDA + flèche haut" permet de faire vocaliser l'information de la zone d'édition.
+La touche "NVDA + flèche haut" permet de faire vocaliser l'information de la zone de sélection numérique.
 
-Les mêmes mécanismes sont mis en place dans d'autre boites de dialogue qui présentent des zones d'édition de temps du même style, comme la boite de dialogue "Enregistrement temporisé".
+Les mêmes mécanismes sont mis en place dans d'autre boites de dialogue qui présentent des zones de sélection numérique de temps du même style, comme la boite de dialogue "Enregistrement temporisé".
 
 ++ Autres adaptations ++[hdr104]
 - Les pistes  ne sont plus annoncées comme étant des lignes d'un tableau et la vue de piste comme un tableau.
@@ -272,6 +275,14 @@ Les mêmes mécanismes sont mis en place dans d'autre boites de dialogue qui pr�
 
 
 + Historique +
+++ v2.0 (01/08/2020) ++
+Compatibilité avec audacity 2.4.2 et 2.4.1
+- compatibilité avec NVDA 2020.2
+- ajout de l'option pour désactiver l'annonce améliorée des zones de sélection numérique.
+- présentation des paramètres de l'extension sous forme de catégories.
+- modification du code pour rechercher les objets avec leur controlID
+
+
 ++ v1.4.5 (19/05/2020) ++
 Correction de bugs:
 - mauvais support de la version 2.3.2.

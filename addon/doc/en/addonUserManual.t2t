@@ -46,14 +46,14 @@ As well as accessibility improvements:
 
 ++ update ++
 The update of the extension is, by default, automatically a short time after the start of NVDA (between 20 and 600 seconds) and a maximum of once per day.
-It is possible to disable this update by unchecking the option "automatically check for updates" in the extension settings, menu item "Update".
+It is possible to disable this update by unchecking the option "automatically check for updates" of "Update" category in the extension settings.
 The version of the extension can be:
 - a stable version: its version number is "1.0" for example.
 - either a development version: the version number is of the type "1.0-dev1", or "1.0-rc1", or "1.0-beta2".
 
 
 By default, the stable version is updated with a stable version more recent (higher version number).
-But it is possible to update the stable version running with a development version of the next stable version. Just check the option "Update also update the stable release to the versions of development" located in the settings of the extension, menu item "Update".
+But it is possible to update the stable version running with a development version of the next stable version. Just check the option "Update also update the stable release to the versions of development" located in the "Update" category of extension settings.
 
 A development version is updated with a development version more recent or stable version.
 
@@ -63,7 +63,7 @@ The button "Search for update" placed in the extension settings, menu item "Upda
 
 
 ++ Compatibility ++
-Tis version of module has been tested with Audacity version 2.3.3 and 2.3.2. Previous versions of Audacity are not supported.
+Tis version of module has been tested with Audacity version 2.4.2, 2.4.1, 2.3.3 and 2.3.2. Previous versions of Audacity are not supported.
 
 ++ Necessary configuration ++
 For proper operation of the module, it is necessary to :
@@ -125,7 +125,7 @@ This script is triggered by the command "SHELL_KEY_AUDIO_POSITION" of the interp
 
 No gesture of command assigned by default.
 
-It announces the time indicated in the field "audio position" of the toolbar "Audacity selection Toolbar".
+It announces the time indicated in the field "audio position" of the  "selection or "time" (depending of Audacity version) Toolbar.
 
 ++ Report informations's selection ++[hdr2]
 To use this script, it is necessary that the focus is in the tracks view.
@@ -222,7 +222,7 @@ The following shortcuts from Audacity (set by default) allow you to set or move 
 - "Control + Shift + left arrow": to contract  the selection to the right.
 
 
-If the option "Report automaticaly the selection changes" is selected, playback is stopped and after the activation of the shortcut, the selection changes are announced
+If the option "Report automaticaly the selection changes" located in "Options" category of the extension settings is selected, playback is stopped and after the activation of the shortcut, the selection changes are announced
 Depending on the type of shortcut, one or the other or both of the selection fields of the toolbar in "Selection" are announced in the form:
 - announcement of the label of the field,
 - announcement of its contents formatted not to say the zeros.
@@ -240,20 +240,22 @@ In Audacity, the bar space is provided to start or stop the audio playback, but 
 
 To press the button, it is necessary to use the "Enter" key, but this moves the focus to the next item in the window and no status change of the button is vocalized.
 
-If the option "Use space bar or Enter key to press a button" is checked, it is then possible to press a button with the space bar or the Enter key and the state changes are announced.
+If the option "Use space bar or Enter key to press a button" located in "Options" category of extension settings is checked, it is then possible to press a button with the space bar or the Enter key and the state changes are announced.
 
 
-++ Vocalization of the edit boxes of the time in the Selection toolbar Audacity ++[HDR103]
-The "Audacity Selection" toolbar  shows zones for editing time.
+++ Vocalization of the time's edit spin boxes ++[HDR103]
+Audacity shows some edit spin boxes  for editing time like, for exemple: audio position, selection start, selection end, selection center, selection length .
 
 This time is recorded according to a format as you configure the context menu.
 
 To change this time, it is necessary to be placed on the digit to modify (for right or left arrow) and the increase or the decrease with the arrows high or low.
 
-This module allows a better vocalization of a hand indicating the time in hours, minutes and seconds, and on the other hand, in indicating the nature of the digit that is changed:
+By default, this module allows a better vocalization of a hand indicating the time in hours, minutes and seconds, and on the other hand, in indicating the nature of the digit that is changed:
 - the tens and the units for the hours, minutes, and seconds,
 - the tenths, hundredths, and thousandths to seconds.
 
+
+This feature can be desactivated by unchecking the "Edit spin box enhanced announcement" check box located in "Options" category of extension settings.
 
 But only the following format are taken into account:
 
@@ -268,7 +270,7 @@ But only the following format are taken into account:
 
 The "NVDA + upArrow" key command allows you to vocalize the full-time.
 
-The same mechanisms are put in place in other dialog boxes which are areas of editing time in the same style as the  "timer Record" dialog.
+The same mechanisms are put in place in other edit spin boxes which are areas of editing time in the same style as the  "timer Record" dialog.
 
 ++ Other adapttations ++[hdr104]
 - The tracks are not announced as rows  and the tracks view as a table.
@@ -278,6 +280,14 @@ The same mechanisms are put in place in other dialog boxes which are areas of ed
 
 
 + History +
+++ Version 2.0 (01/08/2020) ++
+Compatibility with audacity 2.4.2 and 2.4.1.
+- compatibility with NVDA 2020.2
+- adding option to desactivate enhanced announcement of edit spin boxes.
+- parameters dialog with category.
+- code modified for searching object based on controlID
+
+
 ++ Version 1.4.5 (19/05/2020) ++
 Bugs's correction:
 - bad support of audacity 2.3.2 version.

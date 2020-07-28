@@ -1,6 +1,6 @@
 #globalPlugins\audacityAccessEnhancement\au_globalPlugin.py
 # a part of audacityAccessEnhancement add-on
-#Copyright (C) 2019 Paulber19
+#Copyright (C) 2019-2020 Paulber19
 #This file is covered by the GNU General Public License.
 
 
@@ -29,9 +29,9 @@ class AudacityGlobalPlugin(globalPluginHandler.GlobalPlugin):
 			autoUpdateCheck(releaseToDev = _addonConfigManager.toggleUpdateReleaseVersionsToDevVersions     (False))
 	def installSettingsMenu(self):
 		self.preferencesMenu= gui.mainFrame.sysTrayIcon.preferencesMenu
-		from .au_configGui import AudacitySettingsDialog
+		from .au_configGui import AddonSettingsDialog
 		self.menu = self.preferencesMenu.Append(wx.ID_ANY,
-			AudacitySettingsDialog.title + " ...",
+			AddonSettingsDialog.title + " ...",
 			"")
 		gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU, self.onMenu, self.menu)
 	
@@ -47,8 +47,8 @@ class AudacityGlobalPlugin(globalPluginHandler.GlobalPlugin):
 			pass
 	
 	def onMenu(self, evt):
-		from .au_configGui import AudacitySettingsDialog
-		gui.mainFrame._popupSettingsDialog(AudacitySettingsDialog)
+		from .au_configGui import AddonSettingsDialog
+		wx.CallAfter(gui.mainFrame._popupSettingsDialog, AddonSettingsDialog)
 
 	def terminate(self):
 		self.deleteSettingsMenu()

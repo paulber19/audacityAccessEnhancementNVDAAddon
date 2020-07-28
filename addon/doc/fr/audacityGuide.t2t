@@ -24,14 +24,16 @@ Auteur: paulber19 (paulber19@laposte.net)
 %%toc
 
 + Introduction +
-Ce guide est une introduction à l'utilisation du logiciel Audacity  par des personnes mal ou non voyante et utilisant  le lecteur d'écran NVDA.
-Il est, au départ, la traduction  du guide écrit par David Bailes pour la version 2.2 d'Audacity et pour les utilisateurs du lecteur d'écran Jaws ([site du guide http://vip.chowo.co.uk/jaws-guides/]).
-Cette traduction a été adaptée pour la version 2.3 D'Audacity.
+Ceci est la traduction du guide pour les utilisateurs des lecteurs d'écran Jaws, NVDA et Narrator, écrit par David Bailes, pour la version 2.4.1 d'Audacity.
 
-L'installation d'une extension  sera bénéfique pour améliorer l'accessibilité d'Audacity avec NVDA, mais dans le reste du document, seul le comportement de base de NVDA sera pris en compte.
+D'autres guides sont disponibles sur la page [Jaws Guides #http://vip.chowo.co.uk/jaws-guides/]  du site Web "VIP Software Guides". Bien que ceux-ci soient écrits spécifiquement pour les utilisateurs du lecteur d'écran Jaws, beaucoup d'entre eux peuvent également être utiles aux utilisateurs d'autres lecteurs d'écran
+
 
 Vous pouvez utiliser Audacity pour l'enregistrement, l'édition simple dune  pistes individuelles, ou  des éditions plus avancées impliquant de multiples pistes.
+
 Le logiciel Audacity  peut être téléchargé à partir de la page d'accueil du site [Audacity http://audacityteam.org/].
+
+Notez qu'une version 2.4.0 d'Audacity a été brièvement publiée, mais s'est vite avérée contenir un bug sérieux. Si vous faites partie de ceux qui ont installé la version 2.4.0, il est fortement recommandé d'installer la version 2.4.1.
 
 Les  chapitres de cette introduction sont:
 - présentation des Projets Audacity et du curseur dans Audacity,
@@ -51,6 +53,10 @@ Vous pouvez enregistrer un projet Audacity en utilisant le format de projet de f
 
 En principe, Vous  n'avez  besoin  d’enregistrer un projet dans ce format que si vous avez l'intention de continuer à travailler ultérieurement sur le projet.
 
+++ Curseur ++
+Audacity a un curseur pour spécifier un temps particulier pendant l'audio, et cela est similaire au curseur dans Microsoft Word.
+Le curseur dans Audacity est utilisé pour définir des temps tels que: le début de la lecture, la position où vous voulez commencer à sélectionner une plage de temps et l'endroit où le son est collé depuis le presse-papiers
+
 ++ Boite de dialogue de bienvenue++
 Lorsque vous ouvrez Audacity, une boite de dialogue de bienvenue   s'affiche qui contient une zone de texte en  HTML décrivant des informations sur la façon d'obtenir de l'aide sur Audacity. Malheureusement les liens dans ce texte ne peuvent pas être ouverts. C’est pourquoi  les détails de l'aide disponibles sont donnés au chapitre suivant.
 
@@ -64,19 +70,23 @@ Audacity est un outil extrêmement puissant  et ce guide n'est qu'une introducti
 - [Le Wiki anglophone d'Audacity http://wiki.audacityteam.org/wiki/Audacity_Wiki_Home_Page].
 - Le manuel d'utilisation  d'Audacity   qui peut être ouvert dans votre navigateur par défaut en choisissant Manuel dans le menu "Aide".
 - [la liste de diffusion anglophone audacity4blind http://www.freelists.org/list/audacity4blind]. Sur cette page, vous pouvez vous abonner à la liste de diffusion.
+Il existe plusieurs façons de demander à être abonné à cette liste.
+La première consiste à utiliser cette page Web: saisissez votre adresse e-mail dans la zone d'édition "“your email "; puis Tabulation et cochez la case pour indiquer que vous n'êtes pas un robot; et enfin Tab pour le bouton Suivant et appuyez dessus. 
+La deuxième façon consiste à envoyer un e-mail à ecartis@freelists.org, avec le sujet "subscribe Audacity4Blind.
+Après avoir fait votre demande par l'une ou l'autre méthode, vous recevrez un e-mail pour confirmer votre abonnement. Dans cet e-mail, ouvrez le lien pour confirmer votre adresse e-mail. Une page Web s'ouvre dans laquelle vous devez accepter différents termes. Il y a trois cases à cocher qui doivent être cochées, et enfin un bouton Suivant pour appuyer
 
 
-++  Fonctionnalités à noter ++
-Les  fonctionnalités intéressantes que l'on peut noter pour les utilisateurs de lecteurs d'écran et qui sont arrivées avec la version 2.2.0 d'Audacity, sont:
-- les clips sont  accessibles pour les utilisateurs de lecteurs d'écran. Il y a des commandes pour déplacer le curseur aux limites du  clip, pour la sélection de clips et pour déplacer des clips. Elles sont décrites au chapitre ["Clip" #HDR-Clips] avec diverses autres commandes qui impliquent des clips.
-- l'ajout d'un enregistrement audio à une piste existante est   défini par défaut: l'appui sur la touche "R" ajoute de l'audio à une piste existante, tandis que  "majuscule + R" insère l'audio  enregistré dans une nouvelle piste. Une option permet de changer ce comportement et mettre l'enregistrement dans une nouvelle   piste par défaut. Pour plus de détails, voir le chapitre ["Commandes d'enregistrement" #HDR-RecordControls].
-- les  options d'affichage dans la barre d'outils Sélection,  avec les choix "Affichage" :   "début et  fin  de la sélection",   "début et  durée de la sélection",   "durée et fin de la sélection", "durée et centre de la sélection". (Voir chapitre ["Barre d'outils Sélection" #HDR-SelectionBar]).
-- le choix du  jeu de raccourcis par défaut (standard ou complet).
+
+++ Nouvelles fonctionnalités et modifications ++
+Les nouvelles fonctionnalités et modifications d'Audacity 2.4.1 décrites dans ce guide sont les suivantes: 
+- Le frottement (scrubbing en anglais)  est désormais accessible à l'aide du clavier. Vous pouvez lire l'audio en avant ou en arrière avec une large gamme de vitesses. L'écoute à une vitesse lente fournit un autre moyen de positionner le curseur de façon assez précise et est décrit au  chapitre  [Frottement #HDR-Scrubbing]  , qui se trouve dans le chapitre Déplacement du curseur #HDR-MovingCursor].
+- Le contrôle de position audio a été supprimé de la barre d'outils de sélection et se trouve maintenant dans une nouvelle barre d'outils, la barre d'outils "temps". Donc, si vous parcourez tous les contrôles de la barre d'outils de sélection, vous atteindrez le contrôle de position audio
+- En plus des commandes existantes pour rendre muettes ou non  les pistes , il y a deux nouvelles commandes    qui rendre muettes ou non les pistes sélectionnées et  qui ont  les raccourcis Ctrl + Alt + U et Ctrl + Alt + Maj + U respectivement
 
 
 ++ Raccourcis par défaut ++
 Depuis la version 2.2, Audacity installe, par défaut, un minimum de raccourcis.
-Vous pouvez changer cela et  installer un jeu complet de raccourcis. Ceci est décrit au chapitre "[Jeu de raccourcis standard ou complet #HDR-DefaultShortcutsSet]".
+Vous pouvez changer cela et  installer un jeu complet de raccourcis. Ceci est décrit au chapitre [Jeu de raccourcis standard ou complet #HDR-DefaultShortcutsSet]".
 
 Le reste de ce guide suppose que vous avez installé    le jeu complet.
 
@@ -85,62 +95,65 @@ Le reste de ce guide suppose que vous avez installé    le jeu complet.
 ++ Utilisation d'un clavier   de type autre que QWERTY ++
 Si vous utilisez un  clavier  d'un autre type que  QWERTY,  quelques commandes clavier  ne fonctionnent pas si vous utilisez Audacity avec  les paramètres par défaut.
 
-Pour résoudre ce problème, voir le chapitre "[Les raccourcis gênants #HDR-BracketShortcuts]".
+Pour résoudre ce problème, voir le chapitre ["Les raccourcis gênants" #HDR-BracketShortcuts].
 
-Ce guide étant rédigé en français, nous considérerons  dans le reste du guide que le lecteur l'est aussi,  qu'il utilise un clavier "Azerty" et que les raccourcis de base génants ont été modifiés comme le "[" et "]".
-
-++ Curseur dans Audacity ++
-
-Audacity a un curseur pour indiquer un temps donné de l'audio, similaire au curseur dans Microsoft Word.
-Le curseur dans Audacity est utilisé pour définir un temps comme le début de la lecture, la position où vous voulez commencer à sélectionner une plage de temps ou l'endroit de l'audio où vous voulez collez l'audio   du presse-papiers.
+++Informations pour les utilisateurs du Narrateur ++
+Dans un certain nombre d'endroits de ce guide, il y a l'instruction d'appuyer sur la touche de votre lecteur d'écran pour lire la ligne actuelle.
+ Si vous utilisez une version de Windows 10 avant la mise à jour de mai 2019 (version 1903), cette commande Narrateur ne peut être utilisée que lors de la lecture de texte, et il est nécessaire d'utiliser la touche pour lire l'élément actuel, plutôt que la ligne actuelle
+++ Script Jaws ++
+Il existe un script Jaws pour Audacity, et son utilisation apporte la fourniture de commentaires supplémentaires et  de moyens pratiques d'obtenir des informations.
+Tous les détails de ses fonctionnalités sont disponibles sur le site Web Jaws Script for Audacity.
+Un lien direct vers le programme d'installation pour une version bêta de la version 2.2.2 de ce script est: [Jaws-Script-for-Audacity_2_2_2-beta-2020-05-10.exe #https://github.com/campg2j003/JAWS-Script-for-Audacity/releases/download/rel2.2.2-beta-2020-05-10/Jaws-Script-for-Audacity_2_2_2-beta-2020-05-10.exe].
+Notez que pour ceux qui utilisent Jaws, le reste du guide ne suppose pas que ce script est installé
 
 + Fenêtre principale +
 ++ Principaux composants de la fenêtre ++
 Les principaux composants de la fenêtre principale d'Audacity sont:
-- la barre de Titre: Lorsque la fenêtre contient un projet sans nom, par exemple au  lancement d’Audacity, le texte dans la barre de titre est "Audacity". Lorsque la fenêtre contient un nom de projet, le texte est le nom du projet. Pour Lire la barre de titre  utilisez "NVDA + T".
-- La barre de Menu: Il y a , par défaut, un menu  supplémentaire qui n'est pas présent dans la barre de menu, mais qui peut y être ajoutés. Voir le chapitre "[Menus extra #HDR-ExtraMenus]".
-- le groupe des barres d'outils: voir le chapitre "[Groupe des  barres d'outils #HDR-ToolsBarsGroup]":
-- tableau de pistes: Il contient les pistes qui composent  le projet. Voir le chapitres "[Tableau de pistes #HDR-TracksTable]".
-- La barre d'outils sélection: elle contient les éléments  pour la lecture et le réglage du curseur de lecture et celui  du début et de  la fin/ durée/centre de la zone à sélectionner. Voir le chapitre "[Barre d'outils Sélection #HDR-SelectionBar]".
-- La barre d'état: celle-ci est divisé en 3 sections. La première section est probablement la plus intéressante, car elle contient l'état du transport,  à savoir  celui de l'arrêt d’Audacity, de la lecture, de l'enregistrement et ainsi de suite. Pour Lire la barre d'état, appuyez sur "NVDA + fin".
+- la barre de Titre: Lorsque la fenêtre contient un projet sans nom, par exemple au  lancement d’Audacity, le texte dans la barre de titre est "Audacity". Lorsque la fenêtre contient un nom de projet, le texte est le nom du projet.
+- La barre de Menu: Il y a , par défaut, un menu  supplémentaire qui n'est pas présent dans la barre de menu, mais qui peut y être ajoutés. Voir le chapitre ["Menus extra" #HDR-ExtraMenus].
+- le groupe supérieur des barres d'outils.
+- tableau "Vue de  piste": Il contient les pistes qui composent  le projet. Voir le chapitres ["Tableau "Vue de  piste"" #HDR-TracksTable].
+- le groupe inférieur  des barres d'outils.
+- La barre d'état: celle-ci est divisé en 3 sections. La première section est probablement la plus intéressante, car elle contient l'état de l'outils "Transport",  à savoir  celui de l'arrêt d’Audacity, de la lecture, de l'enregistrement et ainsi de suite. Pour Lire la barre d'état, appuyez sur "NVDA + fin".
 
 
 ++ Déplacement dans la fenêtre ++
 Comme dans n'importe quelle fenêtre, pour atteindre la barre de menus, appuyez sur "Alt", et  pour la quitter appuyez sur "Échap" ou  "Alt".
 
 L’appui sur  "Control + F6" vous fait passer d'un élément à un autre parmi:
-- le tableau de piste: NVDA annonce son nom "vue de piste".
-- la barre d'outils sélection: c'est le nom que l'on lui donne dans ce document car elle n'en a pas.
-- le groupe des Barres d'outils comme Transport, outils d'enregistrement, outils de sélection, outils de niveau, etc).Le groupe n'a pas non plus de nom.
+- le groupe supérieur des barres d'outils comme la barre d'outils "Sélection": c'est le nom que l'on lui donne dans ce document car elle n'en a pas.
+- le tableau "Vue de piste": NVDA annonce son nom "vue de piste".
+- le groupe inférieur des Barres d'outils comme Transport, outils d'enregistrement, outils de sélection, outils de niveau, etc).Le groupe n'a pas non plus de nom.
 
 
 En appuyant sur "Control + majuscule + F6" vous vous  déplacez   dans l'ordre inverse.
 
 Dans le groupe des barres d’outils, vous passez d'un outil à un autre avec "control+tab" ou "majuscule + control +tab".
 
+++ Lecture de la barre d'état ++
+Si vous utilisez Jaws ou NVDA, vous pouvez lire la barre d'état d'Audacity à l'aide de la combinaison de touches  tandard du lecteur d'écran prévue pour lire une barre d'état.
+Malheureusement, le Narrateur n'a actuellement pas de commande pour lire la barre d'état, et il n'est donc pas simple de lire la barre d'état à l'aide de ce lecteur d'écran
+
 + Ouverture d'un fichier audio +
 Pour ouvrir un projet de fichiers audacity  ou un fichier audio standard, utiliser la boîte de dialogue "Choisir un ou plusieurs fichier (s)", qui est atteinte par le sous-menu "Ouvrir" du menu "Fichier"  ou par le raccourci "Control + O". La boîte de dialogue  a une structure similaire à la boîte de dialogue "Ouvrir" de Windows.
 
-Quand vous lancez  Audacity, la fenêtre principale contient un tableau de pistes vide.
+Quand vous lancez  Audacity, la fenêtre principale contient un tableau "Vue de piste" vide.
 
 Quand vous ouvrez un fichier audio, il s'ouvre dans cette fenêtre initiale.
 
-Après l'ouverture d'un fichier audio standard, le tableau de pistes  contient une seule piste, alors qu'après l'ouverture d'un projet de fichiers Audacity, le tableau de pistes  contient toutes les pistes du projet enregistrées dans le projet.
+Après l'ouverture d'un fichier audio standard, le tableau "Vue de piste"  contient une seule piste, alors qu'après l'ouverture d'un projet de fichiers Audacity, il  contient toutes les pistes du projet enregistrées dans le projet.
 Si vous ouvrez n'importe quel autre fichier audio, alors ils s'ouvrent dans une nouvelle fenêtre Audacity.
 
 Si vous souhaitez délibérément créer une nouvelle fenêtre avec un projet vide, choisissez le sous-menu "Nouveau" du  menu "Fichier" ou appuyez sur "Control + N".
 
-À la suite de l'ouverture    de fichiers audio standards, vous pouvez  importer un ou plusieurs nouveaux fichiers audio standards dans le projet actuel. Dans ce cas, une nouvelle piste est ajoutée dans le tableau  de pistes  pour chaque fichier. Pour plus de détails, voir le chapitre "[Importation de fichiers audio   #HDR-AudioFileImport]".
+À la suite de l'ouverture    de fichiers audio standards, vous pouvez  importer un ou plusieurs nouveaux fichiers audio standards dans le projet actuel. Dans ce cas, une nouvelle piste est ajoutée dans le tableau  de pistes  pour chaque fichier. Pour plus de détails, voir le chapitre ["Importation de fichiers audio" #HDR-AudioFileImport].
 
 ++ Ouverture  de fichier  audio standards ++
 L'installation par défaut de Audacity permet d'ouvrir des fichiers audio dans les formats audio suivants : WAV, AIFF, AU, MP3, MP2, MPEG, Ogg Vorbis et FLAC.
 
-En outre, vous pouvez ouvrir des fichiers dans d'autres formats, incluant wma et m4a si vous téléchargez et installez la bibliothèque FFmpeg (décrite au chapitre ["Bibliothèque FFmpeg" #HDR-FFMPEGLibrary].
+En outre, vous pouvez ouvrir des fichiers dans d'autres formats, comme wma et m4a,  si vous téléchargez et installez la bibliothèque FFmpeg (décrite au chapitre ["Bibliothèque FFmpeg" #HDR-FFMPEGLibrary].
 
 Elle n'est pas incluse dans l'installation d'Audacity en raison de problèmes juridiques sur les brevets.
-
-Note: Une alternative à l'utilisation de la bibliothèque FFmpeg pour ouvrir des fichiers dans d'autres formats est d'utiliser un autre programme pour convertir le fichier dans un des formats reconnus par   l'installation par défaut d’Audacity. Il y a plusieurs programme  de conversion de format audio    disponibles, comme par exemple "switch"   (gratuit dans sa version de base ou "dBpoweramp Music Converter".
-
 
 Si vous ouvrez un fichier compressé, tel qu'un fichier MP3, et  après avoir appuyé sur le bouton "ouvrir" dans la boîte de dialogue "Ouvrir",  une boîte de dialogue d'Importation s'ouvre qui donne
 La progression  de la décompression du fichier par Audacity.
@@ -162,10 +175,9 @@ Pour sauvegarder dans ce format, utilisez le sous-menu "Sauvegarder le projet" d
 La première fois que vous faites cela, vous obtenez une boîte de dialogue d'Avertissement vous indiquant que seul Audacity peut lire ces fichiers de projet. La boîte de dialogue contient une case à cocher qui vous permet de choisir si vous ne voulez plus cet avertissement à nouveau. Si vous appuyez sur le bouton OK, vous obtenez alors le dialogue "Sauvegarder le Projet sous".
 
 ++ Sauvegarde  dans des formats audio ++
-L'installation par défaut de Audacity permet d'enregistrer dans les normes de format audio suivantes: WAV, Ogg Vorbis, FLAC, et MP2.
-En outre, vous pouvez enregistrer dans certains autres formats si vous téléchargez et installez des bibliothèques supplémentaires qui ne sont pas incluses dans Audacity en raison de problèmes juridiques avec les brevets:
-- Vous pouvez enregistrer au format MP3 si vous téléchargez et installez la  bibliothèque LAME MP3, comme décrit dans le chapitre ["Bibliothèque LAME MP3 encoder" #HDR-LAMEMP3Encoder].
-- Vous pouvez enregistrer dans des formats y compris les formats wma et m4a si vous téléchargez et installer la bibliothèque FFmpeg, voir le chapitre ["Bibliothèque FFmpeg" #HDR-FFMPEGLibrary].
+L'installation par défaut d'Audacity peut enregistrer dans les formats standard suivants: WAV, FLAC, MP3, Ogg Vorbis et MP2.
+
+En outre, vous pouvez enregistrer dans des formats y compris les formats wma et m4a si vous téléchargez et installez la bibliothèque FFmpeg, qui n'est pas incluse avec Audacity en raison de problèmes juridiques,  voir le chapitre ["Bibliothèque FFmpeg" #HDR-FFMPEGLibrary].
 
 
 Si vous voulez sauvegarder tout l'audio, utilisez le sous-menu "Exporter sous" du menu "Fichier"  et choisissez le sous-menu "Exporter l'Audio" (raccourci "control + majuscule +E").
@@ -179,6 +191,7 @@ Pour définir le format de fichier que vous voulez utiliser pour l'enregistremen
 Après avoir choisi le format de fichier, vous pouvez définir les options pour l’encodage utilisé par le format à l’aide des éléments qui apparaissent après le bouton Annuler et que l'on atteint par tabulation.
 
 Comme le format MP3 est le plus souvent utilisé,  de nombreuses options pour l'encodage MP3 sont décrites dans la suite de ce chapitre.
+Dans la zone d'édition Nom de fichier, tapez un nom pour le fichier, puis appuyez sur le bouton Enregistrer (Alt + S). 
 
 La boite de dialogue "Édition des  balises de Métadonnées" s'ouvre automatiquement. Cela vous permet d'éditer divers éléments d'information sur les données audio, comme le nom de l'Artiste et le titre de la Piste.
 
@@ -190,108 +203,71 @@ Attention: si vous annulez ce dialogue,    cela entrainera  l'annulation de l'en
 
 Si vous ne voulez pas d'édition de métadonnées à  chaque fois que vous sauvegarder de l'audio, vous pouvez désactiver cette fonctionnalité comme décrit dans le chapitre ["édition des balises de métadonnées" #HDR-MetaDataTags].
 
-Notez aussi que si vous  essayez d'enregistrer dans le format MP3 et que vous n'avais pas installé le Lame MP3 de la bibliothèque, alors la boite de dialogue "Recherchez Lame" s'ouvre.
-De la même façon, si vous avez essayé de sauvegarder dans l'un des formats inclus dans la bibliothèque FFmpeg, une boîte de message s'ouvre vous indiquant que cela doit être configuré.
+Notez aussi que si vous  essayez d'enregistrer dans un des formats inclues dans la bibliothèque FFmpeg , une boîte de message s'ouvre vous indiquant que celle-ci doit être configurée
 
 Le sous-menu "exporter sous"  contient d'autres commandes  pour exporter sous des formats comme "mp3", "wav" ou "OGG".
 Ces commandes ouvrent la boîte de dialogue "Exporter l'Audio" avec le   type déjà défini sur le format approprié.
 
 Toutefois, étant donné que la boite de dialogue d'Exportation  Audio se souvient du dernier format utilisé et que   les commandes n'ont pas de raccourcis par défaut, vous pourrez trouver plus commode d'utiliser la boîte de dialogue Exporter l'Audio qui possède un raccourci.
 
-+++ Options MP3 +++
-Ce chapitre décrit les différents éléments pour spécifier les options MP3 lors de l'exportation  dans ce format et donne des recommandations pour le paramétrage de ceux-ci.
-Ces éléments apparaissent après le bouton Annuler dans les boites de dialogue comme "Exportations de l'Audio" et "Exportation audio Sélectionné".
-Ils forment le groupe "Options de format". Ce sont:
-- le Mode de débit binaire: un ensemble de 4 radio boutons : préréglage, Variable, Moyenne, et Constant.
-- La zone de liste déroulante "qualité".
-- la liste déroulante "Vitesse variable": qui n'apparaît que pour certains mode de débit binaire.
-- Le mode de canal, un ensemble de deux radio boutons: canaux stéréo joints, et Stéréo. celui-ci n'apparaît pas si la case à cocher suivante est cochée.
-- la case à cocher "Forcer à exporter en mono".
-
-
-Voici quelques paramètres recommandés:
-- Pour la musique:
- - Régler le Mode de débit binaire sur "Variable".
- - la Qualité soit 6, 5 ou 4 (plus le chiffre est bas,  plus la qualité est bonne).
- - Vitesse Variable sur "Rapide".
- - le Mode de Canal sur  "canaux stéréo joints".
-- Pour la parole ou pour  une exigence de petites tailles de fichier:
- - Régler le Mode de débit binaire sur "Moyenne".
- - La Qualité de 64, 80 ou 96 kbps (plus le nombre est grand, plus la qualité est bonne).
- - le mode de Canal sur "canaux stéréo joints".
-
-
-Pour une description complète des options pour le LAME MP3 encoder voir  Les pages sur LAME  du site ["Hydrogen Audio wiki" #http://wiki.hydrogenaud.io/index.php?title=LAME].
-
 + Lecture audio +[HDR-AudioPlayback]
-La Lecture dépend s'il y a ou pas de plage de temps sélectionnée (voir le chapitre ["Sélection  audio" #HDR-AudioSelection]):
-- pas de sélection: la lecture commence à la position du curseur de lecture.
-- une plage de temps est sélectionnée: la lecture commence au début de la sélection et s'arrête à la fin de la sélection.
+++ Paramètres de lecture ++
+Vous pouvez sélectionner le périphérique de lecture qu'Audacity utilise à plusieurs endroits, notamment dans le groupe supérieur de  barres d'outils de la fenêtre principale d'Audacity et dans la catégorie "Périphériques" de la boîte de dialogue "Préférences". 
+Si vous ne disposez que d'un seul appareil de lecture sur votre ordinateur, vous ne devriez pas avoir à modifier ce paramètre.
+
+Le volume de la lecture est contrôlé par le curseur du potentiomètre  de volume de lecture qui se trouve dans le groupe supérieur de barres d'outils de la fenêtre principale d'Audacity.
+
+Pour modifier l'un de ces paramètres de cette barre d'outils  et en supposant que le tableau "Vue de piste" a le focus :
+-  Appuyez deux fois sur Ctrl + F6 pour atteindre le groupe supérieur de     barres d'outils
+- Tabulez en avant ou en arrière (par "majuscule + Tab")  jusqu'à ce que vous arriviez à la zone de liste déroulante Périphérique de lecture ou au potentiomètre  de volume de lecture  et apportez les modifications souhaitées.
+- Appuyez sur Ctrl + F6 pour revenir à la vue de Piste.
 
 
-Le volume de la lecture est contrôlé par le curseur du potentiomètre de lecture qui est dans la table de Mixage du groupe de barre d'outils.
-
-Les raccourcis  pour la lecture sont:
-- Pour démarrer ou arrêter, appuyez sur "Espace".
-- Pour démarrer ou arrêter et marquer la position du  curseur, appuyez sur "X". Lorsque vous utilisez cette touche pour arrêter la lecture, le curseur est déplacé vers la position où la lecture s'est arrêtée.
-- Mettre en Pause ou reprendre la lecture, appuyez sur "P".
-- Sauter: En lecture, si le focus est mis sur le tableau de pistes, vous pouvez sauter vers l'avant ou vers l'arrière d'une courte ou longue période. Pour sauter en arrière ou en avant d'une courte période  presser la touche "flèche gauche" ou "flèche droite" respectivement. Pour sauter en arrière ou en avant d'une longue période, appuyez sur "majuscule + Flèche Gauche" ou "majuscule + Flèche Droite" respectivement. La durée de ces   périodes peut être définie dans la boîte de dialogue "Préférences", comme décrit dans le chapitre ["Sauts temporels" #HDR-Seektimes].
-- pour lire en boucle (répéter l'audio de façon continue), appuyez sur "majuscule + espace".
+La lecture dépend de la sélection d'une plage de temps (voir le chapitre ["Sélection  audio" #HDR-AudioSelection]):
+- s'il n'y a pas de sélection, la lecture commence à la position du curseur.
+- s'il y a une sélection, la lecture commence au début de la sélection et s'arrête à la fin de la sélection.
 
 
-L'état de la lecture est le premier élément dans la barre d'état, que vous pouvez  connaitre en appuyant sur "NVDA+fin".
++++ Commandes de lecture et raccourcis +++
+Ce sont les touches  de  commandes de lecture les plus courantes.
+
+Outre les commandes de recherche, les commandes se trouvent dans le sous-menu "Lecture" du menu "Transport":
+- Pour démarrer ou arrêter, appuyez sur la barre d'espace,
+- Pour démarrer ou arrêter et déplacer le curseur, appuyez sur "x": Lorsque vous utilisez cette touche pour arrêter la lecture, le curseur est déplacé à la position où la lecture a été arrêtée.
+- Pause ou reprise, appuyez sur "p".
+- Recherche / Saut. Pendant la lecture, si le focus est dans la vue de piste, vous pouvez sauter en avant ou en arrière sur une courte ou une longue période. Pour sauter en arrière ou en avant d'une courte période, appuyez respectivement sur la flèche gauche ou la flèche droite. Pour sauter en arrière ou en avant sur une longue période, appuyez respectivement sur "majuscule + Flèche gauche" ou "majuscule + Flèche droite". Les tailles par défaut des périodes courte et longue sont respectivement de 1 et 15 secondes, mais leurs tailles peuvent être définies dans la boîte de dialogue "Préférences", comme décrit dans le chapitre ["Sauts temporels" #HDR-Seektimes].
+- Pour lire en boucle, c'est-à-dire répéter en continu, appuyez sur "majuscule + espace".
 
 
-+ Groupe des  Barres d'outils +[HDR-ToolsBarsGroup]
-Le groupe des  Barres d'outils  contient plusieurs différentes barres d'outils, composée chacune de plusieurs éléments.
+Pour toutes les commandes répertoriées ci-dessus qui démarrent la lecture, la lecture démarre puis s'arrête automatiquement selon la plage de temps sélectionnée (voir le chapitre ["Sélection de l'audio" #HDR-AudioSelection]).
 
-Ce groupe  s'atteint, quand le focus est dans le tableau de piste,  en tapant deux fois "control+F6"  ou simplement "control+majuscule+F6" .
+S'il n'y a pas de sélection, la lecture commence à la position du curseur et s'arrête automatiquement à la fin de l'audio du projet.
 
-À l'intérieur de ce groupe, Vous pouvez accéder à  ses éléments  en utilisant simplement la touche "Tab".
+Si une plage de temps est sélectionnée, la lecture commence au début de cette sélection et s'arrête automatiquement à la fin de la sélection.
 
-Vous pouvez appuyer sur l'un des boutons de la barre d'outils en appuyant sur la touche "Entrée".
+Si vous avez besoin de vérifier l'état de la lecture, c'est-à-dire la lecture, l'arrêt ou la pause, ces informations sont disponible en tant que premier élément de la barre d'état.
 
-Mais vous ne pouvez pas utiliser la touche "Espace" pour appuyer sur le bouton car cette touche est utilisée pour le démarrage et l'arrêt de la lecture.
+Audacity comprend plusieurs commandes de lecture plus spécialisées, qui sont décrites aux endroits appropriés du guide.
 
-Une   des barres d'outils  contient  des boutons  qui définissent  la forme de l'onde audio au cours de l'enregistrement ou la lecture. Cela n'est pas d'un grand intérêt pour la plupart des utilisateurs de lecteurs d'écran.
+Une liste complète des commandes de lecture est disponible dans la rubrique "Lecture" du chapitre "Raccourcis".
 
-Les barres d'outils qui sont affichés par défaut sont:
-- la barre d'outils "Transport": elle contient les boutons pour la lecture et l'enregistrement (tous les éléments sont également disponibles dans le menu "Transport" avec des raccourcis clavier).
-- la barre d'outils "outils": elle contient des boutons pour différents outils d'édition qui impliquent l'utilisation de la souris.
-- la Barre d'outils "Mesureur d'enregistrement" et "mesureur de lecture": ce sont les vumètres d'enregistrement et de Lecture. Chacun de ces éléments contient un bouton déroulant en bas du vumètre qui ouvre un menu permettant de contrôler le niveau.
-- la barre d'outils "Mixage": elle contient le potentiomètre de lecture et d'enregistrement   .
-- la barre d'outils "édition": elle contient des boutons pour Couper, Coller, etc. Ces commandes sont aussi disponibles sur l'Edition ou dans le menu Affichage, et tous ont des raccourcis clavier.
-- la barre d'outils "Lecture à la vitesse": elle contient un bouton "lecture à la vitesse sélectionnée" et  un potentiomètre  de sélection de la vitesse de lecture.
-- la barre d'outils "périphériques": elle contient des zones de liste déroulante pour  l'hôte audio, les périphériques de lecture et d'enregistrement, le nombre de canaux d'enregistrement. Tous ces réglages peuvent également être effectués soit dans différents dialogues, ou dans la catégorie "Périphériques" de la boîte de dialogue ["Préférences" #HDR-Preferences]. Les raccourcis    sont: "majuscule + H" pour l'hôte audio,  "majuscule + I" pour périphérique d'enregistrement, "majuscule + N" pour le nombre de canaux d'enregistrement et "majuscule + O" pour périphérique de lecture.
++ Tableau "Vue de pistes" +[HDR-TracksTable]
+Le tableau "Vue de pistes" contient les pistes qui composent le projet. Le tableau a une colonne et une ligne pour chacune des pistes. Chaque piste possède un nom que le lecteur d'écran  lit lorsque vous passez de piste en piste.
 
+Une piste audio est un conteneur pour les données audio qui  sont affichées sous  la forme d'une onde.
 
-Note: pour cette dernière barre d'outils,  si l'une de ces zones de liste modifiable est sous le focus et que vous appuyez sur   un caractère du clavier qui est un raccourci d'Audacity,  la touche est utilisée pour le raccourci, plutôt que de sélectionner une option commençant par ce caractère. Donc, la sélection d'une option à l'aide de son premier caractère est n'est pas recommandée.
+Souvent, les données audio démarrent à l'instant zéro, mais après l'édition, ce n'est plus toujours le cas.
 
-En outre, si vous démarrez la lecture ou l'enregistrement, le focus est alors automatiquement déplacé vers le Tableau de pistes.
+À la gauche de la fin de la piste audio, il y a une petite zone contenant différents éléments qui comprennent un menu, les commandes pour le gain et le panoramique de la piste.
+L'utilisation de ces commandes est décrite dans la section  ["Édition audio avec plusieurs pistes" #HDR-ADvancedEdition] de ce guide.
 
-Vous pouvez afficher ou masquer tout ou partie  de ces barres d'outils à l'aide du sous-menu "barre d'outils"  du menu "Affichage".
+Le Curseur s'affiche dans le tableau "Vue de piste" comme une ligne verticale. C'est la position de départ de la  lecture  .
 
-En affichant uniquement les barres d'outils que vous êtes susceptibles d'utiliser, tels que la Barre de Mixage,  cela a l'avantage de réduire considérablement le nombre de tabulations nécessaires à faire pour trouver un élément particulier.
-
-Avertissement de bug: si vous afficher une barre d'outils qui n'était pas indiqué lorsque vous avez ouvert Audacity, la barre d'outils sera présenté comme une barre d'outils flottante quelque part dans la fenêtre d'Audacity, et vous ne serez pas en mesure de l'atteindre par tabulation.
-
-Pour contourner ce problème, réinitialisez, tout d'abord,  les barres d'outils avec le sous-menu "réinitialiser les barres d'outils" du sous-menu "Barres d'outils". Vous pourrez ensuite configurer les barres d'outils à afficher.
-
-
-+ Tableau de pistes +[HDR-TracksTable]
-Le tableau de pistes contient les pistes qui composent le projet. Le tableau a une colonne et une ligne pour chacune des pistes. Chaque piste possède un nom que NVDA lit lorsque vous passez de piste en piste.
-
-Une piste audio est un conteneur pour les données audio qui  sont affichées sous  la forme d'une onde. Souvent, les données audio démarrent à l'instant zéro, mais après l'édition, ce n'est plus toujours le cas.
-À la gauche de la fin de la piste audio, il y a une petite zone contenant différents éléments qui comprennent un menu, les éléments pour le gain et le panoramique de la piste.
-L'utilisation de ces commandes est décrite dans la section  ["Édition audio avancée" #HDR-ADvancedEdition] de ce guide.
-
-Le Curseur s'affiche dans le panneau de pistes comme une ligne verticale: c'est la position de départ de la  lecture  ou début de la sélection.
-
-La position du curseur et celle de lecture sont disponibles dans la barre d'outils Sélection.
+La position du curseur et celle de lecture sont disponibles respectivement dans la barre d'outils "Sélection" et "Temps" situées dans le groupe inférieur de barre d'outils.
 
 
 ++ Déplacement dans le tableau ++
-À Chaque fois que le focus est à l'intérieur du tableau de pistes et que le tableau  contient une ou plusieurs pistes, l'une des pistes a le focus, et vous pouvez
+À Chaque fois que le focus est à l'intérieur du tableau "Vue de piste" et que le tableau  contient une ou plusieurs pistes, l'une des pistes a le focus, et vous pouvez
 Passer à la piste précédente ou suivante en utilisant les flèches de direction "haut" ou "bas" respectivement.
 
 Vous pouvez également passer à la première ou à la dernière piste  par "control + début" ou "control + Fin" respectivement.
@@ -305,50 +281,113 @@ Vous avez besoin   de sélectionner des pistes dans les cas suivants:
 
 Il y a plusieurs manières de sélectionner ou désélectionner des pistes:
 - Pour activer / désactiver la sélection de la piste, appuyez sur "Entrée".
-- Pour sélectionner toutes les pistes (et une plage de temps qui comprend tout l'audio, comme décrit dans le chapitre ["Sélection de l'audio" #HDR-AudioSelection]), ouvrez le menu "Sélectionner"    et choisissez le sous-menu "Tous" ou le  raccourci "control + A".
+- Pour sélectionner toutes les pistes (et une plage de temps qui comprend tout l'audio, comme décrit dans le chapitre ["Sélection de l'audio" #HDR-AudioSelection]), ouvrez le menu "Sélectionner"    et choisissez le sous-menu "Tous" ou tapez le  raccourci "control + A".
 - Pour désélectionner toutes les pistes  ouvrez le menu "Sélectionner" puis   choisissez le sous-menu "Rien" ou tapez le raccourci "Control + majuscule   + A".
 - Pour sélectionner toutes les pistes, ouvrez le menu "Sélectionner «puis le sous-menu "Pistes" et   choisissez "dans  toutes les pistes" ou tapez le raccourci "control + majuscule + K".
 
 
 L'état de sélection (sélectionné ou non sélectionné) d'une piste est indiquée à la suite  de son nom.
 
-+ Barre d'outils Sélection +[HDR-SelectionBar]
-Cette barre d'outils s'atteint, quand le focus est dans le panneau de pistes, en tapant "control+F6" ou deux fois "control+majuscule+f6".
 
-Il y a six éléments dans la barre  d'outils  "Sélection" et vous pouvez passer de l'un à l'autre  en avant ou en arrière à l'aide de "Tab" ou "majuscule + Tab" respectivement.
++ Groupes des  Barres d'outils +[HDR-ToolsBarsGroup]
+
+Il y a deux zones de la fenêtre principale qui contiennent des barres d'outils, et celles-ci seront appelées groupes de barre d'outils supérieur et inférieur.
+Le groupe supérieur de barres d'outils apparaît au-dessus du tableau "Vue de piste" et le groupe  inférieur de barres d'outils apparaît en dessous.
+
+Comme mentionné précédemment, vous pouvez faire le tour du groupe  supérieur de barres d'outils,  du tableau "vue de piste" et du groupe inférieur de barres d'outils soit vers l'avant soit vers l'arrière en appuyant respectivement sur "control + F6" ou "control + Majuscule + F6".
+
+Dans les groupes de barres d'outils supérieures et inférieures, vous pouvez accéder à tous les contrôles des barres d'outils du groupe  en appuyant sur "Tab" ou "majuscule + Tab".
+
+Notez que vous ne pouvez appuyer sur les boutons des barres d'outils qu'en appuyant sur "Entrée".
+Vous ne pouvez pas utiliser la barre d'espace, car cette touche est utilisée pour démarrer et arrêter la lecture.
+
+
+Vous pouvez afficher et masquer toutes ces barres d'outils à l'aide du sous-menu "Barres d'outils" du menu "Affichage".
+Seule l'affichage des barres d'outils que vous trouvez utiles a l'avantage de réduire considérablement le nombre d'onglets nécessaires pour trouver un contrôle particulier.
+
+Avertissement de bogue: il existe un bogue qui affecte les utilisateurs qui utilisent Audacity depuis la version 2.2.1 ou antérieure.
+Vous pouvez constater que si vous affichez une barre d'outils qui n'a pas été affichée depuis la version 2.2.1, alors la barre d'outils sera affichée comme une barre d'outils flottante quelque part dans la fenêtre Audacity, et vous ne pourrez pas l'atteindre par tabulation.
+
+Pour contourner ce problème, choisissez réinitialiser les barres d'outils dans le sous-menu Barres d'outils.
+Vous pouvez ensuite définir les barres d'outils à afficher.
+
+Le reste de ce chapitre sur les barres d'outils contient des sous-chapitres sur les  groupes de  barres d'outils supérieures et inférieures, puis des sous-chapitres sur certaines barres d'outils individuelles: la barre d'outils  "Sélection", la barre d'outils "Temps" et la barre d'outils "Lecture à la vitesse".
+
+++ groupe supérieur de barre d'outils ++
+
+Les barres d'outils qui sont affichés par défaut sont:
+- la barre d'outils "Transport": elle contient les boutons pour la lecture et l'enregistrement (tous les éléments sont également disponibles dans le menu "Transport" avec des raccourcis clavier).
+- la barre d'outils "outils": elle contient des boutons pour différents outils d'édition qui impliquent l'utilisation de la souris.
+- la Barre d'outils "Mesureur d'enregistrement" et "mesureur de lecture": ce sont les vumètres d'enregistrement et de Lecture. Chacun de ces éléments contient un bouton déroulant en bas du vumètre qui ouvre un menu permettant de contrôler le mesureur.
+- la barre d'outils "Mixage": elle contient le potentiomètre de réglage du volume de lecture et d'enregistrement   .
+- la barre d'outils "édition": elle contient des boutons pour Couper, Coller, etc. Ces commandes sont aussi disponibles sur l'Edition ou dans le menu Affichage, et tous ont des raccourcis clavier.
+- la barre d'outils "Lecture à la vitesse": elle contient un bouton "lecture à la vitesse sélectionnée" et  un potentiomètre  de sélection de la vitesse de lecture.
+- la barre d'outils "périphériques": elle contient des zones de liste déroulante pour  l'hôte audio, les périphériques de lecture et d'enregistrement, le nombre de canaux d'enregistrement. Tous ces réglages peuvent également être effectués soit dans différents dialogues, ou dans la catégorie "Périphériques" de la boîte de dialogue ["Préférences" #HDR-Preferences]. Les raccourcis    sont: "majuscule + H" pour l'hôte audio,  "majuscule + I" pour périphérique d'enregistrement, "majuscule + N" pour le nombre de canaux d'enregistrement et "majuscule + O" pour périphérique de lecture.
+
+
+Note: pour cette dernière barre d'outils,  si l'une de ces zones de liste modifiable est sous le focus et que vous appuyez sur   un caractère du clavier qui est un raccourci d'Audacity,  la touche est utilisée pour le raccourci, plutôt que de sélectionner une option commençant par ce caractère. Donc, la sélection d'une option à l'aide de son premier caractère est n'est pas recommandée.
+
+
+Ce groupe de barre d'outils possède aussi une    barre d'outils  qui contient  des boutons  qui définissent  la forme de l'onde audio au cours de l'enregistrement ou la lecture. Cela n'est pas d'un grand intérêt pour la plupart des utilisateurs de lecteurs d'écran.
+
+++ Groupe inférieur de Barres d'outils ++
+Par défaut, le groupe inférieur de Barres d'outils contient la barre d'outils "Sélection" et la barre d'outils "Temps".
+
+ces barres d'outils sont décrites dans les deux chapitres suivants.
+
++ Barre d'outils "Sélection" +[HDR-SelectionBar]
+
+La barre d'outils de sélection contient les commandes suivantes:
 - la liste déroulante "taux  du projet": définit  la fréquence d'échantillonnage du projet.
 - la zone déroulante "Se coller à":  définit la manière  dont Audacity doit arrondir les temps.
-- La zone d'édition de la Position Audio : Cela donne la position de lecture ou du début de l'enregistrement.
-- une  liste déroulante "affichage"   qui permet de choisir l'option qui fixe la nature des deux éléments suivants dans la barre d'outils. Le choix se fait parmi: début et fin, début et  longueur, longueur et fin, longueur et centre.
+- une  liste déroulante "affichage"   qui permet de choisir l'option qui fixe la nature des deux zones d'édition suivantes dans la barre d'outils. Le choix se fait parmi: début et fin, début et  longueur, longueur et fin, longueur et centre.
 - deux zone d'édition de temps dont la nature est précisée par la liste "Affichage" précédente.
 
 
 S'il n'y a pas de plage de temps sélectionné, les éléments   "début", "fin" ou "centre" donnent la position du curseur.
 
-++ Modification des temps ++[HDR-SpinBoxesEdition]
-Chaque zone d'édition contient un temps qui est affiché  dans un certain format. Vous pouvez changer le format en le choisissant dans   une liste de formats  à l'aide du menu contextuel. Cela modifie le format de toutes les zones.
+++ Zones de sélection numérique ++[HDR-EditSpinBoxes]
+Les controles  de la barre d'outils "Sélection" qui sont utilisées pour afficher et modifier les temps sont souvent appelées "zones  de sélection numérique".
+Ils portent ce nom, car pour modifier un temps, vous pouvez soit taper un temps, soit utiliser la flèche vers le haut ou la flèche vers le bas pour augmenter ou diminuer la valeur du temps respectivement.
+Dans le guide, ils seront souvent appelés simplement boîtes de sélection numérique par souci de concision.
+Chaque boite de sélection numérique contient un temps qui est affiché  dans un certain format. Vous pouvez changer le format en le choisissant dans   une liste de formats  à l'aide du menu contextuel de la boite de sélection numérique. 
+Dans le cas des boites de sélection numérique de la barre d'outils "Sélection", si vous modifiez le format de l'une d'entre elles, cette modification est également appliquée à l'autre.
 
 La valeur par défaut est le format "secondes",  mais le format "hh:mm:ss +centièmes" est normalement plus utile car il vous permet de modifier le temps de manière plus précise.
 
 La plupart  des exemples de ce guide  utilisera ce format.
 
-Le temps peut être considéré comme être composé d'une ou plusieurs sections selon le format utilisé. Par exemple, lorsque vous utilisez le format "hh:mm:ss", le temps se compose de trois sections composées chacune de deux chiffres: heures, minutes, et secondes.
+Le temps peut être considéré comme être composé d'un ou plusieurs tronçons selon le format utilisé. Par exemple, lorsque vous utilisez le format "hh:mm:ss", le temps se compose de trois tronçons composées chacun de deux chiffres: heures, minutes, et secondes.
 
-Sinon, lors de l'utilisation du format "hh:mm:ss + centièmes", le temps se compose de quatre sections: heures, minutes, secondes, et centièmes de secondes. Cette dernière est  aussi  composée de deux chiffres.
+Sinon, lors de l'utilisation du format "hh:mm:ss + centièmes", le temps se compose de quatre tronçons: heures, minutes, secondes, et centièmes de secondes. Ce dernier est  aussi  composée de deux chiffres.
 
-Lorsque le focus arrive dans une zone d’édition,  NVDA lit le contenu entier de la zone, par exemple, "00h13m04.73s", c'est à dire 0 heures, 13 minutes, et 4 secondes 73.
+Lorsque le focus arrive dans une boite d’édition,  le lecteur d'écran lit le contenu entier de la zone, par exemple, "00h13m04.73s", c'est à dire 0 heures, 13 minutes, et 4 secondes 73.
+Dans une zone de sélection numérique, le focus est mis sur un chiffre.
+Lorsque vous vous déplacez pour la première fois dans une zone de sélection numérique après avoir ouvert Audacity, le focus est mis sur le dernier chiffre , mais si vous revenez ultérieurement sur cette zone de sélection numérique, le dernier chiffre qui avait le focus lorsque vous avez quitté la zone de sélection numérique reprend le focus.
 
-Le déplacement à l'intérieure d'une zone se fait chiffre par chiffre,    Les flèches de direction "droite" ou "gauche" font passer au chiffre suivant ou précédent respectivement.
+Les touches pour déplacer le focus sont les suivantes:
+- "Début" ou "Fin" vous amène respectivement au premier ou au dernier chiffre de la zone de sélection numérique.
+- "Flèche gauche" ou "Flèche droite" vous amène au chifre précédent ou suivant respectivement.
 
-Les flèches de direction "haut" ou "bas" augmente ou diminue respectivement, le chiffre.
 
-Lorsqu’une zone est quittée, Audacity conserve la position du chiffre sous le focus pour cette zone. Lorsque le focus reviendra sur cette zone, le focus sera remis sur ce chiffre, sauf juste après le lancement d'Audacity où le focus sera donné au premier chiffre (le plus à gauche de la zone).
+Lorsque vous utilisez  ces touches, votre lecteur d'écran lit le chiffre qui est maintenant sous le focus.
 
-Il est aussi possible d'utiliser les touches "Début" et "fin" pour aller aux premiers ou derniers chiffres respectivement.
+De plus, si vous changez de tronçon  de temps, votre lecteur d'écran lira le nouveau tronçon avant de lire le chiffre.
+Par exemple, si le temps est 01h42m38.46s et que le focus est sur le deuxième chiffre des minutes (le chiffre 2), alors si vous appuyez sur la flèche Droite votre lecteur d'écran dira 38s, 3.
+Autrement si vous appuyez sur Fin alors votre lecteur d'écran dira 46 centièmes de seconde, 6.
 
-Une seconde manière de définir le temps consiste à entrer tout ou partie  du temps. Lorsqu’un chiffre est tapé, le  chiffre est placé à la position courante du focus et le focus est  déplacé à la position suivante.
+
+Il y a deux façons de changer la valeur du temps:
+- Augmentation ou diminution de la valeur de la commande d'une unité du chiffre focalisé à l'aide de la flèche vers le haut ou de la flèche vers le bas.
+Cette méthode est utile pour augmenter ou diminuer la valeur d'une durée donnée.
+Après chacune de ces frappes, votre lecteur d'écran indique la valeur du tronçon actuelle.
+Par exemple, si vous souhaitez augmenter le temps de 3 dixièmes de seconde et en supposant que le format est réglé sur "hh: mm: ss + centièmes": appuyez sur Fin pour passer au dernier chiffre, appuyez sur la flèche gauche pour passer aux dixièmes d'un deuxième chiffre et appuyez trois fois sur la flèche vers le haut
+- Taper des chiffres. Cette méthode est utile pour définir un temps qui n'est pas liée à la valeur actuelle.
+Si vous tapez un chiffre (0 à 9), la valeur du chiffre sous le focus est remplacée par celle du chiffre tapé et le chiffre suivant prend le focus . Votre lecteur d'écran lit alors le chiffre qui est maintenant sous le focus.
+Si le focus est sur le dernier chiffre   , alors après avoir tapé un chiffre, le focus est placé sur le  premier chiffre.
 Par exemple, si vous souhaitez définir un temps à 32 minutes, et en supposant aussi que le format  choisi soit "HH:MM:SS + centièmes" : Tapez «Début"  pour déplacer le focus  sur le premier chiffre, puis tapez  les 8 chiffres suivants: "00320000".
 Cela remplace complètement le temps avec le temps de 32 minutes.
+Si vous utilisez le lecteur d'écran Jaws ou NVDA, vous pouvez toujours lire l'intégralitédu temps en appuyant sur la commande de lecture  de la ligne  actuelle.
 
 
 ++ Liste déroulante "se coller à" ++
@@ -356,83 +395,104 @@ La liste déroulante "Se coller à "dispose de trois options: «éteint" (valeur
 
 Si l'option choisie  est soit "le plus Proche «ou soit "Avant", cela a deux effets sur l'utilisation des touches fléchées gauche et droite pour déplacer le curseur ou le début ou la fin d'une période sélectionnée.
 
-Le premier effet est que si le choix   est "le plus Proche" et que vous déplacez le curseur ou le début ou la fin d'une période sélectionnée, alors sa position est toujours ajustée automatiquement à l'entier le plus proche du nombre de la plus petite unité dans le format des zones d'édition.
+Le premier effet est que si le choix   est "le plus Proche" et que vous déplacez le curseur ou le début ou la fin d'une période sélectionnée, alors sa position est toujours ajustée automatiquement à l'entier le plus proche du nombre de la plus petite unité dans le format de la  boite de sélection numérique.
 
 Par exemple, si le format est "hh:mm:ss", un temps de 1,3 secondes sera ajustée  à 1 seconde et une durée de 1,8 secondes sera ajusté à 2 secondes.
 
 D'une manière similaire, si l'option est définie à "Avant", les temps de 1.3 secondes et 1,8 secondes seront ajustés,  tous les deux, à 1 seconde.
 
-Le deuxième effet est que le pas minimum de déplacement de  la position du curseur ou celle du début ou de la fin de la sélection    est la plus petite unité dans le format de la zone d'édition.
+Le deuxième effet est que le pas minimum de déplacement de  la position du curseur ou celle du début ou de la fin de la sélection    est la plus petite unité dans le format de la boite de sélection numérique.
 
 Par exemple, si le format est défini à "hh:mm:ss" et que vous appuyez sur "flèche Droite" pour déplacer le curseur vers la droite, le minimum de changement de position est de 1 seconde.
+
+
+
+++ Barre d'outils "temps" ++
+La barre d'outils "temps" se trouve dans le groupe inférieur de  Barres d'outils de la fenêtre principale et contient un seul contrôle, la  boite de sélection numérique "Position audio".
+Pendant la lecture ou l'enregistrement, elle montre la position du curseur de lectur ou d'enregistrement  respectivement.
+Sinon, elle indique le temps  du moment où vous avez tapez sur la barre d'espace.
+
+Notez que contrairement aux boites de sélection numérique de la barre d'outils "Sélection", vous ne pouvez pas modifier le temps affiché par la boite de sélection numérique "Position audio", vous pouvez uniquement lire sa valeur.
+
+Le format par défaut de la boite de sélection numérique "Position audio" est hh: mm: ss.
+Vous pouvez changer cela en utilisant le menu contextuel de cette boite, mais malheureusement il y a un bug qui provoque la réinitialisation du format à la valeur par défaut si vous ouvrez la boîte de dialogue Préférences et appuyez sur le bouton OK.
+
+++ Barre d'outils "Lecture à-la-vitesse" ++
+La barre d'outils "Lecture à-la-vitesse" est dans le groupe supérieur  de barres d'outils de la fenêtre principale et vous permet de lire l'audio à des vitesses variant de très lentes à trois fois la vitesse de lecture normale.
+Elle contient:
+- le bouton "Lecture à la vitesse sélectionnée".
+Notez que, comme pour tous les boutons des barres d'outils, vous ne pouvez appuyer sur le bouton qu'avec "Entrée", car la barre d'espace est le raccourci pour la lecture à vitesse normale et l'arrêt.
+- le potentiomètre "Vitesse de lecture", dont le curseur peut varier de 1 à   300, 300 correspondant à 3 fois la vitesse de lecture normale.
+
+
+Il y a une option pour la lecture  à la vitesse qui fait quelques différences importantes.
+Dans la boîte de dialogue "Préférences", dans la catégorie "Lecture", dans le groupe "Options", il y a une case à cocher «Lecture à vitesse variable», qui est cochée par défaut. Les effets de ce paramètre sont les suivants:
+- Si cette case est cochée, lorsque vous modifiez la valeur du curseur du potentiomètre "Vitesse de lecture" pendant la lecture à grande vitesse, il a un effet immédiat.
+Cependant, pendant la lecture, les commandes de recherche décrites ci-dessus n'ont aucun effet.
+- Si elle n'est pas cochée, les modifications de la valeur de ce  curseur  pendant la lecture à grande vitesse n'ont pas d'effet immédiat. Mais les commandes de recherche fonctionnent normalement.
 
 
 + Déplacement du curseur +[HDR-MovingCursor]
 Audacity a un curseur pour spécifier un moment donné au cours de l'audio, par exemple, le début de la lecture, la position où vous souhaitez démarrer la sélection d'un intervalle de temps, ou la position  où sera  collée le contenu du     presse-papiers.
 
-La lecture de la position actuelle du curseur est décrite dans le prochain chapitre.
+La lecture de la position actuelle du curseur est décrite dans l'un des prochains chapitres.
 
 Les moyens de déplacement du curseur sont les suivants:
 - utiliser la touche "Début Pour déplacer le curseur au début de la piste (temps zéro).
 - utiliser la touche "Fin" Pour déplacer le curseur à la fin de tout l'audio.
 - utiliser les touches "J" ou K" Pour déplacer le curseur au début ou à la fin respectivement de l'audio de la piste  sélectionnée.
-- utiliser les touches "," ou "." Pour reculer ou avancer respectivement d'une  courte période.
-- utilisez  les touches "majuscule +,"  ou "majuscule +." pour avancer ou reculer respectivement d'une longue période. Ces courtes et longues périodes partagent  les mêmes valeurs que celles utilisées pour les demandes de saut en cours de lecture et  qui ont étés  décrites au chapitre  ["Lecture audio" #HDR-AudioPlayback]. La durée de courte et longues périodes peut être définie dans la boîte de dialogue "Préférences", comme décrit au  chapitre ["Sauts temporels" #HDR-SeekTimes].
-- utilisez  les touches "flèche gauche" et "flèche droite" pour déplacer le curseur d'un petit saut à gauche ou à droite respectivement.
-- utilisez la touche "g" pour  fixer en vol le curseur à la position de lecture courante. Si pendant la lecture, vous appuyez  sur la touche "g" puis ensuite sur la touche  "Espace" pour arrêter la lecture, le curseur est déplacé à la position   audio où vous avez appuyé sur la touche "[". Dans la pratique, la  méthode suivante est plus souple:
+- utiliser les touches "," ou "."(voir  le chapitre ["Les raccourcis gênants" #HDR-BracketShortcuts]) Pour reculer ou avancer respectivement d'une  courte période.
+- utilisez  les touches "majuscule +,"  ou "majuscule +. (voir  le chapitre ["Les raccourcis gênants" azqsedxf#HDR-BracketShortcuts]) pour avancer ou reculer respectivement d'une longue période. Ces courtes et longues périodes partagent  les mêmes valeurs que celles utilisées pour les demandes de saut en cours de lecture et  qui ont étés  décrites au chapitre  ["Lecture audio" #HDR-AudioPlayback]. La durée de courte et longues périodes peut être définie dans la boîte de dialogue "Préférences", comme décrit au  chapitre ["Sauts temporels" #HDR-SeekTimes].
+- utilisez  les touches "flèche gauche" et "flèche droite" pour déplacer le curseur d'un petit saut à gauche ou à droite respectivement. Le réglage de la longueur des sauts est décrit au chapitre  ["Longueur des sauts  des flèches gauche et droite" #HDR-JumpSize].
+- utilisez la touche "x" pour arrêter la lecture et déplacer le curseur  à cette position de lecture. Vous pouvez également utiliser cette touche pour reprendre la lecture.
+- utilisez  la touche "u" ou "i" et la maintenir enfoncée pour faire défiler respectivement vers l'arrière ou vers l'avant. Lorsque vous relâchez la touche, le curseur est positionné à ce moment. Voir le chapitre  ["Frottement" #HDR-Scrubbing] pour une description complète du frottement.
+- utilisez la touche "[" (voir  le chapitre ["Les raccourcis gênants" #HDR-BracketShortcuts]) pour  fixer en vol le curseur à la position de lecture courante. Si pendant la lecture, vous appuyez  sur la touche "[" puis ensuite sur la touche  "Espace" pour arrêter la lecture, le curseur est déplacé à la position   audio où vous avez appuyé sur la touche "[". Dans la pratique, la  méthode suivante est plus souple:
  - Pendant la lecture, appuyez sur "P" pour mettre en pause la lecture lorsque vous atteignez la position où vous souhaitez déplacer le curseur.
  - Si vous n'êtes pas satisfait avec cette position, appuyez de nouveau sur "P" pour reprendre la lecture,  recherchez le bon endroit à l'aide des touches de   saut   et refaite une pause au bon endroit.
- - Appuyez sur "g" pour  marquer la nouvelle position du curseur.
+ - Appuyez sur "[" pour  marquer la nouvelle position du curseur.
  - Appuyez sur "Espace" pour arrêter.
-- utilisez la touche "x" pour arrêter la lecture et déplacer le curseur  à cette position de lecture. Vous pouvez également utiliser cette touche pour reprendre la lecture.
-- utilisez la zone  d'édition de temps "début" de la barre d'outils Sélection: ceci est décrit en détail dans le chapitre  ["Déplacement  de curseur avec la zone  "début" #HDR-MovingCursorWithSelectionStart] ci-dessous.
 
+- utilisez la zone  de sélection numérique  de temps "début" de la barre d'outils "Sélection": ceci est décrit en détail dans le chapitre  ["Déplacement  de curseur avec la zone  de sélection numérique "début" #HDR-MovingCursorWithSelectionStart] ci-dessous.
+
+
+
+++ La zone de sélection numérique   de temps  quand il y a un curseur ++
+Dans Audacity, il y a soit un curseur soit une plage de temps sélectionnée.
+Lorsqu'il y a un curseur, les temps affichées par les zone de sélection numériques de temps "Début" et "Fin"  qui controlent  la sélection sont les mêmes  et ces temps sont identique à la position du curseur.
+Pour cette raison, nous pouvons utiliser le début de la zone de sélection numérique  de sélection pour lire et changer la position du curseur, comme décrit dans les deux chapitres  suivants
 
 ++ Lecture de la position du curseur ++
 
-Il y a deux façons de lire  la position du curseur, après avoir stoppée ou mise en pause la lecture.
+Il y a deux façons de lire  la position du curseur.
 
-La première est de  lire la position dans la zone "début"  de  la barre d'outils de sélection:
-- En supposant que le tableau de pistes est sous le focus, appuyez sur "control + F6" pour  se déplacer dans la barre d'outils de sélection.
-- Si nécessaire, appuyez sur  "Tab" jusqu'à ce que vous atteignez la zone d'édition "Début",  qui contient la position du curseur, Notez que lorsque le focus revient dans la barre d'outils de sélection",   l'objet qui reçoit le focus est celui qui avait précédemment le focus, de sorte que vous n'avez   souvent pas besoin de beaucoup de "Tab" à faire.
-- Appuyez sur "control + F6" deux fois ou "control + majuscule + F6" pour revenir au tableau de pistes.
+La première est de  lire la position dans la zone de sélection numérique "début"  de  la barre d'outils "Sélection":
+- En supposant que le tableau "Vue de piste" est sous le focus, appuyez sur "control + F6" pour  se déplacer au groupe inférieur de barre d'outils dans lequel se trouve la barre d'outils "Sélection".
+- Si nécessaire, appuyez sur  "Tab" jusqu'à ce que vous atteignez la zone de sélection numérique "Début",  qui contient la position du curseur, Notez que lorsque le focus revient dans ce groupe  de barre d'outils,   l'objet qui reçoit le focus est celui qui avait précédemment le focus, de sorte que vous n'avez   souvent pas besoin de beaucoup de "Tab" à faire.
+- Appuyez sur "control + F6" deux fois ou "control + majuscule + F6" pour revenir au tableau "Vue de piste".
 
 
 La seconde façon de lire  la position du curseur est d'utiliser  la boite de dialogue "Définir la limite gauche de sélection":
-- Bien qu'il n’y ait pas de lecture, appuyez sur la touche "g" pour ouvrir cette boite de dialogue.
+- en lecture arrêtée, appuyez sur la touche "[" (voir  le chapitre ["Les raccourcis gênants" #HDR-BracketShortcuts]) pour ouvrir cette boite de dialogue.
 - la position du curseur est dans le premier élément de la boite de dialogue  et c'est justement celui-ci qui reçoit le focus.
 - Appuyez sur "Echapp" pour fermer la boîte de dialogue.
 
 
-++ Déplacement du curseur à l'aide de la zone "Début" de la barre d'outils de sélection ++[HDR-MovingCursorWithSelectionStart]
-- Appuyez sur "control + F6" pour amener le focus dans la barre d'outils de sélection".
+++ Déplacement du curseur à l'aide de la zone de sélection numérique "Début" ++[HDR-MovingCursorWithSelectionStart]
+- Appuyez sur "control + F6" pour amener le focus dans le groupe inférieur de barre d'outils  où la barre d'outils "Sélection" est la première.
 - tapez "Tab" pour atteindre la liste déroulante  "Affichage" et assurez-vous que l'option "Début et durée de la sélection" est sélectionnée. Si elle est définie sur "Début et fin de la sélection", vous pouvez accidentellement sélectionnez une plage de temps  au lieu de déplacer le curseur, comme décrit ci-dessous.
-- appuyez sur "Tab" pour atteindre la zone d'édition "Début", et changer sa valeur, comme décrit ci-dessous.
-- Pour revenir au tableau de pistes, appuyez sur "control + F6" deux fois ou simplement sur "control+majuscule+f6".
+- appuyez sur "Tab" pour atteindre la zone de sélection numérique  "Début", et changer sa valeur, comme décrit au chapitre [Zones de sélection numérique #HDR-EditSpinBoxes].
+- Pour revenir au tableau "Vue de piste", appuyez sur "control + F6" deux fois ou simplement sur "control+majuscule+f6".
 
-
-Comme décrit dans le chapitre ["Modification des temps" #HDR-SpinBoxesEdition], il y'a deux façons de  changer les valeurs des zone d'édition:
-- en Incrémentant ou décrémentant la valeur du chiffre sélectionné   à l'aide des touches "flèche haute" ou "flèche Bas": Par exemple, pour déplacer le curseur vers l'avant de 2 minutes et  en supposant que le format soit "hh:mm:ss + centièmes": appuyez sur "Fin" pour amener  le focus à la position du plus petit chiffre des centièmes de secondes, puis appuyez sur "flèche gauche" 4 fois pour déplacer le focus sur le chiffre des minutes, puis appuyez sur "flèche haut" 2 fois.
-- en Tapant directement les chiffres: Par exemple, pour positionner le curseur à   45 minutes et encore une fois en supposant que le format est défini à "hh:mm:ss + centièmes», appuyez sur "Début" pour amener le focus à la position du  premier chiffre, puis tapez  les huit chiffres suivants: "00450000".
 
 
 +++ Raison pour l'utilisation de l'option  "durée" +++
 En supposant qu'il n’a pas de plage de temps définie, considérons les deux cas suivants:
-Premier cas:
-la liste déroulante "affichage" définit l'option  "Début et durée de la sélection".
-
-La zone "début" affiche la position du curseur et la zone "Durée"  affiche zéro. Si vous modifiez la valeur de la zone "Début,  alors la zone "Durée"  reste toujours inchangé à zéro.
-
-
-Second cas:
-la liste déroulante "affichage" définit  l'option "Début et fin de la sélection":
-
-Les zones d'édition "début" et "fin"   affichent la même valeur, ce qui est Lae position du curseur.
-
-Si vous augmentez la valeur de la zone d'édition "Début", alors la valeur de la zone d'édition "Fin"  est automatiquement augmentée à la  même valeur.
-
-Toutefois, si vous diminuez la valeur de la zone d'édition "Début",  la zone d'édition "Fin" reste inchangée.
-
+- Premier cas: la liste déroulante "affichage" définit l'option  "Début et durée de la sélection".
+La zone de sélection numérique "début" affiche la position du curseur et la zone de sélection numérique "Durée"  affiche zéro. Si vous modifiez la valeur de la zone "Début,  alors la zone "Durée"  reste toujours inchangé à zéro.
+- second cas: la liste déroulante "affichage" définit  l'option "Début et fin de la sélection":
+Les zones de sélection numérique "début" et "fin"   affichent la même valeur, ce qui est Lae position du curseur.
+Si vous augmentez la valeur de la zone de sélection numérique "Début", alors la valeur de la zone de sélection numérique  "Fin"  est automatiquement augmentée à la  même valeur.
+Toutefois, si vous diminuez la valeur de la zone de sélection numérique "Début",  la zone de sélection numérique "Fin" reste inchangée.
 Vous avez alors accidentellement sélectionné une plage de temps.
 
 
@@ -462,29 +522,71 @@ Ainsi, par exemple, après avoir réglé le zoom à la normale ("control+ 2"), l
 
 Comme autre exemple, si vous appuyez sur "control + 2" et puis "control + 3" 7 fois, la longueur du pas est d'environ une secondes et demie.
 
+++ Frottement ++[HDR-Scrubbing]
+L'utilisation du mot "Frottement"(scrubbing en anglais) dans les éditeurs audio provient de l'édition à l'aide de magnétophones à bande.
+La bande est déplacée vers l'arrière ou vers l'avant sur la tête de lecture pour trouver la position précise pour un montage.
+
+Dans Audacity, il y a deux commandes de frottement qui intéressent les utilisateurs du clavier:
+- Frottement vers l'arrière  avec la touche  "u",
+- frottement vers l'avant avec la touche "i".
+
+
+En appuyant et en maintenant une de ces touches, vous pouvez lire l'audio en arrière ou en avant.
+
+La vitesse de lecture dépend du paramètre de zoom horizontal d'Audacity, et donc en le modifiant, vous pouvez lire l'audio à une large gamme de vitesses.
+
+Si vous utilisez un lecteur d'écran avec  son paramètre d'écho de frappe défini sur "caractère" et pendant le  maintien enfoncée de la touche de frottement, vous entendrez le nom de la touche être répété .
+Pour éviter cela, vous pouvez temporairement définir l'écho de frappe de  l'éditeur d'écran sur "aucun".
+
+
+Si aucune plage de temps n'est sélectionnée, et que vous maintenez enfoncée l'une des touches de frottement, la lecture démarre au curseur.
+Lorsque vous relâchez la touche, la lecture s'arrête et le curseur est positionné à ce moment.
+
+Sinon, si une plage de temps est sélectionnée et que vous maintenez enfoncée l'une des touches de frottement, la lecture démarre au début de la sélection.
+Contrairement à la lecture normale, si la fin de la plage de temps sélectionnée est atteinte, la lecture ne s'arrête pas automatiquement.
+Lorsque la touche est relâchée, la plage de temps sélectionnée est désélectionnée et le curseur est positionné au moment où la touche a été relâchée.
+
+Si vous appuyez et maintenez l'une de ces touches, et tout en la maintenant enfoncée, vous appuyez et maintenez l'autre touche, la lecture change immédiatement de direction et ne s'arrête pas lorsque vous relâchez la première touche .
+
+La vitesse de lecture pour ces commandes dépend du réglage de zoom horizontal d'Audacity.
+
+Cela peut être défini à l'aide des commandes du sous-menu "zoom", qui se trouve dans le menu "Affichage":
+- Zoom normal (Ctrl + 2), fixe la vitesse de lecture pour ces commandes à la moitié de la vitesse de lecture normale.
+- Zoom avant (Ctrl + 1), divise par deux la vitesse courante  de lecture pour ces commandes. Il existe une vitesse minimale d'un seizième de la vitesse de lecture normale.
+- Zoom arrière (Ctrl + 3), double la vitesse courante de lecture pour ces commandes.
+Il y a une vitesse maximale de trois fois la vitesse de lecture normale.
+
+
+Vous pouvez positionner le curseur plus précisément en utilisant des vitesses de lecture plus basses, et vous pouvez constater qu'une vitesse de lecture d'un quart est un choix utile pour la vitesse.
+
+La précision du positionnement du curseur dépend également de l'interface audio qu'Audacity communique avec vos appareils audio.
+
+Le choix des interfaces est décrit au chapitre["Interface audio" #HDR-JumpSize] plus loin dans le guide.
+L'utilisation de l'interface WASAPI vous donnera le positionnement le plus précis.
+
+Dans la description ci-dessus, il a été dit que lorsque l'une des touches de frottement  est relâchée, le curseur est positionné au moment où la touche est relâchée.
+cependant,il y a une exception à cela si la touche "["  ou "]" a été enfoncée pendant la lecture.
+Dans ce cas, la sélection de temps présente lorsque la touche de frottement  est relâchée est conservée.
+Ce comportement permet le frottement  avec l'une des options décrites dans le chapitre [Méthode générale de sélection d'un intervalle de temps #HDR-GeneralTimeRangeSelection].
+
 + Sélection audio +[HDR-AudioSelection]
 Dans le cas d'un éditeur audio qui ne peut éditer qu'une seule piste audio, la sélection de l'audio consiste simplement en spécifiant le début et la fin de la périodes de l'audio que vous souhaitez sélectionner. C'est une plage de temps.
 
 Par exemple, vous pouvez sélectionner l'audio entre le temps une minute 2 secondes et 5 minutes 23 secondes.
 
-Cependant, Audacity est un multi-éditeur de piste. Si le projet se compose d'un certain nombre de pistes, alors vous voudrez peut-être sélectionner uniquement l'audio  de certaines  pistes dans  un intervalle de temps précis.
+Cependant, Audacity est un éditeur multi-piste. Si le projet se compose d'un certain nombre de pistes, alors vous voudrez peut-être sélectionner uniquement l'audio  de certaines  pistes dans  un intervalle de temps précis.
 
 Donc,  ainsi non seulement il faut sélectionner un intervalle de temps, mais aussi les pistes concernées.
 
 La  sélection de piste a été décrite dans le chapitre ["Sélection des pistes" #HDR-TracksSelection] ci-dessus et la sélection d'un intervalle de temps  est décrites dans les sections suivantes.
 
-++ Option de sélection automatique ++[HDR-AutoSelectOption]
-Il y a une option pour la sélection automatique si une sélection est nécessaire et cette option est activée par défaut.
+En utilisant les paramètres par défaut d'Audacity, si vous essayez d'effectuer une action sur du son, comme appliquer un effet, et qu'en fait aucun son n'est sélectionné, une boîte de dialogue s'ouvre, vous indiquant qu'aucun son n'est sélectionné.
+Cependant, il existe une option de sélection automatique, et si elle est activée, au lieu d'afficher la boîte de dialogue, tout l'audio du projet est sélectionné et l'effet est appliqué à cette sélection.
 
-Cette option affecte ce qui se passe, Par exemple, si vous essayez d'appliquer un effet lorsqu’aucun son n'est sélectionné (aucune piste sélectionnée, ou aucune plage de temps  sélectionnée).
+Pour les utilisateurs de lecteurs d'écran, il est recommandé de laisser cette option désactivée, mais tous les détails de cette option et de ses paramètres sont décrits au chapitre ["Sélection automatique"  #HDR-AutoSelect] du chapitre "Préférences".
 
-Si cette option est désactivée, une boîte de dialogue s'ouvre vous informant qu’il n'y a pas de son sélectionné.
+Toutes les instructions dans le reste de ce guide supposent que l'option est désactivée
 
-Toutefois, si cette option est activée, l'effet est appliqué à  certaines parties ou à la totalité de l'audio dans le projet, selon la sélection des pistes et la sélection d'un intervalle de temps.
-
-Étant donné que  la sélection automatique de pistes et de temps va se produire sans  rétroaction sonore,  pour les utilisateurs de lecteurs d'écran, il est vivement recommandé de désactivez cette option, comme décrit dans le chapitre  ["Sélection automatique"  #HDR-AutoSelect]  du chapitre "Préférences".
-
-Toutes les instructions dans le reste de ce guide supposent que l'option est désactivée.
 
 ++ Sélection d'un intervalle de temps ++
 Un moyen rapide de sélectionner l'ensemble de l'audio dans le projet est d'utiliser le raccourci "control + A": ce raccourci permet de sélectionner toutes les pistes et de sélectionner un large intervalle de temps qui comprend toutes les données audio.
@@ -493,67 +595,66 @@ Il y a deux méthodes pour sélectionner une plage de temps:
 - la première est décrite dans la suite de ce chapitre.
 - la seconde, est décrite au chapitre  ["Sélection d'une plage de temps à l'aide de la position du  curseur mémorisée" #HDR-UsingStoredPositionTimeRangeSelection] ci-dessous.
 
+Après cela, il y a des chapitres sur les commandes de lecture utiles, apportant des ajustements précis aux plages de temps et comment désélectionner les plages de temps.
 
+
++++ Méthode générale de sélection d'un intervalle de temps +++[HDR-GeneralTimeRangeSelection]
 La première méthode de sélection d'un intervalle de temps se compose de deux étapes:
 - Déplacez le curseur à l'endroit où vous souhaitez commencer ou terminer la sélection à l'aide d'une des méthodes décrites au chapitre ["Déplacement du curseur" #HDR-MovingCursor] ci-dessus.
 - Fixez l'autre extrémité de la sélection à l'aide de l'une des méthodes décrite ci-dessous.
 
 
-Note que lorsqu'un intervalle de temps est sélectionné, la lecture audio se fait uniquement à l'intérieur de  cet intervalle de temps.
+Noter que lorsqu'un intervalle de temps est sélectionné, la lecture audio se fait uniquement à l'intérieur de  cet intervalle de temps.
+Il existe également un certain nombre de commandes de lecture supplémentaires décrites au  chapitre ["Commandes de lecture pour la vérification d'une plage de temps sélectionnée" #HDR-CheckingSelectedTimeRange].
+
 
 Vous pouvez utiliser l'une des méthodes suivantes pour fixer l'autre extrémité de la sélection:
-- Avec le curseur à la position où vous souhaitez le début de la sélection et  pour définir la fin de la sélection à la fin de tout l'audio, appuyez sur "majuscule + Fin".
-- Avec le curseur placé à l'endroit où vous voulez  la fin de la sélection et  pour fixer le début de la sélection au début de la piste (temps zéro), appuyez sur "majuscule + Début".
-- Définir la fin de la sélection à l'aide du raccourci  "h" lors de la lecture. Si au cours de la lecture, vous appuyez sur"h" et  ensuite sur "Espace" pour arrêter la lecture, la fin de la sélection est positionnée à l'endroit de l'audio où vous avez appuyé sur la touche "h". Dans la pratique, la méthode suivante est plus souple:
+- Avec le curseur à la position où vous souhaitez le début de la sélection et  pour définir la fin de la sélection à la fin de  l'audio des pistes sélectionnées, appuyez sur "majuscule + k".
+- Avec le curseur placé à l'endroit où vous voulez  la fin de la sélection et  pour fixer le début de la sélection au début de l'audio des pistes sélectionnées, appuyez sur "majuscule + j".
+- Définir la fin de la sélection à l'aide du raccourci  "]" (voir  le chapitre ["Les raccourcis gênants" #HDR-BracketShortcuts])lors de la lecture. Si au cours de la lecture, vous appuyez sur"]" et  ensuite sur "Espace" pour arrêter la lecture, la fin de la sélection est positionnée à l'endroit de l'audio où vous avez appuyé sur la touche "]". Dans la pratique, la méthode suivante est plus souple:
  - Pendant la lecture, appuyez sur "P" pour mettre en pause lorsque vous atteignez la position que vous voulez être la fin de la sélection.
  - Si vous n'êtes pas satisfait avec cette position, appuyez sur "P" pour reprendre la lecture et avec les raccourcis de  saut,    ajustée la position  avant de refaire  une nouvelle pause.
- - Appuyez sur "h" pour marquer la position de la fin de la sélection.
+ - Appuyez sur "]" pour marquer la position de la fin de la sélection.
  - Appuyez sur "Espace" pour positionner le curseur de lecture au début de la sélection si vous voulez écouter l'audio sélectionné ou sur "p" pour continuer la lecture.
-- Avec le curseur à la position où vous souhaitez que soit le début de  sélection et  pour définir la fin de la sélection à la fin de l'audio dans la piste sélectionnée, appuyez sur majuscule + K".
-- Avec le curseur placé à l'endroit où vous voulez la fin de la sélection et  pour placer le début de la sélection au début de l'audio des pistes sélectionnées, appuyez sur "majuscule + J".
-- À l'aide des zones de  sélection  de la barre d'outils de  sélection, tel que décrite dans  la section suivante.
+- Réglez la fin de la sélection à l'aide de la touche  "]" pendant le balayage vers l'avant. Maintenez la touche "i" enfoncée pour faire défiler vers l'avant. Appuyez sur la touche "]" au moment où vous souhaitez terminer la sélection, puis relâchez la touche "i".
+• De même, vous pouvez définir le début de la sélection à l'aide de la touche "[", tout en faisant défiler vers l'arrière. Maintenez la touche "u" enfoncée pour faire défiler vers l'arrière. Appuyez sur la touche "[" au moment où vous souhaitez placer le début de la sélection, puis relâchez la touche "u".
+- Avec le curseur à l'endroit où vous voulez le début de la sélection et pour définir la fin de la sélection à la fin de tout l'audio, appuyez sur majuscule + fin".
+- Avec le curseur positionné à l'endroit où vous voulez la fin de la sélection et pour définir le début de la sélection au début des pistes (temps zéro), appuyez sur "majuscule+ début".
+- À l'aide des zones de  sélection   numériques de la barre d'outils "Sélection", tel que décrite dans  la section suivante.
 - avec "majuscule + Flèche Gauche" ou "majuscule + Flèche Droite": Avec le curseur placé à l'endroit où vous souhaitez que le début de la sélection soit, vous pouvez appuyer sur "majuscule + Flèche Droite" une ou plusieurs fois pour déplacer la fin de la sélection vers la droite en petites étapes. De même, avec le curseur positionné où vous souhaitez la fin de la sélection, vous pouvez appuyer sur "majuscule + Flèche Gauche" une ou plusieurs fois pour déplacer le point de départ de la sélection vers la gauche.
-
-
 Le réglage des longueurs  des pas est décrite au chapitre  ["Longueur     des  sauts faits avec les flèches droite et gauche" #HDR-JumpSize].
 
-Notez que le tableau de pistes  doit être sous le focus pour   l'utilisation de ces raccourcis.
+
+Notez que le tableau "Vue de piste"  doit être sous le focus pour   l'utilisation de ces raccourcis.
 
 
-+++ Définition du début ou de la fin de la sélection à l'aide des zones de sélection +++
-Avec le curseur placé à l'endroit où vous souhaitez commencer la sélection et pour définir la fin de la sélection:
-- Appuyez sur "control + F6" pour amener le focus dans la  barre d'outils de Sélection.
-- tapez "Tab" pour atteindre la liste déroulante "Affichage" et sélectionner l'option "début et fin de la sélection" ou "début et durée de la sélection".
-- tapez "Tab" pour atteindre la zone d'édition "Fin"   ou la zone dédition "Durée".
-- Si c'est la zone dédition "Fin", augmentez   sa valeur: Par exemple, si vous souhaitez déplacer la fin de la sélection de cinq secondes après le début de la sélection et en supposant que le format soit  "hh:mm:ss + centièmes de secondes", appuyez sur "Fin" pour passer au dernier chiffre(celui des centièmes), appuyez sur "flèche gauche" deux fois pour amener le focus sur le chiffre des secondes, puis appuyez sur "flèche haut" cinq fois.
-- Si c'est la zone d’édition "Durée",  vous pouvez augmenter la valeur de la durée soit en utilisant "flèche haut" ou soit en tapant les chiffres comme décrit au chapitre  ["Modification de temps" #HDR-SpinBoxesEdition].
-- Appuyez sur "control + F6" deux fois pour revenir au tableau de pistes.
-
-
-Si vous augmentez  la valeur de la zone durée ou celle de la zone fin de sélection  alors la valeur de la zone "début"  reste inchangée.
-
-Avec le curseur placé à l'endroit où vous voulez la fin de la sélection et pour  définir le début de la sélection:
-- Appuyez sur "control + F6" pour amener le focus dans la barre d'outils de sélection.
-- tapez "Tab" pour atteindre la liste déroulante "Affichage" et sélectionner l'option "début et fin de la sélection" ou "Durée et fin de la sélection". Si vous modifiez la valeur de la zone d’édition "Durée" ou "Début», la valeur de la zone d’édition "Fin" reste inchangée.
-- tapez "Tab" pour atteindre la zone d’édition "Début" ou  "Durée".
-- Si c'est la zone d’édition "Début",  diminuez sa valeur. Par exemple, si vous voulez fixer le point de départ de la sélection,  dix secondes avant la fin de la sélection  et en supposant que le format soit "hh:mm:ss + centièmes": appuyez sur "Fin" pour amener le focus sur le chiffre des centièmes, appuyez sur "flèche gauche" trois fois pour atteindre  le chiffre des dizaines de secondes , puis appuyez sur "flèche  bas" une fois pour diminuer le temps de 10 secondes.
-- Si c'est la zone  d’édition "Durée", vous pouvez augmenter la valeur de la durée   en utilisant "flèche haut", ou en tapant directement les chiffres,  comme décrit au chapitre  ["Modification de temps" #HDR-SpinBoxesEdition].
-- Appuyez sur "control + F6" deux fois pour revenir au tableau de pistes.
+++++ Exemples ++++
+Dans les exemples suivants, on suppose qu'une seule piste est sélectionnée. 
+- Pour sélectionner une plage de temps qui couvre tout l'audio dans la Piste: Appuyez sur "J" pour déplacer le curseur au début de l'audio, puis appuyez sur "majuscule + k" pour définir la fin de la sélection à la fin de l'audio. 
+Une alternative évidente serait d'appuyer sur "k", puis sur "majuscule + j". 
+- Pour sélectionner quelques secondes au début de l'audio de la piste sélectionnée: Appuyez d'abord sur "j" pour déplacer le curseur au début de l'audio, puis appuyez sur la barre d'espace pour démarrer la lecture.
+Lorsque vous arrivez au point où vous voulez être la fin de la plage de temps, appuyez sur "x" pour arrêter la lecture et déplacez le curseur sur ce point.
+Enfin, appuyez sur "majuscule + j" pour définir le début de la sélection au début de l'audio.
+- Pour sélectionner quelques secondes à la fin de l'audio de la piste sélectionnée: Appuyez d'abord sur "k" pour déplacer le curseur à la fin de l'audio. Appuyez ensuite plusieurs fois sur la virgule, jusqu'à ce que le curseur se trouve un peu avant l'heure à laquelle vous souhaitez être le début de la plage horaire. Appuyez sur la barre d'espace pour démarrer la lecture, puis appuyez sur X lorsque vous arrivez au point où vous souhaitez être le début de la plage de temps.
+Enfin, appuyez sur "Smajuscule + k" pour définir la fin de la sélection à la fin de l'audio
+- Pour sélectionner quelques secondes quelque part dans la piste sélectionnée: Appuyez sur la barre d'espace pour démarrer la lecture, puis appuyez sur le "[" au point où vous voulez être le début de la sélection, puis appuyez sur c"]"  au point où vous voulez être la fin de la sélection, et enfin la barre d'espace pour arrêter la lecture
 
 
 ++ Sélection d'une plage de temps à l'aide de la  position  du curseur mémorisée ++[HDR-UsingStoredPositionTimeRangeSelection]
 La seconde  méthode générale de sélection d'un intervalle de temps se compose de quatre étapes:
 - Déplacez le curseur à l'endroit où vous souhaitez commencer ou terminer la sélection, à l'aide d'une des méthodes décrites au chapitre ["Déplacement du curseur" #HDR-MovingCursor] ci-dessus.
-- Ouvrez le menu "sélection", et choisissez de mémoriser  la position du Curseur à l'aide du sous-menu "Stocker la position du curseur".
+- Ouvrez le menu "sélection", et choisissez de mémoriser  la position du Curseur à l'aide du sous-menu "Stocke la position du curseur".
 - Fixez l'autre extrémité de la sélection à l'aide de l'une des méthodes décrites au chapitre ["Déplacement du curseur" #HDR-MovingCursor] ci-dessus.
 - Ouvrez le menu "sélection", et choisissez le sous-menu "Curseur à  la position stockée du Curseur".
 
 
-Dans certains cas, cette méthode est plus facile à utiliser que la méthode décrit dans la section précédente. Avoir stocké la position du curseur, vous permet d'utiliser la      méthode que vous souhaitez pour positionner le curseur à l’autre extrémité de la plage de temps que vous voulez sélectionner, sans aucun danger  de perdre  l'autre extrémité de la sélection.
+Dans certains cas, cette méthode est plus facile à utiliser que la méthode décrite  au chapitre précédent. Avoir stocké la position du curseur, vous permet d'utiliser la      méthode que vous souhaitez pour positionner le curseur à l’autre extrémité de la plage de temps que vous voulez sélectionner, sans aucun danger  de perdre  l'autre extrémité de la sélection.
 
-Note que pendant la lecture, y compris  en pause, la commande de mémorisation de la position du curseur   mémorise la position du curseur de lecture, plutôt que  celle du curseur d'édition.
+Notez que pendant la lecture, y compris  en pause, la commande de mémorisation de la position du curseur   mémorise la position du curseur de lecture, plutôt que  celle du curseur d'édition.
+Cependant, il est normalement plus facile de positionner le curseur d'édition précisément où vous le souhaitez, et donc pour sélectionner une plage de temps, vous ne voudrez probablement pas stocker la position du curseur de lecture très souvent.
+De même, pendant la lecture, y compris en pause, le "curseur à la position stockée du curseur" dans le menu "Sélection" sélectionne de la position du curseur de lecture à la position du curseur stockée.
 
-++ Commandes de lecture pour la vérification d'une plage de temps sélectionnée ++
+++ Commandes de lecture pour la vérification d'une plage de temps sélectionnée ++[HDR-CheckingSelectedTimeRange]
 Lorsqu'un intervalle de temps est sélectionné,  si vous appuyez sur "Espace», seulement l'audio de la plage sélectionnée est lue.
 
 Vous pouvez   utiliser les commandes de lecture suivantes pour vérifier que vous avez bien sélectionné la plage de temps que vous voulez:
@@ -580,23 +681,23 @@ Le réglage des longueurs  des pas est décrite au chapitre  ["Longueur     des 
 
 Note que Les deux raccourcis qui utilisent la touche "control", contractent la plage de temps, tandis que les deux autres l'étendent.
 
-+++  Utilisation des zones de sélection +++
-- Si le focus est sur le tableau de piste, tapez "control + F6" pour l'amener dans la barre d'outils de sélection.
++++  Utilisation des zones de sélection  numérique+++
+- Si le focus est sur le tableau "Vue de piste", tapez "control + F6" pour l'amener dans le groupe inférieur de barre d'outils où dans la barre d'outils "Sélection" est la première barre d'outils.
 - tapez "Tab" pour atteindre  la liste déroulante "affichage" et sélectionnez l'option  "Début et  fin de la sélection".   Cela vous permet de régler le Début ou la Fin de la sélection sans affecter les autres.
-- tapez "Tab" pour atteindre soit la zone d’édition "début" ou la zone d’édition "fin». Si le format n'est pas déjà mis à "hh:mm:ss + centièmes"  et si vous voulez  faire de petits ajustements, utilisez le menu contextuel pour modifier le format.
+- tapez "Tab" pour atteindre soit la zone de sélection numérique  "début" ou la zone de sélection numérique  "fin». Si le format n'est pas déjà mis à "hh:mm:ss + centièmes"  et si vous voulez  faire de petits ajustements, utilisez le menu contextuel pour modifier le format.
 - Si, par exemple, vous souhaitez régler le temps en dixièmes de seconde, appuyez sur "Fin" pour déplacer le focus sur le  dernier chiffre (celui des centièmes), puis appuyez sur "Flèche gauche" pour atteindre le  chiffre des dixièmes de secondes. Vous pouvez ensuite appuyer sur "Flèche haut ou bas" pour augmenter ou diminuer respectivement, le temps d'un dixième de seconde.
 - Ajuster l'autre point de la   sélection si vous le souhaitez.
-- Appuyez sur "control + F6" deux fois pour revenir au tableau de pistes.
+- Appuyez sur "control + F6" deux fois pour revenir au tableau "Vue de piste".
 
 
-++ Désélection  d'une plage ++
-Le déplacement du curseur à l'aide   de l'une des touches suivantes,  désélectionne n'importe quel plage de temps: "Début", "Fin", "J", "K", "Flèche droite", "flèche gauche", "," et ".".
+++ Désélection  de la  plage de temps++
+Le déplacement du curseur à l'aide   de l'une des touches suivantes,  supprime la sélection de la plage de temps: "Début", "Fin", "J", "K", "Flèche droite", "flèche gauche", "," et ".".
 
 Après l'appui sur la touche "flèche gauche" ou "flèche droite", la position du curseur est placée à la position de début ou de  fin de la plage qui vient d'être désélectionnée.
 
 Pour désélectionner toutes les pistes, et désélectionner toute plage  de temps, appuyez sur "control + majuscule + A". La nouvelle position du curseur est au début de la plage qui vient d'être désélectionnée.
 
-+ Édition basique +
++ Édition basique +m
 ++ Annuler et rétablir ++
 Pour annuler appuyez sur "control + Z", et pour refaire appuyez sur control + Y".
 
@@ -613,14 +714,17 @@ Pour couper  l'audio sélectionné, appuyez sur "control + X". L'audio sélectio
 Comme dans le cas de la suppression de l'audio, vous pouvez écouter l'effet de votre découpe en appuyant sur "C" pour Jouer un aperçu de la coupe.
 
 ++ Copier ++
-Pour copier l'audio  sélectionné dans  le presse-papier d'Audacity, appuyez sur "control + C".
+Pour copier l'audio   sélectionné dans  le presse-papier d'Audacity, appuyez sur "control + C".
 
 ++ Coller ++
-Pour coller l'audio du presse-papier d'Audacity dans la ou les piste(s) sélectionnée(s) ou piste, appuyez sur "control+ V".
+Pour coller l'audio du presse-papier d'Audacity dans la ou les piste(s) sélectionnée(s), appuyez sur "control+ V".
 
 Il y a deux cas:
 - Si il n'y a pas de plage  de temps sélectionnée et donc pas d’audio sélectionné, l'audio est inséré à la position du curseur.
-- Si de l'audio est sélectionné, l'audio sélectionné est remplacé par l'audio collé (celui du presse-papier).
+- Si de l'audio est sélectionné, l'audio sélectionné est remplacé par l'audio collé (celui du presse-papier d'Audacity).
+
+
+Si aucune piste n'est sélectionnée lorsque vous collez de l'audio, l'audio est inséré au début d'une nouvelle piste.
 
 Il y a un couple de  commandes de lecture  pratiques qui peuvent être utilisées pour vérifier que la transition au début et à la fin de l’audio collé  sonne bien:
 - Pour lire une courte période avant et après le début de la sélection, appuyez sur  "control + majuscule + F5».
@@ -636,7 +740,7 @@ Pour remplacer l'audio sélectionné avec la même longueur de silence, dans le 
 Pour insérer une période de silence dans les pistes sélectionnées:
 - Déplacer le curseur à l'endroit où vous souhaitez insérer le silence.
 - ouvrez le menu " Générer" et choisissez le sous-menu "Silence".
-- la boite de dialogue "Silence" (Un Générateur de Silence) s'ouvre et le focus est mis dans la zone d'édition  qui permet de spécifier la durée du silence. Cette zone  d'édition est identique aux zones d'édition de temps utilisées dans la barre d'outils Sélection,  bien que le focus soit donné au premier chiffre non nul plutôt qu'au premier chiffre.
+- la boite de dialogue "Silence" (Un Générateur de Silence) s'ouvre et le focus est mis dans la zone d'de sélection numérique qui permet de spécifier la durée du silence. Cette zone  d'édition est identique aux zones de sélection numérique de temps utilisées dans la barre d'outils "Sélection",  bien que le focus soit donné au premier chiffre non nul plutôt qu'au premier chiffre.
 
 
 Définissez le temps que vous souhaitez, puis appuyez sur "Entrée" pour activer, par défaut, le bouton "OK".
@@ -645,9 +749,9 @@ La période de   silence est insérée, et  la plage de  temps qui couvre cette 
 
 Notez que toutes les commandes du menu "Générer" ont le même comportement.
 
-Si une ou plusieurs pistes sont sélectionnées, mais pas de plage de temps, alors l'audio généré  est inséré à l'emplacement du curseur. Toutefois, si une plage de temps est également sélectionnée, l'audio sélectionné dans la plage  est remplacé par l'audio généré.
+Si une ou plusieurs pistes sont sélectionnées, mais pas de plage de temps, alors l'audio généré  est inséré à l'emplacement du curseur.Si une plage de temps est également sélectionnée, l'audio sélectionné dans la plage  est remplacé par l'audio généré.
 
-Toutes les zones d'édition de temps des boîtes de dialogue qui sont ouvertes à partir du menu "Générer"  sont, par défaut, sous le format "secondes" et le focus est donné au premier chiffre non nul.
+Toutes les zones de sélection numérique  de temps des boîtes de dialogue qui sont ouvertes à partir du menu "Générer"  sont, par défaut, sous le format "secondes" et le focus est donné au premier chiffre non nul.
 
 ++ Effets ++
 Audacity fournit un grand nombre d'effets qui sont disponibles avec  le menu "Effets".
@@ -684,6 +788,7 @@ Les boites de Dialogues ayant ce comportement sont dites boites de dialogue non 
 Vous pouvez naviguer entre  la  fenêtre principale d'Audacity   et toutes les boîtes de dialogue non modales en appuyant sur "Alt + F6".
 
 ++ Supprimer des piste ++
+Il existe deux façons de supprimer des pistes:
 - Pour supprimer la piste sous le focus, appuyez sur "majuscule + C".
 - Pour supprimer la ou les pistes sélectionnées,  supprimez à l'aide du menu "Pistes" et du sous-menu "Supprimer la(les) piste(s). Cela fournit un moyen rapide de suppression de toutes les pistes si vous appuyez sur "control + A" pour assurer que toutes les pistes sont sélectionnées.
 
@@ -706,9 +811,8 @@ Afin d'éviter l'introduction de clics:
 - Après avoir placé le curseur pour coller de l'audio dans une piste, et avant de le coller, appliquez "Rechercher les croisements à zéro".
 
 
-+ Édition audio avancée +[HDR-AdvancedEdition]
-++ Ajout d'une nouvelle piste vide ++
-Pour ajouter une nouvelle piste vide, choisissez une des commandes du sous-menu "Ajouter nouvelle" du menu "piste.
++ Édition audio avec plusieurs pistes +[HDR-AdvancedEdition]
+Ce chapitre décrit certaines commandes et certains paramètres qui sont pertinents lorsque vous souhaitez travailler sur un projet contenant plusieurs pistes
 
 ++ Importation de fichier audio ++[HDR-AudioFileImport]
 Vous pouvez importer un ou plusieurs fichiers audio et ceux-ci deviennent de nouvelles pistes dans le  projet existant.
@@ -719,10 +823,90 @@ La boite de dialogue "Choisir un ou plusieurs fichiers audio" s'ouvre.
 
 Note: immédiatement après l'importation, seule la dernière piste du projet est sélectionnée.
 
+
+++ Ajout d'une nouvelle piste vide ++
+Pour ajouter une nouvelle piste vide, choisissez une des commandes du sous-menu "Ajouter nouvelle" du menu "piste.
+
 ++ Duplication de piste ++
 Pour dupliquer l'audio sélectionné dans une  ou plusieurs autres pistes, ouvrez le menu "Édition"  et choisissez le sous-menu "Dupliquer" (raccourci "Control + D").
 
 La copie de l'audio conserve les mêmes timings que ceux de l’audio original, de sorte que dans la ou les nouvelle piste   les données audio commence au début de la période de temps sélectionnée.
+
+
+++ Muet et Solo ++
+Chaque piste dispose d'un paramètre muet qui peut être allumé ou éteint, et un paramètre "solo"  qui peut également être activé ou désactivé.
+
+Ces paramètres sont utilisés pour contrôler les pistes qui vont contribuer à la lecture.
+
+De plus, Le paramètre "muet"  (pas le paramètre  "solo") affecte   l'audio  qui  va contribuer à l'audio enregistré dans  un des formats standard.
+
+Par défaut, les  paramètres "muet" et "solo"   de chaque piste sont respectivement "éteint" et "inactif".
+
+L'état actif de ces paramètres (allumé pour "muet" et actif pour "solo") est inscrit après le nom de la piste.
+
++++ Muet +++
+Si une piste à son paramètre "Muet" allumé,  elle ne contribue ni à la lecture, ni à l'audio enregistré dans  l'un des formats standard.
+
+Vous pouvez modifier le paramètre "Muet" d'une piste ou les paramètres de toutes les  pistes:
+- Pour basculer le paramètre  "Muet" de la piste sous le focus, appuyez sur "majuscule + U".
+- Pour couper le son de toutes les pistes, appuyez sur "control + U".
+- Pour remettre le son de toutes les pistes, appuyez sur "Ccontrol + majuscule + u".
+- Pour couper le son  de toutes les pistes sélectionnées, appuyez sur "control + Alt + u".
+- Pour remettre le son  sur toutes les pistes sélectionnées appuyez sur "control + alt +majuscule + U".
+
+
++++ Solo +++
+Si une ou plusieurs pistes ont leur paramètre "solo" activé,  seules ces pistes contribuent à la lecture, indépendamment du paramètre "Muet"   des autres pistes. Pour basculer le réglage du Solo  de la    piste sous le focus, appuyez sur "majuscule + S".
+
+Il y a trois  options possibles pour le paramètre "Solo" qui impacte   son interaction avec le paramètre "muet":
+- simple (valeur par défaut) : lorsque vous activez le paramètre "Solo" d'une piste,  le paramètre "Muet" et le paramètre "Solo" de cette piste sont ajustés. Ainsi  le paramètre "Muet" de cette piste est éteint et  le paramètre "muet" des autres pistes est allumé et leur paramètre "solo" est inactif. Si le paramètre "solo"  d'une piste redevient inactif, le paramètre "muet" de toutes les autres pistes passe à éteint.
+- Multipiste: Le paramètre "muet" et le paramètre "solo" sont complétement indépendants.
+- Aucun: Il n'y a pas de paramètre "solo", il faut se contenter du seul paramètre "muet".
+
+
+Le choix de L'option pour ce paramètre "solo"  se fait à l'aide d'un bouton dans la sous-rubrique "comportement des pistes" de la catégorie "Piste" des préférences d'Audacity.
+
+
+
+++ Gain de la piste ++
+Pour modifier le gain de la piste, appuyez sur majuscule + G".
+
+La boite de dialogue  "Gain" s'ouvre qui contient à la fois une zone d'édition et un potentiommètre  pour changer le gain.
+
+La gamme de gain (db) est de -36 à +36.
+
+Le gain d'une piste est appliqué à l'ensemble de la piste et est appliquée seulement au cours de la lecture, ou lorsque la piste est exportée vers un fichier, ou lorsque vous utilisez les commandes de mixage  et de rendu.
+
+Modifier le gain n'affecte pas l’amplitude des données audio de la piste.
+
+++ Panoramique de la piste  ++
+Pour changer le panoramique de la piste, tapez "majuscule + p" ou utilisez le sous-menu "Changer le panoramique sur la piste visée" du sous-menu "Pistes" du menu "Extra".
+
+La  boite de dialogue s'ouvre qui contient à la fois une zone d'édition et un potentiomètre pour changer le panoramique.
+
+La plage de panoramique va  de -1 à 1, ce qui correspond à gauche et à droite respectivement.
+
+
+++ Menu contextuel d'une piste ++
+Vous ouvrez le menu contextuel de la piste sous le focus en appuyant sur "majuscule + M", ou la touche "Application" ou le raccourci "majuscule +f10".
+
+Les commandes du menu comprennent le changement de nom de la piste, le déplacement de la position de la piste dans le tableau "Vue de piste".
+Cette dernière commande est décrite dans le chapitre suivant.
+
+
+++ Déplacement d'une piste ++
+Les commandes pour déplacer la position de la piste sous le focus sont: déplacer la piste  vers le haut, déplacer la piste vers le bas, déplacer la piste tout en haut, déplacer la piste tout en bas.
+
+Par défaut, ces  commandes n'ont pas de raccourci associé, mais vous pouvez en assigner sans problème en utilisant la boite de dialogue "Préférences" d'Audacity.
+
+Elles se trouvent dans la catégorie "Clavier", rubrique "Piste" et sous les noms suivants:
+- "Déplacer la piste visée vers le haut",
+- "Déplacer la piste visée vers le bas",
+- "Déplacer la piste visée tout en haut",
+- "Déplacer la piste visée tout en bas".
+
+
+Les combinaisons de touche qui ne sont pas utilisées et qui pourraient convenir sont: "Control + majuscule + Flèche haut", "control + majuscule+ Flèche bas", "control + majuscule + début", "control + majuscule + fin".
 
 ++ Alignement bout à bout de piste ++
 Si vous sélectionnez deux ou plusieurs pistes, vous pouvez aligner l'audio dans ces pistes, de sorte que l'audio d'une piste commence à la fin de l'audio de la piste précédente.
@@ -730,7 +914,7 @@ Si vous sélectionnez deux ou plusieurs pistes, vous pouvez aligner l'audio dans
 Pour ce faire, ouvrez le menu "pistes", puis le sous-menu "Aligner les pistes" et choisissez le sous-menu "Aligner bout à bout".
 
 Note:
-- l'alignement se fait dans l'ordre  dans lequel les pistes se présentent dans le tableau. Si vous  avez besoin de changer cet ordre, vous pouvez le faire à l'aide d'une commande du menu contextuel  pour la piste concernée.
+- l'alignement se fait dans l'ordre  dans lequel les pistes se présentent dans le tableau"Vue de piste". Si vous  avez besoin de changer cet ordre, vous pouvez le faire à l'aide d'une commande du menu contextuel  pour la piste concernée.
 - La position de l'audio dans la première piste sélectionnée reste inchangé.
 
 
@@ -748,10 +932,10 @@ Il y a un couple de commandes de    lecture pratiques qui peuvent être utilisé
 
 
 Vous pouvez modifier la longueur de la période  dans la boîte de dialogue "Préférences" d'Audacity, dans la catégorie "Lecture"   où il y a la zone d'édition de la Longueur de prévisualisation.
-
++++ Exemples +++
 Premier exemple, pour déplacer l'audio dans une ou plusieurs piste à une position de départ précise:
 - Déplacer le curseur à la position souhaitée à l'aide des méthodes décrites au chapitre ["Déplacement du curseur" #HDR-MovingCursor].
-- Sélectionnez les pistes contenant de l'audio que vous souhaitez déplacer, et  assurez-vous que les autres pistes ne soient pas sélectionnés.
+- Sélectionnez les pistes contenant l'audio que vous souhaitez déplacer, et  assurez-vous que les autres pistes ne soient pas sélectionnés.
 - Ouvrir le sous-menu "Aligner les Pistes" du menu "Pistes" et choisissez le sous-menu "Commencer au Curseur/Début de la Sélection".
 
 
@@ -771,8 +955,8 @@ Comme autre exemple, si vous voulez  décaler une ou plusieurs pistes d'un certa
  - tapez "flèche haut"  cinq fois pour  incrémenter ce chiffre   de cinq unités.
  - tapez "flèche gauche" pour atteindre le chiffre des secondes.
  - tapez "Flèche haut" pour incrémenter ce chiffre d’une unité.
-
  Ouvrir le sous-menu "Aligner les pistes" du menu "Pistes" et choisissez le sous menu "Commencer  au Curseur/Début de la Sélection". Cela déplace les données dans les pistes sélectionnées, de sorte que celles-ci  maintenant commencent à la nouvelle position   du curseur.
+
 
 Note: si vous êtes désireux de déplacer une piste que vous avez enregistrés et qui n'est pas alignées avec les pistes existantes,  vous pouvez avoir besoin de déplacer le point de départ de l'audio à un temps antérieur à 0.
 
@@ -783,75 +967,7 @@ Parce que vous ne pouvez pas déplacer le curseur avant le temps  zéro, la mét
 
 Notez qu’Audacity peut avoir une correction automatique de latence.
 
-++ Menu contextuel d'une piste ++
-Vous ouvrez le menu contextuel de la piste sous le focus en appuyant sur "majuscule + M", ou la touche "Application" ou le raccourci "majuscule +f10".
-
-Les commandes du menu comprennent le changement de nom de la piste, le déplacement de la position de la piste dans le tableau.
-
-++ Déplacement d'une piste ++
-Les commandes pour déplacer la position de la piste sous le focus sont: déplacer la piste  vers le haut, déplacer la piste vers le bas, déplacer la piste tout en haut, déplacer la piste tout en bas.
-
-Par défaut, ces  commandes n'ont pas de raccourci associé, mais vous pouvez en assigner sans problème en utilisant les "Préférences" d'Audacity.
-
-Elles se trouvent dans la catégorie "Clavier", rubrique "Piste" et sous les noms suivants:
-- "Déplacer la piste visée vers le haut",
-- "Déplacer la piste visée vers le bas",
-- "Déplacer la piste visée tout en haut",
-- "Déplacer la piste visée tout en bas".
-
-
-Les combinaisons de touche qui ne sont pas utilisées et qui pourraient convenir sont: "Control + majuscule + Flèche haut", "control + majuscule+ Flèche bas", "control + majuscule + début", "control + majuscule + fin".
-
-++ Gain de la piste ++
-Pour modifier le gain de la piste, appuyez sur majuscule + G".
-
-La boite de dialogue  "Gain"  s'ouvre qui contient à la fois une zone d'édition et un curseur pour changer le gain.
-
-La gamme de gain (db) est de -36 à +36.
-
-Le gain d'une piste est appliqué à l'ensemble de la piste et est appliquée seulement au cours de la lecture, ou lorsque la piste est exportée vers un fichier, ou lorsque vous utilisez les commandes de mixage  et de rendu.
-
-Modifier le gain n'affecte pas l’amplitude des données audio de la piste.
-
-++ Panoramique de la piste  ++
-Pour changer le panoramique de la piste, utilisez le sous-menu "Changer le panoramique de la piste visée" du sous-menu "Pistes" du menu "Extra".
-
-La  boite de dialogue s'ouvre qui contient à la fois une zone d'édition et un potentiomètre pour changer le panoramique.
-
-La plage de panoramique va  de -1 à 1, ce qui correspond à gauche et à droite respectivement.
-
-++ Muet et Solo ++
-Chaque piste dispose d'un paramètre muet qui peut être allumé ou éteint, et un paramètre "solo"  qui peut également être activé ou désactivé.
-
-Ces paramètres sont utilisés pour contrôler les pistes qui vont contribuer à la lecture.
-
-De plus, Le paramètre "muet"  (pas le paramètre  "solo") affecte   l'audio  qui  va contribuer à l'audio enregistré dans  un des formats standard.
-
-Par défaut, les  paramètres "muet" et "solo"   de chaque piste sont respectivement "éteint" et "inactif".
-
-L'état actif de ces paramètres (allumé pour "muet" et actif pour "solo") est inscrit après le nom de la piste.
-
-+++ Muet +++
-Si une piste à son paramètre "Muet" allumé,  elle ne contribue ni à la lecture, ni à l'audio enregistré dans  l'un des formats standard.
-
-Vous pouvez modifier le paramètre "Muet" d'une piste ou les paramètres de toutes les  pistes:
-- Pour basculer le paramètre  "Muet" de la piste sous le focus, appuyez sur "majuscule + U".
-- Pour couper le son de toutes les pistes, appuyez sur "control + U".
-- Pour remettre le son  sur toutes les pistes, appuyez sur "control + majuscule + U".
-
-
-+++ Solo +++
-Si une ou plusieurs pistes ont leur paramètre "solo" activé,  seules ces pistes contribuent à la lecture, indépendamment du paramètre "Muet"   des autres pistes. Pour basculer le réglage du Solo  de la    piste sous le focus, appuyez sur "majuscule + S".
-
-Il y a trois  options possibles pour le paramètre "Solo" qui impacte   son interaction avec le paramètre "muet":
-- simple (valeur par défaut) : lorsque vous activez le paramètre "Solo" d'une piste,  le paramètre "Muet" et le paramètre "Solo" de cette piste sont ajustés. Ainsi  le paramètre "Muet" de cette piste est éteint et  le paramètre "muet" des autres pistes est allumé et leur paramètre "solo" est inactif. Si le paramètre "solo"  d'une piste redevient inactif, le paramètre "muet" de toutes les autres pistes passe à éteint.
-- Multipiste: Le paramètre "muet" et le paramètre "solo" sont complétement indépendants.
-- Aucun: Il n'y a pas de paramètre "solo", il faut se contenter du seul paramètre "muet".
-
-
-Le choix de L'option pour ce paramètre "solo"  se fait à l'aide d'un bouton dans la sous-rubrique "comportement des pistes" de la catégorie "Piste" des préférences d'Audacity.
-
-+++ Verrouillage de la synchronisation des pistes +++[HDR-TrackSyncLock]
+++ Verrouillage de la synchronisation des pistes ++[HDR-TrackSyncLock]
 L'idée de verrouillage de la synchronisation des pistes  est d'essayer et de garder un groupe de pistes  qui se synchronisent les unes avec les autres lors de certaines opérations, comme  la suppression d'audio, qui affecte le   placement de l'audio d'une des pistes dans le groupe de pistes.
 
 Supposez que vous ayez deux pistes audio et que leur synchronisation a été verrouillé:
@@ -883,10 +999,6 @@ Un marqueur représentant un  temps est  appelé marqueur de position, un marque
 
 Les marqueurs  sont stockés dans une piste des marqueurs. Il peut y avoir plusieurs pistes de marqueurs dans un projet, mais normalement une seule piste suffit.
 
-Lorsqu'une piste de marqueurs a le focus, par défaut, l'appui sur   une lettre ou un chiffre crée automatiquement un nouveau marqueur.
-
-Ce comportement peut être désactivé  (fortement recommandé). Pour cela, il suffit de décocher   la case à cocher "Taper pour créer un marqueur" dans la sous-section "Comportements des pistes" de la catégorie "Pistes" de la boite de dialogue "Préférences" ou de décocher le sous-menu "Taper pour créer un marqueur" du sous-menu "Marqueurs" du menu "Édition".
-
 Vous pouvez marquer une position ou une plage de temps comme décrit dans la section suivante pour y revenir plus tard en utilisant les commandes de déplacement dans les marqueurs (voir chapitre ["Déplacement à un marqueur" #HDR-MovingToLabel]).
 
 De plus, un certain nombre d'outils dans le menu "analyse" vous permet d'ajouter une piste de marqueurs au projet qui contient leurs résultats d'analyse. Par exemple, l’outil "Trouveur de pulsations" génère une piste de marqueurs contenant des marqueurs à des points où  l'audio a une pulsation.
@@ -894,30 +1006,49 @@ De plus, un certain nombre d'outils dans le menu "analyse" vous permet d'ajouter
 ++ Création d'un marqueur ++
 Il existe deux commandes pour créer un marqueur, et les deux   se trouvent dans le sous-menu "Marqueurs" du menu "Édition":
 - Ajouter un marqueur à la Sélection (raccourci "control + B"): sans plage de temps sélectionnée,   un marqueur de position à la position du Curseur est créé. S’il y a une plage de temps sélectionnée,   un marqueur de région pour cet intervalle de temps est créé.
-- Ajouter un marqueur à la position de Lecture (raccourci "Control + M"):  un marqueur de position à la position de Lecture est créé.
+- Ajouter un marqueur à la position de Lecture (raccourci "Control + M"):  un marqueur de position à la position de Lecture ou d'enregistrement est créé.
 
 
-Pour activer l'une de ces commandes:
--  utiliser le sous-menu "Marqueurs «ou tapez son raccourci. Si la piste sous le focus, n'est pas une piste de marqueurs, le focus est donné à la  première piste de marqueurs sous cette piste si elle existe. Si elle n'existe pas, alors elle est créée à la suite de toutes les pistes et le focus lui est donné. Un nouveau marqueur et une zone d'édition est affichée pour  la saisie d'un nom pour ce marqueur. Malheureusement, de base,  cette zone d'édition n'est pas accessible avec  le lecteur d'écran.
-- Tapez un nom pour le marqueur (optionnel), puis appuyez sur "Entrée «pour fermer la boîte d'édition.
+Pour ces commandes, il existe une option permettant de choisir  si le nom pour un nouveau marqueur   doit être saisi dans une boîte de dialogue ou dans une zone d'édition de la piste des marqueurs.
+
+La deuxième option n'est pas très accessible pour les utilisateurs de lecteurs d'écran, et il est donc recommandé d'utiliser l'option boîte de dialogue.
+
+Dans les "Préférences", dans la sous-catégorie "Comportements des pistes" de la catégorie "Piste", il y a une case à cocher "Utiliser un dialogue pour nommer un nouveau marqueur ", qui n'est pas cochée par défaut, mais que vous devez  cocher.
+
+L'utilisation de ces commandes pour créer des marqueurs à l'aide de ces deux options est décrite ci-aprés.
+
+Tout d'abord, en utilisant une boîte de dialogue pour le nom:
+- Choisissez l'une des commandes dans le sous-menu "Marqueurs" du menu "Édition" ou appuyez sur son raccourci. Une boîte de dialogue "Nouveau marqueur" s'ouvre et la zone d'édition du nom est sous  le focus.
+- Tapez le nom du marqueur (facultatif), puis appuyez sur "Entrée" pour appuyer sur le bouton "OK", qui est le bouton par défaut de la boîte de dialogue. Le nouveau marqueur est ajoutée à une piste de marqueurs, ce qui est :
+ - soit  la piste focalisée, s'il s'agit d'une piste de marqueurs.
+ - soit la première piste de marqueurs en dessous de la piste focalisée, si une telle piste existe.
+ - soit une nouvelle piste de marqueurs ajoutée aux pistes existantes.
+- Le focus revient à la piste d'origine
 
 
-Dans Audacity 2.3.0, il y a maintenant  dans ses préférences, une option pour l'utilisation d'une boîte de dialogue pour  l'édition du nom d'un nouveau marqueur. Cette option  est dans la sous-catégorie "Comportement de la piste" de la catégorie "Pistes" sous le nom "Utiliser un dialogue pour nommer un nouveau marqueur".
+Pour utiliser ces commandes pour ajouter des marqueurs et  sans utiliser l'option Boite de dialogue:
+- Soit vous choisissez l'une d'elles dans le sous-menu "Marqueurs" du menu "Édition",
+- soit vous utilisez son raccourci.
 
-Elle  est désactivée par défaut.
 
-Avec cette option activée, lorsque vous ajoutez un marqueur,  la boîte de dialogue qui s'ouvre  est alors entièrement accessible.
+Si la piste focalisée n'est pas une piste de marqueurs, la première piste de marqueurs en dessous de cette piste devient la piste focalisée, si une telle piste existe.
+S'il n'y en a pas, une nouvelle piste de marqueurs est ajoutée aux pistes existantes et devient la piste focalisée.
 
-Note: avec cette option, lorsque vous ajoutez un marqueur à la sélection et  après la fermeture de la boîte de dialogue, le focus revient à la piste d'origine, plutôt qu’à la piste de marqueurs.
+Dans la piste de marqueurs focalisée, un nouveau marqueur est créé et une zone d'édition s'ouvre pour entrer un nom pour le marqueur.
+Malheureusement, votre lecteur d'écran ne dit pas que le focus est maintenant sur cette zone d'édition.
 
+Tapez un nom pour le marqueur (facultatif), puis appuyez sur Entrée pour fermer la zone d'édition.
+
+Pour la commande "Ajouter un marqueur à la position de lecture", le focus est ensuite renvoyé à la piste d'origine.
 
 ++ Déplacement à un marqueur ++[HDR-MovingToLabel]
-Il y a deux commandes pour se déplacer à un marqueur:
+
+Il existe deux commandes pour aller à un marqueur. Pour déterminer quelle est le marqueur le plus proche, la position d'un marqueur de région est considérée comme le début de sa plage de temps
+Ce sont:
 - Passer au prochain marqueur (raccourci "Alt + Flèche droite"): pour se déplacer au plus proche marqueur  après le curseur ou le début d'une plage de temps sélectionnée. S’il n'y a plus d'autre marqueur, le déplacement se fait au premier marqueur de la piste.
 - passer au  marqueur précédent: (raccourci "Alt + Flèche gauche"): pour se déplacer au plus proche marqueur avant le curseur  ou au début d'une plage de temps. S’il n'y a plus d'autre marqueur, le déplacement se fait au dernier marqueur de la piste.
 
 
-La position d'un marqueur de région est  le début de sa plage de temps.
 
 Ces commandes  utilisent les marqueurs d'une seule piste de marqueurs, pas de toutes les pistes de marqueurs.
 
@@ -929,6 +1060,8 @@ Lorsque ces commandes atteignent un marqueur :
 - si le marqueur est un marqueur de position,   le curseur est placé à la  position du marqueur.
 - si le marqueur est un marqueur de région,   la  plage de temps associée au marqueur est sélectionnée.
 
+
+Dans les deux cas, Jaws et NVDA indique le nom du marqueur, s'il en a une, suivi de sa position dans la piste des marqueurs.
 
 Si ces commandes sont utilisées pendant la lecture,  la lecture continue après le déplacement au marqueur.
 
@@ -986,10 +1119,13 @@ Note: comme "Tab" peut être utilisé pour sélectionner une cellule dans le tab
 
 +++ Suppression d'un marqueur +++
 - Sélectionnez l'une des cellules de la ligne représentant le marqueur.
-- Il y a alors deux solutions: La première est d'appuyer sur "control+ Tab" pour sortir du tableau en allant au bouton "Insérer", "puis Tab" pour se placer sur le bouton "Supprimer" et appuyez dessus. La deuxième est d'utiliser la touche d'accès rapide "alt+s" pour appuyer sur le bouton "Supprimer" sans bouger du tableau.
+- Il y a alors deux solutions: 
+ - La première est d'appuyer sur "control+ Tab" pour sortir du tableau en allant au bouton "Insérer", "puis Tab" pour se placer sur le bouton "Supprimer" et appuyez dessus.
+ - La deuxième est d'utiliser la touche d'accès rapide "alt+s" pour appuyer sur le bouton "Supprimer" sans bouger du tableau.
+
 
 +++ Modification des cellules +++
-NVDA indique toutes les cellules comme étant des zones d'édition. Juste l'ignorer.
+Le lecteur d'écran  indique toutes les cellules comme étant des zones d'édition. Juste l'ignorer.
 
 Aucune des cellules ne se comportent comme des zones d'édition et  la façon dont vous aurez à modifiez  une cellule dépend du type de la valeur qu'elle contient.
 
@@ -1011,33 +1147,37 @@ Pour validez la modification appuyez sur "Tab" ou "Entrée». Pour annuler la mo
 - Pour valider la modification appuyez sur "Tab" ou "Entrée", ou pour l'annuler  appuyez sur "Échapp".
 
 
-Notez que, par défaut, le format de l'heure du début et de la fin des temps est le même que celui utilisé dans les zones d'édition  de temps de la barre d'outils  Sélection.
+Notez que, par défaut, le format de l'heure du début et de la fin des temps est le même que celui utilisé dans les zones de sélection numérique   de la barre d'outils  "Sélection".
 
 Vous   pouvez modifier temporairement ce format  en utilisant le menu contextuel   dans la zone d'édition.
-Ce changement de format ne s'applique   qu'aux zones d'édition de la boite de dialogue et n'est pas enregistré lorsque la boîte de dialogue est fermée.
+Ce changement de format ne s'applique   qu'aux zones de sélection numérique de la boite de dialogue et n'est pas enregistré lorsque la boîte de dialogue est fermée.
 
 + Clips +[HDR-Clips]
-Dans le reste de ce document, il a été supposé qu'une piste audio  ne contient   qu'une seule section de     données audio.
+Dans le reste de ce document, il a été supposé qu'une piste audio  ne contient   qu'un seul tronçon de     données audio.
 
-Toutefois, une piste audio peut contenir plusieurs sections distinctes et elles sont appelées clips.
+Toutefois, une piste audio peut contenir plusieurs tronçons  distinctes et ils sont appelées clips.
 
 Dans Audacity, les clips ne peuvent pas se chevaucher.
 
 Il y a plusieurs situations où vous pouvez vous retrouver avec plus d'un clip sur une piste:
 - Lorsque vous enregistrez à la fin d'un clip existant,  l'audio enregistré est ajouté en tant que clip distinct.
-- Un clip scindé  en deux clips.
+- L'utilisation de diverses commandes de division, décrites ci-dessous.
 - Coller de l'audio dans une piste qui contient déjà un clip et à une position extérieure au clip.
-- Utiliser d'autres  différentes commandes.
 
 
-++Déplacement de curseur ++
+
+++ Déplacement de curseur ++
 Il y a des commandes pour le  déplacement aux limites du clip précédent ou suivant que l'on trouve  dans le sous-menu "Petit saut de curseur à" du menu "Transport". Ce sont:
-- Délimitation du clip précédent: déplace le curseur à la prochaine limite de clip avant le curseur ou au début de la période sélectionnée.
-- délimitation du clip suivant: déplace le curseur à la prochaine limite de clip après le curseur ou à la fin de la période sélectionnée.
-- La commande pour déplacer le curseur à la prochaine limite de clip. Sinon, les limites sont cherchées dans toutes les pistes.
+- "Délimitation du clip précédent": déplace le curseur à la prochaine limite de clip avant le curseur ou au début de la période sélectionnée.
+- "délimitation du clip suivant": déplace le curseur à la prochaine limite de clip après le curseur ou à la fin de la période sélectionnée.
+
 
 
 Si quelques pistes audio sont sélectionnées, ces commandes cherchent les limites des clips dans ces pistes. Sinon, les limites sont cherchées dans toutes les pistes du projet.
+
+Lorsque le curseur est déplacé vers la limite d'un clip, votre lecteur d'écran indique soit début soit fin, suivi du numéro du clip, suivi du nom de la piste.
+Dans le cas où deux clips sont immédiatement l'un à côté de l'autre et que la limite du clip est à la fois la fin d'un clip et le début du suivant, votre lecteur d'écran le dit.
+
 
 ++ Sélection d'une plage de temps ++
 Il y a deux ensembles de commandes pour la sélection des plages de temps qui impliquent les limites de clips.
@@ -1046,32 +1186,38 @@ Elles sont décrites dans les deux chapitres suivants.
 
 Dans les deux cas, si  des pistes audio sont sélectionnées,  les commandes utilisent   les clips de ces pistes. Sinon, les commandes utilisent les clips de toutes les pistes audio.
 
-+++ Sélection du clip précédente ou suivant +++
-Les   commandes pour  la sélection du clip suivant ou précédent se trouvent dans le sous-menu «Délimitation du clip" et sont:
++++ Sélection du clip précédent ou suivant +++
+Les   commandes pour  la sélection du clip suivant ou précédent se trouvent dans le sous-menu «Délimitation du clip" du menu "Sélection"et sont:
 - clip suivant: raccourci "alt+,".
-- clip précédent: raccourci "alt+.".
+- clip précédent: raccourci "alt+." (voir le chapitre ["Les raccourcis gênants" #HDR-BracketShortcuts]).
 
+
+Lorsqu'un clip est sélectionné, votre lecteur d'écran indique le numéro du clip dans la piste, suivi du nom de la piste
 
 Veuillez noter que vous pouvez facilement utiliser ces commandes pour se déplacer aux limites du clip. Juste sélectionnez le clip, puis appuyez sur "flèche gauche" ou "Flèche droite" pour annuler la sélection et  positionner le curseur au début ou la fin du clip respectivement.
 
 Pour ceux qui sont intéressés, les règles précises pour déterminer quels
 Sont les clips sélectionnés lorsque ces commandes sont utilisées,  sont les suivantes.
-- Pour la commande de sélection du clip suivant:
- - Si il n'y a pas de plage de temps  sélectionnée,  le premier clip qui commence  à  ou après la position du curseur est sélectionné.
- - Si il y a une plage de temps sélectionnée: si le début de la sélection est positionné au début du clip et que la fin de la sélection se situe avant la fin du clip, alors le clip est sélectionné. Autrement, le premier clip qui commence après le début de la sélection est sélectionné.
+
+Pour la commande de sélection du clip suivant:
+- Si il n'y a pas de plage de temps  sélectionnée,  le premier clip qui commence  à  ou après la position du curseur est sélectionné.
+- Si il y a une plage de temps sélectionnée: si le début de la sélection est positionné au début du clip et que la fin de la sélection se situe avant la fin du clip, alors le clip est sélectionné. Autrement, le premier clip qui commence après le début de la sélection est sélectionné.
 
 
-- Pour la commande de sélection du clip précédent:
- - Si il n'y a pas de plage de temps sélectionnée, le premier clip qui commence avant le curseur est sélectionné.
- - Si une plage de temps  est sélectionnée: si le début de la  sélection est placé au début d'un clip et la fin de la sélection est après la fin du clip  alors  le clip est sélectionné.  Sinon, le premier clip qui commence avant le début de la sélection est sélectionnée.
+Pour la commande de sélection du clip précédent:
+- Si il n'y a pas de plage de temps sélectionnée, le premier clip qui commence avant le curseur est sélectionné.
+- Si une plage de temps  est sélectionnée: si le début de la  sélection est placé au début d'un clip et la fin de la sélection est après la fin du clip  alors  le clip est sélectionné.  Sinon, le premier clip qui commence avant le début de la sélection est sélectionnée.
 
 
 +++ Sélection avec les limites du clip +++
 En plus des commandes décrites précédemment, deux autres commandes pour la sélection de clip existent.
 
 Elles  se trouvent également dans le sous-menu "Délimitation du clip" du menu "Sélection", mais n'ont pas de raccourci affecté par défaut. Ce sont:
-- Limite précédente du Clip au   Curseur: fixe le début de la  plage de temps sélectionnée à la limite du précédent clip.
-- Curseur à la Prochaine Limite du Clip: fixe la fin de la plage de temps sélectionnée  à la limite du prochain clip.
+- "Limite précédente du Clip au   Curseur": fixe le début de la  sélection   à la limite du précédent clip.
+- "Curseur à la Prochaine Limite du Clip": fixe la fin de la sélection   à la limite du prochain clip.
+
+
+Lorsque le début ou la fin de la plage de temps sélectionnée est défini sur une limite de clip à l'aide de ces commandes, votre lecteur d'écran donne les détails de la limite de clip, exactement de la même manière que lorsque les commandes de déplacement du curseur sur une limite de clip sont utilisé
 
 
 ++ Diverses commandes de découpe ++
@@ -1083,8 +1229,8 @@ Pour fractionner un clip en deux clips d'une piste sélectionnée:
 
 Vous pouvez également fractionner un clip en trois parties à l'aide de cette méthode, si vous sélectionnez un intervalle de temps.
 
-+++ Commandes Supprimer-séparer et couper-séparer +++
-Vous pouvez utiliser les commandes supprimer-séparer  et couper-séparer   pour supprimer ou  enlever l'audio sélectionné, sans affecter la position du contenu de  la piste.
++++ Commandes "Supprimer-séparer" et "couper-séparer" +++
+Vous pouvez utiliser les commandes "supprimer-séparer"  et "couper-séparer"   du sous-me nu "Suppression spéciale" du menu "Édition" pour supprimer ou  enlever l'audio sélectionné, sans affecter la position du contenu de  la piste.
 
 Ceci est en contraste avec les commandes de coupe et suppression standard qui provoque des déplacements d'audio.
 
@@ -1096,12 +1242,14 @@ Comme autre exemple, si le début de la plage sélectionnée se trouve à l'int�
 
 L'effet de la commande "couper-séparer" est le même que celui de la commande "supprimer-séparer", sauf que l'audio qui est supprimé est placé dans le presse-papier d'Audacity, plutôt que d'être tout simplement supprimé.
 
-+++ Scinder dans une autre piste +++
-La commande "Scinder dans une   piste"  déplace  l'audio sélectionné  dans une ou plusieurs autres pistes, sans affecter la position de l'audio restante dans la piste originale.
++++ Scinder dans une nouvelle piste +++
+La commande "Scinder dans une   nouvelle piste"  du sous-menu "Délimitation du clip" du menu "Éédition" place  l'audio sélectionné  dans une ou plusieurs autres pistes, sans affecter la position de l'audio restante dans la piste originale.
 
 Pour chaque piste sélectionnée, les données audio dans la  plage de temps est supprimée, et donc, la piste se vide dans cette plage de temps et la position des données audio restantes dans la piste est gardée inchangé.
 
 Une nouvelle piste est ajouté après la dernière piste, et l'audio  supprimé y est collé  à sa position originale.
+
+Vous pouvez penser à "Scinder dans une nouvelle piste" comme étant équivalent à la commande "Couper-séparer"  suivi de l'audio coupé qui est collé dans une nouvelle piste à la même position que l'audio sélectionné d'origine
 
 +++ Détacher aux silences +++
 Si l'audio sélectionné contient des plages  de silence complet, c’est à dire que l'amplitude de l'audio dans ces plages est 0, alors la commande "Détacher aux silences" peut être utilisé pour supprimer ces plages de l'audio, laissant les clips séparés les uns des autres par des plages de temps vides.
@@ -1111,7 +1259,7 @@ Pour chaque plage de l'audio sélectionné, où l'amplitude de l'audio est égal
 ++ Fusion de clips ++
 Pour fusionner deux clips d'une piste sélectionnée:
 - Sélectionnez une plage de temps de manière que  le début de la plage de temps soit avant la fin du premier clip, et que la fin de la plage soit après le début du second clip. Ainsi, par exemple, vous pouvez fixer   le début de la plage de temps au  début du premier clip, et la fin de la plage à la fin du second clip.
-- fusionner avec le sous-menu "Fusionner" du sous-menu "Délimitation du clip" du menu "Édition"(raccourci "control +j"): Les clips sont alors réunis et n'en forme plus qu'un seul.  Tout l'espace entre les clips est remplacée par du silence.
+- fusionner avec la commande "Fusionner" du sous-menu "Délimitation du clip" du menu "Édition"(raccourci "control +j"): Les clips sont alors réunis et n'en forme plus qu'un seul.  Tout l'espace entre les clips est remplacée par du silence.
 
 
 Dans la méthode ci-dessus, s’il y a d'autres clips entre les deux clips,  ils seront fusionnés dans le  clip final.
@@ -1241,11 +1389,11 @@ Après ceux-ci, un chapitre  décrit comment Audacity peut corriger le retard da
 Il y a un certain nombre de paramètres qui peuvent avoir besoin d'être changés avant de  faire un enregistrement, et qui sont décrits dans les chapitres suivants. Notez que
 Nombre de ces paramètres peuvent être configurés dans la catégorie "Périphériques"  de la boite de dialogue "Préférences" d'Audacity, dans un dialogue particulier ou  dans l’outil "Périphériques" du groupe de  barre d'outils.
 
-+++ Interface Audio +++
++++ Interface Audio +++[hdrAudioInterface]
 Audacity fournit un certain nombre d'options pour l'interface du logiciel qu’Audacity utilise pour interagir avec les périphériques de lecture et d'enregistrement:
-- MME (extensions Multimédia): C'est l'interface par défaut.
-- Windows DirectSound.
-- Windows WASAPI (audio session API): seulement disponible dans Windows Vista et les versions ultérieures. Lors de l'utilisation de cette interface, le périphérique d'enregistrement  inclut aussi les soi-disant versions de rebouclage des périphériques de lecture.
+- MME (Multimedia extension): C'est l'interface par défaut.
+- Windows DirectSound. Normalement, il n'y a aucun avantage à l'utiliser par rapport à l'utilisation du MME.
+- Windows WASAPI (Windows audio session API):  Lors de l'utilisation de cette interface, le périphérique d'enregistrement  inclut aussi les soi-disant versions de rebouclage des périphériques de lecture.
 
 
 En utilisant ce dernier, vous pouvez enregistrer de l'audio qui est envoyé à un des périphériques de lecture. Cela offre une alternative au périphérique d'enregistrement "Mixage stéréo"   qui peut ou ne peut  pas être fourni par votre carte son.
@@ -1253,23 +1401,25 @@ En utilisant ce dernier, vous pouvez enregistrer de l'audio qui est envoyé à u
 Vous pouvez définir cette option:
 - soit à l'aide de la liste déroulante "Hôte audio" du groupe "Interface" de la catégorie "Périphériques"  de la boite de dialogue "Préférences".
 - soit à l'aide de la liste déroulante "Hôte audio"   de   la boite de dialogue "Sélectionner l'hôte audio" ouverte par "Majuscule + h".
-- soit à l'aide de la liste déroulante "Hôte audio" de l’outil "Périphériques" du groupe de barre d'outils.
+- soit à l'aide de la liste déroulante "Hôte audio" de l’outil "Périphériques" du groupe supérieur de barre d'outils.
 
 
 Note:   lorsque vous modifiez cette option, les paramètres de l'enregistrement et des dispositifs de lecture peuvent changer, de sorte que vous devriez alors vérifier ces paramètres.
+
 +++ Périphérique d'enregistrement +++
 Vous pouvez sélectionner le périphérique d'enregistrement en utilisant la liste déroulante  "Périphérique d'enregistrement"  de:
 - soit la catégorie "Périphériques" de la boîte de dialogue "Préférences".
 - soit la boite de dialogue "Sélectionner le périphérique d'enregistrement" ouverte par "Majuscule + i".
-- soit de l’outil Périphérique" du groupe de barre d'outils.
+- soit de l’outil Périphérique" du groupe supérieur de barre d'outils.
 
 
 Si une carte son intégrée  ou une carte son interne a un certain nombre de entrées possibles, tels que le microphone ou l'entrée ligne,  chacune de ces entrées est répertorié comme une unité distincte dans la  liste déroulante. En outre,
 Si vous utilisez l'interface MME ou DirectSound audio, alors
 Les périphériques disponibles  peuvent également inclure "Microsoft Sound Mapper - Input" ou "Primary Sound Captive Driver" respectivement.
 Chacun d'eux  correspondent au périphérique qui a été définie en tant que par défaut pour l'enregistrement périphérique dans Windows.
+En règle générale, l'utilisation de l'une de ces options n'est pas recommandée, car le périphérique d'enregistrement par défaut peut parfois changer de façon inattendue, et donc changer votre périphérique d'enregistrement dans Audacity sans aucun avertissement.
 
-Dans Windows 7 et les versions ultérieures,  la liste déroulante recense tous les périphériques d'enregistrement qui étaient branchés et activés quand  Audacity a été lancé.
+La liste déroulante recense tous les périphériques d'enregistrement qui étaient branchés et activés quand  Audacity a été lancé.
 
 Si un périphérique n'est pas dans la liste, vérifiez l'onglet "Enregistrement" de la boite de dialogue "Son" de Windows pour voir si le périphérique est activé.
 Cette boîte de dialogue est décrite au chapitre ["Boite de dialogue Son de Windows" #HDR-SoundWindowsDialog] pour ce familiariser avec elle.
@@ -1277,7 +1427,8 @@ Cette boîte de dialogue est décrite au chapitre ["Boite de dialogue Son de Win
 +++ Niveau d'enregistrement +++
 Ce chapitre  décrit les éléments à utiliser pour régler le niveau d'enregistrement. Comment régler le niveau d'enregistrement de sorte que vous n'aurez pas trop de  bruit ou de coupure, est décrit dans le chapitre ["Réglage du niveau d'enregistrement" #HDR-RecordLevel] ci-dessous.
 
-Si Audacity peut contrôler le niveau du périphérique d'enregistrement, alors vous pouvez utiliser le potentiomètre d'enregistrement d'Audacity, ou le cas échéant celui de Windows. Il est cependant  plus facile d'utiliser le potentiomètre d'enregistrement d'Audacity qui est dans la table de Mixage du groupe de barre d'outils de la fenêtre principale.
+Si Audacity peut contrôler le niveau du périphérique d'enregistrement, alors vous pouvez utiliser le potentiomètre d'enregistrement d'Audacity, ou le cas échéant celui de Windows. Il est cependant  plus facile d'utiliser le potentiomètre d'enregistrement d'Audacity qui est dans la table de Mixage du groupe supérieur de barre d'outils de la fenêtre principale.
+Pour y accéder à partir du tableau "Vue de piste", appuyez deux fois sur "control + F6", puis sur "Tab" ou "majuscule + Tab" jusqu'à ce que vous arriviez au potentiomètre d'enregistrement.
 
 Quand Audacity ne peut pas contrôler le niveau du périphérique d'enregistrement,  le potentiomètre d'enregistrement est indiqué comme étant indisponible. Pour les utilisateurs voyants, le curseur apparaît en grisé et les utilisateurs de lecteurs d'écran ne peuvent  pas l'atteindre. Dans ce cas, vous devez utiliser l'élément approprié de  Windows, comme décrit ci-dessous.
 
@@ -1291,15 +1442,13 @@ Le réglage  du niveau d'enregistrement  d'un périphérique avec l’outil de W
 +++ Nombre de canaux d'enregistrement +++
 Le nombre de canaux de l'appareil d'enregistrement peut être réglé à l'aide de la  liste déroulante "Canaux":
 - soit de la catégorie "Périphériques" de la boite de dialogue "Préférences".
-- ou dans la boite de dialogue "Canaux d'Enregistrement" ouvert par "majuscule + N".
-- soit  de l’outil "Périphérique" du groupe de barre d'outils.
+- soit dans la boite de dialogue "Canaux d'Enregistrement" ouvert par "majuscule + N".
+- soit  de l’outil "Périphérique" du groupe supérieur de barre d'outils.
 
 
 Si vous enregistrez à l'aide d'un microphone, alors le paramètre approprié dépend si c'est un microphone mono ou stéréo.
+Si vous enregistrez à partir d'une entrée de ligne, d'un mixage stéréo ou de l'un des périphériques de bouclage en utilisation WASAPI, le paramètre doit être stéréo.
 
-+++ Échantillonnage +++
-Le taux d'échantillonnage par défaut pour un nouveau projet est de 44100 hz, et la valeur par défaut  du format d'échantillonnage est de 32 bits  flottants.
-Ceux-ci devraient suffire, mais ils peuvent être changé dans la catégorie "Qualité" de la boîte de dialogue "Préférences", comme décrit au chapitre   ["Echantillonnage" #HDR-Sampling] du chapitre ["Préférences" #HDR-Preferences].
 
 
 +++ Option Doublage (Overdub) +++
@@ -1314,74 +1463,95 @@ Cette option peut être cochée ou décochée en utilisant le sous-menu "Passage
 
 
 ++ Commandes d'enregistrement ++[HDR-RecordControls]
-
-Il y a deux possibilités  pour définir l'endroit où va se placer l'enregistrement.  L'audio enregistré peut être placé soit dans une nouvelle piste  créée, ou être ajouté à la suite d'une piste existante.
-
-Les commandes par défaut d'enregistrement  sont les suivantes:
-Pour démarrer un enregistrement qui sera placé à la suite  d'une piste existante: appuyez sur "R", ou utilisez le sous-menu "Enregistrement" du sous-menu "Enregistrement" du menu "Transport".
-
-Si le projet contient déjà une ou plusieurs pistes audio, l'enregistrement audio est ajouté à la première piste audio sélectionnée, ou sinon à la première piste audio.
-Donc si il y a juste une seule piste audio dans le projet,  l'enregistrement audio est ajouté à cette piste qu’elle soit sélectionnée ou pas.
+Les commandes d'enregistrement et les raccourcis, utilisant les paramètres par défaut sont:
+- Pour démarrer l'enregistrement, appuyez sur "r" ou, dans le menu "Transport", ouvrez le sous-menu "Enregistrement" et choisissez "Enregistrer". Si le projet ne contient aucune piste audio, une nouvelle piste audio est créée et l'audio enregistré est inséré dans cette piste, qui n'est initialement pas sélectionnée. S'il existe des pistes audio existantes, l'audio enregistré est ajouté à la première piste audio sélectionnée, ou bien le cas échéant, à la première piste audio.
+- Pour commencer l'enregistrement et insérer  systématiquement dans une nouvelle piste, appuyez sur "majuscule + r" ou dans le menu "Transport", ouvrez le sous-menu "Enregistrement" et choisissez "Enregistrer une nouvelle piste". Une nouvelle piste est automatiquement ajoutée au projet et l'audio enregistré est inséré à la position du curseur. cette nouvelle piste n'est initialement pas sélectionnée.
+- Pour démarrer l'enregistrement Punch et Roll, appuyez sur "majuscule + d", ou dans le menu "Transport", ouvrez le sous-menu Enregistrement" et choisissez "Enregistrement Punch Roll". Ceci peut être utilisé pour corriger facilement les erreurs que vous venez de faire, et est décrit au chapitre "Enregistrement Punch  Roll" ci-dessous.
+- Pour suspendre ou reprendre l'enregistrement, appuyez sur "p".
+- Pour arrêter l'enregistrement, appuyez sur la barre d'espace.
 
 
-Si le projet ne contient pas de piste audio   l'enregistrement audio est inséré dans une nouvelle piste.
+Notez que pendant un enregistrement, la deuxième partie de la barre d'état contient la durée maximale d'enregistrement que vous pouvez faire compte tenu de votre espace disque libre.
 
-Pour démarrer un enregistrement et le placer dans une nouvelle piste,  appuyez sur "majuscule + R" ou utilisez le sous-menu "Enregistrer dans une nouvelle piste" du sous-menu "Enregistrement" du menu "Transport".
-
-Une nouvelle piste est automatiquement ajoutée au projet, et le nom par défaut de cette nouvelle piste est  “Piste Audio”.
-Note: NVDA  lit le nom de la Piste n, où n est
-Le numéro de ligne de la piste. L'enregistrement audio est inséré à la position du curseur.
-Si il y a  pas de pistes dans le  projet, alors la position du curseur est normalement au temps zéro.
-La nouvelle piste   n'est pas sélectionnée au départ.
-
-Pour mettre en pause ou reprendre l'enregistrement, appuyez sur P.
-
-Pour arrêter l'enregistrement, appuyez sur la barre d'Espace.
-
-Note: pendant un enregistrement, la deuxième section de la barre d'état contient la longueur maximale de l'enregistrement que Vous pouvez faire avec l'espace disponible de votre disque dur.
-
-Comme mentionné ci-dessus, il y a une option pour retrouver   les raccourcis de commandes d'enregistrement originelles pour  ceux d'entre vous qui utilisent Audacity depuis un certain temps et qui peuvent  très bien trouver qu'elles sont plus faciles  à  utiliser.
-
-Dans la catégorie "Enregistrement" de la boite de dialogue "Préférences",  il y a la case à cocher "Enregistrer dans une nouvelle piste"  qui n'est pas cochée par défaut.
-
-Si cette case à cocher est  cochée, les deux commandes pour démarrer l'enregistrement sont alors les suivantes:
-- Pour démarrer l'enregistrement et placer l'audio enregistré sur une nouvelle piste: appuyez sur "R" ou utilisez le sous-menu "Enregistrer nouvelle piste" du sous-menu "Enregistrement" du menu "Transport".
-- Pour Démarrer l'enregistrement et placer l'audio enregistré sur une piste existante: appuyez sur "majuscule + R",  ou utilisez le sous-menu "Poursuite de l'enregistrement" du sous-menu "Enregistrement" du menu "Transport".
+Dans les versions d'Audacity 2.1.3 et antérieures, les raccourcis "r" et "majuscule + r" pour deux des commandes permettant de démarrer l'enregistrement étaient l'inverse. Il y a une option dans les préférences qui vous permet facilement de les avoir de cette façon si vous le trouvez plus pratique. Dans la catégorie "Enregistrement" des Préférences, il y a une case à cocher "Enregistrer sur une nouvelle piste", qui n'est pas cochée par défaut. Si cette case est cochée, les deux commandes pour démarrer l'enregistrement sont:
+- Pour démarrer l'enregistrement et insérer  systématiquement l'audio dans une nouvelle piste, appuyez sur "r", ou dans le menu "Transport", ouvrez le sous-menu "Enregistrement" et choisissez "Enregistrer".
+- Pour démarrer l'enregistrement, et ajouter l'audio à l'audio d'une piste existante, appuyez sur "majuscule + r", ou dans le menu "Transport", ouvrez le sous-menu "Enregistrement" et choisissez "Poursuite de l'enregistrement".
 
 
 ++ Réglage du niveau d'enregistrement ++
-Dans l’outil "Mesureur d'enregistrement" du groupe de barre d'outils de la fenêtre principale d'Audacity, il y a le vumètre d'Enregistrement  pour aider à définir le niveau d'enregistrement.
-Le compteur contient  un bouton déroulant que vous pouvez atteindre en     appuyant sur "control + F6" deux fois pour se placer dans le groupe des barres d'outils, puis en appuyant sur "Tab" jusqu'à l'atteindre.
+Dans l’outil "Mesureur d'enregistrement" du groupe supérieur de barre d'outils de la fenêtre principale d'Audacity, il y a le vumètre d'Enregistrement  pour aider à définir le niveau d'enregistrement.
+Le vu-mètre contient  un bouton déroulant que vous pouvez atteindre en     appuyant sur "control + F6" deux fois pour se placer dans le groupe supérieur de barres d'outils, puis en appuyant sur "Tab" jusqu'à l'atteindre.
 
 
-Si vous appuyez sur ce bouton en appuyant sur "Entrée",  un menu s'ouvre, contenant des commandes pour contrôler le compteur.
-Vous pouvez démarrer et arrêter la  surveillance  du signale d'entrée pendant l'enregistrement par ce compteur.
+Si vous appuyez sur ce bouton en appuyant sur "Entrée",  un menu s'ouvre, contenant des commandes pour contrôler le mesureur.
 
-Pour que ce compteur soit   accessible pour les utilisateurs de lecteurs d'écran, les informations suivantes sont incluses dans le nom du bouton déroulant (ce nom est lu par les lecteurs d'écran):
-- Le niveau de crête: C'est l'amplitude maximale du signal pendant la cession de surveillance. Il est automatiquement mis à zéro lorsque la surveillance commence.
-- Le mot Monitoring: si la surveillance est en cours.
+Vous pouvez démarrer et arrêter la  surveillance  du signale d'entrée pendant l'enregistrement à l'aide de ce menu.
 
-
-Le niveau de crête peut être donné à l'aide de deux échelles différentes:
-- Sur Une échelle linéaire, où les valeurs sont dans la gamme de 0 à 1.
-- Une échelle logarithmique, où la valeur maximale est de 0 décibels (dB), et les valeurs plus faibles sont de plus en plus négative. Par exemple, une valeur de 0,5
-Sur l'échelle linéaire correspond à -6 dB.
+Pour que ce mesureur  soit   accessible pour les utilisateurs de lecteurs d'écran, les informations suivantes sont incluses dans le nom du bouton déroulant (ce nom est lu par les lecteurs d'écran):
+- Le niveau de crête: C'est l'amplitude maximale du signal pendant la cession de surveillance. Il est automatiquement mis à zéro lorsque la surveillance commence. Par défaut, cela est donné en décibels, 0 étant la valeur maximale.
+- Le mot "Monitoring" si la surveillance est en cours.
 
 
-Par défaut, la valeur de crête est donnée en dB, mais vous pouvez la remplacer par:
-- Appuyez sur le vumètre d'enregistrement de liste déroulante en appuyant sur "Entrée".
-- Choisissez Options. Le dialogue "Options du vumètre d'Enregistrement" s'ouvre.
-- Définir le Type du Compteur du bouton déroulant parmi "dB" ou "linéaire".
+Pour vérifier quel est le niveau de crête d'un enregistrement qui est à peu près susceptible d'être avec le réglage actuel du niveau d'enregistrement:
+- Appuyez sur le bouton déroulant du mesureur "vu-mètre d'enregistrement" et choisissez "Démarrer le monitoring".
+- Faites quelques sons représentatifs pendant un court instant.
+- Appuyez de nouveau sur le bouton déroulant et choisissez "Arrêter le monitoring"Le nom du bouton déroulant inclut le niveau de crête pendant cette surveillance .
 
 
-Pour régler le niveau d'enregistrement à l'aide du vumètre d’enregistrement, exécuter  la  boucle suivante jusqu'à ce que vous soyez satisfait:
-- Changer le niveau d'enregistrement. Si c'est le premier tour de boucle, définissez le    niveau suivant  votre meilleure estimation.
-- Appuyez sur le bouton déroulant du vumètre d’enregistrement  et choisissez "Démarrer le monitoring".
-- Faire quelques bruits représentatifs   pendant  une courte durée.
-- Appuyez sur le bouton déroulant du vumètre d'enregistrement  et choisissez "Arrêter le monitoring". Le nom du bouton déroulant indique  maintenant le niveau de crête de cette session de surveillance. Sur la base de cette valeur, à vous de décider si vous avez besoin de répéter cette boucle avec un autre réglage du niveau d'enregistrement tel que discuté ci-dessous.
+Normalement, une bonne valeur du niveau de crête à viser est d'environ -6 dB. Cela devrait garantir que le niveau d'enregistrement est à la fois suffisamment bas pour qu'il n'y ait pas de distorsion ou d'écrêtage, et suffisamment élevé pour que vous n'obteniez pas une quantité de bruit inutile.
 
-Normalement une bonne valeur du niveau de crête à viser est d'environ 6 db,
-Correspondant à 0,5 sur une échelle linéaire. Cela devrait garantir que le niveau d'enregistrement est à la fois suffisamment faible de sorte que la distorsion ou de la saturation ne se produisent pas et suffisamment élevée pour que vous n'ayez pas  une quantité inutile de bruit.
+À tout moment pendant le monitoring,  vous pouvez lire le niveau de crête qui s'est produit jusqu'à présent dans cette session de surveillance, mais la façon de procéder dépend du lecteur d'écran que vous utilisez. Si vous utilisez NVDA ou Narrateur, vous pouvez lire le niveau de crête en utilisant la commande de lecture de la ligne sous le focus. Cependant, si vous utilisez Jaws, vous devez faire un aller  retour par "tab" et majuscule+tab" .
+
+Le niveau de crête peut également être donné en utilisant une échelle linéaire de 0 à 1. Vous voudrez probablement vous en tenir aux décibels, mais si vous souhaitez changer l'échelle:
+- Appuyez sur le bouton déroulant du mesureur "vu-mètre d'enregistrement" en appuyant sur "Entrée".
+- Choisissez "Options". La boîte de dialogue "Options des mesureurs d'enregistrement" s'ouvre.
+- Réglez les boutons radio "Type des mesureurs" sur "dB" ou "linéaire".
+
+
+++ Enregistrement Punch and Roll ++
+L'enregistrement Punch and Roll vous permet de corriger facilement un enregistrement juste après avoir fait une erreur.
+L'enregistrement "Punch In" est un terme utilisé pour écraser une partie d'une piste enregistrée lorsque vous lisez la piste. Le point d'entrée est le moment auquel l'éditeur audio passe de la lecture à l'enregistrement sur un audio existant.
+De même, le point de "punch out" correspond à l'heure à laquelle l'éditeur audio arrête l'enregistrement et revient à la lecture.
+
+En enregistrement "punch and roll", il y a un point de punch in, mais pas de point de punch out.
+
+L'enregistrement continue jusqu'à ce que vous l'arrêtiez.
+
+Ce qui suit est un aperçu de l'enregistrement "Punch and roll" dans Audacity:
+- Vous enregistrez et réalisez que vous venez de faire une erreur. Arrêtez l'enregistrement.
+- Positionnez le curseur à l'endroit où vous souhaitez insérer le point de punch. Ce sera généralement peu de temps avant la fin de l'enregistrement et pendant une pause, par exemple la pause entre les phrases.
+- Lancez l'enregistrement "punch and Roll". La lecture démarre quelques secondes avant le point de punch-in. Une fois le point de punch-in atteint, la lecture s'arrête et l'enregistrement démarre. L'enregistrement continue jusqu'à ce que vous l'arrêtiez.
+
+
+En utilisant l'enregistrement "Punch and roll", vous basez le timing du nouvel enregistrement sur l'écoute de la lecture de l'audio avant le point de punch in.
+Cependant, dans Audacity, il existe un délai entre l'audio lu et l'enregistrement. Il existe une compensation par défaut pour cela, et cela peut être suffisant.
+Si la synchronisation de l'audio près du point de punch-in ne sonne pas correctement, indiquant que la compensation n'est pas assez bonne, consultez la section Compensation de latence ci-dessous pour plus de détails sur ce retard et comment ajuster sa compensation.
+
+Une description plus détaillée de l'enregistrement Punch and Roll est la suivante.
+Vous enregistrez et réalisez que vous venez de faire une erreur. Arrêtez l'enregistrement en appuyant sur la barre d'espace ou sur "X".
+Vous devez maintenant déplacer le curseur sur la position du point de punch in:
+- Si vous ne l'avez pas déjà fait, vérifiez que la piste est sélectionnée et qu'aucune autre piste n'est sélectionnée.
+- Si vous avez arrêté l'enregistrement en appuyant sur la barre d'espace,  appuyez alors sur "k" pour passer à la fin de l'audio.
+- Si vous avez arrêté l'enregistrement en appuyant sur "x", le curseur sera déjà à la fin de l'audio. En fait, ce sera légèrement après la fin, mais cela n'a pas d'importance.
+
+
+Une façon de déplacer ensuite le curseur sur un point de punch-in approprié est la suivante:
+ - Déplacez d'abord le curseur un peu avant le point d'entrée souhaité à l'aide de la virgule ou "majuscule + ." pour déplacer le curseur vers la gauche respectivement de courte ou de longue durée.
+ - Ensuite, démarrez la lecture et appuyez sur "x" lorsque vous atteignez le point de punch-in prévu. La lecture s'arrête et le curseur est positionné à l'endroit où la lecture s'est arrêtée.
+
+
+Après avoir positionné le curseur, puis dans le menu "Transport", ouvrez le sous-menu "Enregistrement" et choisissez "Enregistrement Punch  Roll""  ( raccourci "majuscule+ d"). Cette commande provoque les événements suivants:
+-L'audio après le curseur dans la piste sélectionnée est supprimé.
+- La lecture pré-roll commence quelques secondes avant le curseur. Le pré-roll est de 5 secondes par défaut, mais vous pouvez définir la valeur souhaitée dans la catégorie d'enregistrement de la boîte de dialogue Préférences. Pendant cette lecture, il peut être utile de jouer avec l'enregistrement existant, afin de ne pas avoir à recommencer à froid lorsque l'enregistrement démarre.
+- Lorsque la lecture atteint le curseur, la lecture s'arrête et l'enregistrement démarre.
+
+
+Après un enregistrement  punch and roll:
+- Si vous avez de nouveau fait une erreur au même endroit, vous pouvez simplement faire un autre enregistrement de punch and roll, en laissant le curseur à la position de punch d'origine.
+- Vous pouvez annuler le punch and roll en appuyant sur "control + z"
+
+
+Immédiatement après le point d'entrée, Audacity applique un court fondu enchaîné de l'audio d'origine à l'audio nouvellement enregistré. C'est pour éviter d'introduire des problèmes. La longueur par défaut du fondu enchaîné est de 10 ms, ce qui sera probablement une valeur appropriée, mais vous pouvez modifier cette valeur dans la catégorie d'enregistrement de la boîte de dialogue Préférences.
 
 
 ++ Correction de latence ++
@@ -1407,7 +1577,7 @@ Elle se compose de trois parties qui seront décrites en détail dans les sectio
 
 +++ Générer une piste de rythme +++
 - Choisissez le sous-menu "Piste de rythme"   du  menu "Générer".
-- Le premier élément est la zone d'édition "Tempo" (battements par minute), et  sa valeur par défaut est de 120. Tapez 60, puis appuyez sur "Tab" deux fois pour passer à la prochaine zone d'édition.
+- Le premier controle est la zone d'édition "Tempo" (battements par minute), et  sa valeur par défaut est de 120. Tapez 60, puis appuyez sur "Tab" deux fois pour passer à la prochaine zone d'édition.
 - la zone d'édition  "pulsations par mesure" [bar]  a une valeur par défaut de 4. Tapez   1, puis tapez sur "Entrée" pour appuyer sur le bouton "OK" (bouton par défaut).
 - la piste de rythme est créée. La piste est initialement sélectionné, et une plage de temps est choisie, qui comprend toutes les données audio.
 
@@ -1427,19 +1597,18 @@ Les instructions suivantes décrivent comment trouver la position du clic enregi
 
 Il est supposé que la piste originale soit toujours en sourdine depuis le moment où vous  avez vérifié le niveau de la piste enregistrée (voir ci-dessus):
 - Appuyez sur "Début" pour définir à la fois le début de la sélection et la fin   / duré de la sélection à zéro.
-- Appuyez sur "control + F6" pour  se déplacer dans la barre d'outils Sélection. Tapez "Tab"  pour atteindre la liste déroulante "Affichage" et vérifier que "Début et Durée de la sélection" est bien sélectionné.
-- tapez "Tab" pour atteindre la zone d'édition de temps "Début"   et définir son format d'édition à "hh:mm:ss + millisecondes" à l'aide de son menu contextuel.
+- Appuyez sur "control + F6" pour  se déplacer dans la barre d'outils "Sélection" du groupe inférieur  de barre d'outils. Tapez "Tab"  pour atteindre la liste déroulante "Affichage" et vérifier que "Début et Durée de la sélection" est bien sélectionné.
+- tapez "Tab" pour atteindre la zone de sélection numérique   "Début"   et définir son format d'édition à "hh:mm:ss + millisecondes" à l'aide de son menu contextuel.
 - définissez le début de la sélection à 1 seconde en  appuyant sur "Fin" pour passer au dernier chiffre (millisecondes), appuyez sur "Flèche gauche" trois fois pour atteindre le chiffre des secondes, puis appuyez sur "Flèche haut" pour l'le mettre  à un.
 - Appuyez sur "Espace" pour écouter les quelques premiers  clics.
 
-Il y a deux cas possibles:
 
-Si le clic  enregistré arrive plus tard que le  clic original à une secondes,   l'espacement de temps  avec le premier clic est beaucoup plus petit que celui avec le clic suivant.
-Si le clic enregistré arrive plus tôt que le premier clic à une seconde, le temps au premier clic est proche de l'écart de temps entre clics de une secondes.
+Il y a deux cas possibles:
+- Si le clic  enregistré arrive plus tard que le  clic original à une secondes,   l'espacement de temps  avec le premier clic est beaucoup plus petit que celui avec le clic suivant.
+- Si le clic enregistré arrive plus tôt que le premier clic à une seconde, le temps au premier clic est proche de l'écart de temps entre clics de une secondes.
 
 
 Les étapes pour Trouver la position du clic enregistré et   modifier la correction de latence dans  ces deux cas,  sont:
-
 - Premier cas: trouver la position du clic enregistré  quand il arrive plus tard que le clic original:
  - placer vous sur le chiffre des dixièmes de millisecondes de la zone d'édition "Début".
  - Incrémenter le et appuyer sur "Espace" pour écouter.
@@ -1458,7 +1627,7 @@ Les étapes pour Trouver la position du clic enregistré et   modifier la correc
 
 
 + Préférences +[HDR-Preferences]
-La boite de dialogue "Préférences" d'Audacity vous permet de régler beaucoup de paramètres dans Audacity. Après une brève description de la boîte de dialogue, le chapitre suivant décrit les paramètres les plus courants.
+La boite de dialogue "Préférences" d'Audacity vous permet de régler beaucoup de paramètres dans Audacity. Après une brève description de la boîte de dialogue, les chapitres suivants décrivent les paramètres les plus courants.
 
 ++ Boîte de dialogue Préférences ++
 
@@ -1479,23 +1648,27 @@ Durant la lecture, vous pouvez sauter (seek) vers l'avant ou vers l'arrière par
 
 
 ++ Sélection automatique ++[HDR-AutoSelect]
-L'option de sélection Automatique est décrite au chapitre ["option de sélection Automatique" #HDR-AutoSelectOption].
-Cette option est activé par défaut, mais pour les utilisateurs de lecteurs d'écran, il est recommandé de la désactivée.
+Cette option n'est pas activé par défaut. Pour les utilisateurs de lecteurs d'écran, il est recommandé de la laisser désactivée.
+L'option "Sélectionner toute l’audio, si une sélection est nécessaire " affecte ce qui se passe dans deux situations:
+
+La première est dans le cas où vous essayez d'effectuer une action sur l'audio, par exemple appliquer un effet, alors q'il n'y ya pas d'audio sélectionné:
+
+N'oubliez pas que pour que de l'audio soit sélectionné, une ou plusieurs pistes audio doivent être sélectionnées et une plage de temps doit être sélectionnée.
+
+Si l'option est désactivée, le résultat de l'action est qu'une boîte de dialogue s'ouvre, vous indiquant qu'il n'y a pas d'audio sélectionné.
+
+Si l'option est activée, alors tout l'audio est le projet est sélectionné, et l'action est effectuée.
+
+La deuxième situation est si vous essayez d'effectuer une action sur certaines pistes, par exemple pour les aligner de bout en bout, et  il n'y a pas   de pistes sélectionnées:
+
+Si l'option est désactivée, le résultat de l'action est qu'une boîte de dialogue s'ouvre, vous indiquant qu'une ou plusieurs pistes doivent être sélectionnées.
+
+Si l'option est activée, toutes les pistes audio du projet sont sélectionnées et l'action est exécutée
+
 Pour activer ou désactiver  cette option:
 - Dans la boite de dialogue "Préférences", sélectionnez la sous-catégorie "Comportement des pistes" de la catégorie "Pistes".
-- trouver la case à cocher "Auto sélectionné si une sélection est nécessaire" et décochée là.
+- trouver la case à cocher "Sélectionner toute l’audio, si une sélection est nécessaire" et décochée là.
 
-
-++ Bibliothèque LAME MP3 encoder ++[HDR-LAMEMP3Encoder]
-Jusqu'à récemment, il y avait des questions juridiques sur les brevets et donc  qu'Audacity ne pouvait pas inclure par défaut un encodeur MP3 lors de son installation.
-Ces brevets ont expiré, mais Audacity n'a pas été  mis à jour pour prendre avantage de cela.
-
-Vous êtes  encore obligé de télécharger  des bibliothèques complémentaires.
-
-Pour télécharger et installer la bibliothèque LAME MP3 Encoder:
-- Accéder au site web  ["lame.buanzo.org/#lamewindl" #http://lame.buanzo.org/#lamewindl].
-- Sur cette page, vous trouverez le lien qui commence avec lame et se termine par windows.exe et  activez le lien pour télécharger le fichier.
-- une fois ce fichier télécharger, ouvrez le et un assistant d'installation s'ouvre. Par défaut, l'emplacement du  dossier pour Audacity est soit dans le dossier "Program files (x86)" sous  Windows 64 bits, soit "Program files" sous Windows 32 bits.
 
 
 ++ Bibliothèque FFmpeg ++[HDR-FFMPEGLibrary]
@@ -1518,22 +1691,22 @@ Pour que l'éditeur de balises de Métadonnées s’ouvre automatiquement à cha
 - trouvez la case à cocher "Ouvrir l’éditeur de balises de métadonnées avant d’exporter".  Cette case est cochée par défaut.
 
 
-++ Échantillonnage ++
+++ Option "Utiliser un dialogue pour nommer un nouveau marqueur ++
+Cette option  est décrite dans le chapitre ["Marqueurs" #HDR-Labels].
 
-Pour régler la fréquence d'échantillonnage et le format pour un nouveau projet:
-- Dans la boite de dialogue "Préférences"  d'Audacity  sélectionnez la catégorie "Qualité".
-- tabulez une fois pour se positionner sur le groupe de paramètres "Échantillonnage" et la liste déroulante  "Taux d'Échantillonnage" : Pour la musique, choisissez une fréquence d'échantillonnage  de 44100 Hz, mais pour la parole une fréquence de 22050 Hz est suffisante si vous avez besoin de fichiers compacts.
-- tabulez une fois pour passer  à la liste déroulante "Format d'échantillonnage": Audacity recommande de rester sur 32 bits flottante (valeur par défaut), mais pour la parole,  16 bits est très bien.
-
-
-++ Option Taper pour créer un marqueur ++
-Cette option  est décrite dans le chapitre "[Marqueurs #HDR-Labels]".
-
-Elle  est cochée par défaut, mais pour les utilisateurs de lecteur d’écran, il est recommandé qu’elle ne le soit pas:
-
+Elle  n'est pas cochée par défaut, mais pour les utilisateurs de lecteur d’écran, il est recommandé qu’elle le soit:
 - Dans la boite de dialogue "Préférences"  d'Audacity  sélectionnez la sous-catégorie "Comportement des pistes" de la catégorie "Pistes".
-- Décochez la case "Taper pour créer un marqueur", cette  case à cocher est cochée par défaut.
+- Cochez  la case "Utiliser un  dialogue pour nommer un nouveau marqueur".
 
+
+
+++ Taper pour créer un marqueur  ++
+Lorsqu'une piste d'étiquette est mise en évidence, si l'option "Taper pour créer un marqueur" est activée, appuyer sur n'importe quelle lettre ou chiffre crée automatiquement une nouvelle étiquette.
+Par défaut, cette option est désactivée et les utilisateurs de lecteurs d'écran voudront probablement laisser cette option inchangée.
+
+Cependant, si vous souhaitez modifier cette option:
+- Dans la boîte de dialogue "Préférences" d'Audacity, sélectionnez la catégorie "Comportements des pistes".
+- Dans cette catégorie, il y a la case à cocher «Taper pour créer un marqueur ».
 
 ++ Options d'enregistrement ++
 Les options d'enregistrement sont  configurables dans la boîte de dialogue "Préférences"  et  elles sont décrites au chapitre ["Paramètres d'enregistrements" #HDR-RecordSettings] du chapitre ["Enregistrement" #HDR-Recording].
@@ -1541,8 +1714,12 @@ Les options d'enregistrement sont  configurables dans la boîte de dialogue "Pr�
 ++ Modification ou création de raccourcis clavier ++
 La catégorie "Clavier" de la boite de dialogue "Préférences" d'Audacity vous permet de changer les raccourci clavier des commandes d'Audacity.
 
-Les trois premiers éléments de cette catégorie sont les suivants:
+Outre la manière standard d'accéder à ces commandes en ouvrant la boîte de dialogue "Préférences" et en sélectionnant la catégorie "Clavier", il existe une méthode supplémentaire qui peut vous être utile.
+Si vous sélectionnez une commande dans l'un des menus de la barre de menus et appuyez sur "majuscule+ Entré"e plutôt que sur la touche "Entrée" habituelle, une boîte de dialogue s'ouvre avec le titre "Préférences: clavier".
+Dans l'arborescence ou la liste décrite ci-dessous, la commande est déjà sélectionnée.
+Notez que cette méthode ne fonctionne pas si la commande du menu n'est pas disponible
 
+Les trois premiers éléments de cette catégorie sont les suivants:
 - Un groupe de boutons radio qui contrôle la façon dont les commandes et les raccourcis sont affichés: Vue en arborescence, vue par nom,  vue par   touche. Ils sont décrites dans les trois prochaines sections.
 - Une zone d'édition qui vous permet de rechercher des commandes et des raccourcis, comme décrit au chapitre ["Recherche de commandes" #HDR-CommandSearch]. Le nom de cette zone d'édition est "Rechercher" si c'est une vue en arborescence ou par nom, "Raccourcis clavier" si c'est une vue par touche.
 - Une arborescence ou une liste de commandes, suivant la vue défini par le bouton radio.
@@ -1567,7 +1744,6 @@ Les commandes ayant  un raccourci sont listées en premier et sont triés par or
 Raccourcis sont ensuite classés par ordre alphabétique selon le nom de la commande.
 
 +++ Recherche de commande +++[HDR-CommandSearch]
-
 Vous pouvez rechercher une commande ou des commandes à l'aide du Filtre de la boîte d'édition. Les résultats de recherche sont affichés dans l'arborescence ou la liste dès que quelque chose  est entré dans la zone d'édition. Vous n'avez pas à appuyer sur entrée.
 Le détail de la recherche dépend de la vue:
 - la Vue en Arborescence: Le texte que vous entrez est en correspondance avec les noms de commandes et de tout raccourci.
@@ -1582,49 +1758,63 @@ Pour créer un raccourci:
 - tabulez jusqu'à la zone d'édition "Raccourci" appuyez sur une touche ou combinaison de touche choisie pour le raccourci.
 - tabulez jusqu'au bouton "Attribuer" puis appuyez dessus.
 Si le raccourci est déjà affecté à une autre commande, une boîte de dialogue d'Erreur s'ouvre qui vous dit  le nom de cette  commande. Si vous appuyez sur le bouton OK, le raccourci sera affecté, et retirée de l'autre commande.
+
+
 Pour effacer un raccourci:
-
 - Dans l'Arborescence  ou la liste, sélectionnez la commande du raccourci que vous souhaitez supprimer.
-
 - tabulez jusqu'au bouton   "Effacer", puis appuyez dessus.
 
 
 ++ Jeu de raccourcis standard ou complet ++[HDR-DefaultShortcutsSet]
-
 Il y a deux ensembles de raccourcis par défaut:
-
 - ensemble complet: cet ensemble comprend tous les raccourcis qui ont été présents, par défaut,   dans les versions précédents d'Audacity (v2.2 et v2.1.3) et ce guide suppose que vous utilisez l’ensemble complet.
 - ensemble standard: Il contient moins de raccourcis que l'ensemble complet. L’idée étant de faciliter, pour les utilisateurs,  la création de leurs propres raccourcis avec un plus grand choix possible car il y a moins de raccourcis déjà attribués.
 
-Pour réinitialiser tous les raccourcis de l'ensemble standard ou complet  aux valeurs par défaut:
 
+Si Audacity 2.2.0 ou version ultérieure est exécuté avec un compte utilisateur dans lequel les versions d'Audacity antérieures à 2.2.0 n'ont pas été exécutées, Audacity utilise l'ensemble de raccourcis standard. Cependant, si l'une de ces anciennes versions a été exécutée, alors l'ensemble complet s'il est utilisé, et il n'est pas nécessaire de changer  quoique ce soit, l'ensemble de raccourcis par défaut est utilisé.
+
+
+Pour réinitialiser tous les raccourcis de l'ensemble standard ou complet  aux valeurs par défaut:
 - Dans la boite de dialogue "Préférences" d'Audacity,  sélectionnez la catégorie "Clavier".
 - tabulez jusqu'au bouton "Défaut" et appuyez dessus. Un menu s'ouvre.
 - Choisissez Standard ou Complet
 
 
-++ Les Raccourci gênants ++[HDR-BracketShortcuts]
+++ Les Raccourci gênants avec un clavier Azerty ++[HDR-BracketShortcuts]
++++ les crochets gauche et droite +++
+Audacity installe par défaut  des raccourcis utilisant les crochets pour les commandes suivantes:
+- commande "De la limite droite de la sélection au point de lecture": raccourci "[",
+- commande "De la limite gauche de la sélection au point de lecture": raccourci "]".
+-  commande "saut  vers début de la sélection": raccourci "control+[".
+- commande "Saut vers la fin de la sélection": raccourci "control+]".
 
-Les raccourcis clavier, installés par défaut par Audacity, pour déplacer le curseur à la position de lecture et positionner  la fin de la sélection à la position de lecture sont "[" et "]".  Ils correspondent respectivement aux sous-menus (très mal traduits) du sous-menu "région" du menu "Sélectionner":
-- De la limite droite de la sélection au point de lecture,
-- De la limite gauche de la sélection au point de lecture.
 
-
-
-Ces raccourcis peuvent également être utilisés pour ouvrir la boîte de dialogue  quand il n'y a pas de lecture.
 
 Avec des claviers de type Qwerty, vous pouvez taper "[" et "]" à l'aide des  touches "[" et "]" qui se trouvent    à droite de la touche "P".
 
-Mais Sur presque tous les claviers utilisés dans d’autres pays, les touches de type "[" et "]" se trouvent dans des positions différentes, et vous avez souvent à utiliser les touches de modification comme "control + Alt" pour saisir ces caractères.
+Mais Sur presque tous les claviers utilisés dans d’autres pays, et en particulier les claviers Azerty, les touches de type "[" et "]" se trouvent dans des positions différentes, et vous avez souvent à utiliser les touches de modification comme "control" et "Alt" pour saisir ces caractères.
 
-Heureusement, il existe une solution simple à ce problème.
-Pour les clavier de type Azerty,Tout ce que vous  avez besoin de faire est de modifier ces raccourcis claviers pour les deux commandes en  utilisant la méthode décrite dans la section précédente.
 
-Les lettres G et H  ne sont pas affectées à des commandes, donc vous pouvez :
-- affecter le raccourci  "g" à la commande "De la limite gauche de sélection à la position de lecture" (Mal traduit).
-- affecter le raccourci "h" à la commande "De la limite droite de sélection à la position de lecture" (mal traduit).
+Pour les clavier de type Azerty,il est donc préférable de changer ces raccourcis.
+
+Les lettres G et H  n'étant pas  affectées à des commandes, vous pouvez donc:
+- affecter le raccourci  "g" à la commande "De la limite gauche de sélection à la position de lecture" .
+- affecter le raccourci "h" à la commande "De la limite droite de sélection à la position de lecture".
 - affecter le raccourci "control + g" à la commande "saut  vers début de la sélection".
 - affecter le raccourci "control +h" à la commande "Saut vers la fin de la sélection".
+
+
++++ le caractère "point +++
+Audacity installe par défaut  des raccourcis utilisant le caractère "." pour les commandes suivantes:
+- commande "Petit saut de curseur à droite": raccourci "." .
+- commande "Grand saut de curseur à droite": raccourci "majuscule + .".
+- commande "clip suivant": raccourci "alt+."
+
+Le caractère ";" n'étant pas utilisé, vous pouvez affectez:
+-  ";" à la commande "Petit saut de curseur à droite".
+-  "control + ;" à la commande "Grand saut de curseur à droite".
+-  "control + ," à la commande "Grand saut de curseur à gauche" (pour avoir une cohérence avec la précédente redéfinition).
+- "Alt + ;" à la - commande "clip suivant".
 
 
 + Boite de dialogue Son de Windows +[HDR-SoundWindowsDialog]
@@ -1633,22 +1823,16 @@ Dans   Windows 7 ou dans les versions ultérieures  de Windows, la boite de dial
 ++ Boite de dialogue Son ++
 Il existe deux  façons  d'ouvrir la boite de dialogue "Son" et de d'atteindre l'onglet "Enregistrement".
 Première méthode:
+- Appuyez sur "Insert + F11" pour ouvrir la barre des tâches de Windows.
+- Sélectionnez l'icône du haut-parleurs ou du  casque (ou la carte son). Ensuite, appuyez sur "Entrée".
+Nous ouvrirons l'option du volume, donc nous devons faire un clic droit et un menu contextuel s'ouvre.
+- Sur ce menu, sélectionnez votre périphérique d'enregistrement (le raccourci est R), et le dialogue qui s'ouvre sur l'onglet d'Enregistrement.
 
-1. Appuyez sur "Insert + F11" pour ouvrir la barre des tâches de Windows.
-
-2. Sélectionnez l'icône du haut-parleurs ou du  casque (ou la carte son). Ensuite, appuyez sur "Entrée".
-
-- Nous ouvrirons l'option du volume, donc nous devons faire un clic droit et un menu contextuel s'ouvre.
-
-3. Sur ce menu, sélectionnez votre périphérique d'enregistrement (le raccourci est R), et le dialogue qui s'ouvre sur l'onglet d'Enregistrement.
 
 Deuxième méthode:
-
-1. Appuyez sur la Touche "Windows".
-
-2. Tapez son, puis, si nécessaire, appuyez sur Flèche Bas jusqu'à ce que vous obtenez  son dans la liste de résultats de recherche, puis appuyez sur "Entrée".
-
-3. La boîte de dialogue "Son", qui s'ouvre sur l'onglet de Lecture, de sorte que vous aurez à déplacer vers l'onglet d'Enregistrement.
+- Appuyez sur la Touche "Windows".
+- Tapez son, puis, si nécessaire, appuyez sur Flèche Bas jusqu'à ce que vous obtenez  son dans la liste de résultats de recherche, puis appuyez sur "Entrée".
+- La boîte de dialogue "Son", qui s'ouvre sur l'onglet de Lecture, de sorte que vous aurez à déplacer vers l'onglet d'Enregistrement.
 
 
 ++ Onglet enregistrement ++
@@ -1662,6 +1846,9 @@ Ces options sont: Afficher les Périphériques Désactivés et Afficher les Pér
 Par défaut, les deux options ne sont  pas activées. Si vous ne trouvez pas un périphérique qui, selon vous, devrait être présent, il peut être désactivé. Il ne  sera  affiché  que si l'option "Afficher les Périphériques Désactivés" est cochée.
 
 Pour chaque élément de la liste, il y a trois lignes de texte: son nom, une brève description, et  son statut, qui peut être en fonctionnement,  invalides, ou  n'est Pas branché.
+NVDA lit automatiquement les trois lignes de texte, mais Jaws et Narrator ne lisent que la première ligne. Si vous utilisez Jaws, vous pouvez lire les deux autres lignes à l'aide du curseur Jaws.
+
+De plus, si vous ouvrez le menu contextuel de l'élément, il y aura une commande d'activation ou de désactivation, qui vous indiquera si l'élément est désactivé ou activé, respectivement
 
 ++ Boite de dialogue Propriétés d'un périphérique ++
 Pour connaitre les propriétés  d'un des périphériques de la  liste de l'onglet "Enregistrement", sélectionnez-le et  appuyez sur la barre d'Espace, ou sélectionnez l'option "Propriétés" de son menu contextuel.
@@ -1672,130 +1859,135 @@ Pour La plupart des  appareils, il n’y a qu'un seul  potentiomètre, mais cert
 + Raccourcis +
 Ce sont les raccourcis du jeu complet  installé par défaut par Audacity. Certains raccourcis ne sont pas inclus dans le jeu standard.
 
-Pour plus d'informations sur ces deux jeux de raccourcis installés par défaut et comment faire pour changer de jeu voir le chapitre "[Jeu de raccourcis standard ou complet #HDR-DefaultShortcutsSet]".
+Pour plus d'informations sur ces deux jeux de raccourcis installés par défaut et comment faire pour changer de jeu voir le chapitre ["Jeu de raccourcis standard ou complet" #HDR-DefaultShortcutsSet].
 
 ++ Commandes générales ++
-|  Action | Raccourci | Commentaire |
-| Ouvrir un fichier audio | control + O | |
-|  Importer un fichier audio | control + majuscule + I | |
-| Nouveau projet | control + N | |
-| Sauvegarder le projet | control + S | |
-| Exporter Audio | control + majuscule + E | |
-| Boîte de dialogue "Préférences" | control + P | |
-| Tourner en avant entre le tableau de pistes, la barre   d'outils Sélection   et le groupe de   barres d'outils   | control + F6 | |
-| Tourner en arrière entre le tableau de pistes, la barre d'outils Sélection et le groupe des barres d'outils | control + majuscule +F6 | |
-| Tourner en avant entre la fenêtre principale d'Audacity  et les fenêtres non modales  | Alt + F6 | |
-| Tourner en arrière entre la fenêtre principale d'Audacity  et les fenêtres non modales  | Alt + majuscule + F6 | |
-| Zoom normal | control + 2 | |
-| Zoom Avant | control + 1 | |
-| Zoom arrière | control + 3 | |
+| Commande | Raccourci |
+| Ouvrir un fichier audio | control + O |
+|  Importer un fichier audio | control + majuscule + I |
+| Nouveau projet | control + N |
+| Sauvegarder le projet | control + S |
+| Exporter Audio | control + majuscule + E |
+| Boîte de dialogue "Préférences" | control + P |
+| Tourner en avant entre le groupe supérieur de   barres d'outils,le tableau "Vue de piste" et le groupe inférieur de  barre d'outils | control + F6 |
+| Tourner en arrière entre le groupe supérieur de barres d'outils, le tableau "Vue de piste", le groupe inférieur de barre d'outils | control + majuscule +F6 |
+| Tourner en avant entre la fenêtre principale d'Audacity  et les fenêtres non modales  | Alt + F6 |
+| Tourner en arrière entre la fenêtre principale d'Audacity  et les fenêtres non modales  | Alt + majuscule + F6 |
+| Zoom normal | control + 2 |
+| Zoom Avant | control + 1 |
+| Zoom arrière | control + 3 |
 
 ++ Commandes relatives à la lecture audio ++
-| Action | Raccourci | Commentaire |
-| Démarrage/Arrêt | barre d'espace | |
-| Démarrage/Arrêt avec déplacement du curseur | X | |
-| Pause/reprendre | P | |
-| Petit Saut arrière pendant la lecture | Flèche gauche | |
-| Petit saut   avant pendant la lecture | Flèche droite | |
-| Grand saut arrière  pendant la lecture | majuscule + Flèche gauche | |
-| Grand saut avant pendant la lecture | majuscule + Flèche Droite | |
-| Jouer en boucle | majuscule + barre d'Espace | |
-| Boite de dialogue "Sélection du Périphérique de Lecture | majuscule + O | |
-| Jouer l'aperçu de coupe/suppression  | C | |
-| Jouer une courte période avant le début de la sélection | majuscule + F5 | |
-| Jouer une courte période après le début de la sélection | majuscule + F6 | |
-| Jouer une courte période avant la fin de la sélection | majuscule + F7 | |
-| Jouer une courte période après la fin de la sélection | majuscule + F8 | |
-| Jouer une courte période avant et après le début de la sélection | control + majuscule + F5 | |
-| Jouer une courte période avant et après la fin de la sélection | control + majuscule + F7 | |
+| Commande | Raccourci |
+| Démarrage/Arrêt | barre d'espace |
+| Démarrage/Arrêt avec déplacement du curseur | X |
+| frottement arrière | Appuyez et maintenez la touche "U" |
+| Frottement vers l'avant | Appuyez et maintenez la touche "i" |
+| Pause/reprendre | P |
+| Petit Saut arrière pendant la lecture | Flèche gauche |
+| Petit saut   avant pendant la lecture | Flèche droite |
+| Grand saut arrière  pendant la lecture | majuscule + Flèche gauche |
+| Grand saut avant pendant la lecture | majuscule + Flèche Droite |
+| Jouer en boucle | majuscule + barre d'Espace |
+| Boite de dialogue "Sélection du Périphérique de Lecture | majuscule + O |
+| Jouer l'aperçu de coupe/suppression  | C |
+| Jouer une courte période avant le début de la sélection | majuscule + F5 |
+| Jouer une courte période après le début de la sélection | majuscule + F6 |
+| Jouer une courte période avant la fin de la sélection | majuscule + F7 |
+| Jouer une courte période après la fin de la sélection | majuscule + F8 |
+| Jouer une courte période avant et après le début de la sélection | control + majuscule + F5 |
+| Jouer une courte période avant et après la fin de la sélection | control + majuscule + F7 |
 
 ++ Commandes relatives au Tableau de pistes ++
-| Action | Raccourci | Commentaire |
-| Passer à la piste précédente | Flèche haut | |
-| passer à la piste suivante | Flèche Bas | |
-| Se déplacer à la première piste | control + Origine | |
-| Se déplacer à la dernière piste | control + Fin | |
-| Sélectionner/désélectionner la piste | Entrer | |
-| Sélectionnez toutes les pistes | control + A | une plage de temps comprend alors tout  l'audio |
-| Désélectionner toutes les pistes | control + majuscule + A | toutes les plages de temps sont aussi désélectionnées |
-| Sélectionnez toutes les pistes | control + majuscule + K | |
-| Ouvrir le menu contextuel de la piste sous le focus | majuscule + M ou  Touche Application | |
-| Fermer (Supprimer)  la piste sous le focus | majuscule + C | |
+| Commande | Raccourci |
+| Passer à la piste précédente | Flèche haut |
+| passer à la piste suivante | Flèche Bas |
+| Se déplacer à la première piste | control + Début |
+| Se déplacer à la dernière piste | control + Fin |
+| Sélectionner/désélectionner la piste | Entrer |
+| Sélectionnez toutes les pistes (une plage de temps comprend alors tout  l'audio) | control + A| 
+| Désélectionner toutes les pistes (toutes les plages de temps sont aussi désélectionnées) | control + majuscule + A |
+| Sélectionnez toutes les pistes | control + majuscule + K |
+| Ouvrir le menu contextuel de la piste sous le focus | majuscule + M ou  Touche Application |
+| Fermer (Supprimer)  la piste sous le focus | majuscule + C |
 
 ++ Commandes relatives à une piste Audio ++
-| Action | Raccourci | Commentaire |
-| Changer le  gain de la piste sous le focus | majuscule + G | |
-| Changer le panoramique de la piste sous le focus | majuscule + P | |
-| Couper/rétablir le son   de la piste sous le focus | majuscule + U | |
-| couper le son de toutes les pistes | control + U | |
-| Activer le son de toutes les pistes | control + majuscule + U | |
-| Activer/désactiver Solo pour la piste sous le focus  | majuscule + S | |
+| Commande | Raccourci |
+| Changer le  gain de la piste sous le focus | majuscule + G |
+| Changer le panoramique de la piste sous le focus | majuscule + P |
+| Couper/rétablir le son   de la piste sous le focus | majuscule + U |
+| couper le son de toutes les pistes | control + U |
+| Activer le son de toutes les pistes | control + majuscule + U |
+| Couper le son de toutes les pistes sélectionnées | control + alt + u |
+| Activer le son de toutes les pistes sélectionnées | control + alt + majuscule +u |
+| Activer/désactiver Solo pour la piste sous le focus  | majuscule + S |
 
 ++ Commandes relatives au Déplacement du curseur ++
-| Action | Raccourci | Commentaire |
-| Aller au début de pistes (temps zéro) | Début | |
-| Aller  à la fin de tout audio | Fin | |
-| Aller au début de l'audio  de la  pistes sélectionnées | J | |
-| Aller à  la fin de l'audio de la pistes sélectionnées | K | |
-| Nouvelle position du curseur à la position de lecture | [ | à modifier pour les claviers autre que QWERTY (US,UK, ou Irish) |
-| Arrêt de la lecture avec déplacement du   curseur | X | |
-| Petit saut arrière   | Virgule | |
-| Petit Saut avant  | Point | |
-| Grand saut arrière | majuscule + Virgule | |
-| Grand saut avant  | majuscule + Point | |
-| Curseur vers la gauche par une petite quantité | Flèche Gauche | |
-| Curseur à droite par une petite quantité | Flèche Droite | |
+| Command | Raccourci |
+| Aller au début de pistes (temps zéro) | Début |
+| Aller  à la fin de tout audio | Fin |
+| Aller au début de l'audio  de la  pistes sélectionnées | J |
+| Aller à  la fin de l'audio de la pistes sélectionnées | K |
+| Nouvelle position du curseur à la position de lecture | [ |
+| Arrêt de la lecture avec déplacement du   curseur | X |
+| Petit saut arrière   | Virgule |
+| Petit Saut avant  | Point |
+| Grand saut arrière | majuscule + Virgule |
+| Grand saut avant  | majuscule + Point |
+| Curseur vers la gauche par une petite quantité | Flèche Gauche |
+| Curseur à droite par une petite quantité | Flèche Droite |
 
 ++ Commande relatives à la sélection d'une plage de temps ++
-| Action | Raccourci | Commentaire |
-| Sélectionner  la plage de temps qui comprend l’audio  de toutes les pistes  | control + A | |
-| Début de la Sélection au départ des pistes (temps zéro) | majuscule + Origine | |
-| Fin de la Sélection à la fin de l'audio | majuscule + Fin | |
-| Fin de la Sélection à la position de lecture | ] | |
-| Début de la sélection au début de l'audio des pistes sélectionnées | majuscule + J | |
-| Fin de la Sélection à la fin de l'audio des pistes sélectionnées | majuscule + K | |
-| Étendre la sélection à droite | majuscule + flèche droite | |
-| Étendre la sélection à gauche | majuscule + flèche gauche | |
-| Contracter la sélection à droite | control + majuscule + flèche gauche | |
-| Contracter la sélection à gauche | control + majuscule + flèche droite | |
+| Commande | Raccourci |
+| Sélectionner  la plage de temps qui comprend l’audio  de toutes les pistes  | control + A |
+| Début de la Sélection au départ des pistes (temps zéro) | majuscule + Origine |
+| Fin de la Sélection à la fin de l'audio | majuscule + Fin |
+| Fin de la Sélection à la position de lecture | ] |
+| Début de la sélection au début de l'audio des pistes sélectionnées | majuscule + J |
+| Fin de la Sélection à la fin de l'audio des pistes sélectionnées | majuscule + K |
+| Étendre la sélection à droite | majuscule + flèche droite |
+| Étendre la sélection à gauche | majuscule + flèche gauche |
+| Contracter la sélection à droite | control + majuscule + flèche gauche |
+| Contracter la sélection à gauche | control + majuscule + flèche droite |
 
 ++ Commandes relatives à l'édition audio ++
-| Action | Raccourci | Commentaire |
-| Annuler | control + Z | |
-| Rétablir | control + Y | |
-| Supprimer la sélection audio | Supp  | |
-| Couper  l'audio sélectionné | control + X | |
-| Copier l'audio sélectionné | control + C | |
-| Coller | control + V | |
-| Remplacer l'audio sélectionné par du silence | control + L | |
-| Dupliquer  l'audio sélectionné | control + D | |
-| Fermer (Supprimer) la piste | majuscule + C | |
-| Rechercher les croisements avec le zéro | Z | |
+| Commande | Raccourci |
+| Annuler | control + Z |
+| Rétablir | control + Y |
+| Supprimer la sélection audio | Supp  |
+| Couper  l'audio sélectionné | control + X |
+| Copier l'audio sélectionné | control + C |
+| Coller | control + V |
+| Remplacer l'audio sélectionné par du silence | control + L |
+| Dupliquer  l'audio sélectionné | control + D |
+| Fermer (Supprimer) la piste | majuscule + C |
+| Rechercher les croisements avec le zéro | Z |
 
 ++ Commandes relatives aux Marqueurs ++
-| Action | Raccourci | Commentaire |
-| Ajouter un marqueur à la sélection | control + B | |
-| Ajouter un marqueur à la position de lecture | control + M | |
-| Se Déplacer au marqueur suivant | Alt + Flèche droite | |
-| Se déplacer au marqueur précédent | Alt + Flèche Gauche | |
+| Commande | Raccourci |
+| Ajouter un marqueur à la sélection | control + B |
+| Ajouter un marqueur à la position de lecture | control + M |
+| Se Déplacer au marqueur suivant | Alt + Flèche droite |
+| Se déplacer au marqueur précédent | Alt + Flèche Gauche |
 
 ++ Commandes relatives aux Clips ++
-| Action | Raccourci | Commentaire |
-| Sélectionner  le clip précédent | Alt + P | |
-| Sélectionner le clip suivant | Alt + N | |
-| Scinder le clip | control + I | |
-| supprimer le clip | control + Alt + K | |
-| couper le clip | control + Alt + X | |
-| Scinder comme nouveau | control + Alt + I | |
-| Scinder aux   silences | control + Alt + J | |
-| Fusionner | control + J | |
+| Commande | Raccourci |
+| Sélectionner  le clip précédent | Alt + P |
+| Sélectionner le clip suivant | Alt + N |
+| Scinder le clip | control + I |
+| supprimer le clip | control + Alt + K |
+| couper le clip | control + Alt + X |
+| Scinder comme nouveau | control + Alt + I |
+| Scinder aux   silences | control + Alt + J |
+| Fusionner | control + J |
 
 ++ Commandes relatives à l'enregistrement audio ++
-| Action | Raccourci | Commentaire |
-| Ajouter un enregistrement | R | en utilisant les paramètres par défaut |
-| Enregistrer dans une nouvelle Piste | majuscule + R | en utilisant les paramètres par défaut |
-| Pause/reprendre | P | |
-| Arrêter | Espace | |
-| Boite de dialogue "sélection de l'hôte audio" | majuscule + H | |
-| Boite de dialogue "Sélection du Périphérique d'Enregistrement " | majuscule + I | |
-| Boite de dialogue "Sélection des Canaux d'Enregistrement " | majuscule + N | |
+| Commande | Raccourci |
+| Ajouter un enregistrement | R |
+| Enregistrer dans une nouvelle Piste | majuscule + R |
+| Enregistrement Punch and Roll | majuscule +d |
+| Pause/reprendre | P |
+| Arrêter | Espace |
+| Boite de dialogue "sélection de l'hôte audio" | majuscule + H |
+| Boite de dialogue "Sélection du Périphérique d'Enregistrement " | majuscule + I |
+| Boite de dialogue "Sélection des Canaux d'Enregistrement " | majuscule + N |

@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Audacity AppModule\n"
 "Report-Msgid-Bugs-To: nvda-translations@freelists.org\n"
-"POT-Creation-Date: 2020-05-09 15:12+0200\n"
-"PO-Revision-Date: 2020-05-10 11:16+0300\n"
+"POT-Creation-Date: 2020-07-18 20:00+0200\n"
+"PO-Revision-Date: 2020-07-23 15:52+0300\n"
 "Last-Translator: paulber19 <paulber19@laposte.net>\n"
 "Language-Team: cagrid@hotmail.com\n"
 "Language: tr\n"
@@ -13,7 +13,7 @@ msgstr ""
 "X-Poedit-KeywordsList: _;gettext;gettext_noop\n"
 "X-Poedit-Basepath: ../../..\n"
 "X-Poedit-SourceCharset: UTF-8\n"
-"X-Generator: Poedit 2.3\n"
+"X-Generator: Poedit 2.3.1\n"
 "X-Poedit-Bookmarks: -1,-1,-1,96,-1,-1,-1,-1,-1,-1\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-SearchPath-0: .\n"
@@ -45,7 +45,8 @@ msgid ""
 "* script to display audacity guide written by David Bailes.\n"
 "\n"
 "\n"
-"This addon's version has been tested with audacity v2.3.2.\n"
+"This addon's version has been tested with audacity 2.4.2, 2.4.1, 2.3.3 and "
+"2.3.2. \n"
 "\n"
 "Previous versions of Audacity are not  supported.\n"
 msgstr ""
@@ -67,17 +68,17 @@ msgstr ""
 "komut.\n"
 "\n"
 "\n"
-"Bu eklenti sürümü audacity v2.3.2 ile test edilmiştir.\n"
+"Eklentinin bu sürümü audacity 2.4.1, 2.3.3 ve 2.3.2 ile test edilmiştir.\n"
 "\n"
 "Audacity'nin önceki sürümleri desteklenmez.\n"
 
 #. Translators: the label of a message box dialog  to ask the user if he wants keep current configuration settings.
-#: installTasks.py:48
+#: installTasks.py:57
 msgid "Do you want to keep current add-on configuration settings ?"
 msgstr "Eklentinin mevcut ayarlarını korumak istiyor musun?"
 
 #. Translators: the title of a message box dialog.
-#: installTasks.py:50
+#: installTasks.py:59
 #, python-format
 msgid "%s - installation"
 msgstr "%s - Kurulumu"
@@ -103,13 +104,13 @@ msgid "Error, the information cannot be copied to the clipboard"
 msgstr "Hata, bilgiler panoya kopyalanamıyor"
 
 #. Translators: the label of a dialog box message.
-#: appModules\audacity\au_objects.py:82
+#: appModules\audacity\au_objects.py:126
 #, python-format
 msgid "This version %s of Audacity is not  compatible with the add-on"
 msgstr "Audacity'nin bu sürümü (%s) eklenti ile uyumlu değil"
 
 #. Translators: the label of a dialog box title.
-#: appModules\audacity\au_objects.py:84
+#: appModules\audacity\au_objects.py:128
 #, python-format
 msgid "%s add-on - warning"
 msgstr "%s eklenti - uyarı"
@@ -226,216 +227,216 @@ msgid "{addonSummary}'s add-on - {dialogTitle}"
 msgstr "{addonSummary}'nin eklentisi - {dialogTitle}"
 
 #. Translators: message to the user to report state of record button.
-#: appModules\audacity\__init__.py:81
+#: appModules\audacity\__init__.py:92
 msgid "Recording stopped"
 msgstr "Kayıt durdu"
 
 #. Translators: message to the user to report state of record button.
-#: appModules\audacity\__init__.py:84
+#: appModules\audacity\__init__.py:95
 msgid "Recording"
 msgstr "Kayıt"
 
 #. Translators: message to user to inform  that slider is not available.
 #. Translators: message to user to inform that meter peak is not available.
-#: appModules\audacity\__init__.py:209 appModules\audacity\__init__.py:240
+#: appModules\audacity\__init__.py:220 appModules\audacity\__init__.py:251
 #, python-format
 msgid "%s not available"
 msgstr "%s mevcut değil"
 
 #. Translators: message to user that there is no track in tracks view.
-#: appModules\audacity\__init__.py:281
+#: appModules\audacity\__init__.py:292
 msgid "No track"
 msgstr "Parça yok"
 
 #. Translators:  name of a digit in  selection format.
-#: appModules\audacity\__init__.py:384
+#: appModules\audacity\__init__.py:394 appModules\audacity\__init__.py:535
 msgid "units of hours"
 msgstr ""
 
 #. Translators:  name of a digit in  selection format.
-#: appModules\audacity\__init__.py:386
+#: appModules\audacity\__init__.py:396 appModules\audacity\__init__.py:537
 msgid "dozens of hours"
 msgstr ""
 
 #. Translators:  name of a digit in  selection format.
-#: appModules\audacity\__init__.py:388
+#: appModules\audacity\__init__.py:398 appModules\audacity\__init__.py:539
 msgid "units of minutes"
 msgstr ""
 
 #. Translators:  name of a digit in  selection format.
-#: appModules\audacity\__init__.py:390
+#: appModules\audacity\__init__.py:400 appModules\audacity\__init__.py:541
 msgid "dozens of minutes"
 msgstr ""
 
 #. Translators:  name of a digit in  selection format.
-#: appModules\audacity\__init__.py:392
+#: appModules\audacity\__init__.py:402 appModules\audacity\__init__.py:543
 msgid "units of seconds"
 msgstr ""
 
 #. Translators:  name of a digit in  selection format.
-#: appModules\audacity\__init__.py:394
+#: appModules\audacity\__init__.py:404 appModules\audacity\__init__.py:545
 msgid "dozens of seconds"
 msgstr ""
 
 #. Translators:  name of a digit in  selection format.
-#: appModules\audacity\__init__.py:396
+#: appModules\audacity\__init__.py:406 appModules\audacity\__init__.py:547
 msgid "hundreds of seconds"
 msgstr ""
 
 #. Translators:  name of a digit in  selection format.
-#: appModules\audacity\__init__.py:398
+#: appModules\audacity\__init__.py:408 appModules\audacity\__init__.py:549
 msgid "thounsands of seconds"
 msgstr ""
 
 #. Translators:  name of a digit in  selection format.
-#: appModules\audacity\__init__.py:400
+#: appModules\audacity\__init__.py:410 appModules\audacity\__init__.py:551
 msgid "tens thousands of seconds"
 msgstr ""
 
 #. Translators:  name of a digit in  selection format.
-#: appModules\audacity\__init__.py:402
+#: appModules\audacity\__init__.py:412 appModules\audacity\__init__.py:553
 msgid "hundreds thousands of seconds"
 msgstr ""
 
 #. Translators:  name of a digit in  selection format.
-#: appModules\audacity\__init__.py:404
+#: appModules\audacity\__init__.py:414 appModules\audacity\__init__.py:555
 msgid "tenths of seconds"
 msgstr ""
 
 #. Translators:  name of a digit in  selection format.
-#: appModules\audacity\__init__.py:406
+#: appModules\audacity\__init__.py:416 appModules\audacity\__init__.py:557
 msgid "hundredths of seconds"
 msgstr ""
 
 #. Translators:  name of a digit in  selection format.
-#: appModules\audacity\__init__.py:408
+#: appModules\audacity\__init__.py:418 appModules\audacity\__init__.py:559
 msgid "thousandths of seconds"
 msgstr ""
 
 #. Translators:  name of a digit in  selection format.
-#: appModules\audacity\__init__.py:410
+#: appModules\audacity\__init__.py:420 appModules\audacity\__init__.py:561
 msgid "units of days"
 msgstr ""
 
 #. Translators:  name of a digit in  selection format.
-#: appModules\audacity\__init__.py:412
+#: appModules\audacity\__init__.py:422 appModules\audacity\__init__.py:563
 msgid "dozens of days"
 msgstr ""
 
 #. Translators:  name of a digit in  selection format.
-#: appModules\audacity\__init__.py:414
+#: appModules\audacity\__init__.py:424 appModules\audacity\__init__.py:565
 msgid "units"
 msgstr ""
 
 #. Translators:  name of a digit in  selection format.
-#: appModules\audacity\__init__.py:416
+#: appModules\audacity\__init__.py:426 appModules\audacity\__init__.py:567
 msgid "dozens"
 msgstr ""
 
 #. Translators:  name of a digit in  selection format.
 #. Translators:  name of a digit in  selection format.
-#: appModules\audacity\__init__.py:418
+#: appModules\audacity\__init__.py:428 appModules\audacity\__init__.py:569
 msgid "hundreds"
 msgstr ""
 
 #. Translators:  name of a digit in  selection format.
 #. Translators:  name of a digit in  selection format.
-#: appModules\audacity\__init__.py:420
+#: appModules\audacity\__init__.py:430 appModules\audacity\__init__.py:571
 msgid "thousands"
 msgstr ""
 
 #. Translators:  name of a digit in  selection format.
-#: appModules\audacity\__init__.py:422
+#: appModules\audacity\__init__.py:432 appModules\audacity\__init__.py:573
 msgid "tens of thousands"
 msgstr ""
 
 #. Translators:  name of a digit in  selection format.
-#: appModules\audacity\__init__.py:424
+#: appModules\audacity\__init__.py:434 appModules\audacity\__init__.py:575
 msgid "hundreds of thousands"
 msgstr ""
 
 #. Translators:  name of a digit in  selection format.
-#: appModules\audacity\__init__.py:426
+#: appModules\audacity\__init__.py:436 appModules\audacity\__init__.py:577
 msgid "millions"
 msgstr ""
 
 #. Translators:  name of a digit in  selection format.
-#: appModules\audacity\__init__.py:428
+#: appModules\audacity\__init__.py:438 appModules\audacity\__init__.py:579
 msgid "units of samples"
 msgstr ""
 
 #. Translators:  name of a digit in  selection format.
-#: appModules\audacity\__init__.py:430
+#: appModules\audacity\__init__.py:440 appModules\audacity\__init__.py:581
 msgid "dozens of samples"
 msgstr ""
 
 #. Translators:  name of a digit in  selection format.
-#: appModules\audacity\__init__.py:432
+#: appModules\audacity\__init__.py:442 appModules\audacity\__init__.py:583
 msgid "hundreds of samples"
 msgstr ""
 
 #. Translators:  name of a digit in  selection format.
-#: appModules\audacity\__init__.py:434
+#: appModules\audacity\__init__.py:444 appModules\audacity\__init__.py:585
 msgid "thounsands of samples"
 msgstr ""
 
 #. Translators:  name of a digit in  selection format.
-#: appModules\audacity\__init__.py:436
+#: appModules\audacity\__init__.py:446 appModules\audacity\__init__.py:587
 msgid "tens thousands of samples"
 msgstr ""
 
 #. Translators:  name of a digit in  selection format.
-#: appModules\audacity\__init__.py:438
+#: appModules\audacity\__init__.py:448 appModules\audacity\__init__.py:589
 msgid "hundreds thousands of samples"
 msgstr ""
 
 #. Translators: name of a selection format digit group.
-#: appModules\audacity\__init__.py:443
+#: appModules\audacity\__init__.py:453 appModules\audacity\__init__.py:594
 msgid "hours"
 msgstr ""
 
 #. Translators: name of a selection format digit group.
-#: appModules\audacity\__init__.py:445
+#: appModules\audacity\__init__.py:455 appModules\audacity\__init__.py:596
 msgid "minutes"
 msgstr ""
 
 #. Translators: name of a selection format digit group.
-#: appModules\audacity\__init__.py:447
+#: appModules\audacity\__init__.py:457 appModules\audacity\__init__.py:598
 msgid "thousands seconds"
 msgstr ""
 
 #. Translators: name of a selection format digit group.
-#: appModules\audacity\__init__.py:449
+#: appModules\audacity\__init__.py:459 appModules\audacity\__init__.py:600
 msgid "seconds"
 msgstr ""
 
 #. Translators: name of a selection format digit group.
-#: appModules\audacity\__init__.py:451
+#: appModules\audacity\__init__.py:461 appModules\audacity\__init__.py:602
 msgid "hundredths seconds"
 msgstr ""
 
 #. Translators: name of a selection format digit group.
-#: appModules\audacity\__init__.py:453
+#: appModules\audacity\__init__.py:463 appModules\audacity\__init__.py:604
 msgid "milliseconds"
 msgstr ""
 
 #. Translators: name of a selection format digit group.
-#: appModules\audacity\__init__.py:455
+#: appModules\audacity\__init__.py:465 appModules\audacity\__init__.py:606
 msgid "days"
 msgstr ""
 
 #. Translators: name of a selection format digit group.
-#: appModules\audacity\__init__.py:457
+#: appModules\audacity\__init__.py:467 appModules\audacity\__init__.py:608
 msgid "thousand samples"
 msgstr ""
 
 #. Translators: name of a selection format digit group.
-#: appModules\audacity\__init__.py:459
+#: appModules\audacity\__init__.py:469 appModules\audacity\__init__.py:610
 msgid "samples"
 msgstr "örnekler"
 
 #. Translators: Input help mode message for report selection command.
-#: appModules\audacity\__init__.py:637
+#: appModules\audacity\__init__.py:819
 msgid ""
 "report position of start and end of the selection. Twice: report selection's "
 "length. Third: report position of selection's center "
@@ -444,198 +445,207 @@ msgstr ""
 "söyle. Üç kez: seçimin merkezini  bildir."
 
 #. Translators: Input help mode message for report selection limits command.
-#: appModules\audacity\__init__.py:639
+#: appModules\audacity\__init__.py:821
 msgid "Report position of start and end of the selection"
 msgstr "Seçim başlangıç ve bitiş konumlarını bildir"
 
 #. Translators: Input help mode message for report selection duration command.
-#: appModules\audacity\__init__.py:641
+#: appModules\audacity\__init__.py:823
 msgid "Report selection's length"
 msgstr "Seçimin uzunluğunu söyle"
 
 #. Translators: Input help mode message for report selection center command.
-#: appModules\audacity\__init__.py:643
+#: appModules\audacity\__init__.py:825
 msgid "Report position of selection's center"
 msgstr "Seçim merkezinin konumunu bildir"
 
 #. Translators: Input help mode message for report audio position command.
-#: appModules\audacity\__init__.py:645
+#: appModules\audacity\__init__.py:827
 msgid "report audio position"
 msgstr "ses konumunu bildir"
 
 #. Translators: Input help mode message for toggle selection change automatic report command.
-#: appModules\audacity\__init__.py:647
+#: appModules\audacity\__init__.py:829
 msgid "Enable or disable automatic report of selection's changes"
 msgstr ""
 "Seçim değişikliklerinin otomatik bildirimini etkinleştir veya devre dışı "
 "bırak"
 
 #. Translators: Input help mode message for toggle report transport button state command.
-#: appModules\audacity\__init__.py:649
+#: appModules\audacity\__init__.py:831
 msgid "report the pressed state of Pause , Play and  Record buttons"
 msgstr "Duraklat, Oynat ve Kaydet düğmelerinin basılı durumunu bildir"
 
 #. Translators: Input help mode message for report playback meter peak command.
-#: appModules\audacity\__init__.py:651
+#: appModules\audacity\__init__.py:833
 msgid "Reports the current level of playback meter peak"
 msgstr "Geçerli oynatma ölçer tepe seviyesini göster"
 
 #. Translators: Input help mode message for report record meter peak command.
-#: appModules\audacity\__init__.py:653
+#: appModules\audacity\__init__.py:835
 msgid "Reports the current recording meter peak   level"
 msgstr "Geçerli kayıt ölçer tepe seviyesini bildir"
 
 #. Translators: Input help mode message for report slider playback command.
-#: appModules\audacity\__init__.py:655
+#: appModules\audacity\__init__.py:837
 msgid "Reports the current level of playback's slider"
 msgstr "Geçerli oynatma düzeyini bildir"
 
 #. Translators: Input help mode message for report slider recording command.
-#: appModules\audacity\__init__.py:657
+#: appModules\audacity\__init__.py:839
 msgid "Reports the current level of recording's slider"
 msgstr "Geçerli kayıt düzeyini bildir"
 
 #. Translators: Input help mode message for report playback speed command.
-#: appModules\audacity\__init__.py:659
+#: appModules\audacity\__init__.py:841
 msgid "Reports the current playback speed level"
 msgstr "Geçerli oynatma hızını bildir"
 
 #. Translators: Input help mode message for display add-on user manual command.
-#: appModules\audacity\__init__.py:661
+#: appModules\audacity\__init__.py:843
 msgid "Display add-on user manual"
 msgstr "Eklenti kullanım kılavuzunu görüntüle"
 
 #. Translators: Input help mode message for display audacity guide command.
-#: appModules\audacity\__init__.py:663
+#: appModules\audacity\__init__.py:845
 msgid "Display audacity guide"
 msgstr "Audacity kılavuzunu görüntüle"
 
 #. Translators: Input help mode message for launch module layer command.
-#: appModules\audacity\__init__.py:665
+#: appModules\audacity\__init__.py:847
 msgid "Launch  command shell"
 msgstr "Komut kabuğunu başlat"
 
 #. Translators: Input help mode message for display shell command help dialog command.
-#: appModules\audacity\__init__.py:667
+#: appModules\audacity\__init__.py:849
 msgid "Display shell scripts's list"
 msgstr "komut kabuğu komutlarının listesini görüntüle"
 
 #. Translators: message for indicate shell command in input help mode.
-#: appModules\audacity\__init__.py:740
+#: appModules\audacity\__init__.py:937
 #, python-format
 msgid "(command: %s)"
 msgstr "(komut: %s)"
 
 #. Translators: message to the user when the selection changes.
 #. Translators: This is the label for a checkbox in the AudacitySettingsDialog.
-#: appModules\audacity\__init__.py:824
-#: globalPlugins\audacityAccessEnhancement\au_configGui.py:29
+#: appModules\audacity\__init__.py:1026
+#: globalPlugins\audacityAccessEnhancement\au_configGui.py:27
 msgid "Report automaticaly selection's changes"
 msgstr "Seçim değişikliklerini otomatik olarak bildir"
 
 #. Translators: message to the user when selection change cannot be reported.
-#: appModules\audacity\__init__.py:827
+#: appModules\audacity\__init__.py:1029
 msgid "Don't report automaticaly selection change"
 msgstr "Seçim değişikliğini otomatik olarak bildirme"
 
 #. Translators: message to the user when object is not in tracks view.
-#: appModules\audacity\__init__.py:834
+#: appModules\audacity\__init__.py:1036
 msgid "Not in tracks view"
 msgstr "Parça görünümünde değil"
 
 #. Translators: message to user when button record is pressed.
-#: appModules\audacity\__init__.py:892
+#: appModules\audacity\__init__.py:1103
 msgid "record button pressed"
 msgstr "kayıt düğmesi basılı"
 
 #. Translators: message to the user when play button is pressed.
-#: appModules\audacity\__init__.py:897
+#: appModules\audacity\__init__.py:1108
 msgid "play button pressed"
 msgstr "oynat düğmesi basılı"
 
 #. Translators: message to the user when pause button is pressed.
-#: appModules\audacity\__init__.py:901
+#: appModules\audacity\__init__.py:1112
 msgid "Pause button pressed"
 msgstr "Duraklat düğmesi basılı"
 
 #. Translators: message to the user when no button is pressed.
-#: appModules\audacity\__init__.py:906
+#: appModules\audacity\__init__.py:1117
 msgid "No button pressed"
 msgstr "Hiçbir düğmeye basılı değil"
 
 #. Translators: message to the user to report playback speed.
-#: appModules\audacity\__init__.py:914
+#: appModules\audacity\__init__.py:1124
 #, python-format
 msgid "playback speed: %s"
 msgstr "çalma hızı: %s"
 
 #. Translators: message for user.
-#: appModules\audacity\__init__.py:952
+#: appModules\audacity\__init__.py:1159
 msgid "Please wait ..."
 msgstr "Lütfen bekle..."
 
 #. Translators: message to user when add-on help is not found.
-#: appModules\audacity\__init__.py:975
+#: appModules\audacity\__init__.py:1182
 msgid "Error: Add-on user manual is not found"
 msgstr "Hata: Eklenti kullanım kılavuzu bulunamadı"
 
 #. Translators: message to user when Audacity guide is not found.
-#: appModules\audacity\__init__.py:996
+#: appModules\audacity\__init__.py:1203
 msgid "Error: audacity guide is not found"
 msgstr "Hata: audacity kılavuzu bulunamadı"
 
 #. Translators: this is the title of Helper dialog.
-#: appModules\audacity\__init__.py:1021
+#: appModules\audacity\__init__.py:1226
 msgid "Shell's scripts"
 msgstr "Komut kabuğu"
 
 #. Translators: This is the label of the list  appearing on Shell Scripts List Dialog.
-#: appModules\audacity\__init__.py:1052
+#: appModules\audacity\__init__.py:1257
 msgid "scripts:"
 msgstr "komutlar:"
 
 #. Translators: This is a label of a button appearing on Shell Scripts List Dialog.
-#: appModules\audacity\__init__.py:1059
+#: appModules\audacity\__init__.py:1264
 msgid "&Run script"
 msgstr "Komutu çalıştı&r"
 
 #. Translators: This is the label for the Audacity settings  dialog.
-#: globalPlugins\audacityAccessEnhancement\au_configGui.py:24
-#, python-format
-msgid "%s add-on - settings"
-msgstr "%s eklenti - ayarları"
+#: globalPlugins\audacityAccessEnhancement\au_configGui.py:22
+msgid "Options"
+msgstr "Seçenekler"
 
 #. Translators: This is the label for a checkbox in the AudacitySettingsDialog.
-#: globalPlugins\audacityAccessEnhancement\au_configGui.py:34
+#: globalPlugins\audacityAccessEnhancement\au_configGui.py:32
 msgid "Use space bar and Enter keys to press button"
 msgstr "Düğmeye basmak için aralık çubuğunu ve Enter tuşlarını kullanın"
 
 #. Translators: This is the label for a checkbox in the AudacitySettingsDialog.
-#: globalPlugins\audacityAccessEnhancement\au_configGui.py:38
+#: globalPlugins\audacityAccessEnhancement\au_configGui.py:36
 msgid "Report toolbars's name "
 msgstr "Araç çubuklarını bildir"
 
-#. Translators: This is the label for a group of editing options in the Audacity settings panel.
+#. Translators: This is the label for a checkbox in the AudacitySettingsDialog.
+#: globalPlugins\audacityAccessEnhancement\au_configGui.py:40
+msgid "EnhancedAnnouncement  of edit spin boxes"
+msgstr "Dönen yazı alanlarının gelişmiş anonsu"
+
+#. Translators: This is the label for the Advanced settings panel.
 #. Translators: The title of the dialog displayed while downloading add-on update.
-#: globalPlugins\audacityAccessEnhancement\au_configGui.py:42
+#: globalPlugins\audacityAccessEnhancement\au_configGui.py:72
 #: globalPlugins\audacityAccessEnhancement\updateHandler\update_check.py:104
 msgid "Update"
 msgstr "Güncelleme"
 
 #. Translators: This is the label for a checkbox in the Audacity SettingsDialog.
-#: globalPlugins\audacityAccessEnhancement\au_configGui.py:46
+#: globalPlugins\audacityAccessEnhancement\au_configGui.py:81
 msgid "Automatically check for &updates "
 msgstr "Güncellemeleri &otomatik olarak kontrol et"
 
 #. Translators: This is the label for a checkbox in the Audacity settings panel.
-#: globalPlugins\audacityAccessEnhancement\au_configGui.py:50
+#: globalPlugins\audacityAccessEnhancement\au_configGui.py:85
 msgid "Update also release versions to &developpement versions"
 msgstr "Ana &sürümleri geliştirici sürümlerle de güncelle"
 
 #. translators: label for a button in Audacity settings panel.
-#: globalPlugins\audacityAccessEnhancement\au_configGui.py:54
+#: globalPlugins\audacityAccessEnhancement\au_configGui.py:89
 msgid "&Check for update"
 msgstr "&Güncellemeleri denetle"
+
+#. translators: title of the dialog.
+#: globalPlugins\audacityAccessEnhancement\au_configGui.py:118
+msgid "Settings"
+msgstr "Ayarlar"
 
 #. Translators: The message displayed when trying to update an add-on that is not going to be compatible with the current version of NVDA.
 #: globalPlugins\audacityAccessEnhancement\updateHandler\update_check.py:59
@@ -717,6 +727,10 @@ msgstr "&Hayır"
 #: globalPlugins\audacityAccessEnhancement\updateHandler\update_check.py:483
 msgid "&Later"
 msgstr "&Sonra"
+
+#, python-format
+#~ msgid "%s add-on - settings"
+#~ msgstr "%s eklenti - ayarları"
 
 #~ msgid "The update is not compatible with this version of Windows."
 #~ msgstr "Güncelleştirme, Windows'un bu sürümüyle uyumlu değil."

@@ -25,7 +25,7 @@ Este complemento mejora la accesibilidad del software Audacity proporcionando:
 * un script para mostrar la guía de Audacity escrito por David Bailes.
 
 
-Este complemento es compatible y ha sido probado con Audacity versión 2.3.3 y 2.3.2. Las versiones anteriores de Audacity no son compatibles.
+Este complemento es compatible y ha sido probado con Audacity 2.4.1, 2.3.3 y 2.3.2. Las versiones anteriores de Audacity no son compatibles.
 
-[1]: https://github.com/paulber007/AllMyNVDAAddons/raw/master/audacityAccessEnhancement/audacityAccessEnhancement-1.4.5.nvda-addon
+[1]: https://github.com/paulber007/AllMyNVDAAddons/raw/master/audacityAccessEnhancement/audacityAccessEnhancement-1.5.nvda-addon
 [2]: https://github.com/paulber007/AllMyNVDAAddons/tree/master/audacityAccessEnhancement/dev

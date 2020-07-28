@@ -8,6 +8,7 @@ from logHandler import log
 import addonHandler
 addonHandler.initTranslation()
 import os
+import config
 import globalVars
 from configobj import ConfigObj
 # ConfigObj 5.1.0 and later integrates validate module.
@@ -31,6 +32,10 @@ ID_UpdateReleaseVersionsToDevVersions  = "UpdateReleaseVersionsToDevVersions"
 ID_AutomaticSelectionChangeReport = "AutomaticSelectionChangeReport"
 ID_ReportToolbarsName = "ReportayToolbarNameOnFocusEntered"
 ID_UseSpaceBarToPressButton = "UseSpaceBarToPressButton"
+ID_EditSpinBoxEnhancedAnnouncement = "EditSpinBoxEnhancedAnnouncement"
+_curAddon = addonHandler.getCodeAddon()
+_addonName = _curAddon.manifest["name"]
+
 
 class BaseAddonConfiguration(ConfigObj):
 	_version = ""
@@ -83,20 +88,45 @@ class AddonConfiguration10(BaseAddonConfiguration):
 """.format(general = _GeneralConfSpec, options = _OptionsConfSpec)
 ), list_values=False, encoding="UTF-8")
 
+class AddonConfiguration11(BaseAddonConfiguration):
+	_version = "1.1"
+	_GeneralConfSpec = """[{section}]
+	{configVersion} = string(default = {version})
+	{autoUpdateCheck} = boolean(default=True)
+	{updateReleaseVersionsToDevVersions} = boolean(default=False)
+	""".format(section = SCT_General,configVersion = ID_ConfigVersion, version = _version, autoUpdateCheck = ID_AutoUpdateCheck, updateReleaseVersionsToDevVersions    = ID_UpdateReleaseVersionsToDevVersions)
+	
+	_OptionsConfSpec = """[{section}]
+	{automaticSelectionChangeReport} = boolean(default=True)
+	{reportToolbarsName} = boolean(default=True)
+	{useSpaceBarToPressButton} = boolean(default=True)
+	{editSpinBoxEnhancedAnnouncement} = boolean(default=True)
+	""".format(section = SCT_Options, automaticSelectionChangeReport = ID_AutomaticSelectionChangeReport, reportToolbarsName= ID_ReportToolbarsName, useSpaceBarToPressButton = ID_UseSpaceBarToPressButton, editSpinBoxEnhancedAnnouncement = ID_EditSpinBoxEnhancedAnnouncement)
 
-
+	#: The configuration specification
+	configspec = ConfigObj(StringIO("""# addon Configuration File
+{general}\r\n{options}
+""".format(general = _GeneralConfSpec, options = _OptionsConfSpec)
+), list_values=False, encoding="UTF-8")
+	def mergeWithPreviousConfigurationVersion(self, previousConfig):
+		previousVersion = previousConfig[SCT_General][ID_ConfigVersion]
+		# configuration 1.0 to 1.1
+		#  keep all previous settings, excluded version
+		del previousConfig[SCT_General][ID_ConfigVersion]
+		self[SCT_General].update(previousConfig[SCT_General])
+		self[SCT_Options].update(previousConfig[SCT_Options])
+		log.warning("%s: Merge with previous configuration version: %s"%(_addonName, previousVersion))
 	
 class AddonConfigurationManager():
-	_currentConfigVersion = "1.0"
+	_currentConfigVersion = "1.1"
 	_versionToConfiguration = {
 		"1.0" : AddonConfiguration10,
+		"1.1" : AddonConfiguration11,
 		}
 	def __init__(self, ) :
-		curAddon = addonHandler.getCodeAddon()
-		addonName = curAddon.manifest["name"]
-		self.configFileName  = "%sAddon.ini"%addonName
+		self.configFileName  = "%sAddon.ini"%_addonName
 		self.loadSettings()
-
+		config.post_configSave.register(self.handlePostConfigSave)
 
 	def loadSettings(self):
 		addonConfigFile = os.path.join(globalVars.appArgs.configPath, self.configFileName)
@@ -106,58 +136,66 @@ class AddonConfigurationManager():
 			if baseConfig[SCT_General][ID_ConfigVersion] != self._currentConfigVersion :
 				# old config file must not exist here. Must be deleted
 				os.remove(addonConfigFile)
-				log.warning(" Old config file removed")
+				log.warning("%s: Previous  config file removed : %s"%(_addonName, addonConfigFile))
 			else:
 				configFileExists = True
-		
 		self.addonConfig = self._versionToConfiguration[self._currentConfigVersion](addonConfigFile)
 		if self.addonConfig.errors != []:
-			log.warning("Addon configuration file error")
+			log.warning("%s: Addon configuration file error"%_addonName)
 			self.addonConfig = None
 			return
-		
-		curPath = addonHandler.getCodeAddon().path
-		oldConfigFileName = "addonConfig_old.ini"
-		oldConfigFile = os.path.join(curPath,  oldConfigFileName)
+		curPath = _curAddon.path
+		oldConfigFile = os.path.join(curPath,  self.configFileName)
 		if os.path.exists(oldConfigFile):
 			if not configFileExists:
 				self.mergeSettings(oldConfigFile)
-				self.saveSettings()
 			os.remove(oldConfigFile)
 		if not configFileExists:
-			self.saveSettings()
+			self.saveSettings(True)
 		#log.warning("Configuration loaded")
-	
-	def mergeSettings(self, oldConfigFile):
-		log.warning("Merge settings with old configuration")
-		baseConfig = BaseAddonConfiguration(oldConfigFile)
-		version = baseConfig[SCT_General][ID_ConfigVersion]
-		if version not in self._versionToConfiguration:
-			log.warning("Configuration merge error: unknown configuration version")
+		
+	def mergeSettings(self, previousConfigFile):
+		baseConfig = BaseAddonConfiguration(previousConfigFile)
+		previousVersion = baseConfig[SCT_General][ID_ConfigVersion]
+		if previousVersion not in self._versionToConfiguration:
+			log.warning("%s: Configuration merge error: unknown previous configuration version number"%_addonName)
 			return
-		oldConfig = self._versionToConfiguration[version](oldConfigFile)
-		for sect in self.addonConfig.sections:
-			for k in self.addonConfig[sect]:
-				if sect == SCT_General and k == ID_ConfigVersion:
-					continue
-				if sect in oldConfig.sections  and k in oldConfig[sect]:
-					self.addonConfig[sect][k] = oldConfig[sect][k]
-	
-	def saveSettings(self):
+		previousConfig = self._versionToConfiguration[previousVersion](previousConfigFile)
+		if previousVersion == self.addonConfig[SCT_General][ID_ConfigVersion]:
+			# same config version, update data from previous config
+			self.addonConfig.update(previousConfig)
+			log.warning("%s: Configuration updated with previous configuration file"%_addonName)
+			return
+		# different config version, so do a  merge with previous config.
+		self.addonConfig.mergeWithPreviousConfigurationVersion(previousConfig)
+		try:
+			#self.addonConfig.mergeWithPreviousConfigurationVersion(previousConfig)
+			pass
+		except:
+			pass
+
+
+	def saveSettings(self, force= False):
 		#We never want to save config if runing securely
 		if globalVars.appArgs.secure: return
+		# We save the configuration, in case the user would not have checked the "Save configuration on exit" checkbox in General settings or force is is True
+		if not force and not config.conf['general']['saveConfigurationOnExit']: return
 		if self.addonConfig  is None: return
-
 		try:
 			val = Validator()
 			self.addonConfig.validate(val, copy = True)
 			self.addonConfig.write()
+			log.warning("%s: configuration saved"%_addonName)
 		except:
-			log.warning("Could not save configuration - probably read only file system")
+			log.warning("%s: Could not save configuration - probably read only file system"%_addonName)
 
+	def handlePostConfigSave(self):
+		self.saveSettings(True)
 	
 	def terminate(self):
 		self.saveSettings()
+		config.post_configSave.unregister(self.handlePostConfigSave)	
+
 	def toggleOption (self, id, toggle = True):
 		conf = self.addonConfig
 		if toggle:
@@ -172,6 +210,8 @@ class AddonConfigurationManager():
 		
 	def toggleUseSpaceBarToPressButtonOption (self, toggle = True):
 		return self.toggleOption (ID_UseSpaceBarToPressButton, toggle)
+	def toggleEditSpinBoxEnhancedAnnouncementOption(self, toggle = True):
+		return self.toggleOption (ID_EditSpinBoxEnhancedAnnouncement, toggle)
 
 	def toggleGeneralOption (self, id, toggle):
 		conf = self.addonConfig

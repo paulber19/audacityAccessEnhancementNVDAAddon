@@ -1,6 +1,6 @@
 #appModules\audacity\__init__.py
 # a part of audacityAccessEnhancement add-on
-#Copyright (C) 2018-2019, Paulber19
+#Copyright (C) 2018-2020, Paulber19
 #This file is covered by the GNU General Public License.
 # Released under GPL 2
 
@@ -33,8 +33,19 @@ from  . import au_objects
 from  .au_timerControl import *
 import sys
 _curAddon = addonHandler.getCodeAddon()
-path = os.path.join(_curAddon.path, "shared")
-sys.path.append(path)
+debugToolsPath = os.path.join(_curAddon.path, "debugTools")
+sys.path.append(debugToolsPath)
+try:
+	from appModuleDebug import AppModuleDebug as AppModule
+	from appModuleDebug import printDebug, toggleDebugFlag
+except ImportError:
+	from appModuleHandler import AppModule as AppModule
+	def printDebug(msg): return
+	def toggleDebugFlag(debug = False): return
+del sys.path[-1]
+
+sharedPath = os.path.join(_curAddon.path, "shared")
+sys.path.append(sharedPath)
 from  au_addonConfigManager import _addonConfigManager
 from au_py3Compatibility import _unicode, iterate_items
 del sys.path[-1]
@@ -322,6 +333,146 @@ class TimerControlEdit(NVDAObjects.NVDAObject):
 	def initOverlayClass(self):
 		self.bindGesture("kb:nvda+upArrow", "sayTimer")
 
+	def script_sayTimer(self, gesture):
+		tc = au_timerControl.TimerControl(self)
+		(sLabel, sTime) = tc.getLabelAndTime()
+		msg = "%s" %au_time.getTimeMessage(sTime)
+		ui.message(msg)
+
+	def event_gainFocus(self):
+		tc = au_timerControl.TimerControl(self)
+		(sLabel, sTime) = tc.getLabelAndTime()
+		try:
+			msg = "%s %s" %(sLabel,au_time.getTimeMessage(sTime))
+			ui.message(msg)
+		except:
+			super(TimerControlEdit, self).event_gainFocus()		
+# digit groups IDs
+DGROUP_HOURS = 1
+DGROUP_MINUTES = 2
+DGROUP_SECONDS = 3
+DGROUP_SECOND_THOUSANDS = 4
+DGROUP_SECONDS_HUNDREDTHS = 5
+DGROUP_MILLISECONDS = 6
+DGROUP_DAYS = 7
+DGROUP_SAMPLES = 8
+DGROUP_SAMPLE_THOUSANDS = 9
+
+# digit IDs
+DIGIT_HOUR_UNITS = 1
+DIGIT_HOUR_DOZENS = 2
+DIGIT_MINUTE_UNITS = 3
+DIGIT_MINUTE_DOZENS = 4
+DIGIT_SECOND_UNITS = 5
+DIGIT_SECOND_DOZENS = 6
+DIGIT_SECOND_HUNDREDS = 7
+DIGIT_SECOND_THOUSANDS = 8
+DIGIT_SECOND_TENS_THOUSANDS = 9
+DIGIT_SECOND_HUNDREDS_THOUSANDS = 10
+DIGIT_SECOND_TENTHS = 11
+DIGIT_SECOND_HUNDREDTHS = 12
+DIGIT_SECOND_THOUSANDTHS = 13
+DIGIT_DAY_UNITS = 14
+DIGIT_DAY_DOZENS = 15
+DIGIT_UNITS = 16
+DIGIT_DOZENS = 17
+DIGIT_HUNDREDS = 18
+DIGIT_THOUSANDS = 19
+DIGIT_TENS_THOUSANDS = 20
+DIGIT_HUNDREDS_THOUSANDS = 21
+DIGIT_MILLIONS = 22
+DIGIT_SAMPLE_UNITS = 23
+DIGIT_SAMPLE_DOZENS = 24
+DIGIT_SAMPLE_HUNDREDS = 25
+DIGIT_SAMPLE_THOUSANDS = 26
+DIGIT_SAMPLE_TENS_THOUSANDS = 27
+DIGIT_SAMPLE_HUNDREDS_THOUSANDS = 28
+
+# names of selection format digits
+_digitNames = {
+# Translators:  name of a digit in  selection format.
+	DIGIT_HOUR_UNITS : _("units of hours"),
+	# Translators:  name of a digit in  selection format.
+	DIGIT_HOUR_DOZENS : _("dozens of hours"),
+	# Translators:  name of a digit in  selection format.
+	DIGIT_MINUTE_UNITS : _("units of minutes"),
+	# Translators:  name of a digit in  selection format.
+	DIGIT_MINUTE_DOZENS : _("dozens of minutes"),
+	# Translators:  name of a digit in  selection format.
+	DIGIT_SECOND_UNITS : _("units of seconds"),
+	# Translators:  name of a digit in  selection format.
+	DIGIT_SECOND_DOZENS : _("dozens of seconds"),
+	# Translators:  name of a digit in  selection format.
+	DIGIT_SECOND_HUNDREDS : _("hundreds of seconds"),
+	# Translators:  name of a digit in  selection format.
+	DIGIT_SECOND_THOUSANDS : _("thounsands of seconds"),
+	# Translators:  name of a digit in  selection format.
+	DIGIT_SECOND_TENS_THOUSANDS : _("tens thousands of seconds"),
+	# Translators:  name of a digit in  selection format.
+	DIGIT_SECOND_HUNDREDS_THOUSANDS : _("hundreds thousands of seconds"),
+	# Translators:  name of a digit in  selection format.
+	DIGIT_SECOND_TENTHS : _("tenths of seconds"),
+	# Translators:  name of a digit in  selection format.
+	DIGIT_SECOND_HUNDREDTHS : _("hundredths of seconds"),
+	# Translators:  name of a digit in  selection format.
+	DIGIT_SECOND_THOUSANDTHS : _("thousandths of seconds"),
+	# Translators:  name of a digit in  selection format.
+	DIGIT_DAY_UNITS : _("units of days"),
+	# Translators:  name of a digit in  selection format.
+	DIGIT_DAY_DOZENS :  _("dozens of days"),
+	# Translators:  name of a digit in  selection format.
+	DIGIT_UNITS : _("units"), 
+	# Translators:  name of a digit in  selection format.
+	DIGIT_DOZENS : _("dozens"),# Translators:  name of a digit in  selection format.
+	# Translators:  name of a digit in  selection format.
+	DIGIT_HUNDREDS : _("hundreds"),# Translators:  name of a digit in  selection format.
+	# Translators:  name of a digit in  selection format.
+	DIGIT_THOUSANDS : _("thousands"),
+	# Translators:  name of a digit in  selection format.
+	DIGIT_TENS_THOUSANDS : _("tens of thousands"),
+	# Translators:  name of a digit in  selection format.
+	DIGIT_HUNDREDS_THOUSANDS : _("hundreds of thousands"),
+	# Translators:  name of a digit in  selection format.
+	DIGIT_MILLIONS : _("millions"),
+	# Translators:  name of a digit in  selection format.
+	DIGIT_SAMPLE_UNITS : _("units of samples"),
+	# Translators:  name of a digit in  selection format.
+	DIGIT_SAMPLE_DOZENS : _("dozens of samples"),
+	# Translators:  name of a digit in  selection format.
+	DIGIT_SAMPLE_HUNDREDS : _("hundreds of samples"),
+	# Translators:  name of a digit in  selection format.
+	DIGIT_SAMPLE_THOUSANDS : _("thounsands of samples"),
+	# Translators:  name of a digit in  selection format.
+	DIGIT_SAMPLE_TENS_THOUSANDS : _("tens thousands of samples"),
+	# Translators:  name of a digit in  selection format.
+	DIGIT_SAMPLE_HUNDREDS_THOUSANDS : _("hundreds thousands of samples"),
+	}
+# names of selection format digit groups
+_digitGroupNames=  {
+# Translators: name of a selection format digit group.
+	DGROUP_HOURS : _("hours"),
+	# Translators: name of a selection format digit group.
+	DGROUP_MINUTES : _("minutes"),
+	# Translators: name of a selection format digit group.
+	DGROUP_SECOND_THOUSANDS : _("thousands seconds"),
+	# Translators: name of a selection format digit group.
+	DGROUP_SECONDS : _("seconds"),
+	# Translators: name of a selection format digit group.
+	DGROUP_SECONDS_HUNDREDTHS : _("hundredths seconds"),
+	# Translators: name of a selection format digit group.
+	DGROUP_MILLISECONDS: _("milliseconds"),
+	# Translators: name of a selection format digit group.
+	DGROUP_DAYS : _("days"),
+	# Translators: name of a selection format digit group.
+	DGROUP_SAMPLE_THOUSANDS : _("thousand samples"),
+	# Translators: name of a selection format digit group.
+	DGROUP_SAMPLES : _("samples"),
+	}
+	
+class AudioPositionTimerControlEdit(NVDAObjects.NVDAObject):
+	def initOverlayClass(self):
+		self.bindGesture("kb:nvda+upArrow", "sayTimer")
+
 
 	def script_sayTimer(self, gesture):
 		tc = au_timerControl.TimerControl(self)
@@ -479,18 +630,11 @@ class TimerControlDigit(NVDAObjects.NVDAObject):
 		SELFOR_HHMMSS_MILLISECONDS : (DIGIT_HOUR_DOZENS,DIGIT_HOUR_UNITS, DIGIT_MINUTE_DOZENS, DIGIT_MINUTE_UNITS, DIGIT_SECOND_DOZENS, DIGIT_SECOND_UNITS, DIGIT_SECOND_TENTHS, DIGIT_SECOND_HUNDREDTHS, DIGIT_SECOND_THOUSANDTHS),
 		SELFOR_HHMMSS_SAMPLES  :  (DIGIT_HOUR_DOZENS,DIGIT_HOUR_UNITS, DIGIT_MINUTE_DOZENS, DIGIT_MINUTE_UNITS, DIGIT_SECOND_DOZENS, DIGIT_SECOND_UNITS, DIGIT_SAMPLE_HUNDREDS_THOUSANDS, DIGIT_SAMPLE_TENS_THOUSANDS, DIGIT_SAMPLE_THOUSANDS, DIGIT_SAMPLE_HUNDREDS, DIGIT_SAMPLE_DOZENS, DIGIT_SAMPLE_UNITS),
 		SELFOR_SAMPLES:  (DIGIT_SAMPLE_HUNDREDS_THOUSANDS, DIGIT_SAMPLE_TENS_THOUSANDS, DIGIT_SAMPLE_THOUSANDS, DIGIT_SAMPLE_HUNDREDS, DIGIT_SAMPLE_DOZENS, DIGIT_SAMPLE_UNITS),
-
 		}
 	
-	def initOverlayClass(self):
-		self.bindGesture("kb:NVDA+upArrow", "sayTimer")
-		self.bindGesture("kb:upArrow", "upOrDownArrow")
-		self.bindGesture("kb:downArrow", "upOrDownArrow")
-		self.bindGesture("kb:leftArrow", "leftOrRightArrow")
-		self.bindGesture("kb:rightArrow", "leftOrRightArrow")
-
-	
 	def event_gainFocus(self):
+		printDebug ("TimerControlDigit event_gainFocus: %s, childID= %s"%(self.name, self.IAccessibleChildID))
+		# When digit gains focus but not after script activation, report audio position.
 		tc = au_timerControl.TimerControl(self, self.editFormat)
 		(sLabel, sTime) = tc.getLabelAndTime()
 		try:
@@ -517,6 +661,7 @@ class TimerControlDigit(NVDAObjects.NVDAObject):
 			name = obj.name
 			# name form is xxx  s, x. We want only xxx
 			name = obj.name.split(" ")[0]
+			print ("name: %s"%name)
 			digitID  = obj.IAccessibleChildID -1
 			editFormatElements = TimerControlDigit._selectionFormaElements [obj.editFormatID]
 			if editFormatElements is None:
@@ -529,35 +674,72 @@ class TimerControlDigit(NVDAObjects.NVDAObject):
 			speech.speakMessage(msg)
 		
 		stopTaskTimer()
+# disable next event_gainFocus 
 		self.appModule.trapGainFocus = True
 		gesture.send()
 		GB_taskTimer = wx.CallLater(300, callback)
 		
 	def script_leftOrRightArrow(self, gesture):
 		global GB_taskTimer
+		print ("script leftOrRightArrow:: %s"%self.__class__)
 		def callback():
 			stopTaskTimer()
 			obj = api.getFocusObject()
+			
 			name = obj.name.split(" ")[-1]
 			digitID = obj.IAccessibleChildID -1
 			digitIDs = TimerControlDigit._selectionFormatToDigitIDs [obj.editFormatID]
 			digitName = _digitNames[digitIDs[digitID]]
-			msg = _unicode("{0} {1}") .format(digitName, name)
+			msg = "%s %s" %(digitName, name)
 			ui.message(msg)
 
 		stopTaskTimer()
 		self.appModule.trapGainFocus = True
 		gesture.send()
 		GB_taskTimer = wx.CallLater(300, callback)
-
-		
+	
+	__gestures = {
+		"kb:NVDA+upArrow": "sayTimer",
+		"kb:upArrow": "upOrDownArrow",
+		"kb:downArrow": "upOrDownArrow",
+		"kb:leftArrow": "leftOrRightArrow",
+		"kb:rightArrow": "leftOrRightArrow",
+		}
 class SelectionTimerControlDigit(TimerControlDigit):
 	def initOverlayClass(self):
+
 		from .au_applicationSettings import ApplicationSettingsManager
 		applicationSettingsManager  = ApplicationSettingsManager()
 		self.editFormat = applicationSettingsManager.getSelectionFormat()
 		tc = au_timerControl.TimerControl(self.parent, self.editFormat)
 		self.editFormatID = tc.selectionFormatID
+class SettingSelectionTimerControlDigit(TimerControlDigit):
+	def initOverlayClass(self):
+		self.bindGesture("kb:shift+f10", "application")
+		printDebug ("SettingSelectionTimerControlDigit initOverlayClass: name= %s, %s, childID= %s"%(self.name, controlTypes.roleLabels.get(self.role), self.IAccessibleChildID))
+		from .au_applicationSettings import ApplicationSettingsManager
+		applicationSettingsManager  = ApplicationSettingsManager()
+		self.editFormat = applicationSettingsManager.getSelectionFormat()
+		tc = au_timerControl.TimerControl(self.parent, self.editFormat)
+		self.editFormatID = tc.selectionFormatID
+	def script_application(self, gesture):
+		speech.speakMessage("Disabled by add-on: format must be modified  in selection toolbar")
+		#gesture.send()
+
+
+class AudioPositionTimerControlDigit(TimerControlDigit):
+	def initOverlayClass(self):
+		from .au_applicationSettings import ApplicationSettingsManager
+		applicationSettingsManager  = ApplicationSettingsManager()
+		self.editFormat = applicationSettingsManager.getAudioTimeFormat ()
+		tc = au_timerControl.TimerControl(self.parent, self.editFormat)
+		self.editFormatID = tc.selectionFormatID
+
+	def script_upOrDownArrow(self, gesture):
+		stopTaskTimer()
+		# audio position time cannot be changed (read only)
+		gesture.send()
+
 
 class TimerRecordTimeControlDigit(TimerControlDigit):
 	def initOverlayClass(self):
@@ -606,7 +788,7 @@ def internal_keyDownEventEx(vkCode,scanCode,extended,injected):
 	queueHandler.queueFunction(queueHandler.eventQueue, startMonitoring)
 	return _winInputHookKeyDownCallback  (vkCode,scanCode,extended,injected)
 
-class AppModule(appModuleHandler.AppModule):
+class AppModule(AppModule):
 	trapGainFocus = False
 	# a dictionnary to map  main script to gestures and install feature option
 	_shellGestures={}
@@ -669,6 +851,7 @@ class AppModule(appModuleHandler.AppModule):
 	
 	def __init__(self, *args, **kwargs):
 		super(AppModule, self).__init__(*args, **kwargs)
+		toggleDebugFlag()
 		au_objects.initialize(self)
 		self._reportFocusOnToolbar = False
 		self._reportSelectionChange = True
@@ -691,6 +874,7 @@ class AppModule(appModuleHandler.AppModule):
 	def chooseNVDAObjectOverlayClasses(self, obj, clsList):
 		controlID = obj.windowControlID
 		role = obj.role
+		printDebug("appModule chooseOverlayClass: %s, %s" %(obj.name, controlTypes.roleLabels.get(obj.role)))
 		obj.isATrack = Track.check(obj)
 		if obj.isATrack:
 			clsList.insert(0, Track)
@@ -698,22 +882,35 @@ class AppModule(appModuleHandler.AppModule):
 			clsList.insert(0, TrackView)
 		elif role == controlTypes.ROLE_BUTTON:
 			clsList.insert(0, Button)
-		elif role == controlTypes.ROLE_STATICTEXT and controlID in [2705, 2706, 2707, 2708, 2709]:
-			if obj.parent and obj.parent.windowControlID == controlID:
-				clsList.insert(0, SelectionTimerControlDigit)
-			else:
+		elif role == controlTypes.ROLE_STATICTEXT and _addonConfigManager.toggleEditSpinBoxEnhancedAnnouncementOption(False):
+			parent = obj.parent
+			if parent is None: return
+			if controlID in [2705, 2706, 2707, 2708, 2709]:
+				if parent.windowControlID == controlID:
+					clsList.insert(0, SelectionTimerControlDigit)
+				else:
+					clsList.insert(0, TimerControlEdit)
+			elif controlID in [10001, 10003]:
+				if parent.windowControlID == controlID:
+					clsList.insert(0, TimerRecordTimeControlDigit)
+				else:
+					clsList.insert(0, TimerControlEdit)
+			elif controlID == 10004:
+				if parent.windowControlID == controlID:
+					clsList.insert(0, TimerRecordDurationControlDigit)
+				else:
+					clsList.insert(0, TimerControlEdit)
+			# in audacity 2.4.1, audio position time has moved.
+			elif parent.windowControlID == 12:
+				clsList.insert(0, AudioPositionTimerControlEdit)
+			elif parent.parent and parent.parent.parent and parent.parent.parent.windowControlID == 12:
+				clsList.insert(0, AudioPositionTimerControlDigit)
+			elif parent.windowClassName == "Button" and parent.windowControlID== 3000:
 				clsList.insert(0, TimerControlEdit)
-		elif role == controlTypes.ROLE_STATICTEXT and controlID in [10001, 10003]:
-			if obj.parent.windowControlID == controlID:
-				clsList.insert(0, TimerRecordTimeControlDigit)
-			else:
-				clsList.insert(0, TimerControlEdit)
-		elif role == controlTypes.ROLE_STATICTEXT and controlID == 10004:
-			if obj.parent.windowControlID == controlID:
-				clsList.insert(0, TimerRecordDurationControlDigit)
-			else:
-				clsList.insert(0, TimerControlEdit)
-				
+			elif parent .parent and parent.parent.parent and parent.parent.parent.windowClassName == "Button" and parent.parent.parent.windowControlID== 3000:
+				clsList.insert(0, SettingSelectionTimerControlDigit)
+		printDebug("appModule chooseOverlayClassout: %s, %s" %(obj.name, controlTypes.roleLabels.get(obj.role)))
+
 	def event_NVDAObject_init(self,obj):
 		pass
 	
@@ -773,13 +970,17 @@ class AppModule(appModuleHandler.AppModule):
 			GB_monitorTimer = None
 	
 	def event_gainFocus(self, obj, nextHandler):
+		printDebug ("audacity appModule event_gainFocus: name= %s, %s, childID= %s"%(obj.name, controlTypes.roleLabels.get(obj.role), obj.IAccessibleChildID))
 		if self.trapGainFocus:
+			api.setFocusObject(obj)
 			self.trapGainFocus = False
+			printDebug ("audacity AppModule event_gainFocus trapped")
 			return
 		if self._reportFocusOnToolbar:
 			self.reportFocusOnToolbar(obj)
 			self._reportFocusOnToolbar = False
 		nextHandler()
+	
 	def event_focusEntered(self, obj, nextHandler):
 		if _addonConfigManager.toggleReportToolbarNameOnFocusEnteredOption(False):
 			if obj.name is not None and  obj.role == controlTypes.ROLE_PANE and  obj.name != "panel" and  obj.name != "":
@@ -788,8 +989,9 @@ class AppModule(appModuleHandler.AppModule):
 	
 	def script_moduleLayer(self, gesture):
 		stopTaskTimer()
+		if not self.inMainWindow(api.getFocusObject()): return
 		# A run-time binding will occur from which we can perform various layered script commands
-		# First, check if a second press of the script was done.
+
 		if self.toggling:
 			self.script_error(gesture)
 			return
@@ -833,9 +1035,18 @@ class AppModule(appModuleHandler.AppModule):
 			# Translators: message to the user when object is not in tracks view.
 			speech.speakMessage(_("Not in tracks view"))
 		return False
+	def inMainWindow (self, obj):
+		# check if obj is in topPanel, track view, or mainPanel
+		if self.inTrackView(obj, False): return True
+		o = obj
+		while o:
+			if o.parent and o.parent.name in ["Top Panel", "Main Panel"]: return True
+			o = o.parent
+		return False
+	
 	def script_reportAudioPosition (self, gesture):
 		stopTaskTimer()
-		if not self.inTrackView(api.getFocusObject()):
+		if not self.inMainWindow(api.getFocusObject()):
 			return
 		tc = au_timerControl.AudioTimerControl()
 		msg = tc.getAudioPositionMessage()
@@ -844,7 +1055,7 @@ class AppModule(appModuleHandler.AppModule):
 	
 	def script_reportSelectionCenter(self, gesture):
 		stopTaskTimer()
-		if not self.inTrackView(api.getFocusObject()):
+		if not self.inMainWindow(api.getFocusObject()):
 			return
 		tc = au_timerControl.SelectionTimers()
 		msg = tc.getSelectionCenterMessage()
@@ -853,7 +1064,7 @@ class AppModule(appModuleHandler.AppModule):
 	
 	def script_reportSelectionDuration(self, gesture):
 		stopTaskTimer()
-		if not self.inTrackView(api.getFocusObject()):
+		if not self.inMainWindow(api.getFocusObject()):
 			return
 		tc = au_timerControl.SelectionTimers()
 		msg = tc.getSelectionDurationMessage()
@@ -862,7 +1073,7 @@ class AppModule(appModuleHandler.AppModule):
 	
 	def script_reportSelectionLimits(self, gesture):
 		stopTaskTimer()
-		if not self.inTrackView(api.getFocusObject()):
+		if not self.inMainWindow(api.getFocusObject()):
 			return
 		tc = au_timerControl.SelectionTimers()
 		msg = tc.getSelectionMessage()
@@ -872,7 +1083,7 @@ class AppModule(appModuleHandler.AppModule):
 	def script_reportSelection (self, gesture):
 		global GB_taskTimer
 		stopTaskTimer()
-		if not self.inTrackView(api.getFocusObject()):
+		if not self.inMainWindow(api.getFocusObject()):
 			return
 		count = scriptHandler.getLastScriptRepeatCount()
 		if count == 0:
@@ -884,7 +1095,7 @@ class AppModule(appModuleHandler.AppModule):
 	
 	def script_reportTransportButtonsState(self, gesture):
 		stopTaskTimer()
-		if not self.inTrackView(api.getFocusObject()):
+		if not self.inMainWindow(api.getFocusObject()):
 			return
 		pressed = False
 		if au_objects.isAvailable("record") and au_objects.isPressed("record"):
@@ -907,34 +1118,30 @@ class AppModule(appModuleHandler.AppModule):
 	
 	def script_reportPlaybackSpeed (self,gesture):
 		stopTaskTimer()
-		if not self.inTrackView(api.getFocusObject()):
-			return
+		if not self.inMainWindow(api.getFocusObject()): return
 		speed = au_objects.playbackSpeedSliderObject().value
 		# Translators: message to the user to report playback speed.
 		ui.message(_("playback speed: %s")%speed)
 	
 	def script_reportPlayMeterPeak(self,gesture):
 		stopTaskTimer()
-		if not self.inTrackView(api.getFocusObject()):
-			return
+		if not self.inMainWindow(api.getFocusObject()): return
+
 		PlayMeterPeak().reportLevel()
 	
 	def script_reportRecordMeterPeak(self,gesture):
 		stopTaskTimer()
-		if not self.inTrackView(api.getFocusObject()):
-			return
+		if not self.inMainWindow(api.getFocusObject()): return
 		RecordMeterPeak().reportLevel()
 	
 	def script_reportRecordingSlider(self, gesture):
 		stopTaskTimer()
-		if not self.inTrackView(api.getFocusObject()):
-			return
+		if not self.inMainWindow(api.getFocusObject()): return
 		RecordingSlider().reportLevel()
 	
 	def script_reportPlaybackSlider(self, gesture):
 		stopTaskTimer()
-		if not self.inTrackView(api.getFocusObject()):
-			return
+		if not self.inMainWindow(api.getFocusObject()): return
 		PlaybackSlider().reportLevel()
 	def runScript(self, gesture):
 		self.bindGestures(self._shellGestures)
@@ -997,9 +1204,7 @@ class AppModule(appModuleHandler.AppModule):
 	
 	def script_test(self, gesture):
 		speech.speakMessage("test audacity")
-		from .au_applicationSettings import ApplicationSettingsManager
-		app = ApplicationSettingsManager()
-		app.getSettings()
+
 
 
 class ShellScriptsListDialog(wx.Dialog):

@@ -157,7 +157,7 @@ class AudioTimerControl(TimerControl):
 		obj = au_objects.audioPositionObject()
 		from .au_applicationSettings import ApplicationSettingsManager
 		applicationSettingsManager  = ApplicationSettingsManager()
-		editFormat = applicationSettingsManager.getSelectionFormat()
+		editFormat = applicationSettingsManager.getAudioTimeFormat()
 		super(AudioTimerControl, self).__init__(obj, editFormat)
 	
 	def getAudioPosition(self):
