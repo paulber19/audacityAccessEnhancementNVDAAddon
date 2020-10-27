@@ -7,6 +7,8 @@ Autor: ADDON_AUTHOR_NAME
 %!includeconf: addon_keys.t2tconf
 URL: ADDON_AUTHOR_URL
 
+Repositorio en GitHub: [ADDON_REPOSITORY ADDON_REPOSITORY]
+
 Descargar:
 - [Versión estable ADDON_VERSION ADDON_DOWNLOAD_SERVER1]
 - [Versión de desarrollo ADDON_DEV_URL]
@@ -35,7 +37,7 @@ Como las siguientes mejoras de accesibilidad:
 - [Anuncio automático de cambios en la posición de audio #HDR100],
 - [Anuncio automático de cambios en la selección #HDR101],
 - [Posibilidad de usar la barra espaciadora o la tecla Intro para pulsar en un botón #HDR102],
-- [Verbalización de los cuadros de edición que definen un tiempo o una duración en la Barra de herramientas de selección de Audacity #HDR103],
+- [Verbalización de los cuadros de selección numérico que definen un tiempo o una duración en la Barra de herramientas de selección de Audacity #HDR103],
 - [y varias otras adaptaciones #hdr104].
 
 
@@ -51,19 +53,29 @@ La versión del complemento puede ser:
 Por defecto, una versión estable se actualiza con la última versión estable (Número de versión superior).
 Sin embargo, es posible actualizar la versión actual estable con una versión de desarrollo de la próxima versión estable. Simplemente marcando la opción "Actualizar también versiones estable hacia versiones de desarrollo" situado en las opciones del complemento, elemento de menú "Actualización".
 
-Una versión de desarrollo se actualiza con una versión de desarrollo más reciente o con su versión estable.
+Una versión de desarrollo se actualiza:
+- con una versión de desarrollo más reciente,
+- con su versión estable,
+- o la última versión estable si la opción anterior no está marcada.
+
 
 El botón "Buscar actualización" situado en  las opciones del complemento,  elemento de menú "Actualización", permite buscar inmediatamente una actualización.
 
+En el caso de una actualización automática, y si se detecta una nueva versión, el cuadro de diálogo "Actualización" aparece para proponer:
+- ya sea la instalación inmediata de la nueva versión,
+- ya sea para posponer la actualización a más tarde. En este caso, la búsqueda se reiniciará como mínimo una hora más tarde.
+
+
+El botón "Qué hay de nuevo" ofrece la posibilidad, de abrir en el navegador, el historial del complemento y asi poder conocer las novedades de la versión propuesta.
 
 ++ Compatibilidad ++
-Este complemento ha sido probado con Audacity 2.4.1,  2.3.3 y 2.3.2.Las versiones anteriores de Audacity no son compatibles.
+Este complemento ha sido probado con Audacity 2.4.1,  2.3.3 y 2.3.2. Las versiones anteriores de Audacity no son compatibles.
 
 
 ++ Recomendaciones de configuración ++
 Para un funcionamiento correcto del complemento, es necesario:
 - Conservar la visualización por defecto creado durante la instalación de Audacity, especialmente las barras de herramientas. Audacity permite restablecer esta visualización con el submenú "Restablecer barras de herramientas" del submenú "Barras de herramientas" del menú "Ver". Sin embargo, es necesario reiniciar  Audacity después de usarlo.
-- Conservar el formato de visualización del tiempo establecido por defecto o elegir entre uno de los formatos especificados en la sección [Verbalización de los cuadros de edición que definen un tiempo o una duración en la Barra de herramientas de selección de Audacity #HDR103]
+- Conservar el formato de visualización del tiempo establecido por defecto o elegir entre uno de los formatos especificados en la sección [Verbalización de los cuadros de selección numérico que definen un tiempo o una duración en la Barra de herramientas de selección de Audacity #HDR103]
 
 
 Otras recomendaciones de configuración (para más información ver la ["guía de Audacity" audacityGuide.html] ):
@@ -87,10 +99,10 @@ En el cuadro de diálogo "Gestos de Entrada" de NVDA, los scripts proporcionados
 Para los scripts que se pueden iniciar mediante una órden del intérprete, esto se indica después de la descripción del script.
 
 
-De forma predeterminada, la gran mayoría de los scripts que pueden ser lanzados mediante el intérprete de órdenes no se asignan a ningún gesto de órden.
+De forma predeterminada, la gran mayoría de los scripts que pueden ser lanzados mediante el intérprete de órdenes no se asignan a ningún gesto de entrada.
 
 
-Éste se lanza con la ayuda del gesto de órden "KEY_SHELL". Un pitido es audible.
+Éste se lanza con la ayuda del gesto de entrada "KEY_SHELL". Un pitido es audible.
 
 
 Hoy en día, estas órdenes no son modificables.
@@ -196,9 +208,9 @@ En la reproducción de audio o no, los siguientes atajos de Audacity (definidos 
 - "espacio": reproducir/detener
 
 
-En la reproducción de audio  detenido y después de la activación del atajo, la información del cuadro de edición "posición de audio" de la barra de herramientas "Selección" se anuncia automáticamente si un cambio ha tenido lugar y bajo la forma:
-- Anuncio de la etiqueta  del cuadro de edición "posición de audio",
-- Anuncia el contenido del cuadro   de edición con el formateo del tiempo.
+En la reproducción de audio  detenido y después de la activación del atajo, la información del cuadro de selección numérico "posición de audio" de la barra de herramientas "Selección" o "Tiempos" dependiendo la versión de Audacity se anuncia automáticamente si un cambio ha tenido lugar y bajo la forma:
+- Anuncio de la etiqueta del cuadro de selección numérico "posición de audio",
+- Anuncia el contenido del cuadro   de selección numérico con el formateo del tiempo.
 
 
 El retorno de la posición de audio  al inicio de selección  es indicado.
@@ -218,9 +230,9 @@ Los siguientes atajos de Audacity (definidos por defecto) permite de establecer 
 - "Control + Mayúscula + flecha izquierda": contraer la selección a la derecha.
 
 
-Si la opción "Anunciar automáticamente los cambios en la selección" está marcada, En la reproducción de audio  detenido y después de la activación del atajo, se anuncian los cambios en las  selección.
-Dependiendo del tipo de atajo, uno u otro  o ambos en los cuadros de edición de selección de la barra de herramientas "Selección" se anuncian bajo la forma:
-- Anuncia la etiqueta del cuadro de edición ("inicio", "final", "centrado", "duración" dependiendo de la elección de la vista),
+Si la opción "Anunciar automáticamente los cambios en la selección" en la categoría "Opciones" en Opciones de configuración del complemento está marcado, En la reproducción de audio  detenido y después de la activación del atajo, se anuncian los cambios en las  selección.
+Dependiendo del tipo de atajo, uno u otro  en los cuadros de selección numérico de la barra de herramientas "Selección" se anuncian bajo la forma:
+- Anuncia la etiqueta del cuadro de selección numérico ("inicio", "final", "centrado", "duración" dependiendo de la elección de la vista),
 - Anuncio de su contenido con el formateo del tiempo.
 
 
@@ -236,19 +248,21 @@ En Audacity, la barra espaciadora está programada para iniciar y detener la rep
 
 Para pulsar en el botón, se debe utilizar la tecla "Intro" pero esto mueve el  foco en el siguiente elemento de la ventana y  ningún cambio   de estado del botón  se verbaliza.
 
-Si la opción"Usar la barra espaciadora o la tecla Intro para pulsar en un botón" está marcada, entonces es posible pulsar un botón con la barra espaciadora o la tecla Intro y los cambios se anuncian.
+Si la opción"Usar la barra espaciadora o la tecla Intro para pulsar en un botón" en la categoría "Opciones" en Opciones de configuración del complemento está marcado, entonces es posible pulsar un botón con la barra espaciadora o la tecla Intro y los cambios se anuncian.
 
 
-++ Verbalización de los cuadros de edición del tiempo en la barra de herramientas de selección de Audacity ++[HDR103]
-La barra de herramientas de selección de Audacity (o Audacity Sélection Toolbar nombre no traducido) muestra los cuadros de edición de posición de los cursores "posición de audio", "inicio de la selección", "final de la selección", "centro de la selección" o "duración de la selección".
+++ Verbalización de los cuadros de selección numérico del tiempo de Audacity ++[HDR103]
+Audacity muestra los cuadros de selección numérico para mostrar un tiempo como por ejemplo, "posición de audio", "inicio de la selección", "final de la selección", "centro de la selección" o "duración de la selección".
 
-Estos cuadros de edición muestra la información según  el formato definido por el usuario mediante el menú contextual.
+Estos cuadros de edición muestra la información según  el formato definido por el usuario mediante el menú contextual del campo.
 
 La información es una serie de dígitos. Cada dígito pertenece a un grupo de dígitos tales como las horas, minutos, segundos, etc.
 
 Para cambiar esta información, debe estar colocado en el dígito a modificar (con la flecha derecha  o izquierda)  y aumentarlo o disminuirlo con la flecha arriba o abajo.
 
-Este complemento permite una mejor verbalización indicando un tiempo en horas, minutos y segundos, indicando la naturaleza del dígito que es seleccionado y el valor del grupo del dígito modificado.
+Por defecto, este complemento permite una mejor verbalización indicando un tiempo en horas, minutos y segundos, indicando la naturaleza del dígito que es seleccionado y el valor del grupo del dígito modificado en los cuadros de selección numérico citado como ejemplo anteriormente.
+
+Esto se puede deshabilitar desmarcando la opción "Mejorar el anuncio en los cuadros  de selección numérico" en la categoría "Opciones" en Opciones de configuración del complemento
 
 Sólo los siguientes formatos se tienen en cuenta:
 - segundos,
@@ -260,9 +274,9 @@ Sólo los siguientes formatos se tienen en cuenta:
 - muestras.
 
 
-La tecla "NVDA + flecha arriba" permite verbalizar la información del cuadro de edición.
+La tecla "NVDA + flecha arriba" permite verbalizar la información del cuadro de selección numérico.
 
-Los mismos mecanismos existen en otros cuadros de diálogo que muestra los cuadros de edición de tiempo en el mismo estilo que el cuadro de diálogo "Grabación programada".
+Los mismos mecanismos existen en otros cuadros de diálogo que muestra los cuadros de selección numérico de tiempo en el mismo estilo que el cuadro de diálogo "Grabación programada".
 
 ++ Otras adaptaciones ++[hdr104]
 - Las pistas  ya No se anuncian como líneas de una tabla y la vista de pista como una tabla.
@@ -272,94 +286,4 @@ Los mismos mecanismos existen en otros cuadros de diálogo que muestra los cuadr
 
 
 + Historial +
-++ v1.3 (20/10/2019) ++
-- Compatibilidad con las versiones alpha de NVDA 2019.3.
-- Búsqueda automática de actualización.
-- Corrección en la documentación.
-- Traducción del complemento en español por Rémy Ruiz, cambios por Gunther Melendez.
-
-
-++ v1.2 (01/06/2019) ++
-- Compatibilidad con NVDA 2019.2 ((actualización del manifest.ini)
-
-
-++ v1.1 (16/03/2019) ++
-- Modificación del manifest.ini para la compatibilidad con NVDA 2019.1.0
-- Reemplazo del termino "module complémentaire " por "extension impuesto por los traductores de NVDA en francés).
-- Preparación para la compatibilidad con Python 3.
-
-
-++ v1.0.2 (28/12/2018) ++
-- Corregido el anuncio erróneo de la selección.
-
-
-++ v1.0.1 (22/12/2018) ++
-- Pequeña corrección en la documentación.
-
-
-++ v1.0 (20/12/2018) ++
-- Se reinicia el número de versión en 1.0 debido al cambio del nombre  del complemento,
-- Compatibilidad con Audacity 2.3,
-- Mostrar    los scripts   en una lista en el diálogo "Scripts del intérprete de órdenes" con la posibilidad de lanzar  el script seleccionado,
-- Mejora de la accesibilidad en los cuadros de edición de tiempo en el cuadro de diálogo "Grabación programada",
-- Reelaboración importante del código.
-
-
-++ v3.2 (19/06/2018) ++
-- Compatibilidad con NVDA 2018.2,
-- Gestión de   las opciones  del complemento durante  la instalación o desinstalación del complemento (implementación del archivo install.py),
-- Limpieza y reorganización del código.
-
-
-++ v3.1 (07/01/2018) ++
-- Implementación del complemento bajo la forma addon template y bajo  el repositorio de GitHub.
-
-
-++ v3.0.1 (04/01/2018) ++
-- Corrección de la no visualización  del menú "Opciones de configuración del complemento".
-- Añadida la Directiva para la compatibilidad con Python 3.
-
-
-++ v3.0 (11/2017) ++
-- Compatibilidad con Audacity 2.2.0,
-- Puesta en marcha de un interceptor de las teclas del teclado en reemplazo de un temporizador de monitoreo,
-- Puesta en marcha de un archivo de configuración,
-- Nuevos scripts:
- - Anunciar los vúmetros y los cursores de reproducción o de grabación,
- - Anunciar la duración de la selección,
- - Anunciar la posición del centro de la selección,
-- Anunciar la velocidad de reproducción,
- - Mostrar la guía de Audacity,
-- Mostrar el manual del usuario para el complemento.
-
-
-- Restricción del uso de ciertos scripts en  la vista de pista de acuerdo a la documentación,
-
-
-- Estructuración del complemento para el repositorio en GitHub,
-- Actualizado el manual del usuario.
-
-
-++ v2.3 (08/2017) ++
-- Script "alt+control+f4" para habilitar o deshabilitar el anuncio de cambios de cambios en la selección,
-- Compatibilidad con Audacity v2.1.3,
-- Reanudación del código.
-
-
-++ v2.2 (06/2015) ++
-- Reelaboración completa del código
-
-
-++ v2.1 (10/2014) ++
-- Compatibilidad con NVDA 2014.3
-- Compatibilidad con Audacity v2.06
-
-
-++ v2.0 (05/2014) ++
-- Puesta en marcha de un monitoreo de los campos posición y selección para anunciar los cambios.
-
-
-++ v1.0 (01/2014) ++
-- Creación del complemento.
-
-
+El historial de las versiones del complemento está en el archivo ["changes.html" changes.html]

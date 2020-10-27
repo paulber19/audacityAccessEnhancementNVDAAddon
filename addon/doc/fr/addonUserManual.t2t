@@ -6,8 +6,10 @@ Auteur: ADDON_AUTHOR_NAME
 %!includeconf: addon_keys.t2tconf
 URL: ADDON_AUTHOR_URL
 
+Dépot GitHub: [ADDON_REPOSITORY ADDON_REPOSITORY]
+
 Téléchargement:
-- [Version stable  ADDON_VERSION ADDON_DOWNLOAD_SERVER1]
+- [Version stable ADDON_VERSION ADDON_DOWNLOAD_SERVER1]
 - [Version de développement ADDON_DEV_URL]
 
 
@@ -21,12 +23,12 @@ Compatibilité:
 
 + Introduction +
 ++ Fonctionnalités ++
-Cette extension  tente d'améliorer l'accessibilité de l'éditeur audio multi-piste Audacity (®) en  apportant les scripts:
+Cette extension tente d'améliorer l'accessibilité de l'éditeur audio multi-piste Audacity (®) en apportant les scripts:
 - [Annoncer la position du curseur audio #HDR1],
-- [Annoncer les informations de sélection #HDR2], 
+- [Annoncer les informations de sélection #HDR2],
 - [Annoncer l'état des boutons "Lecture" et "Pause" #HDR3],
-- [Annoncer le niveau des vumètres de crête de lecture  ou d'enregistrement #hdr4],
-- [Annoncer le niveau  des potentiomètres de lecture ou d'enregistrement #hdr5],
+- [Annoncer le niveau des vumètres de crête de lecture ou d'enregistrement #hdr4],
+- [Annoncer le niveau des potentiomètres de lecture ou d'enregistrement #hdr5],
 - [afficher le guide d'audacity #hdr6].
 
 
@@ -34,42 +36,52 @@ Ainsi que les améliorations d'accessibilité suivantes:
 - [Annonce automatique de la position audio #HDR100],
 - [Annonce automatique de la sélection #HDR101],
 - [Utilisation de la barre d'espace ou la touche Entrée pour appuyer sur un bouton #HDR102],
-- [Vocalisation des zone de sélection numérique d'un temps de la barre d'outils Sélection Audacity  #HDR103],
+- [Vocalisation des zone de sélection numérique d'un temps de la barre d'outils Sélection Audacity #HDR103],
 - [et diverses autres adaptations #hdr104].
 
 
 
 ++ mise à jour ++
 La mise à jour de l'extension se fait, par défaut, automatiquement peu de temps après le démarrage de NVDA (entre 20 et 600 secondes) et au maximum une fois par jour.
-Il est possible de désactiver cette mise à jour en décochant l'option "Rechercher automatiquement les mises à jour"  se trouvant dans la catégorie "Mise à jour" des paramètres de l'extension.
+Il est possible de désactiver cette mise à jour en décochant l'option "Rechercher automatiquement les mises à jour" se trouvant dans la catégorie "Mise à jour" des paramètres de l'extension.
 La version de l'extension peut être:
 - soit une version stable: son numéro de version est du type "1.0" par exemple.
-- soit une version de  développement: son numéro de version est alors du type "1.0-dev1", ou "1.0-rc1", ou "1.0-beta2".
+- soit une version de développement: son numéro de version est alors du type "1.0-dev1", ou "1.0-rc1", ou "1.0-beta2".
 
 
-Par défaut, une  version stable est mise à jour avec une version stable plus récente (numéro de version supérieur).
-Mais il est possible de mettre à jour la version stable courante avec une version de développement de la prochaine version stable. Il suffit de cocher l'option "Mettre aussi à jour les versions stable vers les versions de développement  " situé dans les paramètres de l'extension, élément de menu "Mise à jour".
+Par défaut, une version stable est mise à jour avec une version stable plus récente (numéro de version supérieur).
+Mais il est possible de mettre à jour la version stable courante avec une version de développement de la prochaine version stable. Il suffit de cocher l'option "Mettre aussi à jour les versions stable vers les versions de développement " situé dans les paramètres de l'extension, élément de menu "Mise à jour".
 
-Une version de développement  est mise à jour avec une version de développement plus récente ou avec sa version stable.
+Une version de développement est mise à jour:
+- avec une version de développement plus récente,
+- avec sa version stable,
+- ou avec la dernière version stable si l'option précédente est pas cochée.
+
 
 Le bouton "Rechercher une mise à jour" placé dans la catégorie "Mise à jour" des paramètres de l'extension, permet de rechercher immédiatement une mise à jour.
 
+Dans le cas d'une mise à jour automatique et si une nouvelle version est détectée, la boite de dialogue "Mise à jour" s'affiche pour proposer:
+- soit l'installation immédiate de la nouvelle version,
+- soit de reporter la mise à jour à plus tard. Dans ce cas, la recherche se relancera au minimum une heure plus tard.
+
+
+Le bouton "Quoi de neuf" offre la possibilité d'ouvrir, dans le navigateur, l'historique de l'extension et ainsi pouvoir connaitre les nouveautés de la version proposée.
 
 ++ Compatibilité ++
-Cette extension a été testée avec Audacity version  2.4.2, 2.4.1, 2.3.3 et 2.3.2. Les versions précédentes d'Audacity ne sont pas soutenues.
+Cette extension a été testée avec Audacity version 2.4.2, 2.4.1, 2.3.3 et 2.3.2. Les versions précédentes d'Audacity ne sont pas soutenues.
 
 
 
 ++ Recommandations de configuration ++
 Pour un bon fonctionnement de l'extension, il est nécessaire de :
 - conserver l'affichage par défaut mise en place lors de l'installation d'audacity, surtout celui des barres d'outils. Audacity permet de réinitialiser l'affichage de celles-ci avec le sou-menu "Réinitialiser les barres d’outils" du sous-menu "barres d'outils" du menu "Affichage". Mais il est nécessaire de redémarrer Audacity après l'avoir utilisé.
-- Conserver le format  d'affichage du temps défini par défaut ou choisir  parmi un des formats indiqués au chapitre [Vocalisation des zones d'de sélection numérique du temps dans la boite d'outils Sélection Audacity #HDR103]
+- Conserver le format d'affichage du temps défini par défaut ou choisir parmi un des formats indiqués au chapitre [Vocalisation des zones d'de sélection numérique du temps dans la boite d'outils Sélection Audacity #HDR103]
 
 
-autres recommandations  de configuration(voir pour plus d'information le  ["guide d'Audacity" audacityGuide.html] ):
+autres recommandations de configuration(voir pour plus d'information le ["guide d'Audacity" audacityGuide.html] ):
 - faire afficher le menu "Extra",
 - désactiver la création de marqueur par simple frappe de touche,
-- activer l'affichage  de la boite de dialogue  "Création de marqueur",
+- activer l'affichage de la boite de dialogue "Création de marqueur",
 - installer le jeu complet de raccourcis,
 - modifier les raccourcis génants pour le clavier de type "Azerty".
 - désactiver la sélection automatique.
@@ -77,29 +89,29 @@ autres recommandations  de configuration(voir pour plus d'information le  ["guid
 
 
 ++ Activation des scripts ++
-Chaque  script peut être  activé de deux manière:
+Chaque script peut être activé de deux manière:
 - soit à l'aide d'un geste de commande classique ,
 - soit en utilisant l'interpréteur de commandes de l'extension.
 
 
-Dans la boite de dialogue "Gestes de commendes " de NVDA  ,  les scripts apportés par l'extension sont placées dans la catégorie "Éditeur multi-piste Audacity: complément d'accessibilité".
+Dans la boite de dialogue "Gestes de commendes " de NVDA, les scripts apportés par l'extension sont placées dans la catégorie "Éditeur multi-piste Audacity: complément d'accessibilité".
 
-Pour les scripts pouvant être lancés par une commande  de l'interpréteur, cell-ci est indiquée à la suite de la description du script.
-
-
-Par défaut, la grande majorité des scripts pouvant être lancer par l'interpréteur de commandes  n'est affectée à aucun geste de commande.
+Pour les scripts pouvant être lancés par une commande de l'interpréteur, cell-ci est indiquée à la suite de la description du script.
 
 
-L'interpréteur de commande  se lance à l'aide du geste de commande "KEY_SHELL". Un bip sonnore est alors audible.
+Par défaut, la grande majorité des scripts pouvant être lancer par l'interpréteur de commandes n'est affectée à aucun geste de commande.
+
+
+L'interpréteur de commande se lance à l'aide du geste de commande "KEY_SHELL". Un bip sonnore est alors audible.
 
 
 Aujourd'hui, les commandes ne sont pas modifiables.
 
-La commande "SHELL_KEY_HELP" de l'interpréteur  liste l'ensemble des  commandes et la commande "SHELL_KEY_DISPLAY_USER_MANUAL" affiche le manuel d'utilisation de l'extension.
+La commande "SHELL_KEY_HELP" de l'interpréteur liste l'ensemble des commandes et la commande "SHELL_KEY_DISPLAY_USER_MANUAL" affiche le manuel d'utilisation de l'extension.
 
 L'interpréteur de commandes s'arrête soit:
 - en tapant la touche "Echapp",
-- soit automatiquement  si une commande est tapée. Si cette commend ne correspond à aucune fonctionnalité, un bip sonore le signale.
+- soit automatiquement si une commande est tapée. Si cette commend ne correspond à aucune fonctionnalité, un bip sonore le signale.
 
 
 
@@ -121,7 +133,7 @@ Ce script se lance par la commande "SHELL_KEY_AUDIO_POSITION" de l'interpréteur
 
 Aucun geste de commande ne lui est affecté par défaut.
 
-Il annonce  le temps indiqué dans le champ "position audio" de la barre d'outils "Sélection" (ou Audacity selection Toolbar",nom non traduit).
+Il annonce le temps indiqué dans le champ "position audio" de la barre d'outils "Sélection" (ou Audacity selection Toolbar",nom non traduit).
 
 ++ Annonce des informations de sélection ++[hdr2]
 Pour utiliser ce script, il faut que le focus soit dans la vue de piste.
@@ -149,7 +161,7 @@ Il se lance par la commande "SHELL_KEY_BUTTONS_STATE" de l'interpréteur.
 
 Par défaut, aucun geste de commande ne lui est affecté.
 
-Il annonce l'état  "Enfoncé" des boutons "Lecture",  "Pause" et "Enregistrement".
+Il annonce l'état "Enfoncé" des boutons "Lecture", "Pause" et "Enregistrement".
 
 Dans le cas où aucun bouton n'est enfoncé, l'annonce "Aucun bouton enfoncé" est diffusée.
 
@@ -165,7 +177,7 @@ Les scripts suivants permettent de connaitre les niveaux de ces vumètres (quand
 Par défaut, aucun geste de commande ne leur est affecté.
 
 ++ Annonce du niveau du curseur des potentiomètres de lecture ou enregistrement ++[hdr5]
-La barre d'outils de mixage (ou "Audacity mixer Toolbar",  nom non traduit) présente les potentiomètres de lecture et d'enregistrement permettant de régler les niveaux de lecture ou d'enregistrement.
+La barre d'outils de mixage (ou "Audacity mixer Toolbar", nom non traduit) présente les potentiomètres de lecture et d'enregistrement permettant de régler les niveaux de lecture ou d'enregistrement.
 
 Les scripts suivants permettent de connaitre les niveaux de ces curseurs sans bouger le focus de la vue de pistes:
 - annoncer le niveau du curseur de lecture: commande "SHELL_KEY_SLIDERPLAYBACK_REPORT" de l'interpréteur,
@@ -179,12 +191,12 @@ Ce script se lance par la commande "SHELL_KEY_DISPLAY_GUIDE" de l'interpréteur.
 
 Par défaut, aucun geste de commande ne lui est affecté.
 
-Il permet de faire afficher le guide  d'Audacity écrit par David Bailes pour les utilisateurs du lecteur d'écran JAWS (C).
+Il permet de faire afficher le guide d'Audacity écrit par David Bailes pour les utilisateurs du lecteur d'écran JAWS (C).
 
 +Améliorations d'accessibilité +
 ++ Annonce automatique de la position audio ++[hdr100]
 En lecture audio ou non, les raccourcis suivants d'Audacity (définis par défaut) permettent de définir ou de déplacer le curseur audio:
-- "x" lecture / stop  et positionnement du curseur audio
+- "x" lecture / stop et positionnement du curseur audio
 - "flèche gauche": petit saut à gauche,
 - "flèche droite": petit saut à droite,
 - "début": saut au début,
@@ -196,7 +208,7 @@ En lecture audio ou non, les raccourcis suivants d'Audacity (définis par défau
 - "espace": lecture /stop
 
 
-En lecture audio arrêtée et après l'activation du raccourci, l'information de la zone de sélection numérique  "position audio" de la barre d'outils "Sélection"ou "Temps suivant la version d'Audacity, est automatiquement annoncé  si un changement a eu lieu et sous la forme:
+En lecture audio arrêtée et après l'activation du raccourci, l'information de la zone de sélection numérique "position audio" de la barre d'outils "Sélection"ou "Temps suivant la version d'Audacity, est automatiquement annoncé si un changement a eu lieu et sous la forme:
 - annonce du libellé de la zone de sélection numérique "position audio",
 - annonce du contenu de la zone de sélection numérique avec formatage du temps
 
@@ -218,17 +230,17 @@ Les raccourcis suivants d'Audacity (définis par défaut) permettent de définir
 - "Control + Majuscule + flèche gauche": Contracter la sélection à droite.
 
 
-Si l'option "Annoncer automatiquement les changements de sélection" de la catégorie "Options" des paramètres de l'extension est cochée,  En lecture arrêtée et après l'activation du raccourci, les   changements de sélection sont annoncés
-Suivant le type de raccourci, l'une  ou/et l'autre  des zones de sélection numérique  de la barre d'outils "Sélection" sont annoncés sous la forme:
+Si l'option "Annoncer automatiquement les changements de sélection" de la catégorie "Options" des paramètres de l'extension est cochée, En lecture arrêtée et après l'activation du raccourci, les changements de sélection sont annoncés
+Suivant le type de raccourci, l'une ou/et l'autre des zones de sélection numérique de la barre d'outils "Sélection" sont annoncés sous la forme:
 - annonce du libellé de la zone de sélection numérique ("début", "fin", "centré", "durée" suivant le choix d'affichage),
 - annonce de son contenu avec formatage du temps,
 
 
-Comme tous les libellés annoncés sont ceux qui sont affichés par Audacity, il peut y avoir des incohérences dues à la traduction  ou au codage (par exemple, sélection fin au lieu de fin de la sélection", "durée sélection" au lieu de "longueur de la sélection").
+Comme tous les libellés annoncés sont ceux qui sont affichés par Audacity, il peut y avoir des incohérences dues à la traduction ou au codage (par exemple, sélection fin au lieu de fin de la sélection", "durée sélection" au lieu de "longueur de la sélection").
 
-Ces raccourcis  peuvent être modifiés par l'utilisateur sans impacter ce fonctionnement.
+Ces raccourcis peuvent être modifiés par l'utilisateur sans impacter ce fonctionnement.
 
-La commande "SHELL_KEY_TOGGLE_AUTOMATIC_SELECTION_REPORT" de l'interpréteur de l'extension  permet d'activer ou de désactiver cette annonce des changements de sélection quand celle-ci devient gênante.
+La commande "SHELL_KEY_TOGGLE_AUTOMATIC_SELECTION_REPORT" de l'interpréteur de l'extension permet d'activer ou de désactiver cette annonce des changements de sélection quand celle-ci devient gênante.
 Elle fait basculer l'état de l'option "Annoncer automatiquement les changements de sélection" de l'état "coché" à l'état "décoché" ou réciproquement.
 
 ++ Utilisation de la barre d'espace ou de la touche Entrée pour appuyer sur un bouton ++[HDR102]
@@ -236,30 +248,30 @@ Dans Audacity, la barre d'espace est prévue pour lancer ou arrêter la lecture 
 
 Pour appuyer sur le bouton, il faut utiliser la touche "Entrée" mais cela déplace le focus sur l'élément suivant de la fenêtre et aucun changement d'état du bouton n'est vocalisé.
 
-Si l'option "Utiliser la barre d'espace ou la touche Entrée pour appuyer sur un bouton" de la catégorie "Options" des paramètres de l'extension est cochée, il est alors possible d'appuyer  sur un bouton avec la barre d'espace ou la touche Entrée et les changements sont alors annoncés.
+Si l'option "Utiliser la barre d'espace ou la touche Entrée pour appuyer sur un bouton" de la catégorie "Options" des paramètres de l'extension est cochée, il est alors possible d'appuyer sur un bouton avec la barre d'espace ou la touche Entrée et les changements sont alors annoncés.
 
 
 ++ Vocalisation des zones de sélection numérique du temps Audacity ++[HDR103]
-Audacity  présente des zones de sélection numérique pour afficher un temps comme par exemple:   lla position audio, le début de sélection, la fin de sélection, le centre de sélection,  la durée de sélection.
+Audacity présente des zones de sélection numérique pour afficher un temps comme par exemple: lla position audio, le début de sélection, la fin de sélection, le centre de sélection, la durée de sélection.
 
 Ces zones d'édition présentent l'information suivant le format défini par l'utilisateur à l'aide du menu contextuel de la zone.
 
-L'information est une suite de chiffres . Chaque  chiffre appartient à un groupe de chiffre comme les heures, minutes, secondes, etc.
+L'information est une suite de chiffres . Chaque chiffre appartient à un groupe de chiffre comme les heures, minutes, secondes, etc.
 
-Pour modifier cette information , il faut se placer sur le chiffre à modifier  (par flèche droite ou gauche)  et l'augmenter ou le diminuer avec les flèches haute ou bas.
+Pour modifier cette information , il faut se placer sur le chiffre à modifier (par flèche droite ou gauche) et l'augmenter ou le diminuer avec les flèches haute ou bas.
 
-Par défaut, Cette extension permet une meilleure vocalisation  en indiquant un temps en heure, minute et secondes , en   indiquant la nature du chiffre qui est sélectionné et   la valeur du groupe du chiffre modifié pour les zones de sélecction numérique citée en exemple ci-dessus.
+Par défaut, Cette extension permet une meilleure vocalisation en indiquant un temps en heure, minute et secondes , en indiquant la nature du chiffre qui est sélectionné et la valeur du groupe du chiffre modifié pour les zones de sélecction numérique citée en exemple ci-dessus.
 
-Ceci peut être désactivé  en décochant l'option "Améliorer l'annonce des zones de sélection numérique" de la catégorie "Options" des paramètres de l'extension.
+Ceci peut être désactivé en décochant l'option "Améliorer l'annonce des zones de sélection numérique" de la catégorie "Options" des paramètres de l'extension.
 
 
 Seules les format suivants sont pris en compte:
 - secondes,
 - HH:MM:SS,,
-- jj:hh:mm:ss  ,
-- hh:mm:ss + centièmes  ,
-- hh:mm:ss + millisecondes  ,
-- hh:mm:ss + échantillons  ,
+- jj:hh:mm:ss,
+- hh:mm:ss + centièmes,
+- hh:mm:ss + millisecondes,
+- hh:mm:ss + échantillons,
 - échantillons.
 
 
@@ -268,133 +280,11 @@ La touche "NVDA + flèche haut" permet de faire vocaliser l'information de la zo
 Les mêmes mécanismes sont mis en place dans d'autre boites de dialogue qui présentent des zones de sélection numérique de temps du même style, comme la boite de dialogue "Enregistrement temporisé".
 
 ++ Autres adaptations ++[hdr104]
-- Les pistes  ne sont plus annoncées comme étant des lignes d'un tableau et la vue de piste comme un tableau.
+- Les pistes ne sont plus annoncées comme étant des lignes d'un tableau et la vue de piste comme un tableau.
 - L'état au sens NVDA (sélection par le curseur) "non sélectionné" d'une piste n'est plus vocalisé.
 - l'absence de piste quand le focus arrive dans la vue de piste est annoncée.
-- Le nom des barres d'outils est annoncé lors   du déplacement du focus par "control+f6" ou "majuscule+ control+f6" (peut-être désactivé par configuration de l'option "Annoncer le nom des barres d'outils").
+- Le nom des barres d'outils est annoncé lors du déplacement du focus par "control+f6" ou "majuscule+ control+f6" (peut-être désactivé par configuration de l'option "Annoncer le nom des barres d'outils").
 
 
 + Historique +
-++ v2.0 (01/08/2020) ++
-Compatibilité avec audacity 2.4.2 et 2.4.1
-- compatibilité avec NVDA 2020.2
-- ajout de l'option pour désactiver l'annonce améliorée des zones de sélection numérique.
-- présentation des paramètres de l'extension sous forme de catégories.
-- modification du code pour rechercher les objets avec leur controlID
-
-
-++ v1.4.5 (19/05/2020) ++
-Correction de bugs:
-- mauvais support de la version 2.3.2.
-
-
-++ v1.4.4 (11/05/2020) ++
-Ajout traduction turque
-
-++ v1.4.3 (08/05/2020) ++
-Corrections de bogues:
-- mauvaise détection de la barre d'outils "Transport".
-- erreur lorsque le focus  arrives sur un timer  dans le dialogue "changer la vitesse".
-
-
-
-++ v1.4.2 (09/04/2020) ++
-Ajout traduction arabe.
-++ v1.4.1 (03/04/2020) ++
-Correction de l'historique des changements de l'extension.
-
-++ v1.4 (03/04/2020) ++
-- mise en compatibilité avec NVDA 2020.1,
-- mise en conformité avec NVDA pour le test de compatibilité des extensions avec NVDA.
-
-
-++ v1.3 (20/10/2019) ++
-- Compatibilité avec les versions alpha de NVDA 2019.3.
-- recherche de mise à jour automatique.
-- correction de la documentation.
-- traduction de l'extension en Espagnol par Rémy Ruiz, changements par Gunther Melendez.
-
-
-++ v1.2 (01/06/2019) ++
-Compatibilité avec NVDA 2019.2 (mise à jour du manifest.ini)
-
-++ v1.1 (16/03/2019) ++
-- modification du manifest.ini pour compatibilité avec NVDA 2019.1.0
-- remplacement du terme "module complémentaire" par "extension" imposé par les traducteurs de NVDA.
-- préparation à la compatibilité avec python 3.
-
-
-++ v1.0.2 (28/12/2018) ++
-Correction de la mauvaise annonce de la sélection.
-
-
-++ v1.0.1 (22/12/2018) ++
-Petite correction de documentation.
-
-
-++ v1.0 (20/12/2018) ++
--Le numéro de version repart à 1.0 à cause  du changement du nom de l'extension,
-- compatibilité avec audacity 2.3,
-- affichage des  scripts   sous forme de liste dans le dialogue "Scripts de l'interpréteur" avec la possibilité de lancer le script sélectionné,
-- amélioration de l'accessibilité des zones d'édition des temps dans la boite de dialogue "Enregistrement temporisé",
-- refonte importante du code.
-
-
-++ v3.2 (19/06/2018) ++
-- compatibilité avec NVDA 2018.2,
-- gestion des paramètres  de l'extension à l'installation ou désinstallation de l'extension (mise en place du fichier install.py),
-- nettoyage et réorganisation du code.
-
-
-++ v3.1 (07/01/2018) ++
-- mise en place de l'extension sous la forme addon template et sous dépot github.
-
-
-++ v3.0.1 (04/01/2018) ++
-- correction du non affichage menu "Paramètres de configuration de l'extension".
-- ajout directive pour compatibilité avec python 3.
-
-
-++ v3.0 (11/2017) ++
-- compatibilité avec Audacity 2.2.0,
-- mise en place d'un intercepteur de touches clavier en remplacement du temporisateur de surveillance,
-- mise en place d'un fichier de configuration,
-- nouveaux scripts:
- - annoncer les vumètres et curseurs de lecture ou enregistrement,
- - annoncer la durée de la sélection,
- - annoncer la position du centre de la sélection,
-- annoncer la vitesse de lecture,
- - afficher le guide d'Audacity,
-- afficher le manuel utilisateur de l'extension.
-
-
--  restriction de l'utilisation de certains  scripts à  la vue de piste conformément à la documentation,
-
-
-- structuration de l'extension pour le dépot sur github.
-- mise à jour du manuel utilisateur.
-
-
-++ v2.3 (08/2017) ++
-- script "alt+control+f4" pour activer ou désactiver l'annonce des changements de sélection,
-- compatibilité avec audacity v2.1.3,
-- reprise du code.
-
-
-++ v2.2 (06/2015) ++
-- restructuration du code
-
-
-++ v2.1 (10/2014) ++
-- compatibilité avec NVDA 2014.3
-- compatibilité avec Audacity v2.06
-
-
-++ v2.0 (05/2014) ++
-- mise en place d'une surveillance des champ position et sélection pour annoncer les changements.
-
-
-++ v1.0 (01/2014) ++
-Création de l'extension.
-
-
+L'historique des versions de cette extension est dans le fichier ["changes.html" changes.html]

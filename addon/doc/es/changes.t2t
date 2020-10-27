@@ -1,0 +1,144 @@
+ADDON_SUMMARY - Historial
+Autor: ADDON_AUTHOR_NAME
+
+
+%!includeconf: ../addon_global.t2tconf
+%!includeconf: addon_informations.t2tconf
+
+URL: ADDON_AUTHOR_URL
+
+Repositorio en GitHub: [ADDON_REPOSITORY ADDON_REPOSITORY]
+
++ v2.1 (27/10/2020) +
+- compatibilidad con NVDA 2020.3
+- limpieza del código (correcciones de errores detectados por Flake8)
+- añadido el botón "Qué hay de nuevo" en el  cuadro de diálogo proponiendo la instalación de una nueva actualización.
+
+
++ v2.0 (01/08/2020) +
+Compatibilidad con audacity 2.4.2 y 2.4.1
+- compatibilidad con NVDA 2020.2
+- se añade la opción para deshabilitar el anuncio para mejorar los cuadros de selección numérico.
+- presentación de las opciones de configuración del complemento bajo la  forma de categorías.
+- modificación del código para encontrar objetos con su   controlID
+
+
++ v1.4.5 (19/05/2020) +
+Corrección de fallos:
+- un mal soporte de la versión 2.3.2.
+
+
++ v1.4.4 (11/05/2020) +
+Se añade traducción al turco
+
++ v1.4.3 (08/05/2020) +
+Corrección de fallos:
+- una mala detección de la barra de herramientas de "Reproducción".
+- error cuando el foco llega en un temporizador en el diálogo "cambiar la velocidad.".
+
+
+
++ v1.4.2 (09/04/2020) +
+Se añade traducción al árabe.
+
+
++ v1.4.1 (03/04/2020) +
+Se corrigió el historial de cambios del complemento.
+
+
++ v1.4 (03/04/2020) +
+- puesta en compatibilidad con NVDA 2020.1,
+- puesta en conformidad con NVDA para la prueba de compatibilidad  de los complementos con NVDA.
+
+
++ v1.3 (20/10/2019) +
+- Compatibilidad con las versiones alpha de NVDA 2019.3.
+- Búsqueda automática de actualización.
+- Corrección en la documentación.
+- Traducción del complemento en español por Rémy Ruiz, cambios por Gunther Melendez.
+
+
++ v1.2 (01/06/2019) +
+- Compatibilidad con NVDA 2019.2 ((actualización del manifest.ini)
+
+
++ v1.1 (16/03/2019) +
+- Modificación del manifest.ini para la compatibilidad con NVDA 2019.1.0
+- Reemplazo del termino "module complémentaire " por "extension impuesto por los traductores de NVDA en francés).
+- Preparación para la compatibilidad con Python 3.
+
+
++ v1.0.2 (28/12/2018) +
+- Corregido el anuncio erróneo de la selección.
+
+
++ v1.0.1 (22/12/2018) +
+- Pequeña corrección en la documentación.
+
+
++ v1.0 (20/12/2018) +
+- Se reinicia el número de versión en 1.0 debido al cambio del nombre  del complemento,
+- Compatibilidad con Audacity 2.3,
+- Mostrar    los scripts   en una lista en el diálogo "Scripts del intérprete de órdenes" con la posibilidad de lanzar  el script seleccionado,
+- Mejora de la accesibilidad en los cuadros de edición de tiempo en el cuadro de diálogo "Grabación programada",
+- Reelaboración importante del código.
+
+
++ v3.2 (19/06/2018) +
+- Compatibilidad con NVDA 2018.2,
+- Gestión de   las opciones  del complemento durante  la instalación o desinstalación del complemento (implementación del archivo install.py),
+- Limpieza y reorganización del código.
+
+
++ v3.1 (07/01/2018) +
+- Implementación del complemento bajo la forma addon template y bajo  el repositorio de GitHub.
+
+
++ v3.0.1 (04/01/2018) +
+- Corrección de la no visualización  del menú "Opciones de configuración del complemento".
+- Añadida la Directiva para la compatibilidad con Python 3.
+
+
++ v3.0 (11/2017) +
+- Compatibilidad con Audacity 2.2.0,
+- Puesta en marcha de un interceptor de las teclas del teclado en reemplazo de un temporizador de monitoreo,
+- Puesta en marcha de un archivo de configuración,
+- Nuevos scripts:
+ - Anunciar los vúmetros y los cursores de reproducción o de grabación,
+ - Anunciar la duración de la selección,
+ - Anunciar la posición del centro de la selección,
+- Anunciar la velocidad de reproducción,
+ - Mostrar la guía de Audacity,
+- Mostrar el manual del usuario para el complemento.
+
+
+- Restricción del uso de ciertos scripts en  la vista de pista de acuerdo a la documentación,
+
+
+- Estructuración del complemento para el repositorio en GitHub,
+- Actualizado el manual del usuario.
+
+
++ v2.3 (08/2017) +
+- Script "alt+control+f4" para habilitar o deshabilitar el anuncio de cambios en la selección,
+- Compatibilidad con Audacity v2.1.3,
+- Reanudación del código.
+
+
++ v2.2 (06/2015) +
+- Reelaboración completa del código
+
+
++ v2.1 (10/2014) +
+- Compatibilidad con NVDA 2014.3
+- Compatibilidad con Audacity v2.06
+
+
++ v2.0 (05/2014) +
+- Puesta en marcha de un monitoreo de los campos posición y selección para anunciar los cambios.
+
+
++ v1.0 (01/2014) +
+- Creación del complemento.
+
+

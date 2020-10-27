@@ -1,0 +1,141 @@
+ADDON_SUMMARY - Historique
+Auteur: ADDON_AUTHOR_NAME
+
+
+%!includeconf: ../addon_global.t2tconf
+%!includeconf: addon_informations.t2tconf
+
+URL: ADDON_AUTHOR_URL
+
+Dépot GitHub: [ADDON_REPOSITORY ADDON_REPOSITORY]
+
+
++ v2.1 (27/10/2020) +
+- compatibilité avec NVDA 2020.3
+- nettoyage du code (corrections des erreurs détectées par Flake8)
+- ajout du bouton "Quoi de neuf" dans le dialogue proposant l'installation d'une nouvelle mise à jour.
+
+
++ v2.0 (01/08/2020) +
+Compatibilité avec audacity 2.4.2 et 2.4.1
+- compatibilité avec NVDA 2020.2
+- ajout de l'option pour désactiver l'annonce améliorée des zones de sélection numérique.
+- présentation des paramètres de l'extension sous forme de catégories.
+- modification du code pour rechercher les objets avec leur controlID
+
+
++ v1.4.5 (19/05/2020) +
+Correction de bugs:
+- mauvais support de la version 2.3.2.
+
+
++ v1.4.4 (11/05/2020) +
+Ajout traduction turque
+
++ v1.4.3 (08/05/2020) +
+Corrections de bogues:
+- mauvaise détection de la barre d'outils "Transport".
+- erreur lorsque le focus arrives sur un timer dans le dialogue "changer la vitesse".
+
+
+
++ v1.4.2 (09/04/2020) +
+Ajout traduction arabe.
++ v1.4.1 (03/04/2020) +
+Correction de l'historique des changements de l'extension.
+
++ v1.4 (03/04/2020) +
+- mise en compatibilité avec NVDA 2020.1,
+- mise en conformité avec NVDA pour le test de compatibilité des extensions avec NVDA.
+
+
++ v1.3 (20/10/2019) +
+- Compatibilité avec les versions alpha de NVDA 2019.3.
+- recherche de mise à jour automatique.
+- correction de la documentation.
+- traduction de l'extension en Espagnol par Rémy Ruiz, changements par Gunther Melendez.
+
+
++ v1.2 (01/06/2019) +
+Compatibilité avec NVDA 2019.2 (mise à jour du manifest.ini)
+
++ v1.1 (16/03/2019) +
+- modification du manifest.ini pour compatibilité avec NVDA 2019.1.0
+- remplacement du terme "module complémentaire" par "extension" imposé par les traducteurs de NVDA.
+- préparation à la compatibilité avec python 3.
+
+
++ v1.0.2 (28/12/2018) +
+Correction de la mauvaise annonce de la sélection.
+
+
++ v1.0.1 (22/12/2018) +
+Petite correction de documentation.
+
+
++ v1.0 (20/12/2018) +
+-Le numéro de version repart à 1.0 à cause du changement du nom de l'extension,
+- compatibilité avec audacity 2.3,
+- affichage des scripts sous forme de liste dans le dialogue "Scripts de l'interpréteur" avec la possibilité de lancer le script sélectionné,
+- amélioration de l'accessibilité des zones d'édition des temps dans la boite de dialogue "Enregistrement temporisé",
+- refonte importante du code.
+
+
++ v3.2 (19/06/2018) +
+- compatibilité avec NVDA 2018.2,
+- gestion des paramètres de l'extension à l'installation ou désinstallation de l'extension (mise en place du fichier install.py),
+- nettoyage et réorganisation du code.
+
+
++ v3.1 (07/01/2018) +
+- mise en place de l'extension sous la forme addon template et sous dépot github.
+
+
++ v3.0.1 (04/01/2018) +
+- correction du non affichage menu "Paramètres de configuration de l'extension".
+- ajout directive pour compatibilité avec python 3.
+
+
++ v3.0 (11/2017) +
+- compatibilité avec Audacity 2.2.0,
+- mise en place d'un intercepteur de touches clavier en remplacement du temporisateur de surveillance,
+- mise en place d'un fichier de configuration,
+- nouveaux scripts:
+ - annoncer les vumètres et curseurs de lecture ou enregistrement,
+ - annoncer la durée de la sélection,
+ - annoncer la position du centre de la sélection,
+- annoncer la vitesse de lecture,
+ - afficher le guide d'Audacity,
+- afficher le manuel utilisateur de l'extension.
+
+
+- restriction de l'utilisation de certains scripts à la vue de piste conformément à la documentation,
+
+
+- structuration de l'extension pour le dépot sur github.
+- mise à jour du manuel utilisateur.
+
+
++ v2.3 (08/2017) +
+- script "alt+control+f4" pour activer ou désactiver l'annonce des changements de sélection,
+- compatibilité avec audacity v2.1.3,
+- reprise du code.
+
+
++ v2.2 (06/2015) +
+- restructuration du code
+
+
++ v2.1 (10/2014) +
+- compatibilité avec NVDA 2014.3
+- compatibilité avec Audacity v2.06
+
+
++ v2.0 (05/2014) +
+- mise en place d'une surveillance des champ position et sélection pour annoncer les changements.
+
+
++ v1.0 (01/2014) +
+Création de l'extension.
+
+
