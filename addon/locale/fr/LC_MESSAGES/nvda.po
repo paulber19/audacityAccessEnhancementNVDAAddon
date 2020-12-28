@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Audacity AppModule\n"
 "Report-Msgid-Bugs-To: nvda-translations@freelists.org\n"
-"POT-Creation-Date: 2020-10-12 11:48+0200\n"
-"PO-Revision-Date: 2020-10-12 11:54+0200\n"
+"POT-Creation-Date: 2020-12-07 19:00+0100\n"
+"PO-Revision-Date: 2020-12-07 19:00+0100\n"
 "Last-Translator: Rémy Ruiz <remyruiz@gmail.com>\n"
 "Language-Team: paul from scriptNVDA <paulber19@laposte.net>\n"
 "Language: fr_FR\n"
@@ -13,7 +13,7 @@ msgstr ""
 "X-Poedit-KeywordsList: _;gettext;gettext_noop\n"
 "X-Poedit-Basepath: ../../..\n"
 "X-Poedit-SourceCharset: UTF-8\n"
-"X-Generator: Poedit 1.8.12\n"
+"X-Generator: Poedit 1.8.6\n"
 "X-Poedit-Bookmarks: -1,-1,-1,96,-1,-1,-1,-1,-1,-1\n"
 "X-Poedit-SearchPath-0: .\n"
 
@@ -507,7 +507,7 @@ msgid "EnhancedAnnouncement  of edit spin boxes"
 msgstr "Améliorer l'annonce des zones de sélection numérique"
 
 #: globalPlugins/audacityAccessEnhancement/au_configGui.py:78
-#: globalPlugins/audacityAccessEnhancement/updateHandler/update_check.py:105
+#: globalPlugins/audacityAccessEnhancement/updateHandler/update_check.py:107
 msgid "Update"
 msgstr "Mise à jour"
 
@@ -524,11 +524,15 @@ msgstr ""
 msgid "&Check for update"
 msgstr "&Rechercher une mise à jour"
 
-#: globalPlugins/audacityAccessEnhancement/au_configGui.py:127
+#: globalPlugins/audacityAccessEnhancement/au_configGui.py:106
+msgid "View &history"
+msgstr "&Voir l'historique"
+
+#: globalPlugins/audacityAccessEnhancement/au_configGui.py:142
 msgid "Settings"
 msgstr "Paramètres"
 
-#: globalPlugins/audacityAccessEnhancement/updateHandler/update_check.py:58
+#: globalPlugins/audacityAccessEnhancement/updateHandler/update_check.py:60
 #, python-brace-format
 msgid ""
 "The update is not compatible with this version of NVDA. Minimum NVDA "
@@ -538,77 +542,77 @@ msgstr ""
 "minimum de NVDA : {minYear}.{minMajor}, dernière version testée : "
 "{testedYear}.{testedMajor}."
 
-#: globalPlugins/audacityAccessEnhancement/updateHandler/update_check.py:108
+#: globalPlugins/audacityAccessEnhancement/updateHandler/update_check.py:110
 #, python-brace-format
 msgid "Downloading {name}"
 msgstr "Téléchargement de {name} en cours"
 
-#: globalPlugins/audacityAccessEnhancement/updateHandler/update_check.py:123
+#: globalPlugins/audacityAccessEnhancement/updateHandler/update_check.py:125
 #, python-brace-format
 msgid "Error downloading update for {name}."
 msgstr "Erreur lors du téléchargement de la mise à jour de {name}."
 
-#: globalPlugins/audacityAccessEnhancement/updateHandler/update_check.py:182
+#: globalPlugins/audacityAccessEnhancement/updateHandler/update_check.py:184
 #, python-brace-format
 msgid "Cannot update {name} - missing file or invalid file format"
 msgstr ""
 "Impossible de mettre à jour {name} - fichier manquant ou format de fichier "
 "incorrect"
 
-#: globalPlugins/audacityAccessEnhancement/updateHandler/update_check.py:218
+#: globalPlugins/audacityAccessEnhancement/updateHandler/update_check.py:220
 msgid "Updating"
 msgstr "Mise à jour en cours"
 
-#: globalPlugins/audacityAccessEnhancement/updateHandler/update_check.py:220
+#: globalPlugins/audacityAccessEnhancement/updateHandler/update_check.py:222
 msgid "Please wait while the add-on is being updated."
 msgstr "Veuillez patienter durant la mise à jour de l'extension"
 
-#: globalPlugins/audacityAccessEnhancement/updateHandler/update_check.py:231
+#: globalPlugins/audacityAccessEnhancement/updateHandler/update_check.py:233
 #, python-brace-format
 msgid "Failed to update {name} add-on"
 msgstr "Échec de la mise à jour de l'extension {name}"
 
-#: globalPlugins/audacityAccessEnhancement/updateHandler/update_check.py:289
+#: globalPlugins/audacityAccessEnhancement/updateHandler/update_check.py:291
 #, python-brace-format
 msgid "{summary} - update"
 msgstr "{summary} - mise à jour"
 
-#: globalPlugins/audacityAccessEnhancement/updateHandler/update_check.py:299
+#: globalPlugins/audacityAccessEnhancement/updateHandler/update_check.py:301
 msgid "The service is temporarily under maintenance. Please, try again later."
 msgstr ""
 "le service est momentanément en maintenance. Veuillez réessayer plus tard."
 
-#: globalPlugins/audacityAccessEnhancement/updateHandler/update_check.py:347
+#: globalPlugins/audacityAccessEnhancement/updateHandler/update_check.py:348
 #, python-format
 msgid "New version available, version %s. Do you want download it now?"
 msgstr ""
 "Une nouvelle version est disponible: version %s. Voulez-vous la télécharger "
 "maintenant ?"
 
-#: globalPlugins/audacityAccessEnhancement/updateHandler/update_check.py:364
+#: globalPlugins/audacityAccessEnhancement/updateHandler/update_check.py:365
 #, python-format
 msgid "You are up-to-date. %s is the latest version."
 msgstr "Vous êtes à jour, %s est la dernière version."
 
-#: globalPlugins/audacityAccessEnhancement/updateHandler/update_check.py:371
+#: globalPlugins/audacityAccessEnhancement/updateHandler/update_check.py:372
 msgid "Oops! There was a problem checking for updates. Please retry later"
 msgstr ""
 "Oups! Il y a un problème pour rechercher les mises à jour. Réessayer "
 "ultérieurement."
 
-#: globalPlugins/audacityAccessEnhancement/updateHandler/update_check.py:547
+#: globalPlugins/audacityAccessEnhancement/updateHandler/update_check.py:549
 msgid "&Yes"
 msgstr "&Oui"
 
-#: globalPlugins/audacityAccessEnhancement/updateHandler/update_check.py:552
+#: globalPlugins/audacityAccessEnhancement/updateHandler/update_check.py:554
 msgid "&No"
 msgstr "&Non"
 
-#: globalPlugins/audacityAccessEnhancement/updateHandler/update_check.py:557
+#: globalPlugins/audacityAccessEnhancement/updateHandler/update_check.py:559
 msgid "&Later"
 msgstr "&Plus tard"
 
-#: globalPlugins/audacityAccessEnhancement/updateHandler/update_check.py:561
+#: globalPlugins/audacityAccessEnhancement/updateHandler/update_check.py:563
 msgid "Wha&t's new"
 msgstr "Quoi &de neuf"
 

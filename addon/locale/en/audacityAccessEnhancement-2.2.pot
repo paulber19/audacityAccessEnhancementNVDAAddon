@@ -6,9 +6,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: audacityAccessEnhancement 2.1\n"
+"Project-Id-Version: audacityAccessEnhancement 2.2\n"
 "Report-Msgid-Bugs-To: nvda-translations@freelists.org\n"
-"POT-Creation-Date: 2020-10-27 15:23+0100\n"
+"POT-Creation-Date: 2020-12-28 07:49+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,14 +20,14 @@ msgstr ""
 #. Add-on summary, usually the user visible name of the addon.
 #. Translators: Summary for this add-on
 #. to be shown on installation and add-on information.
-#: buildVars.py:22
+#: buildVars.py:24
 msgid "Audacity multi-track editor: accessibility enhancement"
 msgstr ""
 
 #. Add-on description
 #. Translators: Long description to be shown for this add-on
 #. on add-on information from add-ons manager
-#: buildVars.py:26
+#: buildVars.py:28
 msgid ""
 "This add-on adds extra functionality when working with Audacity\n"
 "\n"
@@ -638,7 +638,7 @@ msgstr ""
 
 #. Translators: This is the label for the Advanced settings panel.
 #: globalPlugins\audacityAccessEnhancement\au_configGui.py:78
-#: globalPlugins\audacityAccessEnhancement\updateHandler\update_check.py:105
+#: globalPlugins\audacityAccessEnhancement\updateHandler\update_check.py:107
 msgid "Update"
 msgstr ""
 
@@ -660,12 +660,17 @@ msgstr ""
 msgid "&Check for update"
 msgstr ""
 
+#. translators: this is a label for a button in update settings panel.
+#: globalPlugins\audacityAccessEnhancement\au_configGui.py:106
+msgid "View &history"
+msgstr ""
+
 #. translators: title of the dialog.
-#: globalPlugins\audacityAccessEnhancement\au_configGui.py:127
+#: globalPlugins\audacityAccessEnhancement\au_configGui.py:144
 msgid "Settings"
 msgstr ""
 
-#: globalPlugins\audacityAccessEnhancement\updateHandler\update_check.py:58
+#: globalPlugins\audacityAccessEnhancement\updateHandler\update_check.py:60
 msgid ""
 "The update is not compatible with this version of NVDA. Minimum NVDA "
 "version: {minYear}{minMajor}, last tested: {testedYear}.{testedMajor}."
@@ -673,79 +678,79 @@ msgstr ""
 
 #. Translators: The progress message
 #. indicating the name of the add-on being downloaded.
-#: globalPlugins\audacityAccessEnhancement\updateHandler\update_check.py:108
+#: globalPlugins\audacityAccessEnhancement\updateHandler\update_check.py:110
 msgid "Downloading {name}"
 msgstr ""
 
 #. Translators: A message indicating that an error occurred
 #. while downloading an update to NVDA.
-#: globalPlugins\audacityAccessEnhancement\updateHandler\update_check.py:123
+#: globalPlugins\audacityAccessEnhancement\updateHandler\update_check.py:125
 msgid "Error downloading update for {name}."
 msgstr ""
 
 #. Translators: message to user
-#: globalPlugins\audacityAccessEnhancement\updateHandler\update_check.py:182
+#: globalPlugins\audacityAccessEnhancement\updateHandler\update_check.py:184
 msgid "Cannot update {name} - missing file or invalid file format"
 msgstr ""
 
 #. Translators: The title of the dialog
 #. presented while an Addon is being updated.
-#: globalPlugins\audacityAccessEnhancement\updateHandler\update_check.py:218
+#: globalPlugins\audacityAccessEnhancement\updateHandler\update_check.py:220
 msgid "Updating"
 msgstr ""
 
 #. Translators: The message displayed while an addon is being updated.
-#: globalPlugins\audacityAccessEnhancement\updateHandler\update_check.py:220
+#: globalPlugins\audacityAccessEnhancement\updateHandler\update_check.py:222
 msgid "Please wait while the add-on is being updated."
 msgstr ""
 
 #. Translators: The message displayed when an error occurs
 #. when installing an add-on package.
-#: globalPlugins\audacityAccessEnhancement\updateHandler\update_check.py:231
+#: globalPlugins\audacityAccessEnhancement\updateHandler\update_check.py:233
 msgid "Failed to update {name} add-on"
 msgstr ""
 
-#: globalPlugins\audacityAccessEnhancement\updateHandler\update_check.py:289
+#: globalPlugins\audacityAccessEnhancement\updateHandler\update_check.py:291
 msgid "{summary} - update"
 msgstr ""
 
-#: globalPlugins\audacityAccessEnhancement\updateHandler\update_check.py:299
+#: globalPlugins\audacityAccessEnhancement\updateHandler\update_check.py:301
 msgid "The service is temporarily under maintenance. Please, try again later."
 msgstr ""
 
 #. Translators: message to user to report a new version.
-#: globalPlugins\audacityAccessEnhancement\updateHandler\update_check.py:348
+#: globalPlugins\audacityAccessEnhancement\updateHandler\update_check.py:354
 #, python-format
 msgid "New version available, version %s. Do you want download it now?"
 msgstr ""
 
-#: globalPlugins\audacityAccessEnhancement\updateHandler\update_check.py:369
+#: globalPlugins\audacityAccessEnhancement\updateHandler\update_check.py:371
 #, python-format
 msgid "You are up-to-date. %s is the latest version."
 msgstr ""
 
-#: globalPlugins\audacityAccessEnhancement\updateHandler\update_check.py:376
+#: globalPlugins\audacityAccessEnhancement\updateHandler\update_check.py:378
 msgid "Oops! There was a problem checking for updates. Please retry later"
 msgstr ""
 
 #. Translators: This is a label of a button appearing
 #. on UpdateCheckResult dialog.
-#: globalPlugins\audacityAccessEnhancement\updateHandler\update_check.py:551
+#: globalPlugins\audacityAccessEnhancement\updateHandler\update_check.py:555
 msgid "&Yes"
 msgstr ""
 
 #. Translators: This is a label of a button appearing
 #. on UpdateCheckResult dialog.
-#: globalPlugins\audacityAccessEnhancement\updateHandler\update_check.py:556
+#: globalPlugins\audacityAccessEnhancement\updateHandler\update_check.py:560
 msgid "&No"
 msgstr ""
 
 #. Translators: The label of a button to remind the user later
 #. about performing some action.
-#: globalPlugins\audacityAccessEnhancement\updateHandler\update_check.py:561
+#: globalPlugins\audacityAccessEnhancement\updateHandler\update_check.py:565
 msgid "&Later"
 msgstr ""
 
-#: globalPlugins\audacityAccessEnhancement\updateHandler\update_check.py:565
+#: globalPlugins\audacityAccessEnhancement\updateHandler\update_check.py:569
 msgid "Wha&t's new"
 msgstr ""

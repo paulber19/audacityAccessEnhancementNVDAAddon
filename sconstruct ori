@@ -17,19 +17,6 @@ else:
 	import txt2tags25 as txt2tags
 import markdown2 as markdown
 
-
-def getTranslatedAddonSummary(buildVars, localeLang):
-	try:
-		# No ugettext in Python 3.
-		if sys.version_info.major == 2:
-			_ = gettext.translation("nvda", localedir=os.path.join("addon", "locale"), languages=[localeLang]).ugettext
-		else:
-			_ = gettext.translation("nvda", localedir=os.path.join("addon", "locale"), languages=[localeLang]).gettext
-		summary = _(buildVars.addon_info["addon_summary"])
-	except:
-		summary = buildVars.addon_info["addon_summary"]
-	return summary
-
 def writeHTMLFile(dest, htmlText, lang, title, cssFileName):
 	cssFile =cssFileName if cssFileName is not None else "style.css"
 	#lang = os.path.basename(os.path.dirname(dest)).replace('_', '-')
@@ -76,30 +63,34 @@ def t2t2html(source, dest):
 	htmlText = getHTMLBody(dest)
 	lang = os.path.basename(os.path.dirname(source)).replace('_', '-')
 	localeLang = os.path.basename(os.path.dirname(source))
-	summary = getTranslatedAddonSummary(buildVars, localeLang)
-	title=u"{0} {1}".format(summary, buildVars.addon_info["addon_version"])
-	writeHTMLFile(dest, htmlText, lang, title, cssFileName = "style_t2t.css")
+	try:
 	
+		_ = gettext.translation("nvda", localedir=os.path.join("addon", "locale"), languages=[localeLang]).ugettext
+		title=u"{0} {1}".format(_(buildVars.addon_info["addon_summary"]), buildVars.addon_info["addon_version"])
+	except:
+		title=u"{0} {1}".format(buildVars.addon_info["addon_summary"], buildVars.addon_info["addon_version"])
+	writeHTMLFile(dest, htmlText, lang, title, cssFileName = "style_t2t.css")
+		
 def md2html(source, dest):
+	
 	lang = os.path.basename(os.path.dirname(source)).replace('_', '-')
 	localeLang = os.path.basename(os.path.dirname(source))
-	summary = getTranslatedAddonSummary(buildVars, localeLang)
-	title=u"{0} {1}".format(summary, buildVars.addon_info["addon_version"])
+	try:
+		_ = gettext.translation("nvda", localedir=os.path.join("addon", "locale"), languages=[localeLang]).ugettext
+		title=u"{0} {1}".format(_(buildVars.addon_info["addon_summary"]), buildVars.addon_info["addon_version"])
+	except:
+		title=u"{0} {1}".format(buildVars.addon_info["addon_summary"], buildVars.addon_info["addon_version"])
 	headerDic = {
 		"[[!meta title=\"": "# ",
 		"\"]]": " #",
 	}
 	with codecs.open(source, "r", "utf-8") as f:
 		mdText = f.read()
-		if sys.version_info.major == 2:
-			for k, v in headerDic.iteritems():
-				mdText = mdText.replace(k, v, 1)
-		else:
-			for k, v in headerDic.items():
-				mdText = mdText.replace(k, v, 1)
+		for k, v in headerDic.iteritems():
+			mdText = mdText.replace(k, v, 1)
 		htmlText = "<body>\n" +markdown.markdown(mdText) +"\n</body>"
 		writeHTMLFile(dest, htmlText, lang, title, cssFileName = "style.css")
-
+		return
 def generateT2tHelpFiles (source, target, env, for_signature):
 	action = env.Action(lambda target, source, env : t2t2html(source[0].abspath, target[0].abspath) and None,
 	lambda target, source, env : "Generating %s" % target[0])
@@ -145,14 +136,28 @@ env['BUILDERS']['txt2tags']=Builder(generator = generateT2tHelpFiles,
 env['BUILDERS']['NVDAManifest'] = Builder(generator=manifestGenerator)
 env['BUILDERS']['NVDATranslatedManifest'] = Builder(generator=translatedManifestGenerator)
 
+# unused  because addon help is not the repository help
 def createAddonHelp(dir):
 	docsDir = os.path.join(dir, "doc")
-	
-	
-	# copy (to update) readme.md file (if exists) from addon/doc/en folder to repository root
-	readmePath = os.path.join(docsDir, "en", "readme.md")
+	if os.path.isfile("style.css"):
+		cssPath = os.path.join(docsDir, "style.css")
+		cssTarget = env.Command(cssPath, "style.css", Copy("$TARGET", "$SOURCE"))
+		env.Depends(addon, cssTarget)
+	if os.path.isfile("readme.md"):
+		readmePath = os.path.join(docsDir, buildVars.baseLanguage, "readme.md")
+		readmeTarget = env.Command(readmePath, "readme.md", Copy("$TARGET", "$SOURCE"))
+		env.Depends(addon, readmeTarget)
+
+
+
+def updateRepositoryHelp(dir):
+	if hasattr(buildVars,  'baseLanguage'):
+		baseLanguage = buildVars.baseLanguage
+	else:
+		baseLanguage = 'en'
+	docsDir = os.path.join(dir, "doc")
+	readmePath = os.path.join(docsDir, baseLanguage, "readme.md")
 	if os.path.isfile(readmePath):
-		#readmeTarget = env.Command(readmePath, "readme.md", Copy("$TARGET", "$SOURCE"))
 		readmeTarget = env.Command( "readme.md",readmePath,  Copy("$TARGET", "$SOURCE"))
 		env.Depends(addon, readmeTarget)
 		env.NoClean(readmeTarget)
@@ -161,17 +166,7 @@ def createAddonHelp(dir):
 			cssTarget = env.Command( "style.css",cssPath,  Copy("$TARGET", "$SOURCE"))
 			env.Depends(addon, cssTarget)
 			env.NoClean(cssTarget)
-	else:
-		# copy readme.md file (if exists) from repository root to addon/doc/en folder
-		if os.path.isfile("readme.md"):
-			readmeTarget = env.Command(readmePath, "readme.md", Copy("$TARGET", "$SOURCE"))
-			env.Depends(addon, readmeTarget)
-		# copy css file  (if exists) from repository root to addon/doc folder
-		if os.path.isfile("style.css"):
-			cssPath = os.path.join(docsDir, "style.css")
-			cssTarget = env.Command(cssPath, "style.css", Copy("$TARGET", "$SOURCE"))
-			env.Depends(addon, cssTarget)
-
+	
 
 def createAddonBundleFromPath(path, dest):
 	""" Creates a bundle from a directory that contains an addon manifest file."""
@@ -194,11 +189,7 @@ def generateManifest(source, dest):
 		f.write(manifest)
 
 def generateTranslatedManifest(source, language, out):
-	# No ugettext in Python 3.
-	if sys.version_info.major == 2:
-		_ = gettext.translation("nvda", localedir=os.path.join("addon", "locale"), languages=[language]).ugettext
-	else:
-		_ = gettext.translation("nvda", localedir=os.path.join("addon", "locale"), languages=[language]).gettext
+	_ = gettext.translation("nvda", localedir=os.path.join("addon", "locale"), languages=[language]).ugettext
 	vars = {}
 	for var in ("addon_summary", "addon_description"):
 		vars[var] = _(buildVars.addon_info[var])
@@ -238,9 +229,11 @@ manifest = env.NVDAManifest(os.path.join("addon", "manifest.ini"), os.path.join(
 env.Depends(manifest, "buildVars.py")
 
 env.Depends(addon, manifest)
-createAddonHelp("addon") # We need at least doc in English and should enable the Help button for the add-on in Add-ons Manager
+# We need at least doc in English and should enable the Help button for the add-on in Add-ons Manager
+updateRepositoryHelp("addon")
 langDirs = [f for f in env.Glob(os.path.join("addon", "locale", "*"))]
-
+doneMDFiles = []
+doneT2tFiles = []
 #Allow all NVDA's gettext po files to be compiled in source/locale, and manifest files to be generated
 for dir in langDirs:
 	poFile = dir.File(os.path.join("LC_MESSAGES", "nvda.po"))
@@ -250,17 +243,36 @@ for dir in langDirs:
 		translatedManifest = env.NVDATranslatedManifest(dir.File("manifest.ini"), [moFile, os.path.join("manifest-translated.ini.tpl")])
 		env.Depends(translatedManifest, ["buildVars.py"])
 		env.Depends(addon, [translatedManifest, moFile])
-	#Convert markdown files to html
-	for mdFile in env.Glob(os.path.join('addon', 'doc', '*', '*.md')):
+	#Convert markdown files to html for this language
+	lang = str(dir).split('\\')[2]
+	for mdFile in env.Glob(os.path.join('addon', 'doc', lang, '*.md')):
 		mdhtmlFile = env.markdown(mdFile)
-		if os.path.exists(str(poFile)):
-			env.Depends(mdhtmlFile, [mdFile, moFile])
+		env.Depends(mdhtmlFile, [mdFile, moFile])
 		env.Depends(addon, mdhtmlFile)
+		doneMDFiles.append(mdFile)
 	#Convert txt2tags files to html
-	for t2tFile in env.Glob(os.path.join('addon', 'doc', '*', '*.t2t')):
+	for t2tFile in env.Glob(os.path.join('addon', 'doc', lang, '*.t2t')):
 		t2thtmlFile = env.txt2tags(t2tFile)
-		if os.path.exists(str(poFile)):
-			env.Depends(t2thtmlFile, [t2tFile, moFile])
+		env.Depends(t2thtmlFile, [t2tFile, moFile])
 		env.Depends(addon,t2thtmlFile)
+		doneT2tFiles.append(t2tFile)
 
-		env.Default(addon)
+# create html file with no po file
+# convert mdFile to html
+allMDFiles = env.Glob(os.path.join('addon', 'doc', '*', '*.md'))
+for mdFile in  doneMDFiles:
+	allMDFiles.remove(mdFile)
+for mdFile in allMDFiles:
+	mdhtmlFile = env.markdown(mdFile)
+	env.Depends(mdhtmlFile, [mdFile, moFile])
+	env.Depends(addon, mdhtmlFile)
+#Convert txt2tags files to html
+allT2tFiles = env.Glob(os.path.join('addon', 'doc', '*', '*.t2t'))
+for t2tFile in doneT2tFiles:
+	allT2tFiles.remove(t2tFile)
+for t2tFile in allT2tFiles:
+	t2thtmlFile = env.txt2tags(t2tFile)
+	env.Depends(t2thtmlFile, [t2tFile, moFile])
+	env.Depends(addon,t2thtmlFile)
+
+env.Default(addon)

@@ -11,7 +11,7 @@ Manual bundling:
 
 Automated bundling: 
 To use this method, install Python 2.7 (www.python.org), Markdown, and SCons (www.scons.org).
-- Install Python (if you haven't), then install SCons and Markdown, 
+- Install Python3.7 or above (if you haven't), then install SCons and Markdown, 
 - run "makeAddon.bat" batche command.
 If everything is working, after some progress messages, add-on installer (addonName-addonVersion.nvda-addon) will be created.
 This method is based on buildVars.py file of add-on root folder  ( "addon\buildVars.py" file).

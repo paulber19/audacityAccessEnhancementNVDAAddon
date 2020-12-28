@@ -7,9 +7,20 @@ Auteur: ADDON_AUTHOR_NAME
 
 URL: ADDON_AUTHOR_URL
 
-GitHub repository: [ADDON_REPOSITORY ADDON_REPOSITORY]
+[GitHub repository: ADDON_REPOSITORY ADDON_REPOSITORY]
+
+Download:
+- [Current stable version: ADDON_CUR_VERSION ADDON_DOWNLOAD_SERVER1]
+- [Previous stable Version: ADDON_PREV_VERSION ADDON_DOWNLOAD_PREVIOUS]
+- [Development's versions ADDON_DEV_URL]
+
 
 Sorry, but this document is an automatic translation from french language.
+
++ v2.2 (18/12/2020) +
+- compatibility with NVDA 2020.4
+- addition of the "View history" button in the "Update" category of the add-on's parameters.
+
 
 + v2.1 (27/10/2020) +
 - compatibility with NVDA 2020.3

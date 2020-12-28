@@ -5,9 +5,11 @@ import os.path
 # Build customizations
 # Change this file instead of sconstruct or manifest files, whenever possible.
 
+
 # Full getext (please don't change)
 def _(arg):
 	return arg
+
 
 # Add-on information variables
 addon_info = {
@@ -46,7 +48,7 @@ Previous versions of Audacity are not  supported.
 """),
 
 	# version
-	"addon_version": "2.1",
+	"addon_version": "2.2",
 	# Author(s)
 	"addon_author": "paulber19",
 	# URL for the add-on documentation support
@@ -56,7 +58,7 @@ Previous versions of Audacity are not  supported.
 	# Minimum NVDA version supported (e.g. "2018.3")  # noqa:E501
 	"addon_minimumNVDAVersion": "2019.1",
 	# Last NVDA version supported/tested (e.g. "2018.4", ideally more recent than minimum version)  # noqa:E501
-	"addon_lastTestedNVDAVersion": "2020.3",
+	"addon_lastTestedNVDAVersion": "2020.4",
 	# Add-on update channel (default is stable or None)
 	"addon_updateChannel": None,
 }
@@ -79,3 +81,8 @@ i18nSources = pythonSources
 # Files that will be ignored when building the nvda-addon file
 # Paths are relative to the addon directory, not to the root directory of your addon sources.  # noqa:E501
 excludedFiles = []
+
+# Base language for the NVDA add-on
+# If your add-on is written in a language other than english, modify this variable.
+# For example, set baseLanguage to "es" if your add-on is primarily written in spanish.
+baseLanguage = "en"

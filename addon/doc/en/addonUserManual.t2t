@@ -7,10 +7,10 @@ Auteur: ADDON_AUTHOR_NAME
 %!includeconf: addon_keys.t2tconf
 URL: ADDON_AUTHOR_URL
 
-GitHub repository: [ADDON_REPOSITORY ADDON_REPOSITORY]
+[GitHub repository: ADDON_REPOSITORY ADDON_REPOSITORY]
 
 Download:
-- [stable version ADDON_VERSION ADDON_DOWNLOAD_SERVER1]
+- [stable version ADDON_CUR_VERSION ADDON_DOWNLOAD_SERVER1]
 - [developpement's version ADDON_DEV_URL]
 
 
@@ -65,12 +65,14 @@ A development version is updated:
 
 The button "Search for update" placed in the extension settings, menu item "Update", allows you to search immediately for an update.
 
+The "View history" button, placed in this same category, allows you to display the history of the current version in the browser.
+
 In the case of an automatic update and if a new version is detected, the "Update" dialog box is displayed to suggest:
 - either the immediate installation of the new version,
 - or to postpone the update until later. In this case, the search will be restarted at least one hour later.
 
 
-The "What's new" button offers the possibility of opening, in the browser, the history of the extension and thus being able to know the new features of the proposed version.
+In the case of an automatic update and if a new version is detected, the "Update" dialog box is displayed to suggest:
 
 ++ Compatibility ++
 Tis version of module has been tested with Audacity version 2.4.2, 2.4.1, 2.3.3 and 2.3.2. Previous versions of Audacity are not supported.
