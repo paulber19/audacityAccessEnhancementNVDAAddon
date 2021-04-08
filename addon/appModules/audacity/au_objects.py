@@ -65,6 +65,18 @@ _controlIDs = {
 	HIE_RecordButton: 11005,  # button in transportToolBar object
 }
 
+
+
+# for audacity 3.0.0
+_hierarchy_3000 = {
+	HIE_PlaybackSpeedSlider: "2",  # from PlayAtSpeedToolBarObject
+	HIE_RecordMeterPeak: "1",  # from HIE_RecordingMeterToolbar
+	HIE_PlayMeterPeak: "1",  # from HIE_PlaybackMeterToolbar
+	HIE_RecordingSlider: "2",  # from MixerToolbarObject
+	HIE_PlaybackSlider: "4",  # from MixerToolbarObject
+}
+
+
 # for audacity 2.4.2
 _hierarchy_2420 = {
 	HIE_PlaybackSpeedSlider: "2",  # from PlayAtSpeedToolBarObject
@@ -110,7 +122,8 @@ def initialize(appModule):
 	global _audacityHierarchyPaths, _audacityVersionID
 	version = appModule._get_productVersion()
 	_audacityVersionID = int("".join(version.split(",")))
-	if _audacityVersionID == 2420:
+
+	if _audacityVersionID in [2420, 3000]:
 		id = _hierarchy_2420
 	elif _audacityVersionID == 2410:
 		id = _hierarchy_2410
@@ -119,15 +132,16 @@ def initialize(appModule):
 	elif _audacityVersionID == 2320:
 		id = _hierarchy_2320
 	else:
-		log.warning("This version %s of Audacity is not  compatible with the add-on" % version)  # noqa: E501 line too long
+		id = _hierarchy_2420
+		log.warning("This version %s of Audacity is perhaps not  compatible with the add-on" % version)  # noqa: E501 line too long
 		wx.CallLater(
 			1000, gui.messageBox,
 			# Translators: the label of a dialog box message.
-			_("This version %s of Audacity is not  compatible with the add-on") % version,  # noqa: F405, E501 '_' may be undefined, or defined from star, line too long
+			_("The add-on has not been tested with this version of Audacity and may not be compatible with it."),
 			# Translators: the label of a dialog box title.
 			_("%s add-on - warning") % _addonSummary,  # noqa: F405,E501 '_' may be undefined, or defined from star, line too long
 			wx.OK | wx.ICON_WARNING)
-		id = None
+
 	_audacityHierarchyPaths = id
 
 
@@ -238,7 +252,7 @@ def _timePaneObject():
 
 
 def audioPositionObject():
-	if _audacityVersionID in [2420, 2410]:
+	if _audacityVersionID >= 2410:
 		# position audio is now under time  pane
 		o = _timePaneObject()
 		if o is not None:

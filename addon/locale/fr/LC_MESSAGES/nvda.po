@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Audacity AppModule\n"
 "Report-Msgid-Bugs-To: nvda-translations@freelists.org\n"
-"POT-Creation-Date: 2020-12-07 19:00+0100\n"
-"PO-Revision-Date: 2020-12-07 19:00+0100\n"
+"POT-Creation-Date: 2021-04-08 09:18+0200\n"
+"PO-Revision-Date: 2021-04-08 09:20+0200\n"
 "Last-Translator: Rémy Ruiz <remyruiz@gmail.com>\n"
 "Language-Team: paul from scriptNVDA <paulber19@laposte.net>\n"
 "Language: fr_FR\n"
@@ -333,12 +333,15 @@ msgstr "copié"
 msgid "Error, the information cannot be copied to the clipboard"
 msgstr "Erreur, l'information ne peut pas être copiée dans le presse-papier"
 
-#: appModules/audacity/au_objects.py:126
-#, python-format
-msgid "This version %s of Audacity is not  compatible with the add-on"
-msgstr "Cette version %s  d'Audacity n'est pa compatible avec l'extension"
+#: appModules/audacity/au_objects.py:140
+msgid ""
+"The add-on has not been tested with this version of Audacity and may not be "
+"compatible with it."
+msgstr ""
+"L'extension n'a pas été testée avec Cette version d'Audacity et peut ne pas "
+"être compatible avec elle."
 
-#: appModules/audacity/au_objects.py:128
+#: appModules/audacity/au_objects.py:142
 #, python-format
 msgid "%s add-on - warning"
 msgstr "%s - Avertissement"
@@ -436,11 +439,11 @@ msgstr "%s dialogue est déjà ouvert"
 msgid "{addonSummary}'s add-on - {dialogTitle}"
 msgstr "{addonSummary} - {dialogTitle}"
 
-#: buildVars.py:22
+#: buildVars.py:24
 msgid "Audacity multi-track editor: accessibility enhancement"
 msgstr "Éditeur multi-piste Audacity: complément d'accessibilité"
 
-#: buildVars.py:26
+#: buildVars.py:28
 msgid ""
 "This add-on adds extra functionality when working with Audacity\n"
 "\n"
@@ -528,7 +531,7 @@ msgstr "&Rechercher une mise à jour"
 msgid "View &history"
 msgstr "&Voir l'historique"
 
-#: globalPlugins/audacityAccessEnhancement/au_configGui.py:142
+#: globalPlugins/audacityAccessEnhancement/au_configGui.py:144
 msgid "Settings"
 msgstr "Paramètres"
 
@@ -582,37 +585,37 @@ msgid "The service is temporarily under maintenance. Please, try again later."
 msgstr ""
 "le service est momentanément en maintenance. Veuillez réessayer plus tard."
 
-#: globalPlugins/audacityAccessEnhancement/updateHandler/update_check.py:348
+#: globalPlugins/audacityAccessEnhancement/updateHandler/update_check.py:354
 #, python-format
 msgid "New version available, version %s. Do you want download it now?"
 msgstr ""
 "Une nouvelle version est disponible: version %s. Voulez-vous la télécharger "
 "maintenant ?"
 
-#: globalPlugins/audacityAccessEnhancement/updateHandler/update_check.py:365
+#: globalPlugins/audacityAccessEnhancement/updateHandler/update_check.py:371
 #, python-format
 msgid "You are up-to-date. %s is the latest version."
 msgstr "Vous êtes à jour, %s est la dernière version."
 
-#: globalPlugins/audacityAccessEnhancement/updateHandler/update_check.py:372
+#: globalPlugins/audacityAccessEnhancement/updateHandler/update_check.py:378
 msgid "Oops! There was a problem checking for updates. Please retry later"
 msgstr ""
 "Oups! Il y a un problème pour rechercher les mises à jour. Réessayer "
 "ultérieurement."
 
-#: globalPlugins/audacityAccessEnhancement/updateHandler/update_check.py:549
+#: globalPlugins/audacityAccessEnhancement/updateHandler/update_check.py:555
 msgid "&Yes"
 msgstr "&Oui"
 
-#: globalPlugins/audacityAccessEnhancement/updateHandler/update_check.py:554
+#: globalPlugins/audacityAccessEnhancement/updateHandler/update_check.py:560
 msgid "&No"
 msgstr "&Non"
 
-#: globalPlugins/audacityAccessEnhancement/updateHandler/update_check.py:559
+#: globalPlugins/audacityAccessEnhancement/updateHandler/update_check.py:565
 msgid "&Later"
 msgstr "&Plus tard"
 
-#: globalPlugins/audacityAccessEnhancement/updateHandler/update_check.py:563
+#: globalPlugins/audacityAccessEnhancement/updateHandler/update_check.py:569
 msgid "Wha&t's new"
 msgstr "Quoi &de neuf"
 

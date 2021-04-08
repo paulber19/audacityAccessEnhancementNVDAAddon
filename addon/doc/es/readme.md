@@ -5,7 +5,7 @@
 	* [versión estable][1]
 	* [versión de desarrollo][2]
 * Compatibilidad:
-	* Versión mínima de NVDA requerida: 2019.1
+	* Versión mínima de NVDA requerida: 2019.2.1
 	* Última versión de NVDA probada: 2020.4
 
 
@@ -27,5 +27,5 @@ Este complemento mejora la accesibilidad del software Audacity proporcionando:
 
 Este complemento es compatible y ha sido probado con Audacity 2.4.1, 2.3.3 y 2.3.2. Las versiones anteriores de Audacity no son compatibles.
 
-[1]: https://github.com/paulber007/AllMyNVDAAddons/raw/master/audacityAccessEnhancement/audacityAccessEnhancement-2.2.nvda-addon
+[1]: https://github.com/paulber007/AllMyNVDAAddons/raw/master/audacityAccessEnhancement/audacityAccessEnhancement-2.3.nvda-addon
 [2]: https://github.com/paulber007/AllMyNVDAAddons/tree/master/audacityAccessEnhancement/dev

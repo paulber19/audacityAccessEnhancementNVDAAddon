@@ -6,9 +6,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: audacityAccessEnhancement 2.2\n"
+"Project-Id-Version: audacityAccessEnhancement 2.3\n"
 "Report-Msgid-Bugs-To: nvda-translations@freelists.org\n"
-"POT-Creation-Date: 2020-12-28 07:49+0100\n"
+"POT-Creation-Date: 2021-04-08 10:08+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -87,14 +87,14 @@ msgid "Error, the information cannot be copied to the clipboard"
 msgstr ""
 
 #. Translators: the label of a dialog box message.
-#: appModules\audacity\au_objects.py:126
-#, python-format
-msgid "This version %s of Audacity is not  compatible with the add-on"
+#: appModules\audacity\au_objects.py:140
+msgid ""
+"The add-on has not been tested with this version of Audacity and may not be "
+"compatible with it."
 msgstr ""
 
-#. noqa: F405, E501 '_' may be undefined, or defined from star, line too long
 #. Translators: the label of a dialog box title.
-#: appModules\audacity\au_objects.py:128
+#: appModules\audacity\au_objects.py:142
 #, python-format
 msgid "%s add-on - warning"
 msgstr ""
