@@ -15,6 +15,9 @@ Descarga:
 - [Versiones de desarrollo ADDON_DEV_URL]
 
 
++ v2.4.1 (25/06/2021) +
+Se añade traducción al turco
+
 + v2.4 (18/06/2021) +
 - Compatibilidad con NVDA 2021.1. Las versiones de NVDA anteriores a la 2019.3 ya no son soportadas.
 - eliminado código relativo a Python 2.7.

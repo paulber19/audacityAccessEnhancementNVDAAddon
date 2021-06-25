@@ -27,5 +27,5 @@ Cette extension améliore l'accessiblité du logiciel Audacity en apportant :
 
 Elle est Compatible et testée avec Audacity version 3.0.2, 3.0.0, 2.4.2, 2.4.1, 2.3.3 et 2.3.2. Les versions précédentes d'Audacity ne sont pas supportées.
 
-[1]: https://github.com/paulber007/AllMyNVDAAddons/raw/master/audacityAccessEnhancement/audacityAccessEnhancement-2.4.nvda-addon
+[1]: https://github.com/paulber007/AllMyNVDAAddons/raw/master/audacityAccessEnhancement/audacityAccessEnhancement-2.4.1.nvda-addon
 [2]: https://github.com/paulber007/AllMyNVDAAddons/tree/master/audacityAccessEnhancement/dev

@@ -48,7 +48,7 @@ Previous versions of Audacity are not  supported.
 """),
 
 	# version
-	"addon_version": "2.4",
+	"addon_version": "2.4.1",
 	# Author(s)
 	"addon_author": "paulber19",
 	# URL for the add-on documentation support

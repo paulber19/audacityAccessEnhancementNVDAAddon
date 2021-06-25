@@ -17,6 +17,9 @@ Download:
 
 Sorry, but this document is an automatic translation from french language.
 
++ v2.4.1 (06/25/2021) +
+Adding turkish translation
+
 + v2.4 (06/18/2021) +
 - Compatibility with NVDA 2021.1. Versions of NVDA prior to 2019.3 are not supported.
 - removal of the code concerning Python 2.7.
