@@ -6,7 +6,49 @@
 
 import addonHandler
 import appModuleHandler
-import controlTypes
+import inputCore
+try:
+	# for nvda version >= 2021.2
+	from controlTypes.role import Role
+	ROLE_TABLEROW = Role.TABLEROW
+	ROLE_UNKNOWN = Role.UNKNOWN
+	ROLE_TABLE  = Role.TABLE 
+	ROLE_BUTTON = Role.BUTTON
+	ROLE_STATICTEXT  = Role.STATICTEXT 
+	ROLE_PANE = Role.PANE
+	from controlTypes.state import State
+	STATE_UNAVAILABLE  = State.UNAVAILABLE 
+	STATE_INVISIBLE  = State.INVISIBLE 
+	STATE_FOCUSABLE  = State.FOCUSABLE 
+	STATE_SELECTED  = State.SELECTED 
+	# adding role for audacity
+	import controlTypes.role
+#	from .au_role import extendNVDARole
+	#(audacityRole, audacityRoleLabels) = extendNVDARole()
+	#controlTypes.Role = audacityRole
+	#controlTypes.role._roleLabels = audacityRoleLabels
+	ROLE_TRACKVIEW = None # controlTypes.Role.TRACKVIEW
+	ROLE_TRACK = None #controlTypes.Role.TRACK
+	from controlTypes.role import _roleLabels as roleLabels
+except ImportError:
+	from controlTypes import roleLabels
+	from controlTypes import (
+	ROLE_TABLEROW, ROLE_UNKNOWN,
+	ROLE_TABLE , ROLE_BUTTON,
+	ROLE_STATICTEXT , ROLE_PANE
+	)
+	from controlTypes import (
+	STATE_UNAVAILABLE , STATE_INVISIBLE , STATE_FOCUSABLE ,
+	STATE_SELECTED 
+	)
+	# role for audacity
+	ROLE_TRACKVIEW = 300
+	ROLE_TRACK = 301
+	from controlTypes import roleLabels
+# no label for this role
+roleLabels[ROLE_TRACKVIEW] = ""
+roleLabels[ROLE_TRACK] = ""
+
 import os
 import eventHandler
 import queueHandler
@@ -48,12 +90,8 @@ addonHandler.initTranslation()
 # to save current winInputHook keyDownCallback function before hook
 _winInputHookKeyDownCallback = None
 
-# role for audacity
-ROLE_TRACKVIEW = 300
-ROLE_TRACK = 301
-# no label for this role
-controlTypes.roleLabels[ROLE_TRACKVIEW] = ""
-controlTypes.roleLabels[ROLE_TRACK] = ""
+
+
 # timer for repeatCount management
 GB_taskTimer = None
 # timer to monitor audio and selection changes
@@ -217,9 +255,9 @@ class Slider(object):
 			return False
 		states = self.obj.states
 		if (
-			controlTypes.STATE_UNAVAILABLE in states
-			or controlTypes.STATE_INVISIBLE in states
-			or controlTypes.STATE_FOCUSABLE not in states):
+			STATE_UNAVAILABLE in states
+			or STATE_INVISIBLE in states
+			or STATE_FOCUSABLE not in states):
 			name = self.obj.name if self.obj.name is not None else ""
 			# Translators: message to user to inform  that slider is not available.
 			msg = _("%s not available") % name
@@ -254,9 +292,9 @@ class MeterPeak (object):
 			return False
 		states = self.obj.states
 		if (
-			controlTypes.STATE_UNAVAILABLE in states
-			or controlTypes.STATE_INVISIBLE in states
-			or controlTypes.STATE_FOCUSABLE not in states):
+			STATE_UNAVAILABLE in states
+			or STATE_INVISIBLE in states
+			or STATE_FOCUSABLE not in states):
 			name = self.obj.name if self.obj.name is not None else ""
 			if len(name):
 				name = " ".join(name.split(" ")[:-2])
@@ -320,9 +358,9 @@ class Track(NVDAObjects.NVDAObject):
 
 	def _get_states(self):
 		states = super(Track, self)._get_states()
-		if controlTypes.STATE_SELECTED in states:
+		if STATE_SELECTED in states:
 			# selection state is already set in name bby audacity , so remove this state
-			states.remove(controlTypes.STATE_SELECTED)
+			states.remove(STATE_SELECTED)
 		return states
 
 	def event_gainFocus(self):
@@ -333,7 +371,7 @@ class Track(NVDAObjects.NVDAObject):
 		# check if it is a track in tracks panel view
 		try:
 			if ((
-				obj.role in [controlTypes.ROLE_TABLEROW, controlTypes.ROLE_UNKNOWN]
+				obj.role in [ROLE_TABLEROW, ROLE_UNKNOWN]
 				and obj.windowControlID == 1003)
 				and obj.parent.windowControlID == 1003):
 				return True
@@ -737,7 +775,7 @@ class SelectionTimerControlDigit(TimerControlDigit):
 class SettingSelectionTimerControlDigit(TimerControlDigit):
 	def initOverlayClass(self):
 		self.bindGesture("kb:shift+f10", "application")
-		printDebug("SettingSelectionTimerControlDigit initOverlayClass: name= %s, %s, childID= %s" % (self.name, controlTypes.roleLabels.get(self.role), self.IAccessibleChildID))  # noqa:E501
+		printDebug("SettingSelectionTimerControlDigit initOverlayClass: name= %s, %s, childID= %s" % (self.name, roleLabels.get(self.role), self.IAccessibleChildID))  # noqa:E501
 		from .au_applicationSettings import ApplicationSettingsManager
 		applicationSettingsManager = ApplicationSettingsManager()
 		self.editFormat = applicationSettingsManager.getSelectionFormat()
@@ -906,19 +944,41 @@ class AppModule(AppModule):
 			GB_monitorTimer.Stop()
 			GB_monitorTimer = None
 		super(AppModule, self).terminate()
+	def installAudacityRole(self):
+		from versionInfo import version_year, version_major
+		NVDAVersion = [version_year, version_major]
+		import controlTypes
+		if NVDAVersion >= [2021, 3]:
+			# for NVDA version > 2021.2
+			import controlTypes.role
+			global ROLE_TRACKVIEW, ROLE_TRACK
+			if not hasattr(self, "NVDARole"):
+				self.NVDARole = controlTypes.Role
+				self.NVDARoleLabels = controlTypes.role._roleLabels.copy()
+				from .au_role import extendNVDARole
+				(audacityRole, audacityRoleLabels) = extendNVDARole()
+				controlTypes.Role= audacityRole
+				controlTypes.role._roleLabels = audacityRoleLabels.copy()
+				ROLE_TRACKVIEW = controlTypes.Role.TRACKVIEW 
+				ROLE_TRACK = controlTypes.Role.TRACK 
+		else:
+			# for nvda version < 2021.2
+			if not hasattr(self, "NVDARole"):
+				self.NVDARole = None
 
 	def chooseNVDAObjectOverlayClasses(self, obj, clsList):
+		self.installAudacityRole()
 		controlID = obj.windowControlID
 		role = obj.role
-		printDebug("appModule chooseOverlayClass: %s, %s" % (obj.name, controlTypes.roleLabels.get(obj.role)))  # noqa:E501
+		printDebug("appModule chooseOverlayClass: %s, %s" % (obj.name, roleLabels.get(obj.role)))  # noqa:E501
 		obj.isATrack = Track.check(obj)
 		if obj.isATrack:
 			clsList.insert(0, Track)
-		elif role == controlTypes.ROLE_TABLE and controlID == 1003:
+		elif role == ROLE_TABLE and controlID == 1003:
 			clsList.insert(0, TrackView)
-		elif role == controlTypes.ROLE_BUTTON:
+		elif role == ROLE_BUTTON:
 			clsList.insert(0, Button)
-		elif role == controlTypes.ROLE_STATICTEXT and (
+		elif role == ROLE_STATICTEXT and (
 			_addonConfigManager.toggleEditSpinBoxEnhancedAnnouncementOption(False)):
 			parent = obj.parent
 			if parent is None:
@@ -951,7 +1011,7 @@ class AppModule(AppModule):
 				and parent.parent.parent.windowClassName == "Button"
 				and parent.parent.parent.windowControlID == 3000):
 				clsList.insert(0, SettingSelectionTimerControlDigit)
-		printDebug("appModule chooseOverlayClassout: %s, %s" % (obj.name, controlTypes.roleLabels.get(obj.role)))  # noqa:E501
+		printDebug("appModule chooseOverlayClassout: %s, %s" % (obj.name, roleLabels.get(obj.role)))  # noqa:E501
 
 	def event_NVDAObject_init(self, obj):
 		pass
@@ -998,6 +1058,7 @@ class AppModule(AppModule):
 
 	def event_appModule_gainFocus(self):
 		global GB_monitorTimer, GB_audioPosition, GB_selection, GB_recordButtonIsPressed, _winInputHookKeyDownCallback  # noqa:E501
+		self.installAudacityRole()
 		GB_audioPosition = None
 		GB_selection = None
 		GB_recordButtonIsPressed = None
@@ -1007,14 +1068,28 @@ class AppModule(AppModule):
 		wx.CallLater(100, monitorAudioAndSelectionChanges)
 
 	def event_appModule_loseFocus(self):
+		print ("appModuleLoseFocus")
 		global GB_monitorTimer
+		import controlTypes
+		if hasattr(controlTypes, "Role") and hasattr(self, "NVDARole") and self.NVDARole is not None:
+			# for nvda version >= 2021.2
+			global ROLE_TRACKVIEW, ROLE_TRACK
+			import controlTypes.role
+			controlTypes.Role = self.NVDARole
+			controlTypes.role._roleLabels = self.NVDARoleLabels.copy()
+			del ROLE_TRACKVIEW
+			del ROLE_TRACK
+			del self.NVDARole
+			del self.NVDARoleLabels
+			print ("original nvda Role restored")
+
 		winInputHook.setCallbacks(keyDown=_winInputHookKeyDownCallback)
 		if GB_monitorTimer is not None:
 			GB_monitorTimer.Stop()
 			GB_monitorTimer = None
 
 	def event_gainFocus(self, obj, nextHandler):
-		printDebug("audacity appModule event_gainFocus: name= %s, %s, childID= %s" % (obj.name, controlTypes.roleLabels.get(obj.role), obj.IAccessibleChildID))  # noqa:E501
+		printDebug("audacity appModule event_gainFocus: name= %s, %s, childID= %s" % (obj.name, roleLabels.get(obj.role), obj.IAccessibleChildID))  # noqa:E501
 		if self.trapGainFocus:
 			api.setFocusObject(obj)
 			self.trapGainFocus = False
@@ -1028,7 +1103,7 @@ class AppModule(AppModule):
 	def event_focusEntered(self, obj, nextHandler):
 		if _addonConfigManager.toggleReportToolbarNameOnFocusEnteredOption(False):
 			if obj.name is not None and (
-				obj.role == controlTypes.ROLE_PANE
+				obj.role == ROLE_PANE
 				and obj.name != "panel"
 				and obj.name != ""):
 				ui.message(obj.name)
@@ -1077,7 +1152,7 @@ class AppModule(AppModule):
 			ui.message(_("Don't report automaticaly selection change"))
 
 	def inTrackView(self, obj, notify=True):
-		if obj.role in [ROLE_TRACK, ROLE_TRACKVIEW, controlTypes.ROLE_TABLEROW]:
+		if obj.role in [ROLE_TRACK, ROLE_TRACKVIEW, ROLE_TABLEROW]:
 			return True
 		if notify:
 			# Translators: message to the user when object is not in tracks view.
@@ -1287,14 +1362,13 @@ class ShellScriptsListDialog(wx.Dialog):
 
 	def initList(self):
 		self.docToScript = {}
-		self.scriptToKey = {}
+		self.scriptToIdentifier = {}
 		for script in self.appModule._scriptsToDocsAndCategory:
 			if script not in self.appModule._shellScriptToGestures:
 				continue
-			gest = self.appModule._shellScriptToGestures[script][0]
+			identifier = self.appModule._shellScriptToGestures[script][0]
 			(doc, category) = self.appModule._scriptsToDocsAndCategory[script]
-			key = ":".join(gest.split(":")[1:])
-			self.scriptToKey[script] = key
+			self.scriptToIdentifier[script] = identifier
 			self.docToScript[doc] = script
 
 	def doGui(self):
@@ -1303,8 +1377,9 @@ class ShellScriptsListDialog(wx.Dialog):
 		choice = []
 		for doc in self.docList:
 			script = self.docToScript[doc]
-			key = self.scriptToKey[script]
-			choice.append("%s: %s" % (doc, key))
+			identifier = self.scriptToIdentifier[script]
+			source, main = inputCore.getDisplayTextForGestureIdentifier(identifier.lower())
+			choice.append("%s: %s" % (doc, main))
 
 		from gui import guiHelper
 		mainSizer = wx.BoxSizer(wx.VERTICAL)
@@ -1351,7 +1426,7 @@ class ShellScriptsListDialog(wx.Dialog):
 		index = self.scriptsListBox.GetSelection()
 		doc = self.docList[index]
 		script = self.docToScript[doc]
-		key = self.scriptToKey[script]
+		identifier = self.scriptToIdentifier[script]
 		from keyboardHandler import KeyboardInputGesture
 		gesture = KeyboardInputGesture.fromName(key)
 		wx.CallLater(200, speech.cancelSpeech)

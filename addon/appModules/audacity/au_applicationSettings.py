@@ -26,8 +26,14 @@ class ApplicationSettingsManager(object):
 
 	def _getSettingsFolderPath(self):
 		try:
+			if hasattr(shlobj, "SHGetKnownFolderPath"):
+				configParent = shlobj.SHGetKnownFolderPath(
+					shlobj.FolderId.ROAMING_APP_DATA 
+					)
+			else:
+				configParent = shlobj.SHGetFolderPath(0, shlobj.CSIDL_APPDATA)
 			dir = os.path.join(
-				shlobj.SHGetFolderPath(0, shlobj.CSIDL_APPDATA),
+				configParent,
 				self._settingsFolderName)
 		except WindowsError:
 			log.warning("%ssettings directory not found" % self.settingsFolderName)

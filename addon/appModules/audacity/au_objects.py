@@ -115,26 +115,10 @@ def initialize(appModule):
 	global _audacityHierarchyPaths, _audacityVersionID
 	version = appModule._get_productVersion()
 	_audacityVersionID = int("".join(version.split(",")))
-
-	if _audacityVersionID in [2420, 3000, 3020]:
-		id = _hierarchy_2420
-	elif _audacityVersionID == 2410:
-		id = _hierarchy_2410
-	elif _audacityVersionID == 2330:
-		id = _hierarchy_2330
-	elif _audacityVersionID == 2320:
-		id = _hierarchy_2320
-	else:
-		id = _hierarchy_2420
-		log.warning("This version %s of Audacity is perhaps not  compatible with the add-on" % version)  # noqa: E501 line too long
-		wx.CallLater(
-			1000, gui.messageBox,
-			# Translators: the label of a dialog box message.
-			_("The add-on has not been tested with this version of Audacity and may not be compatible with it."),
-			# Translators: the label of a dialog box title.
-			_("%s add-on - warning") % _addonSummary,  # noqa: F405,E501 '_' may be undefined, or defined from star, line too long
-			wx.OK | wx.ICON_WARNING)
-
+	id = _hierarchy_2420
+	if _audacityVersionID < 2410:
+		log.warning(
+			"This version %s of Audacity is not supported" % version)
 	_audacityHierarchyPaths = id
 
 
@@ -325,8 +309,10 @@ def transportToolBarObject():
 		# the only solution to find transport toolbar
 		for i in range(obj.childCount):
 			o = obj.getChild(i)
-			if o.windowControlID == 0 and o.childCount == 7:
-				return o
+			if o.windowControlID == 0 and o.childCount >= 7:
+				for j in range(o.childCount):
+					if o.getChild(j).windowControlID == _controlIDs [HIE_PauseButton]:
+						return o
 	return None
 
 

@@ -1,10 +1,19 @@
 # appModules\audacity\au_timerControl.py
 # a part of audacityAccessEnhancement add-on
-# Copyright (C) 2018, Paulber19
+# Copyright (C) 2018-2021, Paulber19
 # This file is covered by the GNU General Public License.
 
 from logHandler import log
-import controlTypes
+try:
+	# for nvda version >= 2021.2
+	from controlTypes.state import State
+	STATE_INVISIBLE  = State.INVISIBLE 
+	STATE_UNAVAILABLE  = State.UNAVAILABLE 
+except ImportError:
+	from controlTypes import (
+	STATE_INVISIBLE , STATE_UNAVAILABLE
+	)
+
 import ui
 import api
 from .au_time import formatTime, isNullDuration, getTimeMessage
@@ -133,8 +142,8 @@ class TimerControl(object):
 		if (
 			self.obj is None
 			or len(self.obj.states) == 0
-			or controlTypes.STATE_INVISIBLE in self.obj.states
-			or controlTypes.STATE_UNAVAILABLE in self.obj.states):
+			or STATE_INVISIBLE in self.obj.states
+			or STATE_UNAVAILABLE in self.obj.states):
 			return False
 		return True
 
