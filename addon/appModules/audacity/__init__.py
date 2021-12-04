@@ -7,8 +7,10 @@
 import addonHandler
 import appModuleHandler
 import inputCore
-try:
-	# for nvda version >= 2021.2
+from versionInfo import version_year, version_major
+NVDAVersion = [version_year, version_major]
+if NVDAVersion >= [2021, 3]:
+	# for nvda version >= 2021.3
 	from controlTypes.role import Role
 	ROLE_TABLEROW = Role.TABLEROW
 	ROLE_UNKNOWN = Role.UNKNOWN
@@ -30,7 +32,8 @@ try:
 	ROLE_TRACKVIEW = None # controlTypes.Role.TRACKVIEW
 	ROLE_TRACK = None #controlTypes.Role.TRACK
 	from controlTypes.role import _roleLabels as roleLabels
-except ImportError:
+else:
+	# for nvda version <2021.3
 	from controlTypes import roleLabels
 	from controlTypes import (
 	ROLE_TABLEROW, ROLE_UNKNOWN,
@@ -945,26 +948,25 @@ class AppModule(AppModule):
 			GB_monitorTimer = None
 		super(AppModule, self).terminate()
 	def installAudacityRole(self):
-		from versionInfo import version_year, version_major
-		NVDAVersion = [version_year, version_major]
+		if hasattr(self, "NVDARole"):
+			# allready installed
+			return
 		import controlTypes
 		if NVDAVersion >= [2021, 3]:
 			# for NVDA version > 2021.2
 			import controlTypes.role
 			global ROLE_TRACKVIEW, ROLE_TRACK
-			if not hasattr(self, "NVDARole"):
-				self.NVDARole = controlTypes.Role
-				self.NVDARoleLabels = controlTypes.role._roleLabels.copy()
-				from .au_role import extendNVDARole
-				(audacityRole, audacityRoleLabels) = extendNVDARole()
-				controlTypes.Role= audacityRole
-				controlTypes.role._roleLabels = audacityRoleLabels.copy()
-				ROLE_TRACKVIEW = controlTypes.Role.TRACKVIEW 
-				ROLE_TRACK = controlTypes.Role.TRACK 
+			self.NVDARole = controlTypes.Role
+			self.NVDARoleLabels = controlTypes.role._roleLabels.copy()
+			from .au_role import extendNVDARole
+			(audacityRole, audacityRoleLabels) = extendNVDARole()
+			controlTypes.Role= audacityRole
+			controlTypes.role._roleLabels = audacityRoleLabels.copy()
+			ROLE_TRACKVIEW = controlTypes.Role.TRACKVIEW 
+			ROLE_TRACK = controlTypes.Role.TRACK 
 		else:
 			# for nvda version < 2021.2
-			if not hasattr(self, "NVDARole"):
-				self.NVDARole = None
+			self.NVDARole = None
 
 	def chooseNVDAObjectOverlayClasses(self, obj, clsList):
 		self.installAudacityRole()
