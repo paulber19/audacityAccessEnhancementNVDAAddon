@@ -28,8 +28,8 @@ class ApplicationSettingsManager(object):
 		try:
 			if hasattr(shlobj, "SHGetKnownFolderPath"):
 				configParent = shlobj.SHGetKnownFolderPath(
-					shlobj.FolderId.ROAMING_APP_DATA 
-					)
+					shlobj.FolderId.ROAMING_APP_DATA
+				)
 			else:
 				configParent = shlobj.SHGetFolderPath(0, shlobj.CSIDL_APPDATA)
 			dir = os.path.join(

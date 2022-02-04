@@ -15,7 +15,7 @@ addonHandler.initTranslation()
 
 def uninstallPreviousVersion():
 	for addon in addonHandler.getAvailableAddons():
-		if (addon.manifest["name"], addon.manifest["author"]) == previousNameAndAuthor:  # noqa:E501
+		if (addon.manifest["name"], addon.manifest["author"]) == previousNameAndAuthor:
 			addon.requestRemove()
 			break
 
@@ -28,7 +28,7 @@ def saveFile(theFile, path):
 		shutil.copy(theFile, path)
 		os.remove(theFile)
 		log.warning("%s file copied in %s and deleted" % (path, theFile))
-	except:  # noqa:E722
+	except Exception:
 		log.warning("Error: %s file cannot be move to %s" % (theFile, path))
 
 
@@ -54,13 +54,20 @@ def onInstall():
 		f = os.path.join(userConfigPath, fileName)
 		if not os.path.exists(f):
 			continue
-		if gui.messageBox(
+		extraAppArgs = globalVars.appArgsExtra if hasattr(globalVars, "appArgsExtra") else globalVars.unknownAppArgs
+		keep = True if "addon-auto-update" in extraAppArgs else False
+		if keep or gui.messageBox(
 			# Translators: the label of a message box dialog
 			# to ask the user if he wants keep current configuration settings.
 			_("Do you want to keep current add-on configuration settings ?"),
 			# Translators: the title of a message box dialog.
-			_("%s - installation" % addonSummary),
-			wx.YES | wx.NO | wx.ICON_WARNING) == wx.YES:
+			_("%s - installation") % addonSummary,
+			wx.YES | wx.NO | wx.ICON_WARNING) == wx.YES or gui.messageBox(
+				# Translators: the label of a message box dialog.
+				_("Are you sure you don't want to keep the current add-on configuration settings?"),
+				# Translators: the title of a message box dialog.
+				_("%s - installation") % addonSummary,
+				wx.YES | wx.NO | wx.ICON_WARNING) == wx.NO:
 			path = os.path.join(curPath, curConfigFileName)
 			saveFile(f, path)
 		break

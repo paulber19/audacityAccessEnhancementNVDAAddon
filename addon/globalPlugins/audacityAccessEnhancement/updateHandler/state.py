@@ -31,8 +31,8 @@ def initialize():
 		# 9038: Python 3 requires binary format when working with pickles.
 		with open(_stateFilename, "rb") as f:
 			_state = pickle.load(f)
-	except:  # noqa:E722
-		log.debugWarning("update state file don't exist: initialization with default values", exc_info=False)  # noqa:E501
+	except Exception:
+		log.debugWarning("update state file don't exist: initialization with default values", exc_info=False)
 		# Defaults.
 		_state = {
 			"lastCheck": 0,
@@ -45,7 +45,7 @@ def saveState():
 		# #9038: Python 3 requires binary format when working with pickles.
 		with open(_stateFilename, "wb") as f:
 			pickle.dump(_state, f)
-	except:  # noqa:E722
+	except Exception:
 		log.debugWarning("Error saving state", exc_info=True)
 
 

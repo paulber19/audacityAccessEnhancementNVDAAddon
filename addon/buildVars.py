@@ -46,17 +46,17 @@ Previous versions of Audacity are not  supported.
 """),
 
 	# version
-	"addon_version": "2.5.1",
+	"addon_version": "2.6",
 	# Author(s)
 	"addon_author": "paulber19",
 	# URL for the add-on documentation support
 	"addon_url": "paulber19@laposte.net",
 	# Documentation file name
 	"addon_docFileName": "addonUserManual.html",
-	# Minimum NVDA version supported (e.g. "2018.3")  # noqa:E501
+	# Minimum NVDA version supported (e.g. "2018.3")
 	"addon_minimumNVDAVersion": "2019.3",
-	# Last NVDA version supported/tested (e.g. "2018.4", ideally more recent than minimum version)  # noqa:E501
-	"addon_lastTestedNVDAVersion": "2021.3",
+	# Last NVDA version supported/tested (e.g. "2018.4", ideally more recent than minimum version)
+	"addon_lastTestedNVDAVersion": "2022.1",
 	# Add-on update channel (default is stable or None)
 	"addon_updateChannel": None,
 }
@@ -70,14 +70,14 @@ pythonSources = [
 	os.path.join("addon", "appModules", "audacity", "*.py"),
 	os.path.join("addon", "globalPlugins", "audacityAccessEnhancement", "*.py"),
 	os.path.join(
-		"addon", "globalPlugins", "audacityAccessEnhancement", "updateHandler", "*.py"),  # noqa:E501
+		"addon", "globalPlugins", "audacityAccessEnhancement", "updateHandler", "*.py"),
 ]
 
 # Files that contain strings for translation. Usually your python sources
 i18nSources = pythonSources
 
 # Files that will be ignored when building the nvda-addon file
-# Paths are relative to the addon directory, not to the root directory of your addon sources.  # noqa:E501
+# Paths are relative to the addon directory, not to the root directory of your addon sources.
 excludedFiles = []
 
 # Base language for the NVDA add-on

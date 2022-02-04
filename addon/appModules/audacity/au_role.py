@@ -4,12 +4,14 @@
 # This file is covered by the GNU General Public License.
 # Released under GPL 2
 
-import addonHandler
 import controlTypes
-def addControlTypeRole (roleName, value, roleLabel):
+
+
+def addControlTypeRole(roleName, value, roleLabel):
 	"""
 	Allows you to add a role, with its value and its label, in the controlTypes module.
-	This feature supports versions of NVDA that only use role constants, as well as those that use the controlTypes.Role enumeration class.
+	This feature supports versions of NVDA that only use role constants, as well as those that use
+	the controlTypes.Role enumeration class.
 	parameters :
 	@param roleName : name of the role, which must be written in all caps.
 	@type roleName : str.
@@ -20,7 +22,6 @@ def addControlTypeRole (roleName, value, roleLabel):
 	@return : Void.
 	@rtype : Void
 	"""
-	import controlTypes
 	roleName = roleName.upper()
 	if hasattr(controlTypes, "Role"):
 		from utils.displayString import DisplayStringIntEnum
@@ -39,18 +40,20 @@ def addControlTypeRole (roleName, value, roleLabel):
 _audacityRoles = (
 	("TRACKVIEW", 300, ""),
 	("TRACK", 301, "")
-	)
+)
 
 
-def extendNVDARole(roles= _audacityRoles):
+def extendNVDARole(roles=_audacityRoles):
 	"""
 	Allows you to add some roles, with its value and its label, in the controlTypes module.
-	This feature supports versions of NVDA that only use role constants, as well as those that use the controlTypes.Role enumeration class.
+	This feature supports versions of NVDA that only use role constants,
+	as well as those that use the controlTypes.Role enumeration class.
 	parameters :
 	@param roles: list which defines for each role:
 	@the roleName (type str) name of the role, which must be written in all caps.
 	@the Role value(type int), which must be represented by a decimal number.
-	@ the roleLabel:  The display name of the role (type str), which must match the type of the newly created role.
+	@ the roleLabel:  The display name of the role (type str),
+	which must match the type of the newly created role.
 	@return : new role enum
 	@rtype : DisplayStringIntEnum
 	"""
@@ -65,6 +68,5 @@ def extendNVDARole(roles= _audacityRoles):
 	roleLabels = dict(_roleLabels)
 	for roleName, roleValue, roleLabel in roles:
 		roleLabels[getattr(Role, roleName)] = roleLabel
-	Role._displayStringLabels = property (lambda self: roleLabels)
+	Role._displayStringLabels = property(lambda self: roleLabels)
 	return (Role, roleLabels)
-	

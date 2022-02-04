@@ -1,6 +1,6 @@
 # appModules\audacity\au_utils.py
 # A part of audacityAccessEnhancement add-on
-# Copyright (C) 2018, paulber19
+# Copyright (C) 2018-2022, paulber19
 # This file is covered by the GNU General Public License.
 
 
@@ -52,7 +52,7 @@ def messageBox(
 
 def getPositionXY(obj):
 	location = obj.location
-	(x, y) = (int(location[0])+int(location[2]/2), int(location[1])+int(location[3]/2))  # noqa:E501
+	(x, y) = (int(location[0]) + int(location[2] / 2), int(location[1]) + int(location[3] / 2))
 	return (x, y)
 
 

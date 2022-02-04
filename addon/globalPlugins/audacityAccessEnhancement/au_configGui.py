@@ -12,7 +12,7 @@ import sys
 _curAddon = addonHandler.getCodeAddon()
 path = os.path.join(_curAddon.path, "shared")
 sys.path.append(path)
-from au_addonConfigManager import _addonConfigManager  # noqa:E402
+from au_addonConfigManager import _addonConfigManager
 del sys.path[-1]
 addonHandler.initTranslation()
 
@@ -57,13 +57,17 @@ class OptionsSettingsPanel(SettingsPanel):
 		self.AutomaticSelectionChangeReportBox.SetFocus()
 
 	def saveSettingChanges(self):
-		if self.AutomaticSelectionChangeReportBox.IsChecked() != _addonConfigManager .toggleAutomaticSelectionChangeReportOption(False):  # noqa:501
+		if self.AutomaticSelectionChangeReportBox.IsChecked() != (
+			_addonConfigManager .toggleAutomaticSelectionChangeReportOption(False)):
 			_addonConfigManager .toggleAutomaticSelectionChangeReportOption(True)
-		if self.UseSpaceBarToPressButtonBox .IsChecked() != _addonConfigManager .toggleUseSpaceBarToPressButtonOption(False):  # noqa:E501
+		if self.UseSpaceBarToPressButtonBox .IsChecked() != (
+			_addonConfigManager .toggleUseSpaceBarToPressButtonOption(False)):
 			_addonConfigManager .toggleUseSpaceBarToPressButtonOption(True)
-		if self.reportToolbarNameOnFocusEnteredBox .IsChecked() != _addonConfigManager .toggleReportToolbarNameOnFocusEnteredOption(False):  # noqa:E501
+		if self.reportToolbarNameOnFocusEnteredBox .IsChecked() != (
+			_addonConfigManager .toggleReportToolbarNameOnFocusEnteredOption(False)):
 			_addonConfigManager .toggleReportToolbarNameOnFocusEnteredOption(True)
-		if self.editSpinBoxEnhancedAnnouncementBox.IsChecked() != _addonConfigManager .toggleEditSpinBoxEnhancedAnnouncementOption(False):  # noqa:E501
+		if self.editSpinBoxEnhancedAnnouncementBox.IsChecked() != (
+			_addonConfigManager .toggleEditSpinBoxEnhancedAnnouncementOption(False)):
 			_addonConfigManager .toggleEditSpinBoxEnhancedAnnouncementOption(True)
 
 	def postSave(self):
@@ -111,7 +115,7 @@ class UpdateSettingsPanel(SettingsPanel):
 	def onCheckForUpdate(self, evt):
 		from .updateHandler import addonUpdateCheck
 		self.saveSettingChanges()
-		releaseToDevVersion = self.updateReleaseVersionsToDevVersionsCheckBox.IsChecked()  # noqa:E501
+		releaseToDevVersion = self.updateReleaseVersionsToDevVersionsCheckBox.IsChecked()
 		wx.CallAfter(addonUpdateCheck, auto=False, releaseToDev=releaseToDevVersion)
 		self.Close()
 
@@ -128,9 +132,10 @@ class UpdateSettingsPanel(SettingsPanel):
 		os.startfile(theFile)
 
 	def saveSettingChanges(self):
-		if self.autoCheckForUpdatesCheckBox.IsChecked() != _addonConfigManager .toggleAutoUpdateCheck(False):  # noqa:E501
+		if self.autoCheckForUpdatesCheckBox.IsChecked() != _addonConfigManager .toggleAutoUpdateCheck(False):
 			_addonConfigManager .toggleAutoUpdateCheck(True)
-		if self.updateReleaseVersionsToDevVersionsCheckBox.IsChecked() != _addonConfigManager .toggleUpdateReleaseVersionsToDevVersions(False):  # noqa:E501
+		if self.updateReleaseVersionsToDevVersionsCheckBox.IsChecked() != (
+			_addonConfigManager .toggleUpdateReleaseVersionsToDevVersions(False)):
 			_addonConfigManager .toggleUpdateReleaseVersionsToDevVersions(True)
 
 	def postSave(self):
@@ -150,7 +155,7 @@ class AddonSettingsDialog(MultiCategorySettingsDialog):
 	categoryClasses = [
 		OptionsSettingsPanel,
 		UpdateSettingsPanel,
-		]
+	]
 
 	def __init__(self, parent, initialCategory=None):
 		super(AddonSettingsDialog, self).__init__(parent, initialCategory)

@@ -1,17 +1,17 @@
 # appModules\audacity\au_timerControl.py
 # a part of audacityAccessEnhancement add-on
-# Copyright (C) 2018-2021, Paulber19
+# Copyright (C) 2018-2022, Paulber19
 # This file is covered by the GNU General Public License.
 
 from logHandler import log
 try:
 	# for nvda version >= 2021.2
 	from controlTypes.state import State
-	STATE_INVISIBLE  = State.INVISIBLE 
-	STATE_UNAVAILABLE  = State.UNAVAILABLE 
+	STATE_INVISIBLE = State.INVISIBLE
+	STATE_UNAVAILABLE = State.UNAVAILABLE
 except ImportError:
 	from controlTypes import (
-	STATE_INVISIBLE , STATE_UNAVAILABLE
+		STATE_INVISIBLE, STATE_UNAVAILABLE
 	)
 
 import ui
@@ -46,7 +46,7 @@ _selectionFormatIDs = {
 	"PAL frames (25 fps)": 13,  # 000,026 frames
 	"hh:mm:ss + CDDA frames (75 fps)": 14,  # 00 h 00 m 00 s+02 frames
 	"CDDA frames (75 fps)": 15,  # XXX,YYY frames,  # 000,077 frames
-	}
+}
 
 
 def format_XXXYYY(text):
@@ -85,9 +85,9 @@ _selectionFormats = {
 	"dd:hh:mm:ss": (8, format_DDHHMMSS),  # 00 days 00 h 00 m 00 s
 	"hh:mm:ss + hundredths": (6, format_HHMMSS),  # 00 h 00 m 01.00 s
 	"hh:mm:ss + milliseconds": (6, format_HHMMSS),  # 00 h 00 m 01.000 s
-	"hh:mm:ss + samples": (7, format_HHMMSS_samples),  # noqa:E501 00 h 00 m 01 s+00000 samples
+	"hh:mm:ss + samples": (7, format_HHMMSS_samples),
 	"samples": (2, format_samples),  # 000,000,000 samples
-	"hh:mm:ss + film frames (24 fps)": None,  # noqa:E501 00 h 00 m 00 s+00 frames
+	"hh:mm:ss + film frames (24 fps)": None,
 	"film frames (24 fps)": None,  # 000,000 frames
 	"hh:mm:ss + NTSC drop frames": None,  # 00 h 00 m 00 s+00 frames
 	"hh:mm:ss + NTSC drop frames": None,  # 00 h 00 m 00 s+000 frames
@@ -96,7 +96,7 @@ _selectionFormats = {
 	"PAL frames (25 fps)": None,  # 000,026 frames
 	"hh:mm:ss + CDDA frames (75 fps)": None,  # 00 h 00 m 00 s+02 frames
 	"CDDA frames (75 fps)": None,  # XXX,YYY frames,  # 000,077 frames
-	}
+}
 
 
 class TimerControl(object):
@@ -107,7 +107,7 @@ class TimerControl(object):
 			log.warning("error, not timerControl object %s" % self.__class__)
 			self.name = ""
 		else:
-			self.name = self.obj.IAccessibleObject.accName(0) if self.obj is not None else None  # noqa:E501
+			self.name = self.obj.IAccessibleObject.accName(0) if self.obj is not None else None
 		self.selectionFormat = editFormat
 		self.selectionFormatID = _selectionFormatIDs[self.selectionFormat]
 
@@ -130,7 +130,7 @@ class TimerControl(object):
 			return (timerControlName, None)
 		try:
 			(nb, funct) = _selectionFormats[self.selectionFormat]
-		except:  # noqa:E722
+		except Exception:
 			return (None, None)
 		label = getLabel(timerControlName, nb)
 		timerControlName = timerControlName.replace(label, "").strip()
@@ -159,7 +159,7 @@ class TimerControl(object):
 			if c in ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]:
 				sTemp = sTemp + "*"
 			else:
-				sTemp = sTemp+c
+				sTemp = sTemp + c
 		if sTemp.lower() in ["**:**:**", "**:**:**.**", "**:**:**.***"]:
 			return True
 		return False
@@ -188,7 +188,9 @@ class AudioTimerControl(TimerControl):
 		if selection is None:
 			return None
 
-		((sSelectionStartLabel, sSelectionStartTime), (sSelectionEndLabel, sSelectionEndTime), selectionDuration, selectionCenter) = selection  # noqa:E501
+		(
+			(sSelectionStartLabel, sSelectionStartTime), (sSelectionEndLabel, sSelectionEndTime),
+			selectionDuration, selectionCenter) = selection
 		msg = self.getIfAudioAtStartOfSelectionMessage(sAudioPosition, selection)
 		if not isNullDuration(sSelectionStartTime) and msg is not None:
 			pass
@@ -207,7 +209,9 @@ class AudioTimerControl(TimerControl):
 	def getIfAudioAtStartOfSelectionMessage(self, sAudioPosition, selection):
 		msg = None
 		(sAudioPositionLabel, sAudioPositionTime) = sAudioPosition
-		((sSelectionStartLabel, sSelectionStartTime), (sSelectionEndLabel, sSelectionEndTime), selectionDuration, selectionCenter) = selection  # noqa:E501
+		(
+			(sSelectionStartLabel, sSelectionStartTime), (sSelectionEndLabel, sSelectionEndTime),
+			selectionDuration, selectionCenter) = selection
 		if not isNullDuration(sSelectionStartTime):
 			# there is a selection and  selection start is not start of track
 			if (
@@ -215,7 +219,7 @@ class AudioTimerControl(TimerControl):
 				or isNullDuration(sAudioPositionTime)):
 				# Translators: message to the user
 				# to inform that the  audio position is at selection start.
-				msg = "%s %s" % (_("Audio position at selection's start"), getTimeMessage(sSelectionStartTime))  # noqa:E501
+				msg = "%s %s" % (_("Audio position at selection's start"), getTimeMessage(sSelectionStartTime))
 		return msg
 
 
@@ -292,7 +296,9 @@ class SelectionTimers(object):
 	def getSelectionMessage(self, selection=None):
 		if selection is None:
 			selection = self.getSelection()
-		((selectionStartLabel, selectionStartTime), (selectionEndLabel, selectionEndTime), selectionDuration, selectionCenter) = selection  # noqa:E501
+		(
+			(selectionStartLabel, selectionStartTime), (selectionEndLabel, selectionEndTime),
+			selectionDuration, selectionCenter) = selection
 		if (selectionStartTime, selectionEndTime) == (None, None):
 			return None
 		if self.sayIfNoSelection(selectionStartTime, selectionEndTime):
@@ -312,7 +318,9 @@ class SelectionTimers(object):
 			selection = self.getSelection()
 		if selection is None:
 			return None
-		((selectionStartLabel, selectionStartTime), (selectionEndLabel, selectionEndTime), selectionDuration, selectionCenter) = selection  # noqa:E501
+		(
+			(selectionStartLabel, selectionStartTime), (selectionEndLabel, selectionEndTime),
+			selectionDuration, selectionCenter) = selection
 		if selectionDuration[1] is None:
 			return None
 		if self.sayIfNoSelection(selectionStartTime, selectionEndTime):
@@ -330,7 +338,9 @@ class SelectionTimers(object):
 			selection = self.getSelection()
 		if selection is None:
 			return None
-		((selectionStartLabel, selectionStartTime), (selectionEndLabel, selectionEndTime), selectionDuration, selectionCenter) = selection  # noqa:E501
+		(
+			(selectionStartLabel, selectionStartTime), (selectionEndLabel, selectionEndTime),
+			selectionDuration, selectionCenter) = selection
 		if selectionCenter[1] is None:
 			return None
 		if self.sayIfNoSelection(selectionStartTime, selectionEndTime):
@@ -344,7 +354,7 @@ class SelectionTimers(object):
 		return " ".join(textList)
 
 	def sayIfNoSelection(self, selectionStartTime, selectionEndTime):
-		if (selectionStartTime == selectionEndTime) and isNullDuration(selectionStartTime):  # noqa:E501
+		if (selectionStartTime == selectionEndTime) and isNullDuration(selectionStartTime):
 			# Translators: message to the user to inform that there is no selection.
 			sayMessage(_("no selection"))
 			return True
@@ -353,7 +363,7 @@ class SelectionTimers(object):
 	def getIfNoSelectionMessage(self, selectionStartTime, selectionEndTime):
 		if selectionStartTime is None or selectionEndTime is None:
 			return None
-		if (selectionStartTime == selectionEndTime) and isNullDuration(selectionStartTime):  # noqa:E501
+		if (selectionStartTime == selectionEndTime) and isNullDuration(selectionStartTime):
 			# Translators: message to the user that there is no selection.
 			return _("no selection")
 		return None
@@ -363,7 +373,9 @@ class SelectionTimers(object):
 			selection = self.getSelection()
 		if selection is None:
 			return None
-		((selectionStartLabel, selectionStartTime), (selectionEndLabel, selectionEndTime), selectionDuration, selectionCenter) = selection  # noqa:E501
+		(
+			(selectionStartLabel, selectionStartTime), (selectionEndLabel, selectionEndTime),
+			selectionDuration, selectionCenter) = selection
 		textList = []
 		# sayMessage (selectionStartLabel)
 		textList.append(selectionStartLabel)
@@ -372,9 +384,11 @@ class SelectionTimers(object):
 
 	def getSelectionEndMessage(self, selection=None):
 		if selection is None:
-			selection = getSelection()
+			selection = self.getSelection()
 		if selection is None:
 			return None
 
-		((selectionStartLabel, selectionStartTime), (selectionEndLabel, selectionEndTime), selectionDuration, selectionCenter) = selection  # noqa:E501
-		return "%s %s" % (selectionEndLabel, getTimeMessage(selectionEndTime))  # noqa:E501
+		(
+			(selectionStartLabel, selectionStartTime), (selectionEndLabel, selectionEndTime),
+			selectionDuration, selectionCenter) = selection
+		return "%s %s" % (selectionEndLabel, getTimeMessage(selectionEndTime))

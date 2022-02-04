@@ -19,6 +19,18 @@ Sorry, but this document is an automatic translation from french language.
 
 
 
+
+
++ v2.6 (02/04/2022) +
+- Compatibility with NVDA 2022.1
+- reset the configuration in the event of errors in the configuration file.
+
+
+Changes:
+- during an automatic update of the add-on, it no longer asks the user if he wants to keep the current configuration parameters of the add-on.
+- during a manual installation of the add-on, a confirmation request is requested when the user has chosen not to keep the current settings of the add-on configuration.
+
+
 + v2.5 (12/01/2021) +
 - Compatibility with NVDA 2021.3
 - removed the warning message indicating that the extension has not been tested with the version of Audacity used.

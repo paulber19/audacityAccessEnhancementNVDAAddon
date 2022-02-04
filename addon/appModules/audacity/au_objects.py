@@ -1,16 +1,18 @@
 # -*- coding: UTF-8 -*-
 # appModules\audacity\au_objects.py
 # a part of audacityAccessEnhancement add-on
-# Copyright 2018-2021,paulber19
+# Copyright 2018-2022,paulber19
 # This file is covered by the GNU General Public License.
 
 
 import addonHandler
 from logHandler import log
 import api
-import gui
-import wx
-from oleacc import *  # noqa: F401, F403
+
+from oleacc import (
+	STATE_SYSTEM_PRESSED, STATE_SYSTEM_UNAVAILABLE, STATE_SYSTEM_INVISIBLE,
+)
+
 
 addonHandler.initTranslation()
 
@@ -125,7 +127,7 @@ def initialize(appModule):
 def getObjectByHierarchy(oParent, iHierarchy):
 	try:
 		sHierarchy = _audacityHierarchyPaths[iHierarchy]
-	except:  # noqa: E722 Bare except
+	except Exception:
 		return None
 	try:
 		o = oParent
@@ -139,7 +141,7 @@ def getObjectByHierarchy(oParent, iHierarchy):
 					# error, no child
 					return None
 			return o
-	except:  # noqa: E722 Bare except
+	except Exception:
 		log.error("error getObjectByHierarchy: %s, parent: %s" % (
 			sHierarchy, oParent.name))
 	return None
@@ -311,7 +313,7 @@ def transportToolBarObject():
 			o = obj.getChild(i)
 			if o.windowControlID == 0 and o.childCount >= 7:
 				for j in range(o.childCount):
-					if o.getChild(j).windowControlID == _controlIDs [HIE_PauseButton]:
+					if o.getChild(j).windowControlID == _controlIDs[HIE_PauseButton]:
 						return o
 	return None
 
@@ -367,10 +369,10 @@ _buttonObjectsDic = {
 def isPressed(button):
 	try:
 		o = _buttonObjectsDic[button]()
-	except:  # noqa: E722 Bare except
+	except Exception:
 		log.warning("Button %s not found" % button)
 		o = None
-	if o and o.IAccessibleObject.accState(0) & STATE_SYSTEM_PRESSED:  # noqa: F405,E501 'STATE_SYSTEM_PRESSED' may be undefined, or defined from star, line too long
+	if o and o.IAccessibleObject.accState(0) & STATE_SYSTEM_PRESSED:
 		return True
 	return False
 
@@ -378,12 +380,12 @@ def isPressed(button):
 def isAvailable(button):
 	try:
 		o = _buttonObjectsDic[button]()
-	except:  # noqa: E722 Bare except
+	except Exception:
 		log.warning("Button %s not found" % button)
 		o = None
-	if (
-			o and (o.IAccessibleObject.accState(0) & STATE_SYSTEM_UNAVAILABLE  # noqa: F405,E501
-				or o.IAccessibleObject.accState(0) & STATE_SYSTEM_INVISIBLE)):  # noqa: F405,E501
+	if (o and (
+		o.IAccessibleObject.accState(0) & STATE_SYSTEM_UNAVAILABLE
+		or o.IAccessibleObject.accState(0) & STATE_SYSTEM_INVISIBLE)):
 		return False
 	return True
 

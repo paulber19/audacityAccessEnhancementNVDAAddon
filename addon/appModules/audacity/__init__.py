@@ -1,6 +1,6 @@
 # appModules\audacity\__init__.py
 # a part of audacityAccessEnhancement add-on
-# Copyright (C) 2018-2021, Paulber19
+# Copyright (C) 2018-2022, Paulber19
 # This file is covered by the GNU General Public License.
 # Released under GPL 2
 
@@ -14,40 +14,34 @@ if NVDAVersion >= [2021, 3]:
 	from controlTypes.role import Role
 	ROLE_TABLEROW = Role.TABLEROW
 	ROLE_UNKNOWN = Role.UNKNOWN
-	ROLE_TABLE  = Role.TABLE 
+	ROLE_TABLE = Role.TABLE
 	ROLE_BUTTON = Role.BUTTON
-	ROLE_STATICTEXT  = Role.STATICTEXT 
+	ROLE_STATICTEXT = Role.STATICTEXT
 	ROLE_PANE = Role.PANE
 	from controlTypes.state import State
-	STATE_UNAVAILABLE  = State.UNAVAILABLE 
-	STATE_INVISIBLE  = State.INVISIBLE 
-	STATE_FOCUSABLE  = State.FOCUSABLE 
-	STATE_SELECTED  = State.SELECTED 
+	STATE_UNAVAILABLE = State.UNAVAILABLE
+	STATE_INVISIBLE = State.INVISIBLE
+	STATE_FOCUSABLE = State.FOCUSABLE
+	STATE_SELECTED = State.SELECTED
 	# adding role for audacity
-	import controlTypes.role
-#	from .au_role import extendNVDARole
-	#(audacityRole, audacityRoleLabels) = extendNVDARole()
-	#controlTypes.Role = audacityRole
-	#controlTypes.role._roleLabels = audacityRoleLabels
-	ROLE_TRACKVIEW = None # controlTypes.Role.TRACKVIEW
-	ROLE_TRACK = None #controlTypes.Role.TRACK
+	ROLE_TRACKVIEW = None
+	ROLE_TRACK = None
 	from controlTypes.role import _roleLabels as roleLabels
 else:
 	# for nvda version <2021.3
-	from controlTypes import roleLabels
 	from controlTypes import (
-	ROLE_TABLEROW, ROLE_UNKNOWN,
-	ROLE_TABLE , ROLE_BUTTON,
-	ROLE_STATICTEXT , ROLE_PANE
+		ROLE_TABLEROW, ROLE_UNKNOWN,
+		ROLE_TABLE, ROLE_BUTTON,
+		ROLE_STATICTEXT, ROLE_PANE,
+		roleLabels
 	)
 	from controlTypes import (
-	STATE_UNAVAILABLE , STATE_INVISIBLE , STATE_FOCUSABLE ,
-	STATE_SELECTED 
+		STATE_UNAVAILABLE, STATE_INVISIBLE, STATE_FOCUSABLE,
+		STATE_SELECTED
 	)
 	# role for audacity
 	ROLE_TRACKVIEW = 300
 	ROLE_TRACK = 301
-	from controlTypes import roleLabels
 # no label for this role
 roleLabels[ROLE_TRACKVIEW] = ""
 roleLabels[ROLE_TRACK] = ""
@@ -68,7 +62,12 @@ import winInputHook
 from . import au_time
 from . import au_timerControl
 from . import au_objects
-from .au_timerControl import *  # noqa:F403
+from .au_timerControl import (
+	SELFOR_SECONDS, SELFOR_HHMMSS, SELFOR_DDHHMMSS,
+	SELFOR_HHMMSS_HUNDREDTHS, SELFOR_HHMMSS_MILLISECONDS, SELFOR_HHMMSS_SAMPLES,
+	SELFOR_SAMPLES,
+)
+
 from .au_utils import isOpened, makeAddonWindowTitle
 from .au_NVDAStrings import NVDAString
 import sys
@@ -80,19 +79,22 @@ try:
 	from appModuleDebug import printDebug, toggleDebugFlag
 except ImportError:
 	from appModuleHandler import AppModule as AppModule
-	def printDebug(msg): return
-	def toggleDebugFlag(debug=False): return
+
+	def printDebug(msg):
+		return
+
+	def toggleDebugFlag(debug=False):
+		return
 del sys.path[-1]
 sharedPath = os.path.join(_curAddon.path, "shared")
 sys.path.append(sharedPath)
-from au_addonConfigManager import _addonConfigManager  # noqa:E402
+from au_addonConfigManager import _addonConfigManager
 del sys.path[-1]
 
 addonHandler.initTranslation()
 
 # to save current winInputHook keyDownCallback function before hook
 _winInputHookKeyDownCallback = None
-
 
 
 # timer for repeatCount management
@@ -117,7 +119,6 @@ _scriptCategory = str(_addonSummary)
 def monitorAudioAndSelectionChanges():
 	global GB_monitorTimer, GB_audioPosition,\
 		GB_selection, GB_recordButtonIsPressed
-
 
 	def getRecordChangeMessage():
 		global GB_recordButtonIsPressed
@@ -147,13 +148,13 @@ def monitorAudioAndSelectionChanges():
 				(selectionEndLabel, selectionEndTime),
 				selectionDuration, selectionCenter) = newSelection
 			(
-			(selectionStartLabel, oldSelectionStartTime),
-			(selectionEndLabel, oldSelectionEndTime),
-			selectionDuration, selectionCenter) = GB_selection
+				(selectionStartLabel, oldSelectionStartTime),
+				(selectionEndLabel, oldSelectionEndTime),
+				selectionDuration, selectionCenter) = GB_selection
 			# change to no selection ?
-			msg = selectionTimer.getIfNoSelectionMessage(selectionStartTime, selectionEndTime)  # noqa:E501
+			msg = selectionTimer.getIfNoSelectionMessage(selectionStartTime, selectionEndTime)
 			if (
-				(selectionStartTime != oldSelectionStartTime or selectionEndTime != oldSelectionEndTime)  # noqa:E501
+				(selectionStartTime != oldSelectionStartTime or selectionEndTime != oldSelectionEndTime)
 				and msg is not None):
 				msgList.append(msg)
 			else:
@@ -162,7 +163,7 @@ def monitorAudioAndSelectionChanges():
 					audioTimer = au_timerControl.AudioTimerControl()
 					if not audioTimer.isAvailable():
 						return None
-					msg = audioTimer.getIfAudioAtStartOfSelectionMessage(GB_audioPosition, newSelection)  # noqa:E501
+					msg = audioTimer.getIfAudioAtStartOfSelectionMessage(GB_audioPosition, newSelection)
 					if msg is not None:
 						if msg != audioChangeMessage:
 							newAudioPosition = audioTimer.getAudioPosition()
@@ -342,7 +343,7 @@ class TrackView (NVDAObjects.NVDAObject):
 			# Translators: message to user that there is no track in tracks view.
 			ui.message(_("No track"))
 		else:
-			global GB_monitorTimer, GB_audioPosition, GB_selection, GB_recordButtonIsPressed  # noqa:E501
+			global GB_monitorTimer, GB_audioPosition, GB_selection, GB_recordButtonIsPressed
 			GB_audioPosition = None
 			GB_selection = None
 			GB_recordButtonIsPressed = None
@@ -378,7 +379,7 @@ class Track(NVDAObjects.NVDAObject):
 				and obj.windowControlID == 1003)
 				and obj.parent.windowControlID == 1003):
 				return True
-		except:  # noqa:E722
+		except Exception:
 			pass
 		return False
 
@@ -399,7 +400,7 @@ class TimerControlEdit(NVDAObjects.NVDAObject):
 		try:
 			msg = "%s %s" % (sLabel, au_time.getTimeMessage(sTime))
 			ui.message(msg)
-		except:  # noqa:E722
+		except Exception:
 			super(TimerControlEdit, self).event_gainFocus()
 
 
@@ -475,7 +476,7 @@ _digitNames = {
 	# Translators:  name of a digit in  selection format.
 	DIGIT_DAY_UNITS: _("units of days"),
 	# Translators:  name of a digit in  selection format.
-	DIGIT_DAY_DOZENS:  _("dozens of days"),
+	DIGIT_DAY_DOZENS: _("dozens of days"),
 	# Translators:  name of a digit in  selection format.
 	DIGIT_UNITS: _("units"),
 	# Translators:  name of a digit in  selection format.
@@ -502,7 +503,7 @@ _digitNames = {
 	DIGIT_SAMPLE_TENS_THOUSANDS: _("tens thousands of samples"),
 	# Translators:  name of a digit in  selection format.
 	DIGIT_SAMPLE_HUNDREDS_THOUSANDS: _("hundreds thousands of samples"),
-	}
+}
 # names of selection format digit groups
 _digitGroupNames = {
 	# Translators: name of a selection format digit group.
@@ -523,7 +524,7 @@ _digitGroupNames = {
 	DGROUP_SAMPLE_THOUSANDS: _("thousand samples"),
 	# Translators: name of a selection format digit group.
 	DGROUP_SAMPLES: _("samples"),
-	}
+}
 
 
 class AudioPositionTimerControlEdit(NVDAObjects.NVDAObject):
@@ -542,7 +543,7 @@ class AudioPositionTimerControlEdit(NVDAObjects.NVDAObject):
 		try:
 			msg = "%s %s" % (sLabel, au_time.getTimeMessage(sTime))
 			ui.message(msg)
-		except:  # noqa:E722
+		except Exception:
 			super(TimerControlEdit, self).event_gainFocus()
 
 
@@ -618,7 +619,7 @@ _digitNames = {
 	# Translators:  name of a digit in  selection format.
 	DIGIT_DAY_UNITS: _("units of days"),
 	# Translators:  name of a digit in  selection format.
-	DIGIT_DAY_DOZENS:  _("dozens of days"),
+	DIGIT_DAY_DOZENS: _("dozens of days"),
 	# Translators:  name of a digit in  selection format.
 	DIGIT_UNITS: _("units"),
 	# Translators:  name of a digit in  selection format.
@@ -645,7 +646,7 @@ _digitNames = {
 	DIGIT_SAMPLE_TENS_THOUSANDS: _("tens thousands of samples"),
 	# Translators:  name of a digit in  selection format.
 	DIGIT_SAMPLE_HUNDREDS_THOUSANDS: _("hundreds thousands of samples"),
-	}
+}
 # names of selection format digit groups
 _digitGroupNames = {
 	# Translators: name of a selection format digit group.
@@ -666,32 +667,61 @@ _digitGroupNames = {
 	DGROUP_SAMPLE_THOUSANDS: _("thousand samples"),
 	# Translators: name of a selection format digit group.
 	DGROUP_SAMPLES: _("samples"),
-	}
+}
 
 
 class TimerControlDigit(NVDAObjects.NVDAObject):
 	_selectionFormaElements = {
-		SELFOR_SECONDS: (DGROUP_SECOND_THOUSANDS, DGROUP_SECOND_THOUSANDS, DGROUP_SECOND_THOUSANDS, DGROUP_SECONDS, DGROUP_SECONDS, DGROUP_SECONDS),  # noqa:E501
-		SELFOR_HHMMSS: (DGROUP_HOURS, DGROUP_HOURS, DGROUP_MINUTES, DGROUP_MINUTES, DGROUP_SECONDS, DGROUP_SECONDS),  # noqa:E501
-		SELFOR_DDHHMMSS: (DGROUP_DAYS, DGROUP_DAYS, DGROUP_HOURS, DGROUP_HOURS, DGROUP_MINUTES, DGROUP_MINUTES, DGROUP_SECONDS, DGROUP_SECONDS),  # noqa:E501
-		SELFOR_HHMMSS_HUNDREDTHS: (DGROUP_HOURS, DGROUP_HOURS, DGROUP_MINUTES, DGROUP_MINUTES, DGROUP_SECONDS, DGROUP_SECONDS, DGROUP_SECONDS_HUNDREDTHS, DGROUP_SECONDS_HUNDREDTHS),  # noqa:E501
-		SELFOR_HHMMSS_MILLISECONDS: (DGROUP_HOURS, DGROUP_HOURS, DGROUP_MINUTES, DGROUP_MINUTES, DGROUP_SECONDS, DGROUP_SECONDS, DGROUP_MILLISECONDS, DGROUP_MILLISECONDS, DGROUP_MILLISECONDS),  # noqa:E501
-		SELFOR_HHMMSS_SAMPLES: (DGROUP_HOURS, DGROUP_HOURS, DGROUP_MINUTES, DGROUP_MINUTES, DGROUP_SECONDS, DGROUP_SECONDS, DGROUP_SAMPLES, DGROUP_SAMPLES, DGROUP_SAMPLES, DGROUP_SAMPLES, DGROUP_SAMPLES, DGROUP_SAMPLES),  # noqa:E501
-		SELFOR_SAMPLES: (DGROUP_SAMPLE_THOUSANDS, DGROUP_SAMPLE_THOUSANDS, DGROUP_SAMPLE_THOUSANDS, DGROUP_SAMPLES, DGROUP_SAMPLES, DGROUP_SAMPLES),  # noqa:E501
-		}
+		SELFOR_SECONDS: (
+			DGROUP_SECOND_THOUSANDS,
+			DGROUP_SECOND_THOUSANDS, DGROUP_SECOND_THOUSANDS, DGROUP_SECONDS, DGROUP_SECONDS, DGROUP_SECONDS),
+		SELFOR_HHMMSS: (
+			DGROUP_HOURS, DGROUP_HOURS, DGROUP_MINUTES, DGROUP_MINUTES, DGROUP_SECONDS, DGROUP_SECONDS),
+		SELFOR_DDHHMMSS: (
+			DGROUP_DAYS, DGROUP_DAYS,
+			DGROUP_HOURS, DGROUP_HOURS, DGROUP_MINUTES, DGROUP_MINUTES, DGROUP_SECONDS, DGROUP_SECONDS),
+		SELFOR_HHMMSS_HUNDREDTHS: (
+			DGROUP_HOURS, DGROUP_HOURS, DGROUP_MINUTES, DGROUP_MINUTES, DGROUP_SECONDS, DGROUP_SECONDS,
+			DGROUP_SECONDS_HUNDREDTHS, DGROUP_SECONDS_HUNDREDTHS),
+		SELFOR_HHMMSS_MILLISECONDS: (
+			DGROUP_HOURS, DGROUP_HOURS, DGROUP_MINUTES, DGROUP_MINUTES, DGROUP_SECONDS,
+			DGROUP_SECONDS, DGROUP_MILLISECONDS, DGROUP_MILLISECONDS, DGROUP_MILLISECONDS),
+		SELFOR_HHMMSS_SAMPLES: (
+			DGROUP_HOURS, DGROUP_HOURS, DGROUP_MINUTES, DGROUP_MINUTES, DGROUP_SECONDS, DGROUP_SECONDS,
+			DGROUP_SAMPLES, DGROUP_SAMPLES, DGROUP_SAMPLES,
+			DGROUP_SAMPLES, DGROUP_SAMPLES, DGROUP_SAMPLES),
+		SELFOR_SAMPLES: (
+			DGROUP_SAMPLE_THOUSANDS, DGROUP_SAMPLE_THOUSANDS, DGROUP_SAMPLE_THOUSANDS, DGROUP_SAMPLES,
+			DGROUP_SAMPLES, DGROUP_SAMPLES),
+	}
 
 	_selectionFormatToDigitIDs = {
-		SELFOR_SECONDS: (DIGIT_SECOND_HUNDREDS_THOUSANDS, DIGIT_SECOND_TENS_THOUSANDS, DIGIT_SECOND_THOUSANDS, DIGIT_SECOND_HUNDREDS, DIGIT_SECOND_DOZENS,  DIGIT_SECOND_UNITS),  # noqa:E501
-		SELFOR_HHMMSS: (DIGIT_HOUR_DOZENS, DIGIT_HOUR_UNITS, DIGIT_MINUTE_DOZENS, DIGIT_MINUTE_UNITS, DIGIT_SECOND_DOZENS, DIGIT_SECOND_UNITS),  # noqa:E501
-		SELFOR_DDHHMMSS: (DIGIT_DAY_DOZENS, DIGIT_DAY_UNITS, DIGIT_HOUR_DOZENS, DIGIT_HOUR_UNITS, DIGIT_MINUTE_DOZENS, DIGIT_MINUTE_UNITS, DIGIT_SECOND_DOZENS, DIGIT_SECOND_UNITS),  # noqa:E501
-		SELFOR_HHMMSS_HUNDREDTHS: (DIGIT_HOUR_DOZENS, DIGIT_HOUR_UNITS, DIGIT_MINUTE_DOZENS, DIGIT_MINUTE_UNITS, DIGIT_SECOND_DOZENS, DIGIT_SECOND_UNITS, DIGIT_SECOND_TENTHS, DIGIT_SECOND_HUNDREDTHS),  # noqa:E501
-		SELFOR_HHMMSS_MILLISECONDS: (DIGIT_HOUR_DOZENS, DIGIT_HOUR_UNITS, DIGIT_MINUTE_DOZENS, DIGIT_MINUTE_UNITS, DIGIT_SECOND_DOZENS, DIGIT_SECOND_UNITS, DIGIT_SECOND_TENTHS, DIGIT_SECOND_HUNDREDTHS, DIGIT_SECOND_THOUSANDTHS),  # noqa:E501
-		SELFOR_HHMMSS_SAMPLES:  (DIGIT_HOUR_DOZENS, DIGIT_HOUR_UNITS, DIGIT_MINUTE_DOZENS, DIGIT_MINUTE_UNITS, DIGIT_SECOND_DOZENS, DIGIT_SECOND_UNITS, DIGIT_SAMPLE_HUNDREDS_THOUSANDS, DIGIT_SAMPLE_TENS_THOUSANDS, DIGIT_SAMPLE_THOUSANDS, DIGIT_SAMPLE_HUNDREDS, DIGIT_SAMPLE_DOZENS, DIGIT_SAMPLE_UNITS),  # noqa:E501
-		SELFOR_SAMPLES:  (DIGIT_SAMPLE_HUNDREDS_THOUSANDS, DIGIT_SAMPLE_TENS_THOUSANDS, DIGIT_SAMPLE_THOUSANDS, DIGIT_SAMPLE_HUNDREDS, DIGIT_SAMPLE_DOZENS, DIGIT_SAMPLE_UNITS),  # noqa:E501
-		}
+		SELFOR_SECONDS: (
+			DIGIT_SECOND_HUNDREDS_THOUSANDS, DIGIT_SECOND_TENS_THOUSANDS, DIGIT_SECOND_THOUSANDS,
+			DIGIT_SECOND_HUNDREDS, DIGIT_SECOND_DOZENS, DIGIT_SECOND_UNITS),
+		SELFOR_HHMMSS: (
+			DIGIT_HOUR_DOZENS, DIGIT_HOUR_UNITS, DIGIT_MINUTE_DOZENS, DIGIT_MINUTE_UNITS,
+			DIGIT_SECOND_DOZENS, DIGIT_SECOND_UNITS),
+		SELFOR_DDHHMMSS: (
+			DIGIT_DAY_DOZENS, DIGIT_DAY_UNITS, DIGIT_HOUR_DOZENS, DIGIT_HOUR_UNITS,
+			DIGIT_MINUTE_DOZENS, DIGIT_MINUTE_UNITS, DIGIT_SECOND_DOZENS, DIGIT_SECOND_UNITS),
+		SELFOR_HHMMSS_HUNDREDTHS: (
+			DIGIT_HOUR_DOZENS, DIGIT_HOUR_UNITS, DIGIT_MINUTE_DOZENS, DIGIT_MINUTE_UNITS,
+			DIGIT_SECOND_DOZENS, DIGIT_SECOND_UNITS, DIGIT_SECOND_TENTHS, DIGIT_SECOND_HUNDREDTHS),
+		SELFOR_HHMMSS_MILLISECONDS: (
+			DIGIT_HOUR_DOZENS, DIGIT_HOUR_UNITS, DIGIT_MINUTE_DOZENS, DIGIT_MINUTE_UNITS, DIGIT_SECOND_DOZENS,
+			DIGIT_SECOND_UNITS, DIGIT_SECOND_TENTHS, DIGIT_SECOND_HUNDREDTHS, DIGIT_SECOND_THOUSANDTHS),
+		SELFOR_HHMMSS_SAMPLES: (
+			DIGIT_HOUR_DOZENS, DIGIT_HOUR_UNITS, DIGIT_MINUTE_DOZENS, DIGIT_MINUTE_UNITS, DIGIT_SECOND_DOZENS,
+			DIGIT_SECOND_UNITS, DIGIT_SAMPLE_HUNDREDS_THOUSANDS, DIGIT_SAMPLE_TENS_THOUSANDS,
+			DIGIT_SAMPLE_THOUSANDS, DIGIT_SAMPLE_HUNDREDS, DIGIT_SAMPLE_DOZENS, DIGIT_SAMPLE_UNITS),
+		SELFOR_SAMPLES: (
+			DIGIT_SAMPLE_HUNDREDS_THOUSANDS, DIGIT_SAMPLE_TENS_THOUSANDS, DIGIT_SAMPLE_THOUSANDS,
+			DIGIT_SAMPLE_HUNDREDS, DIGIT_SAMPLE_DOZENS, DIGIT_SAMPLE_UNITS),
+	}
 
 	def event_gainFocus(self):
-		printDebug("TimerControlDigit event_gainFocus: %s, childID= %s" % (self.name, self.IAccessibleChildID))  # noqa:E501
+		printDebug("TimerControlDigit event_gainFocus: %s, childID= %s" % (self.name, self.IAccessibleChildID))
 		# When digit gains focus but not after script activation,
 		# report audio position.
 		tc = au_timerControl.TimerControl(self, self.editFormat)
@@ -699,7 +729,7 @@ class TimerControlDigit(NVDAObjects.NVDAObject):
 		try:
 			msg = "%s %s" % (sLabel, au_time.getTimeMessage(sTime))
 			ui.message(msg)
-		except:  # noqa:E722
+		except Exception:
 			super(TimerControlDigit, self).event_gainFocus()
 
 	def script_sayTimer(self, gesture):
@@ -722,7 +752,7 @@ class TimerControlDigit(NVDAObjects.NVDAObject):
 			# name form is xxx  s, x. We want only xxx
 			name = obj.name.split(" ")[0]
 			digitID = obj.IAccessibleChildID - 1
-			editFormatElements = TimerControlDigit._selectionFormaElements[obj.editFormatID]  # noqa:E501
+			editFormatElements = TimerControlDigit._selectionFormaElements[obj.editFormatID]
 			if editFormatElements is None:
 				# format not supported
 				ui.message(name)
@@ -762,7 +792,7 @@ class TimerControlDigit(NVDAObjects.NVDAObject):
 		"kb:downArrow": "upOrDownArrow",
 		"kb:leftArrow": "leftOrRightArrow",
 		"kb:rightArrow": "leftOrRightArrow",
-		}
+	}
 
 
 class SelectionTimerControlDigit(TimerControlDigit):
@@ -778,7 +808,8 @@ class SelectionTimerControlDigit(TimerControlDigit):
 class SettingSelectionTimerControlDigit(TimerControlDigit):
 	def initOverlayClass(self):
 		self.bindGesture("kb:shift+f10", "application")
-		printDebug("SettingSelectionTimerControlDigit initOverlayClass: name= %s, %s, childID= %s" % (self.name, roleLabels.get(self.role), self.IAccessibleChildID))  # noqa:E501
+		printDebug("SettingSelectionTimerControlDigit initOverlayClass: name= %s, %s, childID= %s" % (
+			self.name, roleLabels.get(self.role), self.IAccessibleChildID))
 		from .au_applicationSettings import ApplicationSettingsManager
 		applicationSettingsManager = ApplicationSettingsManager()
 		self.editFormat = applicationSettingsManager.getSelectionFormat()
@@ -834,7 +865,7 @@ class Button(NVDAObjects.NVDAObject):
 		obj = api.getFocusObject()
 		try:
 			obj.doAction()
-		except:  # noqa:E722
+		except Exception:
 			pass
 
 		eventHandler.queueEvent("gainFocus", obj)
@@ -857,8 +888,8 @@ class AppModule(AppModule):
 	_shellGestures = {}
 	_mainScriptToGesture = {
 		"moduleLayer": ("kb:nvda+space",),
-		#"test": ("kb:alt+control+f10",),
-		}
+		# "test": ("kb:alt+control+f10",),
+	}
 
 	_shellScriptToGestures = {
 		"displayHelp": ("kb:h",),
@@ -875,56 +906,59 @@ class AppModule(AppModule):
 		"reportPlaybackSlider": ("kb:f9",),
 		"reportRecordingSlider": ("kb:f10",),
 		"reportPlaybackSpeed": ("kb:f11",),
-		}
+	}
 
 	_scriptsToDocsAndCategory = {
 		# Translators: Input help mode message for report selection command.
-		"reportSelection":  (_("report position of start and end of the selection. Twice: report selection's length. Third: report position of selection's center "), None),  # noqa:E501
+		"reportSelection": (_(
+			"report position of start and end of the selection. "
+			"Twice: report selection's length. Third: report position of selection's center "), None),
 		# Translators: Input help mode message
 		# for report selection limits command.
-		"reportSelectionLimits": (_("Report position of start and end of the selection"), None),  # noqa:E501
+		"reportSelectionLimits": (_("Report position of start and end of the selection"), None),
 		# Translators: Input help mode message
 		# for report selection duration command.
-		"reportSelectionDuration": (_("Report selection's length"), None),  # noqa:E501
+		"reportSelectionDuration": (_("Report selection's length"), None),
 		# Translators: Input help mode message
 		# for report selection center command.
-		"reportSelectionCenter": (_("Report position of selection's center"), None),  # noqa:E501
+		"reportSelectionCenter": (_("Report position of selection's center"), None),
 		# Translators: Input help mode message
 		# for report audio position command.
-		"reportAudioPosition": (_("report audio position"), None),  # noqa:E501
+		"reportAudioPosition": (_("report audio position"), None),
 		# Translators: Input help mode message
 		# for toggle selection change automatic report command.
-		"toggleSelectionChangeAutomaticReport": (_("Enable or disable automatic report of selection's changes"), None),  # noqa:E501
+		"toggleSelectionChangeAutomaticReport": (_(
+			"Enable or disable automatic report of selection's changes"), None),
 		# Translators: Input help mode message
 		# for toggle report transport button state command.
-		"reportTransportButtonsState": (_("report the pressed state of Pause , Play and  Record buttons"), None),  # noqa:E501
+		"reportTransportButtonsState": (_("report the pressed state of Pause , Play and  Record buttons"), None),
 		# Translators: Input help mode message
 		# for report playback meter peak command.
-		"reportPlayMeterPeak": (_("Reports the current level of playback meter peak"), None),  # noqa:E501
+		"reportPlayMeterPeak": (_("Reports the current level of playback meter peak"), None),
 		# Translators: Input help mode message
 		# for report record meter peak command.
-		"reportRecordMeterPeak": (_("Reports the current recording meter peak   level"), None),  # noqa:E501
+		"reportRecordMeterPeak": (_("Reports the current recording meter peak   level"), None),
 		# Translators: Input help mode message
 		# for report slider playback command.
-		"reportPlaybackSlider": (_("Reports the current level of playback's slider"), None),  # noqa:E501
+		"reportPlaybackSlider": (_("Reports the current level of playback's slider"), None),
 		# Translators: Input help mode message
 		# for report slider recording command.
-		"reportRecordingSlider": (_("Reports the current level of recording's slider"), None),  # noqa:E501
+		"reportRecordingSlider": (_("Reports the current level of recording's slider"), None),
 		# Translators: Input help mode message
 		# for report playback speed command.
-		"reportPlaybackSpeed": (_("Reports the current playback speed level"), None),  # noqa:E501
+		"reportPlaybackSpeed": (_("Reports the current playback speed level"), None),
 		# Translators: Input help mode message
 		# for display add-on user manual command.
-		"displayAddonUserManual": (_("Display add-on user manual"), None),  # noqa:E501
+		"displayAddonUserManual": (_("Display add-on user manual"), None),
 		# Translators: Input help mode message
 		# for display audacity guide command.
-		"displayAudacityGuide": (_("Display audacity guide"), None),  # noqa:E501
+		"displayAudacityGuide": (_("Display audacity guide"), None),
 		# Translators: Input help mode message
 		# for launch module layer command.
-		"moduleLayer":  (_("Launch  command shell"), None),  # noqa:E501
+		"moduleLayer": (_("Launch  command shell"), None),
 		# Translators: Input help mode message
 		# for display shell command help dialog command.
-		"displayHelp": (_("Display shell scripts's list"), None),  # noqa:E501
+		"displayHelp": (_("Display shell scripts's list"), None),
 	}
 
 	def __init__(self, *args, **kwargs):
@@ -947,6 +981,7 @@ class AppModule(AppModule):
 			GB_monitorTimer.Stop()
 			GB_monitorTimer = None
 		super(AppModule, self).terminate()
+
 	def installAudacityRole(self):
 		if hasattr(self, "NVDARole"):
 			# allready installed
@@ -960,10 +995,10 @@ class AppModule(AppModule):
 			self.NVDARoleLabels = controlTypes.role._roleLabels.copy()
 			from .au_role import extendNVDARole
 			(audacityRole, audacityRoleLabels) = extendNVDARole()
-			controlTypes.Role= audacityRole
+			controlTypes.Role = audacityRole
 			controlTypes.role._roleLabels = audacityRoleLabels.copy()
-			ROLE_TRACKVIEW = controlTypes.Role.TRACKVIEW 
-			ROLE_TRACK = controlTypes.Role.TRACK 
+			ROLE_TRACKVIEW = controlTypes.Role.TRACKVIEW
+			ROLE_TRACK = controlTypes.Role.TRACK
 		else:
 			# for nvda version < 2021.2
 			self.NVDARole = None
@@ -972,7 +1007,7 @@ class AppModule(AppModule):
 		self.installAudacityRole()
 		controlID = obj.windowControlID
 		role = obj.role
-		printDebug("appModule chooseOverlayClass: %s, %s" % (obj.name, roleLabels.get(obj.role)))  # noqa:E501
+		printDebug("appModule chooseOverlayClass: %s, %s" % (obj.name, roleLabels.get(obj.role)))
 		obj.isATrack = Track.check(obj)
 		if obj.isATrack:
 			clsList.insert(0, Track)
@@ -1013,7 +1048,7 @@ class AppModule(AppModule):
 				and parent.parent.parent.windowClassName == "Button"
 				and parent.parent.parent.windowControlID == 3000):
 				clsList.insert(0, SettingSelectionTimerControlDigit)
-		printDebug("appModule chooseOverlayClassout: %s, %s" % (obj.name, roleLabels.get(obj.role)))  # noqa:E501
+		printDebug("appModule chooseOverlayClassout: %s, %s" % (obj.name, roleLabels.get(obj.role)))
 
 	def event_NVDAObject_init(self, obj):
 		pass
@@ -1045,12 +1080,6 @@ class AppModule(AppModule):
 			func = getattr(self, scr)
 			func.__func__.__doc__ = doc
 			func.__func__.category = category
-			# we must remove documentation of replaced nvda global commands scripts
-			if hasattr(func, "removeCommandsScript") and (
-				(featureID is None)
-				or (featureID and not isInstallWithoutGesture(featureID))):
-				globalCommandsFunc = getattr(func, "removeCommandsScript")
-				globalCommandsFunc.__func__.__doc__ = None  # noqa:E501
 
 	def _getScriptDocAndCategory(self, script):
 		(doc, category) = self._scriptsToDocsAndCategory[script]
@@ -1059,7 +1088,8 @@ class AppModule(AppModule):
 		return (doc, category)
 
 	def event_appModule_gainFocus(self):
-		global GB_monitorTimer, GB_audioPosition, GB_selection, GB_recordButtonIsPressed, _winInputHookKeyDownCallback  # noqa:E501
+		global GB_monitorTimer
+		global GB_audioPosition, GB_selection, GB_recordButtonIsPressed, _winInputHookKeyDownCallback
 		self.installAudacityRole()
 		GB_audioPosition = None
 		GB_selection = None
@@ -1070,7 +1100,6 @@ class AppModule(AppModule):
 		wx.CallLater(100, monitorAudioAndSelectionChanges)
 
 	def event_appModule_loseFocus(self):
-		print ("appModuleLoseFocus")
 		global GB_monitorTimer
 		import controlTypes
 		if hasattr(controlTypes, "Role") and hasattr(self, "NVDARole") and self.NVDARole is not None:
@@ -1083,7 +1112,6 @@ class AppModule(AppModule):
 			del ROLE_TRACK
 			del self.NVDARole
 			del self.NVDARoleLabels
-			print ("original nvda Role restored")
 
 		winInputHook.setCallbacks(keyDown=_winInputHookKeyDownCallback)
 		if GB_monitorTimer is not None:
@@ -1091,7 +1119,8 @@ class AppModule(AppModule):
 			GB_monitorTimer = None
 
 	def event_gainFocus(self, obj, nextHandler):
-		printDebug("audacity appModule event_gainFocus: name= %s, %s, childID= %s" % (obj.name, roleLabels.get(obj.role), obj.IAccessibleChildID))  # noqa:E501
+		printDebug("audacity appModule event_gainFocus: name= %s, %s, childID= %s" % (
+			obj.name, roleLabels.get(obj.role), obj.IAccessibleChildID))
 		if self.trapGainFocus:
 			api.setFocusObject(obj)
 			self.trapGainFocus = False
@@ -1218,7 +1247,7 @@ class AppModule(AppModule):
 		if count == 0:
 			GB_taskTimer = wx.CallLater(200, self.script_reportSelectionLimits, gesture)
 		elif count == 1:
-			GB_taskTimer = wx.CallLater(200, self.script_reportSelectionDuration, gesture)  # noqa:E501
+			GB_taskTimer = wx.CallLater(200, self.script_reportSelectionDuration, gesture)
 		else:
 			self.script_reportSelectionCenter(gesture)
 
@@ -1400,7 +1429,7 @@ class ShellScriptsListDialog(wx.Dialog):
 		if self.scriptsListBox.GetCount():
 			self.scriptsListBox.SetSelection(0)
 		# Buttons
-		bHelper = sHelper.addDialogDismissButtons(guiHelper.ButtonHelper(wx.HORIZONTAL))  # noqa:E501
+		bHelper = sHelper.addDialogDismissButtons(guiHelper.ButtonHelper(wx.HORIZONTAL))
 		# Translators: This is a label of a button
 		# appearing on Shell Scripts List Dialog.
 		runScriptButton = bHelper.addButton(
@@ -1412,7 +1441,7 @@ class ShellScriptsListDialog(wx.Dialog):
 			self,
 			id=wx.ID_CLOSE,
 			label=NVDAString("&Close"))
-		mainSizer.Add(sHelper.sizer, border=guiHelper.BORDER_FOR_DIALOGS, flag=wx.ALL)  # noqa:E501
+		mainSizer.Add(sHelper.sizer, border=guiHelper.BORDER_FOR_DIALOGS, flag=wx.ALL)
 		mainSizer.Fit(self)
 		self.SetSizer(mainSizer)
 		# Events
@@ -1430,7 +1459,7 @@ class ShellScriptsListDialog(wx.Dialog):
 		script = self.docToScript[doc]
 		identifier = self.scriptToIdentifier[script]
 		from keyboardHandler import KeyboardInputGesture
-		gesture = KeyboardInputGesture.fromName(key)
+		gesture = KeyboardInputGesture.fromName(identifier)
 		wx.CallLater(200, speech.cancelSpeech)
 		wx.CallLater(1000, self.appModule.runScript, gesture)
 		self.Close()
