@@ -1,0 +1,1994 @@
+Guida introduttiva ad Audacity
+Autore: paulber19 (paulber19@laposte.net)
+
+
+
+%!Target: html
+%!Encoding: UTF-8
+%!style:..\style_t2t.css
+%!Options: --toc
+%!Options: --toc-level=6
+% Remove the Table of Contents heading from the toc.
+%!PostProc(html): '^.*\<LI\>\<A HREF="#toc"\>.*\</A\>.*$' ''
+
+
+% h1 in html should really be the document title only.
+% Therefore, change h1 through h5 in the output to h2 through h6.
+%!PostProc(html): ^<H5>(.*)</H5>$ <H6>\1</H6>
+%!PostProc(html): ^<H4>(.*)</H4>$ <H5>\1</H5>
+%!PostProc(html): ^<H3>(.*)</H3>$ <H4>\1</H4>
+%!PostProc(html): ^<H2>(.*)</H2>$ <H3>\1</H3>
+%!PostProc(html): ^<H1>(.*)</H1>$ <H2>\1</H2>
+
+= Riepilogo =[toc]
+%%toc
+
++ Introduzione +
+Questa è la traduzione della guida per gli utenti degli screen reader Jaws, NVDA e Narrator, scritta da David Bailes, per Audacity versione 2.4.1.
+
+Altre guide sono disponibili nella pagina [Jaws Guides #http://vip.chowo.co.uk/jaws-guides/] del sito Web "VIP Software Guides". Sebbene siano scritti specificamente per gli utenti dello screen reader Jaws, molti di essi possono essere utili anche per gli utenti di altri screen reader.
+
+
+Puoi utilizzare Audacity per la registrazione, il semplice editing di singole tracce o l'editing più avanzato che coinvolge più tracce.
+
+Il software Audacity può essere scaricato dalla home page di [Audacity http://audacityteam.org/].
+
+Si noti che una versione 2.4.0 di Audacity è stata rilasciata brevemente, ma si è presto scoperto che conteneva un bug serio. Se sei uno di quelli che hanno installato la versione 2.4.0, si consiglia vivamente di installare la versione 2.4.1.
+
+I capitoli di questa introduzione sono:
+- presentazione dei Progetti Audacity e del cursore in Audacity,
+- descrizioni della finestra di benvenuto e come ottenere aiuto,
+- panoramica di alcune funzionalità di Audacity rilevanti per gli utenti di screen reader,
+- panoramica sulla configurazione predefinita di Audacity come le scorciatoie da tastiera e alcuni consigli se non si utilizza una tastiera QWERTY.
+
+
+++ Progetti Audacity ++
+Gli oggetti modificati da Audacity sono noti come progetti, quindi i progetti sono equivalenti ai documenti di Microsoft Word o alle cartelle di lavoro di Microsoft Excel.
+
+Un progetto Audacity è composto da un insieme di tracce di diverso tipo: traccia audio, traccia marker, traccia temporale. Poiché le tracce temporali non sono accessibili agli utenti degli screen reader, non verranno trattate in questo documento.
+
+Per molte attività semplici, probabilmente avrai solo una traccia in un progetto.
+
+Puoi salvare un progetto Audacity usando il formato del file di progetto di Audacity. Ciò conserverà tutte le tracce nel progetto.
+
+In linea di principio, devi salvare un progetto in questo formato solo se intendi continuare a lavorare sul progetto in un secondo momento.
+
+++ Cursore ++
+Audacity ha un dispositivo di scorrimento per specificare un momento particolare durante l'audio ed è simile al dispositivo di scorrimento in Microsoft Word.
+Il dispositivo di scorrimento in Audacity viene utilizzato per impostare tempi come: l'inizio della riproduzione, la posizione in cui si desidera iniziare a selezionare un intervallo di tempo e il punto in cui il suono viene incollato dagli appunti
+
+++ Finestra di benvenuto++
+Quando apri Audacity, appare una finestra di dialogo di benvenuto che contiene una casella di testo HTML che descrive le informazioni su come ottenere aiuto con Audacity. Purtroppo i collegamenti in questo testo non possono essere aperti. Questo è il motivo per cui i dettagli dell'aiuto disponibile sono riportati nel capitolo successivo.
+
+La finestra di dialogo contiene anche la casella di controllo "Non mostrare più all'avvio" per evitare che questa finestra di dialogo venga visualizzata in futuro.
+Per non parlare, seleziona la casella e premi il pulsante OK.
+
+
+++ Aiuto ++
+
+Audacity è uno strumento estremamente potente e questa guida è solo un'introduzione. Per ulteriori informazioni, vedere:
+- [The English Audacity Wiki http://wiki.audacityteam.org/wiki/Audacity_Wiki_Home_Page].
+- Il manuale utente di Audacity che può essere aperto nel tuo browser predefinito selezionando Manuale dal menu "Aiuto".
+- [la mailing list inglese di audacity4blind http://www.freelists.org/list/audacity4blind]. In questa pagina puoi iscriverti alla mailing list.
+Esistono diversi modi per richiedere di essere iscritti a questo elenco.
+Il primo è utilizzare questa pagina web: inserisci il tuo indirizzo email nella casella di modifica "la tua email"; quindi Tab e spunta la casella per indicare che non sei un robot; e infine Tab per il pulsante Avanti e premilo.
+Il secondo modo è inviare una e-mail a ecartis@freelists.org, con oggetto "subscribe Audacity4Blind.
+Dopo aver effettuato la richiesta con entrambi i metodi, riceverai un'e-mail per confermare la tua iscrizione. In questa email, apri il link per confermare il tuo indirizzo email. Si apre una pagina web in cui devi accettare vari termini. Ci sono tre caselle di controllo che devono essere selezionate e infine un pulsante Avanti da premere.
+
+
+
+++ Nuove funzionalità e modifiche ++
+Le nuove funzionalità e modifiche in Audacity 2.4.1 descritte in questa guida sono le seguenti:
+- Lo scrub ora è accessibile tramite la tastiera. È possibile riprodurre l'audio in avanti o all'indietro con un'ampia gamma di velocità. Lo sniffare a bassa velocità fornisce un altro modo per posizionare il cursore in modo abbastanza accurato ed è descritto nel capitolo [#HDR-Scrubbing], che può essere trovato nel capitolo [#HDR-MovingCursor].
+- Il controllo della posizione dell'audio è stato rimosso dalla barra degli strumenti di selezione ed è ora in una nuova barra degli strumenti, la barra degli strumenti "tempo". Quindi, se scorri tutti i controlli nella barra degli strumenti di selezione, raggiungerai il controllo della posizione dell'audio
+- Oltre ai comandi esistenti per disattivare o riattivare l'audio delle tracce, ci sono due nuovi comandi che disattivano o riattivano le tracce selezionate e hanno rispettivamente le scorciatoie Ctrl + Alt + U e Ctrl + Alt + Maiusc + U
+
+
+++ Scorciatoie predefinite ++
+Dalla versione 2.2, Audacity installa, per impostazione predefinita, un minimo di scorciatoie.
+Puoi cambiarlo e installare un set completo di scorciatoie. Questo è descritto nel capitolo [Set di scorciatoie standard o completo #HDR-DefaultShortcutsSet]".
+
+Il resto di questa guida presuppone che tu abbia installato il gioco completo.
+
+
+
+++ Utilizzo di un tipo di tastiera diverso da QWERTY ++
+Se stai usando un tipo di tastiera non QWERTY, alcuni comandi da tastiera non funzionano se stai usando Audacity con le impostazioni predefinite.
+
+Per risolvere questo problema, vedere il capitolo ["Scorciatoie fastidiose" #HDR-BracketShortcuts].
+
+++Informazioni per gli utenti dell'Assistente vocale++
+In diversi punti di questa guida, c'è l'istruzione per premere il tasto sullo screen reader per leggere la riga corrente.
+Se stai utilizzando una versione di Windows 10 precedente all'aggiornamento di maggio 2019 (versione 1903), questo comando dell'Assistente vocale può essere utilizzato solo durante la lettura del testo ed è necessario utilizzare il tasto per leggere l'elemento corrente, anziché la riga corrente
+++Script di Jaws++
+Esiste uno script Jaws per Audacity e il suo utilizzo fornisce feedback aggiuntivi e modi convenienti per ottenere informazioni.
+I dettagli completi delle sue caratteristiche possono essere trovati sul sito Web di Jaws Script for Audacity.
+Un collegamento diretto al programma di installazione per una versione beta della versione 2.2.2 di questo script è: [Jaws-Script-for-Audacity_2_2_2-beta-2020-05-10.exe#https://github.com/campg2j003/JAWS -Script-for-Audacity/releases/download/rel2.2.2-beta-2020-05-10/Jaws-Script-for-Audacity_2_2_2-beta-2020-05-10.exe].
+Nota che per chi usa Jaws, il resto della guida non presuppone che questo script sia installato.
+
++ Finestra principale +
+++ Componenti della finestra principale ++
+I componenti principali della finestra principale di Audacity sono:
+- la barra del titolo: quando la finestra contiene un progetto senza nome, ad esempio all'avvio di Audacity, il testo nella barra del titolo è "Audacity". Quando la finestra contiene il nome di un progetto, il testo è il nome del progetto.
+- La barra dei menu: esiste, per impostazione predefinita, un menu aggiuntivo che non è presente nella barra dei menu, ma che può essere aggiunto lì. Vedere il capitolo ["Menu Extra" #HDR-ExtraMenus].
+- il gruppo superiore di barre degli strumenti.
+- Tabella "Vista traccia": contiene le tracce che compongono il progetto. Vedere i capitoli ["Tabella Track View" #HDR-TracksTable].
+- il gruppo inferiore di barre degli strumenti.
+- La barra di stato: è divisa in 3 sezioni. La prima sezione è probabilmente la più interessante, in quanto contiene lo stato dello strumento "Trasporto", ovvero Audacity che si ferma, suona, registra e così via. Per leggere la barra di stato, premere "NVDA + fine".
+
+
+++ Movimento nella finestra ++
+Come in ogni finestra, per raggiungere la barra dei menu, premere "Alt", e per abbandonarla premere "Esc" o "Alt".
+
+Premendo "Control + F6" si passa da un elemento all'altro tra:
+- il gruppo superiore di barre degli strumenti come la barra degli strumenti "Selezione": questo è il nome che le viene dato in questo documento perché non ne ha.
+- la scheda "Track View": NVDA annuncia il suo nome "Track View".
+- il gruppo inferiore di barre degli strumenti come Trasporto, Strumenti di registrazione, Strumenti di selezione, Strumenti di livello, ecc. Anche il gruppo non ha nome.
+
+
+Premendo "Control + Shift + F6" si sposta in ordine inverso.
+
+Nel gruppo della barra degli strumenti, puoi passare da uno strumento all'altro con "controllo+scheda" o "maiusc+controllo+scheda".
+
+++ Lettura della barra di stato ++
+Se stai usando Jaws o NVDA, puoi leggere la barra di stato di Audacity usando la combinazione di tasti standard dello screen reader destinata alla lettura di una barra di stato.
+Sfortunatamente, l'Assistente vocale al momento non dispone di un comando per leggere la barra di stato, quindi non è semplice leggere la barra di stato usando questo screen reader.
+
++ Apertura di un file audio +
+Per aprire un progetto di file audacity o un file audio standard, utilizzare la finestra di dialogo "Scegli file", raggiungibile tramite il sottomenu "Apri" del menu "File" o tramite la scorciatoia "Control+O". La finestra di dialogo ha una struttura simile alla finestra di dialogo "Apri" in Windows.
+
+Quando avvii Audacity, la finestra principale contiene una tabella "Track View" vuota.
+
+Quando apri un file audio, questo si apre in questa finestra iniziale.
+
+Dopo aver aperto un file audio standard, la tabella "Track View" contiene una singola traccia, mentre dopo aver aperto un progetto di file Audacity, contiene tutte le tracce del progetto salvate nel progetto.
+Se apri altri file audio, questi si aprono in una nuova finestra di Audacity.
+
+Se vuoi creare deliberatamente una nuova finestra con un progetto vuoto, scegli il sottomenu "Nuovo" dal menu "File" o premi "Control + N".
+
+Dopo aver aperto i file audio standard, puoi importare uno o più nuovi file audio standard nel progetto corrente. In questo caso, viene aggiunta una nuova traccia alla tabella delle tracce per ogni file. Per maggiori dettagli, vedere il capitolo ["Importazione di file audio" #HDR-AudioFileImport].
+
+++ Apri file audio standard ++
+L'installazione predefinita di Audacity apre i file audio nei seguenti formati audio: WAV, AIFF, AU, MP3, MP2, MPEG, Ogg Vorbis e FLAC.
+
+Inoltre, puoi aprire file in altri formati, come wma e m4a, se scarichi e installi la libreria FFmpeg (descritta nel capitolo ["Libreria FFmpeg" #HDR-FFMPEGLibreria].
+
+Non è incluso nell'installazione di Audacity a causa di problemi legali sui brevetti.
+
+Se apri un file compresso, ad esempio un file MP3, e dopo aver premuto il pulsante "Apri" nella finestra di dialogo "Apri", si apre una finestra di dialogo Importa che fornisce
+I progressi di Audacity nella decompressione del file.
+
++Salvataggio audio+[Risparmio audio HDR]
+Puoi salvare l'audio nel formato del progetto audacity o in uno dei formati audio standard come descritto nei capitoli seguenti.
+
+Il formato del progetto Audacity conserva tutte le tracce nel progetto.
+Hai davvero solo bisogno di salvare un progetto nel formato del progetto audacity se intendi continuare a lavorare sul progetto in futuro.
+
+D'altra parte, quando salvi in uno dei formati audio di Audacity, Audacity mixa automaticamente tutte le tracce in un'unica traccia.
+
+Quando chiudi Audacity e non hai salvato le modifiche in un file di progetto Audacity, la finestra di dialogo "Salva modifiche in" si apre chiedendo se desideri salvare le modifiche in un progetto Audacity prima di chiudere. .
+Il pulsante predefinito è Sì., Ma se vuoi salvare il progetto come file audio Audacity, devi rifiutare con il pulsante "no" per poi esportarlo.
+
+++ Salva in formato progetto audacity ++
+Per salvare in questo formato, utilizzare il sottomenu "Salva progetto" del sottomenu "Salva progetto" del menu "File" o utilizzare la scorciatoia "control + s".
+
+La prima volta che lo fai, viene visualizzata una finestra di avviso che ti dice che solo Audacity può riprodurre questi file di progetto. La finestra di dialogo contiene una casella di controllo che ti consente di scegliere se non desideri più questo avviso. Se si preme il pulsante OK, viene visualizzata la finestra di dialogo "Salva progetto con nome".
+
+++ Salvataggio in formati audio ++
+L'installazione predefinita di Audacity può registrare nei seguenti formati standard: WAV, FLAC, MP3, Ogg Vorbis e MP2.
+
+Inoltre, puoi salvare in formati inclusi wma e m4a se scarichi e installi la libreria FFmpeg, che non è inclusa in Audacity per problemi legali, vedi il capitolo ["Libreria FFmpeg" #HDR-FFMPEGLibrary].
+
+
+Se vuoi salvare tutto l'audio, usa il sottomenu "Esporta come" del menu "File" e scegli il sottomenu "Esporta audio" (scorciatoia "Ctrl + Maiusc +E").
+
+Altrimenti e se vuoi salvare solo i dati audio selezionati, scegli invece il sottomenu "Esporta audio selezionato" dallo stesso sottomenu.
+
+La finestra di dialogo "Esportazione audio" si apre e ha una struttura molto simile alla classica finestra di dialogo "Salva con nome" di Windows.
+
+Per definire il formato del file che si desidera utilizzare per la registrazione dell'audio, utilizzare la casella combinata "tipo", situata dopo la casella di modifica del nome del file. Si noti che tutti i formati che utilizzano la libreria FFmpeg hanno "FFmpeg" tra parentesi dopo il nome.
+
+Dopo aver scelto il formato del file, è possibile impostare le opzioni per la codifica utilizzata dal formato utilizzando gli elementi che compaiono dopo il pulsante Annulla e si trovano a schede.
+
+Poiché il formato MP3 è il più comunemente usato, molte opzioni per la codifica MP3 sono descritte più avanti in questo capitolo.
+Nella casella di modifica Nome file, digitare un nome per il file, quindi premere il pulsante Salva (Alt+S).
+
+La finestra di dialogo "Modifica tag metadati" si apre automaticamente. Ciò consente di modificare varie informazioni sui dati audio, come il nome dell'artista e il titolo della traccia.
+
+È descritto in dettaglio nel capitolo ["modifica dei tag dei metadati" #HDR-MetaDataTags].
+
+Se non vuoi modificare queste informazioni, puoi semplicemente premere il pulsante "Invio" o "OK" (pulsante predefinito).
+
+Attenzione: se annulli questa finestra di dialogo, la registrazione audio verrà annullata.
+
+Se non vuoi modificare i metadati ogni volta che salvi l'audio, puoi disabilitare questa funzione come descritto nel capitolo ["modificare i tag dei metadati" #HDR-MetaDataTags].
+
+Si noti inoltre che se si tenta di registrare in uno dei formati inclusi nella libreria FFmpeg, si apre una finestra di messaggio che informa che deve essere configurato.
+
+Il sottomenu "esporta come" contiene ulteriori comandi per l'esportazione in formati come "mp3", "wav" o "OGG".
+Questi comandi aprono la finestra di dialogo "Esporta audio" con il tipo già impostato sul formato appropriato.
+
+Tuttavia, poiché la finestra di dialogo ExportAudio ricorda l'ultimo formato utilizzato e i comandi non hanno scorciatoie per impostazione predefinita, potresti trovare più conveniente utilizzare la finestra di dialogo Esporta audio che ha una scorciatoia.
+
++Riproduzione audio+[Riproduzione audio HDR]
+++ Impostazioni di riproduzione ++
+Puoi selezionare il dispositivo di riproduzione utilizzato da Audacity in diversi punti, incluso il primo gruppo di barre degli strumenti nella finestra principale di Audacity e la categoria "Dispositivi" della finestra di dialogo "Preferenze".
+Se sul computer è presente un solo dispositivo di riproduzione, non dovrebbe essere necessario modificare questa impostazione.
+
+Il volume di riproduzione è controllato dal cursore del potenziometro del volume di riproduzione che si trova nel gruppo superiore delle barre degli strumenti nella finestra principale di Audacity.
+
+Per modificare una di queste impostazioni da questa barra degli strumenti e supponendo che l'array "Track View" sia attivo:
+- Premi Ctrl + F6 due volte per raggiungere il gruppo superiore di barre degli strumenti.
+- Tab avanti o indietro (da "Maiusc + Tab") fino ad arrivare alla casella combinata Dispositivo di riproduzione o alla manopola del volume di riproduzione e apportare le modifiche desiderate.
+- Premi Ctrl + F6 per tornare alla vista Traccia.
+
+
+La riproduzione dipende dalla selezione di un intervallo di tempo (vedere il capitolo ["Selezione audio" #HDR-Selezione audio]):
+- se non è presente alcuna selezione, la riproduzione inizia dalla posizione del cursore.
+- se è presente una selezione, la riproduzione inizia all'inizio della selezione e si interrompe alla fine della selezione.
+
+
++++ Lettura di comandi e scorciatoie +++
+Questi sono i tasti di controllo della riproduzione più comuni.
+
+Oltre ai comandi di ricerca, i comandi si trovano nel sottomenu "Riproduzione" del menu "Trasporto":
+- Per avviare o interrompere, premere la barra spaziatrice.
+- Per avviare o interrompere e spostare il cursore, premere "x": Quando si utilizza questo tasto per interrompere la riproduzione, il cursore viene spostato nella posizione in cui è stata interrotta la riproduzione.
+- Metti in pausa o riprendi, premi "p".
+- Cerca / Salta. Durante la riproduzione, se il focus è nella vista traccia, puoi saltare avanti o indietro per un breve o lungo periodo. Per saltare avanti o indietro di un breve periodo, premere rispettivamente la freccia sinistra o la freccia destra. Per saltare indietro o avanti a lungo, premi rispettivamente "Maiusc + Freccia sinistra" o "Maiusc + Freccia destra". Le dimensioni predefinite dei periodi brevi e lunghi sono rispettivamente di 1 e 15 secondi, ma le loro dimensioni possono essere impostate nella finestra di dialogo "Preferenze", come descritto nel capitolo ["Salti temporali" #HDR-Seektimes].
+- Per eseguire il loop, ovvero ripetere continuamente, premere "shift + spazio".
+
+
+Per tutti i comandi sopra elencati che avviano la riproduzione, la riproduzione si avvia e poi si interrompe automaticamente in base all'intervallo di tempo selezionato (vedere il capitolo ["Selezione Audio" #HDR-Selezione Audio]).
+
+Se non è presente alcuna selezione, la riproduzione inizia dalla posizione del cursore e si interrompe automaticamente al termine dell'audio del progetto.
+
+Se viene selezionato un intervallo di tempo, la riproduzione inizia all'inizio di quella selezione e si interrompe automaticamente alla fine della selezione.
+
+Se è necessario controllare lo stato della riproduzione, ovvero la riproduzione, interrotta o in pausa, queste informazioni sono disponibili come prima voce nella barra di stato.
+
+Audacity include diversi comandi di riproduzione più specializzati, descritti nei punti appropriati della guida.
+
+Un elenco completo dei comandi di riproduzione è disponibile nella sezione "Riproduzione" del capitolo "Scorciatoie".
+
++ Tabella "Vista tracce" +[Tabella HDR-Tracce]
+La tabella "Vista traccia" contiene le tracce che compongono il progetto. La tabella ha una colonna e una riga per ciascuna delle tracce. Ogni traccia ha un nome che lo screen reader legge mentre ti sposti da una traccia all'altra.
+
+Una traccia audio è un contenitore di dati audio che viene visualizzato come un'onda.
+
+Spesso i dati audio iniziano all'istante zero, ma dopo la modifica non è sempre così.
+
+A sinistra della fine della traccia audio, c'è una piccola area contenente varie voci che includono un menu, i controlli per il guadagno e il pan della traccia.
+L'uso di questi comandi è descritto nella sezione ["Editing audio con più tracce" #HDR-ADvancedEdition] di questa guida.
+
+Il cursore viene visualizzato nella tabella "Track View" come una linea verticale. Questa è la posizione di partenza per la riproduzione.
+
+La posizione del cursore e la posizione di riproduzione sono disponibili rispettivamente nelle barre degli strumenti "Selezione" e "Ora" situate nel gruppo inferiore delle barre degli strumenti.
+
+
+++ Movimento nella tabella ++
+Ogni volta che il focus è all'interno dell'array "Track View" e l'array contiene una o più tracce, una delle tracce ha il focus e puoi
+Passa alla traccia precedente o successiva utilizzando rispettivamente i tasti freccia "su" o "giù".
+
+Puoi anche saltare alla prima o all'ultima traccia rispettivamente con "controllo + inizio" o "controllo + fine".
+
+
+++ Selezione traccia ++[Selezione tracce HDR]
+È necessario selezionare le tracce nei seguenti casi:
+- Per operazioni come l'allineamento delle tracce disponibili nel menu "Tracce".
+- Come parte del processo di selezione dell'audio, come descritto nel capitolo ["Selezione Audio" #HDR-Selezione Audio].
+
+
+Esistono diversi modi per selezionare o deselezionare le tracce:
+- Per abilitare/disabilitare la selezione dei brani, premere "Enter".
+- Per selezionare tutte le tracce (e un intervallo di tempo che includa tutto l'audio, come descritto nel capitolo ["Selezionare l'audio" #HDR-Selezione Audio]), aprire il menu "Seleziona" e scegliere il sottomenu "Tutto" oppure digitare il scorciatoia "controllo + A".
+- Per deselezionare tutte le tracce, apri il menu "Seleziona", quindi scegli il sottomenu "Niente" o digita la scorciatoia "Control + Maiusc + A".
+- Per selezionare tutte le tracce, apri il menu "Seleziona", quindi il sottomenu "Tracce" e scegli "in tutte le tracce" oppure digita la scorciatoia "control + shift + K".
+
+
+Lo stato di selezione (selezionato o non selezionato) di una traccia è indicato dopo il suo nome.
+
+
++ Gruppi di barre degli strumenti +[HDR-ToolsBarsGroup]
+
+Ci sono due aree della finestra principale che contengono le barre degli strumenti e queste saranno denominate gruppi di barre degli strumenti superiore e inferiore.
+Il gruppo superiore di barre degli strumenti viene visualizzato sopra la tabella "Vista traccia" e il gruppo inferiore di barre degli strumenti viene visualizzato sotto.
+
+Come accennato in precedenza, puoi scorrere il gruppo superiore di barre degli strumenti, l'array "Traccia vista" e il gruppo inferiore di barre degli strumenti avanti o indietro premendo rispettivamente "controllo" + F6" o "controllo + Maiusc + F6".
+
+Nei gruppi di barre degli strumenti superiore e inferiore, puoi accedere a tutti i controlli della barra degli strumenti nel gruppo premendo "Tab" o "Maiusc+Tab".
+
+Tieni presente che puoi premere i pulsanti della barra degli strumenti solo premendo "Invio".
+Non è possibile utilizzare la barra spaziatrice, poiché questo tasto viene utilizzato per avviare e interrompere la riproduzione.
+
+
+Puoi mostrare e nascondere tutte queste barre degli strumenti utilizzando il sottomenu "Barre degli strumenti" del menu "Visualizza".
+Solo la visualizzazione delle barre degli strumenti che ritieni utili ha il vantaggio di ridurre notevolmente il numero di schede necessarie per trovare un particolare controllo.
+
+Avviso di bug: esiste un bug che colpisce gli utenti che utilizzano Audacity dalla versione 2.2.1 o precedente.
+Puoi vedere che se visualizzi una barra degli strumenti che non è stata visualizzata dalla versione 2.2.1, la barra degli strumenti verrà visualizzata come una barra degli strumenti mobile da qualche parte nella finestra di Audacity e non sarai in grado di visualizzarla.
+
+Per aggirare questo problema, scegliere Reimposta barre degli strumenti dal sottomenu Barre degli strumenti.
+È quindi possibile definire quali barre degli strumenti visualizzare.
+
+Il resto di questo capitolo sulle barre degli strumenti contiene i sottocapitoli sui gruppi di barre degli strumenti superiore e inferiore, quindi i sottocapitoli su alcune singole barre degli strumenti: la barra degli strumenti "Selezione", la barra degli strumenti "Tempo" e la barra degli strumenti "Gioca alla velocità".
+
+++ Gruppo superiore della barra degli strumenti ++
+
+Le barre degli strumenti visualizzate per impostazione predefinita sono:
+- la barra degli strumenti "Trasporto": contiene i pulsanti per la riproduzione e la registrazione (tutti gli elementi sono disponibili anche nel menu "Trasporto" con le scorciatoie da tastiera).
+- la barra degli strumenti "strumenti": contiene i pulsanti per diversi strumenti di modifica che prevedono l'uso del mouse.
+- le barre degli strumenti "Record Meter" e "Playback Meter": sono gli indicatori di registrazione e di riproduzione. Ciascuno di questi elementi contiene un pulsante a discesa nella parte inferiore del contatore che apre un menu per il controllo del contatore.
+- la barra degli strumenti "Mixing": contiene il potenziometro per la regolazione del volume di riproduzione e registrazione.
+- la barra degli strumenti "edizione": contiene i pulsanti per Taglia, Incolla, ecc. Questi comandi sono disponibili anche nel menu Modifica o Visualizza e dispongono tutti di scorciatoie da tastiera.
+- la barra degli strumenti "Riproduci alla velocità": contiene un pulsante "Riproduci alla velocità selezionata" e un potenziometro per la selezione della velocità di riproduzione.
+- la barra degli strumenti "dispositivi": contiene i box a tendina per host audio, dispositivi di riproduzione e registrazione, numero di canali di registrazione. Tutte queste impostazioni possono essere effettuate anche in diverse finestre di dialogo o nella categoria "Dispositivi" della finestra di dialogo ["Preferenze" #HDR-Preferenze]. Le scorciatoie sono: "shift+H" per l'host audio, "shift+I" per il dispositivo di registrazione, "shift+N" per il numero di canali di registrazione e "shift+O" per il dispositivo di riproduzione.
+
+
+Nota: per quest'ultima barra degli strumenti, se una di queste caselle combinate è attiva e premi un carattere della tastiera che è una scorciatoia di Audacity, il tasto viene utilizzato per la scorciatoia, anziché selezionare un'opzione che inizia con quel carattere. Pertanto, non è consigliabile selezionare un'opzione utilizzando il suo primo carattere.
+
+
+Questo gruppo di barre degli strumenti ha anche una barra degli strumenti che contiene pulsanti che definiscono la forma dell'onda audio durante la registrazione o la riproduzione. Questo non è di grande interesse per la maggior parte degli utenti di screen reader.
+
+++ Gruppo inferiore di barre degli strumenti ++
+Per impostazione predefinita, il gruppo inferiore di barre degli strumenti contiene la barra degli strumenti "Selezione" e la barra degli strumenti "Ora".
+
+queste barre degli strumenti sono descritte nei due capitoli seguenti.
+
++ Barra degli strumenti "Selezione" +[Barra di selezione HDR]
+
+La barra degli strumenti di selezione contiene i seguenti controlli:
+- l'elenco a tendina "Frequenza di progetto": definisce la frequenza di campionamento del progetto.
+- il menu a tendina "Snap to": definisce come Audacity dovrebbe arrotondare i tempi.
+- un elenco a tendina di "visualizzazione" che consente di scegliere l'opzione che imposta la natura delle seguenti due aree di modifica nella barra degli strumenti. La scelta è fatta tra: inizio e fine, inizio e lunghezza, lunghezza e fine, lunghezza e centro.
+- due fusi orari, la cui natura è specificata dal precedente elenco "Display".
+
+
+Se non è stato selezionato alcun intervallo di tempo, gli elementi "inizio", "fine" o "centro" indicano la posizione del cursore.
+
+++ Spin Box ++[HDR-EditSpinBoxes]
+I controlli sulla barra degli strumenti "Seleziona" utilizzati per visualizzare e modificare i tempi sono spesso chiamati "caselle di selezione".
+Sono così chiamati perché per modificare un'ora è possibile digitare un'ora o utilizzare la freccia su o giù per aumentare o diminuire rispettivamente il valore dell'ora.
+Nella guida, saranno spesso indicati semplicemente come caselle di selezione numerica per brevità.
+Ciascuna casella di selezione numerica contiene un'ora che viene visualizzata in un determinato formato. È possibile modificare il formato scegliendolo da un elenco di formati utilizzando il menu contestuale della casella di selezione numerica.
+Nel caso delle caselle di selezione numeriche della barra degli strumenti "Selezione", se si modifica il formato di una di esse, questa modifica si applica anche all'altra.
+
+Il formato predefinito è il formato "secondi", ma il formato "hh:mm:ss +centesimo" è normalmente più utile in quanto consente di modificare l'ora in modo più preciso.
+
+La maggior parte degli esempi in questa guida utilizzerà questo formato.
+
+Il tempo può essere pensato come composto da uno o più blocchi a seconda del formato utilizzato. Ad esempio, quando si utilizza il formato "hh:mm:ss", l'ora è composta da tre blocchi ciascuno composto da due cifre: ore, minuti e secondi.
+
+In caso contrario, quando si utilizza il formato "hh:mm:ss + centesimi", l'ora è composta da quattro blocchi: ore, minuti, secondi e centesimi di secondo. Quest'ultimo è anche composto da due cifre.
+
+Quando lo stato attivo arriva in una casella di modifica, l'utilità per la lettura dello schermo legge l'intero contenuto della casella, ad esempio "00h13m04.73s", ovvero 0 ore, 13 minuti e 4 secondi 73.
+In una casella di selezione, lo stato attivo è su un numero.
+Quando ti sposti per la prima volta in una casella di selezione dopo aver aperto Audacity, lo stato attivo è sull'ultima cifra, ma se in seguito torni su quella casella di selezione, l'ultima cifra che aveva il fuoco quando hai lasciato la casella di selezione riacquista la messa a fuoco.
+
+I tasti per spostare lo stato attivo sono i seguenti:
+- "Inizio" o "Fine" ti porta rispettivamente alla prima o all'ultima cifra della casella di selezione.
+- "Freccia sinistra" o "Freccia destra" ti portano rispettivamente alla cifra precedente o successiva.
+
+
+Quando usi questi tasti, il tuo screen reader legge il numero che ora è a fuoco.
+
+Inoltre, se modifichi l'intervallo di tempo, lo screen reader leggerà il nuovo tratto prima di leggere il numero.
+Ad esempio, se l'ora è 01h42m38.46s e il focus è sulla seconda cifra dei minuti (la cifra 2), se si preme la freccia destra il lettore dello schermo dirà 38s, 3.
+Altrimenti, se premi Fine, il tuo screen reader dirà 46 centesimi di secondo, 6.
+
+
+Esistono due modi per modificare il valore del tempo:
+- Aumentare o diminuire il valore di controllo di un'unità della cifra focalizzata utilizzando la freccia su o giù.
+Questo metodo è utile per aumentare o diminuire il valore di una data durata.
+Dopo ciascuna di queste sequenze di tasti, l'utilità per la lettura dello schermo mostra il valore della gamba corrente.
+Ad esempio, se vuoi aumentare il tempo di 3 decimi di secondo e supponendo che il formato sia impostato su "hh:mm:ss+centesimi": premi Fine per saltare all'ultima cifra, premi la freccia sinistra per passare al decimi di secondo e premere tre volte la freccia su.
+- Digitare i numeri. Questo metodo è utile per impostare un tempo che non è legato al valore corrente.
+Se si digita un numero (da 0 a 9), il valore del numero sotto il focus viene sostituito da quello del numero digitato e il numero successivo assume il focus. L'utilità per la lettura dello schermo legge quindi il numero che ora è a fuoco.
+Se lo stato attivo è sull'ultima cifra, dopo aver digitato una cifra, lo stato attivo viene posizionato sulla prima cifra.
+Ad esempio, se vuoi impostare un tempo a 32 minuti, e supponendo anche che il formato scelto sia "HH:MM:SS + centesimi": digita "Inizio" per spostare lo stato attivo sulla prima cifra, quindi digita le 8 cifre seguenti: "00320000".
+Questo sostituisce completamente il tempo con il tempo di 32 minuti.
+Se stai utilizzando lo screen reader Jaws o NVDA, puoi comunque leggere tutto il tempo premendo il comando di lettura della riga corrente.
+
+
+++ "attenersi" a discesa ++
+L'elenco a discesa "Attieniti a" ha tre opzioni: "off" (impostazione predefinita), "più vicino" e "prima".
+
+Se l'opzione scelta è "Più vicino" o "Prima", ciò ha due effetti sull'uso dei tasti freccia sinistra e destra per spostare il cursore o all'inizio o alla fine di un periodo selezionato.
+
+Il primo effetto è che se la scelta è "Più vicino" e si sposta il cursore o l'inizio o la fine di un periodo selezionato, la sua posizione viene sempre regolata automaticamente sull'intero più vicino al numero dell'unità più piccola nel formato del casella dei numeri.
+
+Ad esempio, se il formato è "hh:mm:ss", un tempo di 1,3 secondi verrà regolato su 1 secondo e una durata di 1,8 secondi verrà regolata su 2 secondi.
+
+Allo stesso modo, se l'opzione è impostata su "Prima", i tempi di 1,3 secondi e 1,8 secondi verranno entrambi regolati su 1 secondo.
+
+Il secondo effetto è che il passo minimo di spostamento della posizione del cursore o quello dell'inizio o della fine della selezione è l'unità più piccola nel formato della casella di selezione numerica.
+
+Ad esempio, se il formato è impostato su "hh:mm:ss" e si preme "Freccia destra" per spostare il cursore a destra, il cambio di posizione minimo è di 1 secondo.
+
+
+
+++ Barra degli strumenti "Ora" ++
+La barra degli strumenti "tempo" si trova nel gruppo inferiore delle barre degli strumenti nella finestra principale e contiene un unico controllo, la casella di selezione numerica "Posizione audio".
+Durante la riproduzione o la registrazione, mostra rispettivamente la posizione del cursore di riproduzione o di registrazione.
+Altrimenti, indica l'ora in cui colpisci la barra spaziatrice.
+
+Si noti che a differenza delle caselle di selezione nella barra degli strumenti "Selezione", non è possibile modificare l'ora visualizzata dalla casella di selezione "Posizione audio", è possibile solo leggerne il valore.
+
+Il formato predefinito della casella di selezione "Posizione audio" è hh:mm:ss.
+Puoi cambiarlo usando il menu contestuale di questa casella, ma sfortunatamente c'è un bug che causa il ripristino del formato predefinito se apri la finestra di dialogo Preferenze e premi il pulsante OK.
+
+++ Barra degli strumenti "Gioca alla velocità" ++
+La barra degli strumenti "Play-at-Speed" si trova nel gruppo in alto delle barre degli strumenti nella finestra principale e consente di riprodurre l'audio a velocità che vanno da molto lenta a tre volte la normale velocità di riproduzione. .
+Contiene:
+- il pulsante "Gioca alla velocità selezionata".
+Nota che, come con tutti i pulsanti della barra degli strumenti, puoi solo premere il pulsante con "Invio", poiché la barra spaziatrice è la scorciatoia per giocare a velocità normale e fermarsi.
+- il potenziometro “Velocità di lettura”, il cui cursore può variare da 1 a 300, 300 corrispondenti a 3 volte la normale velocità di lettura.
+
+
+C'è un'opzione per la riproduzione a velocità che fa alcune differenze importanti.
+Nella finestra di dialogo "Preferenze", nella categoria "Riproduzione", nel gruppo "Opzioni", è presente una casella di controllo "Riproduzione a velocità variabile", che è selezionata per impostazione predefinita. Gli effetti di questo parametro sono i seguenti:
+- Se questa casella è selezionata, quando si modifica il valore del cursore del potenziometro "Play Speed" durante la riproduzione ad alta velocità, ha effetto immediato.
+Tuttavia, durante la riproduzione, i comandi di ricerca descritti sopra non hanno effetto.
+- Se deselezionata, le modifiche al valore di questo dispositivo di scorrimento durante la riproduzione ad alta velocità non hanno effetto immediato. Ma i comandi di ricerca funzionano normalmente.
+
+
++ Cursore mobile +[Cursore mobile HDR]
+Audacity ha un dispositivo di scorrimento per specificare un determinato momento durante l'audio, ad esempio, l'inizio della riproduzione, la posizione in cui si desidera iniziare a selezionare un intervallo di tempo o la posizione in cui verranno incollati i contenuti della stampa.
+
+La lettura della posizione corrente del cursore è descritta in uno dei capitoli successivi.
+
+I modi per spostare il cursore sono i seguenti:
+- utilizzare il tasto "Start" per spostare il cursore all'inizio della traccia (tempo zero).
+- utilizzare il tasto "Fine" per spostare il cursore alla fine di tutto l'audio.
+- utilizzare i tasti "J" o K" per spostare il cursore rispettivamente all'inizio o alla fine dell'audio della traccia selezionata.
+- usa "," o "." (vedi il capitolo ["Scorciatoie scomode" #HDR-Scorciatoie Staffa]) Per tornare indietro o avanti rispettivamente di un breve periodo.
+- utilizzare "shift +" o "shift +. (vedere il capitolo ["Scorciatoie scomode" #HDR-Scorciatoie parentesi quadre]) per spostarsi rispettivamente avanti o indietro di un lungo periodo. Questi periodi brevi e lunghi condividono gli stessi valori di quelli utilizzati per le richieste di salto durante la riproduzione e che sono stati descritti nel capitolo ["Riproduzione audio" #HDR-Riproduzione audio]. La durata di periodi brevi e lunghi può essere definita nella finestra di dialogo "Preferenze", come descritto nel capitolo ["Salti temporali " #HDR-SeekTimes].
+- utilizzare i tasti "freccia sinistra" e "freccia destra" per spostare il cursore di un piccolo salto rispettivamente a sinistra oa destra. L'impostazione della lunghezza del salto è descritta nel capitolo ["Lunghezza del salto delle frecce sinistra e destra" #HDR-JumpSize].
+- utilizzare il tasto "x" per interrompere la riproduzione e spostare il cursore in quella posizione di riproduzione. È inoltre possibile utilizzare questo pulsante per riprendere la riproduzione.
+- utilizzare e tenere premuto il tasto "u" o "i" per scorrere rispettivamente indietro o avanti. Quando si rilascia il tasto, il cursore si posiziona in quel momento. Vedere il capitolo ["Scrubbing" #HDR-Scrubbing] per una descrizione completa dello scrubbing.
+- utilizzare il tasto "parentesi sinistra" (vedere il capitolo ["Scorciatoie scomode" #HDR-Scorciatoie parentesi quadre]) per fissare il cursore in volo sulla posizione di riproduzione corrente. Se durante la riproduzione si preme il tasto "[" e poi il tasto "Spazio" per interrompere la riproduzione, il cursore si sposta nella posizione dell'audio in cui è stato premuto il tasto "[". In pratica, il metodo seguente è più flessibile:
+- Durante la riproduzione, premere "P" per mettere in pausa la riproduzione quando si raggiunge la posizione in cui si desidera spostare il cursore.
+- Se non sei soddisfatto di questa posizione, premi di nuovo "P" per riprendere la riproduzione, cerca il posto giusto usando i tasti di salto e fai nuovamente una pausa nel posto giusto.
+- Premere "[" per contrassegnare la nuova posizione del cursore.
+- Premi "Spazio" per interrompere.
+
+- utilizzare la casella di selezione numerica dell'ora di "inizio" della barra degli strumenti di "Selezione": ciò è descritto in dettaglio nel capitolo ["Spostare il cursore con la casella di selezione numerica di "inizio" #HDR-MovingCursorWithSelectionStart] qui sotto.
+
+
+
+++ La casella numerica del tempo quando è presente uno slider ++
+In Audacity c'è uno slider o un intervallo di tempo selezionato.
+Quando è presente un cursore, i tempi visualizzati dalle caselle di selezione numerica del tempo "Inizio" e "Fine" che controllano la selezione sono gli stessi e questi tempi sono identici alla posizione del cursore.
+Per questo motivo, possiamo utilizzare la spin box digitale di inizio selezione per leggere e modificare la posizione del cursore, come descritto nei prossimi due capitoli
+
+++ Leggi la posizione del cursore ++
+
+Ci sono due modi per leggere la posizione del cursore.
+
+Il primo è leggere la posizione nella casella di selezione "inizio" della barra degli strumenti "Selezione":
+- Supponendo che la tabella "Track View" sia attiva, premere "control + F6" per passare al gruppo di barre degli strumenti in basso dove si trova la barra degli strumenti "Selezione".
+- Se necessario, premi "Tab" fino a raggiungere la casella di selezione "Inizio", che contiene la posizione del cursore, Nota che quando il focus ritorna su questo gruppo della barra degli strumenti, l'oggetto che riceve il focus è chi in precedenza aveva il focus, quindi spesso non non servono molte "schede" da fare.
+- Premere due volte "control + F6" o "control + shift + F6" per tornare alla tabella "Track View".
+
+
+Il secondo modo per leggere la posizione del cursore consiste nell'usare la finestra di dialogo "Imposta confine di selezione sinistro":
+- a riproduzione interrotta, premere il tasto "parentesi sinistra" (vedere il capitolo ["Scorciatoie scomode" #HDR-Scorciatoie parentesi quadre]) per aprire questa finestra di dialogo.
+- la posizione del cursore è nel primo elemento della finestra di dialogo ed è proprio questo che riceve il focus.
+- Premere "Esc" per chiudere la finestra di dialogo.
+
+
+++ Spostare il cursore utilizzando la casella di selezione "Start" ++[HDR-MovingCursorWithSelectionStart]
+- Premi "Ctrl + F6" per portare lo stato attivo sul gruppo di barre degli strumenti inferiore in cui la barra degli strumenti "Selezione" è prima.
+- digita "Tab" per raggiungere l'elenco a discesa "Visualizza" e assicurati che l'opzione "Inizio e durata selezione" sia selezionata. Se impostato su "Inizio e fine selezione", potresti selezionare accidentalmente un intervallo di tempo invece di spostare il cursore, come descritto di seguito.
+- premere "Tab" per raggiungere la spinbox "Start", e cambiarne il valore, come descritto nel capitolo [Spinboxes #HDR-EditSpinBoxes].
+- Per tornare alla tabella "Track View", premere due volte "control + F6" o semplicemente "control+shift+f6".
+
+
+
++++ Motivo per l'utilizzo dell'opzione "durata" +++
+Supponendo che non abbia un intervallo di tempo definito, considera i due casi seguenti:
+- Primo caso: l'elenco a tendina "visualizzazione" definisce l'opzione "Inizio e durata della selezione".
+La casella di selezione "Inizio" visualizza la posizione del cursore e la casella di selezione "Durata" visualizza zero. Se si modifica il valore della zona "Start", la zona "Durata" rimane sempre invariata a zero.
+- secondo caso: l'elenco a tendina "visualizzazione" definisce l'opzione "Inizio e fine selezione":
+Le caselle di selezione "inizio" e "fine" mostrano lo stesso valore, che è la posizione del cursore.
+Se aumenti il valore della casella di selezione "Inizio", il valore della casella di selezione "Fine" viene automaticamente aumentato allo stesso valore.
+Tuttavia, se si riduce il valore della casella di selezione "Inizio", la casella di selezione "Fine" rimane invariata.
+Hai quindi selezionato accidentalmente un intervallo di tempo.
+
+
+++ Lunghezza dei salti fatti con le frecce destra e sinistra ++[HDR-JumpSize]
+Questa sezione descrive come la lunghezza dei salti effettuati con le frecce destra e sinistra dipende dal livello di zoom orizzontale del materiale audio e come impostare il livello di zoom in modo che la lunghezza dei salti sia a valori appropriati.
+
+Le lunghezze vengono utilizzate anche da "Maiusc + Freccia sinistra o destra" e "Control + Maiusc + Freccia sinistra o destra", sequenze di tasti per espandere o contrarre intervalli di tempo selezionati.
+
+Audacity ha la capacità di variare la quantità di ingrandimento dei dati audio in direzione orizzontale. Ciò è utile per gli utenti vedenti per visualizzare i dati audio in modo più o meno dettagliato a seconda dell'attività.
+
+Premendo la freccia destra o sinistra si sposta il cursore alla stessa distanza fisica sullo schermo, indipendentemente dal livello di zoom orizzontale.
+
+Quindi, se il livello di zoom viene aumentato, il tempo di spostamento del cursore diminuisce. Allo stesso modo, se il livello di zoom viene diminuito, il tempo di spostamento del cursore aumenta.
+
+Dopo aver aperto o importato un file, lo zoom orizzontale viene regolato in modo che la traccia più lunga del progetto occupi lo spazio disponibile nella traccia nella finestra. Quindi la quantità iniziale di zoom, e quindi la lunghezza dei salti della freccia destra o sinistra, dipende dalla lunghezza delle tracce.
+
+Tuttavia, è possibile regolare lo zoom orizzontale su un livello predefinito.
+
+Per fare ciò, apri il menu "Visualizza", quindi il sottomenu "Zoom" e scegli il sottomenu "Zoom normale" (scorciatoia "Control + 2"). Quando lo zoom è impostato su normale, le frecce sinistra e destra spostano il cursore di alcuni centesimi di secondo.
+
+Questa lunghezza del salto è solitamente troppo piccola per essere utile. Tuttavia, puoi facilmente regolare la dimensione del passo, utilizzando i controlli di zoom presenti nel sottomenu "zoom" del menu "visualizza":
+- Ingrandisci (scorciatoia "Control + 1"). Questo raddoppia lo zoom e quindi dimezza il tono dei tasti freccia sinistra e destra.
+- Rimpicciolisci (scorciatoia "controllo + 3"). Divide lo zoom per 2 e quindi raddoppia il passo dei tasti freccia sinistra e destra.
+
+
+Quindi, ad esempio, dopo aver impostato lo zoom su normale ("control+2"), la lunghezza del passo viene impostata a poco più di un centesimo di secondo, se rimpicciolisci ("control+3") tre volte, il che moltiplica il dimensione del passo di 8, risultando in una lunghezza del passo di poco meno di un decimo di secondo.
+
+Come altro esempio, se si preme "control + 2" e poi "control + 3" 7 volte, la durata del passo è di circa un secondo e mezzo.
+
+++ Attrito ++[Scrubbing HDR]
+L'uso della parola "scrubbing" negli editor audio deriva dall'editing utilizzando i registratori.
+Il nastro viene spostato avanti o indietro sulla testina di riproduzione per trovare la posizione precisa per una modifica.
+
+In Audacity, ci sono due comandi di sfregamento di interesse per gli utenti della tastiera:
+- Frizione all'indietro con il tasto "u",
+- strofinando in avanti con il tasto "i".
+
+
+Premendo e tenendo premuto uno di questi tasti, è possibile riprodurre l'audio avanti o indietro.
+
+La velocità di riproduzione dipende dall'impostazione dello zoom orizzontale di Audacity, quindi, modificandola, puoi riprodurre l'audio a un'ampia gamma di velocità.
+
+Se stai usando un'utilità per la lettura dello schermo con l'impostazione dell'eco dei tasti impostata su "carattere" e mentre tieni premuto il tasto di sfregamento, sentirai ripetere il nome del tasto.
+Per evitare ciò, puoi impostare temporaneamente l'eco di digitazione dello screen reader su "nessuno".
+
+
+Se non è selezionato alcun intervallo di tempo e si tiene premuto uno dei tasti di scorrimento, la riproduzione inizia in corrispondenza del cursore.
+Quando si rilascia il tasto, la riproduzione si interrompe e il cursore si posiziona su quella battuta.
+
+In alternativa, se viene selezionato un intervallo di tempo e si tiene premuto uno dei tasti di scorrimento, la riproduzione inizia dall'inizio della selezione.
+A differenza della riproduzione normale, se viene raggiunta la fine dell'intervallo di tempo selezionato, la riproduzione non si interrompe automaticamente.
+Al rilascio del tasto, l'intervallo di tempo selezionato viene deselezionato e il cursore si posiziona nel momento in cui il tasto è stato rilasciato.
+
+Se si tiene premuto uno di questi tasti e tenendolo premuto si tiene premuto l'altro tasto, la riproduzione cambia immediatamente direzione e non si interrompe quando si rilascia il primo tasto.
+
+La velocità di riproduzione per questi comandi dipende dall'impostazione dello zoom orizzontale di Audacity.
+
+Questo può essere impostato utilizzando i comandi del sottomenu "zoom", che si trova nel menu "Visualizza":
+- Zoom normale (Ctrl + 2), imposta la velocità di riproduzione per questi controlli a metà della velocità di riproduzione normale.
+- Zoom avanti (Ctrl + 1), dimezza la velocità di riproduzione corrente per questi comandi. C'è una velocità minima di un sedicesimo della normale velocità di riproduzione.
+- Rimpicciolisci (Ctrl + 3), raddoppia la velocità di riproduzione corrente per questi comandi.
+C'è una velocità massima di tre volte la velocità di riproduzione normale.
+
+
+Puoi posizionare il cursore in modo più preciso utilizzando velocità di riproduzione più basse e potresti scoprire che un quarto di velocità di riproduzione è una scelta utile per la velocità.
+
+La precisione del posizionamento del cursore dipende anche dall'interfaccia audio che Audacity comunica con i tuoi dispositivi audio.
+
+La scelta delle interfacce è descritta nel capitolo ["Interfaccia audio" #HDR-JumpSize] più avanti nella guida.
+L'uso dell'interfaccia WASAPI ti darà il posizionamento più accurato.
+
+Nella descrizione precedente si diceva che quando si rilascia uno dei tasti di frizione, il cursore si posiziona nel momento in cui si rilascia il tasto.
+Tuttavia, c'è un'eccezione se il tasto "[" o "]" è stato premuto durante la riproduzione.
+In questo caso viene mantenuta la selezione del tempo presente al rilascio della chiave frizione.
+Questo comportamento consente l'attrito con una delle opzioni descritte nel capitolo [Metodo di selezione dell'intervallo di tempo generale #HDR-GeneralTimeRangeSelection].
+
++Selezione audio +[Selezione audio HDR]
+Nel caso di un editor audio che può modificare solo una singola traccia audio, la selezione dell'audio consiste semplicemente nello specificare l'inizio e la fine dei periodi dell'audio che si desidera selezionare. È un intervallo di tempo.
+
+Ad esempio, puoi selezionare l'audio tra un minuto e 2 secondi e 5 minuti e 23 secondi.
+
+Tuttavia, Audacity è un editor multitraccia. Se il progetto è composto da più tracce, potresti voler selezionare solo l'audio da determinate tracce entro un intervallo di tempo specifico.
+
+Quindi, non devi solo selezionare una fascia oraria, ma anche le tracce coinvolte.
+
+La selezione della traccia è stata descritta nel capitolo ["Selezione della traccia" #HDR-TracksSelection] sopra e la selezione della fascia oraria è descritta nelle sezioni seguenti.
+
+Utilizzando le impostazioni predefinite di Audacity, se si tenta di eseguire un'azione su un suono, come l'applicazione di un effetto, e in effetti non è selezionato alcun suono, si apre una finestra di dialogo che dice che "nessun suono è selezionato".
+Tuttavia, esiste un'opzione di selezione automatica e, se abilitata, invece di mostrare la finestra di dialogo, tutto l'audio nel progetto viene selezionato e l'effetto viene applicato a quella selezione.
+
+Per gli utenti di screen reader, si consiglia di lasciare questa opzione disabilitata, ma i dettagli completi di questa opzione e delle sue impostazioni sono descritti nel capitolo ["Selezione automatica" #HDR-Selezione automatica] del capitolo "Preferenze".
+
+Tutte le istruzioni nel resto di questa guida presuppongono che l'opzione sia disabilitata
+
+
+++ Selezione di un intervallo di tempo ++
+Un modo rapido per selezionare tutto l'audio nel progetto è utilizzare la scorciatoia "control + A": questa scorciatoia seleziona tutte le tracce e seleziona un ampio intervallo di tempo che include tutto l'audio.
+
+Esistono due metodi per selezionare un intervallo di tempo:
+- il primo è descritto più avanti in questo capitolo.
+- il secondo, è descritto nel capitolo ["Selezione di un intervallo di tempo utilizzando la posizione del cursore memorizzata" #HDR-UsingStoredPositionTimeRangeSelection] di seguito.
+
+Dopodiché ci sono capitoli su utili controlli di riproduzione, regolazioni fini agli intervalli di tempo e come deselezionare gli intervalli di tempo.
+
+
++++ Metodo di selezione dell'intervallo di tempo generale +++[HDR-GeneralTimeRangeSelection]
+Il primo metodo per selezionare un intervallo di tempo consiste in due passaggi:
+- Spostare il cursore nel punto in cui si desidera iniziare o terminare la selezione utilizzando uno dei metodi descritti nel capitolo ["Spostamento del cursore" #HDR-MovingCursor] sopra.
+- Fissare l'altra estremità della selezione utilizzando uno dei metodi descritti di seguito.
+
+
+Si noti che quando viene selezionata una fascia oraria, la riproduzione audio è solo all'interno di quella fascia oraria.
+Sono inoltre disponibili numerosi controlli di riproduzione aggiuntivi descritti nel capitolo ["Controlli di riproduzione per il controllo di un intervallo di tempo selezionato" #HDR-CheckingSelectedTimeRange].
+
+
+È possibile utilizzare uno dei seguenti metodi per correggere l'altra estremità della selezione:
+- Con il cursore nella posizione in cui si desidera che inizi la selezione e per impostare la fine della selezione alla fine dell'audio delle tracce selezionate, premere "shift + k".
+- Con il cursore posizionato nel punto in cui si desidera che la selezione termini, e per impostare l'inizio della selezione all'inizio dell'audio delle tracce selezionate, premere "shift + j".
+- Definire la fine della selezione utilizzando la scorciatoia "]" (vedere il capitolo ["Scorciatoie scomode" #HDR-Scorciatoie Staffa]) durante la riproduzione. Se durante la riproduzione si preme "]" e poi "Spazio" per interrompere la riproduzione, la fine della selezione viene posizionata nel punto dell'audio in cui è stato premuto il tasto "]". In pratica, il metodo seguente è più flessibile:
+- Durante la riproduzione, premere "P" per mettere in pausa quando si raggiunge la posizione in cui si desidera che sia la fine della selezione.
+- Se non sei soddisfatto di questa posizione, premi "P" per riprendere la riproduzione e con le scorciatoie di salto, regola la posizione prima di mettere nuovamente in pausa.
+- Premere "]" per contrassegnare la posizione di fine selezione.
+- Premere "Spazio" per posizionare il cursore di riproduzione all'inizio della selezione se si desidera ascoltare l'audio selezionato o "p" per continuare la riproduzione.
+- Regolare la fine della selezione utilizzando il tasto "]" durante la scansione in avanti. Tieni premuto il tasto "i" per scorrere in avanti. Premere il tasto "]" nel momento in cui si desidera terminare la selezione, quindi rilasciare il tasto "i".
+- Allo stesso modo, è possibile impostare l'inizio della selezione utilizzando il tasto "[", mentre si scorre all'indietro. Tenere premuto il tasto "u" per scorrere all'indietro. Premere il tasto "[" nel punto in cui si vuole posizionare l'inizio della selezione, quindi rilasciare il tasto "u".
+- Con il cursore nel punto in cui si desidera che inizi la selezione e per impostare la fine della selezione alla fine di tutto l'audio, premere Maiusc+Fine".
+- Con il cursore posizionato dove si vuole che la selezione termini e per impostare l'inizio della selezione all'inizio delle tracce (tempo zero), premere "shift+start".
+- Utilizzando le caselle di selezione numeriche sulla barra degli strumenti "Selezione", come descritto nella sezione successiva.
+- con "Maiusc + Freccia sinistra" o "Maiusc + Freccia destra": con il cursore posizionato dove vuoi che si trovi l'inizio della selezione, puoi premere "Maiusc + Freccia destra" una o più volte per spostare la fine della selezione a destra a piccoli passi. Allo stesso modo, con il cursore posizionato dove vuoi che la selezione finisca, puoi premere "Maiusc + Freccia sinistra" una o più volte per spostare il punto di inizio della selezione a sinistra.
+L'impostazione delle lunghezze dei passi è descritta nel capitolo ["Lunghezza dei salti effettuati con le frecce destra e sinistra" #HDR-JumpSize].
+
+
+Si noti che l'array "Track View" deve essere a fuoco per utilizzare queste scorciatoie.
+
+
+++++ Esempi ++++
+Negli esempi seguenti si presuppone che sia selezionata una sola traccia.
+- Per selezionare un intervallo di tempo che copra tutto l'audio nella traccia: premere "J" per spostare il cursore all'inizio dell'audio, quindi premere "shift + k" per impostare la fine della selezione alla fine dell'audio .
+Un'alternativa ovvia sarebbe premere "k" e poi "shift+j".
+- Per selezionare alcuni secondi all'inizio dell'audio della traccia selezionata: premere prima "j" per spostare il cursore all'inizio dell'audio, quindi premere la barra spaziatrice per avviare la riproduzione.
+Quando arrivi al punto in cui vuoi che sia la fine dell'intervallo di tempo, premi "x" per interrompere la riproduzione e sposta il cursore su quel punto.
+Infine, premi "shift + j" per impostare l'inizio della selezione all'inizio dell'audio.
+- Per selezionare alcuni secondi alla fine dell'audio della traccia selezionata: Premere prima "k" per spostare il cursore alla fine dell'audio. Quindi premere più volte la virgola, fino a quando il cursore si trova poco prima dell'ora in cui si desidera essere l'inizio dell'intervallo di tempo. Premi la barra spaziatrice per avviare la riproduzione, quindi premi X quando arrivi al punto in cui desideri che si trovi l'inizio dell'intervallo di tempo.
+Infine, premi "shift + k" per impostare la fine della selezione alla fine dell'audio.
+- Per selezionare alcuni secondi da qualche parte nella traccia selezionata: premere la barra spaziatrice per avviare la riproduzione, quindi premere il tasto "[" nel punto in cui si desidera che si trovi l'inizio della selezione, quindi premere " ]" nel punto in cui vuoi che sia la fine della selezione e infine la barra spaziatrice per interrompere la riproduzione.
+
+
+++ Selezione di un intervallo di tempo utilizzando la posizione del cursore memorizzata ++[HDR-UsingStoredPositionTimeRangeSelection]
+Il secondo metodo generale per selezionare un intervallo di tempo consiste in quattro passaggi:
+- Spostare il cursore nel punto in cui si desidera iniziare o terminare la selezione, utilizzando uno dei metodi descritti nel capitolo ["Spostamento del cursore" #HDR-MovingCursor] sopra.
+- Aprire il menu "selezione" e scegliere di memorizzare la posizione del cursore utilizzando il sottomenu "Memorizza posizione cursore".
+- Fissare l'altra estremità della selezione utilizzando uno dei metodi descritti nel capitolo ["Spostare il cursore" #HDR-MovingCursor] sopra.
+- Aprire il menu "selezione" e scegliere il sottomenu "Cursore nella posizione memorizzata del cursore".
+
+
+In alcuni casi, questo metodo è più facile da usare rispetto al metodo descritto nel capitolo precedente. La memorizzazione della posizione del cursore consente di utilizzare qualsiasi metodo si desideri posizionare il cursore all'altra estremità dell'intervallo di tempo che si desidera selezionare, senza alcun pericolo di perdere l'altra estremità della selezione.
+
+Si noti che durante la riproduzione, anche in pausa, il controllo di posizione del cursore ricorda la posizione del cursore di riproduzione, anziché il cursore di modifica.
+Tuttavia, normalmente è più facile posizionare il cursore di modifica esattamente dove lo desideri, quindi per selezionare un intervallo di tempo, probabilmente non vorrai memorizzare la posizione del cursore di riproduzione molto spesso.
+Allo stesso modo, durante la riproduzione, anche in pausa, il "Cursore nella posizione del cursore memorizzata" nel menu "Selezione" seleziona dalla posizione del cursore di riproduzione alla posizione del cursore memorizzata.
+
+++ Controlli di riproduzione per il controllo di un intervallo di tempo selezionato ++[HDR-CheckingSelectedTimeRange]
+Quando viene selezionato un intervallo di tempo, se si preme "Spazio", viene riprodotto solo l'audio dell'intervallo selezionato.
+
+È possibile utilizzare i seguenti comandi di riproduzione per verificare di aver selezionato l'intervallo di tempo desiderato:
+- Per riprodurre un breve periodo di tempo prima o dopo l'inizio della selezione, premere rispettivamente "shift + F5" o "shift + F6".
+- Per riprodurre un breve periodo prima o dopo la fine della selezione, premere rispettivamente Maiusc + F7" o "Maiusc + F8".
+- Per riprodurre un'anteprima tagliata: premere "c". Questo giocherà un breve periodo prima dell'inizio della selezione, quindi un breve periodo dopo la fine della selezione. L'intervallo di tempo selezionato stesso è escluso dalla riproduzione.
+
+
+Le durate di questi periodi fanno parte del gruppo di impostazioni "Taglia anteprima" e sono configurate nella categoria di preferenze "Riproduzione".
+
+
+++ Adeguamento di un intervallo di tempo ++
+Esistono diversi modi per apportare piccole modifiche a un intervallo di tempo e sono descritti nei prossimi due capitoli.
+
++++ Utilizzo delle scorciatoie per spostare l'inizio e la fine della selezione +++
+È possibile utilizzare i seguenti tasti per spostare il punto iniziale o finale della selezione di un breve periodo di tempo:
+- Per spostare la fine della selezione a destra, e quindi per estendere l'intervallo di tempo, premere "shift + freccia destra".
+- Per spostare la fine della selezione a sinistra, in modo da contrarre l'intervallo di tempo, premere "control + shift + freccia sinistra".
+- Per spostare a destra il punto di inizio della selezione, e quindi per contrarre l'intervallo di tempo, premere "control + shift + freccia destra".
+- Per spostare a sinistra il punto di inizio della selezione, e quindi per estendere l'intervallo di tempo, premere "shift + freccia sinistra".
+
+
+L'impostazione delle lunghezze dei passi è descritta nel capitolo ["Lunghezza dei salti effettuati con le frecce destra e sinistra" #HDR-JumpSize].
+
+Si noti che le due scorciatoie che utilizzano il tasto "controllo", contraggono l'intervallo di tempo, mentre le altre due lo espandono.
+
++++ Utilizzo di caselle di selezione +++
+- Se il focus è sulla tabella "Track View", digita "control + F6" per portarlo al gruppo inferiore dove la prima barra degli strumenti è la barra degli strumenti di "selezione".
+- digitare "Tab" per raggiungere l'elenco a discesa "visualizzazione" e selezionare l'opzione "Inizio e fine selezione". Ciò consente di regolare l'inizio o la fine della selezione senza influire sugli altri.
+- digita "Tab" per raggiungere la casella di selezione "inizio" o "fine". Se il formato non è già impostato su "hh:mm:ss + centesimi" e vuoi apportare piccole modifiche, usa il menu contestuale per modificare il formato.
+- Se, ad esempio, vuoi impostare il tempo in decimi di secondo, premi "Fine" per spostare il focus sull'ultima cifra (i centesimi), quindi premi "Freccia sinistra" per raggiungere la cifra dei decimi di secondo. È quindi possibile premere "Freccia su o giù" per aumentare o diminuire il tempo rispettivamente di un decimo di secondo.
+- Se lo desideri, regola l'altro punto della selezione.
+- Premere due volte "control + F6" per tornare alla tabella "Track View".
+
+
+++ Deselezione dell'intervallo di tempo ++
+Spostando il cursore con uno dei seguenti tasti si rimuove la selezione dell'intervallo di tempo: "Inizio", "Fine", "J", "K", "Freccia destra", "Freccia sinistra" , "," e ".".
+
+Dopo aver premuto il tasto "freccia sinistra" o "freccia destra", la posizione del cursore viene posizionata all'inizio o alla fine dell'intervallo appena deselezionato.
+
+Per deselezionare tutte le tracce e deselezionare qualsiasi intervallo di tempo, premi "Ctrl + Maiusc + A". La nuova posizione del cursore è all'inizio dell'intervallo appena deselezionato.
+
++ Edizione base +
+++ Annulla e ripeti ++
+Per annullare premere "control + Z", e per ripetere premere control + Y".
+
+++ Elimina l'audio ++
+Per eliminare l'audio selezionato, premere il tasto "Elimina".
+
+Se si desidera visualizzare in anteprima l'audio dopo l'eliminazione, premere "C" che riproduce un breve periodo di tempo prima e dopo il cue point.
+
+La durata del periodo di riproduzione prima e dopo la selezione può essere impostata nel gruppo di impostazioni "Anteprima taglio" situato nella categoria "Riproduzione" delle preferenze di Audacity.
+
+++ Taglia ++
+Per disattivare l'audio selezionato, premere "control + X". L'audio selezionato viene rimosso dalla traccia e inserito negli appunti di Audacity.
+
+Come per l'eliminazione dell'audio, puoi sentire l'effetto del tuo ritaglio premendo "C" per riprodurre un'anteprima del ritaglio.
+
+++ Copia ++
+Per copiare l'audio selezionato negli appunti di Audacity, premi "control + C".
+
+++ Incolla ++
+Per incollare l'audio dagli appunti di Audacity nelle tracce selezionate, premi "control+V".
+
+Ci sono due casi:
+- Se non è selezionato alcun intervallo di tempo e quindi nessun audio selezionato, l'audio viene inserito nella posizione del cursore.
+- Se l'audio è selezionato, l'audio selezionato viene sostituito dall'audio incollato (quello degli appunti di Audacity).
+
+
+Se non viene selezionata alcuna traccia quando si incolla l'audio, l'audio viene inserito all'inizio di una nuova traccia.
+
+Ci sono un paio di pratici controlli di riproduzione che possono essere usati per verificare che la transizione all'inizio e alla fine dell'audio incollato suoni bene:
+- Per riprodurre un breve periodo prima e dopo l'inizio della selezione, premere "control + shift + F5".
+- Per riprodurre un breve periodo prima e dopo la fine della selezione, premere "control + shift + F7".
+
+
+La durata del periodo di riproduzione prima e dopo la selezione può essere impostata nel gruppo di impostazioni "Anteprima taglio" situato nella categoria "Riproduzione" delle preferenze di Audacity.
+
+++ Sostituisci l'audio con il silenzio ++
+Per sostituire l'audio selezionato con la stessa durata del silenzio, nel menu "Modifica", aprire il sottomenu "Rimozione speciale" e scegliere il sottomenu "Silenzio audio" (scorciatoia "control+l").
+
+++ Inserisci riposo ++
+Per inserire un periodo di silenzio nelle tracce selezionate:
+- Spostare il cursore nel punto in cui si desidera inserire il silenzio.
+- apri il menu "Genera" e scegli il sottomenu "Silenzio".
+- si apre la finestra di dialogo "Silenzio" (Un generatore di silenzio) e il focus viene posizionato nella zona di selezione numerica che consente di specificare la durata del silenzio. Questa casella di modifica è identica alle caselle di selezione del tempo utilizzate nella barra degli strumenti "Selezione", sebbene lo stato attivo sia assegnato alla prima cifra diversa da zero anziché alla prima cifra.
+
+
+Impostare l'ora desiderata, quindi premere "Invio" per attivare, di default, il pulsante "OK".
+
+Viene inserito il periodo di silenzio e viene selezionato l'intervallo di tempo che copre questo periodo.
+
+Nota che tutti i comandi nel menu "Genera" hanno lo stesso comportamento.
+
+Se sono selezionate una o più tracce, ma nessun intervallo di tempo, l'audio generato viene inserito nella posizione del cursore. Se viene selezionato anche un intervallo di tempo, l'audio selezionato nell'intervallo viene sostituito dall'audio generato.
+
+Tutte le caselle di selezione temporali nelle finestre di dialogo che vengono aperte dal menu "Genera" sono, per impostazione predefinita, nel formato "secondi" e lo stato attivo viene assegnato alla prima cifra diversa da zero.
+
+++ Effetti ++
+Audacity fornisce un gran numero di effetti che sono disponibili con il menu "Effetti".
+
+Per alcuni comandi, come dissolvenza in apertura o chiusura, è sufficiente eseguire l'effetto sull'audio selezionato.
+
+Ma la maggior parte di essi apre una finestra di dialogo che consente di regolare i parametri dell'effetto.
+
+Se un effetto non supporta l'anteprima in tempo reale (vedi capitolo successivo), la sua finestra di dialogo contiene quasi sempre un pulsante di anteprima che consente di ascoltare un breve campione dell'effetto applicato all'audio selezionato. Per impostazione predefinita, la durata della finestra di anteprima è di 6 secondi.Puoi modificare questo valore nella finestra di dialogo "Preferenze" di Audacity, nella categoria "Riproduzione" dove è presente una casella di modifica per la durata dell'anteprima.
+
+La finestra di dialogo dell'effetto contiene anche un pulsante "Gestisci" che apre un menu che include comandi per i preset.
+
++++ Effetti con anteprima in tempo reale +++
+Alcuni degli effetti che possono essere utilizzati in Audacity includono un'anteprima in tempo reale in cui è possibile modificare i parametri di un effetto durante la riproduzione.
+
+Un piccolo numero di effetti inclusi con l'installazione di Audacity, ad esempio l'effetto "bassi e alti" o l'effetto "wahwah", hanno questa funzionalità.
+
+Se hai installato effetti VST o LADSPA, questi hanno un'anteprima in tempo reale.
+
+Le finestre di dialogo degli effetti che includono l'anteprima in tempo reale includono i seguenti elementi, tutti dotati di tasti di scelta rapida:
+- il pulsante "Applica", che applica l'effetto all'audio selezionato e che è il pulsante predefinito nella finestra di dialogo. Questo pulsante non chiude la finestra di dialogo.
+- il pulsante "chiudi" ("Esc").
+- il pulsante "gestisci". Questo apre un menu che include comandi per i preset e apre una finestra di dialogo "opzioni".
+- il pulsante "Avvia/Interrompi riproduzione". Se si preme "Interrompi riproduzione" durante la riproduzione, quindi si preme "Avvia riproduzione", la riproduzione riprende da dove era stata interrotta.
+- il pulsante "Salta indietro": durante la riproduzione, premere questo pulsante per tornare indietro di un breve periodo senza andare oltre l'inizio del brano selezionato.
+- il pulsante "Salta in avanti": durante la riproduzione, premere questo pulsante per andare avanti di un breve periodo senza andare oltre la fine del brano selezionato.
+- la casella di controllo "attiva": determina se l'effetto è attivato. È selezionato per impostazione predefinita. La disabilitazione di questa funzione consente di confrontare rapidamente l'audio con e senza effetto.
+
+
+Dopo aver aperto una di queste finestre di dialogo degli effetti, puoi tornare al menu principale della finestra di Audacity senza chiuderla.
+
+Le finestre di dialogo con questo comportamento sono chiamate finestre di dialogo non modali.
+
+Puoi navigare tra la finestra principale di Audacity e tutte le finestre di dialogo non modali premendo "Alt + F6".
+
+++ Elimina tracce ++
+Esistono due modi per eliminare le tracce:
+- Per eliminare la traccia messa a fuoco, premere "shift + C".
+- Per eliminare le tracce selezionate, eliminare utilizzando il menu "Tracce" e il sottomenu "Elimina traccia(i)". Ciò fornisce un modo rapido per eliminare tutte le tracce se si preme "control + A" per assicurarsi che tutte le tracce sono selezionati.
+
+
+++ Evita di introdurre clic durante la modifica ++
+Se rimuovi o disattiva una parte dell'audio in una traccia e l'inizio o la fine di quella parte non ha un'ampiezza zero, potrebbe verificarsi un cambiamento improvviso nell'ampiezza dell'audio.
+
+Se la dimensione di queste modifiche brusche è sufficientemente grande, si sentono dei clic.
+
+Un problema simile può verificarsi se copi e incolli l'audio.
+
+Puoi evitare l'introduzione di questi clic utilizzando il sottomenu "Trova incroci con zero", del menu "selezione", (scorciatoia "Z").
+
+Se è selezionata una traccia, ma non è stato selezionato alcun periodo, se si applica questo comando, la posizione del cursore viene spostata nella posizione più vicina a dove l'ampiezza dell'audio nella traccia selezionata è zero.
+Il cambio di posizione è molto piccolo, quindi non devi preoccuparti che apporti un grande cambiamento alla posizione del cursore.
+Allo stesso modo, se è selezionato un intervallo di tempo, la posizione dell'inizio e della fine dell'intervallo viene regolata in modo che l'ampiezza dell'audio nella traccia selezionata sia zero.
+
+Per evitare l'introduzione di clic:
+- Dopo aver selezionato una porzione di audio in una traccia, e prima di tagliarla, cancellarla o copiarla, applicare il comando "Trova Crossover a Zero".
+- Dopo aver posizionato il cursore per incollare l'audio in una traccia, e prima di incollarlo, applicare "Trova zero crossing".
+
+
++Editing audio con più tracce+[HDR-AdvancedEdition]
+Questo capitolo descrive alcuni comandi e parametri che sono rilevanti quando si desidera lavorare su un progetto contenente più tracce.
+
+++ Importazione di file audio ++[HDR-AudioFileImport]
+Puoi importare uno o più file audio e questi diventano nuove tracce nel progetto esistente.
+
+Per importare uno o più file audio standard, apri il menu "File" e seleziona "Audio" dal sottomenu "Importa" (scorciatoia "control + shift + I").
+
+Si apre la finestra di dialogo "Scegli uno o più file audio".
+
+Nota: subito dopo l'importazione, viene selezionata solo l'ultima traccia nel progetto.
+
+
+++ Aggiunta nuova traccia vuota ++
+Per aggiungere una nuova traccia vuota, scegli uno dei comandi dal sottomenu "Aggiungi nuovo" del menu "traccia".
+
+++ Traccia la duplicazione ++
+Per duplicare l'audio selezionato in una o più altre tracce, apri il menu "Modifica" e scegli il sottomenu "Duplica" (scorciatoia "Control + D").
+
+La copia dell'audio conserva gli stessi tempi dell'audio originale, in modo che nelle nuove tracce l'audio inizi all'inizio del periodo di tempo selezionato.
+
+
+++ Muto e Solo ++
+Ogni traccia ha un'impostazione mute che può essere attivata o disattivata e un'impostazione "solo" che può anche essere attivata o disattivata.
+
+Queste impostazioni vengono utilizzate per controllare quali tracce contribuiranno alla riproduzione.
+
+Inoltre, l'impostazione "muto" (non l'impostazione "solo") influisce sull'audio che contribuirà all'audio registrato in uno dei formati standard.
+
+Per impostazione predefinita, le impostazioni "mute" e "solo" di ciascuna traccia sono rispettivamente "off" e "inactive".
+
+Lo stato attivo di queste impostazioni (on per mute e on per solo) è elencato dopo il nome della traccia.
+
++++ Muto +++
+Se una traccia ha l'impostazione "Muto" attivata, non contribuisce alla riproduzione o all'audio registrato in uno dei formati standard.
+
+È possibile modificare l'impostazione "Muto" per una traccia o le impostazioni per tutte le tracce:
+- Per attivare l'impostazione "Muto" della traccia messa a fuoco, premere "shift + U".
+- Per disattivare l'audio di tutte le tracce, premere "control + U".
+- Per riattivare l'audio di tutte le tracce, premere "Ccontrol + shift + u".
+- Per disattivare l'audio di tutte le tracce selezionate, premere "control + Alt + u".
+- Per ripristinare l'audio su tutte le tracce selezionate, premere "control + alt + shift + U".
+
+
++++ Solo +++
+Se una o più tracce hanno l'impostazione "solo" abilitata, solo quelle tracce contribuiscono alla riproduzione, indipendentemente dall'impostazione "Muto" delle altre tracce. Per attivare l'impostazione Solo della traccia messa a fuoco, premi "shift + S".
+
+Sono disponibili tre opzioni per l'impostazione "Solo" che influiscono sulla sua interazione con l'impostazione "muto":
+- single (valore di default): attivando il parametro "Solo" di una traccia, il parametro "Mute" e il parametro "Solo" di questa traccia vengono regolati. Quindi il parametro "Mute" di questa traccia viene disattivato e il parametro "mute" delle altre tracce viene attivato e il loro parametro "solo" è inattivo. Se l'impostazione "solo" di una traccia diventa nuovamente inattiva, l'impostazione "mute" di tutte le altre tracce viene disattivata.
+- Multitraccia: Il parametro "mute" e il parametro "solo" sono completamente indipendenti.
+- Nessuno: non esiste un parametro "solo", devi accontentarti dell'unico parametro "muto".
+
+
+La scelta dell'opzione per questo parametro "solo" avviene tramite un pulsante nella sottosezione "comportamento traccia" della categoria "Traccia" delle preferenze di Audacity.
+
+
+
+++ Guadagno in pista ++
+Per modificare il guadagno della traccia, premere MAIUSC + G".
+
+Si apre la finestra di dialogo "Guadagno" che contiene sia una casella di modifica che una manopola per modificare il guadagno.
+
+L'intervallo di guadagno (db) è compreso tra -36 e +36.
+
+Il guadagno di una traccia viene applicato all'intera traccia e viene applicato solo durante la riproduzione o quando la traccia viene esportata in un file o quando si utilizzano i controlli Mix e Render.
+
+La modifica del guadagno non influisce sull'ampiezza dei dati audio sulla traccia.
+
+++ Panoramica delle tracce ++
+Per modificare il panning della traccia, digitare "shift + p" oppure utilizzare il sottomenu "Cambia il panning sulla traccia di destinazione" del sottomenu "Tracce" del menu "Extra".
+
+Si apre la finestra di dialogo che contiene sia un'area di modifica che un potenziometro per modificare il pan.
+
+L'intervallo di panoramica è compreso tra -1 e 1, che corrisponde rispettivamente a sinistra ea destra.
+
+
+++ Traccia il menu contestuale ++
+Si apre il menu contestuale della traccia messa a fuoco premendo "shift + M", oppure il tasto "Applicazione" o la scorciatoia "shift +f10".
+
+I comandi di menu includono la ridenominazione della traccia, lo spostamento della posizione della traccia nella tabella "Vista traccia".
+Quest'ultimo comando è descritto nel prossimo capitolo.
+
+
+++ Spostare una traccia ++
+I comandi per spostare la posizione della traccia messa a fuoco sono: sposta la traccia in alto, sposta la traccia in basso, sposta la traccia fino in fondo, sposta la traccia fino in fondo.
+
+Per impostazione predefinita, questi comandi non hanno collegamenti associati, ma puoi facilmente assegnarne uno utilizzando la finestra di dialogo "Preferenze" di Audacity.
+
+Si trovano nella categoria "Tastiera", nella sezione "Traccia" e sotto i seguenti nomi:
+- "Sposta verso l'alto la traccia di destinazione",
+- "Sposta verso il basso la traccia di destinazione",
+- "Sposta in alto la traccia di destinazione",
+- "Sposta la traccia di destinazione fino in fondo".
+
+
+Le combinazioni di tasti che non vengono utilizzate e che potrebbero funzionare sono: "Control + Maiusc + Freccia su", "Control + Maiusc + Freccia giù", "Control + Maiusc + Home", "Control + Maiusc + Fine".
+
+++ Allineamento end-to-end della pista ++
+Se selezioni due o più tracce, puoi allineare l'audio in quelle tracce, in modo che l'audio di una traccia inizi alla fine dell'audio della traccia precedente.
+
+Per fare ciò, apri il menu "tracce", quindi il sottomenu "Allinea tracce" e scegli il sottomenu "Allinea da un capo all'altro".
+
+Nota:
+- l'allineamento avviene nell'ordine in cui i binari sono presentati nella tabella "Vista pista". Se è necessario modificare questo ordine, è possibile farlo utilizzando un comando del menu contestuale per la traccia in questione.
+- La posizione dell'audio nella prima traccia selezionata rimane invariata.
+
+
+++ Compensazione audio ++
+È possibile spostare i dati audio in una o più tracce, in modo che l'inizio o la fine dell'audio si trovi in una determinata posizione desiderata.
+
+È possibile specificare questa posizione sia con il cursore che con l'inizio o la fine di un intervallo di tempo selezionato.
+Tutti i comandi di movimento audio sono disponibili nel sottomenu "Allinea tracce" del menu "Tracce".
+
+Di seguito sono riportati alcuni esempi di utilizzo.
+
+Ci sono un paio di pratici controlli di riproduzione che possono essere usati per controllare la posizione dell'audio offset:
+- Per riprodurre un breve periodo prima e dopo il cursore in cui inizia la selezione, premere "control + shift + F5".
+- Per riprodurre un breve periodo prima e dopo la fine della selezione, premere "control + shift + F7".
+
+
+Puoi modificare la durata del periodo nella finestra di dialogo "Preferenze" di Audacity, nella categoria "Riproduzione" dove è presente la casella di modifica Lunghezza anteprima.
++++ Esempi +++
+Primo esempio, per spostare l'audio in una o più tracce in una precisa posizione di partenza:
+- Spostare il cursore nella posizione desiderata utilizzando i metodi descritti nel capitolo ["Spostamento del cursore" #HDR-MovingCursor].
+- Seleziona le tracce contenenti l'audio che vuoi spostare e assicurati che le altre tracce non siano selezionate.
+- Apri il sottomenu "Allinea tracce" del menu "Tracce" e scegli il sottomenu "Inizia al cursore/inizio selezione".
+
+
+Nota: se è stata selezionata più di una traccia e il suono di queste tracce è iniziato in momenti diversi, l'audio di tutte le tracce viene spostato della stessa quantità, e quindi l'audio più vecchio viene posizionato nella posizione del cursore.
+
+Se si desidera spostare l'audio di una o più tracce, in modo che termini in un determinato momento desiderato, è sufficiente modificare il terzo passaggio utilizzando il sottomenu "Fine al cursore / inizio selezione".
+
+Come altro esempio, se vuoi spostare una o più tracce di un certo intervallo di tempo, allora:
+- Seleziona le tracce che vuoi spostare nel tempo e assicurati che le altre tracce non siano selezionate.
+- Premere "J" per spostare il cursore all'inizio dell'audio nelle tracce selezionate.
+- Premi "control + F6" per mettere a fuoco la barra degli strumenti di selezione,
+- digitare "Tab" per raggiungere l'elenco a discesa "Visualizza" e scegliere l'opzione "inizio e durata della selezione".
+- digita "Tab" per raggiungere la casella di modifica "Start".
+- a seconda che si desideri spostarli nel tempo, avanti o indietro, è necessario aumentare o diminuire l'ora della zona. Ad esempio, se desideri spostare l'audio in avanti di 1,5 secondi:
+- digitare "Fine" per portare il focus sulla cifra dei centesimi.
+- digita "freccia sinistra" per posizionarti sulla decima cifra.
+- digitare "freccia su" cinque volte per aumentare questa cifra di cinque unità.
+- digitare "freccia sinistra" per raggiungere il numero di secondi.
+- digitare "Freccia su" per aumentare questo numero di un'unità.
+- Aprire il sottomenu "Allinea tracce" del menu "Tracce" e scegliere il sottomenu "Inizia al cursore/inizio selezione". Questo sposta i dati nelle tracce selezionate, in modo che queste inizino ora nella nuova posizione del cursore.
+
+
+Nota: se desideri spostare una traccia che hai registrato non in linea con le tracce esistenti, potresti dover spostare il punto iniziale dell'audio su una battuta prima di 0.
+
+Poiché non è possibile spostare il cursore prima del tempo zero, il metodo sopra dovrebbe essere adattato come segue:
+- nel secondo passaggio, premi il tasto "K" per saltare alla fine dell'audio dei brani selezionati.
+- nel quinto passo, utilizzare il sottomenù "Fine al cursore/inizio selezione".
+
+
+Nota che Audacity potrebbe avere una correzione automatica della latenza.
+
+++ Blocco sincronizzazione traccia ++[HDR-TrackSyncLock]
+L'idea del blocco della sincronizzazione delle tracce è di provare a mantenere un gruppo di tracce che si sincronizzano tra loro durante determinate operazioni, come l'eliminazione dell'audio, che influisce sul posizionamento dell'audio nella traccia di una delle tracce nel gruppo di tracce.
+
+Supponiamo di avere due tracce audio e la loro sincronizzazione è stata bloccata:
+
+Se selezioni un intervallo di tempo in una delle tracce ed elimini l'audio da quell'intervallo, anche l'audio dell'altra traccia verrà eliminato nello stesso intervallo.
+
+Tutto l'altro audio di entrambe le tracce è ancora sincronizzato.
+
+Allo stesso modo con solo due tracce che sono bloccate sincronizzate:
+
+Se selezioni una traccia e incolli i file audio in quella traccia nella posizione del cursore, un silenzio della stessa lunghezza dell'audio incollato viene incollato nell'altra traccia nella posizione del cursore.
+
+L'interruttore di blocco della sincronizzazione viene configurato utilizzando il sottomenu "Blocca sincronizzazione tracce (on/off)" del menu "Tracce".
+
+È disabilitato per impostazione predefinita.
+
+Se nel progetto sono presenti solo tracce audio, esiste un solo gruppo di blocco della sincronizzazione.
+
+Le tracce del progetto possono essere divise in più gruppi utilizzando un marcatore di tracce.
+
+Ogni traccia audio immediatamente successiva a un contrassegno di traccia avvia un nuovo gruppo di tracce.
+
+Quando più tracce sono bloccate nella sincronizzazione, viene visualizzata un'icona corrispondente nella traccia e l'indicazione "blocco sincronizzato selezionato" viene aggiunta al nome della traccia.
+
++ Marcatori +[Etichette HDR]
+Un Marker rappresenta un tempo specifico o un intervallo di tempo specifico e può essere denominato.
+
+Un marker che rappresenta una battuta è chiamato marker di posizione, un marker che rappresenta un intervallo di tempo è chiamato marker di regione.
+
+I marker vengono memorizzati in una traccia marker. Ci possono essere più tracce marker in un progetto, ma normalmente una traccia è sufficiente.
+
+È possibile contrassegnare una posizione o un intervallo di tempo come descritto nella sezione successiva per tornarci in seguito utilizzando i comandi di spostamento nei marker (vedere il capitolo ["Spostarsi su un marker" #HDR-MovingToLabel]).
+
+Inoltre, una serie di strumenti nel menu "analisi" consentono di aggiungere una traccia marker al progetto che contiene i risultati dell'analisi. Ad esempio, lo strumento "Beat Finder" genera una traccia marker contenente marker nei punti in cui l'audio ha una battuta.
+
+++ Creazione di un marker ++
+Ci sono due comandi per creare un marcatore, ed entrambi si trovano nel sottomenu "Marcatori" del menu "Modifica":
+- Aggiungi Marker alla Selezione (scorciatoia "control + B"): senza che sia selezionato alcun intervallo di tempo, viene creato un marker di posizione in corrispondenza della posizione del Cursore. Se è selezionato un intervallo di tempo, viene creato un indicatore di regione per quell'intervallo di tempo.
+- Aggiungi marker in posizione di riproduzione (scorciatoia "Control + M"): viene creato un marker di posizione in posizione di riproduzione o registrazione.
+
+
+Per questi comandi c'è un'opzione per scegliere se il nome di un nuovo marker deve essere inserito in una finestra di dialogo o in una casella di modifica nella traccia marker.
+
+La seconda opzione non è molto accessibile per gli utenti di screen reader, quindi si consiglia di utilizzare l'opzione di dialogo.
+
+Nelle "Preferenze", nella sottocategoria "Traccia comportamenti" della categoria "Traccia", è presente una casella di controllo "Utilizza una finestra di dialogo per nominare un nuovo marcatore", che è deselezionata per impostazione predefinita, ma che devi spuntare.
+
+L'uso di questi comandi per creare marcatori utilizzando queste due opzioni è descritto di seguito.
+
+Innanzitutto, utilizzando una finestra di dialogo per il nome:
+- Scegli uno dei comandi dal sottomenu "Marcatori" del menu "Modifica" o premi la sua scorciatoia. Viene visualizzata una finestra di dialogo "Nuovo indicatore" e la casella di modifica del nome è a fuoco.
+- Digitare il nome dell'indicatore (opzionale), quindi premere "Invio" per premere il pulsante "OK", che è il pulsante predefinito nella finestra di dialogo. Il nuovo marker viene aggiunto a una traccia marker, che è:
+- o la traccia focalizzata, se è una traccia marker.
+- o la prima traccia marker sotto la traccia focalizzata, se tale traccia esiste.
+- o una nuova traccia marker aggiunta alle tracce esistenti.
+- Il focus torna alla traccia originale.
+
+
+Per utilizzare questi comandi per aggiungere marcatori e senza utilizzare l'opzione Finestra di dialogo:
+- O ne scegli uno nel sottomenu "Marcatori" del menu "Modifica",
+- o usi la sua scorciatoia.
+
+
+Se la traccia focalizzata non è una traccia marker, la prima traccia marker sotto questa traccia diventa la traccia focalizzata, se tale traccia esiste.
+Se non ce ne sono, una nuova traccia marker viene aggiunta alle tracce esistenti e diventa la traccia focalizzata.
+
+Nella traccia marcatore focalizzato, viene creato un nuovo marcatore e si apre una casella di modifica per inserire un nome per il marcatore.
+Sfortunatamente, il tuo screen reader non dice che lo stato attivo è ora su questa casella di modifica.
+
+Digita un nome per l'indicatore (facoltativo), quindi premi Invio per chiudere la casella di modifica.
+
+Per il comando "Aggiungi marcatore alla posizione di riproduzione", lo stato attivo viene quindi riportato alla traccia originale.
+
+++ Passaggio all'etichetta ++[HDR-MovingToLabel]
+
+Ci sono due comandi per andare a un marker. Per determinare quale sia il marker più vicino, la posizione di un marker di regione viene presa come inizio del suo intervallo di tempo
+Quelli sono:
+- Passa al marcatore successivo (scorciatoia "Alt + Freccia destra"): per spostarti al marcatore più vicino dopo il cursore o all'inizio di un intervallo di tempo selezionato. Se non ci sono più segnalini, lo spostamento viene effettuato al primo segnalino sul tracciato.
+- sposta al marcatore precedente: (scorciatoia "Alt + Freccia sinistra"): per spostarti al marcatore più vicino prima del cursore o all'inizio di un intervallo di tempo. Se non ci sono più marker, il movimento viene effettuato fino all'ultimo marker della traccia.
+
+
+
+Questi comandi utilizzano i marker di una singola traccia marker, non di tutte le tracce marker.
+
+Se c'è solo una traccia marker nel progetto (che di solito è il caso), i comandi usano quella traccia anche se non ha lo stato attivo.
+
+Se sono presenti più tracce marker, viene utilizzata la prima traccia marker (se presente) che segue la traccia audio.
+
+Quando questi comandi raggiungono un marker:
+- se il marker è un marker di posizione, il cursore viene posizionato nella posizione del marker.
+- se il marker è un marker di regione, viene selezionato l'intervallo di tempo associato al marker.
+
+
+In entrambi i casi, Jaws e NVDA mostrano il nome del marker, se ne ha uno, seguito dalla sua posizione nella traccia marker.
+
+Se questi comandi vengono utilizzati durante la riproduzione, la riproduzione continua dopo essersi spostati sul marker.
+
+Nota che se una traccia marker è a fuoco, "Tab" e "Shift + Tab" si sposteranno al marker disponibile successivo o precedente. Tuttavia, l'uso di queste chiavi non è raccomandato. Oltre a passare a un marker, questi tasti aprono anche la casella di modifica del nome del marker, che non è accessibile.
+
+Se hai utilizzato accidentalmente uno di questi tasti, puoi chiudere la casella di modifica premendo "Invio".
+
+Se è necessario modificare il nome del marker, è possibile utilizzare la finestra di dialogo "Modifica marker", descritta nella sezione successiva.
+
+++ Modifica dei marcatori ++
+L'uso della finestra di dialogo "Modifica marcatori" consente di rinominare un marcatore, eliminare un marcatore ed eventualmente essere un'alternativa per spostare un marcatore.
+
+Per aprire la finestra di dialogo, apri il menu "Modifica", apri il sottomenu "Marcatori", quindi scegli "Modifica marcatori".
+
+La finestra di dialogo contiene i seguenti elementi:
+- Una tabella che contiene i dettagli dei marker di tutte le tracce marker nel progetto (descritto nella sezione successiva).
+- i pulsanti "Inserisci prima", "Inserisci dopo" e "Elimina".
+- Pulsanti "Importa" ed "Esporta" per importare o esportare marcatori in un file di testo.
+
+
+Quando si apre la finestra di dialogo, una delle celle della tabella ha lo stato attivo ed è selezionata. Supponendo che il progetto contenga almeno un marker, viene selezionato uno dei nomi di questi marker.
+
+Per determinare quello il cui nome è selezionato (la posizione di un marker di regione è considerata l'inizio del suo intervallo di tempo):
+- Se il cursore o l'inizio di un periodo selezionato si trova nella posizione del marker, viene selezionato il nome del marker.
+- In caso contrario, viene selezionato il nome del marker che si trova subito prima del cursore.
+- Se non ci sono marker prima del cursore, viene selezionato il nome del primo marker nella traccia marker.
+
+
+Quando si chiude la finestra di dialogo, premendo il pulsante "OK" o il pulsante "Annulla",
+Il cursore o un intervallo di tempo viene definito utilizzando l'indicatore selezionato nella tabella, a seconda che l'indicatore sia un indicatore di posizione o regione.
+
+Nota: non è consigliabile aprire la finestra di dialogo quando non ci sono marker nel progetto.
+In tal caso, la tabella contiene una singola riga e il nome della traccia marker ha lo stato attivo ed è selezionato. Il nome dell'indicatore è vuoto.
+Se si preme il pulsante "OK", viene aggiunta una nuova traccia marker nel progetto e questa traccia contiene un marker senza nome.
+
+La cosa migliore da fare se si apre la finestra di dialogo in questo caso è premere il pulsante "Esc" per chiudere la finestra di dialogo.
+
+Tuttavia, anche se si annulla, il cursore si posiziona all'istante 0 e quindi si perde la posizione precedente del cursore.
+
++++ Tabella dei marcatori +++
+La tabella ha sei colonne: il nome della traccia marker, il nome del marker, l'inizio e la fine dell'intervallo di tempo e le frequenze basse e alte.
+
+Se un marker è un marker di posizione, l'inizio e la fine dell'intervallo di tempo hanno lo stesso valore.
+
+Le frequenze basse e alte servono per la selezione spettrale e non sono trattate in questa guida.
+
+Esistono diversi modi per selezionare una cella nella tabella:
+- selezione della cella successiva: premere "Tab" o "freccia destra".Se è selezionata l'ultima cella, premendo "Tab" si passa al pulsante "Inserisci".
+- selezione della cella precedente: premere "shift + Tab" o "freccia sinistra".Se la prima cella è selezionata, premendo "shift + Tab" si passa al pulsante "Annulla" in fondo alla finestra di dialogo.
+- selezione della cella appena sotto o sopra la cella corrente: premere rispettivamente "Freccia giù" o "Freccia su".
+- selezione della prima o dell'ultima cella: premere rispettivamente "controllo + inizio" o "controllo + fine".
+
+
+Nota: poiché "Tab" può essere utilizzato per selezionare una cella nella tabella, sono presenti un paio di tasti che consentono di spostarsi direttamente all'esterno della tabella. Da qualsiasi cella della tabella, "control+tab" e "control+shift+tab" saltano rispettivamente all'elemento dopo o prima della tabella.
+
++++ Eliminazione di un marker +++
+- Seleziona una delle celle nella riga che rappresenta il marcatore.
+- Ci sono quindi due soluzioni:
+- Il primo è premere "control + Tab" per uscire dal tavolo andando sul pulsante "Inserisci", "quindi Tab" per posizionarsi sul pulsante "Elimina" e premerlo.
+- Il secondo consiste nell'utilizzare il tasto di scelta rapida "alt+s" per premere il pulsante "Elimina" senza spostarsi dal tabellone.
+
+
++++ Modifica delle celle +++
+L'utilità per la lettura dello schermo contrassegna tutte le celle come caselle di modifica. Ignoralo.
+
+Nessuna delle celle si comporta come caselle di modifica e il modo in cui modifichi una cella dipende dal tipo di valore che contiene.
+
+La modifica del nome, dell'ora di inizio e dell'ora di fine di un marker è descritta nei capitoli seguenti.
+
+In ogni caso, puoi convalidare la modifica premendo "Invio" o "Tab". La differenza tra i due è che "Invio" ti sposta alla cella immediatamente sotto la cella corrente, mentre "Tab" ti sposta alla cella successiva. Inoltre, in entrambi i casi, è possibile annullare la modifica premendo “Esc”.
+
++++ Modifica del nome del marcatore +++
+Puoi sostituire o modificare il nome corrente:
+- Per sostituire il nome attuale: digita del testo.
+- Per modificare il nome: premere "F2", che seleziona il testo. Per deselezionare il testo prima di modificarlo, premere "Freccia destra" o "Fine" che posiziona il cursore di modifica immediatamente dopo il testo esistente, oppure premere "Home" che posiziona il cursore di modifica sul primo carattere del testo.
+
+
+Per convalidare la modifica premere "Tab" o "Enter" Per annullare la modifica premere "Esc"
+
+
++++ Modifica dell'ora di inizio e di fine +++
+- Premere "F2": ora è possibile modificare l'ora esattamente come si fa per definire la posizione dell'audio o l'inizio o la fine della selezione.
+- Per convalidare la modifica premere "Tab" o "Enter", oppure per annullarla premere "Escape".
+
+
+Si noti che, per impostazione predefinita, il formato dell'ora dell'ora di inizio e di fine è lo stesso utilizzato nelle caselle di selezione numeriche della barra degli strumenti "Selezione".
+
+È possibile modificare temporaneamente questo formato utilizzando il menu contestuale nell'area di modifica.
+Questa modifica del formato si applica solo alle caselle di selezione della finestra di dialogo e non viene salvata quando la finestra di dialogo viene chiusa.
+
++ Clip +[Clip HDR]
+Nel resto di questo documento, si presume che una traccia audio contenga solo un blocco di dati audio.
+
+Tuttavia, una traccia audio può contenere diversi blocchi separati e sono chiamati clip.
+
+In Audacity, le clip non possono sovrapporsi.
+
+Ci sono diverse situazioni in cui potresti ritrovarti con più di una clip su una traccia:
+- Quando si registra alla fine di una clip esistente, l'audio registrato viene aggiunto come clip separata.
+- L'uso di vari comandi di divisione, descritti di seguito.
+- Incolla l'audio in una traccia che contiene già una clip e in una posizione esterna alla clip.
+
+
+
+++ Movimento del cursore ++
+Ci sono controlli per spostarsi ai limiti della clip precedente o successiva che si trovano nel sottomenu "Salta a cursore piccolo" del menu "Trasporto". Quelli sono:
+- "Confine clip precedente": sposta il cursore al limite della clip successivo prima del cursore o all'inizio del periodo selezionato.
+- "limite clip successivo": sposta il cursore al limite del clip successivo dopo il cursore o alla fine del periodo selezionato.
+
+
+
+Se sono selezionate alcune tracce audio, questi comandi cercano i limiti di clip in quelle tracce. In caso contrario, i limiti vengono ricercati in tutte le tracce del progetto.
+
+Quando il cursore viene spostato sul limite di una clip, lo screen reader indicherà l'inizio o la fine, seguito dal numero della clip, seguito dal nome della traccia.
+Nel caso in cui due clip si trovino immediatamente l'una accanto all'altra e il limite della clip sia sia la fine di una clip che l'inizio di quella successiva, il lettore dello schermo lo dice.
+
+
+++ Selezione di un intervallo di tempo ++
+Esistono due serie di comandi per la selezione di intervalli di tempo che coinvolgono i limiti di clip.
+
+Sono descritti nei due capitoli seguenti.
+
+In entrambi i casi, se sono selezionate tracce audio, i controlli utilizzano le clip di tali tracce. In caso contrario, i comandi utilizzano clip di tutte le tracce audio.
+
++++ Seleziona clip precedente o successiva +++
+I comandi per selezionare la clip successiva o precedente si trovano nel sottomenu "Clip Trim" del menu "Selezione" e sono:
+- clip successiva: scorciatoia "alt+,".
+- clip precedente: scorciatoia "alt+." (vedi il capitolo ["Scorciatoie scomode" #HDR-Scorciatoie Staffa]).
+
+
+Quando viene selezionata una clip, lo screen reader mostra il numero della clip nella traccia, seguito dal nome della traccia.
+
+Si noti che è possibile utilizzare facilmente questi comandi per spostarsi all'interno dei contorni della clip. Basta selezionare la clip, quindi premere "Freccia sinistra" o "Freccia destra" per annullare la selezione e posizionare il cursore rispettivamente all'inizio o alla fine della clip.
+
+Per chi fosse interessato, le regole precise per determinare quale
+Le clip selezionate quando vengono utilizzati questi comandi sono le seguenti.
+
+Per il comando Seleziona clip successiva:
+- Se non è stato selezionato alcun intervallo di tempo, viene selezionata la prima clip che inizia alla o dopo la posizione del cursore.
+- Se è presente un intervallo di tempo selezionato: se l'inizio della selezione è posizionato all'inizio della clip e la fine della selezione è prima della fine della clip, la clip è selezionata. In caso contrario, viene selezionata la prima clip che inizia dopo l'inizio della selezione.
+
+
+Per il comando seleziona clip precedente:
+- Se non è stato selezionato alcun intervallo di tempo, viene selezionata la prima clip che inizia prima del cursore.
+- Se è selezionato un intervallo di tempo: se l'inizio della selezione è posizionato all'inizio di una clip e la fine della selezione è dopo la fine della clip, la clip è selezionata. In caso contrario, viene selezionata la prima clip che inizia prima dell'inizio della selezione.
+
+
++++ Selezione con limiti di clip +++
+Oltre ai comandi descritti in precedenza, esistono altri due comandi per la selezione delle clip.
+
+Si trovano anche nel sottomenu "Delimita clip" del menu "Selezione", ma non hanno una scorciatoia assegnata per impostazione predefinita. Quelli sono:
+- "Previous Clip Limit at Cursor": imposta l'inizio della selezione al limite della clip precedente.
+- "Cursore al limite del clip successivo": imposta la fine della selezione sul limite del clip successivo.
+
+
+Quando l'inizio o la fine dell'intervallo di tempo selezionato è impostato su un limite di clip utilizzando questi comandi, lo screen reader fornisce i dettagli del limite di clip, esattamente nello stesso modo in cui vengono utilizzati i comandi di spostamento del cursore su un limite di clip.
+
+
+++ Vari comandi di taglio ++
++++ Divisione +++
+Per dividere una clip in due clip su una traccia selezionata:
+- Posiziona il cursore nel punto in cui desideri dividere la clip.
+- nel menu "Modifica", aprire il sottomenu "Contorni clip" e selezionare "Dividi".
+
+
+Puoi anche dividere una clip in tre parti usando questo metodo, se selezioni un intervallo di tempo.
+
++++ Comandi "Cancella-separa" e "taglia-separa" +++
+Puoi utilizzare i comandi "cancella-separa" e "taglia-separa" nel sottomenu "Eliminazione speciale" del menu "Modifica" per eliminare o rimuovere l'audio selezionato, senza influire sulla posizione del contenuto della traccia.
+
+Ciò è in contrasto con i comandi taglia ed elimina standard che fanno muovere l'audio.
+
+L'effetto del comando "remove-split" è il seguente: per ogni traccia selezionata, l'audio che si trova all'interno dell'intervallo di tempo selezionato viene rimosso e la posizione dell'audio rimanente rimane invariata. La traccia diventa vuota in questo intervallo di tempo e la posizione di tutti i dati audio successivi nella traccia rimane invariata.
+
+Ad esempio, se in una traccia selezionata l'intervallo di tempo è all'interno di una clip, questa clip viene divisa in due clip. La prima clip termina all'inizio dell'intervallo selezionato. Poi c'è un intervallo vuoto la cui lunghezza è la lunghezza dell'intervallo selezionato, quindi il secondo clip che inizia alla fine dell'intervallo selezionato.
+
+Come altro esempio, se l'inizio dell'intervallo selezionato è all'interno di una clip e la sua fine è alla fine della clip, la clip viene accorciata. Non è stata creata alcuna nuova clip.
+
+L'effetto del comando "taglia-separa" è lo stesso di quello del comando "elimina-separa", tranne per il fatto che l'audio rimosso viene posizionato negli appunti di Audacity, anziché essere tutto cancellato.
+
++++ Dividi in una nuova traccia +++
+Il comando "Dividi in nuova traccia" nel sottomenu "Ritaglia clip" del menu "Modifica" posiziona l'audio selezionato in una o più altre tracce, senza influire sulla posizione dell'audio rimanente nella traccia originale.
+
+Per ogni traccia selezionata, i dati audio nell'intervallo di tempo vengono eliminati, quindi la traccia si svuota in quell'intervallo di tempo e la posizione dei dati audio rimanenti nella traccia viene mantenuta invariata.
+
+Una nuova traccia viene aggiunta dopo l'ultima traccia e l'audio eliminato viene incollato nella sua posizione originale.
+
+Puoi pensare a "Dividi in una nuova traccia" come equivalente al comando "Taglia-Dividi" seguito dall'audio tagliato che viene incollato in una nuova traccia nella stessa posizione dell'audio selezionato originale
+
++++ Stacca alle pause +++
+Se l'audio selezionato contiene intervalli di completo silenzio, ovvero l'ampiezza dell'audio in questi intervalli è 0, è possibile utilizzare il comando "Stacca ai silenzi" per rimuovere questi intervalli dall'audio, lasciando i clip separati l'uno dall'altro da vuoti intervalli di tempo.
+
+Per ogni intervallo di audio selezionato, dove l'ampiezza dell'audio è zero, i dati audio vengono rimossi, risultando in un intervallo di tracce vuoto e la posizione di qualsiasi dato audio nella traccia rimane invariata.
+
+++ Unisci clip ++
+Per unire due clip su una traccia selezionata:
+- Seleziona un intervallo di tempo in modo che l'inizio dell'intervallo di tempo sia prima della fine del primo clip e la fine dell'intervallo sia dopo l'inizio del secondo clip. Quindi, ad esempio, puoi impostare l'inizio dell'intervallo di tempo all'inizio del primo clip e la fine dell'intervallo alla fine del secondo clip.
+- unisci con il comando "Unisci" del sottomenu "Delimitazione clip" del menu "Modifica" (scorciatoia "control +j"): le clip vengono quindi unite e formano una sola. Tutto lo spazio tra le clip viene sostituito dal silenzio.
+
+
+Nel metodo sopra, se ci sono altre clip tra le due clip, verranno unite nella clip finale.
+
+++ Sposta clip ++
+Ci sono un paio di comandi che possono essere usati per spostare una o più clip. Questi comandi sono "Clip sinistra" e "Clip destra", che si trovano nel sottomenu "Piccolo cursore Salta a sinistra" del menu "Extra". Per impostazione predefinita, non viene loro assegnata alcuna scorciatoia.
+
+Questi comandi "Clip a destra" e "Clip a sinistra" consentono di spostare la clip con un piccolo salto rispettivamente a sinistra oa destra.
+
+Come nel caso dell'utilizzo dei tasti freccia per spostare il cursore, la lunghezza del salto dipende dall'impostazione dello zoom e tale lunghezza può essere regolata, come descritto nel capitolo ["Lunghezza dei salti effettuati con le frecce destra e sinistra" # Dimensione salto HDR].
+
++++ Spostamento di un singolo clip +++
+- Passa alla traccia che contiene la clip che desideri spostare.
+- Sposta il cursore in modo che sia all'interno della clip.
+- utilizzare i comandi "Clip a destra" o "Clip a sinistra" per spostare la clip e il cursore di un piccolo salto. Se il clip non può essere spostato, perché ad esempio si trova accanto a un altro clip, viene visualizzato un messaggio di avviso.
+
+
+Se il cursore è posizionato su un limite di clip che è sia la fine di una clip che l'inizio della clip successiva, per i comandi di spostamento della clip il cursore è considerato nella seconda clip ei comandi s verranno applicati a questa clip.
+
+Per questo motivo, quando è necessario posizionare il cursore su una clip per spostarla, si consiglia di non posizionare il cursore alla fine della clip.
+
+Se il cursore si trova alla fine della clip e se usi più volte il comando "Clip a destra", la clip finisce per essere adiacente alla clip successiva. Il cursore sarà considerato in quest'ultimo ed è questa clip, piuttosto che la clip originale che si sposterà. È improbabile che sia quello che vuoi.
+
++++ Spostamento di più clip adiacenti +++
+Per spostare più clip adiacenti in una traccia:
+- Passa alla traccia che contiene le clip da spostare.
+- Seleziona la traccia, le altre tracce non dovrebbero essere selezionate.
+- selezionare un intervallo di tempo tale che l'inizio della selezione sia nella prima clip da spostare e la fine della selezione nell'ultima clip. Quindi, ad esempio, puoi spostare il cursore all'inizio della prima clip, quindi impostare la fine della selezione alla fine dell'ultima clip.
+
+
+Nel caso in cui siano selezionate altre tracce, oltre alla traccia messa a fuoco, vengono spostate anche tutte le clip su quelle tracce che contengono l'audio selezionato.
+
++++ Spostamento di clip con blocco Track Sync abilitato +++
+L'uso di Track Sync Lock per mantenere un gruppo di tracce sincronizzato nel tempo è stato descritto nel capitolo [Blocco Track Sync Lock "HDR-TrackSync"].
+
+Se il blocco della sincronizzazione della traccia è abilitato, quando si sposta una singola clip o un gruppo di clip, è possibile che vengano spostati anche altri clip e marcatori.
+
+Faremo riferimento alle clip che verrebbero spostate se il blocco della sincronizzazione della traccia fosse stato disabilitato come set originale di clip da spostare.
+
+- Se una clip si sovrappone a una delle clip da spostare, verrà anche spostata.
+- Se sono presenti una o più tracce marker nel gruppo di tracce sincronizzate, tutti i marker su quelle tracce verranno spostati.
+
+
+Ecco alcune note sulla funzionalità dei controlli "Clip destra" e "Clip sinistra".
+
+Il loro obiettivo è avere funzionalità simili a quelle del mouse con il tasto "Shift".
+Quindi Clip Left/Right è più o meno equivalente a fare clic nella traccia nella posizione data dall'inizio della selezione e trascinarla di un pixel a sinistra/destra.
+
+Per essere più precisi:
+- Se la traccia non contiene dati audio selezionati: se l'inizio della selezione è in una clip, la clip viene spostata e viene spostato anche l'inizio della selezione. (Utilizzando un mouse, l'inizio della selezione non viene spostato).
+- Se la traccia contiene l'audio selezionato: se l'inizio della selezione si trova in una clip, questa clip e tutte le altre clip su qualsiasi traccia che contiene l'audio selezionato vengono spostate e l'intervallo selezionato viene spostato.
+- Se il blocco della sincronizzazione delle tracce è (????), le clip vengono spostate.
+
+
++ Modifica dei tag di metadati +[HDR-MetaDataTag]
+I metadati sono dati che descrivono altri dati e i metadati per i file audio sono costituiti da un numero di tag, in cui ogni tag è definito da un'etichetta e da un valore.
+
+Il Metadata Tag Editor di Audacity ti consente di modificare i valori di un certo numero di preset di tag e anche di creare i tuoi tag personalizzati.
+
+Puoi aprire l'editor dei tag dei metadati in qualsiasi momento selezionando il sottomenu "Metadata" dal menu "Modifica".
+
+Inoltre, se stai registrando l'audio in uno dei formati standard, a meno che tu non abbia disabilitato l'opzione appropriata,
+L'editor dei tag dei metadati si apre automaticamente, come descritto nel capitolo ["Salvataggio dell'audio" #HDR-SavingAudio] sopra.
+
+L'editor dei tag dei metadati contiene i seguenti elementi:
+- Un array che contiene le etichette e i valori dei tag (descritti nel prossimo capitolo).
+- i pulsanti "Aggiungi", "Rimuovi" ed "Elimina" che servono per modificare la tabella. La pressione del pulsante "Elimina" cancella tutti i valori dei tag predefiniti e quelli dei tag personalizzati. I pulsanti per aggiungere o rimuovere tag personalizzati sono descritti nel capitolo ["Creazione e modifica di tag" #HDR-TagsEditing].
+- Una sezione di genere: composta da pulsanti per modificare e ripristinare l'elenco dei generi, come descritto nel capitolo ["Modificare l'elenco dei generi" #HDR-EditingGenreList] di seguito.
+- una sezione del modello: non descritta in questa guida.
+
+
+++ Descrizione tabella ++
+La tabella ha due colonne: Tag e Valore, e le prime 7 celle della colonna "Tag" contengono nomi di tag predefiniti come Nome artista e Titolo traccia.
+NVDA indica che i nomi predefiniti non sono modificabili dicendo "non disponibile" dopo i loro nomi.
+
+Esistono diversi modi per selezionare una cella nella tabella:
+- Per selezionare la cella successiva nella tabella, premere "Tab" o "Freccia destra". Se viene selezionata l'ultima cella, premendo "Tab" si passa al pulsante "Aggiungi".
+- Per selezionare la cella precedente nella tabella, premere "Maiusc + Tab" o "Freccia sinistra". Se viene selezionata la prima cella, premendo "Maiusc + Tab" si passa al pulsante "Annulla".
+- Per selezionare la cella appena sotto o sopra la cella attiva, premere rispettivamente "Freccia giù" o "Freccia su".
+- Per selezionare la prima o l'ultima cella, premere rispettivamente "control + home" o "control + end".
+
+
+Nota: poiché "Tab" può essere utilizzato per selezionare una cella nella tabella, sono presenti un paio di tasti che consentono di spostarsi direttamente all'esterno della tabella. Da qualsiasi cella della tabella, "control+tab" e "control+shift+tab" salta all'elemento prima o dopo la tabella.
+
+
+++ Modifica dei valori dei parametri ++
+Tutti i valori dei tag, ad eccezione dei valori dei tag "genere", sono modificabili utilizzando una casella di modifica. I valori dei tag di genere sono modificabili con una casella di modifica a discesa, che consente di scegliere rapidamente da un elenco di generi.
+
+Per modificare il valore di un tag, ad eccezione dei valori del tag "genere", ci sono due possibilità: sovrascrivere o modificare il valore corrente, come descritto di seguito.
+
+Entrambi implicano l'utilizzo dei tasti "Invio" o "Tab" per confermare la modifica. "Invio" seleziona la cella immediatamente sotto la cella corrente, "Tab" seleziona la cella immediatamente dopo la quale è il nome del tag successivo nella riga.
+
+- Per sostituire il valore corrente è sufficiente digitare del testo, quindi premere "Tab" o "Enter" per confermare la modifica, oppure "Esc" per annullare la modifica.
+- Per modificare il valore, premere "F2", che seleziona il testo. Per deselezionare il testo prima di modificarlo, premi "freccia destra" o "Fine" per posizionare il cursore alla fine del testo, o "Inizio" per metterlo all'inizio del testo. Per confermare la modifica premere "Tab" o "Enter". "Esc" per annullare la modifica.
+
+Per modificare il valore di un tag "genere":
+- Come con altri valori di tag, puoi iniziare a modificarlo semplicemente iniziando a digitare o premendo "F2".
+- È possibile utilizzare "freccia su" e "freccia giù" per selezionare un genere dall'elenco dei generi predefiniti. Per trovare rapidamente un genere che inizia con una lettera specifica, digita quella lettera, quindi premi "Freccia giù" per scorrere tutti i generi che iniziano con quella lettera.
+- per confermare la modifica, premere "Tab" o "Enter".
+- "Esc" se si desidera annullare la modifica.
+
+
+++ Creazione e modifica dei tag ++[Modifica dei tag HDR]
+Puoi utilizzare le righe della tabella dopo i tag predefiniti per creare i tuoi tag personalizzati. Queste righe consentono di modificare il nome del tag e il suo valore.
+
+Per un nuovo set di metadati, c'è una riga di riserva dopo i tag predefiniti.
+
+Puoi aggiungere e rimuovere righe dalla tabella utilizzando i pulsanti "Aggiungi" e "Rimuovi" situati dopo la tabella. Il pulsante "Aggiungi" aggiunge una riga e il pulsante "Rimuovi" elimina la riga personalizzata corrente.
+
+++ Modifica elenco generi ++[HDR-EditingGenreList]
+Per modificare l'elenco dei generi disponibile nella casella di modifica a discesa, quando modifichi il valore del genere:
+- Premi il pulsante "Modifica" nella sezione Generi.
+- si apre la finestra di dialogo per la modifica dei generi. Il primo elemento nella casella è una casella di modifica su più righe con un genere per riga. Nota che quando la finestra di dialogo viene aperta per la prima volta, tutti i generi sono selezionati, quindi a meno che tu non digiti prima un tasto di navigazione, ad esempio
+"Freccia destra", sostituirai tutti i sessi. Per spostarsi in alto o in basso nell'elenco, premere rispettivamente "control + home" o "control + end".
+- Al termine della modifica, digita "Tab" per raggiungere il pulsante OK e premilo.
+
+
+Per ripristinare l'elenco dei generi ai valori predefiniti, premere il pulsante Ripristina nella sezione Generi. Si apre una finestra di messaggio che chiede se si è sicuri di voler reimpostare l'elenco. Digita "Invio". Per premere il pulsante "OK" (pulsante predefinito).
+
+
++ Registrazione +[Registrazione HDR]
+I prossimi tre capitoli trattano ciò che è utile nella maggior parte delle registrazioni. Vale a dire: registrazione parametri, controlli e regolazione del livello di registrazione.
+
+Dopo questi, un capitolo descrive come Audacity può correggere il ritardo nella registrazione audio durante la registrazione di una traccia vocale, mentre si ascoltano tracce esistenti.
+
+++ Impostazioni di registrazione ++[Impostazioni di registrazione HDR]
+Ci sono un certo numero di impostazioni che potrebbero dover essere modificate prima di effettuare una registrazione, descritte nei capitoli seguenti. Notare che
+Molte di queste impostazioni possono essere configurate nella categoria "Dispositivi" della finestra di dialogo "Preferenze" di Audacity, in una finestra di dialogo particolare o nello strumento "Dispositivi" nel gruppo della barra degli strumenti.
+
++++ Interfaccia audio +++[hdrAudioInterface]
+Audacity fornisce una serie di opzioni per l'interfaccia software che Audacity utilizza per interagire con i dispositivi di riproduzione e registrazione:
+- MME (estensione multimediale): questa è l'interfaccia predefinita.
+- Suono diretto di Windows. Normalmente non vi è alcun vantaggio nell'usarlo rispetto all'utilizzo di MME.
+- Windows WASAPI (API della sessione audio di Windows): quando si utilizza questa interfaccia, il dispositivo di registrazione include anche le cosiddette versioni loopback dei dispositivi di riproduzione.
+
+
+Usando quest'ultimo, puoi registrare l'audio che viene inviato a uno dei dispositivi di riproduzione. Ciò fornisce un'alternativa al dispositivo di registrazione "Stereo Mix" che può essere fornito o meno dalla tua scheda audio.
+
+Puoi impostare questa opzione:
+- oppure utilizzando l'elenco a discesa "Host audio" del gruppo "Interfaccia" della categoria "Periferiche" della finestra di dialogo "Preferenze".
+- o utilizzando l'elenco a discesa "Host audio" della finestra di dialogo "Seleziona l'host audio" aperta da "Maiusc + h".
+- o utilizzando l'elenco a discesa "Host audio" dello strumento "Dispositivi" nel gruppo della barra degli strumenti superiore.
+
+
+Nota: quando modifichi questa opzione, le impostazioni dei dispositivi di registrazione e riproduzione potrebbero cambiare, quindi dovresti controllare queste impostazioni.
+
++++ Dispositivo di registrazione +++
+È possibile selezionare il dispositivo di registrazione utilizzando l'elenco a discesa "Dispositivo di registrazione" da:
+- o la categoria "Dispositivi" della finestra di dialogo "Preferenze".
+- la finestra di dialogo "Seleziona il dispositivo di registrazione" aperta da "Maiusc + i".
+- o lo strumento Dispositivo" del gruppo della barra degli strumenti superiore.
+
+
+Se una scheda audio integrata o una scheda audio interna ha un numero di possibili ingressi, come microfono o ingresso di linea, ciascuno di questi ingressi viene elencato come un'unità separata nell'elenco a discesa. Oltretutto,
+Se stai usando l'interfaccia audio MME o DirectSound, allora
+I dispositivi disponibili possono anche includere rispettivamente "Microsoft Sound Mapper - Input" o "Primary Sound Captive Driver".
+Ciascuno di essi corrisponde al dispositivo che è stato impostato come predefinito per la registrazione del dispositivo in Windows.
+In genere, non è consigliabile utilizzare una di queste opzioni, poiché il dispositivo di registrazione predefinito a volte può cambiare in modo imprevisto e quindi cambiare il dispositivo di registrazione in Audacity senza alcun preavviso.
+
+L'elenco a discesa elenca tutti i dispositivi di registrazione che erano collegati e abilitati all'avvio di Audacity.
+
+Se un dispositivo non è elencato, controlla la scheda "Registrazione" della finestra di dialogo "Suono" di Windows per vedere se il dispositivo è abilitato.
+Questa finestra di dialogo è descritta nel capitolo ["Finestra di dialogo Windows Sound" #HDR-SoundWindowsDialog] per familiarizzare con essa.
+
++++ Livello di registrazione +++
+Questo capitolo descrive gli elementi da utilizzare per regolare il livello di registrazione. Come regolare il livello di registrazione in modo da non ottenere troppo rumore o clipping, è descritto nel capitolo [“Regolazione del livello di registrazione” #HDR-RecordLevel] di seguito.
+
+Se Audacity può controllare il livello del dispositivo di registrazione, puoi usare il fader di registrazione di Audacity, o possibilmente quello di Windows. È comunque più facile usare il fader dei record di Audacity che si trova nel Mixer nel gruppo in alto della barra degli strumenti della finestra principale.
+Per accedervi dalla tabella "Track View", premere due volte "control + F6", quindi "Tab" o "shift + Tab" fino ad arrivare al fader del record.
+
+Quando Audacity non è in grado di controllare il livello del dispositivo di registrazione, il fader di registrazione viene indicato come non disponibile. Per gli utenti vedenti, il cursore appare in grigio e gli utenti dello screen reader non possono raggiungerlo. In questo caso, è necessario utilizzare l'elemento Windows appropriato, come descritto di seguito.
+
+Se Audacity può controllare il livello di registrazione dipende molto dall'interfaccia audio che stai utilizzando:
+- MME o Direct Sound: per molti dispositivi di registrazione, puoi utilizzare il fader di registrazione di Audacity.
+- WASAPI: per i dispositivi di loopback forniti dall'interfaccia WASAPI, il livello di registrazione dipende solo dal livello del volume del programma che invia l'uscita audio al dispositivo di riproduzione che si desidera registrare. Non dipende dal livello del volume di Windows, né dai fader di riproduzione o registrazione di Audacity.
+
+
+La regolazione del livello di registrazione di un dispositivo con lo strumento Windows è descritta nel capitolo ["Finestra di dialogo audio di Windows" #HDR-SoundWindowsDialog].
+
++++ Numero di canali di registrazione +++
+Il numero di canali del registratore può essere impostato utilizzando l'elenco a discesa "Canali":
+- o dalla categoria "Periferiche" della finestra di dialogo "Preferenze".
+- o nella finestra di dialogo "Canali di registrazione" aperta da "lettera maiuscola + N".
+- o lo strumento "Dispositivo" del gruppo barra degli strumenti superiore.
+
+
+Se stai registrando utilizzando un microfono, l'impostazione appropriata dipende dal fatto che si tratti di un microfono mono o stereo.
+Se stai registrando da un ingresso di linea, un mix stereo o uno dei dispositivi di loopback utilizzando WASAPI, l'impostazione deve essere stereo.
+
+
+
++++ Opzione di sovraincisione +++
+L'opzione "Duplicazione" controlla se Audacity deve riprodurre tutte le tracce esistenti durante la registrazione di nuovo.
+Puoi selezionare o deselezionare questa opzione con il sottomenu "Duplicazione" del sottomenu "Opzioni di trasporto" del menu "Trasporto", o con la casella di controllo "Duplicazione" della categoria "Registrazione" della finestra di dialogo "Preferenze".
+
+
++++ Leggi l'opzione software +++
+Questa opzione controlla se Audacity deve riprodurre la nuova traccia durante la registrazione. Normalmente dovrebbe essere disattivato, ma è utile se vuoi ascoltare ciò che stai registrando da un dispositivo.
+
+Questa opzione può essere selezionata o deselezionata utilizzando il sottomenu "Pass-through audio software" del sottomenu "Opzioni di trasporto" del menu "Trasporto", o la casella di controllo "Riproduci tramite software" della categoria "Registrazione". " del " finestra di dialogo Preferenze".
+
+
+++ Controlli di registrazione ++[HDR-RecordControls]
+I comandi e le scorciatoie di registrazione, utilizzando le impostazioni predefinite sono:
+- Per avviare la registrazione, premere "r" oppure, nel menu "Trasporto", aprire il sottomenu "Registra" e scegliere "Registra". Se il progetto non contiene tracce audio, viene creata una nuova traccia audio e l'audio registrato viene inserito in questa traccia, inizialmente deselezionata. Se sono presenti tracce audio, l'audio registrato viene aggiunto alla prima traccia audio selezionata o, se presente, alla prima traccia audio.
+- Per avviare la registrazione e inserirla sistematicamente in una nuova traccia, premere "shift + r" oppure nel menu "Trasporto", aprire il sottomenu "Registrazione" e scegliere "Registra una nuova traccia". Una nuova traccia viene aggiunta automaticamente al progetto e l'audio registrato viene inserito nella posizione del cursore. questa nuova traccia inizialmente non è selezionata.
+- Per avviare la registrazione Punch and Roll, premi "Maiusc + d", oppure nel menu "Trasporto", apri il sottomenu "Registrazione" e scegli "Registrazione Punch Roll". Questo può essere utilizzato per correggere facilmente gli errori appena fatti e è descritto nel capitolo "Registrazione Punch Roll" di seguito.
+- Per mettere in pausa o riprendere la registrazione, premere "p".
+- Per interrompere la registrazione, premere la barra spaziatrice.
+
+
+Nota che durante una registrazione, la seconda parte della barra di stato contiene il tempo di registrazione massimo che puoi ottenere dato lo spazio libero su disco.
+
+Nelle versioni di Audacity 2.1.3 e precedenti, le scorciatoie "r" e "shift+r" per due dei comandi per avviare la registrazione erano il contrario. C'è un'opzione nelle preferenze che ti consente di averle facilmente in quel modo se lo trovi più conveniente. Nella categoria "Registrazione" delle Preferenze, c'è una casella di controllo "Registra su una nuova traccia", che è deselezionata per impostazione predefinita. Se questa casella è selezionata, i due comandi per avviare la registrazione sono:
+- Per avviare la registrazione e inserire sistematicamente l'audio in una nuova traccia, premere "r", oppure nel menu "Trasporto", aprire il sottomenu "Registra" e scegliere "Registra".
+- Per avviare la registrazione e aggiungere l'audio all'audio di una traccia esistente, premere "shift + r", oppure nel menu "Trasporto", aprire il sottomenu "Registra" e scegliere "Continua registrazione".
+
+
+++ Regolazione del livello di registrazione ++
+Nello strumento "Record Meter" nel gruppo in alto della barra degli strumenti della finestra principale di Audacity, c'è il Record Meter per aiutare a impostare il livello di registrazione.
+Il misuratore contiene un pulsante a discesa che puoi raggiungere premendo due volte "Ctrl + F6" per arrivare al primo gruppo di barre degli strumenti, quindi premendo "Tab" fino a raggiungerlo.
+
+
+Se si preme questo pulsante mentre si preme "Invio", si apre un menu contenente i comandi per controllare il contatore.
+
+È possibile avviare e interrompere il monitoraggio del segnale di ingresso durante la registrazione utilizzando questo menu.
+
+Per rendere questo strumento accessibile agli utenti di screen reader, le seguenti informazioni sono incluse nel nome del pulsante a discesa (questo nome viene letto dagli screen reader):
+- Il livello di picco: è l'ampiezza massima del segnale durante la sessione di monitoraggio. Viene azzerato automaticamente all'inizio del monitoraggio. Per impostazione predefinita, questo è espresso in decibel, dove 0 è il valore massimo.
+- La parola "Monitoraggio" se il monitoraggio è in corso.
+
+
+Per verificare qual è il livello di picco di una registrazione che è più o meno probabile che sia con l'impostazione del livello di registrazione corrente:
+- Premi il pulsante a discesa del misuratore "contatore di registrazione" e scegli "Avvia monitoraggio".
+- Fai dei suoni rappresentativi per un breve periodo.
+- Premere nuovamente il pulsante a discesa e scegliere "Interrompi monitoraggio". Il nome del pulsante a discesa include il livello di picco durante questo monitoraggio.
+
+
+Normalmente, un buon valore di livello di picco a cui puntare è di circa -6 dB. Questo dovrebbe garantire che il livello di registrazione sia sufficientemente basso da non avere distorsioni o clipping, e sufficientemente alto da non ottenere una quantità inutile di rumore.
+
+In qualsiasi momento durante il monitoraggio, puoi leggere il livello di picco che si è verificato finora in quella sessione di monitoraggio, ma il modo in cui farlo dipende dallo screen reader in uso. Se stai usando NVDA o Narrator, puoi leggere il livello di picco usando il comando read nella riga sotto il focus. Tuttavia, se stai usando Jaws, devi andare avanti e indietro con "tab" e "shift+tab".
+
+Il livello di picco può anche essere dato usando una scala lineare da 0 a 1. Probabilmente vorrai rimanere con i decibel, ma se vuoi cambiare la scala:
+- Premere il pulsante a discesa del misuratore "misuratore di registrazione" premendo "Invio".
+- Scegli "Opzioni". Si apre la finestra di dialogo "Opzioni misuratore di registrazione".
+- Impostare i pulsanti di opzione "Tipo di misuratore" su "dB" o "lineare".
+
+
+++ Registrazione Punch and Roll ++
+La registrazione Punch and Roll ti consente di correggere facilmente una registrazione subito dopo aver commesso un errore.
+La registrazione "Punch In" è un termine utilizzato per sovrascrivere parte di una traccia registrata durante la riproduzione della traccia. Il punto di ingresso è il punto in cui l'editor audio passa dalla riproduzione alla registrazione sull'audio esistente.
+Allo stesso modo, il punto "punch out" è il momento in cui l'editor audio interrompe la registrazione e torna alla riproduzione.
+
+Nella registrazione "punch and roll", c'è un punto di punch in, ma nessun punto di punch out.
+
+La registrazione continua finché non la interrompi.
+
+Quella che segue è un'anteprima della registrazione "Punch and roll" in Audacity:
+- Salvi e ti rendi conto di aver appena commesso un errore. Interrompi la registrazione.
+- Posizionare il cursore nel punto in cui si desidera inserire il punto di perforazione. Questo di solito avverrà poco prima della fine della registrazione e durante una pausa, ad esempio la pausa tra le frasi.
+- Avvia la registrazione "punch and roll". La riproduzione inizia alcuni secondi prima del punto di punch-in. Quando viene raggiunto il punto di punch-in, la riproduzione si interrompe e la registrazione inizia. La registrazione continua finché non la interrompi.
+
+
+Usando la registrazione "Punch and roll", basi il tempo della nuova registrazione sull'ascolto della riproduzione dell'audio prima del punto di punch in.
+Tuttavia, in Audacity c'è un ritardo tra la riproduzione e la registrazione dell'audio. C'è una compensazione predefinita per questo, e potrebbe essere sufficiente.
+Se la temporizzazione dell'audio vicino al punto di punch-in non suona correttamente, indicando che la compensazione non è abbastanza buona, vedere la sezione Compensazione della latenza di seguito per maggiori dettagli su questo ritardo e su come regolarne la compensazione.
+
+Una descrizione più dettagliata della registrazione Punch and Roll è la seguente.
+Salvi e ti rendi conto di aver appena commesso un errore. Interrompere la registrazione premendo la barra spaziatrice o la "X".
+Ora devi spostare il cursore sulla posizione del punto di perforazione:
+- Se non l'hai già fatto, assicurati che la traccia sia selezionata e che non siano selezionate altre tracce.
+- Se hai interrotto la registrazione premendo la barra spaziatrice, premi "k" per saltare alla fine dell'audio.
+- Se hai interrotto la registrazione premendo "x", il cursore sarà già alla fine dell'audio. In realtà, sarà leggermente dopo la fine, ma non importa.
+
+
+Un modo per spostare il cursore su un punto di punch-in adatto è il seguente:
+- Spostare innanzitutto il cursore un po' prima del punto di ingresso desiderato utilizzando la virgola o "maiuscolo +". per spostare il cursore a sinistra rispettivamente di durata breve o lunga.
+- Quindi avvia la riproduzione e premi "x" quando raggiungi il punto di punch-in previsto. La riproduzione si interrompe e il cursore viene posizionato nel punto in cui la riproduzione si è interrotta.
+
+
+Dopo aver posizionato il cursore, quindi nel menu "Trasporto", aprire il sottomenu "Registrazione" e scegliere "Registrazione Punch Roll" (scorciatoia "shift+d"). Questo comando provoca i seguenti eventi:
+- Audio dopo la rimozione del cursore nella traccia selezionata.
+- La riproduzione pre-roll inizia alcuni secondi prima del cursore. Il pre-roll è di 5 secondi per impostazione predefinita, ma puoi impostare il valore desiderato nella categoria di registrazione della finestra di dialogo Preferenze. Durante questa riproduzione, può essere utile giocare con la registrazione esistente, in modo da non dover ricominciare da capo quando la registrazione inizia.
+- Quando la riproduzione raggiunge il cursore, la riproduzione si interrompe e la registrazione inizia.
+
+
+Dopo una registrazione punch and roll:
+- Se hai commesso di nuovo un errore nello stesso punto, puoi semplicemente fare un'altra registrazione punch and roll, lasciando il cursore nella posizione originale del punch.
+- Puoi annullare punch and roll premendo "control + z"
+
+
+Immediatamente dopo l'attacco, Audacity applica una breve dissolvenza incrociata dall'audio originale all'audio appena registrato. Questo per evitare di introdurre problemi. La lunghezza della dissolvenza incrociata predefinita è 10 ms, che sarà probabilmente un valore appropriato, ma è possibile modificare questo valore nella categoria di registrazione della finestra di dialogo Preferenze.
+
+
+++ Correzione della latenza ++
+Se si registra una traccia vocale, mentre si ascolta una o più tracce esistenti, a causa di vari ritardi, la nuova registrazione non sarà sincronizzata con le altre tracce. Il ritardo totale è noto come latenza e alcuni dei fattori che ne influenzano le dimensioni sono: il dispositivo di registrazione e riproduzione, la dimensione dei buffer audio in Audacity e il
+Interfaccia audio (ad esempio, MME o DirectSound).
+
+Audacity può correggere automaticamente questa latenza, una volta che questa latenza è stata misurata, come descritto di seguito.
+
+Nella finestra di dialogo Preferenze, nella categoria "Dispositivi" e nel gruppo "Latenza", è presente la casella di modifica "Compensazione latenza", in cui le unità di correzione sono i millisecondi.
+
+Se registri l'audio su una nuova traccia, l'audio registrato viene automaticamente spostato più avanti nel tempo di un tempo pari a questa compensazione della latenza. Per spostare l'audio in anticipo per compensare la latenza, il numero dovrebbe essere negativo.
+
+Il valore predefinito per la correzione della latenza è -130 millisecondi.
+L'impostazione predefinita sarà adatta solo per una registrazione particolare ed è altamente raccomandato misurare la latenza.
+
+Il metodo seguente per misurare la latenza quando si utilizza un microfono per la registrazione ha una precisione di 10 millisecondi. Questo dovrebbe normalmente essere abbastanza sufficiente.
+
+Si compone di tre parti che verranno descritte in dettaglio nelle sezioni seguenti:
+- Genera una traccia ritmica, che consiste in una serie di clic distanziati di un secondo.
+- Registra questa traccia ritmica. A causa della latenza e della sua attuale correzione, potrebbe verificarsi un certo numero di clic sulla traccia registrata prima o dopo i clic sulla traccia originale.
+- utilizzando la casella di modifica dell'ora "Inizio" della barra degli strumenti "Selezione" trovare la posizione del clic nella traccia registrata che corrisponde al clic ad un secondo nella traccia generata ed apportare una nuova correzione.
+
+
++++ Genera traccia ritmica +++
+- Scegli il sottomenu "Rhythm Track" dal menu "Generate".
+- Il primo controllo è la casella di modifica "Tempo" (battiti al minuto) e il suo valore predefinito è 120. Digitare 60, quindi premere "Tab" due volte per passare alla casella di modifica successiva.
+- la casella di modifica "battiti per misura" [bar] ha un valore predefinito di 4. Digitare 1, quindi digitare "Invio" per premere il pulsante "OK" (pulsante predefinito).
+- viene creata la traccia ritmica. Inizialmente viene selezionata la traccia e viene scelto un intervallo di tempo che include tutti i dati audio.
+
+
++++ Registra la traccia del ritmo +++
+Per registrare in cuffia la traccia ritmica attualmente in riproduzione, sarà ovviamente necessario rimuoverla temporaneamente. Se stai utilizzando un microfono separato, anziché un microfono sull'auricolare, posizionalo vicino all'auricolare in modo che possa raccogliere i clic.
+- Avvia la registrazione in una nuova traccia ("shift + R", per impostazione predefinita), quindi premi la barra spaziatrice per interrompere la registrazione dopo una manciata di clic.
+- Con la prima traccia ancora a fuoco, premi "shift + U" per disattivarla, quindi avvia la riproduzione della traccia registrata. Se i click sono molto silenziosi, rispetto a NVDA amplifica la traccia:
+- Deseleziona la prima traccia, quindi seleziona la seconda traccia.
+- Premere "Start", quindi "Shift + End" per selezionare un intervallo di tempo.
+- Scegli il sottomenu "Amplificazione" nel menu degli effetti.
+- Nella finestra di dialogo "Amplifica", premere "Invio" per accettare il valore predefinito.
+
+
++++ Trova la posizione di un clic sulla traccia registrata +++
+Le seguenti istruzioni descrivono come trovare la posizione del clic registrato che corrisponde al clic di un secondo della traccia generata e aggiornare la correzione della latenza di Audacity.
+
+Si presume che la traccia originale sia ancora silenziata dal momento in cui hai controllato il livello della traccia registrata (vedi sopra):
+- Premere "Start" per impostare a zero sia l'inizio della selezione che la fine/durata della selezione.
+- Premere "control + F6" per passare alla barra degli strumenti "Selezione" del gruppo di barre degli strumenti inferiore. Digitare "Tab" per raggiungere l'elenco a discesa "Visualizza" e verificare che "Inizio e Durata della selezione" sia selezionato.
+- digita "Tab" per raggiungere la casella di selezione "Start" e imposta il suo formato di modifica su "hh:mm:ss + millisecondi" usando il suo menu contestuale.
+- impostare l'inizio della selezione a 1 secondo premendo "Fine" per passare all'ultima cifra (millisecondi), premere tre volte "Freccia sinistra" per raggiungere la cifra dei secondi, quindi premere "Freccia su" per impostarla a uno.
+- Premi "Spazio" per ascoltare i primi clic.
+
+
+Ci sono due casi possibili:
+- Se il clic registrato arriva dopo un secondo rispetto al clic originale, l'intervallo di tempo con il primo clic è molto inferiore rispetto a quello con il clic successivo.
+- Se il clic registrato arriva prima del primo clic di un secondo, il tempo del primo clic è prossimo all'intervallo di tempo tra i clic di un secondo.
+
+
+I passaggi per trovare la posizione del clic registrato e modificare la correzione della latenza in questi due casi sono:
+- Primo caso: trova la posizione del clic registrato quando arriva dopo il clic originale:
+- Posizionati sulla cifra dei decimi di millisecondo della zona di modifica "Start".
+- Aumentalo e premi "Spazio" per ascoltare.
+- ripetere il passaggio precedente fino a quando il tempo che trascorre fino al primo clic non cambia improvvisamente a circa un secondo. Hai superato il primo clic.
+- quindi diminuire il tempo di 10 ms per sentire di nuovo rapidamente il clic.
+- leggere l'ora con "NVDA + freccia su".
+- modificare la correzione della latenza sottraendo questo tempo: ad esempio, se la correzione della latenza iniziale è -130 millisecondi e il tempo al primo clic è in ritardo di 40 millisecondi, allora impostare la correzione a -170 millisecondi.
+
+
+- secondo caso: trova la posizione del clic registrato quando arriva prima del clic originale:
+- Posizionati sulla cifra dei decimi di millisecondo della zona di modifica "Start".
+- diminuiscilo e premi "Spazio" per ascoltare.
+- ripeti il passaggio precedente finché non senti molto rapidamente il primo clic.
+- leggere l'ora con "NVDA + freccia su".
+- modificare la correzione della latenza aggiungendo questo tempo: ad esempio, se la correzione della latenza iniziale è -130 millisecondi e il tempo per il primo clic è 20 millisecondi avanti, allora imposta la correzione a -110 millisecondi.
+
+
++ Preferenze + [Preferenze HDR]
+La finestra di dialogo "Preferenze" di Audacity ti consente di regolare molti parametri in Audacity. Dopo una breve descrizione della finestra di dialogo, i capitoli seguenti descrivono i parametri più comuni.
+
+++ Finestra di dialogo Preferenze ++
+
+Per aprire questa finestra di dialogo, scegli il sottomenu "Preferenze" dal menu "Modifica" (controllo + P").
+
+Sul lato sinistro della finestra di dialogo è presente una vista ad albero che contiene un elenco di categorie. A destra di questo albero ci sono i controlli per l'impostazione delle opzioni che corrispondono alla categoria selezionata nell'albero. Il pulsante predefinito nella finestra di dialogo è il pulsante "OK".
+
+++ Menu extra ++[HDR-menu extra]
+Questo menu non viene visualizzato, per impostazione predefinita, nella barra dei menu durante l'installazione di Audacity.
+
+È possibile visualizzare o meno questo menu utilizzando il sottomenu "Menu extra (attivo/disattivo)" del menu "Visualizza" o la casella di controllo "Visualizza menu aggiuntivi" nella categoria "Interfaccia" della finestra di dialogo Preferenze.
+
+
+++ Salti temporali ++[HDR-SeekTimes]
+Durante la riproduzione, puoi saltare (cercare) avanti o indietro per brevi o lunghi periodi. Per impostare i valori di breve e lungo periodo:
+- Nella finestra di dialogo "Preferenze", seleziona la categoria "Lettura".
+- digitare "tab" per trovare il gruppo "salta la riproduzione" che contiene le due caselle di modifica del tempo "breve" e "lungo". Entrambi i tempi sono espressi in secondi.
+
+
+++ Selezione automatica ++[HDR-Selezione automatica]
+Questa opzione non è abilitata per impostazione predefinita. Per gli utenti di screen reader, si consiglia di lasciarlo disabilitato.
+L'opzione "Seleziona tutto l'audio, se è necessaria la selezione" influisce su ciò che accade in due situazioni:
+
+Il primo è nel caso in cui tenti di eseguire un'azione sull'audio, ad esempio applica un effetto, mentre non è selezionato alcun audio:
+
+Ricorda che per selezionare l'audio è necessario selezionare una o più tracce audio e selezionare un intervallo di tempo.
+
+Se l'opzione è disabilitata, il risultato dell'azione è che si apre una finestra di dialogo che informa che non è stato selezionato alcun audio.
+
+Se l'opzione è abilitata, tutto l'audio nel progetto viene selezionato e l'azione viene eseguita.
+
+La seconda situazione è se si tenta di eseguire un'azione su alcune tracce, ad esempio per allinearle da un capo all'altro, e non ci sono tracce selezionate:
+
+Se l'opzione è disabilitata, il risultato dell'azione è che si apre una finestra di dialogo che ti dice che una o più tracce devono essere selezionate.
+
+Se l'opzione è attivata, tutte le tracce audio nel progetto vengono selezionate e l'azione viene eseguita.
+
+Per modificare questa impostazione:
+- Nella finestra di dialogo "Preferenze", seleziona la sottocategoria "Traccia comportamento" della categoria "Tracce".
+- trova la casella di controllo "Seleziona tutto l'audio, se è necessaria una selezione" che è disabilitata per impostazione predefinita.
+
+
+
+++ Libreria FFmpeg ++[Libreria HDR-FFMPEG]
+La libreria FFmpeg contiene i decoder e gli encoder che consentono ad Audacity di aprire e salvare file in formati non supportati dall'installazione standard di Audacity. La libreria FFmpeg non è inclusa in Audacity a causa di problemi legali sui brevetti. Quasi tutti i codificatori sono coperti da uno o più brevetti, ma questi brevetti non sono riconosciuti in tutti i paesi.
+
+Vedere la pagina [Licenza FFMpeg e aspetti legali #http://www.ffmpeg.org/legal.html] del sito Web FFMpeg per ulteriori commenti su questi problemi.
+
+Per scaricare e installare la libreria FFmpeg:
+- Accedi al sito web ["lame.buanzo.org/#lamewindl" #http://lame.buanzo.org/#lamewindl].
+- In questa pagina, trova il link ffmpeg-win-2.2.2.exe e attivalo per scaricare un file con lo stesso nome del link. Nota che se il link nella pagina è una versione più recente della 2.2.2, andrà bene anche questo.
+- Aprire il file scaricato e si apre una procedura guidata di configurazione. Per impostazione predefinita, il percorso della cartella di installazione della libreria FFmpeg è nella cartella "Programmi (x86) su Windows a 64 bit o "Programmi" su Windows a 32 bit.
+
+
+Al prossimo avvio, Audacity troverà automaticamente la libreria FFmpeg.
+
+
+++ Editor di tag di metadati ++[HDR-MetaDataTagEditor]
+Per fare in modo che l'editor dei tag dei metadati si apra automaticamente ad ogni esportazione audio:
+- Nella finestra di dialogo "Preferenze" di Audacity, seleziona la categoria "Importa/Esporta".
+- trova la casella di controllo "Apri l'editor di tag dei metadati prima dell'esportazione". Questa casella è selezionata per impostazione predefinita.
+
+
+++ Opzione "Usa una finestra di dialogo per nominare un nuovo marcatore" ++
+Questa opzione è descritta nel capitolo ["Markers" #HDR-Labels].
+
+È deselezionato per impostazione predefinita, ma per gli utenti di screen reader si consiglia che sia:
+- Nella finestra di dialogo "Preferenze" di Audacity, seleziona la sottocategoria "Comportamento tracce" della categoria "Tracce".
+- Seleziona la casella "Usa una finestra di dialogo per assegnare un nome a un nuovo marcatore".
+
+
+
+++ Tocca per creare un marcatore ++
+Quando una traccia tag è evidenziata, se l'opzione "Tocca per creare tag" è abilitata, toccando qualsiasi lettera o numero si crea automaticamente un nuovo tag.
+Per impostazione predefinita, questa opzione è disattivata e gli utenti di screen reader probabilmente vorranno lasciare questa opzione invariata.
+
+Tuttavia, se desideri modificare questa opzione:
+- Nella finestra di dialogo "Preferenze" di Audacity, seleziona la categoria "Traccia comportamenti".
+- In questa categoria è presente la casella di controllo "Tocca per creare un marcatore".
+
+
+++ Opzioni di registrazione ++
+Le opzioni di registrazione sono configurabili nella finestra di dialogo "Preferenze" e sono descritte nel capitolo ["Impostazioni di registrazione" #HDR-RecordSettings] del capitolo ["Registrazione" #HDR-Registrazione].
+
+++ Modifica o creazione di scorciatoie da tastiera ++
+La categoria "Tastiera" della finestra di dialogo "Preferenze" di Audacity ti consente di modificare le scorciatoie da tastiera per i comandi di Audacity.
+
+Oltre al modo standard per accedere a questi comandi aprendo la finestra di dialogo "Preferenze" e selezionando la categoria "Tastiera", c'è un metodo aggiuntivo che potresti trovare utile.
+Se selezioni un comando da uno dei menu nella barra dei menu e premi "Maiusc+Invio" anziché il solito tasto "Invio", si apre una finestra di dialogo con il titolo "Preferenze: Tastiera".
+Nell'albero o nell'elenco descritti di seguito, il comando è già selezionato.
+Si noti che questo metodo non funziona se il comando di menu non è disponibile.
+
+I primi tre elementi di questa categoria sono:
+- Un gruppo di pulsanti di opzione che controllano come vengono visualizzati i comandi e le scorciatoie: vista ad albero, vista per nome, vista per chiave. Sono descritti nelle tre sezioni successive.
+- Un'area di modifica che consente di cercare comandi e scorciatoie, come descritto nel capitolo ["Ricerca di comandi" #HDR-CommandSearch]. Il nome di questa area di modifica è "Trova" se è una vista ad albero o per nome "Scorciatoie da tastiera" se è una vista chiave.
+- Una struttura ad albero o un elenco di comandi, a seconda della vista definita dal pulsante di opzione.
+
+
++++ Vista ad albero +++
+I comandi vengono visualizzati in una struttura ad albero e, se un comando ha un collegamento, viene visualizzato dopo il nome del comando.
+L'albero contiene i seguenti elementi:
+- i menu che si trovano nella barra dei menu: ogni menu contiene i suoi comandi e sottomenu, e ogni sottomenu i suoi comandi.
+- comandi: sono i comandi che non sono inclusi in un menu dalla barra dei menu.
+
+
++++ Visualizza per nome +++
+
+I comandi vengono visualizzati come un elenco ordinato alfabeticamente in base al nome del comando.
+Se a un comando è assegnata una scorciatoia, viene visualizzato dopo il nome del comando.
+Nota Se il comando compare in un sottomenu, il suo nome è preceduto dal nome del sottomenu. Questo aiuta a distinguere i comandi che hanno lo stesso nome ma si trovano in menu diversi.
+
++++ Vista chiave +++
+I comandi vengono visualizzati come un elenco e se al comando è assegnata una scorciatoia, viene visualizzato prima del nome.
+I comandi con una scorciatoia vengono elencati per primi e sono ordinati in ordine alfabetico in base al nome della scorciatoia. Ordini senza
+I collegamenti vengono quindi elencati in ordine alfabetico in base al nome del comando.
+
++++ Ricerca comando +++[Ricerca comando HDR]
+È possibile cercare uno o più comandi utilizzando il filtro nella casella di modifica. I risultati della ricerca vengono visualizzati nella visualizzazione ad albero o nell'elenco non appena viene immesso qualcosa nella casella di modifica. Non è necessario premere invio.
+Il dettaglio della ricerca dipende dalla vista:
+- Visualizzazione ad albero: il testo inserito corrisponde ai nomi dei comandi e di eventuali scorciatoie.
+- visualizza per nome: il testo immesso viene abbinato solo ai nomi dei comandi.
+- visualizza per tasto: il tasto o la combinazione di tasti viene confrontato solo con le scorciatoie.
+
+
++++ Creazione o modifica di una scorciatoia +++
+Per creare una scorciatoia:
+
+- Nella vista ad albero o nell'elenco, selezionare il comando interessato dalla modifica.
+- scheda alla casella di modifica "Scorciatoia" premere un tasto o una combinazione di tasti scelta per la scorciatoia.
+- scheda sul pulsante "Assegna", quindi premilo.
+Se il collegamento è già assegnato a un altro comando, si apre una finestra di dialogo di errore che ti dice il nome di quel comando. Se si preme il pulsante OK, il collegamento verrà assegnato e rimosso dall'altro comando.
+
+
+Per eliminare una scorciatoia:
+- Nella vista ad albero o nell'elenco, selezionare il comando di scelta rapida che si desidera eliminare.
+- scheda sul pulsante "Elimina", quindi premilo.
+
+
+++ Set di scorciatoie standard o completo ++[HDR-DefaultShortcutsSet]
+Esistono due serie di scorciatoie predefinite:
+- set completo: questo set include tutte le scorciatoie che erano presenti, per impostazione predefinita, nelle versioni precedenti di Audacity (v2.2 e v2.1.3) e questa guida presuppone che tu stia utilizzando il set completo.
+- set standard: contiene meno scorciatoie rispetto al set completo. L'idea è di rendere più facile per gli utenti creare le proprie scorciatoie con una scelta più ampia possibile perché ci sono meno scorciatoie già assegnate.
+
+
+Se Audacity 2.2.0 o versioni successive viene eseguito con un account utente in cui non sono state eseguite versioni di Audacity precedenti alla 2.2.0, Audacity utilizza l'insieme standard di scorciatoie. Tuttavia, se una di queste versioni precedenti era in esecuzione, quindi il set completo se utilizzato e non è necessario modificare nulla, viene utilizzato il set di scorciatoie predefinito.
+
+
+Per ripristinare tutti i collegamenti nell'impostazione standard o completa ai valori predefiniti:
+- Nella finestra di dialogo "Preferenze" di Audacity, seleziona la categoria "Tastiera".
+- scheda sul pulsante "Predefinito" e premilo. Si apre un menu.
+- Scegli Standard o Completo
+
+
+++ Scorciatoie fastidiose con una tastiera Azerty ++[Scorciatoie HDR-Bracket]
++++ parentesi destra e sinistra +++
+Per impostazione predefinita, Audacity installa le scorciatoie utilizzando parentesi quadre per i seguenti comandi:
+- comando "Dal limite destro della selezione al punto di lettura": scorciatoia "[".
+- comando "Dal limite sinistro della selezione al punto di lettura": scorciatoia "]".
+- Comando "Vai all'inizio della selezione": scorciatoia "control+[".
+- Comando "Vai alla fine della selezione": scorciatoia "control+]".
+
+
+
+Con le tastiere di tipo Qwerty, puoi digitare "[" e "]" utilizzando i tasti "[" e "]" che si trovano a destra del tasto "P".
+
+Ma su quasi tutte le tastiere utilizzate in altri paesi, e in particolare sulle tastiere Azerty, i tasti di tipo "[" e "]" sono in posizioni diverse e spesso devi usare tasti modificatori come " control" e "Alt" per inserire questi caratteri .
+
+
+Per le tastiere di tipo Azerty è quindi preferibile modificare queste scorciatoie.
+
+Le lettere G e H non sono assegnate ai comandi, quindi puoi:
+- assegnare la scorciatoia "g" al comando "Dal limite di selezione sinistro alla posizione di riproduzione".
+- assegnare la scorciatoia "h" al comando "Da destra limite di selezione a posizione di lettura".
+- assegnare la scorciatoia "controllo + g" al comando "Vai all'inizio della selezione".
+- assegnare la scorciatoia "controllo +h" al comando "Salta alla fine della selezione".
+
+
++++ il carattere "punto" +++
+Audacity installa le scorciatoie usando il carattere "." per impostazione predefinita. per i seguenti ordini:
+- Comando "Piccolo cursore salta a destra": scorciatoia ".".
+- comando "Salto cursore grande a destra": scorciatoia "shift + .".
+- Comando "clip successiva": scorciatoia "alt+.".
+
+Il personaggio ";" non utilizzato, è possibile assegnare:
+- ";" al comando "Piccolo cursore salta a destra".
+- "controllo +;" al comando "Grande cursore salta a destra".
+- "control + ," al comando "Cursore grande salta a sinistra" (per essere coerente con la ridefinizione precedente).
+- "Alt+;" al comando - "clip successiva".
+
+
++ Finestra di dialogo Suono Windows +[Finestra di dialogo Suono HDR di Windows]
+In Windows 7 o versioni successive di Windows, la finestra di dialogo "Suono" ha quattro schede: Riproduzione, Registrazione, Suoni e Comunicazioni. Le sezioni seguenti descrivono come aprire questa finestra di dialogo, gli elementi nella scheda "Registra" e come regolare il livello di ingresso di un dispositivo.
+
+++ Dialogo audio ++
+Esistono due modi per aprire la finestra di dialogo "Suono" e raggiungere la scheda "Registrazione".
+Primo metodo:
+- Premi "Inserisci + F11" per aprire la barra delle applicazioni di Windows.
+- Seleziona l'icona dell'altoparlante o della cuffia (o della scheda audio). Quindi premere "Invio".
+Apriremo l'opzione del volume, quindi dobbiamo fare clic con il pulsante destro del mouse e si apre un menu di scelta rapida.
+- In questo menu, seleziona il tuo dispositivo di registrazione (la scorciatoia è R) e la finestra di dialogo che si apre nella scheda Registrazione.
+
+
+Secondo metodo:
+- Premere il tasto "Finestre".
+- Digita il suono, quindi, se necessario, premi la freccia giù fino a visualizzare il suono nell'elenco dei risultati della ricerca, quindi premi "Invio".
+- La finestra di dialogo "Suono", che si apre nella scheda Riproduzione, quindi dovrai passare alla scheda Registrazione.
+
+
+++ Scheda Registrazione ++
+La scheda "registrazione" contiene l'elenco dei dispositivi e, se applicabile, uno o più pulsanti: Configurazione, Default, Proprietà.
+
+I comandi forniti dai pulsanti sono disponibili anche con il menu contestuale del dispositivo selezionato nell'elenco e sono molto più facili da usare rispetto ai pulsanti.
+
+Ci sono due opzioni che controllano quali dispositivi sono presenti nell'elenco.
+Appaiono nel menu contestuale dell'elemento nell'elenco.
+Queste opzioni sono: Mostra dispositivi disabilitati e Mostra dispositivi disconnessi.
+Per impostazione predefinita, entrambe le opzioni non sono abilitate. Se non riesci a trovare un dispositivo che ritieni dovrebbe essere presente, puoi disabilitarlo. Verrà visualizzato solo se l'opzione "Mostra dispositivi disabilitati" è selezionata.
+
+Per ogni elemento dell'elenco sono presenti tre righe di testo: il suo nome, una breve descrizione e il suo stato, che può essere Funzionante, Non valido o Non connesso.
+NVDA legge automaticamente tutte e tre le righe di testo, ma Jaws e Narrator leggono solo la prima riga. Se stai usando Jaws, puoi leggere le altre due righe usando il cursore Jaws.
+
+Inoltre, se apri il menu contestuale dell'elemento, ci sarà un comando di abilitazione o disabilitazione, che ti dirà se l'elemento è rispettivamente disabilitato o abilitato.
+
+++ Finestra di dialogo Proprietà dispositivo ++
+Per conoscere le proprietà di uno dei dispositivi presenti nell'elenco della scheda "Registrazione", selezionalo e premi la barra spaziatrice, oppure seleziona l'opzione "Proprietà" dal suo menu contestuale.
+
+Il volume di ingresso (livello) può essere impostato nella scheda Livelli di questa finestra di dialogo.
+Per la maggior parte dei dispositivi c'è un solo potenziometro, ma alcuni microfoni hanno un potenziometro "boost".
+
++ Scorciatoie +
+Queste sono le scorciatoie per il gioco completo installato per impostazione predefinita da Audacity. Alcuni tasti di scelta rapida non sono inclusi nel gioco standard.
+
+Per ulteriori informazioni su questi due set di collegamenti installati per impostazione predefinita e su come modificare il set, vedere il capitolo ["Set di collegamenti standard o completo" #HDR-DefaultShortcutsSet].
+
+++ Comandi generali ++
+| Comando | Scorciatoia |
+| Apri un file audio | controllo+O |
+| Importa file audio | control + shift + I |
+| Nuovo progetto | controllo+N |
+| Salva progetto | controllo+S |
+| Esporta audio | CTRL + MAIUSC + E |
+| Finestra di dialogo Preferenze | controllo+P |
+| Ruota in avanti tra il gruppo superiore di barre degli strumenti, la tabella "Vista traccia" e il gruppo inferiore di barre degli strumenti | controllo + F6 |
+| Torna indietro tra il gruppo superiore di barre degli strumenti, la tabella "Vista traccia", il gruppo inferiore di barre degli strumenti | Ctrl + Maiusc +F6 |
+| Ruota in avanti tra la finestra principale di Audacity e le finestre non modali | Alt+F6 |
+| Torna indietro tra la finestra principale di Audacity e le finestre non modali | Alt + Maiusc + F6 |
+| zoom normale | controllo + 2 |
+| Ingrandisci | spunta + 1 |
+| Rimpicciolisci | controllo + 3 |
+
+++ Controlli relativi alla riproduzione audio ++
+| Comando | Scorciatoia |
+| Avvia/Interrompi | barra spaziatrice |
+| Avvia/Interrompi con il movimento del cursore | X |
+| attrito all'indietro | Tenere premuto il tasto "U" |
+| Attrito in avanti | Tenere premuto il tasto "i" |
+| Pausa/riprendi | P |
+| Piccolo Salta indietro durante il gioco | Freccia sinistra |
+| Piccolo salto in avanti durante la riproduzione | Freccia destra |
+| Grande salto all'indietro durante il gioco | Maiusc + freccia sinistra |
+| Grande salto in avanti durante il gioco | Maiusc + freccia destra |
+| Ciclo | MAIUSC + BARRA SPAZIATRICE |
+| Finestra di dialogo di selezione del dispositivo di riproduzione | maiuscolo + O |
+| Riproduci taglia/rimuovi anteprima | C |
+| Gioca un breve periodo prima dell'inizio della selezione | maiuscolo + F5 |
+| Gioca un breve periodo dopo l'inizio della selezione | maiuscolo + F6 |
+| Gioca un breve periodo prima della fine della selezione | maiuscolo + F7 |
+| Gioca un breve periodo dopo la fine della selezione | maiuscolo + F8 |
+| Gioca un breve periodo prima e dopo l'inizio della selezione | CTRL + MAIUSC + F5 |
+| Gioca un breve periodo prima e dopo la fine della selezione | CTRL + MAIUSC + F7 |
+
+++ Comandi relativi alla Track Table ++
+| Comando | Scorciatoia |
+| Salta al brano precedente | Freccia su |
+| passa al brano successivo | Freccia giù |
+| Passa alla prima traccia | controllo + Home |
+| Passa all'ultima traccia | controllo + Fine |
+| Seleziona/deseleziona traccia | Ingresso |
+| Seleziona tutte le tracce (un intervallo di tempo include quindi tutto l'audio) | controllo+A|
+| Deseleziona tutte le tracce (sono deselezionate anche tutte le fasce orarie) | Ctrl + Maiusc + A |
+| Seleziona tutte le tracce | CTRL + MAIUSC + K |
+| Apri il menu contestuale della traccia sotto focus | Maiusc + M o tasto applicazione |
+| Chiudi (Elimina) traccia messa a fuoco | maiuscolo + C |
+
+++ Comandi relativi a una traccia Audio ++
+| Comando | Scorciatoia |
+| Cambia guadagno di traccia sotto focus | maiuscolo + G |
+| Cambia il panning della traccia messa a fuoco | maiuscolo + P |
+| Disattiva/riattiva l'audio della traccia messa a fuoco | maiuscolo + U |
+| disattiva tutte le tracce | controllo + U |
+| Attiva tutte le tracce | CTRL + MAIUSC + U |
+| Disattiva l'audio di tutte le tracce selezionate | control+alt+u |
+| Riattiva tutti i brani selezionati | control + alt + shift +u |
+| Solo on/off per la traccia messa a fuoco | maiuscolo + S |
+
+++ Comandi di spostamento del cursore ++
+| Comando | Scorciatoia |
+| Vai all'inizio delle tracce (tempo zero) | Inizio |
+| Vai alla fine di qualsiasi audio | Fine |
+| Vai all'inizio dell'audio della traccia selezionata | J |
+| Vai alla fine dell'audio della traccia selezionata | K |
+| Nuova posizione del cursore in posizione di riproduzione | [ |
+| Arresta la riproduzione con il movimento del cursore | X |
+| Piccolo salto all'indietro | virgola |
+| Piccolo salto in avanti | punto |
+| Grande salto all'indietro | maiuscolo + virgola |
+| Grande balzo in avanti | maiuscolo + Punto |
+| Dispositivo di scorrimento lasciato da una piccola quantità | Freccia sinistra |
+| Cursore a destra di una piccola quantità | Freccia destra |
+
+++ Comandi relativi alla selezione di una fascia oraria ++
+| Comando | Scorciatoia |
+| Seleziona l'intervallo di tempo che include l'audio di tutte le tracce | controllo+A |
+| Inizio della Selezione all'inizio delle tracce (tempo zero) | maiuscolo + Home |
+| Fine della selezione alla fine dell'audio | maiuscolo + Fine |
+| Fine della selezione in posizione di gioco | ] |
+| Inizio selezione all'inizio dell'audio dei brani selezionati | maiuscolo + J |
+| Fine della selezione alla fine dell'audio delle tracce selezionate | maiuscolo + K |
+| Estendi la selezione a destra | maiuscolo + freccia destra |
+| Estendi la selezione a sinistra | MAIUSC + freccia sinistra |
+| Diritto di selezione del contratto | CTRL + MAIUSC + freccia sinistra |
+| Selezione del contratto a sinistra | Ctrl + Maiusc + Freccia destra |
+
+++ Comandi relativi all'editing audio ++
+| Comando | Scorciatoia |
+| Annulla | controllo+Z |
+| Rifare | controllo+Y |
+| Elimina selezione audio | Aggiungi |
+| Taglia l'audio selezionato | CTRL+X |
+| Copia l'audio selezionato | CTRL+C |
+| Incolla | controllo + V |
+| Sostituisci l'audio selezionato con silenzio | ctrl+L |
+| Duplica audio selezionato | controllo + D |
+| Chiudi (Elimina) Traccia | maiuscolo + C |
+| Cerca incroci con lo zero | Z |
+
+++ Comandi relativi ai marker ++
+| Comando | Scorciatoia |
+| Aggiungi marcatore alla selezione | controllo+B |
+| Aggiungi segnalino in posizione di riproduzione | ctrl+M |
+| Passa al marcatore successivo | Alt + Freccia destra |
+| Passa al marcatore precedente | Alt + Freccia sinistra |
+
+++ Comandi relativi alle clip ++
+| Comando | Scorciatoia |
+| Seleziona clip precedente | Alt+P |
+| Seleziona clip successiva | Alt+N |
+| Clip divisa | controllo + I |
+| rimuovere clip | CTRL+ALT+K |
+| clip tagliata | CTRL+ALT+X |
+| Dividi come nuovo | control+Alt+I |
+| Dividi in pause | CTRL+ALT+J |
+| Unisci | controllo + J |
+
+++ Controlli relativi alla registrazione audio ++
+| Comando | Scorciatoia |
+| Aggiungi record | R |
+| Registra su una nuova traccia | maiuscolo + R |
+| Registrazione Punch and Roll | maiuscolo +d |
+| Pausa/riprendi | P |
+| Fermare | Spazio |
+| Finestra di dialogo di selezione dell'host audio | maiuscolo + H |
+| Finestra di dialogo "Selezione dispositivo di registrazione" | maiuscolo + I |
+| Finestra di dialogo di selezione del canale di registrazione | maiuscolo + N |

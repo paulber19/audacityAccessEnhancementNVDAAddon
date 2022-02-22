@@ -28,5 +28,5 @@ This add-on adds extra functionality when working with Audacity multi-track edit
 
 Compatible and Tested with Audacity  3.1, 3.0 and 2.4.2. Previous versions of Audacity are not supported.
 
-[1]: https://github.com/paulber007/AllMyNVDAAddons/raw/master/audacityAccessEnhancement/audacityAccessEnhancement-2.6.nvda-addon
+[1]: https://github.com/paulber007/AllMyNVDAAddons/raw/master/audacityAccessEnhancement/audacityAccessEnhancement-2.6.1.nvda-addon
 [2]: https://github.com/paulber007/AllMyNVDAAddons/tree/master/audacityAccessEnhancement/dev
