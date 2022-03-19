@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: audacityAccessEnhancement 2.6\n"
 "Report-Msgid-Bugs-To: nvda-translations@freelists.org\n"
 "POT-Creation-Date: 2022-02-04 10:01+0100\n"
-"PO-Revision-Date: 2022-02-18 08:48+0100\n"
+"PO-Revision-Date: 2022-03-13 11:59+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: it_IT\n"
@@ -80,8 +80,8 @@ msgstr ""
 #: installTasks.py:62
 msgid "Do you want to keep current add-on configuration settings ?"
 msgstr ""
-"Vuoi mantenere le impostazioni di configurazione del componente aggiuntivo "
-"correnti?"
+"Vuoi mantenere le impostazioni correnti di configurazione del componente "
+"aggiuntivo?"
 
 #. Translators: the title of a message box dialog.
 #: installTasks.py:64 installTasks.py:69
@@ -501,13 +501,13 @@ msgstr "annuncia lo stato premuto dei pulsanti Pausa, Riproduci e Registra"
 #. for report playback meter peak command.
 #: appModules\audacity\__init__.py:937
 msgid "Reports the current level of playback meter peak"
-msgstr "Annuncia il livello corrente del misuratore di picco di riproduzione"
+msgstr "Annuncia il livello corrente del monitor di picco di riproduzione"
 
 #. Translators: Input help mode message
 #. for report record meter peak command.
 #: appModules\audacity\__init__.py:940
 msgid "Reports the current recording meter peak   level"
-msgstr "Annuncia il livello corrente del misuratore di picco di registrazione"
+msgstr "Annuncia il livello corrente del monitor di picco di registrazione"
 
 #. Translators: Input help mode message
 #. for report slider playback command.
@@ -546,13 +546,13 @@ msgstr "Mostra la guida di Audacity"
 #. for launch module layer command.
 #: appModules\audacity\__init__.py:958
 msgid "Launch  command shell"
-msgstr "Avvia la shell dei comandi"
+msgstr "Avvia l'interprete dei comandi"
 
 #. Translators: Input help mode message
 #. for display shell command help dialog command.
 #: appModules\audacity\__init__.py:961
 msgid "Display shell scripts's list"
-msgstr "Visualizza l'elenco degli script della shell"
+msgstr "Visualizza l'elenco degli script dell'interprete"
 
 #. Translators: message for indicate shell command in input help mode.
 #: appModules\audacity\__init__.py:1076
@@ -623,7 +623,7 @@ msgstr "Errore: la guida di Audacity non è stata trovata"
 #. Translators: this is the title of Helper dialog.
 #: appModules\audacity\__init__.py:1388
 msgid "Shell's scripts"
-msgstr "Scripts della Shell"
+msgstr "Scripts del'interprete"
 
 #. Translators: This is the label of the list
 #. appearing on Shell Scripts List Dialog.
@@ -656,7 +656,7 @@ msgstr "Annuncia il nome delle barre degli strumenti"
 #. OptionsSettingsPanel
 #: globalPlugins\audacityAccessEnhancement\au_configGui.py:50
 msgid "EnhancedAnnouncement  of edit spin boxes"
-msgstr "Annuncio avanzato della modifica delle caselle di selezione"
+msgstr "Annuncio migliorato della modifica delle caselle di selezione"
 
 #. Translators: This is the label for the Advanced settings panel.
 #: globalPlugins\audacityAccessEnhancement\au_configGui.py:82
