@@ -1,0 +1,453 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it" lang="it">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<link rel="stylesheet" type="text/css" href="../style_t2t.css" media="screen"/>
+<title>Editor multitraccia Audacity: miglioramento dell'accessibilità 2.7</title>
+</head>
+<BODY BGCOLOR="white" TEXT="black">
+<P ALIGN="center"><CENTER><H1>Editor multitraccia Audacity: componente aggiuntivo per l'accessibilità - Manuale d'uso</H1>
+<FONT SIZE="4">
+<I>Autore : paulber19</I><BR>
+</FONT></CENTER>
+
+<P>
+URL : <A HREF="mailto:paulber19@laposte.net">paulber19@laposte.net</A>
+</P>
+<P>
+<A HREF="https://github.com/paulber19/audacityAccessEnhancementNVDAAddon.git">Repository GitHub : https://github.com/paulber19/audacityAccessEnhancementNVDAAddon.git</A>
+</P>
+<P>
+Download :
+</P>
+<UL>
+<LI><A HREF="https://github.com/paulber007/AllMyNVDAAddons/raw/master/audacityAccessEnhancement/audacityAccessEnhancement-2.7.nvda-addon">Versione stabile 2.7</A>
+<LI><A HREF="https://github.com/paulber007/AllMyNVDAAddons/tree/master/audacityAccessEnhancement/dev">Versione in sviluppo</A>
+</UL>
+
+<P>
+Compatibilità :
+</P>
+<UL>
+<LI>versione minima di NVDA supportata : 2020.4
+<LI>ultima versione di NVDA testata : 2022.1
+</UL>
+
+<P>
+Scusate, ma questa è una traduzione automatica dal francese
+</P>
+<A NAME="toc"></A>
+<H2>Sommario</H2>
+  <UL>
+
+  <LI><A HREF="#toc2">1. Introduzione</A>
+    <UL>
+    <LI><A HREF="#toc3">1.1. Caratteristiche</A>
+    <LI><A HREF="#toc4">1.2. aggiornamento</A>
+    <LI><A HREF="#toc5">1.3. Compatibilità</A>
+    <LI><A HREF="#toc6">1.4. Consigli per l'installazione</A>
+    <LI><A HREF="#toc7">1.5. Abilitazione degli script</A>
+    </UL>
+  <LI><A HREF="#toc8">2. Impostazioni dell'estensione</A>
+  <LI><A HREF="#toc9">3. Gli Scripts</A>
+    <UL>
+    <LI><A HREF="#hdr1">3.1. Annuncia la posizione audio</A>
+    <LI><A HREF="#hdr2">3.2. Annuncia le informazioni sulla selezione</A>
+    <LI><A HREF="#hdr3">3.3. Annuncia lo stato premuto dei pulsanti Pausa, Riproduci o Registra</A>
+    <LI><A HREF="#hdr4">3.4. Annuncia il livello dei monitor di picco in riproduzione o registrazione</A>
+    <LI><A HREF="#hdr5">3.5. Annuncia il livello del cursore dei potenziometri in riproduzione o registrazione</A>
+    <LI><A HREF="#hdr6">3.6. Visualizza la guida di Audacity</A>
+    </UL>
+  <LI><A HREF="#toc16">4. Miglioramenti all'accessibilità</A>
+    <UL>
+    <LI><A HREF="#hdr100">4.1. Annuncio automatico della posizione audio</A>
+    <LI><A HREF="#hdr101">4.2. Annuncio selezione automatica</A>
+    <LI><A HREF="#HDR102">4.3. Usare la barra spaziatrice o il tasto Invio per premere un pulsante</A>
+    <LI><A HREF="#HDR103">4.4. Vocalizzazione della zona delle caselle numeriche dei tempi nella barra strumenti selezione</A>
+    <LI><A HREF="#hdr104">4.5. Altri adattamenti</A>
+    </UL>
+  <LI><A HREF="#toc22">5. Cronologia</A>
+  </UL>
+
+<P></P>
+<A NAME="toc2"></A>
+<H2>1. Introduzione</H2>
+<A NAME="toc3"></A>
+<H3>1.1. Caratteristiche</H3>
+<P>
+Questa estensione tenta di migliorare l'accessibilità dell'editor audio multitraccia Audacity (®) fornendo gli script:
+</P>
+<UL>
+<LI><A HREF="#HDR1">Annuncia la posizione del cursore audio</A>,
+<LI><A HREF="#HDR2">Annuncia le informazioni sulla selezione</A>,
+<LI><A HREF="#HDR3">Annuncia lo stato premuto dei pulsanti Pausa, Riproduci o Registra</A>,
+<LI><A HREF="#hdr4">Annuncia il livello dei monitor di picco in riproduzione o registrazione</A>,
+<LI><A HREF="#hdr5">Annuncia il livello del cursore dei potenziometri in riproduzione o registrazione</A>,
+<LI><A HREF="#hdr6">Visualizza la guida di Audacity</A>.
+</UL>
+
+<P>
+Oltre ai seguenti miglioramenti dell'accessibilità:
+</P>
+<UL>
+<LI><A HREF="#HDR100">Annuncio automatico della posizione audio</A>,
+<LI><A HREF="#HDR101">Annuncio automatico della selezione</A>,
+<LI><A HREF="#HDR102">Utilizzare la barra spaziatrice o il tasto Invio per premere un pulsante</A>,
+<LI><A HREF="#HDR103">Vocalizzazione della zona delle caselle numeriche dei tempi nella barra strumenti selezione</A>,
+<LI><A HREF="#hdr104">e vari altri adattamenti</A>.
+</UL>
+
+<A NAME="toc4"></A>
+<H3>1.2. aggiornamento</H3>
+<P>
+L'aggiornamento dell'estensione avviene, per impostazione predefinita, automaticamente poco dopo l'avvio di NVDA (tra 20 e 600 secondi) e al massimo una volta al giorno.
+È possibile disabilitare questo aggiornamento deselezionando l'opzione "Verifica aggiornamenti automaticamente" che si trova nella categoria "Aggiorna" delle impostazioni dell'estensione.
+La versione dell'estensione può essere:
+</P>
+<UL>
+<LI>o una versione stabile: il suo numero di versione è ad esempio del tipo "1.0".
+<LI>o una versione di sviluppo: il suo numero di versione è quindi del tipo "1.0-dev1", o "1.0-rc1", o "1.0-beta2".
+</UL>
+
+<P>
+Per impostazione predefinita, una versione stabile viene aggiornata a una versione stabile più recente (numero di versione più alto).
+Ma è possibile aggiornare l'attuale versione stabile con una versione di sviluppo della prossima versione stabile. Basta selezionare l'opzione "Aggiorna anche le versioni stabili alle versioni di sviluppo" che si trova nelle impostazioni dell'estensione, voce di menu "Aggiorna".
+</P>
+<P>
+Una versione di sviluppo viene aggiornata:
+</P>
+<UL>
+<LI>con una versione di sviluppo più recente,
+<LI>con la sua versione stabile,
+<LI>o con l'ultima versione stabile se l'opzione precedente non è selezionata.
+</UL>
+
+<P>
+Il pulsante "Verifica aggiornamenti" posizionato nella categoria "Aggiorna" delle impostazioni dell'estensione, consente di cercare immediatamente un aggiornamento.
+</P>
+<P>
+Il pulsante "Visualizza cronologia", collocato in questa stessa categoria, consente di visualizzare la cronologia della versione corrente nel browser.
+</P>
+<P>
+In caso di aggiornamento automatico e se viene rilevata una nuova versione, viene visualizzata la finestra di dialogo "Aggiorna" per offrire:
+</P>
+<UL>
+<LI>o l'installazione immediata della nuova versione,
+<LI>o di posticipare l'aggiornamento a più tardi. In questo caso, la ricerca riprenderà almeno un'ora dopo.
+</UL>
+
+<P>
+In caso di aggiornamento a una versione stabile, il pulsante "Novità" offre la possibilità di aprire,nel browser, la cronologia dell'estensione e poter così conoscere le novità della versione proposta.
+</P>
+<A NAME="toc5"></A>
+<H3>1.3. Compatibilità</H3>
+<P>
+Questa estensione è stata testata con Audacity versione 3.2, 3.1, 3.0 e 2.4.2. Le versioni precedenti di Audacity non sono supportate.
+</P>
+<A NAME="toc6"></A>
+<H3>1.4. Consigli per l'installazione</H3>
+<P>
+Per un buon funzionamento dell'estensione è necessario:
+</P>
+<UL>
+<LI>mantenere la visualizzazione predefinita impostata durante l'installazione di audacity, in particolare le barre degli strumenti. Audacity permette di resettare la visualizzazione di queste ultime con il sottomenu "Ripristina barre degli strumenti" del sottomenu Barre degli strumenti" del menu "Visualizza". Ma è necessario riavviare Audacity dopo averlo utilizzato.
+<LI>Mantenere il formato di visualizzazione del tempo definito di default o scegliere uno dei formati indicati nel capitolo <A HREF="#HDR103">Vocalizzazione della selezione delle caselle numeriche dei tempi nella zona strumenti</A>
+</UL>
+
+<P>
+altri consigli di configurazione (consultare la <A HREF="audacityGuide.html">"Guida Audacity"</A> per maggiori informazioni):
+</P>
+<UL>
+<LI>visualizzare il menu "Extra",
+<LI>disabilitare la creazione di etichette con una semplice digitazione,
+<LI>attivare la visualizzazione della finestra di dialogo "Creazione etichette",
+<LI>installare il set completo di scorciatoie,
+<LI>modificare le scorciatoie fastidiose per la tastiera di tipo "Azerty".
+<LI>disabilitare la selezione automatica.
+</UL>
+
+<A NAME="toc7"></A>
+<H3>1.5. Abilitazione degli script</H3>
+<P>
+Ogni script può essere attivato in due modi:
+</P>
+<UL>
+<LI>utilizzando un classico gesto di controllo,
+<LI>o utilizzando l'interprete dei comandi dell'estensione.
+</UL>
+
+<P>
+Nella finestra di dialogo "Gesti di comando" di NVDA, gli script forniti dall'estensione sono inseriti nella categoria "Editor multitraccia Audacity: miglioramento dell'accessibilità".
+</P>
+<P>
+Per gli script che possono essere lanciati da un comando dell'interprete, quest'ultimo è indicato dopo la descrizione dello script.
+</P>
+<P>
+Per impostazione predefinita, la stragrande maggioranza degli script che possono essere avviati dalla shell non sono assegnati ad alcun gesto di comando.
+</P>
+<P>
+L'interprete dei comandi viene avviato utilizzando il gesto di comando "NVDA+Spazio". Si sente quindi un segnale acustico.
+</P>
+<P>
+Ad oggi, i comandi non sono modificabili.
+</P>
+<P>
+Il comando "h" dell'interprete elenca tutti i comandi e il comando "g" visualizza il manuale utente dell'estensione.
+</P>
+<P>
+L'interprete dei comandi si interrompe:
+</P>
+<UL>
+<LI>premendo il tasto "Esc",
+<LI>o automaticamente se viene digitato un comando. Se questo comando non corrisponde ad alcuna funzionalità, un segnale acustico lo segnala.
+</UL>
+
+<A NAME="toc8"></A>
+<H2>2. Impostazioni dell'estensione</H2>
+<P>
+Questa estensione installa nel menu "Preferenze" di NVDA il sottomenu "Editor Multitraccia Audacity: miglioramento dell'accessibilità - Impostazioni...".
+Ciò consente di visualizzare la finestra di dialogo di configurazione per i parametri dell'estensione, ovvero:
+</P>
+<UL>
+<LI>la casella di controllo "Segnala automaticamente le modifiche alla selezione",
+<LI>la casella di controllo "usa la barra spaziatrice o il tasto Invio per premere un pulsante",
+<LI>la casella di controllo "Annuncia il nome delle barre degli strumenti".
+</UL>
+
+<P>
+Questa configurazione viene salvata nel file "audacityAccessEnhancementAddon.ini" salvato nella cartella di configurazione utente di NVDA.
+</P>
+<A NAME="toc9"></A>
+<H2>3. Gli Scripts</H2>
+<A NAME="hdr1"></A>
+<H3>3.1. Annuncia la posizione audio</H3>
+<P>
+Per utilizzare questo script, il focus deve trovarsi nella vista traccia.
+</P>
+<P>
+Questo script viene lanciato dal comando "a" dell'interprete.
+</P>
+<P>
+Non ha alcun gesto di controllo assegnato per impostazione predefinita.
+</P>
+<P>
+Annuncia il tempo indicato nel campo "posizione audio" della barra degli strumenti "Selezione".
+</P>
+<A NAME="hdr2"></A>
+<H3>3.2. Annuncia le informazioni sulla selezione</H3>
+<P>
+Per utilizzare questo script, il focus deve trovarsi nella vista traccia.
+</P>
+<P>
+La barra degli strumenti "Selezione" presenta diverse informazioni:
+</P>
+<UL>
+<LI>i limiti della selezione (inizio e fine),
+<LI>la durata della selezione,
+<LI>il centro della selezione.
+</UL>
+
+<P>
+È possibile farli annunciare, rimanendo nella vista traccia, con i seguenti script:
+</P>
+<UL>
+<LI>annunciare l'inizio e la fine della selezione: comando "s" dell'interprete,
+<LI>annunciare la durata della selezione: comando "shift+s" dell'interprete,
+<LI>annunciare il centro della selezione: comando "control+s" dell'interprete,
+<LI>annunciare l'inizio e la fine della selezione. Premere due volte: annuncia la durata. Tre volte: annuncia il centro: senza comando dell'interprete.
+</UL>
+
+<P>
+Per impostazione predefinita, non hanno gesti di controllo assegnati loro.
+</P>
+<A NAME="hdr3"></A>
+<H3>3.3. Annuncia lo stato premuto dei pulsanti Pausa, Riproduci o Registra</H3>
+<P>
+Per utilizzare questo script, il focus deve trovarsi nella vista traccia.
+</P>
+<P>
+Viene lanciato dal comando "f5" dell'interprete.
+</P>
+<P>
+Per impostazione predefinita, non è assegnato alcun gesto di controllo.
+</P>
+<P>
+Annuncia lo stato "Premuto" dei pulsanti "Riproduci", "Pausa" e "Registra".
+</P>
+<P>
+Nel caso in cui non sia stato premuto alcun pulsante, viene riprodotto l'annuncio "Nessun pulsante premuto".
+</P>
+<A NAME="hdr4"></A>
+<H3>3.4. Annuncia il livello dei monitor di picco in riproduzione o registrazione</H3>
+<P>
+Audacity mostra i monitor di livello per monitorare i picchi di riproduzione o registrazione.
+</P>
+<P>
+I seguenti script ti consentono di conoscere i livelli di questi monitor (quando sono disponibili), senza spostare il focus dalla vista traccia:
+</P>
+<UL>
+<LI>annunciare il livello del monitor di picco di riproduzione: comando "f7" dell'interprete,
+<LI>annunciare il livello del monitor di picco di registrazione: comando "f8" dell'interprete.
+</UL>
+
+<P>
+Per impostazione predefinita, non hanno alcun gesto di controllo assegnato loro.
+</P>
+<A NAME="hdr5"></A>
+<H3>3.5. Annuncia il livello del cursore dei potenziometri in riproduzione o registrazione</H3>
+<P>
+La barra degli strumenti "Barra del mixer" presenta i potenziometri di riproduzione e registrazione che consentono di regolare i livelli di riproduzione o registrazione.
+</P>
+<P>
+I seguenti script ti consentono di conoscere i livelli di questi cursori, senza spostare il focus dalla vista della traccia:
+</P>
+<UL>
+<LI>annunciare il livello delcursore di riproduzione: comando "f9" dell'interprete,
+<LI>annunciare il livello del cursore di registrazione: comando "f10" dell'interprete.
+</UL>
+
+<P>
+Per impostazione predefinita, non hanno alcun gesto di controllo assegnato loro.
+</P>
+<A NAME="hdr6"></A>
+<H3>3.6. Visualizza la guida di Audacity</H3>
+<P>
+Questo script viene lanciato dal comando "control+g" dell'interprete.
+</P>
+<P>
+Per impostazione predefinita, non è assegnato alcun gesto di controllo.
+</P>
+<P>
+Visualizza la guida Audacity scritta da David Bailes per gli utenti dello screen reader JAWS (C).
+</P>
+<A NAME="toc16"></A>
+<H2>4. Miglioramenti all'accessibilità</H2>
+<A NAME="hdr100"></A>
+<H3>4.1. Annuncio automatico della posizione audio</H3>
+<P>
+In riproduzione audio o meno, le seguenti scorciatoie di Audacity (definite di default, consentono di impostare o spostare il cursore audio:
+</P>
+<UL>
+<LI>"x" play/stop e posizionamento del cursore audio
+<LI>"freccia sinistra": piccolo salto a sinistra,
+<LI>"freccia destra": piccolo salto a destra,
+<LI>"inizio": salta all'inizio,
+<LI>"fine": salta alla fine,
+<LI>",": piccolo salto a sinistra,
+<LI>"." : piccolo salto a destra,
+<LI>"Maiuscolo + ," : grande salto a sinistra,
+<LI>"Maiusc + ." : grande salto a destra,
+<LI>"spazio": play/stop
+</UL>
+
+<P>
+In riproduzione audio interrotta e dopo aver attivato la scorciatoia, le informazioni nella zona di selezione numerica "posizione audio" della barra degli strumenti "Selezione" o "Tempo", a seconda della versione di Audacity, vengono annunciate automaticamente se è avvenuta una modifica e nel modulo:
+</P>
+<UL>
+<LI>annuncio del nome della zona di selezione numerica "posizione audio",
+<LI>annuncio del contenuto della casella combinata con la formattazione del tempo
+</UL>
+
+<P>
+Viene segnalato il ritorno della posizione dell'audio all'inizio della selezione.
+</P>
+<P>
+Queste scorciatoie possono essere modificate dall'utente senza influire su questa operazione.
+</P>
+<A NAME="hdr101"></A>
+<H3>4.2. Annuncio selezione automatica</H3>
+<P>
+Le seguenti scorciatoie di Audacity (impostate di default vengono utilizzate per impostare o spostare l'inizio e la fine della selezione:
+</P>
+<UL>
+<LI>"Maiuscolo + inizio": seleziona fino all'inizio,
+<LI>"Maiusc + fine": seleziona fino alla fine,
+<LI>"Maiuscolo + j": seleziona dall'inizio della traccia al cursore,
+<LI>"Maiuscolo + k": seleziona dal cursore fino alla fine della traccia,
+<LI>Maiusc + freccia destra": estende la selezione a destra,
+<LI>"Maiusc + freccia sinistra": estende la selezione a sinistra,
+<LI>"ctrl + Maiusc + freccia destra": contrai la selezione a sinistra,
+<LI>"ctrl + Maiusc + freccia sinistra": contrai la selezione a destra.
+Se l'opzione "Annuncia automaticamente le modifiche alla selezione" nella categoria "Opzioni" delle impostazioni dell'estensione è selezionata, a riproduzione interrotta e dopo aver attivato il collegamento, le modifiche alla selezione vengono annunciate
+A seconda del tipo di scorciatoia, l'una o/e l'altra delle zone di selezione numerica della barra degli strumenti "Selezione" vengono annunciate nella forma:
+<LI>annuncio del nome della zona di selezione numerica ("inizio", "fine", "centrato", "durata" a seconda della scelta del display),
+<LI>annuncio del suo contenuto con formattazione dell'ora,
+</UL>
+
+<P>
+Poiché tutti i nomi annunciati sono quelli visualizzati da Audacity, potrebbero esserci incongruenze dovute alla traduzione o alla codifica (ad es. termine selezione anziché fine selezione", "durata selezione" anziché "lunghezza della selezione").
+</P>
+<P>
+Queste scorciatoie possono essere modificate dall'utente senza influire su questa operazione.
+</P>
+<P>
+Il comando "f4" dell'interprete dell'estensione consente di attivare o disattivare questo annuncio di modifiche alla selezione quando diventa fastidioso.
+Commuta lo stato dell'opzione "Annuncia automaticamente le modifiche alla selezione" da "selezionato" a "non selezionato" o viceversa.
+</P>
+<A NAME="HDR102"></A>
+<H3>4.3. Usare la barra spaziatrice o il tasto Invio per premere un pulsante</H3>
+<P>
+In Audacity, la barra spaziatrice ha lo scopo di avviare o interrompere la riproduzione audio, ma non di premere un pulsante.
+</P>
+<P>
+Per premere il pulsante è necessario utilizzare il tasto "Invio", ma questo sposta il focus sull'elemento successivo della finestra e non viene vocalizzato alcun cambiamento di stato del pulsante.
+</P>
+<P>
+Se l'opzione "Usa la barra spaziatrice o il tasto Invio per premere un pulsante" dalla categoria "Opzioni" delle impostazioni dell'estensione è selezionata, è possibile premere un pulsante con la barra spaziatrice o il tasto Invio e le modifiche verranno annunciato.
+</P>
+<A NAME="HDR103"></A>
+<H3>4.4. Vocalizzazione della zona delle caselle numeriche dei tempi nella barra strumenti selezione</H3>
+<P>
+Audacity presenta zone di selezione numerica per visualizzare un tempo come: la posizione dell'audio, l'inizio della selezione, la fine della selezione, il centro della selezione, la durata della selezione.
+</P>
+<P>
+Queste zone di modifica presentano le informazioni secondo il formato definito dall'utente utilizzando il menu contestuale della zona.
+</P>
+<P>
+L'informazione è una sequenza di numeri. Ogni cifra appartiene a un gruppo di cifre come ore, minuti, secondi, ecc.
+</P>
+<P>
+Per modificare queste informazioni, muoversi sulle figure da modificare (usando le frecce destra o sinistra) e aumentarle o diminuirle con le frecce su o giù.
+</P>
+<P>
+Di default, questa estensione permette una migliore vocalizzazione indicando un tempo in ore, minuti e secondi, indicando la natura della cifra selezionata e il valore del gruppo di cifre modificato per le zone di selezione numerica citate a titolo di esempio sopra.
+Questo può essere disabilitato deselezionando l'opzione "Annuncio migliorato della modifica delle caselle di selezione" dalla categoria "Opzioni" delle impostazioni dell'estensione.
+</P>
+<P>
+Vengono presi in considerazione solo i seguenti formati:
+</P>
+<UL>
+<LI>secondi,
+<LI>HH:MM:SS,,
+<LI>gg:hh:mm:ss,
+<LI>hh:mm:ss + centesimi,
+<LI>hh:mm:ss + millisecondi,
+<LI>hh:mm:ss + campioni,
+<LI>campioni.
+</UL>
+
+<P>
+Il tasto "NVDA + freccia su" viene utilizzato per dare voce alle informazioni nella zona di selezione numerica.
+</P>
+<P>
+Gli stessi meccanismi sono presenti in altre finestre di dialogo che presentano caselle di selezione numerica del tempo dello stesso stile, come la finestra di dialogo "Registrazione programmata.
+</P>
+<A NAME="hdr104"></A>
+<H3>4.5. Altri adattamenti</H3>
+<UL>
+<LI>Le tracce non vengono più annunciate come righe di una tabella e la visualizzazione delle tracce come una tabella.
+<LI>Lo stato non selezionato, in senso NVDA (selezione con il cursore), di una traccia non è più vocalizzato.
+<LI>viene annunciata l'assenza di una traccia quando il focus arriva nella vista della traccia.
+<LI>Il nome delle barre degli strumenti viene annunciato spostando il focus con "control+f6" o "shift+control+f6". (Può essere disabilitato configurando l'opzione "Annuncia il nome delle barre degli strumenti").
+</UL>
+
+<A NAME="toc22"></A>
+<H2>5. Cronologia</H2>
+<P>
+La cronologia delle versioni di questa estensione è nel file <A HREF="changes.html">"changes.html"</A>
+</P>
+
+</body>
+</html>
