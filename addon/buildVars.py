@@ -46,7 +46,7 @@ Previous versions of Audacity are not  supported.
 """),
 
 	# version
-	"addon_version": "2.7",
+	"addon_version": "2.7.1",
 	# Author(s)
 	"addon_author": "paulber19",
 	# URL for the add-on documentation support
@@ -56,7 +56,7 @@ Previous versions of Audacity are not  supported.
 	# Minimum NVDA version supported (e.g. "2018.3")
 	"addon_minimumNVDAVersion": "2020.4",
 	# Last NVDA version supported/tested (e.g. "2018.4", ideally more recent than minimum version)
-	"addon_lastTestedNVDAVersion": "2022.1",
+	"addon_lastTestedNVDAVersion": "2022.3",
 	# Add-on update channel (default is stable or None)
 	"addon_updateChannel": None,
 }
