@@ -2,9 +2,9 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-GB" lang="en-GB"><head>
 	<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
 	<meta name="viewport" content="width=device-width, initial-scale = 1">
-	<title>Audacity 3.1.0 Guide</title>
+	<title>Audacity 3.2.3 Guide</title>
 	
-	<meta name="description" content="A guide to Audacity 3.1.0 to 3.1.3 for users of
+	<meta name="description" content="A guide to Audacity 3.2.3 for users of
 	the Jaws, NVDA, and Narrator screen readers.">
 
 	<style type="text/css">
@@ -90,7 +90,7 @@
 <body>
 <div id="page">
 
-	<h1>Audacity 3.1.0 to 3.1.3 Guide</h1>
+	<h1>Audacity 3.2.3 Guide</h1>
 	
 	<p>A guide for users of the Jaws, NVDA, and Narrator screen readers, written by David Bailes.
 	More guides are available on the
@@ -115,8 +115,10 @@
 		<li><a href="#editing-multiple-tracks">Editing when there are multiple tracks</a></li>
 		<li><a href="#labels">Labels</a></li>
 		<li><a href="#clips">Clips</a></li>
+		<li><a href="#realtime-effects">Realtime effects</a></li>
 		<li><a href="#metadata-tags-editor">Metadata tags editor</a></li>		
 		<li><a href="#recording">Recording</a></li>
+		<li><a href="#plugins">Plugins</a></li>
 		<li><a href="#preferences">Preferences</a></li>
 		<li><a href="#sound-dialog-in-windows">Sound dialog in Windows</a></li>		
 		<li><a href="#keystrokes">Keystrokes</a></li>		
@@ -125,30 +127,28 @@
 	
 	<h2 id="introduction">Introduction</h2>
 
-	<p>This is a guide for versions 3.1.0 to 3.1.3 of Audacity, which is a free
+	<p>This is a guide for version 3.2.3 of Audacity, which is a free
 	multi-track audio editor. You can use it for recording, simple editing
 	of single tracks, or more advanced editing involving multiple tracks.</p>
 
-	<p>Audacity 3.1.1 to 3.1.3 contained fixes for a number of serious bugs found in 3.1.0,
-	so it's highly recommended to use the most recent version.
-	Audacity 3.1.3 is available as either a 64 bit or 32 bit version. It's
+	<p>Audacity 3.2.3 is available as either a 64 bit or 32 bit version. It's
 	recommended to install the 64 bit version, unless you have a particular reason
 	for needing the 32 bit version. Note that if you're going to install
 	the 64 bit version, and you have a 32 bit version of Audacity installed,
 	you should uninstall this before installing the 64 bit version.</p>
 
-	<p>You can download the 64 bit version of Audacity 3.1.3 using the following link
-	<a href="https://github.com/audacity/audacity/releases/download/Audacity-3.1.3/audacity-win-3.1.3-64bit.exe">Audacity 3.1.3 64 bit installer</a>
+	<p>You can download the 64 bit version of Audacity 3.2.3 using the following link
+	<a href="https://github.com/audacity/audacity/releases/download/Audacity-3.2.3/audacity-win-3.2.3-x64.exe">Audacity 3.2.3 64 bit installer</a>
 	and the 32 bit version using the following link
-	<a href="https://github.com/audacity/audacity/releases/download/Audacity-3.1.3/audacity-win-3.1.3-32bit.exe">Audacity 3.1.3 32 bit installer</a>.
+	<a href="https://github.com/audacity/audacity/releases/download/Audacity-3.2.3/audacity-win-3.2.3-x32.exe">Audacity 3.2.3 32 bit installer</a>.
 	</p>
-	
+
 	<p>The remaining sections of the introduction are as follows. There are introductions
 	to Projects and the cursor in Audacity, and descriptions of some message boxes which
 	can be shown at startup,
 	and how to get help. There is then an outline of some new features and
-	changes which were introduced in Audacity 3.1.0 There
-	are then sections on Audacity's two sets of default shortcuts, some advice
+	changes which were introduced since Audacity 3.1.3, a section on Audacity's
+	two sets of default shortcuts, some advice
 	if you are using a non US/UK keyboard,
 	and details of where to get the Jaws script for Audacity.</p>
 
@@ -231,17 +231,19 @@
 	an introductory guide. For more information see:</p>
 	
 	<ul>
-		<li>The installed Audacity user manual which can be opened in your
-		default browser by choosing Manual on the Help menu.</li>
+		<li><a href="https://support.audacityteam.org/">The Audacity Support website</a>.</li>
 
+		<li><a href="https://manual.audacityteam.org/">The Audacity manual</a>
+		is still available, but is no longer completely up to date. It can be opened in your
+		default browser by choosing Manual on the help menu.</li>
+		
 		<li><a href="https://wiki.audacityteam.org/wiki/Audacity_Wiki_Home_Page">The Audacity Wiki</a>.</li>
 
 		<li>The <a href="https://www.freelists.org/list/audacity4blind">Audacity4Blind mailing list</a>.
 		There are a couple of ways you can request to be subscribed to this list.
 		The first is using this web page: type your
 		email address into to the “your email address” edit box;
-		then <strong>Tab</strong> to and check the check box to indicate that you
-		aren't a robot; and finally <strong>Tab</strong> to the Next button and press it.
+		then <strong>Tab</strong> to the Next button and press it.
 		The second way is to send an email to ecartis@freelists.org, with the
 		subject subscribe Audacity4Blind.
 		After making your request by either method, you will receive an email to
@@ -254,33 +256,34 @@
 
 	<h3>New features and changes</h3>
 
-	<p>The new features and changes which were introduced in Audacity 3.1.0 include
-	the following:</p>
+	<p>The new features and changes which were introduced in Audacity 3.2.0 to
+	3.2.3 include the following:</p>
 
 	<ul>
-		<li>The default for the setting which controls whether the subsequent clips in
-		a track are moved when audio is added or removed has been changed. Subsequent
-		clips are now not moved by default. You can change this setting in the Track
-		Behaviour category of the Preferences dialog, as described in the
-		<a href="#whether-subsequent-clips">Whether subsequent clips are moved when audio is
-		added or removed section</a> of the Preferences section.</li>
+		<li><a href="#realtime-effects">Realtime effects</a> can be added to a track.
+		You can change these effects during playback, and also come back and
+		change them at any point in your editing.</li>
 
-		<li><a href="#clips">Clips</a> now have names. When a clip is created it's
-		automatically given an appropriate name, and you can also manually edit
-		this name.</li>
+		<li>The effects in the Effect menu are now grouped by default, rather than
+		just being sorted by name. If you want to change this, see the
+		<a href="#sorting-or-grouping-of-the-effect-menu">Sorting or grouping of the
+		Effect menu section</a> of the Preferences section.</li>
 
-		<li>The Time Shift Left and Time Shift Right commands can now be used
-		for adjusting the position of a label, as described in the
-		<a href="#time-shifting-labels">Time shifting labels section</a> of
-		the Labels section.</li>
+		<li>The playback and recording meter toolbars now contain both a meter button,
+		and a level slider, and so the old mixer toolbar is no longer needed.</li>
 
-		<li>How loop playback works has been significantly changed. There
-		is now a loop range which controls the extent of any looping,
-		and which is independent of the selected time range. For details, see the
-		<a href="#loop-playback">Loop playback section</a> of the Basic Editing section.</li>
+		<li>There's an Audio setup toolbar, which is a replacement for the device toolbar,
+		although the latter is still available if desired. See the
+		<a href="#upper-toolbars">upper toolbars section</a> for more details.</li>
 
-		<li>The playback volume slider in Audacity now controls Audacity's playback
-		volume, and not the playback device's master volume in Windows.</li>
+		<li>The Play-at-speed toolbar has been moved from the upper toolbars section
+		of the main window to the <a href="#lower-toolbars">lower toolbars</a> section
+		of the main window.</li>
+
+		<li>Audacity now supports a much more recent version of the FFmpeg library. Details
+		of how to download and install this are given in the
+		<a href="#ffmpeg-library">FFmpeg library section</a> of the Preferences
+		section.</li>
 	</ul>
 	
 
@@ -311,6 +314,10 @@
 	<a href="https://github.com/campg2j003/JAWS-Script-for-Audacity">Jaws Script for Audacity website</a>.
 	A direct link to the installer for a beta version of version 2.2.2 of this script is:
 	<a href="https://github.com/campg2j003/JAWS-Script-for-Audacity/releases/download/rel2.2.2-beta-2020-06-21/Jaws-Script-for-Audacity_2_2_2-beta-2020-06-21.exe">Jaws-Script-for-Audacity_2_2_2-beta-2020-06-21.exe</a>.</p>
+	
+	<p>Because this script has not been updated recently, some of the functionality does
+	not work with the current version of Audacity. For example, the keystrokes <strong>G</strong>,
+	and <strong>H</strong> no longer read the peak values of the recording and playback meters.</p>
 	
 	<p>Note that for those using Jaws, the remainder of the guide does not assume that this
 	script is installed.</p>
@@ -511,29 +518,35 @@
 	category of the Preferences dialog. If you only have one playback device on your
 	computer, you shouldn't need to change the setting.</p>
 
-	<p>Audacity's playback volume is controlled by playback volume slider which is
+	<p>If you need to change Audacity's playback device, then this is one way to do it:</p>
+
+	<ol>
+		<li>Press <strong>Ctrl + P</strong> to open the Preferences dialog</li>
+
+		<li>Select Devices in the categories list.</li>
+
+		<li><strong>Tab</strong> to the Playback device combo box, and set the
+		device you want to use.</li>
+
+		<li>Press <strong>Enter</strong> to press the default OK button.</li>
+	</ol>
+
+	<p>Audacity's playback volume is controlled by  the playback level slider which is
 	in the Upper toolbars section of Audacity's main window. The total playback
 	volume is determined by both Audacity's playback volume, and the playback
 	device's volume slider, which can be set in Windows.</p>
 
-	<p>To change either of these settings in the Upper toolbars section of the main window,
-	assuming that the Track view is the current focus:</p>
+	<p>To change the value of the playback level slider, assuming that the Track
+	view is the current focus:</p>
 
 	<ol>
 		<li>Press <strong>Ctrl + F6</strong> twice to move to the Upper toolbars section</li>
 
 		<li><strong>Tab</strong> or <strong>Shift + Tab</strong> until you get to
-		either the Playback device combo box or the Playback volume slider and
-		make any changes you want.</li>
+		the Playback level slider and make any change you want.</li>
 
 		<li>Press <strong>Ctrl + F6</strong> to return to the Track view.</li>
 	</ol>
-	
-	<p>Playback depends on whether there is a time range selected
-	(see the <a href="#selecting-audio">Selecting audio section</a>):
-	if there is no selection, then playback starts at the cursor position;
-	if there is a selection, then playback starts at the start of the selection,
-	and stops at the end of the selection.</p>
 
 
 	<h3>Playback commands and keystrokes</h3>
@@ -564,7 +577,7 @@
 	</ul>
 
 	<p>For all the commands listed above which start playback,
-	where playback starts and and then automatically stops depends on whether a time
+	where playback starts and then automatically stops depends on whether a time
 	range is selected (see the <a href="#selecting-audio">Selecting audio section</a>).
 	If there is no selection, then playback starts at the cursor position,
 	and automatically stops at the end of the audio in the project. If a time
@@ -670,14 +683,6 @@
 	on the View Menu. Only showing the toolbars which you find useful has the advantage
 	of greatly reducing the number of <strong>Tab</strong>s needed to find a particular control.</p>
 
-	<p><strong>Bug warning</strong>: There's a bug which affects users who have
-	been using Audacity since version 2.2.1 or earlier. You may find that if
-	you show a toolbar which has not been shown since version 2.2.1, then
-	the toolbar will be shown as a floating toolbar
-	somewhere in the Audacity window, and you will not be able to tab to it.
-	To work around this, choose reset toolbars on the Toolbars sub menu.
-	You can then set which toolbars are displayed.</p>
-
 	<p>The remainder of this section on toolbars contains sections on the
 	upper and lower toolbars, and then sections on some individual toolbars:
 	the selection, time, and play at speed toolbars.</p>
@@ -689,47 +694,51 @@
 	the following toolbars:</p>
 	
 	<ul>
-		<li>Transport. This contains buttons for playback and recording,
+		<li>Transport toolbar, which contains buttons for playback and recording,
 		and all the commands are also available on the Transport
 		menu, and have keyboard shortcuts.</li>
 		
-		<li>Tools. This contains tool buttons for editing which involve the
+		<li>Tools toolbar, which contains tool buttons for editing which involve the
 		use of the mouse.</li>
 		
-		<li>Recording meter and Playback meter. Each of these contains a drop down
-		button which opens a menu for controlling the meter.</li>
-		
-		<li>Mixer. This contains the recording and playback volume sliders.</li>
-		
-		<li>Edit. This contains buttons for Cut, Paste, etc. These
-		commands are also available on either the Edit or View menu,
+		<li>Edit toolbar, which contains buttons for various editing and zooming
+		commands, which are also available on either the Edit or View menus,
 		and all have keyboard shortcuts.</li>
-		
-		<li><a href="#play-at-speed-toolbar">Play at speed</a>, which contains
-		a play at selected speed button and a playback speed slider.</li>
-		
-		<li>Device. This contains combo boxes for Audio host, the
-		recording device, the number of recording channels, and the playback device. Note that
-		if one of these combo boxes is the focus, and you press a character key which
-		is an Audacity shortcut, then the key is used for the shortcut, rather
-		than selecting an option beginning with that character. So selecting
-		an option using its first character is not recommended. All of these settings
-		can also be made either in individual dialogs, or in the Devices category
-		of the Preferences dialog, as described in the
-		<a href="#recording-settings">Recording settings section</a>.</li>
+
+		<li>Audio Setup toolbar, which contains an Audio setup button. This opens
+		a menu for setting the devices you want to use for recording
+		and playback. For keyboard users, there are more convenient
+		ways of changing these settings, for example in the devices
+		category of the Preferences dialog.</li>
+
+		<li>Share Audio toolbar, which contains a Share audio button. This enables
+		you to share audio with other users using a service provided
+		by the same company that owns Audacity. This isn't covered in
+		this guide.</li>
+
+		<li>Recording meter and Playback meter toolbars. Each of these contains a
+		button which opens a menu for controlling a meter, and a slider
+		for setting the level.</li>
 	</ul>
 
-	<p> The Upper toolbars section also contains a Timeline options
-	button, which opens a menu containing items which either aren't of
-	much interest to most screen reader users, or which duplicate
-	settings which can be more conveniently available elsewhere.</p>
+	<p>In versions of Audacity prior to version 3.2.0, a device toolbar was also
+	shown by default in the upper toolbars section. This toolbar is still available
+	for those who want to use it, you just have to enable it using the toolbars
+	sub-menu of the View menu. However, in this guide, it won't be used.</p>
 	
 
 	<h3 id="lower-toolbars">Lower toolbars</h3>
 
-	<p>By default, the Lower toolbars section of the main window contains the
-	selection toolbar and the time toolbar, and these toolbars are described
-	in the following two sections.</p>
+	<p>By default , the Lower toolbars section of the main window contains the
+	following toolbars, which are all described in the following sections:</p>
+
+	<ul>
+		<li>The Selection toolbar.</li>
+
+		<li>The Time toolbar.</li>
+
+		<li>The Play-at-speed toolbar.</li>
+	</ul>
 		
 	
 	<h3 id="selection-toolbar">Selection toolbar</h3>
@@ -1524,70 +1533,46 @@
 
 	<h3 id="effects">Effects</h3>
 
-	<p>Audacity provides a large number of effects which are available on the
-	Effects menu. Some of the commands, like fade in or fade out,
+	<p>Audacity provides a large number of effects, which are available on
+	the Effect menu. By default, the effects are grouped by
+	category, and so there are submenus such as Volume and Compression,
+	Fading, and Pitch and Tempo. There are a number of options for how the Effect
+	menu is sorted or grouped, such as sorting by name, and this can
+	be set in the Effects category of the Preferences dialog, where in
+	the Effect options grouping, there is a Sort or Group combo box.</p>
+
+	<p>Some of the menu items, like fade in or fade out,
 	simply execute the effect on the selected audio, but most of them
 	open a dialog box so that you can adjust the parameters for the
-	effect.</p>
-	
-	<p>If an effect does not support real-time preview, which is
-	described in the next section, then its dialog nearly always
-	contains a Preview button which
-	allows you to hear a short sample of the effect applied to the
-	selected audio. By default, the length of the preview is 6 seconds, but you
-	can change this in the Preferences dialog, where in the Playback
-	category, in the Effects Preview group, there's a Length edit box.</p>
-	
-	<p>The effect's dialog also contains a Manage button, which
-	opens a menu which includes commands for presets.</p>
-	
-	
-	<h4>Effects with real-time preview</h4>
-	
-	<p>Some of the effects which can be used Audacity include real-time
-	preview – where you can change the settings of an effect during
-	playback. A small number of the effects included with Audacity's installation,
-	for example, the bass and treble effect and the wahwah effect,
-	have this feature. In addition, if you have downloaded
-	any VST or LADSPA effects, then these have real-time preview.</p>
-	
-	<p>The dialogs of effects which include real-time preview include the
-	following controls, all of which have access keys:</p>
-	
-	<ul>
-		<li>Apply button, which applies the effect to the selected audio,
-		and is the dialog's default button. Note that as with any other
-		Apply button, it doesn't close the dialog.</li>
-		
-		<li>Close button (<strong>Esc</strong>).</li>
-		
-		<li>Manage button. This opens a menu which includes commands for presets,
-		and opening an options dialog.</li>
-		
-		<li>Start/Stop Playback button. If you press Stop Playback during
-		playback, and then press Start Playback, then playback resumes from
-		where it was stopped.</li>
-		
-		<li>Skip Backward button. During playback, pressing this seeks backward
-		by a short period. Otherwise, pressing it ensures that the next playback
-		starts at the start of the selected time range.</li>
-		
-		<li>Skip Forward button. During playback, pressing this seeks forward
-		by a short period. Otherwise, pressing it causes the next playback to
-		start at the end of the selected time range.</li>
-		
-		<li>Enable check box. This sets whether the effect is enabled, and is
-		checked by default. Unchecking this allows you to quickly compare the
-		audio with and without the effect.</li>
-	</ul>
-	
-	<p>After opening one of these effect dialogs, you can return to the main
-	Audacity window without closing it. Dialogs with this behaviour are known
-	as modeless dialogs. You can cycle round the Audacity main window and any
-	open modeless dialogs by pressing <strong>Alt + F6</strong>. Because these
-	effect dialogs have their own playback controls, you may not need to make
-	use of the behaviour very often.</p>
+	effect. In an effect dialog box, after the controls for the various parameters,
+	there are three buttons:</p>
 
+	<ul>
+		<li>A Presets &amp; settings button, which opens a menu which includes
+		commands for any factory and user presets.</li>
+
+		<li>A Preview button, which
+		allows you to hear a short sample of the effect applied to the
+		selected audio. By default, the length of the preview is 6 seconds, but you
+		can change this in the Preferences dialog, where in the Playback
+		category, in the Effects Preview group, there's a Length edit box.</li>
+
+		<li>An Apply button, which is the dialog's default button. Although there's
+		no Cancel button, you can still Cancel the dialog by pressing
+		<strong>Escape</strong>.</li>
+	</ul>
+
+	<p>In addition to the effects which are included with Audacity, you can also
+	use effect plugins, and some details of these which are relevant to users of
+	screen readers are given in the <a href="#plugins">Plugins section</a>.</p>
+
+	<p>When you apply one of the Effects in the effect menu to some selected
+	audio, then the audio data contained in the track is changed. You can
+	also apply realtime effects to an entire track, which leaves the audio
+	data in the track unchanged, and allows you to come back at any time
+	during your editing and make changes. This is described in the
+	<a href="#realtime-effects">Realtime effects section</a>.</p>
+	
 	
 	<h3>Deleting tracks</h3>
 
@@ -2097,7 +2082,8 @@
 	<p>When you select one or more tracks in a sync locked group, then an appropriate icon
 	is shown in the track for sighted users, and the phrase sync locked is added to the
 	name of the track for screen reader users.</p>
-	
+
+
 
 	<h2 id="labels">Labels</h2>
 	
@@ -2673,6 +2659,128 @@
 	to be moved such that
 	each pair of adjacent clips in this series overlap in time, then that clip will
 	also be moved.</p>
+
+
+	<h2 id="realtime-effects">Realtime effects</h2>
+
+	<p>You can now add one or more realtime effects to a track. Unlike when you apply an effect
+	using the Effects menu, adding a realtime effect to a track doesn't change any of the audio
+	data in the track. Rather, when you you playback the track, the these effects are applied
+	in realtime. This means that you can change the parameters of any of these effects during
+	playback and hear the effect of this. And, in addition, at any point in your editing you can
+	come back to a track's realtime effects, and change parameters, or add or remove effects.</p>
+
+	<p>Using this version of Audacity, you can't use any of Audacity's built in effects as
+	realtime effects, but it's planned that some of these effects can be used in future versions.
+	However, you can use a number of effect plugins, notably both VST and VST3 effect plugins.
+	Using VST and VST3 plugins using a screen reader is described in the
+	<a href="#plugins">Plugins section</a>.</p>
+
+	<p>You add and manage the realtime effects for the focused track using the Realtime effects
+	pane, which is described in the next section.</p>
+
+
+	<h3>Realtime effects pane</h3>
+
+	<p>You can open the realtime effects pane by opening the Effects menu and choosing
+	Add Realtime effects, or using the default shortcut, which is the letter <strong>E</strong>.
+	Visually, the pane is shown to the left of the track view. It contains a list of
+	any realtime effects which have be added to the focused track, and you can use
+	it for adding and removing effects, and changing effect parameters. To close
+	the pane, and move to the track view, you can either use the same command that you used
+	to open it, or press the Close button (<strong>Escape</strong>). Note, that when the pane
+	is open, you can use the keystrokes <strong>Ctrl + F6</strong> and
+	<strong>Ctrl + Shift + F6</strong> to move to the other main sections of the Audacity
+	window without closing the pane, but you may not find the need to do that very often.</p>
+
+
+	<p>The Realtime effects pane contains the following controls:</p>
+
+	<ul>
+		<li>A power toggle button, which controls whether any of the effects in the list of
+		effects are enabled.</li>
+
+		<li>A close button (<strong>Escape</strong>), which closes the pane, the track view becoming the focus.</li>
+
+		<li>A list of effects. For each effect, there are three buttons: a power toggle button which
+		controls just that effect; a button which has name of the effect, and which opens a dialog
+		for that effect; and a replace effect button, which opens a menu for either removing the effect
+		or replacing it with another effect.</li>
+
+		<li>An Add effect button.</li>
+
+		<li>If no effects have been added, there's a link to watch a video about realtime
+		effects.</li>
+	</ul>
+
+	<p>So, for example, to add a realtime effect to the focused track:</p>
+
+	<ol>
+		<li>Open the Effects menu, and choose Add realtime effects <strong>E</strong>. The
+		realtime effects pane opens, and becomes the focus.</li>
+
+		<li><strong>Tab</strong> to the Add effect button, press it, and choose an effect
+		from the menu. The effect is added to the list of effects, so the three
+		controls before the add effect button are now the power toggle button,
+		the effect button, and the replace effect button for the added effect.</li>
+
+		<li>So to open the dialog for the added effect, press <strong>Shift + Tab</strong>
+		twice to move to the effect button, and press it. A realtime effect dialog opens,
+		and its structure is described in the next section.</li>
+	</ol>
+
+
+	<h3>Realtime effect dialog</h3>
+
+	<p>The title of a realtime effect dialog consists of the name of the effect,
+	followed by a dash, followed by the name of the track. And the dialog contains
+	the following controls:</p>
+
+	<ul>
+		<li>An Enable toggle button, which has the same state as the power button
+		for the effect in the realtime effects pane. Unfortunately the state of
+		this button is currently not read by screen readers. Often you will easily
+		be able to hear whether or not the the effect is being applied during playback.
+		Alternatively you can check the setting of the power button for the effect
+		in the realtime effects pane, which is read by screen readers.</li>
+
+		<li>A Presets &amp; settings button, which opens a menu which includes commands for
+		factory and user presets, and opening an options dialog box.</li>
+
+		<li>The controls for the particular effect.</li>
+
+		<li>Although there isn't a Close button, you can close the dialog by
+		pressing <strong>Escape</strong>.</li>
+	</ul>
+
+	<p>So that a user can easily control playback using the keyboard without having to
+	switch the focus back to the main window, then nearly all of the keystrokes
+	which can be used in the main Audacity window can be used when any control in
+	the dialog is the focus.</p>
+
+	<p>There are a small set of reserved keystrokes which are used for navigating and
+	interacting with the standard controls, rather than Audacity. However, because of
+	its use to start and stop playback, <strong>Spacebar</strong> controls playback
+	and can't be used for interacting with controls. This is in fact very similar
+	to when you are interacting with controls in the toolbars in the Audacity main
+	window.</p>
+
+	<p>The use of <strong>Spacebar</strong> to control playback affects how you
+	can interact with two types of control: buttons, and check boxes. In the case of a button,
+	it just means that you can only press it using <strong>Enter</strong>, and not
+	<strong>Spacebar</strong> as well. In the case of a check box,  here are two ways
+	of checking it or unchecking. This first is to use the keystroke
+	<strong>Ctrl + Spacebar</strong>, since by default this is not used in Audacity's
+	full set of default keystrokes. The second is to make use of the two standard but little
+	used keystrokes for  unchecking and checking a check box: <strong>minus</strong>
+	and <strong>plus</strong> respectively. On UK and US keyboards, you can use the
+	two keys to the right of the zero key on the top row of the keyboard for these
+	keys.</p>
+
+	<p>After opening one of these realtime effect dialogs, you can return to the main
+	Audacity window without closing it, though you may not want to do this very often.
+	Dialogs with this behaviour are known as modeless dialogs. You can cycle round
+	the Audacity main window and any open modeless dialogs by pressing <strong>Alt + F6</strong>.</p>
 		
 
 	
@@ -2854,7 +2962,7 @@
 	<p>There are a number of settings which may need changing before
 	you make a recording, and they're described in the following sections. Note
 	that a number of these settings can be made either in the Devices category
-	of the Preferences dialog, or an individual dialog, or the Device Toolbar.</p>
+	of the Preferences dialog, or an individual dialog.</p>
     
     
 	<h4 id="audio-interface">Audio interface</h4>
@@ -2879,8 +2987,8 @@
 	
 	<p>You can set this option using either the Interface host combo box in
 	the Devices category of the Preferences dialog, or the Audio host
-	combo box in the Select Audio Host dialog (<strong>Shift + H</strong>),
-	or the Audio Host combo box on the Device toolbar. Note that when you
+	combo box in the Select Audio Host dialog (<strong>Shift + H</strong>).
+	Note that when you
 	change this option, the settings of the recording and playback devices may
 	change, and so you should check these settings.</p>
 
@@ -2889,8 +2997,9 @@
 	
     <p>You can select the recording device using either the recording device
     combo box in the Devices category in the Preferences dialog, or the recording
-	device combo box in the Select Recording Device dialog (<strong>Shift + I</strong>),
-	or the recording device combo box on the Device toolbar.</p>
+	device combo box in the Select Recording Device dialog
+	(<strong>Shift + I</strong>).</p>
+
 	
 	<p>If you're using either the MME or the DirectSound audio interface, then the
 	available devices may also include either “Microsoft Sound Mapper - Input”
@@ -2917,15 +3026,15 @@
     below.</p>
     
     <p>If Audacity can control the level of the recording device, then you can
-    use either Audacity's recording volume slider, or the appropriate Windows control.
-    It's normally easier to use the recording volume slider in Audacity,
+    use either Audacity's recording level slider, or the appropriate Windows control.
+    It's normally easier to use the recording level slider in Audacity,
     which is in the Mixer toolbar in the Upper toolbars section
     of Audacity's main window. To move to it from the Track view table, press
     <strong>Ctrl + F6</strong> twice, and then <strong>Tab</strong> or
-    <strong>Shift + Tab</strong> until you get to the recording volume slider.</p>
+    <strong>Shift + Tab</strong> until you get to the recording level slider.</p>
     
     <p>When Audacity can't control the level of the recording device, this
-    is indicated by the recording volume slider being unavailable.
+    is indicated by the recording level slider being unavailable.
 	For sighted users, the slider appears greyed out, and for users of
 	screen readers, you can't Tab to it. In these cases you have to use the appropriate
 	control which is part of Windows, as described in the
@@ -2936,13 +3045,13 @@
         
     <ul>
         <li>MME or Direct Sound. For many recording devices, you can use
-        Audacity's recording volume slider.</li>
+        Audacity's recording level slider.</li>
 		
         <li>WASAPI. For the loopback devices provided by the WASAPI interface,
         the recording level depends only on the volume levels set in the programs
         which are sending their output to the playback device which you're recording.
         It doesn't depend on the Windows volume of the playback device,
-        or the recording and playback volume sliders in Audacity.</li>
+        or the recording and playback level sliders in Audacity.</li>
     </ul>
 
 	
@@ -2952,9 +3061,8 @@
 	<p>The number of channels of the recording device can be set using either
 	the recording channels combo box in the Devices category of the Preferences
 	dialog, or the recording channels combo box in the Select Recording Channels
-	dialog (<strong>Shift + N</strong>), or the Recording Channels combo box in
-	the Device toolbar. If you're recording using a microphone, then the
-	appropriate setting depends whether it's a mono or stereo microphone.
+	dialog (<strong>Shift + N</strong>). If you're recording using a microphone,
+	then the appropriate setting depends whether it's a mono or stereo microphone.
 	If you're recording from line in, stereo mix, or one of the loopback devices
 	when using WASAPI, then the setting should be stereo.</p>
 	
@@ -3116,11 +3224,6 @@
 		The recording continues until you stop it.</li>
 	</ol>
 
-	<p><strong>Bug warning:</strong> if the overdub option is enabled, so that other tracks are
-	played back during the punch and roll recording, unfortunately these tracks are not played
-	with the correct timings. So it's currently best not to have overdub enabled during
-	punch and roll recording.</p>
-
 	<p>Using Punch and roll record, you base the timing of the new recording on listening to
 	the playback of the audio before the punch in point. However, within Audacity there is a delay
 	between the played and the recorded audio. There is a default compensation for this,
@@ -3236,7 +3339,7 @@
 	<ol>
 		<li>Choose Rhythm Track from the Generate menu.</li>
 		
-		<li>The second control is the Tempo [beats per minute] edit
+		<li>The first control is the Tempo [beats per minute] edit
 		box, and its default value is 120. Type 60, and then
 		press <strong>Tab</strong> twice to move to the next edit
 		box.</li>
@@ -3268,7 +3371,7 @@
 	<ol>
 		<li>Deselect the first track, and select the second track</li>
 		
-		<li>Press <strong>Home</strong>, then <strong>Shift + End</strong>
+		<li>Press <strong>J</strong>, then <strong>Shift + K</strong>
 		to select a time range.</li>
 		
 		<li>Choose Amplify from the effects menu.</li>
@@ -3347,7 +3450,93 @@
 		should be changed to -110ms.</li>
 	</ol>
     
-    
+ 
+
+	<h2 id="plugins">Plugins</h2>
+
+	<p>When Audacity is installed, a reasonable number of effects, generators and analysers are
+	included. You can also install plugins for more of these from various providers, as described on the
+	<a href="https://plugins.audacityteam.org/">Audacity plugins website</a>.</p>
+
+	<p>The coverage of plugins in this guide is restricted to areas which are of particular interest
+	to users of screen readers.</p>
+
+
+	<h3>Nyquist plugins</h3>
+
+	<p>Nyquist is a programming language for audio processing, and Audacity provides a framework
+	for plugins to be written in this language. A number of Nyquist plugins are included in Audacity,
+	but users of screen readers may find a number of additional Nyquist plugins useful. This is a
+	link to the listing of
+	<a href="https://plugins.audacityteam.org/nyquist-plugins/effect-plugins">Nyquist effect plugins</a>.
+	The
+	<a href="https://plugins.audacityteam.org/nyquist-plugins/effect-plugins/amplify-mix-and-pan-effects#ramp-panning"></a>
+	is an example of a useful effect.</p>
+
+	<p>Install a Nyquist effect which you have downloaded:</p>
+
+	<ol>
+		<li>On the Tools menu, choose Nyquist plugin installer. A dialog with than name opens.</li>
+
+		<li><strong>Tab</strong> to the Browse button, and press it. A Select one or more files
+		dialog opens. Select the plugin file, and press the Open button. You are returned to
+		the Nyquist plugin installer dialog.</li>
+
+		<li>Press the Apply button. A Nyquist plugin installer message box should open with news
+		of success and some details. Press the OK button.</li>
+
+		<li>Restart Audacity. The plugin should now be available to use.</li>
+	</ol>
+
+
+	<h3>VST and VST3 effect plugins</h3>
+
+	<p>Virtual Studio Technology (VST) plugins use an interface between the plugin and a program
+	such as Audacity which was developed by the Steinberg company. There are a couple of versions
+	of the interface currently in use, VST2 (which is also known as just VST) and VST3. Both
+	of these can be used in Audacity. As well as VST effect plugins, there are also VST instrument
+	plugins, but these currently can't be used in Audacity.</p>
+
+
+	<h4>Interface in effect dialog</h4>
+
+	<p>Nearly all VST and VST3 effects have by default a custom graphical user interface
+	for changing the values of its settings which is not accessible for keyboard users.
+	However, Audacity provides an alternative
+	interface which is accessible. For VST effects there's a slider for each parameter,
+	and for VST 3 effects there's either a slider or a check box for each parameter.</p>
+
+	<p>When a slider is used for a parameter, its value could be for example, a frequency or level,
+	or an option, such as mono or stereo, not just a plain percentage. For screen readers,
+	the parameter's value is appended to the name of the parameter. So when you <strong>Tab</strong>
+	to a slider, your screen reader reads the parameter's name,  the parameter's value,
+	and the slider's position, a number in the range 0 to 100. When you change the value
+	of a slider, using the standard keystrokes such as <strong>Left arrow</strong>
+	and <strong>Right arrow</strong>, only the new position of the the slider is read.
+	To read the new parameter value depends on which screen reader you're using. If
+	you're using NVDA or Narrator, you can simple press the keystroke to read the
+	current line. However, if you do this using Jaws, Jaws unfortunately reads a
+	parameter value which is incorrect. To read a correct value, you have to
+	<strong>Tab</strong> away from the control, and then <strong>Shift + Tab</strong>
+	back again.</p>
+
+	<p>When you first open a VST or VST3 effect, its custom graphical user interface is
+	used. You will only be able to tab to a small number of controls, such as the
+	Presets &amp; settings button. To switch to using a keyboard accessible user interface:</p>
+
+	<ol>
+		<li>Press the Presets &amp; settings button, and choose Options. An effect options dialog
+		opens.</li>
+
+		<li><strong>Tab</strong> to the enable graphical interface check box, an uncheck it.</li>
+
+		<li>Press <strong>Enter</strong> to press the default OK button.</li>
+
+		<li>For the change of interface to take effect, you then have to close the effect
+		dialog, and then reopen it.</li>
+	</ol>
+
+
 	
 	<h2 id="preferences">Preferences</h2>
 	
@@ -3454,53 +3643,28 @@
 	Help menu, choose About, and in the About dialog move to the build information
 	page. Included in the information is the build type. For 64 bit Audacity
 	this will be “CMake Release build (debug level 1), 64 bits”,
-	and for 32 bit Audacity, just “CMake Release build (debug level 1)”.
-	Instructions for downloading and installing the two versions of
-	the FFmpeg library are given in the next two sections. There
-	are no issues with having both versions installed at the same time.</p>
+	and for 32 bit Audacity, “CMake Release build (debug level 1), 32 bits”.
+	Instructions for downloading and installing either version of
+	the FFmpeg library are as follows:</p>
 
-
-	<h4>FFmpeg library for 64 bit version of Audacity</h4>
-
-	<p>To download and install the FFmpeg library:</p>
-	
 	<ol>
-		<li>Go to the website whose address is
-		<a href="https://lame.buanzo.org/ffmpeg64audacity.php">lame.buanzo.org/ffmpeg64audacity.php</a> .</li>
-		
-		<li>On this page, find the link FFmpeg v2.2.2 INSTALLER (.EXE), and then open it to download
-		a file  which has the same name as the link. Note that if the link on the page is
-		to a version later than 2.2.2 then that will be OK too.</li>
-		
-		<li>Open the downloaded file, and a setup wizard opens. The
-		default location for the FFmpeg library is a newly created
-		FFmpeg for Audacity folder in the Program Files folder.</li> 
+		<li>Go the the website whose address is
+		<a href="https://lame.buanzo.org/#lamewindl">lame.buanzo.org/#lamewindl</a>.
+		</li>
+
+		<li>On this page, find the link FFmpeg_for_Audacity_3.2_on_Windows.zip, and then
+		open it to download a file which has the same name as the link.</li>
+
+		<li>Extract the contents of this zip file. It contains two installers, one for
+		32 bit Audacity, and one for 64 bit Audacity. The name of the installer for
+		64 bit Audacity contains the number 64.</li>
+
+		<li>Open the appropriate installer. A setup wizard opens, which installs the
+		FFmpeg library in a folder where Audacity will automatically find it the
+		next time it's opened.</li>
 	</ol>
 
-	<p>Then, the next time Audacity is opened, it automatically finds the
-	FFmpeg library.</p>
-
-
-	<h4>FFmpeg library for 32 bit version of Audacity</h4>
-	
-	<p>To download and install the FFmpeg library:</p>
-	
-	<ol>
-		<li>Go to the website whose address is
-		<a href="https://lame.buanzo.org/">lame.buanzo.org</a> .</li>
-		
-		<li>On this page, find the link ffmpeg-win-2.2.2.exe, and then open it to download
-		a file  which has the same name as the link. Note that if the link on the page is
-		to a version later than 2.2.2 then that will be OK too.</li>
-		
-		<li>Open the downloaded file, and a setup wizard opens. The
-		default location for the FFmpeg library is a newly created
-		FFmpeg for Audacity folder in either the Program Files (x86) folder on 64-bit Windows,
-		or the Program Files folder on 32-bit Windows.</li> 
-	</ol>	
-	
-	<p>Then, the next time Audacity is opened, it automatically finds the
-	FFmpeg library.</p>
+	<p>Note that there are no issues with having both versions installed at the same time.</p>
 		
 	
 	<h3 id="edit-metadata-tags-dialog-opens-during-export">Edit Metadata Tags dialog opens
@@ -3591,10 +3755,23 @@
 
 	<p>When the option is not enabled, then if any audio is added to or removed
 	from a track, then the positions of all the clips in the track which start
-	after the added or removed audio are unchanged. In Audacity, clips cannot
+	after the added or removed audio are unchanged. In Audacity, clips cannSot
 	overlap, so if you try to add audio which would go past the start of the next clip,
 	you will get a warning dialog telling you that there is not enough room available
 	to either paste the selection or generate the audio.</p>
+
+
+	<h3 id="sorting-or-grouping-of-the-effect-menu">Sorting or grouping of the Effect menu</h3>
+
+	<p>There are a number of possible options for how the effects on the Effect menu
+	are grouped or sorted. The default option is for the effects which are included
+	with Audacity are grouped by category, and any additional effect plugins are grouped
+	by the publisher.</p>
+
+	<p>In the Effects category of the Preferences dialog, in the Effect Options grouping,
+	there's a Sort or Group combo box, which by default is set to the default option which
+	was described above. Alternative options include Sorted by Effect name, which in fact
+	was the default prior to version 3.2.0 of Audacity.</p>
 	
 	
 	<h3>Recording options</h3>
@@ -3780,8 +3957,9 @@
 	If you don't want this automatic checking to happen, then in the Preferences
 	dialog, in the Application category, there's a Check for updates
 	check box. By default it's checked.</p>
-	
-	
+
+
+
 	<h2 id="sound-dialog-in-windows">Sound dialog in Windows</h2>
 	
 	<p>The Windows Sound dialog in Windows 7 and later versions has four pages:
@@ -4104,6 +4282,10 @@
 		<tr>
 			<td>Solo/Unsolo focused track</td>
 			<td>Shift + S</td>
+		</tr>
+		<tr>
+			<td>Open/close realtime effects pane for focused track</td>
+			<td>E</td>
 		</tr>				
 	</tbody></table>
 	

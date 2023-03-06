@@ -15,6 +15,18 @@ Téléchargement :
 - [versions de développement ADDON_DEV_URL]
 
 
+
+
++ v2.8 (14/02/2023) +
+- Compatibilité avec NVDA 2023.1
+- compatibilité avec audacity 3.2.3
+- abandon du support des versions inférieures à audacity 3.0
+
+
+Changements:
+- mise à jour du guide  d'Audacity pour la version 3.2.3  [voir le guide écrit par David Bell https://vip.chowo.co.uk/wp-content/uploads/jaws/Audacity-3.2.3-Guide.html]).
+
+
 + v2.7 (26/05/2022) +
 Corrections de bogues:
 - remplacement de curLang par getLanguage

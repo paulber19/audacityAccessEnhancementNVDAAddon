@@ -1,7 +1,7 @@
 # -*- coding: UTF-8 -*-
 # appModules\audacity\au_objects.py
 # a part of audacityAccessEnhancement add-on
-# Copyright 2018-2022,paulber19
+# Copyright 2018-2023,paulber19
 # This file is covered by the GNU General Public License.
 
 
@@ -16,7 +16,7 @@ from oleacc import (
 
 addonHandler.initTranslation()
 
-# object hierarchy
+# object hierarchy id
 HIE_TrackView = 1
 HIE_ToolDock1 = 2
 HIE_ToolDock2 = 3
@@ -42,7 +42,13 @@ HIE_TimePane = 22
 HIE_TimeAudioPosition = 23
 HIE_SelectionAudioPosition = 24
 
-_controlIDs = {
+# control ids changed in  audacity 3.2 
+_controlIDs_3200 = {
+	HIE_SelectionToolBar: 9,  # pane in toolDock2 object
+	HIE_TimePane: 13,  # pane in selectionToolbar object
+}
+# control IDs for audacity version until v3.2
+_controlIDsBase = {
 	HIE_TrackView: 1003,  # unknown role in  mainPanelObject
 	HIE_ToolDock1: 1,  # pane in topPanelObject
 	HIE_ToolDock2: 2,  # pane in mainFrame object
@@ -60,6 +66,17 @@ _controlIDs = {
 	HIE_StopButton: 11002,  # button in transportToolBar object
 	HIE_RecordButton: 11005,  # button in transportToolBar object
 }
+# for audacity 3.2
+_hierarchy_3200 = {
+	HIE_PlaybackSpeedSlider: "2",  # from PlayAtSpeedToolBarObject
+	HIE_RecordMeterPeak: "1",  # from HIE_RecordingMeterToolbar
+	HIE_PlayMeterPeak: "1",  # from HIE_PlaybackMeterToolbar
+	HIE_RecordingSlider: "1",  # from MixerToolbarObject
+	HIE_PlaybackSlider: "2",  # from MixerToolbarObject
+}
+
+
+
 
 # for audacity 3.0.0
 _hierarchy_3000 = {
@@ -71,54 +88,24 @@ _hierarchy_3000 = {
 }
 
 
-# for audacity 2.4.2
-_hierarchy_2420 = {
-	HIE_PlaybackSpeedSlider: "2",  # from PlayAtSpeedToolBarObject
-	HIE_RecordMeterPeak: "1",  # from HIE_RecordingMeterToolbar
-	HIE_PlayMeterPeak: "1",  # from HIE_PlaybackMeterToolbar
-	HIE_RecordingSlider: "2",  # from MixerToolbarObject
-	HIE_PlaybackSlider: "4",  # from MixerToolbarObject
-}
-
-# for audacity 2.4.1
-_hierarchy_2410 = {
-	HIE_PlaybackSpeedSlider: "2",  # from PlayAtSpeedToolBarObject
-	HIE_RecordMeterPeak: "1",  # from HIE_RecordingMeterToolbar
-	HIE_PlayMeterPeak: "1",  # from HIE_PlaybackMeterToolbar
-	HIE_RecordingSlider: "2",  # from MixerToolbarObject
-	HIE_PlaybackSlider: "4",  # from MixerToolbarObject
-}
-
-# for audacity 2.3.3
-_hierarchy_2330 = {
-	HIE_PlaybackSpeedSlider: "2",  # from PlayAtSpeedToolBarObject
-	HIE_RecordMeterPeak: "1",  # from HIE_RecordingMeterToolbar
-	HIE_PlayMeterPeak: "1",  # from HIE_PlaybackMeterToolbar
-	HIE_RecordingSlider: "2",  # from MixerToolbarObject
-	HIE_PlaybackSlider: "4",  # from MixerToolbarObject
-}
-# for audacity 2.3.2
-_hierarchy_2320 = {
-	HIE_PlaybackSpeedSlider: "2",  # from PlayAtSpeedToolBarObject
-	HIE_RecordMeterPeak: "1",  # from HIE_RecordingMeterToolbar
-	HIE_PlayMeterPeak: "1",  # from HIE_PlaybackMeterToolbar
-	HIE_RecordingSlider: "2",  # from MixerToolbarObject
-	HIE_PlaybackSlider: "4",   # from MixerToolbarObject
-}
-
 
 _curAddon = addonHandler.getCodeAddon()
 _addonSummary = _curAddon.manifest['summary']
 _audacityHierarchyPaths = None
 _audacityVersionID = None
+_controlIDs = None
 
 
 def initialize(appModule):
-	global _audacityHierarchyPaths, _audacityVersionID
+	global _audacityHierarchyPaths, _audacityVersionID, _controlIDs 
 	version = appModule._get_productVersion()
 	_audacityVersionID = int("".join(version.split(",")))
-	id = _hierarchy_2420
-	if _audacityVersionID < 2410:
+	id = _hierarchy_3000
+	_controlIDs  = _controlIDsBase.copy()
+	if _audacityVersionID >= 3200:
+		_controlIDs.update(_controlIDs_3200)
+		id = _hierarchy_3200
+	if _audacityVersionID < 3000:
 		log.warning(
 			"This version %s of Audacity is not supported" % version)
 	_audacityHierarchyPaths = id
@@ -371,8 +358,8 @@ def isPressed(button):
 		o = _buttonObjectsDic[button]()
 	except Exception:
 		log.warning("Button %s not found" % button)
-		o = None
-	if o and o.IAccessibleObject.accState(0) & STATE_SYSTEM_PRESSED:
+		return False
+	if o.IAccessibleObject.accState(0) & STATE_SYSTEM_PRESSED:
 		return True
 	return False
 
@@ -393,21 +380,24 @@ def isAvailable(button):
 def recordingMeterToolbarObject():
 	obj = toolDock1Object()
 	if obj:
-		# the only solution to find transport toolbar
 		for i in range(obj.childCount):
 			o = obj.getChild(i)
-			if o.windowControlID == 3 and o.childCount == 3:
+			if o.windowControlID == 3 and o.childCount in [3, 4]:
 				return o
 	log.warning("error: recordingMeterToolbarObject not found")
 	return None
 
 
 def recordMeterPeakObject():
-	o = recordingMeterToolbarObject()
-	if o:
-		o = getObjectByHierarchy(o, HIE_RecordMeterPeak)
-		if o:
-			return o
+	obj = recordingMeterToolbarObject()
+	if obj:
+		for i in range(obj.childCount):
+			o = obj.getChild(i)
+			if o.role in [9, 36]:
+				return o
+		#o = getObjectByHierarchy(o, HIE_RecordMeterPeak)
+		#if o:
+			#return o
 		log.warning("recordMeterPeakObject not found")
 	return None
 
@@ -417,20 +407,22 @@ def playbackMeterToolbarObject():
 	if obj:
 		for i in range(obj.childCount):
 			o = obj.getChild(i)
-			if o.windowControlID == 4 and o.childCount == 3:
+			if o.windowControlID == 4 and o.childCount in [3, 4]:
 				return o
 	log.warning("error: playbackMeterToolbarObject not found")
 	return None
 
 
 def playMeterPeakObject():
-	o = playbackMeterToolbarObject()
-	if o:
-		o = getObjectByHierarchy(o, HIE_PlayMeterPeak)
-		if o:
-			return o
+	obj = playbackMeterToolbarObject()
+	if obj:
+		for i in range(obj.childCount):
+			o = obj.getChild(i)
+			if o.role in [9, 36]:
+				return o
 		log.warning("playMeterPeakObject not found")
 	return None
+
 
 
 def mixerToolbarObject():
@@ -438,8 +430,15 @@ def mixerToolbarObject():
 	if obj:
 		for i in range(obj.childCount):
 			o = obj.getChild(i)
-			if o.windowControlID == 5 and o.childCount == 6:
-				return o
+			if _audacityVersionID  >=3230:
+				if o.windowControlID == 2 and o.childCount == 6:
+					return o
+			elif _audacityVersionID >= 3200:
+				if o.windowControlID == 2 and o.childCount == 4:
+					return o
+			else:
+				if o.windowControlID == 5 and o.childCount == 6:
+					return o
 	log.warning("mixerToolbarObject not found")
 	return None
 
@@ -447,17 +446,23 @@ def mixerToolbarObject():
 def recordingSliderObject():
 	o = mixerToolbarObject()
 	if o:
-		o = getObjectByHierarchy(o, HIE_RecordingSlider)
-		if o:
-			return o
-		log.warning("recordingSliderObject not found")
+		if _audacityVersionID  >=3230:
+			o = o.getChild(1)
+		else:
+			o = getObjectByHierarchy(o, HIE_RecordingSlider)
+	if o:
+		return o
+	log.warning("recordingSliderObject not found")
 	return None
 
 
 def playbackSliderObject():
 	o = mixerToolbarObject()
 	if o:
-		o = getObjectByHierarchy(o, HIE_PlaybackSlider)
+		if _audacityVersionID  >=3230:
+			o = o.getChild(0)
+		else:
+			o = getObjectByHierarchy(o, HIE_PlaybackSlider)
 		if o:
 			return o
 		log.warning("playbackSliderObject not found")
@@ -465,12 +470,16 @@ def playbackSliderObject():
 
 
 def PlayAtSpeedToolBarObject():
-	obj = toolDock1Object()
+	obj = _toolDock2Object()
 	if obj:
 		for i in range(obj.childCount):
 			o = obj.getChild(i)
-			if o.windowControlID == 7 and o.childCount == 4:
-				return o
+			if _audacityVersionID >= 3200:
+				if o.windowControlID == 6 and o.childCount == 4:
+					return o
+			else:
+				if o.windowControlID == 7 and o.childCount == 4:
+					return o
 	log.warning("PlayAtSpeedToolBarObject not found")
 	return None
 
@@ -480,3 +489,57 @@ def playbackSpeedSliderObject():
 	if o:
 		return getObjectByHierarchy(o, HIE_PlaybackSpeedSlider)
 	return None
+
+import ui
+def reportTransportButtonsState():
+	if _audacityVersionID  >=3230:
+		reportTransportButtonsState_3200()
+	else:
+		reportTransportButtonsState_3000()
+		
+	
+
+
+def reportTransportButtonsState_3000():
+
+	pressed = False
+	if isAvailable("record") and isPressed("record"):
+		# Translators: message to user when button record is pressed.
+		ui.message(_("record button pressed"))
+		pressed = True
+
+	if isAvailable("play") and isPressed("play"):
+		# Translators: message to the user when play button is pressed.
+		ui.message(_("play button pressed"))
+		pressed = True
+	if isPressed("pause"):
+		# Translators: message to the user when pause button is pressed.
+		ui.message(_("Pause button pressed"))
+		pressed = True
+
+	if not pressed:
+		# Translators: message to the user when no button is pressed.
+		ui.message(_("No button pressed"))
+
+
+def reportTransportButtonsState_3200():
+	# in audacity 3.2.x, play and pause  buttons turned into a text box
+
+	pressed = False
+	if isAvailable("record") and isPressed("record"):
+		# Translators: message to user when button record is pressed.
+		ui.message(_("record button pressed"))
+		pressed = True
+
+	o = playButtonObject()
+	if o:
+		ui.message(o.name)
+	o = pauseButtonObject()
+	if o:
+		# Translators: message to the user when pause button is pressed.
+		ui.message(o.name)
+		pressed = True
+
+	if not pressed:
+		# Translators: message to the user when no button is pressed.
+		ui.message(_("No button pressed"))

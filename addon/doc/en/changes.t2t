@@ -17,6 +17,16 @@ Download:
 
 Sorry, but this document is an automatic translation from french language.
 
++ v2.8 (February/14/2023) +
+- compatibility with audacity 3.2.3
+- compatibility with NVDA 2023.1
+- discontinuation of versions prior to audacity 3.0.
+
+
+Changes:
+- updating the Audacity guide for versions  3.2.3 ( [see guide written by David Bell https://vip.chowo.co.uk/wp-content/uploads/jaws/Audacity-3.2.3-Guide.html] )
+
+
 + v2.7 (May/26/2022) +
 Bug fixes:
 - replacement of curLang by getLanguage

@@ -274,7 +274,8 @@ class Slider(object):
 			return
 		name = self.obj.name
 		value = self.obj.value
-		ui.message("%s: %s" % (name, value))
+		if value!= None:
+			ui.message("%s: %s" % (name, value))
 
 
 class PlaybackSlider(Slider):
@@ -1255,6 +1256,8 @@ class AppModule(AppModule):
 		stopTaskTimer()
 		if not self.inMainWindow(api.getFocusObject()):
 			return
+		au_objects.reportTransportButtonsState()
+		return
 		pressed = False
 		if au_objects.isAvailable("record") and au_objects.isPressed("record"):
 			# Translators: message to user when button record is pressed.

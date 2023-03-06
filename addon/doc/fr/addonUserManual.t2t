@@ -71,7 +71,7 @@ Dans le cas d'une mise à jour automatique et si une nouvelle version est détec
 Dans le cas d'une mise à jour vers une  version stable, Le bouton "Quoi de neuf" offre la possibilité d'ouvrir, dans le navigateur, l'historique de l'extension et ainsi pouvoir connaitre les nouveautés de la version proposée.
 
 ++ Compatibilité ++
-Cette extension a été testée avec Audacity version 3.2, 3.1, 3.0 et 2.4.2. Les versions précédentes d'Audacity ne sont pas soutenues.
+Cette extension a été testée avec Audacity version 3.2.3,  3.1, 3.0. Les versions précédentes d'Audacity ne sont pas soutenues.
 
 ++ Recommandations de configuration ++
 Pour un bon fonctionnement de l'extension, il est nécessaire de :
