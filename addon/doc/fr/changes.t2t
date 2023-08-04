@@ -15,6 +15,8 @@ Téléchargement :
 - [versions de développement ADDON_DEV_URL]
 
 
++ v2.9 (03/08/2023) +
+- la position audio n'est plus annoncé après la relance de la lecture. Cela se produisait   avec les versions 3.2.2 et supérieures d'Audacity. Dans ces versions , l'état des boutons "lecture" et "Pause" n'est plus disponible avec MSAA), contrairement aux précédentes versions.
 
 
 + v2.8 (14/02/2023) +

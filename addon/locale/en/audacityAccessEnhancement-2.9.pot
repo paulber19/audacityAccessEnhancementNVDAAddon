@@ -6,9 +6,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: audacityAccessEnhancement 2.8\n"
+"Project-Id-Version: audacityAccessEnhancement 2.9\n"
 "Report-Msgid-Bugs-To: nvda-translations@freelists.org\n"
-"POT-Creation-Date: 2023-03-03 11:11+0100\n"
+"POT-Creation-Date: 2023-08-03 19:57+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -103,23 +103,23 @@ msgid "Error, the information cannot be copied to the clipboard"
 msgstr ""
 
 #. Translators: message to user when button record is pressed.
-#: appModules\audacity\au_objects.py:508 appModules\audacity\au_objects.py:531
+#: appModules\audacity\au_objects.py:520 appModules\audacity\au_objects.py:543
 #: appModules\audacity\__init__.py:1264
 msgid "record button pressed"
 msgstr ""
 
 #. Translators: message to the user when play button is pressed.
-#: appModules\audacity\au_objects.py:513 appModules\audacity\__init__.py:1269
+#: appModules\audacity\au_objects.py:525 appModules\audacity\__init__.py:1269
 msgid "play button pressed"
 msgstr ""
 
 #. Translators: message to the user when pause button is pressed.
-#: appModules\audacity\au_objects.py:517 appModules\audacity\__init__.py:1273
+#: appModules\audacity\au_objects.py:529 appModules\audacity\__init__.py:1273
 msgid "Pause button pressed"
 msgstr ""
 
 #. Translators: message to the user when no button is pressed.
-#: appModules\audacity\au_objects.py:522 appModules\audacity\au_objects.py:545
+#: appModules\audacity\au_objects.py:534 appModules\audacity\au_objects.py:557
 #: appModules\audacity\__init__.py:1278
 msgid "No button pressed"
 msgstr ""

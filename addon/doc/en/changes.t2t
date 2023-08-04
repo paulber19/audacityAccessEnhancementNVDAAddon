@@ -17,6 +17,10 @@ Download:
 
 Sorry, but this document is an automatic translation from french language.
 
++ v2.9 (August/03/2023) +
+- the audio position is no longer announced after restarting playback. This happened with Audacity versions 3.2.2 and above. In these versions, the state of the "play" and "pause" buttons is no longer available with MSAA), unlike previous versions.
+
+
 + v2.8 (February/14/2023) +
 - compatibility with audacity 3.2.3
 - compatibility with NVDA 2023.1

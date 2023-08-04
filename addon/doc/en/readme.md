@@ -30,5 +30,5 @@ This addon's version has been tested with audacity 3.2, 3.1, 3.0.
 Previous versions of Audacity are not  supported.
 
 
-[1]: https://github.com/paulber007/AllMyNVDAAddons/raw/master/audacityAccessEnhancement/audacityAccessEnhancement-2.8.nvda-addon
+[1]: https://github.com/paulber007/AllMyNVDAAddons/raw/master/audacityAccessEnhancement/audacityAccessEnhancement-2.9.nvda-addon
 [2]: https://github.com/paulber007/AllMyNVDAAddons/tree/master/audacityAccessEnhancement/dev

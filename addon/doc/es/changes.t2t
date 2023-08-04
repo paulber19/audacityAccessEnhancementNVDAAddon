@@ -15,6 +15,10 @@ Descarga:
 - [Versiones de desarrollo ADDON_DEV_URL]
 
 
++ v2.9 (03/03/2023) +
+- la posición del audio ya no se anuncia después de reiniciar la reproducción. Esto sucedió con las versiones de Audacity 3.2.2 y superiores. En estas versiones, el estado de los botones "reproducir" y "pausar" ya no está disponible con MSAA), a diferencia de las versiones anteriores.
+
+
 + v2.8 (14/02/2023) +
 - Compatibilidad con NVDA 2023.1
 - compatibilidad con audacity 3.2.3

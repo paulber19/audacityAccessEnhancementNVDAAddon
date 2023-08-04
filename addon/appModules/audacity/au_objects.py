@@ -359,6 +359,18 @@ def isPressed(button):
 	except Exception:
 		log.warning("Button %s not found" % button)
 		return False
+	# in v3.3.3, pressed state is not available for play and pause buttons
+	# since version 3.2.2, the state of the "play" and "pause" buttons is not available
+	# so the only thing we can do is to look to the button name
+	# name is "play" or "pause" folowed by "button" and "pressed" or "not pressed"
+	# if name has 3 words, state is pressed else not pressed
+	# we hope this works in all languages
+	if _audacityVersionID >= 3200and button in ["play", "pause"]:
+		nameList = o.name.split(" ")
+		if len(nameList) == 3:
+			return True
+		return False
+	# for other buttonslike "record" button
 	if o.IAccessibleObject.accState(0) & STATE_SYSTEM_PRESSED:
 		return True
 	return False
