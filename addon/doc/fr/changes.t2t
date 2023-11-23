@@ -5,9 +5,8 @@ Auteur : ADDON_AUTHOR_NAME
 %!includeconf: ../addon_global.t2tconf
 %!includeconf: addon_informations.t2tconf
 
-URL : ADDON_AUTHOR_URL
+URL: [ADDON_REPOSITORY ADDON_REPOSITORY]
 
-[Dépot GitHub : ADDON_REPOSITORY ADDON_REPOSITORY]
 
 Téléchargement :
 - [Version stable actuelle : ADDON_CUR_VERSION ADDON_DOWNLOAD_SERVER1]
@@ -15,8 +14,30 @@ Téléchargement :
 - [versions de développement ADDON_DEV_URL]
 
 
++ v3.0 (23/11/2023) +
+Nouveautés:
+- nomage des panneaux de barres d'outils en "paneaux inférieur" et "Panneau supérieur".
+- nommage du panneau contenant la vue de piste en "Panneau principal".
+
+
+Changements:
+- Les scripts pour annoncer le début, la fin la durée et le centre de la sélection sont remplacés par :
+ - un script pour annoncer la sélection,
+ - un script pour annoncer le premier temps de la sélection,
+ - un script pour annoncer le second temps de la sélection.
+- dans la documentation, la terminologie "zone de sélection numérique" est remplacée par "boite de sélection numérique" conformément au guide d'Audacity.
+- dans la documentation, le terme groupe" pour les barre d'outils est remplacé par "panneau".
+- la fonctionnalité "Vocalisation des boites de sélection numérique du temps Audacity " n'est pas disponible dans les versions 3.3.x d'Audacity.
+
+
+Compatibilité:
+- Cette version de l'extension a été testée avec Audacity 3.4, 3.4.2, 3.3.0 et 3.3.3. Elle devrait aussi être compatible avec les versions 3.3.1 et 3.3.2, mais aucun test n'a été fait.
+- La compatibilité avec les versions antérieures à la 3.3.0 n'est plus assurée.
+- les versions de NVDA inférieures à la 2022.1 ne sont plus supportés.
+
+
 + v2.9 (03/08/2023) +
-- la position audio n'est plus annoncé après la relance de la lecture. Cela se produisait   avec les versions 3.2.2 et supérieures d'Audacity. Dans ces versions , l'état des boutons "lecture" et "Pause" n'est plus disponible avec MSAA), contrairement aux précédentes versions.
+- la position audio n'est plus annoncé après la relance de la lecture. Cela se produisait avec les versions 3.2.2 et supérieures d'Audacity. Dans ces versions , l'état des boutons "lecture" et "Pause" n'est plus disponible avec MSAA), contrairement aux précédentes versions.
 
 
 + v2.8 (14/02/2023) +
@@ -26,18 +47,18 @@ Téléchargement :
 
 
 Changements:
-- mise à jour du guide  d'Audacity pour la version 3.2.3  [voir le guide écrit par David Bell https://vip.chowo.co.uk/wp-content/uploads/jaws/Audacity-3.2.3-Guide.html]).
+- mise à jour du guide d'Audacity pour la version 3.2.3 [voir le guide écrit par David Bell https://vip.chowo.co.uk/wp-content/uploads/jaws/Audacity-3.2.3-Guide.html]).
 
 
 + v2.7 (26/05/2022) +
 Corrections de bogues:
 - remplacement de curLang par getLanguage
 - erreur lors du lancement d'un script dans le dialogue qui liste les scripts de l'interpréteur de commandes.
-- certains messages étaient vocalisés mais  n'étaient pas affichés sur l'afficheur braille.
+- certains messages étaient vocalisés mais n'étaient pas affichés sur l'afficheur braille.
 
 
 Changements:
-- mise à jour du guide  d'Audacity pour les versions 3.1.0 à 3.1.3  ([voir le guide écrit par David Bell https://vip.chowo.co.uk/wp-content/uploads/jaws/Audacity-3.1.0-Guide.html]).
+- mise à jour du guide d'Audacity pour les versions 3.1.0 à 3.1.3 ([voir le guide écrit par David Bell https://vip.chowo.co.uk/wp-content/uploads/jaws/Audacity-3.1.0-Guide.html]).
 
 
 + v2.6 (04/02/2022) +
@@ -59,7 +80,7 @@ Changements:
 Ajout traduction turque
 
 + v2.4 (18/06/2021) +
-- Compatibilité avec NVDA 2021.1. Les versions de NVDA antérieures à  la 2019.3 ne sont pas supportées.
+- Compatibilité avec NVDA 2021.1. Les versions de NVDA antérieures à la 2019.3 ne sont pas supportées.
 - suppression du code concernant Python 2.7.
 - compatibilité avec audacity 3.0.2
 

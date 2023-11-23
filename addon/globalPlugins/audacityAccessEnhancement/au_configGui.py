@@ -1,6 +1,6 @@
 # globalPlugins\audacityAccessEnhancement\au_configGui.py
 # a part of audacityAccessEnhancement add-on
-# Copyright 2018-2021,paulber19
+# Copyright 2018-2023,paulber19
 # released under GPL.
 
 import addonHandler
@@ -40,7 +40,7 @@ class OptionsSettingsPanel(SettingsPanel):
 			_addonConfigManager .toggleUseSpaceBarToPressButtonOption(False))
 		# Translators: This is the label for a checkbox
 		# OptionsSettingsPanel
-		labelText = _("Report toolbars's name ")
+		labelText = _("Report name of toolbars's Panels")
 		self.reportToolbarNameOnFocusEnteredBox = sHelper.addItem(wx.CheckBox(
 			self, wx.ID_ANY, label=labelText))
 		self.reportToolbarNameOnFocusEnteredBox.SetValue(
@@ -88,7 +88,7 @@ class UpdateSettingsPanel(SettingsPanel):
 		sHelper = gui.guiHelper.BoxSizerHelper(self, sizer=settingsSizer)
 		# Translators: This is the label for a checkbox
 		# UpdateSettingsPanel
-		labelText = _("Automatically check for &updates ")
+		labelText = _("Automatically check for &updates")
 		self.autoCheckForUpdatesCheckBox = sHelper.addItem(wx.CheckBox(
 			self, wx.ID_ANY, label=labelText))
 		self.autoCheckForUpdatesCheckBox.SetValue(

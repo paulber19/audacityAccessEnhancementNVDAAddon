@@ -58,6 +58,12 @@ class ApplicationSettingsManager(object):
 		key = "SelectionFormat"
 		return settings[key]
 
+	def getRecordTimeFormat(self):
+		return "hh:mm:ss"
+
+	def getRecordDurationFormat(self):
+		return "dd:hh:mm:ss"
+
 
 class AudacityCFGFileHandler(object):
 	_fileName = "audacity.cfg"
@@ -75,6 +81,7 @@ class AudacityCFGFileHandler(object):
 	def _load(self):
 		settings = self._defaultSettings.copy()
 		if not os.path.exists(self.audacityCFGFilePath):
+			log.debug("AudacityCFGFileHandler: Default settings are used")
 			return settings
 		src = codecs.open(self.audacityCFGFilePath, "r", "utf_8", errors="replace")
 		for line in src:
@@ -84,4 +91,5 @@ class AudacityCFGFileHandler(object):
 			k = lineList[0].strip()
 			if k in self._defaultSettings:
 				settings[k] = lineList[1].strip()
+		log.debug("AudacityCFGFileHandler: settings loaded: %s" % settings)
 		return settings

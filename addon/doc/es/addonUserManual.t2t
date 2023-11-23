@@ -5,9 +5,8 @@ Autor: ADDON_AUTHOR_NAME
 %!includeconf: ../addon_userManual.t2tconf
 %!includeconf: addon_informations.t2tconf
 %!includeconf: addon_keys.t2tconf
-URL: ADDON_AUTHOR_URL
+URL: [ADDON_REPOSITORY ADDON_REPOSITORY]
 
-[Repositorio en GitHub: ADDON_REPOSITORY ADDON_REPOSITORY]
 
 Descargar:
 - [Versión estable ADDON_CUR_VERSION ADDON_DOWNLOAD_SERVER1]
@@ -30,14 +29,15 @@ Este complemento trata de mejorar la accesibilidad del Editor de audio multi-pis
 - [Anunciar el estado de los botones "Pausar", "Reproducir" y "Grabar" #HDR3],
 - [Anunciar el nivel actual de los vúmetros de los picos de amplitud en reproducción o en grabación #hdr4],
 - [Anunciar el nivel actual  de los cursores de reproducción o de grabación #hdr5],
-- [Mostrar la guía de Audacity #hdr6].
+- [Anunciar la velocidad de reproducción #hdr6],
+- [Mostrar la guía de Audacity #hdr7].
 
 
 Como las siguientes mejoras de accesibilidad:
 - [Anuncio automático de cambios en la posición de audio #HDR100],
 - [Anuncio automático de cambios en la selección #HDR101],
 - [Posibilidad de usar la barra espaciadora o la tecla Intro para pulsar en un botón #HDR102],
-- [Verbalización de los cuadros de selección numérico que definen un tiempo o una duración en la Barra de herramientas de selección de Audacity #HDR103],
+- [Verbalización de los cuadros de selección numérico que definen un tiempo o una duración de Audacity #HDR103],
 - [y varias otras adaptaciones #hdr104].
 
 
@@ -71,13 +71,18 @@ En el caso de una actualización automática, y si se detecta una nueva versión
 Para una actualización de una versión estable, el botón "Qué hay de nuevo" ofrece la posibilidad, de abrir en el navegador, el historial del complemento y asi poder conocer las novedades de la versión propuesta.
 
 ++ Compatibilidad ++
-Este complemento ha sido probado con Audacity versión 3.2.3, 3.1, 3.0. Las versiones anteriores de Audacity ya no son soportadas.
+- Este complemento ha sido probado con la versión de Audacity 3.4, 3.3.0 
+y 3.3.3. También debería ser compatible con las versiones 3.3.1 y 3.3.2, 
+pero no se han realizado pruebas.
+- Las versiones de Audacity anteriores a la 3.3.0 ya no son soportadas.
+- Algunas funciones no están disponibles en las versiones 3.3.x de Audacity.
+
 
 
 ++ Recomendaciones de configuración ++
 Para un funcionamiento correcto del complemento, es necesario:
 - Conservar la visualización por defecto creado durante la instalación de Audacity, especialmente las barras de herramientas. Audacity permite restablecer esta visualización con el submenú "Restablecer barras de herramientas" del submenú "Barras de herramientas" del menú "Ver". Sin embargo, es necesario reiniciar  Audacity después de usarlo.
-- Conservar el formato de visualización del tiempo establecido por defecto o elegir entre uno de los formatos especificados en la sección [Verbalización de los cuadros de selección numérico que definen un tiempo o una duración en la Barra de herramientas de selección de Audacity #HDR103]
+- Conservar el formato de visualización del tiempo establecido por defecto o elegir entre uno de los formatos especificados en la sección [Verbalización de los cuadros de selección numérico que definen un tiempo o una duración de Audacity #HDR103]
 
 
 Otras recomendaciones de configuración (para más información ver la ["guía de Audacity" audacityGuide.html] ):
@@ -135,22 +140,23 @@ Este script se lanza mediante la órden "SHELL_KEY_AUDIO_POSITION" del intérpre
 
 No se le asigna ningún gesto de entrada por defecto.
 
-Se anuncia el tiempo indicado en el campo "posición de audio" de la barra de herramientas de selección (o "Audacity selection Toolbar", nombre no traducido).
+Se anuncia el tiempo indicado en el cuadro de selección numérico "posición de audio" de la barra de herramientas de "Tiempo".
 
 ++ Anuncio de información de selección ++[hdr2]
 Para utilizar este script, debe estar el foco en la vista de pista.
 
-La barra de herramientas de selección muestra más información:
+La barra de herramientas de "Selección" muestra dos cuadros de selección numérico que dan según la elección hecha con el botón "Configuración de Barra de herramientas de selección":
 - Los límites de la selección  (inicio y final),
-- La duración de la selección,
-- El centro de la selección .
+- El inicio y la duración de la selección,
+- La duración y el final de la selección,
+- La duración y el centro de la selección.
 
 
-Esto es posible de  anunciarlos mientras  que se queda  en la vista de pista con los siguientes scripts:
-- Anunciar la posición de inicio y el final de la selección: órden "SHELL_KEY_SELECTION_LIMITS_REPORT" del intérprete,
-- Anunciar la duración de la selección: órden "SHELL_KEY_SELECTION_DURATION_REPORT" del intérprete,
-- Anunciar la posición del centro de la selección: órden "SHELL_KEY_SELECTION_CENTER_REPORT" del intérprete,
-- Anunciar la posición de inicio y el final de la selección. Pulsa dos veces para anunciar la duración de la selección. Pulsa tres veces para anunciar la posición del centro de la selección sin órden del intérprete.
+Con los siguientes scripts, es posible anunciar el tiempo indicado por estos dos cuadros  sin tener que mover el foco en la barra de herramientas de "Selección":
+- "Anunciar la selección": órden "SHELL_KEY_SELECTION_LIMITS_REPORT" del intérprete,
+- "Anunciar el primer tiempo de la selección": órden "SHELL_KEY_SELECTION_DURATION_REPORT" del intérprete,
+- "Anunciar el segundo tiempo de la selección": órden "SHELL_KEY_SELECTION_CENTER_REPORT" del intérprete,
+- "Anunciar la selección. Pulsa dos veces para anunciar su primer tiempo. Pulsa tres veces para anunciar su segundo tiempo" sin órden del intérprete.
 
 
 Por defecto, no se le asigna ningún gesto de entrada.
@@ -169,26 +175,35 @@ Si ningún botón  es pulsado, el anuncio "No hay ningún botón pulsado" se emi
 
 
 ++ Anuncio del nivel actual de los vúmetros de los picos de amplitud en reproducción o en grabación ++[hdr4]
-Audacity muestra los vúmetros en reproducción y en grabación permitiendo  el monitoreo de los picos de amplitud en reproducción o en grabación.
+En los mezcladores de reproducción y grabación, Audacity muestra los vúmetros en reproducción y en grabación permitiendo  el monitoreo de los picos de amplitud en reproducción o en grabación.
 
 Los siguientes scripts permitirán conocer los niveles de estos vúmetros (cuando esté disponible) sin mover el foco de la vista de pista:
-- Anunciar el nivel actual del vúmetro del pico de amplitud en reproducción: órden "SHELL_KEY_PLAYMETERPEAK_REPORT" del intérprete,
-- Anunciar el nivel actual del vúmetro del pico de amplitud en grabación: órden "SHELL_KEY_RECORDMETERPEAK_REPORT" del intérprete.
+- "Anunciar el nivel actual del vúmetro del pico de amplitud en reproducción": órden "SHELL_KEY_PLAYMETERPEAK_REPORT" del intérprete,
+- "Anunciar el nivel actual del vúmetro del pico de amplitud en grabación": órden "SHELL_KEY_RECORDMETERPEAK_REPORT" del intérprete.
 
 
 Por defecto, no se le asigna ningún gesto de entrada.
 
 ++ Anuncio del nivel actual del cursor de reproducción o de grabación ++[hdr5]
-La barra de herramientas de mezcla (o "Audacity mixer Toolbar", nombre no traducido) muestra los cursores de reproducción y de grabación  permitiendo ajustar los niveles de reproducción o grabación.
+Los medidores de reproducción y grabación muestra los cursores de reproducción y de grabación  permitiendo ajustar los niveles de reproducción o grabación.
 
 Los siguientes scripts permitirán conocer los niveles de estos cursores sin mover el foco de la vista de pista:
-- Anunciar el nivel actual del cursor de reproducción: órden "SHELL_KEY_SLIDERPLAYBACK_REPORT" del intérprete,
-- Anunciar el nivel actual del cursor de grabación: órden "SHELL_KEY_SLIDERRECORDING_REPORT" del intérprete.
+- "Anunciar el nivel de reproducción": órden "SHELL_KEY_SLIDERPLAYBACK_REPORT" del intérprete,
+- "Anunciar el nivel de grabación": órden "SHELL_KEY_SLIDERRECORDING_REPORT" del intérprete.
 
 Por defecto, no se le asigna ningún gesto de entrada.
 
 
-++ Mostrar la guía de Audacity ++[hdr6]
+++ Anuncio de velocidad de reproducción ++[hdr6]
+
+Este se lanza mediante la órden "SHELL_KEY_PLAYBACK_SPEED_REPORT" del intérprete.
+
+Por defecto, no se le asigna ningún gesto de entrada.
+
+Este script anuncia el nivel del potenciómetro "Velocidad de reproducción" del grupo "Play-at-Speed" Speed".
+
+
+++ Mostrar la guía de Audacity ++[hdr7]
 Este script se lanza mediante la órden "SHELL_KEY_DISPLAY_GUIDE" del intérprete.
 
 Por defecto, no se le asigna ningún gesto de entrada.
@@ -210,9 +225,9 @@ En la reproducción de audio o no, los siguientes atajos de Audacity (definidos 
 - "espacio": reproducir/detener
 
 
-En la reproducción de audio  detenido y después de la activación del atajo, la información del cuadro de selección numérico "posición de audio" de la barra de herramientas "Selección" o "Tiempos" dependiendo la versión de Audacity se anuncia automáticamente si un cambio ha tenido lugar y bajo la forma:
-- Anuncio de la etiqueta del cuadro de selección numérico "posición de audio",
-- Anuncia el contenido del cuadro   de selección numérico con el formateo del tiempo.
+En la reproducción de audio  detenido y después de la activación del atajo, la información del cuadro de selección numérico "posición de audio" de la barra de herramientas de "Tiempo" dependiendo la versión de Audacity se anuncia automáticamente si un cambio ha tenido lugar y bajo la forma:
+- Anuncio de la etiqueta del cuadro de selección numérico "posición de audio" (mostrado por Audacity),
+- Anuncio del formateo del tiempo indicado por este cuadro.
 
 
 El retorno de la posición de audio  al inicio de selección  es indicado.
@@ -232,13 +247,13 @@ Los siguientes atajos de Audacity (definidos por defecto) permite de establecer 
 - "Control + Mayúscula + flecha izquierda": contraer la selección a la derecha.
 
 
-Si la opción "Anunciar automáticamente los cambios en la selección" en la categoría "Opciones" en Opciones de configuración del complemento está marcado, En la reproducción de audio  detenido y después de la activación del atajo, se anuncian los cambios en las  selección.
-Dependiendo del tipo de atajo, uno u otro  en los cuadros de selección numérico de la barra de herramientas "Selección" se anuncian bajo la forma:
-- Anuncia la etiqueta del cuadro de selección numérico ("inicio", "final", "centrado", "duración" dependiendo de la elección de la vista),
-- Anuncio de su contenido con el formateo del tiempo.
+Si la opción "Anunciar automáticamente los cambios en la selección" en la categoría "Opciones" en Opciones de configuración del complemento está marcado, En la reproducción de audio  detenido y después de la activación de uno de los atajos anteriores, se anuncian los cambios en las  selección.
+Dependiendo del tipo de atajo, uno u otro  en los cuadros de selección numérico de la barra de herramientas de "Selección" se anuncian bajo la forma:
+- Anuncio de la etiqueta del cuadro de selección numérico "posición de audio" (mostrado por Audacity),
+- Anuncio del formateo del tiempo indicado por este cuadro.
 
 
-Al igual   que todas las etiquetas anunciadas las cuales son las que se muestran por Audacity, puede haber inconsistencias debido a la traducción o a su codificación (por ejemplo, "selección final" en lugar de "final de la selección", "duración selección" en lugar de "duración de la selección").
+Al igual   que todas las etiquetas anunciadas las cuales son las que se muestran por Audacity, puede haber inconsistencias debido a la traducción o a su codificación.
 
 Estos atajos pueden ser cambiados por el usuario sin afectar este funcionamiento.
 
@@ -248,15 +263,18 @@ Esta cambia el estado de la opción "Anunciar automáticamente los cambios en la
 ++ Usar la barra espaciadora o la tecla Intro para pulsar en un botón ++[HDR102]
 En Audacity, la barra espaciadora está programada para iniciar y detener la reproducción de audio, pero no para pulsar un botón.
 
-Para pulsar en el botón, se debe utilizar la tecla "Intro" pero esto mueve el  foco en el siguiente elemento de la ventana y  ningún cambio   de estado del botón  se verbaliza.
+Para pulsar en el botón, se debe utilizar la tecla "Intro".
 
-Si la opción"Usar la barra espaciadora o la tecla Intro para pulsar en un botón" en la categoría "Opciones" en Opciones de configuración del complemento está marcado, entonces es posible pulsar un botón con la barra espaciadora o la tecla Intro y los cambios se anuncian.
+Si la opción"Usar la barra espaciadora o la tecla Intro para pulsar en un botón" en la categoría "Opciones" en Opciones de configuración del complemento está marcado, entonces es posible pulsar un botón con la barra espaciadora o la tecla Intro.
 
 
 ++ Verbalización de los cuadros de selección numérico del tiempo de Audacity ++[HDR103]
+Esta característica no está disponible en las versiones 3.3.x de 
+Audacity.
+
 Audacity muestra los cuadros de selección numérico para mostrar un tiempo como por ejemplo, "posición de audio", "inicio de la selección", "final de la selección", "centro de la selección" o "duración de la selección".
 
-Estos cuadros de edición muestra la información según  el formato definido por el usuario mediante el menú contextual del campo.
+Estos cuadros de selección muestra la información según  el formato definido por el usuario mediante el menú contextual del cuadro.
 
 La información es una serie de dígitos. Cada dígito pertenece a un grupo de dígitos tales como las horas, minutos, segundos, etc.
 
@@ -270,7 +288,7 @@ Sólo los siguientes formatos se tienen en cuenta:
 - segundos,
 - HH:MM:SS,
 - jj:hh:mm:ss,
-- hh:mm:ss + centésimas,
+		- hh:mm:ss + centésimas,
 - hh:mm:ss + milisegundos,
 - hh:mm:ss + muestras,
 - muestras.
@@ -284,7 +302,7 @@ Los mismos mecanismos existen en otros cuadros de diálogo que muestra los cuadr
 - Las pistas  ya No se anuncian como líneas de una tabla y la vista de pista como una tabla.
 - El estado   en el sentido  de NVDA (selección por el cursor) "No hay ninguna selección" de una pista ya no se verbaliza.
 - La ausencia de pista cuando el foco se mueve   en la vista de pista se anuncia.
-- El nombre de las barras de herramientas se anuncia cuando el foco se mueve con "control+f6" o "mayúsculas + control+f6" (puede ser desactivado mediante el cuadro de diálogo opciones "Anunciar el nombre de la barra de herramientas").
+- El nombre de los paneles de las barras de herramientas se anuncia cuando el foco se mueve con "control+f6" o "mayúsculas + control+f6" (véase la ["guía de Audacity" audacityGuide.html]). Esto puede ser desactivado mediante el cuadro de diálogo opciones "Anunciar el nombre de los paneles de las barras de herramientas". El panel que contiene la vista de pista es nombrado "Panel principal".
 
 
 + Historial +

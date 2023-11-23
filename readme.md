@@ -6,18 +6,18 @@
 	* [stable version][1]
 	* [developpement' versions][2]
 * Compatibility:
-	* Minimum required NVDA version:  2020.4
-	* Last NVDA version tested:  2023.1
+	* Minimum required NVDA version:  2022.1
+	* Last NVDA version tested:  2023.3
 
 
 This add-on adds extra functionality when working with Audacity multi-track editor:
 
 * a script to report audio position,
-* a script to report start and end of selection,
+* a script to report time spin boxes of selection,
 * a script to announce the state of the  "Pause",  "Play" and "record" buttons,
 * automatic audio position changes report ,
 * automatic selection changes report (can be disabled),
-* timer control editting support,
+* time edit spin box editting support,
 * use of spacebar to press a button,
 * script to report playback/recording peak level,
 * script to report playback/record slider level,
@@ -26,9 +26,9 @@ This add-on adds extra functionality when working with Audacity multi-track edit
 * script to display audacity guide written by David Bailes.
 
 
-This addon's version has been tested with audacity 3.2, 3.1, 3.0.
-Previous versions of Audacity are not  supported.
+This addon's version has been tested with audacity 3.4, 3.4.2, 3.3.0 and 3.3.3.
+Prior  versions of Audacity are not  supported by this version.
 
 
-[1]: https://github.com/paulber007/AllMyNVDAAddons/raw/master/audacityAccessEnhancement/audacityAccessEnhancement-2.9.nvda-addon
+[1]: https://github.com/paulber007/AllMyNVDAAddons/raw/master/audacityAccessEnhancement/audacityAccessEnhancement-3.0.nvda-addon
 [2]: https://github.com/paulber007/AllMyNVDAAddons/tree/master/audacityAccessEnhancement/dev

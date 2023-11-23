@@ -4,9 +4,8 @@ Auteur : ADDON_AUTHOR_NAME
 %!includeconf: ../addon_userManual.t2tconf
 %!includeconf: addon_informations.t2tconf
 %!includeconf: addon_keys.t2tconf
-URL : ADDON_AUTHOR_URL
+URL: [ADDON_REPOSITORY ADDON_REPOSITORY]
 
-[Dépot GitHub : ADDON_REPOSITORY ADDON_REPOSITORY]
 
 Téléchargement :
 - [Version stable ADDON_CUR_VERSION ADDON_DOWNLOAD_SERVER1]
@@ -29,14 +28,15 @@ Cette extension tente d'améliorer l'accessibilité de l'éditeur audio multi-pi
 - [Annoncer l'état des boutons "Lecture" et "Pause" #HDR3],
 - [Annoncer le niveau des vumètres de crête de lecture ou d'enregistrement #hdr4],
 - [Annoncer le niveau des potentiomètres de lecture ou d'enregistrement #hdr5],
-- [afficher le guide d'audacity #hdr6].
+- [annoncer la vitesse de lecture #hdr6],
+- [afficher le guide d'audacity #hdr7].
 
 
 Ainsi que les améliorations d'accessibilité suivantes :
 - [Annonce automatique de la position audio #HDR100],
 - [Annonce automatique de la sélection #HDR101],
 - [Utilisation de la barre d'espace ou la touche Entrée pour appuyer sur un bouton #HDR102],
-- [Vocalisation des zone de sélection numérique d'un temps de la barre d'outils Sélection Audacity #HDR103],
+- [Vocalisation des boites de sélection numérique d'un temps Audacity #HDR103],
 - [et diverses autres adaptations #hdr104].
 
 
@@ -61,22 +61,25 @@ Une version de développement est mise à jour :
 Le bouton "Rechercher une mise à jour" placé dans la catégorie "Mise à jour" des paramètres de l'extension, permet de rechercher immédiatement une mise à jour.
 
 
-Le bouton "Voir l'historique", placé dans cette même catégorie,  vous permet d'afficher l'historique  de la version actuelle dans le navigateur.
+Le bouton "Voir l'historique", placé dans cette même catégorie, vous permet d'afficher l'historique de la version actuelle dans le navigateur.
 
 Dans le cas d'une mise à jour automatique et si une nouvelle version est détectée, la boite de dialogue "Mise à jour" s'affiche pour proposer :
 - soit l'installation immédiate de la nouvelle version,
 - soit de reporter la mise à jour à plus tard. Dans ce cas, la recherche se relancera au minimum une heure plus tard.
 
 
-Dans le cas d'une mise à jour vers une  version stable, Le bouton "Quoi de neuf" offre la possibilité d'ouvrir, dans le navigateur, l'historique de l'extension et ainsi pouvoir connaitre les nouveautés de la version proposée.
+Dans le cas d'une mise à jour vers une version stable, Le bouton "Quoi de neuf" offre la possibilité d'ouvrir, dans le navigateur, l'historique de l'extension et ainsi pouvoir connaitre les nouveautés de la version proposée.
 
 ++ Compatibilité ++
-Cette extension a été testée avec Audacity version 3.2.3,  3.1, 3.0. Les versions précédentes d'Audacity ne sont pas soutenues.
+- Cette version de l'extension a été testée avec Audacity 3.4, 3.3.0 et 3.3.3. Elle devrait aussi être compatible avec les versions 3.3.1 et 3.3.2, mais aucun test n'a été fait.
+- La compatibilité avec les versions antérieures à la 3.3.0 n'est pas assurée.
+Certaines fonctionnalités ne sont pas disponibles sous les versions 3.3.x d'Audacity.
+
 
 ++ Recommandations de configuration ++
 Pour un bon fonctionnement de l'extension, il est nécessaire de :
 - conserver l'affichage par défaut mise en place lors de l'installation d'audacity, surtout celui des barres d'outils. Audacity permet de réinitialiser l'affichage de celles-ci avec le sou-menu "Réinitialiser les barres d’outils" du sous-menu "barres d'outils" du menu "Affichage". Mais il est nécessaire de redémarrer Audacity après l'avoir utilisé.
-- Conserver le format d'affichage du temps défini par défaut ou choisir parmi un des formats indiqués au chapitre [Vocalisation des zones d'de sélection numérique du temps dans la boite d'outils Sélection Audacity #HDR103]
+- Conserver le format d'affichage du temps défini par défaut ou choisir parmi un des formats indiqués au chapitre ["Vocalisation des boites de sélection numérique du temps Audacity" #HDR103]
 
 
 autres recommandations de configuration(voir pour plus d'information le ["guide d'Audacity" audacityGuide.html] ) :
@@ -86,7 +89,6 @@ autres recommandations de configuration(voir pour plus d'information le ["guide 
 - installer le jeu complet de raccourcis,
 - modifier les raccourcis génants pour le clavier de type "Azerty".
 - désactiver la sélection automatique.
-
 
 
 ++ Activation des scripts ++
@@ -134,22 +136,23 @@ Ce script se lance par la commande "SHELL_KEY_AUDIO_POSITION" de l'interpréteur
 
 Aucun geste de commande ne lui est affecté par défaut.
 
-Il annonce le temps indiqué dans le champ "position audio" de la barre d'outils "Sélection" (ou Audacity selection Toolbar",nom non traduit).
+Il annonce le temps indiqué dans la boite de sélection numérique "position audio" de la barre d'outils "Temps".
 
 ++ Annonce des informations de sélection ++[hdr2]
 Pour utiliser ce script, il faut que le focus soit dans la vue de piste.
 
-La barre d'outils de sélection présente plusieurs informations :
+La barre d'outils de sélection présente deux boites de sélection numériques qui donnent suivant le choix fait à l'aide du bouton "Selection Toolbar Setup":
 - les limites de la sélection (début et fin),
-- la durée de la sélection,
-- le centre de la sélection.
+- le début et la durée de la sélection,
+- la durée et la fin de la sélection,
+- la durée et le centre de la sélection.
 
 
-Il est possible de les faire annoncer tout en restant dans la vue de piste avec les scripts suivants :
-- annoncer le début et la fin de la sélection : commande "SHELL_KEY_SELECTION_LIMITS_REPORT" de l'interpréteur,
-- annoncer la durée de la sélection : commande "SHELL_KEY_SELECTION_DURATION_REPORT" de l'interpréteur,
-- annoncer le centre de la sélection : commande "SHELL_KEY_SELECTION_CENTER_REPORT" de l'interpréteur,
-- annoncer le début et la fin de la sélection. Deux appuis : annoncer la durée. Trois appuis: annoncer le centre: sans commande interpréteur.
+Avec les scripts suivants, Il est possible de faire annoncer le temps indiqué par ces deux boites sans avoir besoin de déplacer le focus dans la barre d'outils "Sélection":
+- "Annoncer la sélection" : commande "SHELL_KEY_SELECTION_LIMITS_REPORT" de l'interpréteur,
+- "annoncer le premier temps de la sélection" : commande "SHELL_KEY_SELECTION_DURATION_REPORT" de l'interpréteur,
+- "annoncer le second temps de la sélection": "SHELL_KEY_SELECTION_CENTER_REPORT" de l'interpréteur,
+- "annoncer la sélection. Deux appuis : annoncer son premier temps. Trois appuis: annoncer son second temps" : sans commande interpréteur.
 
 
 Par défaut, Aucun geste de commandes ne leur est affecté.
@@ -168,33 +171,41 @@ Dans le cas où aucun bouton n'est enfoncé, l'annonce "Aucun bouton enfoncé" e
 
 
 ++ Annonce du niveau des vumètres de crête de lecture ou d'enregistrement ++[hdr4]
-Audacityprésente les vumètres de lecture et d'enregistrement permettant de surveiller les pics de lecture ou d'enregistrement.
+Dans les mélangeurs de lecture et d'enregistrement, Audacityprésente les vumètres de lecture et d'enregistrement permettant de surveiller les pics de lecture ou d'enregistrement.
 
 Les scripts suivants permettent de connaitre les niveaux de ces vumètres (quand ils sont disponibles) sans bouger le focus de la vue de pistes :
-- annoncer le niveau du vumètre de crête de lecture : commande "SHELL_KEY_PLAYMETERPEAK_REPORT" de l'interpréteur,
-- annoncer le niveau du vu-mmètre de crête d'enregistrement : commande "SHELL_KEY_RECORDMETERPEAK_REPORT" de l'interpréteur.
+- "annoncer le niveau du vumètre de crête de lecture" : commande "SHELL_KEY_PLAYMETERPEAK_REPORT" de l'interpréteur,
+- "annoncer le niveau du vu-mmètre de crête d'enregistrement" : commande "SHELL_KEY_RECORDMETERPEAK_REPORT" de l'interpréteur.
 
 
 Par défaut, aucun geste de commande ne leur est affecté.
 
 ++ Annonce du niveau du curseur des potentiomètres de lecture ou enregistrement ++[hdr5]
-La barre d'outils de mixage (ou "Audacity mixer Toolbar", nom non traduit) présente les potentiomètres de lecture et d'enregistrement permettant de régler les niveaux de lecture ou d'enregistrement.
+Les mesureurs de lecture et d'enregistrement présente les potentiomètres de lecture et d'enregistrement permettant de régler les niveaux de lecture ou d'enregistrement:
 
 Les scripts suivants permettent de connaitre les niveaux de ces curseurs sans bouger le focus de la vue de pistes :
-- annoncer le niveau du curseur de lecture : commande "SHELL_KEY_SLIDERPLAYBACK_REPORT" de l'interpréteur,
-- annoncer le niveau du curseur d'enregistrement : commande "SHELL_KEY_SLIDERRECORDING_REPORT" de l'interpréteur.
+- "annoncer le niveau de lecture" : commande "SHELL_KEY_SLIDERPLAYBACK_REPORT" de l'interpréteur,
+- "annoncer le niveau d'enregistrement" : commande "SHELL_KEY_SLIDERRECORDING_REPORT" de l'interpréteur.
+
 
 Par défaut, aucun geste de commande ne leur est affecté.
 
+++ Annonce de la vitesse de lecture ++[hdr6]
 
-++ Affichage du guide d'Audacity ++[hdr6]
+Il se lance par la commande "SHELL_KEY_PLAYBACK_SPEED_REPORT" de l'interpréteur.
+
+Par défaut, aucun geste de commande ne lui est affecté.
+
+Ce script annonce le niveau du potentiomètre "Vitesse de lecture" du groupe "Lecture-à-la-vitesse".
+
+++ Affichage du guide d'Audacity ++[hdr7]
 Ce script se lance par la commande "SHELL_KEY_DISPLAY_GUIDE" de l'interpréteur.
 
 Par défaut, aucun geste de commande ne lui est affecté.
 
 Il permet de faire afficher le guide d'Audacity écrit par David Bailes pour les utilisateurs du lecteur d'écran JAWS (C).
 
-+Améliorations d'accessibilité +
++ Améliorations d'accessibilité +
 ++ Annonce automatique de la position audio ++[hdr100]
 En lecture audio ou non, les raccourcis suivants d'Audacity (définis par défaut) permettent de définir ou de déplacer le curseur audio :
 - "x" lecture / stop et positionnement du curseur audio
@@ -209,9 +220,9 @@ En lecture audio ou non, les raccourcis suivants d'Audacity (définis par défau
 - "espace" : lecture /stop
 
 
-En lecture audio arrêtée et après l'activation du raccourci, l'information de la zone de sélection numérique "position audio" de la barre d'outils "Sélection"ou "Temps suivant la version d'Audacity, est automatiquement annoncé si un changement a eu lieu et sous la forme :
-- annonce du libellé de la zone de sélection numérique "position audio",
-- annonce du contenu de la zone de sélection numérique avec formatage du temps
+En lecture audio arrêtée et après l'activation du raccourci, l'information de la boite de sélection numérique "position audio" de la barre d'outils "Temps", est automatiquement annoncé si un changement a eu lieu et sous la forme :
+- annonce du libellé de la boite de sélection numérique de la position audio (affiché par Audacity),
+- annonce du temps formatté indiqué par cette boite.
 
 
 Le retour de la position audio en début de sélection est signalé.
@@ -231,13 +242,13 @@ Les raccourcis suivants d'Audacity (définis par défaut) permettent de définir
 - "Control + Majuscule + flèche gauche" : Contracter la sélection à droite.
 
 
-Si l'option "Annoncer automatiquement les changements de sélection" de la catégorie "Options" des paramètres de l'extension est cochée, En lecture arrêtée et après l'activation du raccourci, les changements de sélection sont annoncés
-Suivant le type de raccourci, l'une ou/et l'autre des zones de sélection numérique de la barre d'outils "Sélection" sont annoncés sous la forme :
-- annonce du libellé de la zone de sélection numérique ("début", "fin", "centré", "durée" suivant le choix d'affichage),
-- annonce de son contenu avec formatage du temps,
+Si l'option "Annoncer automatiquement les changements de sélection" de la catégorie "Options" des paramètres de l'extension est cochée, En lecture arrêtée et après l'activation d'un des raccourciprécédents, les changements de sélection sont annoncés
+Suivant le type de raccourci, l'une ou/et l'autre des boites de sélection numérique de la barre d'outils "Sélection" sont annoncés sous la forme :
+- annonce du libellé de la boite de sélection numérique affiché par Audacity,
+- annonce du temps formatté indiqué par cette boite.
 
 
-Comme tous les libellés annoncés sont ceux qui sont affichés par Audacity, il peut y avoir des incohérences dues à la traduction ou au codage (par exemple, sélection fin au lieu de fin de la sélection", "durée sélection" au lieu de "longueur de la sélection").
+Comme tous les libellés annoncés sont ceux qui sont affichés par Audacity, il peut y avoir des incohérences dues à la traduction ou au codage.
 
 Ces raccourcis peuvent être modifiés par l'utilisateur sans impacter ce fonctionnement.
 
@@ -247,28 +258,29 @@ Elle fait basculer l'état de l'option "Annoncer automatiquement les changements
 ++ Utilisation de la barre d'espace ou de la touche Entrée pour appuyer sur un bouton ++[HDR102]
 Dans Audacity, la barre d'espace est prévue pour lancer ou arrêter la lecture audio, mais pas pour appuyer sur un bouton.
 
-Pour appuyer sur le bouton, il faut utiliser la touche "Entrée" mais cela déplace le focus sur l'élément suivant de la fenêtre et aucun changement d'état du bouton n'est vocalisé.
+Pour appuyer sur le bouton, il faut utiliser la touche "Entrée".
 
-Si l'option "Utiliser la barre d'espace ou la touche Entrée pour appuyer sur un bouton" de la catégorie "Options" des paramètres de l'extension est cochée, il est alors possible d'appuyer sur un bouton avec la barre d'espace ou la touche Entrée et les changements sont alors annoncés.
+Si l'option "Utiliser la barre d'espace ou la touche Entrée pour appuyer sur un bouton" de la catégorie "Options" des paramètres de l'extension est cochée, il est alors possible d'appuyer sur un bouton avec la barre d'espace ou la touche Entrée.
 
+++ Vocalisation des boites de sélection numérique du temps Audacity ++[HDR103]
+Cette fonctionnalité n'est pas disponible dans les versions 3.3.x d'Audacity.
 
-++ Vocalisation des zones de sélection numérique du temps Audacity ++[HDR103]
-Audacity présente des zones de sélection numérique pour afficher un temps comme par exemple : lla position audio, le début de sélection, la fin de sélection, le centre de sélection, la durée de sélection.
+Audacity présente des boites de sélection numérique pour afficher un temps comme par exemple : lla position audio, le début de sélection, la fin de sélection, le centre de sélection, la durée de sélection.
 
-Ces zones d'édition présentent l'information suivant le format défini par l'utilisateur à l'aide du menu contextuel de la zone.
+Ces boites de sélection présentent l'information suivant le format défini par l'utilisateur à l'aide du menu contextuel de la boite.
 
 L'information est une suite de chiffres . Chaque chiffre appartient à un groupe de chiffre comme les heures, minutes, secondes, etc.
 
 Pour modifier cette information , il faut se placer sur le chiffre à modifier (par flèche droite ou gauche) et l'augmenter ou le diminuer avec les flèches haute ou bas.
 
-Par défaut, Cette extension permet une meilleure vocalisation en indiquant un temps en heure, minute et secondes , en indiquant la nature du chiffre qui est sélectionné et la valeur du groupe du chiffre modifié pour les zones de sélecction numérique citée en exemple ci-dessus.
+Par défaut, Cette extension permet une meilleure vocalisation en indiquant un temps en heure, minute et secondes , en indiquant la nature du chiffre qui est sélectionné et la valeur du groupe du chiffre modifié pour les boites de sélection numérique citée en exemple ci-dessus.
 
-Ceci peut être désactivé en décochant l'option "Améliorer l'annonce des zones de sélection numérique" de la catégorie "Options" des paramètres de l'extension.
+Ceci peut être désactivé en décochant l'option "Améliorer l'annonce des boites de sélection numérique" de la catégorie "Options" des paramètres de l'extension.
 
 
 Seules les format suivants sont pris en compte :
 - secondes,
-- HH:MM:SS,,
+- HH:MM:SS,
 - jj:hh:mm:ss,
 - hh:mm:ss + centièmes,
 - hh:mm:ss + millisecondes,
@@ -276,15 +288,16 @@ Seules les format suivants sont pris en compte :
 - échantillons.
 
 
-La touche "NVDA + flèche haut" permet de faire vocaliser l'information de la zone de sélection numérique.
+La touche "NVDA + flèche haut" permet de faire vocaliser l'information de la boite de sélection numérique.
 
-Les mêmes mécanismes sont mis en place dans d'autre boites de dialogue qui présentent des zones de sélection numérique de temps du même style, comme la boite de dialogue "Enregistrement temporisé".
+Les mêmes mécanismes sont mis en place dans d'autre boites de dialogue qui présentent des boites de sélection numérique de temps du même style, comme la boite de dialogue "Enregistrement temporisé".
+
 
 ++ Autres adaptations ++[hdr104]
 - Les pistes ne sont plus annoncées comme étant des lignes d'un tableau et la vue de piste comme un tableau.
 - L'état au sens NVDA (sélection par le curseur) "non sélectionné" d'une piste n'est plus vocalisé.
 - l'absence de piste quand le focus arrive dans la vue de piste est annoncée.
-- Le nom des barres d'outils est annoncé lors du déplacement du focus par "control+f6" ou "majuscule+ control+f6" (peut-être désactivé par configuration de l'option "Annoncer le nom des barres d'outils").
+- Le nom des panneaux des barres d'outils est annoncé lors du déplacement du focus par "control+f6" ou "majuscule+ control+f6" (voir le ["guide d'Audacity" audacityGuide.html]). Cela peut être désactivé par configuration de l'option "Annoncer le nom des panneaux des barres d'outils". Le panneau qui contient la vue de piste est nommé "Panneau principal".
 
 
 + Historique +

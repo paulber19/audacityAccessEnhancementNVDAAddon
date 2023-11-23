@@ -2,9 +2,9 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-GB" lang="en-GB"><head>
 	<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
 	<meta name="viewport" content="width=device-width, initial-scale = 1">
-	<title>Audacity 3.2.3 Guide</title>
+	<title>Audacity 3.3.0 to 3.3.3 Guide</title>
 	
-	<meta name="description" content="A guide to Audacity 3.2.3 for users of
+	<meta name="description" content="A guide to Audacity 3.3.0 to 3.3.3 for users of
 	the Jaws, NVDA, and Narrator screen readers.">
 
 	<style type="text/css">
@@ -90,7 +90,7 @@
 <body>
 <div id="page">
 
-	<h1>Audacity 3.2.3 Guide</h1>
+	<h1>Audacity 3.3.0 to 3.3.3 Guide</h1>
 	
 	<p>A guide for users of the Jaws, NVDA, and Narrator screen readers, written by David Bailes.
 	More guides are available on the
@@ -127,27 +127,27 @@
 	
 	<h2 id="introduction">Introduction</h2>
 
-	<p>This is a guide for version 3.2.3 of Audacity, which is a free
+	<p>This is a guide for versions 3.3.0 to 3.3.3 of Audacity, which is a free
 	multi-track audio editor. You can use it for recording, simple editing
 	of single tracks, or more advanced editing involving multiple tracks.</p>
 
-	<p>Audacity 3.2.3 is available as either a 64 bit or 32 bit version. It's
+	<p>Audacity 3.3.3 is available as either a 64 bit or 32 bit version. It's
 	recommended to install the 64 bit version, unless you have a particular reason
 	for needing the 32 bit version. Note that if you're going to install
 	the 64 bit version, and you have a 32 bit version of Audacity installed,
 	you should uninstall this before installing the 64 bit version.</p>
 
-	<p>You can download the 64 bit version of Audacity 3.2.3 using the following link
-	<a href="https://github.com/audacity/audacity/releases/download/Audacity-3.2.3/audacity-win-3.2.3-x64.exe">Audacity 3.2.3 64 bit installer</a>
+	<p>You can download the 64 bit version of Audacity 3.3.3 using the following link
+	<a href="https://github.com/audacity/audacity/releases/download/Audacity-3.3.3/audacity-win-3.3.3-x64.exe">Audacity 3.3.3 64 bit installer</a>
 	and the 32 bit version using the following link
-	<a href="https://github.com/audacity/audacity/releases/download/Audacity-3.2.3/audacity-win-3.2.3-x32.exe">Audacity 3.2.3 32 bit installer</a>.
+	<a href="https://github.com/audacity/audacity/releases/download/Audacity-3.3.3/audacity-win-3.3.3-x32.exe">Audacity 3.3.3 32 bit installer</a>.
 	</p>
 
 	<p>The remaining sections of the introduction are as follows. There are introductions
 	to Projects and the cursor in Audacity, and descriptions of some message boxes which
 	can be shown at startup,
 	and how to get help. There is then an outline of some new features and
-	changes which were introduced since Audacity 3.1.3, a section on Audacity's
+	changes which were introduced in Audacity 3.3.0, a section on Audacity's
 	two sets of default shortcuts, some advice
 	if you are using a non US/UK keyboard,
 	and details of where to get the Jaws script for Audacity.</p>
@@ -236,8 +236,6 @@
 		<li><a href="https://manual.audacityteam.org/">The Audacity manual</a>
 		is still available, but is no longer completely up to date. It can be opened in your
 		default browser by choosing Manual on the help menu.</li>
-		
-		<li><a href="https://wiki.audacityteam.org/wiki/Audacity_Wiki_Home_Page">The Audacity Wiki</a>.</li>
 
 		<li>The <a href="https://www.freelists.org/list/audacity4blind">Audacity4Blind mailing list</a>.
 		There are a couple of ways you can request to be subscribed to this list.
@@ -256,36 +254,36 @@
 
 	<h3>New features and changes</h3>
 
-	<p>The new features and changes which were introduced in Audacity 3.2.0 to
-	3.2.3 include the following:</p>
+	<p>The new features and changes which were introduced in Audacity 3.3.0
+	include the following:</p>
 
 	<ul>
-		<li><a href="#realtime-effects">Realtime effects</a> can be added to a track.
-		You can change these effects during playback, and also come back and
-		change them at any point in your editing.</li>
+		<li>Some of Audacity's built in effects can now be used as
+		<a href="#realtime-effects">realtime effects</a>. These are:
+		Bass and Treble, Distortion, Phaser, Reverb and Wahwah.</li>
 
-		<li>The effects in the Effect menu are now grouped by default, rather than
-		just being sorted by name. If you want to change this, see the
-		<a href="#sorting-or-grouping-of-the-effect-menu">Sorting or grouping of the
-		Effect menu section</a> of the Preferences section.</li>
+		<li>There have been changes to some of the toolbars in the
+		<a href="#lower-toolbars">Lower toolbars</a> section of the
+		main window. This includes that in the Selection toolbar,
+		the details of the selection which are shown is now set using
+		a menu button, rather than a combo box.</li>
 
-		<li>The playback and recording meter toolbars now contain both a meter button,
-		and a level slider, and so the old mixer toolbar is no longer needed.</li>
-
-		<li>There's an Audio setup toolbar, which is a replacement for the device toolbar,
-		although the latter is still available if desired. See the
-		<a href="#upper-toolbars">upper toolbars section</a> for more details.</li>
-
-		<li>The Play-at-speed toolbar has been moved from the upper toolbars section
-		of the main window to the <a href="#lower-toolbars">lower toolbars</a> section
-		of the main window.</li>
-
-		<li>Audacity now supports a much more recent version of the FFmpeg library. Details
-		of how to download and install this are given in the
-		<a href="#ffmpeg-library">FFmpeg library section</a> of the Preferences
+		<li>When pasting audio from a different project, there are now
+		options for how much data in copied into the current project.
+		This is described in the
+		<a href="https://vip.chowo.co.uk/wp-content/uploads/jaws/pasting-audio-from-different-project">Pasting audio
+		from a different project section</a> of the Preferences
 		section.</li>
+
+		<li>In the Preferences dialog, the Devices category has been renamed the
+		Audio settings category.</li>
+
+		<li>Unfortunately, this version of Audacity causes more of the
+		functionality of the <a href="https://vip.chowo.co.uk/wp-content/uploads/jaws/jaws-script">Jaws script for Audacity</a>
+		to no longer work.</li>
 	</ul>
-	
+
+
 
 	<h3>Default shortcuts</h3>
 
@@ -307,7 +305,7 @@
 	other than US, UK or Irish section</a>, which is in the Customizing section.</p>
 	
 	
-	<h3>Jaws Script</h3>
+	<h3 id="jaws-script">Jaws Script</h3>
 	
 	<p>There's a Jaws script for Audacity, and its uses include giving additional feedback, and providing
 	convenient ways of obtaining information. Full details of its functionality can be found on the
@@ -317,7 +315,8 @@
 	
 	<p>Because this script has not been updated recently, some of the functionality does
 	not work with the current version of Audacity. For example, the keystrokes <strong>G</strong>,
-	and <strong>H</strong> no longer read the peak values of the recording and playback meters.</p>
+	and <strong>H</strong> no longer read the peak values of the recording and playback meters.
+	In addition, the keystrokes for reading the start and end of the selection no longer work.</p>
 	
 	<p>Note that for those using Jaws, the remainder of the guide does not assume that this
 	script is installed.</p>
@@ -514,7 +513,7 @@
 	<h3>Playback settings</h3>
 
 	<p>You can select the playback device which Audacity uses in a number of places,
-	including the Upper toolbars section of Audacity's main window and the Devices
+	including the Upper toolbars section of Audacity's main window and the Audio Settings
 	category of the Preferences dialog. If you only have one playback device on your
 	computer, you shouldn't need to change the setting.</p>
 
@@ -523,9 +522,9 @@
 	<ol>
 		<li>Press <strong>Ctrl + P</strong> to open the Preferences dialog</li>
 
-		<li>Select Devices in the categories list.</li>
+		<li>Select Audio Settings in the categories list.</li>
 
-		<li><strong>Tab</strong> to the Playback device combo box, and set the
+		<li><strong>Tab</strong> to the Device combo box in the Playback grouping , and set the
 		device you want to use.</li>
 
 		<li>Press <strong>Enter</strong> to press the default OK button.</li>
@@ -708,7 +707,7 @@
 		<li>Audio Setup toolbar, which contains an Audio setup button. This opens
 		a menu for setting the devices you want to use for recording
 		and playback. For keyboard users, there are more convenient
-		ways of changing these settings, for example in the devices
+		ways of changing these settings, for example in the Audio Settings
 		category of the Preferences dialog.</li>
 
 		<li>Share Audio toolbar, which contains a Share audio button. This enables
@@ -733,12 +732,56 @@
 	following toolbars, which are all described in the following sections:</p>
 
 	<ul>
-		<li>The Selection toolbar.</li>
+		<li>Snapping toolbar</li>
 
 		<li>The Time toolbar.</li>
 
+		<li>The Selection toolbar.</li>
+
 		<li>The Play-at-speed toolbar.</li>
 	</ul>
+
+
+	<h3 id="snapping-toolbar">Snapping toolbar</h3>
+
+	<p>The Snapping toolbar contains two controls:</p>
+
+	<ul>
+		<li>A Snap check box, which is used for turning snapping on or off, and
+		which by default is not checked. Note,
+		that in Audacity's main window, <strong>Spacebar</strong> always starts or
+		stops playback. Keystrokes you can use to change the state of the
+		check box include <strong>Ctrl + Spacebar</strong>, and <strong>Enter</strong>.</li>
+
+		<li>A Snap to combo box, which specifies the unit used by snapping, as described
+		below. This control is only available when the Snap check box is checked.</li>
+	</ul>
+
+	<p>For keyboard users, snapping affects the commands for moving the cursor by a small amount,
+	and the commands for moving the start or end of the selection by a small amount. These
+	are the commands that by default have the keystrokes <strong>Left/Right arrow</strong>,
+	<strong>Shift + left/right arrow</strong>,and <strong>Ctrl + Shift + Left/Right arrow</strong>.
+	All these commands are described later in the guide.</p>
+
+	<p>When snapping is off, the step size of these commands depends on the Zoom level,
+	as described in the
+	<a href="#step-size">Step size of the left and right arrow keys section</a>,
+	later in this guide. When snapping is on, this is modified as follows. The new
+	positions are rounded to the nearest unit specified by the Snap to combo box.
+	In addition, the minimum step size is the unit specifies by the Snap combo box.</p>
+
+
+	<h3 id="time-toolbar">Time toolbar</h3>
+
+	<p>The Time toolbar contains
+	a single control, an audio position spin box. During playback or recording, this
+	shows the position of the playback or recording cursor respectively. Otherwise,
+	it shows the time that playback would start if you pressed <strong>Spacebar</strong>.
+	Note that unlike the spin boxes in the Selection toolbar, you can't change the
+	time shown by the audio position spin box, you can only read its value.</p>
+
+	<p>The default format of the audio position spin box is hh:mm:ss, and you can
+	change this using the control's context menu.</p>
 		
 	
 	<h3 id="selection-toolbar">Selection toolbar</h3>
@@ -746,18 +789,13 @@
 	<p>The selection toolbar contains the following controls:</p>
 
 	<ul>	
-		<li>Project Rate edit-combo box. This is the sampling rate of the project.</li>
-		
-		<li>Snap To combo box, which is described below.</li>
+		<li>A Selection toolbar setup button. This opens a menu which contains the options
+		for which details of any selected time range are shown in the two edit spin
+		boxes, which are the next two controls in the toolbar. These options are:
+		start and end, start and length, length and end, and length and center.</li>
 			
-		<li>A Show combo box which determines which details of any selected time
-		range are shown in the two edit spin boxes, which are the next two controls
-		in the toolbar.
-		The options for the details which are shown are: start and end, start and length,
-		length and end, and length and center.</li>
-		
 		<li>Two edit spin boxes, which give the details of the selected time range,
-		which have been specified by the preceding combo box.
+		which have been specified by the preceding setup button's menu.
 		If there is no time range selected, then the start, end, or center edit spin
 		boxes give the position of the cursor.</li>	
 	</ul>		
@@ -840,42 +878,6 @@
 
 	<p>If you are using the Jaws screen reader, you can always read the entire time by pressing the
 	keystroke to read the current line.</p>
-	
-		
-	<h4 id="snap-to-combo-box">Snap To combo box</h4>
-	
-	<p>The Snap to combo box contains three options: Off, which is the default, Nearest,
-	and Prior. If the combo box is set to either Nearest or Prior, then this has two effects on
-	using the left and right arrow keys to move the cursor or the start or end of a selected time range.</p>
-	
-	<p>The first effect is that if Snap combo box to is set to Nearest, then if you move the cursor
-	or the start or end of a selected time range, then its position is always automatically adjusted to the
-	nearest whole number of the smallest unit in the format of the edit spin boxes. For example,
-	if format is hh:mm:ss, then a position of 1.3 seconds would be adjusted to 1 second,
-	and a time of 1.8 seconds would be adjusted to 2 seconds. In a similar manner,
-	if the Snap to combo box is set to Prior, then the times 1.3 seconds and 1.8 seconds
-	would both be adjusted to 1 second.</p>
-	
-	<p>If the Snap to combo box is set to Nearest or Prior, the second effect is that
-	the minimum amount that the position of the cursor or the start or end of selection
-	changes by is the smallest unit in the format of the edit spin boxes. So, for
-	example, if the format is set to hh:mm:ss, and you press <strong>Right arrow</strong>
-	to move the cursor to the right, the minimum change in position is 1 second.</p>
-
-
-	<h3 id="time-toolbar">Time toolbar</h3>
-
-	<p>The Time toolbar is in the Lower toolbars section of the main window, and contains
-	a single control, an audio position spin box. During playback or recording, this
-	shows the position of the playback recording cursor respectively. Otherwise,
-	it shows the time that playback would start if you pressed <strong>Spacebar</strong>.
-	Note that unlike the spin boxes in the Selection toolbar, you can't change the
-	time shown by the audio position spin box, you can only read its value.</p>
-
-	<p>The default format of the audio position spin box is hh:mm:ss. You can
-	change this using the control's context menu, but unfortunately there is bug
-	which causes the format to be reset to the default value if you open the
-	Preferences dialog and press the OK button.</p>
 
 
 	<h3 id="play-at-speed-toolbar">Play at speed toolbar</h3>
@@ -981,7 +983,7 @@
 	
 	<ol>
 		<li>Assuming that the Track view table is the focus, press <strong>Ctrl + F6</strong>
-		to move to the Lower toolbars, where the first toolbar is the selection toolbar.</li>
+		to move to the Lower toolbars.</li>
 		
 		<li>If necessary, <strong>Tab</strong> until you get to the Start control,
 		which contains the cursor position, and which your screen reader reads out. Note
@@ -1008,20 +1010,22 @@
 	<h3 id="moving-the-cursor-with-the-selection-start-control">Moving the cursor using the Start of selection control</h3>
 	
    <ol>
-	   <li>Press <strong>Ctrl + F6</strong> to move to the Lower toolbars, where the
-	   first toolbar is the selection toolbar.</li>
+	   	<li>Press <strong>Ctrl + F6</strong> to move to the Lower toolbars.</li>
       
-       <li><strong>Tab</strong> to the Show box, and make
-       sure that the Start and length of selection option is selected. If it's set to
-	   Start and end of selection, then you can accidentally select a time range,
-	   instead of moving the cursor, as described in the next section.</li>
+       	<li><strong>Tab</strong> to the Selection toolbar setup button, and then
+		check whether the two following controls are showing the start and length
+		of the selection. If not, press the Selection toolbar setup button, and
+		choose Start and length of selection on the menu. If the spin boxes are
+		showing the
+	   	start and end of selection, then you can accidentally select a time range,
+	   	instead of moving the cursor, as described in the next section.</li>
       
-       <li><strong>Tab</strong> to the Start control, and change its
-	   value using one of two ways described in the  as described in the
-	   <a href="#edit-spin-boxes">Edit spin boxes section</a>.</li>
+       	<li><strong>Tab</strong> to the Start control, and change its
+	   	value using one of two ways described in the  as described in the
+	   	<a href="#edit-spin-boxes">Edit spin boxes section</a>.</li>
       
-       <li>To return to the Track view table, press <strong>Ctrl + F6</strong>
-       twice.</li>
+       	<li>To return to the Track view table, press <strong>Ctrl + F6</strong>
+       	twice.</li>
    </ol>
 	
 	
@@ -1030,12 +1034,12 @@
 	<p>With no time range selected, consider the two cases:</p>
 	
 	<ul>
-		<li>The Show combo box set to Start and length of selection. The start control
+		<li>The spin boxes show the start and length of selection. The start control
 		displays the cursor position, and the length control displays
 		zero. If you change value of the start control, then the
 		length control always remains unchanged at zero.</li>
 		
-		<li>The Show combo box set to Start and end of selection. The start and
+		<li>The spin boxes show the start and end of selection. The start and
 		end controls both display the same value, which is the cursor position.
 		If you increase the value of the start control, then the
 		value of the end control is automatically increased to the same
@@ -1390,12 +1394,14 @@
 	
 	<ol>
 		<li>If the current focus is the Track view table, then press
-		<strong>Ctrl + F6</strong> to move to the Lower toolbars, where
-		the first toolbar is the selection toolbar.</li>
+		<strong>Ctrl + F6</strong> to move to the Lower toolbars.</li>
 		
-		<li><strong>Tab</strong> to the Show combo box, and set the
-		Start and end of selection option. This allows you to adjust the Start or the End of the
-		selection without affecting the other one.</li>
+		<li><strong>Tab</strong> to the Selection toolbar setup button,
+		and then check that the two following controls are showing the start
+		and end of the selection. If not, press the Selection toolbar setup button,
+		and choose Start and end of selection on the menu. This allows you to
+		adjust the Start or the End of the selection without affecting
+		the other one.</li>
 		
 		<li><strong>Tab</strong> to either the start or the
 		end control.</li>
@@ -1439,7 +1445,8 @@
 
 	<h3>Deleting audio</h3>
 
-	<p>To delete the selected audio, press the <strong>Delete</strong> key.</p>
+	<p>To delete the selected audio, you can press either <strong>Delete</strong>,
+	or <strong>Backspace</strong>, or <strong>Ctrl + K</strong>.</p>
 	
 	<p>If you want a preview of the audio after deletion,
 	press <strong>C</strong> which plays back from a short time before
@@ -1493,6 +1500,19 @@
 	<p>The settings for the length of these periods share the settings of the play
 	cut preview command, and can be set in the playback category of Preferences.</p>
 
+
+	<h4>Pasting audio from a different project</h4>
+
+	<p>When you paste some audio from a different project, a Paste audio dialog may open,
+	asking how you would like to paste your audio. There is a group of two radio buttons
+	for the options, which are Smart clip and Selected audio only. For users of screen
+	readers,  it's recommended that you select the Selected audio only option. Then
+	<strong>Tab</strong> to the remember my choice check box and check it, and finally
+	<strong>Tab</strong> to the Continue button and press it. An explanation for this
+	advice is given in the
+	<a href="#pasting-audio-from-a-different-project">Pasting audio from a different
+	project section</a> in the Preferences section of this guide.</p>
+
 	
 	<h3>Replace with silence</h3>
 
@@ -1536,10 +1556,10 @@
 	<p>Audacity provides a large number of effects, which are available on
 	the Effect menu. By default, the effects are grouped by
 	category, and so there are submenus such as Volume and Compression,
-	Fading, and Pitch and Tempo. There are a number of options for how the Effect
-	menu is sorted or grouped, such as sorting by name, and this can
+	Fading, and Pitch and Tempo. However, there are a number of options for how the Effect
+	menu is organized, such as sorting by name, and this can
 	be set in the Effects category of the Preferences dialog, where in
-	the Effect options grouping, there is a Sort or Group combo box.</p>
+	the Effect options grouping, there is an Effects menu organization combo box.</p>
 
 	<p>Some of the menu items, like fade in or fade out,
 	simply execute the effect on the selected audio, but most of them
@@ -1553,9 +1573,23 @@
 
 		<li>A Preview button, which
 		allows you to hear a short sample of the effect applied to the
-		selected audio. By default, the length of the preview is 6 seconds, but you
-		can change this in the Preferences dialog, where in the Playback
-		category, in the Effects Preview group, there's a Length edit box.</li>
+		selected audio. The default length of the preview is 6 seconds,
+		but you can change this in the Preferences dialog, where in the Playback
+		category, in the Effects Preview group, there's a Length edit box.
+		Note that in version 3.3.0 of Audacity, but not in later versions,
+		for a small number of  effects, after you press the Preview button it changes
+		to a Stop preview button, which allows you to stop the preview
+		when you want.</li>
+
+		<li>A Preview button, which
+		allows you to hear a short sample of the effect applied to the
+		selected audio. There are in fact two ways in which the Preview
+		button can work. For some effects the default length of the preview is 6 seconds,
+		and you can change this in the Preferences dialog, where in the Playback
+		category, in the Effects Preview group, there's a Length edit box.
+		For other effects, after you press the Preview button it changes
+		to a Stop preview button, which allows you to stop the preview
+		when you want.</li>
 
 		<li>An Apply button, which is the dialog's default button. Although there's
 		no Cancel button, you can still Cancel the dialog by pressing
@@ -1748,7 +1782,7 @@
 		<li>Multi-track. The mute and solo settings are completely independent, and
 		any number of tracks can be soloed.</li>
 		
-		<li>None. There's no solo setting, just a mute setting.</li>
+		<li>None. For keyboard users, this is incorrectly just the same as Multi-track.</li>
 	</ul>
 	
 	<p>The setting which has these options can be found by going to the Tracks Behaviors
@@ -1873,10 +1907,11 @@
 		<li>Press <strong>J</strong> to  move the cursor to the start of the
 		audio in the selected tracks.</li>
 		
-		<li>Press <strong>Ctrl + F6</strong> to move to the Lower toolbars,
-		where the first toolbar is the selection toolbar.
-		Then <strong>Tab</strong> to the Show combo box, and make sure
-		that the start and length option is selected.</li>
+		<li>Press <strong>Ctrl + F6</strong> to move to the Lower toolbars.
+		Then <strong>Tab</strong> to the Selection toolbar setup button,
+		and then check that the following two controls are showing the start
+		and length of the selection. If not, then press the Selection toolbar
+		setup button, and choose Start and length of selection on the menu.</li>
 		
 		<li><strong>Tab</strong> to the Start spin-box.</li>
 		
@@ -2670,9 +2705,9 @@
 	playback and hear the effect of this. And, in addition, at any point in your editing you can
 	come back to a track's realtime effects, and change parameters, or add or remove effects.</p>
 
-	<p>Using this version of Audacity, you can't use any of Audacity's built in effects as
-	realtime effects, but it's planned that some of these effects can be used in future versions.
-	However, you can use a number of effect plugins, notably both VST and VST3 effect plugins.
+	<p>Using this version of Audacity, you can use a number of Audacity's built in effects as
+	realtime effects: Bass and treble, Distortion, Phaser, Reverb and Wahwah.
+	In addition, you can use a number of effect plugins, notably both VST and VST3 effect plugins.
 	Using VST and VST3 plugins using a screen reader is described in the
 	<a href="#plugins">Plugins section</a>.</p>
 
@@ -2707,7 +2742,11 @@
 		for that effect; and a replace effect button, which opens a menu for either removing the effect
 		or replacing it with another effect.</li>
 
-		<li>An Add effect button.</li>
+		<li>An Add effect button. This opens a menu in which, by default, the the effects are
+		grouped by type and publisher. However, there are a number of other options
+		for how the menu is organized, and the setting for this can be found in the
+		Effects category of the Preferences dialog, where in the Effect options grouping,
+		there is a Realtime effect organization combo box.</li>
 
 		<li>If no effects have been added, there's a link to watch a video about realtime
 		effects.</li>
@@ -2716,7 +2755,7 @@
 	<p>So, for example, to add a realtime effect to the focused track:</p>
 
 	<ol>
-		<li>Open the Effects menu, and choose Add realtime effects <strong>E</strong>. The
+		<li>Open the Effects menu, and choose Add realtime effects (<strong>E</strong>). The
 		realtime effects pane opens, and becomes the focus.</li>
 
 		<li><strong>Tab</strong> to the Add effect button, press it, and choose an effect
@@ -2737,12 +2776,8 @@
 	the following controls:</p>
 
 	<ul>
-		<li>An Enable toggle button, which has the same state as the power button
-		for the effect in the realtime effects pane. Unfortunately the state of
-		this button is currently not read by screen readers. Often you will easily
-		be able to hear whether or not the the effect is being applied during playback.
-		Alternatively you can check the setting of the power button for the effect
-		in the realtime effects pane, which is read by screen readers.</li>
+		<li>A Power toggle button, which has the same state as the power button
+		for the effect in the realtime effects pane.</li>
 
 		<li>A Presets &amp; settings button, which opens a menu which includes commands for
 		factory and user presets, and opening an options dialog box.</li>
@@ -2961,7 +2996,7 @@
 	
 	<p>There are a number of settings which may need changing before
 	you make a recording, and they're described in the following sections. Note
-	that a number of these settings can be made either in the Devices category
+	that a number of these settings can be made either in the Audio Settings category
 	of the Preferences dialog, or an individual dialog.</p>
     
     
@@ -2986,7 +3021,7 @@
     </ul>
 	
 	<p>You can set this option using either the Interface host combo box in
-	the Devices category of the Preferences dialog, or the Audio host
+	the Audio Settings category of the Preferences dialog, or the Audio host
 	combo box in the Select Audio Host dialog (<strong>Shift + H</strong>).
 	Note that when you
 	change this option, the settings of the recording and playback devices may
@@ -2996,7 +3031,7 @@
 	<h4>Recording device</h4>
 	
     <p>You can select the recording device using either the recording device
-    combo box in the Devices category in the Preferences dialog, or the recording
+    combo box in the Audio Settings category in the Preferences dialog, or the recording
 	device combo box in the Select Recording Device dialog
 	(<strong>Shift + I</strong>).</p>
 
@@ -3059,7 +3094,7 @@
 	<h4>Number of recording channels</h4>
 	
 	<p>The number of channels of the recording device can be set using either
-	the recording channels combo box in the Devices category of the Preferences
+	the recording channels combo box in the Audio Settings category of the Preferences
 	dialog, or the recording channels combo box in the Select Recording Channels
 	dialog (<strong>Shift + N</strong>). If you're recording using a microphone,
 	then the appropriate setting depends whether it's a mono or stereo microphone.
@@ -3303,7 +3338,7 @@
 	
 	<p>Audacity can automatically compensate for the latency, once the
 	latency has been measured, as described below. In the
-	Preferences dialog, in the Devices category, in the Latency group, there's a
+	Preferences dialog, in the Audio Settings category, in the Latency group, there's a
 	Latency compensation edit box, where the units of the compensation
 	are milliseconds. If you record audio in a new track, then
 	the audio is automatically moved later in time by this latency
@@ -3394,9 +3429,11 @@
 		start and selection end/length spin boxes in the selection toolbar
 		to zero.</li>
 		
-		<li>Press <strong>Ctrl + F6</strong> to move to the selection
-		bar. <strong>Tab</strong> to the Show combo box, and
-		make sure that the Start and Length of selection option is selected.</li>	
+		<li>Press <strong>Ctrl + F6</strong> to move to the lower toolbars.
+		<strong>Tab</strong> to the Selection toolbar setup button, and then
+		check that the following two controls are showing the start and
+		length of the selection. If not, press the Selection toolbar setup
+		button, and choose Start and length of selection on the menu.</li>	
 		
 		<li>Then <strong>Tab</strong> to the Start spin box,
 		and  change the format to hh:mm:ss + milliseconds using
@@ -3470,10 +3507,10 @@
 	link to the listing of
 	<a href="https://plugins.audacityteam.org/nyquist-plugins/effect-plugins">Nyquist effect plugins</a>.
 	The
-	<a href="https://plugins.audacityteam.org/nyquist-plugins/effect-plugins/amplify-mix-and-pan-effects#ramp-panning"></a>
-	is an example of a useful effect.</p>
+	<a href="https://plugins.audacityteam.org/nyquist-plugins/effect-plugins/amplify-mix-and-pan-effects#ramp-panning">Ramp
+	panning plugin</a> is an example of a useful effect.</p>
 
-	<p>Install a Nyquist effect which you have downloaded:</p>
+	<p>To install a Nyquist effect which you have downloaded:</p>
 
 	<ol>
 		<li>On the Tools menu, choose Nyquist plugin installer. A dialog with than name opens.</li>
@@ -3502,26 +3539,15 @@
 
 	<p>Nearly all VST and VST3 effects have by default a custom graphical user interface
 	for changing the values of its settings which is not accessible for keyboard users.
-	However, Audacity provides an alternative
-	interface which is accessible. For VST effects there's a slider for each parameter,
-	and for VST 3 effects there's either a slider or a check box for each parameter.</p>
+	However, Audacity provides an alternative interface which is accessible.</p>
 
-	<p>When a slider is used for a parameter, its value could be for example, a frequency or level,
-	or an option, such as mono or stereo, not just a plain percentage. For screen readers,
-	the parameter's value is appended to the name of the parameter. So when you <strong>Tab</strong>
-	to a slider, your screen reader reads the parameter's name,  the parameter's value,
-	and the slider's position, a number in the range 0 to 100. When you change the value
-	of a slider, using the standard keystrokes such as <strong>Left arrow</strong>
-	and <strong>Right arrow</strong>, only the new position of the the slider is read.
-	To read the new parameter value depends on which screen reader you're using. If
-	you're using NVDA or Narrator, you can simple press the keystroke to read the
-	current line. However, if you do this using Jaws, Jaws unfortunately reads a
-	parameter value which is incorrect. To read a correct value, you have to
-	<strong>Tab</strong> away from the control, and then <strong>Shift + Tab</strong>
-	back again.</p>
-
+	<p>Bug warning. Unfortunately, Audacity versions 3.3.0 to 3.3.3 don't provide
+	an accessible interface for VST plugins - the setting of the enable graphical interface
+	check box described below has no effect. Fortunately, VST3 plugins are not affected,
+	and most VST plugins are now available as VST3 plugins.</p>
+	
 	<p>When you first open a VST or VST3 effect, its custom graphical user interface is
-	used. You will only be able to tab to a small number of controls, such as the
+	used, and you will only be able to tab to a small number of controls, such as the
 	Presets &amp; settings button. To switch to using a keyboard accessible user interface:</p>
 
 	<ol>
@@ -3536,7 +3562,23 @@
 		dialog, and then reopen it.</li>
 	</ol>
 
-
+	<p>When using the keyboard accessible user interface, then for VST effects
+	there's a slider for each parameter, and for VST 3 effects there's either
+	a slider or a check box for each parameter. When a slider is used for a parameter,
+	its value could be for example, a frequency or level,
+	or an option, such as mono or stereo, not just a plain percentage. For screen readers,
+	the parameter's value is appended to the name of the parameter. So when you <strong>Tab</strong>
+	to a slider, your screen reader reads the parameter's name,  the parameter's value,
+	and the slider's position, a number in the range 0 to 100. When you change the value
+	of a slider, using the standard keystrokes such as <strong>Left arrow</strong>
+	and <strong>Right arrow</strong>, only the new position of the the slider is read.
+	To read the new parameter value depends on which screen reader you're using. If
+	you're using NVDA or Narrator, you can simple press the keystroke to read the
+	current line. However, if you do this using Jaws, Jaws unfortunately reads a
+	parameter value which is incorrect. To read a correct value, you have to
+	<strong>Tab</strong> away from the control, and then <strong>Shift + Tab</strong>
+	back again.</p>
+	
 	
 	<h2 id="preferences">Preferences</h2>
 	
@@ -3648,23 +3690,19 @@
 	the FFmpeg library are as follows:</p>
 
 	<ol>
-		<li>Go the the website whose address is
-		<a href="https://lame.buanzo.org/#lamewindl">lame.buanzo.org/#lamewindl</a>.
-		</li>
+		<li>Go to the website whose address is
+		<a href="https://lame.buanzo.org/ffmpeg.php">lame.buanzo.org/ffmpeg.php</a> .</li>
 
-		<li>On this page, find the link FFmpeg_for_Audacity_3.2_on_Windows.zip, and then
-		open it to download a file which has the same name as the link.</li>
-
-		<li>Extract the contents of this zip file. It contains two installers, one for
-		32 bit Audacity, and one for 64 bit Audacity. The name of the installer for
-		64 bit Audacity contains the number 64.</li>
-
-		<li>Open the appropriate installer. A setup wizard opens, which installs the
+		<li>On this page, find the link for downloading the installer for either
+		the 64 bit or 32 bit version of the library, as discussed above.</li>
+		
+		<li>Open the downloaded file. A setup wizard opens, which installs the
 		FFmpeg library in a folder where Audacity will automatically find it the
 		next time it's opened.</li>
 	</ol>
 
-	<p>Note that there are no issues with having both versions installed at the same time.</p>
+	<p>Note that there are no issues with having both versions of the FFmpeg
+	library installed at the same time.</p>
 		
 	
 	<h3 id="edit-metadata-tags-dialog-opens-during-export">Edit Metadata Tags dialog opens
@@ -3739,6 +3777,44 @@
 	</ol>
 
 
+	<h3 id="pasting-audio-from-a-different-project">Pasting audio from a different project</h3>
+
+	<p>After editing, you often end up with one or more sections of audio data (clips), which were each
+	originally part of a longer clip. For each clip, Audacity keeps track of
+	the original longer clip, and it stores this data in the project, even though it may
+	be hidden. This allows a user to extend a clip using the data from the original
+	clip. Unfortunately, this functionality is not accessible
+	for keyboard users.</p>
+
+	<p>When an audio clip from a different project is pasted into the project
+	which you're editing, then if the clip originally was part of a longer original clip,
+	then Audacity gives you the option as to whether or not the data from originally clip
+	is copied and stored in the current project.</p>
+
+	<p>In the Track Behaviors category of the preferences dialog, in the
+	“Paste audio from other Audacity project as” there are three
+	radio buttons:</p>
+
+	<ul>
+		<li>Smart clip. If the clip was originally part of a longer clip, then
+		all of the data for the longer clip is also copied and stored in
+		the current project. This allows mouse users to extend the
+		clip in the current project, but also can add greatly to the size of the
+		current project.</li>
+
+		<li>Selected audio only. The data from any longer original
+		clip is not copied and stored in the current project.
+		The clip cannot be extended in the current project, but
+		the increase in size of the project is kept to a minimum.
+		Given that keyboard users can't lengthen clips anyway, this is
+		the recommended option.</li>
+
+		<li>Ask me each time. A Paste audio dialog opens when you paste audio
+		from a different project, asking you how you want to paste the audio.
+		This is the default option.</li>
+	</ul>
+
+
 	<h3 id="whether-subsequent-clips">Whether subsequent clips are moved when audio is
 		added or removed</h3>
 
@@ -3761,17 +3837,21 @@
 	to either paste the selection or generate the audio.</p>
 
 
-	<h3 id="sorting-or-grouping-of-the-effect-menu">Sorting or grouping of the Effect menu</h3>
+	<h3 id="organizations-of-effect-menus">Organizations of effect menus</h3>
 
-	<p>There are a number of possible options for how the effects on the Effect menu
-	are grouped or sorted. The default option is for the effects which are included
-	with Audacity are grouped by category, and any additional effect plugins are grouped
-	by the publisher.</p>
+	<p>There are settings for the organization of both the Effect menu, and the
+	menu which opens when you press the Add effect button in the Realtime effects
+	panel. These two settings are found in the Effects category in the Preferences
+	dialog, where there's an Effect options grouping which contains two combo
+	boxes:</p>
 
-	<p>In the Effects category of the Preferences dialog, in the Effect Options grouping,
-	there's a Sort or Group combo box, which by default is set to the default option which
-	was described above. Alternative options include Sorted by Effect name, which in fact
-	was the default prior to version 3.2.0 of Audacity.</p>
+	<ul>
+		<li>Effect menu organization combo box, which by default is set to
+		Group by category. Alternatives include Sort by effect name.</li>
+
+		<li>Realtime effect organization combo box, which by default is set to
+		Group by type and publisher.</li>
+	</ul>
 	
 	
 	<h3>Recording options</h3>
@@ -4424,7 +4504,7 @@
 		</tr>
 		<tr>
 			<td>Delete selected audio</td>
-			<td>Delete</td>
+			<td>Delete or Backspace or Ctrl + K</td>
 		</tr>		
 		<tr>
 			<td>Cut selected audio</td>

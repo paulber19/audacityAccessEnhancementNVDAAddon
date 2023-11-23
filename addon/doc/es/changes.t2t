@@ -5,9 +5,8 @@ Autor: ADDON_AUTHOR_NAME
 %!includeconf: ../addon_global.t2tconf
 %!includeconf: addon_informations.t2tconf
 
-URL: ADDON_AUTHOR_URL
+URL: [ADDON_REPOSITORY ADDON_REPOSITORY]
 
-[Repositorio en GitHub: ADDON_REPOSITORY ADDON_REPOSITORY]
 
 Descarga:
 - [Versión actual: ADDON_CUR_VERSION ADDON_DOWNLOAD_SERVER1]
@@ -15,7 +14,31 @@ Descarga:
 - [Versiones de desarrollo ADDON_DEV_URL]
 
 
-+ v2.9 (03/03/2023) +
++ v3.0 (23/11/2023) +
+Nuevas características:
+- nominación de los paneles de las barras de herramientas en "Panel inferior" y "Panel superior".
+- nominación del panel que contiene la vista de pista en "Panel principal".
+
+
+Cambios:
+- Los scripts para anunciar el inicio, el final, la duración y el centro de la selección son reemplazados por:
+ - un script para anunciar la selección,
+ - un script para anunciar el primer tiempo de la selección,
+ - un script para anunciar el segundo tiempo de la selección.
+- en la documentación al francés, la terminología "zone de sélection numérique" se reemplaza por "boite de sélection numérique" de acuerdo con la guía de Audacity. (N. del T.): En la documentación al español esta terminología ha sido traducida por "cuadro de selección numérico".
+- en la documentación, el término "grupo" para las barras de herramientas" se reemplaza por "panel".
+- la funcionalidad "Verbalización de los cuadros de selección numérico 
+del tiempo de Audacity" no está disponible en las versiones 3.3.x de 
+Audacity.
+
+
+Compatibilidad:
+- Esta versión del complemento se probó con Audacity 3.4, 3.4.2, 3.3.0 y 3.3.3. También debe ser compatible con las versiones 3.3.1 y 3.3.2, pero no se ha realizado ninguna prueba.
+- La compatibilidad con versiones anteriores a la 3.3.0 ya no está garantizada.
+- las versiones de NVDA inferiores a la 2022.1 ya no son soportadas.
+
+
++ v2.9 (03/08/2023) +
 - la posición del audio ya no se anuncia después de reiniciar la reproducción. Esto sucedió con las versiones de Audacity 3.2.2 y superiores. En estas versiones, el estado de los botones "reproducir" y "pausar" ya no está disponible con MSAA), a diferencia de las versiones anteriores.
 
 

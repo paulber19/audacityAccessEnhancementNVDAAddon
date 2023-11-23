@@ -1,13 +1,13 @@
 ADDON_SUMMARY - user manual
-Auteur: ADDON_AUTHOR_NAME
+Author: ADDON_AUTHOR_NAME
 
 
 %!includeconf: ../addon_userManual.t2tconf
 %!includeconf: addon_informations.t2tconf
 %!includeconf: addon_keys.t2tconf
-URL: ADDON_AUTHOR_URL
 
-[GitHub repository: ADDON_REPOSITORY ADDON_REPOSITORY]
+URL: [ADDON_REPOSITORY ADDON_REPOSITORY]
+
 
 Download:
 - [stable version ADDON_CUR_VERSION ADDON_DOWNLOAD_SERVER1]
@@ -36,14 +36,15 @@ This add-on provides the folowing scripts:
 - [Report pressed state of the buttons "Play" and "Pause" #HDR3],
 - [Report the level of playback or recording meter peak#hdr4],
 - [Report the level of playback or record sliders #hdr5],
-- [Display the guide of audacity #hdr6],
+- [announce playback speed #hdr6],
+- [Display the guide of audacity #hdr7],
 
 
 As well as accessibility improvements:
 - [Automatic announcement of the audio position #HDR100],
 - [Automatic Announcement of the selection #HDR101],
 - [Use the space bar or the Enter key to press a button #HDR102],
-- [Vocalization of the edit area of a time of the Selection toolbar Audacity #HDR103],
+- [Vocalization of the edit spin boxes of Audacity time #HDR103],
 - [various other adaptations #hdr104].
 
 ++ update ++
@@ -75,7 +76,8 @@ In the case of an automatic update and if a new version is detected, the "Update
 In the case of an automatic update and if a new version is detected, the "Update" dialog box is displayed to suggest:
 
 ++ Compatibility ++
-Tis version of add-on has been tested with Audacity version 3.2.3, 3.1, 3.0. Previous versions of Audacity are not supported.
+This add-on has been tested with Audacity version 3.4, 3.3.0 and 3.3.3. It is not compatible with versions prior to version 3.3.0.
+
 
 ++ Necessary configuration ++
 For proper operation of the module, it is necessary to :
@@ -137,22 +139,25 @@ This script is triggered by the command "SHELL_KEY_AUDIO_POSITION" of the interp
 
 No gesture of command assigned by default.
 
-It announces the time indicated in the field "audio position" of the "selection or "time" (depending of Audacity version) Toolbar.
+It announces the time indicated in the "audio position" edit spin box of the "Time" toolbar.
 
 ++ Report informations's selection ++[hdr2]
 To use this script, it is necessary that the focus is in the tracks view.
 
-The selection toolbar provides several items of information:
-- the boundaries of the selection (start and end),
-- the length of the selection,
-- the center of the selection.
+The selection toolbar presents two edit spin boxes which give according to the choice made using the "Selection Toolbar Setup" button:
+- the limits of the selection (beginning and end),
+- the start and duration of the selection,
+- the duration and end of the selection,
+- the duration and the center of the selection.
 
 
-It is possible to advertise while remaining in the tracks view with the following scripts:
-- report position of start and end of the selection: command "SHELL_KEY_SELECTION_LIMITS_REPORT" of the interpreter,
-- report the selection's length : command "SHELL_KEY_SELECTION_DURATION_REPORT" of the interpreter,
-- report the position of the selection's center: command "SHELL_KEY_SELECTION_CENTER_REPORT"of the interpreter,
-- report the position of start and end of selection. Twice: report the selection's length. Third: report the position of selection's centre: without interpreter's command.
+With the following scripts, it is possible to announce the time indicated by these two boxes without having to move the focus in the "Selection" toolbar:
+- "Announce the selection": command "SHELL_KEY_SELECTION_LIMITS_REPORT" of the interpreter,
+- "announce the first time of the selection": command "SHELL_KEY_SELECTION_DURATION_REPORT" of the interpreter,
+- "announce the second time of the selection": "SHELL_KEY_SELECTION_CENTER_REPORT" of the interpreter,
+- "announce the selection. Press twice: announce its first time. Press three times: announce its second time": without an interpreter command.
+
+
 
 
 By default, No input gesture is affected.
@@ -190,14 +195,23 @@ The following scripts make it possible to know the levels of these sliders witho
 By default, no input gesture command is assigned.
 
 
-++ Display Audacity's guide ++[hdr6]
+
+++ Report the playback speed ++[hdr6]
+
+It is launched by the "SHELL_KEY_PLAYBACK_SPEED_REPORT" command of the interpreter.
+
+By default, it has no control gesture assigned to it.
+
+This script announces the level of the "Playback speed" slider of the "Play-at-Speed" Speed" group.
+
+++ Display Audacity's guide ++[hdr7]
 This script is triggered by the command "SHELL_KEY_DISPLAY_GUIDE" of the interpreter.
 
 By default, no input gesture is assigned.
 
 It allows you to view the guide of Audacity written by David Bailes for the users of the Jaws (c) screen reader and Audacity v2.2.
 
-+Accessibility improvements +
++ Accessibility improvements +
 ++ Automatic announcement of the audio position ++[hdr100]
 In audio playback or not, the following shortcuts from Audacity (set by default) allow you to set or move the cursor audio:
 - "Shift + a" or "x": play / stop and positioning of the cursor audio
@@ -212,9 +226,9 @@ In audio playback or not, the following shortcuts from Audacity (set by default)
 - "space": play /stop
 
 
-In audio playback stopped and after activation of the shortcut, the field "audio position" of the toolbar "Audacity Selection toolbar" is automatically announced if a change has taken place and in the form:
-- announcement of the field's label("audio position",
-- announcement of the contents of the field formatted not to say the zeros.
+In stopped audio playback and after activating the shortcut, the information in the "audio position" edit spin box of the "Time" toolbar is automatically announced if a change has taken place and in the form:
+- announcement of the label of the edit spin box of the audio position (displayed by Audacity),
+- announcement of the formatted time indicated by this box.
 
 
 The return of the audio position in the beginning of the selection is reported.
@@ -234,10 +248,11 @@ The following shortcuts from Audacity (set by default) allow you to set or move 
 - "Control + Shift + left arrow": to contract the selection to the right.
 
 
-If the option "Report automaticaly the selection changes" located in "Options" category of the extension settings is selected, playback is stopped and after the activation of the shortcut, the selection changes are announced
-Depending on the type of shortcut, one or the other or both of the selection fields of the toolbar in "Selection" are announced in the form:
-- announcement of the label of the field,
-- announcement of its contents formatted not to say the zeros.
+
+If the option "Automatically announce selection changes" in the "Options" category of the extension settings is checked, In stopped playback and after activating one of the previous shortcuts, selection changes are announced
+Depending on the type of shortcut, one or/and the other of the numeric selection boxes of the "Selection" toolbar are announced in the form:
+- announcement of the label of the numerical selection box displayed by Audacity,
+- announcement of the formatted time indicated by this box.
 
 
 As all the labels advertised are those that are displayed by Audacity, there may be inconsistencies due to the translation or at the coding .
@@ -255,16 +270,18 @@ To press the button, it is necessary to use the "Enter" key, but this moves the 
 If the option "Use space bar or Enter key to press a button" located in "Options" category of extension settings is checked, it is then possible to press a button with the space bar or the Enter key and the state changes are announced.
 
 
-++ Vocalization of the time's edit spin boxes ++[HDR103]
+++ Vocalization of the Audacity time's edit spin boxes ++[HDR103]
+This feature is not available in Audacity versions 3.3.x.
+
 Audacity shows some edit spin boxes for editing time like, for exemple: audio position, selection start, selection end, selection center, selection length .
 
-This time is recorded according to a format as you configure the context menu.
+These selection boxes present the information according to the format defined by the user using the contextual menu of the box.
+
+The information is a sequence of numbers. Each digit belongs to a group of digits such as hours, minutes, seconds, etc.
 
 To change this time, it is necessary to be placed on the digit to modify (for right or left arrow) and the increase or the decrease with the arrows high or low.
 
-By default, this module allows a better vocalization of a hand indicating the time in hours, minutes and seconds, and on the other hand, in indicating the nature of the digit that is changed:
-- the tens and the units for the hours, minutes, and seconds,
-- the tenths, hundredths, and thousandths to seconds.
+By default, this extension allows better vocalization by indicating a time in hours, minutes and seconds, indicating the nature of the digit that is selected and the value of the group of the digit modified for the digital selection boxes cited as an example above.
 
 
 This feature can be desactivated by unchecking the "Edit spin box enhanced announcement" check box located in "Options" category of extension settings.
@@ -288,7 +305,7 @@ The same mechanisms are put in place in other edit spin boxes which are areas of
 - The tracks are not announced as rows and the tracks view as a table.
 - The state "not selected" to a track is no longer vocalized.
 - the absence of a track when the focus arrives in the view of the track is announced.
-- The name of the toolbars is announced during the movement of the focus by "control+f6" or "shift+ control+f6" (can be disabled by a configuration option 'Report name of toolbars").
+- The name of the toolbar panels is announced when moving the focus by "control+f6" or "shift+control+f6" (see the ["Audacity guide" audacityGuide.html]). This can be disabled by configuring the "Announce toolbar panel names" option. The panel that contains the Track View is named "Main Panel".
 
 
 + History +

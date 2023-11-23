@@ -24,7 +24,7 @@ Autor: paulber19 (paulber19@laposte.net)
 %%toc
 
 + Introducción +
-Esta es la traducción de la [guía https://vip.chowo.co.uk/wp-content/uploads/jaws/Audacity-3.2.3-Guide.html] para los usuarios del lector de pantalla JAWS, NVDA y Narrador, escrito por David Bailes, referente a la versión 3.2.3 de Audacity.
+Esta es la traducción de la [guía https://vip.chowo.co.uk/wp-content/uploads/jaws/Audacity-3.3.0-Guide.html] para los usuarios del lector de pantalla JAWS, NVDA y Narrador, escrito por David Bailes, referente a las versiones 3.3.0 a 3.3.3 de Audacity.
 
 Otras guías están disponibles en la página [Jaws Guides http://vip.chowo.co.uk/jaws-guides/] del sitio Web "VIP Software Guides". A pesar de que éstas se han escrito específicamente para los usuarios del lector de pantalla JAWS, muchos de ellos también pueden ser útiles para los usuarios de otros lectores de pantalla.
 
@@ -34,7 +34,7 @@ Puede usar Audacity para la grabación, la edición simple de pistas individuale
 El software  Audacity  se puede descargar desde la página de inicio del sitio [Audacity http://audacityteam.org/].
 
 
-Audacity 3.2.3 está disponible en versión de 64 bits o 32 bits. Se recomienda instalar la versión de 64 bits, a menos que tenga una razón especial para necesitar la versión de 32 bits.
+Audacity 3.3.3 está disponible en versión de 64 bits o 32 bits. Se recomienda instalar la versión de 64 bits, a menos que tenga una razón especial para necesitar la versión de 32 bits.
 
 Tenga en cuenta que si desea instalar la versión de 64 bits y ha instalado una versión de Audacity de 32 bits, debe desinstalarla antes de instalar la versión de 64 bits.
 
@@ -99,13 +99,14 @@ Después de su solicitud por cualquiera de los métodos, recibirá un correo ele
 
 
 ++ Nuevas características y cambios ++
-Las nuevas características y cambios que se introdujeron en Audacity 3.2.0 hasta la 3.2.3 incluyen lo siguiente:
-- Los efectos en tiempo real se pueden añadir a una pista. Puede cambiar estos efectos durante la reproducción y también volver para modificarlos en cualquier momento del montaje.
-- Los efectos del menú "Efecto" ahora se agrupan por defecto, en lugar de ser simplemente ordenados por nombre. Si desea modificar esto, véase la sección "Ordenar o agrupar del menú Efecto" de la sección "Preferencias" #HDR-SortEffectMenu].
-- Las barras de herramientas de reproducción y grabación ahora contienen un botón de medición y un cursor de nivel y, por lo tanto, la antigua barra de herramientas de "mezcla" ya no es necesaria.
-- Hay una barra de herramientas de "Configuración de audio", que reemplaza la barra de herramientas de "Dispositivos", aunque esta última siempre está disponible si lo desea. Véase la sección superior de las barras de herramientas para obtener más detalles.
-- La barra de herramienta "reproducir a velocidad" se movió desde la sección superior  de las barras de herramientas de la ventana principal a la sección inferior de las barras de herramientas de la ventana principal.
-- Audacity ahora admite una versión mucho más reciente de la Biblioteca FFmpeg. Los detalles sobre cómo descargar e instalar esto se dan en la sección "Biblioteca FFmpeg" de la sección "Preferencias".
+Las nuevas características y cambios que se introdujeron en Audacity 3.3.0 incluyen lo siguiente:
+- Algunos de los efectos de  Audacity integrados ahora se pueden usar como [efectos en tiempo real]. Estos son: Graves y agudos, Distorsión, Cambiar fase (Phaser), Reverberación y Wahwah.
+- Ciertas barras de herramientas se han cambiado en la sección [Barras de herramientas inferior] de la ventana principal. Esto incluye que en la barra de herramientas de selección, los detalles de la selección que se muestran ahora se definen usando un botón de menú, en lugar de un cuadro combinado.
+- Cuando se pega audio a partir de otro proyecto, ahora hay opciones para la cantidad de datos copiados en el proyecto actual. Esto se describe en la sección [Pegar audio de otro proyecto] de la sección "Preferencias".
+- En el cuadro de diálogo "Preferencias", la categoría "Dispositivos" ha sido renombrada  en "Configuración de Audio".
+- Desafortunadamente, los cambios en esta versión de Audacity significan que ciertas características del script Jaws ya no funcionan.
+
+
 
 
 ++ Atajos predeterminados ++
@@ -137,9 +138,9 @@ Tenga en cuenta que para aquellos que utilizan Jaws, el resto de la guía no asu
 Los principales componentes de la ventana principal de Audacity son los siguientes:
 - La barra de título: Cuando la ventana contiene un proyecto sin nombre, por ejemplo al arranque de Audacity, el texto en la barra de título es "Audacity". Cuando la ventana contiene el nombre del proyecto, el texto es el nombre del proyecto.
 - La barra de menú: Hay, por defecto, un menú adicional que no está presente en la barra de menú, pero se puede añadir. Véase la sección "[Mostrar menús adicionales #HDR-ExtraMenus]".
-- El grupo superior de barras de herramientas.
+- El panel superior de barras de herramientas.
 - Tabla "Vista de pista": Contiene las pistas que componen el proyecto. Véase la sección "[Tabla "Vista de pista" #HDR-TracksTable]".
-- El grupo inferior de barras de herramientas.
+- El panel inferior de barras de herramientas.
 - La barra de estado: se divide en 3 secciones. La primera sección es probablemente la más interesante, ya que contiene el estado de reproducción, a saber el de detener Audacity, de la reproducción, de la grabación y así sucesivamente.
 
 
@@ -147,9 +148,9 @@ Los principales componentes de la ventana principal de Audacity son los siguient
 Al igual que en cualquier ventana, para llegar a la barra de menú, pulsar "Alt", y para salir de esta, pulsar "Escape" o "Alt".
 
 Si se pulsa"Control + F6" te llevará de un elemento a otro entre:
-- El grupo superior de barras de herramientas.
+- El panel superior de barras de herramientas.
 - La tabla "Vista de pista".
-- El grupo inferior de barras de herramientas.
+- El panel inferior de barras de herramientas.
 
 
 Pulsando "Control + mayúscula + F6" se mueve en sentido inverso.
@@ -226,22 +227,22 @@ Sin embargo, desde el cuadro de diálogo de exportación de audio se recuerda el
 
 + Reproducción de audio +[HDR-AudioPlayback]
 ++ Ajustes de reproducción ++
-Se puede seleccionar  el dispositivo de reproducción que Audacity utiliza en varios lugares, especialmente en el grupo superior de barras de herramientas  de la ventana principal de Audacity  y en la categoría "Dispositivos" del cuadro de diálogo "Preferencias".
+Se puede seleccionar  el dispositivo de reproducción que Audacity utiliza en varios lugares, especialmente en el panel superior de barras de herramientas  de la ventana principal de Audacity  y en la categoría "Configuración de Audio" del cuadro de diálogo "Preferencias".
 
 Si sólo tiene un único dispositivo de reproducción en el equipo, no debería tener que cambiar esta configuración.
 
 Si necesita cambiar el dispositivo de reproducción de Audacity, aquí hay una forma de hacerlo:
 - Pulsar Ctrl + P para abrir el cuadro de diálogo "Preferencias".
-- Selecciona "Dispositivos" de la lista de categorías.
+- Selecciona "Configuración de Audio" de la lista de categorías.
 - Tabular hasta llegar al cuadro combinado "Reproducción" y defina el dispositivo que desea usar.
 - Pulsar "Intro" para activar el botón  "Aceptar" por defecto.
 
 
-El volumen de reproducción es controlado por el cursor  del potenciómetro de volumen de reproducción que está en el Mezclador del grupo superior barra de herramientas de la ventana principal de Audacity.
+El volumen de reproducción es controlado por el cursor  del potenciómetro de volumen de reproducción que está en el Mezclador del panel superior barra de herramientas de la ventana principal de Audacity.
 El volumen de reproducción total se determina tanto por el volumen de reproducción de Audacity como por el cursor de volumen del dispositivo de reproducción, que se puede definir en Windows.
 
 Para cambiar cualquiera de estos ajustes de esta barra de herramientas y asumiendo que la tabla "Vista de pista" tiene el foco:
-- Pulsar dos veces Ctrl + F6 para alcanzar el grupo superior de barras de herramientas.
+- Pulsar dos veces Ctrl + F6 para alcanzar el panel superior de barras de herramientas.
 - Tabular hacia adelante o hacia atrás (con "mayúscula + Tab") hasta llegar al potenciómetro del nivel de volumen de reproducción y realizar los cambios deseados.
 - Pulsar Ctrl + F6 para volver a la vista de pista.
 
@@ -282,7 +283,7 @@ El uso de estas órdenes se describe en la sección ["Edición de audio con vari
 
 Aparece el cursor  en la tabla "Vista de pista" como una línea vertical. esta es la posición de inicio de la reproducción.
 
-La posición del cursor y la reproducción están disponibles  respectivamente en la barra de herramientas de selección y "de tiempo" ubicado en el grupo inferior de la barra de herramientas.
+La posición del cursor y la reproducción están disponibles  respectivamente en la barra de herramientas "de selección" y "de tiempo" ubicado en el  panel inferior de la barra de herramientas.
 
 
 ++ Desplazamiento en la tabla ++
@@ -308,14 +309,14 @@ Hay varias maneras de seleccionar o deseleccionar la selección de pistas:
 El estado de selección ("seleccionado") de una pista se indica seguido de su nombre.
 
 
-+ Grupos de barras de herramientas +[HDR-ToolsBarsGroup]
++ Paneles de barras de herramientas +[HDR-ToolsBarsGroup]
 
-Hay dos áreas de la ventana principal que contiene las barras de herramientas, y ellos serán llamados grupos de barras de herramientas superior e inferior.
-El grupo superior de barras de herramientas aparece por encima de la  tabla "Vista de pista" y el grupo inferior de barras de herramientas aparece por debajo.
+Hay dos áreas de la ventana principal que contiene las barras de herramientas, y ellos serán llamados paneles de barras de herramientas superior e inferior.
+El panel superior de barras de herramientas aparece por encima de la  tabla "Vista de pista" y el panel inferior de barras de herramientas aparece por debajo.
 
-Como se mencionó anteriormente, puede dar la vuelta del grupo superior de barras de herramientas, de la tabla "vista de pista" y del grupo inferior de barras de herramientas ya sea hacia adelante o hacia atrás pulsando "control + F6" o "control + Mayúscula + F6" respectivamente.
+Como se mencionó anteriormente, puede dar la vuelta del panel superior de barras de herramientas, de la tabla "vista de pista" y del panel inferior de barras de herramientas ya sea hacia adelante o hacia atrás pulsando "control + F6" o "control + Mayúscula + F6" respectivamente.
 
-En los grupos de barras de herramientas superior e inferior, se puede acceder a todos los controles de barras de herramientas del grupo pulsando "Tab" o "Mayúscula + Tab".
+En los paneles de barras de herramientas superior e inferior, se puede acceder a todos los controles de barras de herramientas del panel pulsando "Tab" o "Mayúscula + Tab".
 
 Tenga en cuenta que no puede pulsar  los botones de barras de herramientas  que al pulsar "Intro".
 Pero no se puede utilizar la tecla "Espacio", porque esta tecla se utiliza para iniciar y detener la reproducción.
@@ -325,34 +326,63 @@ Puede mostrar y ocultar todas las barras de herramientas utilizando el submenú 
 Mostrando sólo las barras de herramientas  que encuentre útil tiene la ventaja de reducir considerablemente el número de tabulaciones necesarias para encontrar un control en particular.
 
 
-El resto de esta sección sobre las barras de herramientas contiene  las sub-secciones sobre los grupos de barras de herramientas superior e inferior y las sub-secciones sobre algunas barras de herramientas individuales como la barra de herramientas de "selección", la barra de herramientas de "tiempo" y la barra de herramientas de "reproducir a velocidad".
+El resto de esta sección sobre las barras de herramientas contiene  las sub-secciones sobre los paneles de barras de herramientas superior e inferior y las sub-secciones sobre algunas barras de herramientas individuales como la barra de herramientas de "selección", la barra de herramientas de "tiempo" y la barra de herramientas de "reproducir a velocidad".
 
-++ Grupo superior de barras de herramientas ++
+++ Panel superior de barras de herramientas ++
 
 Las barras de herramientas que se muestran de forma predeterminada son las siguientes:
 - la barra de herramientas de "reproducción": esta contiene los botones para la reproducción y grabación (todos los elementos son también disponible en el menú "Reproducción" con atajos de teclado).
 - la barra de herramientas de "herramientas": esta contiene los botones para diversas herramientas de edición que implican el uso del ratón.
 - la barra de herramientas de "edición": esta contiene los botones para Cortar, Pegar, etc. Estas órdenes también están disponibles en el menú Editar o en el menú Ver, y todos tienen atajos de teclado.
-- la barra de herramientas de "configuración de audio", que contiene un botón de configuración de audio. Esto abre un menú para definir los dispositivos que desea usar para la grabación y la reproducción. Para los usuarios de teclado, hay formas más prácticas de modificar estos ajustes , por ejemplo, en la categoría "Dispositivos" del cuadro de diálogo "Preferencias".
+- la barra de herramientas de "configuración de audio", que contiene un botón de configuración de audio. Esto abre un menú para definir los dispositivos que desea usar para la grabación y la reproducción. Para los usuarios de teclado, hay formas más prácticas de modificar estos ajustes , por ejemplo, en la categoría "Configuración de Audio" del cuadro de diálogo "Preferencias".
 - la barra de herramientas de "Compartir audio", que contiene un botón "Compartir audio". Esto le permite compartir el audio con otros usuarios utilizando un servicio proporcionado por la misma compañía que tiene  Audacity. No está cubierto en esta guía.
-- la barra de herramientas de "medición de grabación" y la barra de herramientas de "medición de reproducción". Cada uno de ellos contiene un botón que abre un menú para controlar el medidor y el potenciómetro para ajustar el nivel. En las versiones de Audacity anteriores a la versión 3.2.0,  una barra de "dispositivos" también se mostraba de forma predeterminada en este grupo de barra de herramientas. Esta barra de herramientas siempre está disponible para aquellos que desean usarla, simplemente activela mediante el submenú "Barras de herramientas" en el menú "Ver". Sin embargo, en esta guía, no se utilizará.
+- la barra de herramientas de "medición de grabación" y la barra de herramientas de "medición de reproducción". Cada uno de ellos contiene un botón que abre un menú para controlar el medidor y el potenciómetro para ajustar el nivel. En las versiones de Audacity anteriores a la versión 3.2.0,  una barra de "dispositivos" también se mostraba de forma predeterminada en este panel de barra de herramientas. Esta barra de herramientas siempre está disponible para aquellos que desean usarla, simplemente activela mediante el submenú "Barras de herramientas" en el menú "Ver". Sin embargo, en esta guía, no se utilizará.
 
 
-++ Grupo inferior de barras de herramientas ++
-De forma predeterminada, el grupo inferior de barras de herramientas contiene:
+++ Panel inferior de barras de herramientas ++
+De forma predeterminada, el panel inferior de barras de herramientas contiene:
+- la barra de herramientas de "snapping",
+	- la barra de herramientas de "tiempo",
 - la barra de herramientas de "selección",
-- la barra de herramientas de "tiempo",
 - la barra de herramientas de "reproducir a velocidad"
 
+
+++ Barra de herramientas de "snapping" ++
+
+La barra de herramientas de "snapping" contiene dos órdenes:
+- Una casilla de verificación "Snap", que se usa para activar o desactivar el chasquido (snapping en inglés), y que por defecto está desmarcada. Tenga en cuenta que en la ventana principal de Audacity, la barra espaciadora comienza o detiene siempre la reproducción. Los atajos de teclado que puede usar para cambiar el estado de la casilla de verificación incluyen "Control +  espacio" y "Intro".
+- Un cuadro combinado "snap to", que especifica la unidad utilizada para el chasquido, como se describe más abajo. Este control solo está disponible cuando se marca la casilla de verificación "Snapping".
+
+
+Para los usuarios de teclado, el chasquido afecta las órdenes para mover ligeramente el cursor y las órdenes para mover ligeramente el inicio o el final de la selección.
+
+Estas son las órdenes que tienen por defecto las teclas "Flecha izquierda/derecha", "Mayúscula + flecha izquierda/derecha" y "Control + Mayúscula + flecha izquierda/derecha".
+Todas estas órdenes se describen más adelante en la guía.
+Cuando el snapping se deshabilita, el tamaño de los pasos de las órdenes depende del nivel de zoom, como se describe en la sección Tamaño del paso con las flechas izquierda y derecha, más adelante en esta guía.
+
+Cuando el snapping se habilita, esto se cambia de la siguiente manera. Las nuevas posiciones se redondean a la unidad más cercana especificada por el cuadro combinado "Snap to". Además, el tamaño de los pasos mínimos es la unidad especificada por el cuadro combinado "Snap to".
+
+
+++ Barra de herramientas de "tiempo" ++
+La barra de herramientas de "tiempo" contiene un solo control, el cuadro de selección numérico "Posición de audio".
+Durante la reproducción o la grabación, se muestra la posición del cursor de reproducción o de grabación respectivamente.
+De lo contrario, se indica el tiempo cuando se pulsa la barra espaciadora.
+
+Tenga en cuenta que a diferencia de los cuadros de selección numérico de la Barra de herramientas de "selección", no se puede cambiar el tiempo mostrado por el cuadro de selección numérico "Posición de audio", sólo se puede leer su valor.
+
+El formato por defecto del cuadro de selección numérico "Posición de audio" es hh: mm: ss.
+Puedes cambiar esto usando el menú contextual de este cuadro, pero por desgracia hay un fallo que causa la reinicialización del formato  al valor por defecto si se abre el cuadro de diálogo de Preferencias y pulsas el botón Aceptar.
 
 
 ++ Barra de herramientas de "selección" ++[HDR-SelectionBar]
 
-La barra de herramientas de selección contiene los siguientes controles:
-- El cuadro combinado "Frecuencia (Hz)": define la frecuencia  de muestreo del proyecto.
-- El cuadro combinado "Ajuste a": define la manera cómo Audacity debe redondear el tiempo.
-- Un cuadro combinado "Mostrar" que permite elegir la opción  que fija la naturaleza de los dos cuadros de edición siguientes en la barra de herramientas. La elección se hace entre: Inicio y final de la selección, Inicio y duración de la selección, Duración y fin de la selección, Duración y centro de la selección.
-- Dos cuadros de edición  de tiempo cuya naturaleza está especificado por la lista "Mostrar" anterior. Si no se selecciona el intervalo de tiempo, los elementos "Inicio", "Final" o "Centro" da la posición del cursor.
+La barra de herramientas de selección contiene las siguientes órdenes:
+- Un botón de configuración para esta barra de herramientas. Abre un menú que contiene las opciones para definir la naturaleza del intervalo de tiempo que se muestra en los dos cuadros de selección numérico, que son los siguientes dos controles en la barra de herramientas. Estas opciones son: inicio y final, inicio y duración, duración y final, y duración y centro.
+- Dos cuadros de selección numérico, que dan los detalles del intervalo de tiempo seleccionado, que fueron especificados por el menú del botón de configuración anterior.
+
+
+Si no se selecciona el intervalo de tiempo, en los cuadro de selección numérico los elementos "Inicio", "Final" o "Centro" da la posición del cursor.
+
 
 +++ Cuadros de selección numérico +++[HDR-EditSpinBoxes]
 Los controles de la barra de herramientas de "selección" que se utiliza para mostrar y editar el tiempo son a menudo llamados "cuadros de selección numérico".
@@ -398,38 +428,11 @@ Se reemplaza completamente el tiempo con el tiempo de 32 minutos.
 Si se utiliza el lector de pantalla JAWS o NVDA, siempre se puede leer la totalidad del tiempo pulsando las teclas de órdenes para leer la línea actual.
 
 
-+++ Cuadro combinado "Ajuste a" +++
-El cuadro combinado "Ajuste a" tiene tres opciones: "Desactivado" (valor por defecto), "El más cercano", y "Anterior".
-
-Si la opción escogida es ya sea "El más cercano" o ya sea  "Anterior", tiene dos efectos sobre el uso de las teclas de flechas izquierda y derecha para mover el cursor o el comienzo y el final de un período seleccionado.
-
-El primer efecto es que si la elección es "El más cercano" y que se mueve el cursor o el comienzo o el final de un período seleccionado, entonces su posición siempre se ajusta automáticamente al número entero más próximo de la unidad más pequeña  en el formato en el cuadro de selección numérico.
-
-Por ejemplo, si el formato es "hh:mm:ss", un tiempo de 1,3 segundos será ajustado a 1 segundo y una duración  de 1,8 segundos será ajustado a  2 segundos.
-
-Del mismo modo, si la opción se establece en "Anterior", los tiempos de 1.3 segundos y 1,8 segundos  se ajustará, ambos, a 1 segundo.
-
-El segundo efecto es que el paso mínimo de desplazamiento de la posición del cursor  o que el principio o el final de la selección es  la unidad más pequeña  en el formato en el cuadro de selección numérico.
-
-Por ejemplo, si el formato está definido en "hh:mm:ss" y se pulsa "flecha derecha" para mover el cursor hacia la derecha, el cambio mínimo en la posición es de 1 segundo.
-
-
-
-++ Barra de herramientas de "tiempo" ++
-La Barra de herramientas de "tiempo" se encuentra en el grupo inferior de  barras de herramientas de la ventana principal y contiene un solo  control, el cuadro de selección numérico "Posición de audio".
-Durante la reproducción o la grabación, se muestra la posición del cursor de reproducción o de grabación respectivamente.
-De lo contrario, se indica el tiempo cuando pulsa la barra espaciadora.
-
-Tenga en cuenta que a diferencia de los cuadros de selección numérico de la Barra de herramientas de "selección", no se puede cambiar el tiempo mostrado por el cuadro de selección numérico "Posición de audio", sólo se puede leer su valor.
-
-El formato por defecto del cuadro de selección numérico "Posición de audio" es hh: mm: ss.
-Puede cambiar esto usando el menú contextual de este cuadro, pero por desgracia hay un fallo que causa la reinicialización del formato  al valor por defecto si se abre el cuandro de diálogo de Preferencias y pulsa el botón Aceptar.
-
 ++ Barra de herramientas de "reproducir a velocidad" ++
-Además de reproducir a velocidad normal, también puede reproducir el audio a velocidades que  van desde muy lento hasta tres veces la velocidad de reproducción normal. Puede hacerlo ya sea utilizando la barra de herramientas de "reproducir a velocidad" que se encuentra en el grupo superior de barras de herramientas de la ventana principal, o ya sea utilizando las órdenes del submenú "Reproducir a velocidad" del menú "Extra".
+Además de reproducir a velocidad normal, también puede reproducir el audio a velocidades que  van desde muy lento hasta tres veces la velocidad de reproducción normal. Puede hacerlo ya sea utilizando la barra de herramientas de "reproducir a velocidad" que se encuentra en el panel superior de barras de herramientas de la ventana principal, o ya sea utilizando las órdenes del submenú "Reproducir a velocidad" del menú "Extra".
 
 Ella contiene:
-- el botón "Reproducir a velocidad seleccionada".
+- el botón "Reproducir a velocidad seleccionada" (no en la versión 3.3.3).
 Tenga en cuenta que, al igual que con todos los botones de las barras de herramientas, se puede pulsar el botón sólo con "Intro", debido a que la barra de espacio es el atajo para reproducir a velocidad normal y para detener.
 - el potenciómetro "Velocidad de reproducción", cuyo cursor puede variar de 1 a 300, 300 que corresponde a 3 veces la velocidad de reproducción normal.
 
@@ -469,8 +472,8 @@ Por esta razón, podemos usar el inicio del cuadro de selección numérico de se
 Hay dos maneras de leer la posición del cursor.
 
 El primero es leer la posición en el cuadro de selección numérico "Inicio" en la barra de herramientas de "selección":
-- Suponiendo que la tabla  "Vista de pista" está bajo el foco, pulsar "control + F6" para moverse al grupo inferior de la barra de herramientas en el cual se encuentra la barra de herramientas de "selección".
-- Si es necesario, pulsar la tecla "Tab" hasta llegar al cuadro de selección numérico "Inicio", que contiene la posición del cursor. Tenga en cuenta que cuando el foco vuelve  en este grupo de la barra de herramientas, el objeto que recibe el foco es el que anteriormente tenía el foco, por lo que a menudo no necesita una gran cantidad de "Tab" para hacerlo.
+- Suponiendo que la tabla  "Vista de pista" está bajo el foco, pulsar "control + F6" para moverse al panel inferior de la barra de herramientas en el cual se encuentra la barra de herramientas de "selección".
+- Si es necesario, pulsar la tecla "Tab" hasta llegar al cuadro de selección numérico "Inicio", que contiene la posición del cursor. Tenga en cuenta que cuando el foco vuelve  en este panel de la barra de herramientas, el objeto que recibe el foco es el que anteriormente tenía el foco, por lo que a menudo no necesita una gran cantidad de "Tab" para hacerlo.
 - Pulsar las teclas "control + F6" dos veces o "control + mayúscula + F6" para volver a la tabla "Vista de pista".
 
 
@@ -481,8 +484,8 @@ La segunda manera de leer la posición del cursor es utilizar el cuadro de diál
 
 
 ++ Desplazamiento del cursor con el cuadro de selección numérico "Inicio" ++[HDR-MovingCursorWithSelectionStart]
-- Pulsar las teclas "control + F6" para poner el foco en el grupo inferior de la barra de herramientas  donde la barra de herramientas "selección" es la primera.
-- Pulsar "Tab" para alcanzar el cuadro combinado "Mostrar" " y asegúrese de que la  opción "Inicio y duración de la selección" está seleccionado. Si se establece en "Inicio y final de la selección", accidentalmente se puede seleccionar un intervalo de tiempo en lugar de mover el cursor, como se describe más abajo.
+- Pulsar las teclas "control + F6" para poner el foco en el panel inferior de la barra de herramientas  donde la barra de herramientas "selección" es la primera.
+- Pulsar "Tab" para alcanzar el botón de configuración de la barra de herramientas de selección y asegúrese de que la  opción "Inicio y duración de la selección" está seleccionado. Si se establece en "Inicio y final de la selección", accidentalmente se puede seleccionar un intervalo de tiempo en lugar de mover el cursor, como se describe más abajo.
 - Pulsar "Tab" para alcanzar el cuadro de selección numérico "Inicio", y cambiar su valor, tal como se describe en la sección [Cuadros de selección numérico #HDR-EditSpinBoxes].
 - Para volver a la tabla "Vissta de pista", pulsar "control + F6" dos veces o simplemente pulsar "control+mayúscula+F6".
 
@@ -490,9 +493,9 @@ La segunda manera de leer la posición del cursor es utilizar el cuadro de diál
 
 +++ Razón para el uso de la opción "Duración" +++
 Suponiendo que no tiene intervalo de tiempo establecido, considere los siguientes dos casos:
-- Primer caso:: El cuadro combinado "Mostrar" define la opción "Inicio y duración de la selección".
+- Primer caso: El botón de configuración de la barra de herramientas de selección define la opción "Inicio y duración de la selección".
 El cuadro de selección numérico "Inicio" muestra la posición del cursor y el cuadro de selección numérico "Duración"  muestra cero. Si se cambia el valor del cuadro "Inicio", entonces el cuadro "Duración" se mantiene sin cambios en cero.
-- Segundo caso: El cuadro combinado "Mostrar" define la opción "Inicio y final de la selección":
+- Segundo caso: El botón de configuración de la barra de herramientas de selección define la opción "Inicio y final de la selección":
 Los cuadros de selección numérico "Inicio" y "Final" muestra el mismo valor, lo que es la posición del cursor.
 Si se aumenta el valor del cuadro de selección numérico "Inicio", entonces el valor del cuadro de selección numérico "Final" se incrementa automáticamente al mismo valor.
 Sin embargo, si se disminuye el valor del cuadro de selección numérico "Inicio", el cuadro de selección numérico "Final" se mantiene sin cambios.
@@ -684,8 +687,8 @@ El ajuste de la longitudes de los paso se describe en la Sección ["Longitud de 
 Tenga en cuenta que los dos atajos que utilizan la tecla "control", contraen el intervalo de tiempo, mientras que los otros dos se extienden.
 
 +++ Uso de los cuadros de selección numérico +++
-- Si el foco está en la tabla "Vista de pista", pulsar "control + F6" para llevarlo en el grupo inferior donde la primera barra de herramientas es la barra de herramientas de "selección".
-- Pulsar "Tab" para alcanzar el cuadro combinado "Mostrar" y seleccione la opción "Inicio y final de la selección".   Esto le permite ajustar el inicio o el final de la selección sin afectar a los demás.
+- Si el foco está en la tabla "Vista de pista", pulsar "control + F6" para llevarlo en el panel inferior donde la primera barra de herramientas es la barra de herramientas de "selección".
+- Pulsar "Tab" para alcanzar el botón de configuración de la barra de herramientas de selección y seleccione la opción "Inicio y final de la selección".   Esto le permite ajustar el inicio o el final de la selección sin afectar a los demás.
 - Pulsar "Tab" para alcanzar ya sea el cuadro de selección numérico "Inicio" o el cuadro de selección numérico "Final". Si el formato no está ajustado en "hh:mm:ss + centésimas"  y si se quieren hacer pequeños ajustes, utilizar el menú contextual para cambiar el formato.
 - Si por ejemplo se desea establecer el tiempo en décimas de segundos, pulsar"Fin" para mover el foco sobre el último dígito (el de las centésimas), luego pulsar "Flecha izquierda" para alcanzar el dígito  de las décimas de segundos. Entonces se puede pulsar "flecha arriba o abajo" para aumentar o reducir, respectivamente, el tiempo a una décima de segundo.
 - Ajustar el otro punto de la selección si lo desea.
@@ -735,6 +738,18 @@ Hay un par de órdenes de reproducción prácticos que se pueden utilizar para c
 
 La duración del período de reproducción antes y después de la selección se puede ajustar  en el grupo de Opciones "Vista previa del corte" ubicada en la categoría "Reproducción" en las Preferencias de Audacity.
 
+
+++ Pegar audio a partir de otro proyecto ++
+Cuando pegas el audio de otro proyecto, un cuadro de diálogo "Pegar audio" puede abrirse, preguntándote cómo quieres pegar tu audio.
+
+Hay un grupo de dos botones de opción para las opciones, que son "Clip inteligente" y "Sólo audio seleccionado".
+
+Para los usuarios de lectores de pantalla, se recomienda seleccionar la opción "Sólo audio seleccionado".
+Luego moverse mediante "Tab" hasta la casilla de verificación "Recordar mi decisión y no preguntar de nuevo." para marcarla, y finalmente "Tab" hasta el botón "Continuar" y pulsar sobre él.
+
+Se da una explicación de este consejo en la sección (["Pegar audio de otro proyecto" #HDR-PastingAudioFromOtherProject] de la sección "Preferencias" de esta guía.
+
+
 ++ Reemplazar el audio por el silencio ++
 Para reemplazar el audio seleccionado con el mismo período de silencio, en el menú "Editar", abra el submenú "Eliminar especial"  y seleccionar el submenú "Silenciar audio"  (atajo "control+l").
 
@@ -765,7 +780,7 @@ Algunos de los elementos del menú, como el fundido en entrada o en salida, simp
 
 En un cuadro de diálogo de efecto después de las órdenes de las diferentes opciones, hay tres botones:
 - Un botón "Valores predefinidos y ajustes", que abre un menú que incluye las órdenes para todos los valores predefinidos originales y usuario.
-- Un botón "Vista previa", que le permite escuchar una muestra corta del efecto aplicado al audio seleccionado. Por defecto, la duración de la vista previa es de 6 segundos, pero puede cambiar esto en el cuadro de diálogo ""Preferencias" en la categoría "Reproducción", en el grupo "Vista previa de efectos", donde hay un cuadro de edición "Duración".
+- Un botón "Vista previa", que le permite escuchar una muestra corta del efecto aplicado al audio seleccionado. Por defecto, la duración de la vista previa es de 6 segundos, pero puede cambiar esto en el cuadro de diálogo ""Preferencias" en la categoría "Reproducción", en el grupo "Vista previa de efectos", donde hay un cuadro de edición "Duración". Tenga en cuenta que en la versión 3.3.0 de Audacity pero no en versiones posteriores, para un pequeño número de efectos, después de pulsar el botón "Vista previa", se convierte en un botón "Detener vista previa", lo que te permite detener la vista previa cuando lo desees.
 - Un botón "Aplicar", que es el botón predeterminado en el cuadro de diálogo. Aunque no hay un botón "Cancelar", siempre se puede salir del cuadro de diálogo pulsando "Escape".
 
 
@@ -964,7 +979,7 @@ Como otro ejemplo, si se desea mover una o más pistas de un cierto  lapso de ti
 - Seleccione la o las pistas que se desea mover en el tiempo, y asegúrese de que las otras pistas no están seleccionadas.
 - Pulsar la tecla "J" para mover el cursor al inicio del audio en la o las pistas seleccionadas.
 - Pulsar "control + F6" para llevar el foco en la barra de herramientas de selección.
-- Pulsar "Tab" para alcanzar el cuadro combinado "Mostrar" y seleccione la opción "Inicio y duración de la selección".
+- Pulsar "Tab" para alcanzar el botón de configuración de la barra de herramientas y seleccione la opción "Inicio y duración de la selección".
 - Pulsar "Tab" para alcanzar el cuadro de edición "Inicio".
 - Según  se desea moverlo en el tiempo,  ya sea hacia adelante o hacia atrás, hay que aumentar o disminuir  el tiempo en el cuadro de edición. Por ejemplo, si se desea mover el audio hacia adelante  de  1,5 segundos:
  - Pulsar "Fin" para llevar el foco sobre el dígito de las centésimas.
@@ -1424,9 +1439,9 @@ A diferencia de la aplicación de un efecto utilizando el menú "Efecto", la adi
 Por el contrario, al reproducir la pista, estos efectos se aplican en tiempo real.
 Esto significa que puede cambiar los ajustes de cualquiera de estos efectos durante la reproducción y escuchar el efecto.
 Y, además, en cualquier momento del montaje, puede volver a los efectos en tiempo real de una pista y modificar los ajustes, o añadir o eliminar efectos.
+Al usar esta versión de Audacity, puede usar una serie de efectos de Audacity integrados en tiempo real: Graves y agudos, Distorsión, Cambiar fase (Phaser), Reverberación y Wahwah.
 
-Con esta versión de Audacity, no puede usar ninguno de los efectos integrados de Audacity en tiempo real. Pero se espera que algunos de estos efectos puedan usarse en futuras versiones.
-Sin embargo, puede usar una serie de complementos (plugins) de efectos, incluidos los complementos de efectos VST y VST3.
+Además, puedes usar una serie de complementos (plugins) de efectos, incluidos los complementos de efectos VST y VST3.
 El uso de complementos VST y VST3 usando un lector de pantalla se describe en la sección ["Plugins" #HDR-Plugins].
 
 Agrega y administra los efectos en tiempo real para la pista encauzada mediante el "panel Efectos en tiempo real para", que se describe en la próxima sección.
@@ -1445,7 +1460,7 @@ El "panel Efectos en tiempo real para", contiene los siguientes controles:
 - Un botón "Encendido", que controla si uno de los efectos de la lista de efectos está activado.
 - Un botón "Cerrar" (Escape), que cierra el panel, la "Vista de pista" retomando el foco.
 - Una lista de efectos. Para cada efecto, hay tres botones: un botón: "Encendido" que solo controla este efecto ; Un botón que lleva el nombre del efecto y abre un cuadro de diálogo para este efecto ; y un botón "Reemplazar efecto", que abre un menú para eliminar el efecto o reemplazarlo con otro efecto.
-- Un botón "Añadir efecto".
+- Un botón "Añadir efecto". Esto abre un menú en el que, por defecto, los efectos se agrupan por tipo y por autor. Sin embargo, hay una serie de otras opciones sobre cómo se organiza el menú, y el ajuste de esto se puede encontrar en la categoría "Efectos" del cuadro de diálogo "Preferencias", o en el grupo de efectos, donde hay un cuadro combinado "Organización de efectos en tiempo real".
 - Si no se ha agregado ningún efecto, hay un enlace para ver un video sobre los efectos en tiempo real.
 
 Por lo tanto, por ejemplo, para agregar un efecto en tiempo real a la pista enfocada:
@@ -1456,7 +1471,7 @@ Por lo tanto, por ejemplo, para agregar un efecto en tiempo real a la pista enfo
 ++ Cuadro de diálogo Efecto en tiempo real ++
 El título de un cuadro de diálogo Efecto en tiempo real consiste en el nombre del efecto, seguido de un guión, seguido del nombre de la pista.
 Y el cuadro de diálogo contiene los siguientes controles:
-- Un botón conmuta "Habilitar", que tiene el mismo estado que el botón  "Encendido" del efecto en el "panel Efectos en tiempo real para". Desafortunadamente, el estado de este botón actualmente no es verbalizado por los lectores de pantalla. A menudo puede escuchar fácilmente si el efecto se aplica o no durante la reproducción. También puede comprobar el ajuste del botón  "Encendido" para el efecto en el "panel Efectos en tiempo real para", que es verbalizado por los lectores de pantalla.
+- Un botón conmuta "Habilitar", que tiene el mismo estado que el botón  "Encendido" del efecto en el "panel Efectos en tiempo real para".
 - Los controles  para el efecto particular.
 - Aunque no hay un botón Cerrar, puede cerrar el cuadro de diálogo pulsando "Escape".
 
@@ -1552,7 +1567,7 @@ Después de esto, una sección describe  cómo  Audacity puede corregir el retra
 
 ++ Parámetros de grabación ++[HDR-RecordSettings]
 Hay una serie de parámetros que pueden necesitar ser cambiado antes de la grabación, y se describen en las siguientes secciones. Tenga en cuenta que
-Muchos de estos ajustes se pueden configurar en la categoría "Dispositivos"  del cuadro de diálogo "Preferencias" de Audacity, en un cuadro de diálogo particular o  en la herramienta  "Dispositivos" del grupo de la barra de herramientas.
+Muchos de estos ajustes se pueden configurar en la categoría "Configuración de Audio"  del cuadro de diálogo "Preferencias" de Audacity, en un cuadro de diálogo particular.
 
 +++ Interfaz Audio +++[hdrAudioInterface]
 Audacity proporciona una serie de opciones para la interfaz del software  que es usado por Audacity para interactuar con dispositivos de reproducción y de grabación:
@@ -1564,7 +1579,7 @@ Audacity proporciona una serie de opciones para la interfaz del software  que es
 Utilizando este último, puede grabar el audio que se envía  a uno de los dispositivos de reproducción. Esto ofrece una alternativa  al dispositivo de grabación "Mezcla estéreo"   que puede o no puede ser proporcionado por su tarjeta de sonido.
 
 Puede establecer esta opción:
-- Ya sea utilizando la lista desplegable "Servidor" del grupo "Interfaz" en la categoría "Dispositivos" en el cuadro de diálogo "Preferencias".
+- Ya sea utilizando la lista desplegable "Servidor" del grupo "Interfaz" en la categoría "Configuración de Audio" en el cuadro de diálogo "Preferencias".
 - Ya sea utilizando la lista desplegable "Servidor" del cuadro de diálogo "Seleccionar servidor de audio" abierto con "Mayúscula + h"...
 - Ya sea utilizando la lista desplegable "Servidor de audio" de la herramienta "Dispositivos" del grupo superior de la barra de herramientas.
 
@@ -1573,9 +1588,9 @@ Nota: Si cambia esta opción, los parámetros de los dispositivos de grabación 
 
 +++ Dispositivo de grabación +++
 Se puede seleccionar el dispositivo de grabación mediante el menú desplegable "Dispositivo de grabación" de:
-- Ya sea en la categoría "Dispositivos" del cuadro de diálogo "Preferencias".
+- Ya sea en la categoría "Configuración de Audio" del cuadro de diálogo "Preferencias".
 - Ya sea del cuadro de diálogo "Seleccionar dispositivo de grabación" abierto con "Mayúscula + i".
-- Ya sea en la herramienta "Dispositivo" del grupo superior de la barra de herramientas.
+- Ya sea en la herramienta "Dispositivo" del panel superior de la barra de herramientas.
 
 
 Si una tarjeta de sonido integrado o una tarjeta de sonido interna tiene una serie de entradas posibles, tales como   el micrófono o la entrada línea, cada una de estas entradas se muestra como una unidad separada en la lista desplegable. Además,
@@ -1592,7 +1607,7 @@ Este cuadro de diálogo se describe en la sección ["Cuadro de diálogo Sonido d
 +++ Nivel de grabación +++
 En esta sección se describen los elementos que se utilizan para ajustar el nivel de grabación. Cómo ajustar el nivel de grabación de manera que no se tenga demasiado ruido o cortes, esto se describe en la sección ["Ajuste del nivel de grabación" #HDR-RecordLevel] más abajo.
 
-Si Audacity puede controlar el nivel del dispositivo de grabación, entonces se puede utilizar el control deslizante de grabación de Audacity, o opcionalmente el  de Windows. Sin embargo, es más fácil utilizar el control deslizante de grabación de Audacity que está en  el mezclador del grupo superior de la barra de herramientas de la ventana principal.
+Si Audacity puede controlar el nivel del dispositivo de grabación, entonces se puede utilizar el control deslizante de grabación de Audacity, o opcionalmente el  de Windows. Sin embargo, es más fácil utilizar el control deslizante de grabación de Audacity que está en  el mezclador del panel superior de la barra de herramientas de la ventana principal.
 Para acceder a partir de la tabla "Vista de pista", pulsar dos veces "control + F6", después "Tab" o "mayúscula + Tab" hasta que se llegue  al control deslizante de grabación.
 
 Cuando Audacity no puede controlar el nivel del dispositivo de grabación, el control deslizante de grabación es indicado como no disponible. Para los usuarios videntes, el cursor aparece como atenuado y los usuarios de lectors de pantalla no lo puede alcanzar. En este caso, debe utilizar el elemento apropiado de  Windows, como se describe  más abajo.
@@ -1606,9 +1621,9 @@ El ajuste del nivel de grabación para un dispositivo con la herramienta de Wind
 
 +++ Número de canales de grabación +++
 El número de canales del dispositivo de grabación puede ajustarse utilizando la lista desplegable "canales":
-- Ya sea en la categoría "Dispositivos" en el cuadro de diálogo "Preferencias".
+- Ya sea en la categoría "Configuración de Audio" en el cuadro de diálogo "Preferencias".
 - Ya sea en el cuadro de diálogo "Seleccionar canales de grabación" abierto con "mayúscula + N".
-- Ya sea en la herramienta "Dispositivo" del grupo superior de la barra de herramientas.
+- Ya sea en la herramienta "Dispositivo" del panel superior de la barra de herramientas.
 
 
 Si está grabando con un micrófono, entonces la configuración adecuada depende de si se trata de un micrófono mono o estéreo.
@@ -1644,8 +1659,8 @@ En las versiones de Audacity 2.1.3 y anteriores, los atajos "r" y "mayúscula + 
 
 
 ++ Ajuste del nivel de grabación ++
-En la herramienta "Medidor de grabación" del grupo superior de la barra de herramientas de la ventana principal de Audacity, hay el vúmetro de grabación para ayudar a establecer el nivel de grabación.
-El vúmetro contiene un botón desplegable que se puede alcanzar pulsando "control + F6" dos veces para ser colocado en el grupo superior de barras de herramientas, luego pulsando "Tab" hasta alcanzarlo.
+En la herramienta "Medidor de grabación" del panel superior de la barra de herramientas de la ventana principal de Audacity, hay el vúmetro de grabación para ayudar a establecer el nivel de grabación.
+El vúmetro contiene un botón desplegable que se puede alcanzar pulsando "control + F6" dos veces para ser colocado en el panel superior de barras de herramientas, luego pulsando "Tab" hasta alcanzarlo.
 
 
 Si se pulsa este botón con la tecla "Intro", se abre un menú, que contiene las órdenes para controlar el medidor.
@@ -1725,7 +1740,7 @@ Interfaz de audio (por ejemplo, MME o DirectSound).
 
 Audacity puede corregir automáticamente este tiempo de latencia, una vez que esta latencia se midió como se describe a continuación.
 
-En el cuadro de diálogo de Preferencias, en la categoría "Dispositivos",  y el grupo "Latencia", existe  el campo de edición "Compensación de latencia", donde las unidades de la corrección son en milisegundos.
+En el cuadro de diálogo de Preferencias, en la categoría "Configuración de Audio", y el grupo "Latencia", existe  el campo de edición "Compensación de latencia", donde las unidades de la corrección son en milisegundos.
 
 Si se graba el audio en una pista nueva, entonces el audio grabado se desplaza de forma automática más tarde en el tiempo, de un tiempo igual a esta compensación de latencia. Con el fin   de desplazar el audio más temprano en el tiempo para  compensar la latencia, el número debe ser negativo.
 
@@ -1762,7 +1777,7 @@ Las siguientes instrucciones describen cómo encontrar la posición del clic  gr
 
 Se supone que la pista original todavía está silenciado  desde el momento que se comprobó el nivel de la pista grabada  (véase más arriba):
 - Pulsar "Inicio" para establecer tanto el inicio de la selección  y   el final/duración de la selección  a cero.
-- Pulsar "control + F6" para moverse en la barra de herramientas de selección del grupo inferior de la barra de herramientas. Pulsar "Tab" para alcanzar el cuadro combinado "Mostrar" y asegúrese de que la opción  "Inicio y final de la selección" está bien seleccionado.
+- Pulsar "control + F6" para moverse en la barra de herramientas de selección del panel inferior de la barra de herramientas. Pulsar "Tab" para alcanzar el botón de configuración de la barra de herramientas de selección y asegúrese de que la opción  "Inicio y final de la selección" está bien seleccionado.
 - Pulsar "Tab" para alcanzar el cuadro de edición de selección numérico de tiempo "Inicio" y establecer su formato en edición en "hh:mm:ss + milisegundos" utilizando el menú contextual.
 - Establecer el inicio de la selección a 1 segundo pulsando "Fin" para pasar al último dígito (milisegundos), pulsar "Flecha izquierda "tres veces para alcanzar el  dígito de los segundos y luego pulsar  "Flecha arriba" para colocarlo   a uno.
 - Pulsar "Espacio" para escuchar los primeros  puñados   de clics.
@@ -1838,6 +1853,35 @@ Para usar una interfaz de usuario accesible por teclado:
 - Para que el cambio de interfaz tenga efecto, debe cerrar el cuadro de diálogo  Efecto, y luego reabrirlo.
 
 
+++ Diálogo de interfaz en el efecto ++
+Casi todos los efectos VST y VST3 tienen, por defecto, una interfaz gráfica de usuario personalizada para modificar los valores de sus parámetros que no es accesible para los usuarios de teclado.
+Sin embargo, Audacity proporciona una interfaz alternativa accesible.
+Advertencia de fallo: Desafortunadamente, las versiones 3.3.0 a 3.3.3 de Audacity no proporcionan una interfaz accesible para los plugins VST - el ajuste de la casilla de verificación  "Habilitar interfaz gráfica" como se describe más abajo no tiene ningún efecto.
+
+Afortunadamente, los plugins VST3 no se ven afectados y la mayoría de los plugins VST ahora están disponibles como plugins VST3.
+
+Cuando abre un efecto VST o VST3 por primera vez, se utiliza su interfaz gráfica de usuario personalizada y solo puede acceder a una pequeña cantidad de controles de efectos,
+como el botón Valores predefinidos y ajustes.
+Para usar una interfaz de usuario accesible por teclado:
+- Pulsa en el botón Valores predefinidos y ajustes y elija opciones. Se abre un cuadro de diálogo de opción de efecto.
+- Tabula hasta la casilla de verificación  "Habilitar interfaz gráfica", luego desmarcarla.
+- Pulsa la tecla "Intro" para pulsar el botón "Aceptar" de forma predeterminada.
+- Para que el cambio de interfaz tenga efecto, debe cerrar el cuadro de diálogo  Efecto, y luego reabrirlo.
+
+
+Cuando se usa la interfaz de usuario accesible para el teclado para los efectos VST, hay un cursor para cada parámetro, y para los efectos VST 3, hay un cursor o una casilla de verificación para cada parámetro.
+
+Cuando se usa un cursor para un parámetro, su valor puede ser, por ejemplo, una frecuencia o un nivel, o una opción, tal como mono o estéreo, no solo un simple porcentaje.
+
+Para los lectores de pantalla, el valor del parámetro se agrega al nombre del parámetro. Por lo tanto, cuando accede a un cursor mediante Tabulación, su lector de pantalla verbaliza el nombre del parámetro, el valor del parámetro  y la posición del cursor, un número entre 0 y 100.
+
+Cuando se cambia el valor de un cursor, utilizando las teclas estándar, como la flecha izquierda y la flecha derecha, solo se verbaliza la nueva posición del cursor.
+
+Leer el nuevo valor de parámetro depende del lector pantalla que use. Si usa NVDA o Narrador, puede simplemente pulsar la tecla para leer la línea actual.
+
+Sin embargo, si hace esto usando Jaws, Jaws desafortunadamente lee un valor de parámetro que es incorrecto. Para leer un valor correcto, debe "hacer Tab" lejos del control, luego "Mayúscula + Tab" nuevamente.
+
+
 + Preferencias +[HDR-Preferences]
 El cuadro de diálogo "Preferencias" de Audacity le permite configurar muchos parámetros en Audacity. Después de una breve descripción del cuadro de diálogo, en la siguiente sección se describen los ajustes más comunes.
 
@@ -1892,10 +1936,9 @@ Dependiendo de si usa la versión de Audacity de 64 bits o 32 bits, deberá inst
 Puede comprobar si usa una versión de 64 bits o 32 bits de Audacity leyendo  la información de construcción: en el menú Ayuda, elija Acerca de Audacity, y en el cuadro de diálogo  Acerca de Audacity, vaya a la página de información de construcción. El tipo de construcción se incluye en la información.
 Para Audacity 64 bits, será "CMake Release build (debug level 1), 64 bits", y para Audacity 32 bits, solamente "CMake Release build (debug level 1)".
 Las instrucciones para descargar e instalar una u otra versión de la biblioteca FFmpeg son las siguientes:
-- Ir al sitio cuya dirección es ["lame.buanzo.org/#lamewindl" https://lame.buanzo.org/#lamewindl].
-- En esta página, busque el enlace FFmpeg_for_Audacity_3.2_on_Windows.zip, luego ábralo para descargar un archivo que tiene el mismo nombre que el enlace.
-- Extraiga el contenido de este archivo zip. Contiene dos programas de instalación, uno para Audacity de 32 bits y uno para Audacity de 64 bits. El nombre del programa de instalación para Audacity 64 bits contiene el número 64.
-- Abra el programa de instalación apropiado. Se abre un asistente de instalación, que instala la biblioteca FFmpeg en una carpeta donde Audacity la encontrará automáticamente la próxima vez que esté abierta.
+- Ir al sitio cuya dirección es ["lame.buanzo.org/#lamewindl" https://lame.buanzo.org/].
+- En esta página, busque el enlace para descargar el programa de instalación para la versión de 64 bits o 32 bits de la biblioteca, como se indicó anteriormente.
+- Abra el archivo descargado. Se abre un asistente de instalación, que instala la biblioteca FFmpeg en una carpeta donde Audacity la encontrará automáticamente la próxima vez que esté abierta.
 
 
 Tenga en cuenta que no hay problemas para tener ambas versiones instaladas al mismo tiempo.
@@ -1937,6 +1980,22 @@ Por defecto, esta opción está desactivada y los usuarios de lectores de pantal
 Sin embargo, si desea cambiar esta opción:
 - En el cuadro de diálogo "Preferencias" de Audacity seleccionar la categoría "Comportamiento de pistas".
 - En esta categoría, se encuentra la casilla de verificación "Escribir para crear una etiqueta".
+
+
+
+++ Pegar audio de otro proyecto ++[HDR-PastingAudioFromOtherProject]
+Después de la edición, a menudo se encuentra con uno o más bloques de datos de audio (clips), que originalmente eran parte de un bloque más largo.
+
+Para cada bloque, Audacity guarda un rastro del bloque original más largo y almacena estos datos en el proyecto, incluso si se pueden ocultar.
+Esto permite a un usuario extender un bloque utilizando los datos del bloque originales.
+
+Desafortunadamente, esta característica no es accesible para los usuarios de teclado.
+
+Cuando un bloque de audio de otro proyecto se pega en el proyecto que se edita, entonces si el bloque originalmente era parte de un bloque original más largo, entonces Audacity te da la posibilidad de copiar o no los datos del bloque original y de almacenarlo en el proyecto actual.
+En la categoría "Comportamiento de pistas" del cuadro de diálogo "Preferencias" de Audacity, en la categoría "Pegar audio de otro proyecto", hay un grupo de tres botones de opción:
+- Clip inteligente: Si el bloque era inicialmente parte de un bloque más largo, todos los datos del bloque más largos también se copian y almacenan en el proyecto actual. Esto permite a los usuarios del ratón de extender el bloque en el proyecto actual, pero también puede aumentar considerablemente el tamaño del proyecto actual.
+- Sólo audio seleccionado: Los datos de un bloque original más largo no se copian y almacenan en el proyecto actual. El bloque no puede extenderse en el proyecto actual, pero el aumento en el tamaño del proyecto se reduce al mínimo. Dado que los usuarios de teclado no pueden extender los bloques de todos modos, esta es la opción recomendada.
+- Preguntar siempre: Se abre un cuadro de diálogo "Pegar audio" cuando se pegas el audio de otro proyecto, preguntándote cómo quieres pegar el audio. Esta es la opción por defecto.
 
 
 
@@ -2122,8 +2181,8 @@ Para obtener más información acerca de estos dos juegos de atajos instalados p
 | Guardar proyecto | control + S |
 | Exportar Audio | control + mayúscula + E |
 | Cuadro de diálogo "Preferencias" | control + P |
-| Avanzar desde el grupo superior de las barras de herramientas hasta la tabla "Vista de pista", y el grupo inferior de  barras de herramientas | control + F6 |
-| Retroceder desde  el grupo superior de las barras de herramientas hasta la tabla "Vista de pista", y el grupo inferior de  barras de herramientas | control + mayúscula +F6 |
+| Avanzar desde el panel superior de las barras de herramientas hasta la tabla "Vista de pista", y el panel inferior de  barras de herramientas | control + F6 |
+| Retroceder desde  el panel superior de las barras de herramientas hasta la tabla "Vista de pista", y el panel inferior de  barras de herramientas | control + mayúscula +F6 |
 | Avanzar a través de la ventana principal de Audacity y las ventanas no modales | Alt + F6 |
 | Retroceder a través de la ventana principal de Audacity y las ventanas no modales | Alt + mayúscula + F6 |
 | Normal | control + 2 |

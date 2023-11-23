@@ -4,10 +4,8 @@ Auteur: ADDON_AUTHOR_NAME
 
 %!includeconf: ../addon_global.t2tconf
 %!includeconf: addon_informations.t2tconf
+URL: [ADDON_REPOSITORY ADDON_REPOSITORY]
 
-URL: ADDON_AUTHOR_URL
-
-[GitHub repository: ADDON_REPOSITORY ADDON_REPOSITORY]
 
 Download:
 - [Current stable version: ADDON_CUR_VERSION ADDON_DOWNLOAD_SERVER1]
@@ -16,6 +14,27 @@ Download:
 
 
 Sorry, but this document is an automatic translation from french language.
+
++ v3.0 (Nobember/23/2023) +
+New:
+- naming toolbar panels into "lower panels" and "upper panel".
+- naming of the panel containing the track view as "Main panel".
+
+
+Changes:
+- The scripts to announce the start, the end, the duration and the center of the selection are replaced by:
+ - a script to announce the selection,
+ - a script to announce the first time of the selection,
+ - a script to announce the second time of the selection.
+- in the documentation, the term group" for toolbars is replaced by "panel".
+- the "Vocalization of Audacity digital time selection boxes" functionality is not available in versions 3.3.x of Audacity.
+
+
+Compatibility:
+- This version of the extension has been tested with Audacity 3.4, 3.4.2, 3.3.0 and 3.3.3. It should also be compatible with versions 3.3.1 and 3.3.2, but no testing has been done.
+- Compatibility with versions prior to 3.3.0 is no longer supported.
+- NVDA versions below 2022.1 are no longer supported.
+
 
 + v2.9 (August/03/2023) +
 - the audio position is no longer announced after restarting playback. This happened with Audacity versions 3.2.2 and above. In these versions, the state of the "play" and "pause" buttons is no longer available with MSAA), unlike previous versions.
@@ -28,7 +47,7 @@ Sorry, but this document is an automatic translation from french language.
 
 
 Changes:
-- updating the Audacity guide for versions  3.2.3 ( [see guide written by David Bell https://vip.chowo.co.uk/wp-content/uploads/jaws/Audacity-3.2.3-Guide.html] )
+- updating the Audacity guide for versions 3.2.3 ( [see guide written by David Bell https://vip.chowo.co.uk/wp-content/uploads/jaws/Audacity-3.2.3-Guide.html] )
 
 
 + v2.7 (May/26/2022) +
