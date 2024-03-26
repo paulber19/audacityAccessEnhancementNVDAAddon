@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: audacityAccessEnhancement 3.0-dev29\n"
 "Report-Msgid-Bugs-To: paulber19\n"
 "POT-Creation-Date: 2023-11-23 17:33+0100\n"
-"PO-Revision-Date: 2023-11-23 17:40+0100\n"
+"PO-Revision-Date: 2024-01-08 10:00+0300\n"
 "Last-Translator: paulber19 <paulber19@laposte.net>\n"
 "Language-Team: Danil Kostenkov <danilkostenkov38@gmail.com>\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 3.2.2\n"
+"X-Generator: Poedit 3.4.2\n"
 
 #. Add-on summary, usually the user visible name of the addon.
 #. Translators: Summary for this add-on
@@ -90,9 +90,7 @@ msgstr "Установка - %s"
 msgid ""
 "Are you sure you don't want to keep the current add-on configuration "
 "settings?"
-msgstr ""
-"Вы уверены, что не хотите сохранить текущие настройки дополнения?Установка - "
-"%s"
+msgstr "Вы уверены, что не хотите сохранить текущие настройки дополнения?"
 
 #: shared\au_addonConfigManager.py:176
 msgid ""
@@ -157,7 +155,7 @@ msgstr "Ни одна кнопка не нажата"
 #. Translators: a part of message to the user to say one day.
 #: appModules\audacity\au_time.py:86
 msgid "one day"
-msgstr "Один день"
+msgstr "один день"
 
 #. Translators: a part of message to the user to say number of day.
 #: appModules\audacity\au_time.py:89
@@ -234,13 +232,13 @@ msgstr "0 семпл"
 #. to inform that audio position is at track start.
 #: appModules\audacity\au_timerControl.py:190
 msgid "Audio position at start of track"
-msgstr "Позиция звука в начале трека"
+msgstr "Положение звука в начале дорожки"
 
 #. Translators: message to the user
 #. to inform that the  audio position is at selection start.
 #: appModules\audacity\au_timerControl.py:210
 msgid "Audio position at selection's start"
-msgstr "Позиция звука в начале выделения"
+msgstr "Положение звука в начале выделения"
 
 #. Translators: message to user to indicate selection informations.
 #: appModules\audacity\au_timerControl.py:267
@@ -253,7 +251,7 @@ msgstr "Выделение: "
 #: appModules\audacity\au_timerControl.py:277
 #: appModules\audacity\au_timerControl.py:286
 msgid "no selection"
-msgstr "Нет выделения"
+msgstr "нет выделения"
 
 #. Translators: the label of a dialog box message.
 #: appModules\audacity\au_utils.py:28
@@ -291,7 +289,7 @@ msgstr "%s недоступно"
 #. Translators: message to user that there is no track in tracks view.
 #: appModules\audacity\__init__.py:328
 msgid "No track"
-msgstr "Нет трека"
+msgstr "Нет дорожки"
 
 #. Translators:  name of a digit in  selection format.
 #: appModules\audacity\__init__.py:455
@@ -483,32 +481,32 @@ msgid ""
 "Report the selection. Twice: report selection's first time. Third: report "
 "selection's second time"
 msgstr ""
-"сообщает позицию выделения. При нажатии дважды быстро: сообщает позицию "
+"Сообщает позицию выделения. При нажатии дважды быстро: сообщает позицию "
 "начала выделения. При нажатии трижды быстро: сообщает позицию конца выделения"
 
 #. Translators: Input help mode message
 #. for report selection limits command.
 #: appModules\audacity\__init__.py:825
 msgid "Report the selection"
-msgstr "сообщает позицию выделения"
+msgstr "Сообщает позицию выделения"
 
 #. Translators: Input help mode message
 #. for report selection's first timer  command.
 #: appModules\audacity\__init__.py:828
 msgid "Report selection's first time"
-msgstr "сообщает позицию начала выделения"
+msgstr "Сообщает позицию начала выделения"
 
 #. Translators: Input help mode message
 #. for report selection's second timer command.
 #: appModules\audacity\__init__.py:831
 msgid "Report selection's second time"
-msgstr "сообщает позицию конца выделения"
+msgstr "Сообщает позицию конца выделения"
 
 #. Translators: Input help mode message
 #. for report audio position command.
 #: appModules\audacity\__init__.py:834
 msgid "Report audio position"
-msgstr "сообщает позицию звука"
+msgstr "Сообщает положение звука"
 
 #: appModules\audacity\__init__.py:838
 msgid "Enable or disable automatic report of selection's changes"
@@ -518,7 +516,7 @@ msgstr "Включить или отключить автоматические 
 #. for toggle report transport button state command.
 #: appModules\audacity\__init__.py:841
 msgid "Report the pressed state of Pause , Play and  Record buttons"
-msgstr "сообщает состояние нажатых кнопок паузы, воспроизведения и записи"
+msgstr "Сообщает состояние нажатых кнопок паузы, воспроизведения и записи"
 
 #. Translators: Input help mode message
 #. for report playback meter peak command.
@@ -604,17 +602,17 @@ msgstr "Не сообщать автоматически об изменении
 #. Translators: message to the user when object is not in tracks view.
 #: appModules\audacity\__init__.py:1160
 msgid "Not in tracks view"
-msgstr "Не в режиме просмотра трека"
+msgstr "Не в режиме просмотра дорожки"
 
 #. Translators: message to the user when play button is pressed.
 #: appModules\audacity\__init__.py:1242
 msgid "play button pressed"
-msgstr "кнопка воспроизвести нажата "
+msgstr "кнопка воспроизвести нажата"
 
 #. Translators: message to the user when pause button is pressed.
 #: appModules\audacity\__init__.py:1246
 msgid "Pause button pressed"
-msgstr "кнопка приостановить нажата "
+msgstr "Кнопка приостановить нажата"
 
 #. Translators: message for user.
 #: appModules\audacity\__init__.py:1297
@@ -640,7 +638,7 @@ msgstr "Скрипты оболочки"
 #. appearing on Shell Scripts List Dialog.
 #: appModules\audacity\__init__.py:1395
 msgid "Scripts:"
-msgstr "скрипты:"
+msgstr "Скрипты:"
 
 #: appModules\audacity\__init__.py:1412
 msgid "&Run script"
@@ -679,7 +677,7 @@ msgstr "Обновление"
 #. UpdateSettingsPanel
 #: globalPlugins\audacityAccessEnhancement\au_configGui.py:91
 msgid "Automatically check for &updates"
-msgstr "Автоматически проверять наличие обновлений "
+msgstr "Автоматически проверять наличие обновлений"
 
 #. Translators: This is the label for a checkbox
 #. UpdateSettingsPanel
@@ -779,7 +777,7 @@ msgstr ""
 #: globalPlugins\audacityAccessEnhancement\updateHandler\update_check.py:361
 #, python-format
 msgid "You are up-to-date. %s is the latest version."
-msgstr "Дополнение обновлено. Последняя версия: %s"
+msgstr "Дополнение обновлено. Последняя версия: %s."
 
 #: globalPlugins\audacityAccessEnhancement\updateHandler\update_check.py:368
 msgid "Oops! There was a problem checking for updates. Please retry later"

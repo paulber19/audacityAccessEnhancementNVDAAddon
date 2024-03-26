@@ -15,6 +15,17 @@ Download:
 
 Sorry, but this document is an automatic translation from french language.
 
++ v3.1 (March/23/2024) +
+Compatibility with NVDA 2024.1
+
+What's new:
+- taking into account the "Speech on demand" mode introduced in nvda 2024.1: all scripts announcing information will vocalize this information. In this mode, all other scripts will remain silent.
+
+
+Bug Fixes:
+- the radio button allowing you to choose the type of export (export the entire project, export of multiple files, etc.) is now accessible.
+
+
 + v3.0 (Nobember/23/2023) +
 New:
 - naming toolbar panels into "lower panels" and "upper panel".

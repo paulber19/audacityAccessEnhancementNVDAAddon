@@ -30,6 +30,17 @@ import api
 import NVDAObjects
 from functools import wraps
 import tones
+from .au_utils import (
+	isOpened, makeAddonWindowTitle,
+	executeWithSpeakOnDemand,
+)
+try:
+	# NVDA >= 2024.1
+	speech.speech.SpeechMode.onDemand
+	speakOnDemand = {"speakOnDemand": True}
+except AttributeError:
+	# NVDA <= 2023.3
+	speakOnDemand = {}
 from . import au_time
 from . import au_timerControl
 from . import au_objects
@@ -39,7 +50,7 @@ from .au_timerControl import (
 	SELFOR_SAMPLES,
 )
 
-from .au_utils import isOpened, makeAddonWindowTitle
+
 from .au_NVDAStrings import NVDAString
 import sys
 _curAddon = addonHandler.getCodeAddon()
@@ -211,15 +222,13 @@ def startMonitoring():
 
 def finally_(func, final):
 	"""Calls final after func, even if it fails."""
-	def wrap(f):
-		@wraps(f)
-		def new(*args, **kwargs):
-			try:
-				func(*args, **kwargs)
-			finally:
-				final()
-		return new
-	return wrap(final)
+	@wraps(func)
+	def new(*args, **kwargs):
+		try:
+			func(*args, **kwargs)
+		finally:
+			final()
+	return new
 
 
 def stopTaskTimer():
@@ -387,6 +396,9 @@ class TimerControlEdit(NVDAObjects.NVDAObject):
 	def initOverlayClass(self):
 		self.bindGesture("kb:nvda+upArrow", "sayTimer")
 
+	@scriptHandler.script(
+		**speakOnDemand,
+	)
 	def script_sayTimer(self, gesture):
 		tc = au_timerControl.TimerControl(self, self.editFormat)
 		(sLabel, sTime) = tc.getLabelAndTime()
@@ -608,6 +620,9 @@ class TimerControlDigit(NVDAObjects.NVDAObject):
 		log.debug("focus entered")
 		# super().event_focusEntered()
 
+	@scriptHandler.script(
+		**speakOnDemand,
+	)
 	def script_sayTimer(self, gesture):
 		tc = au_timerControl.TimerControl(self.parent, self.editFormat)
 		(sLabel, sTime) = tc.getLabelAndTime()
@@ -936,7 +951,7 @@ class AppModule(AppModule):
 		if obj.isATrack:
 			clsList.insert(0, Track)
 			return
-		if _addonConfigManager.toggleEditSpinBoxEnhancedAnnouncementOption(False):
+		if _addonConfigManager.toggleEditSpinBoxEnhancedAnnouncementOption(False) and role == Role.STATICTEXT:
 			# for audio position edit spin box
 			if controlID == 2801:
 				if obj.childCount == 0:
@@ -951,6 +966,7 @@ class AppModule(AppModule):
 				else:
 					clsList.insert(0, SelectionTimerControlEdit)
 				return
+
 			# for record edit spin box
 			if controlID in [10001, 10003]:
 				if obj.childCount == 0:
@@ -1176,6 +1192,9 @@ class AppModule(AppModule):
 			o = parent
 		return False
 
+	@scriptHandler.script(
+		**speakOnDemand,
+	)
 	def script_reportAudioPosition(self, gesture):
 		stopTaskTimer()
 		if not self.inMainWindow(api.getFocusObject()):
@@ -1185,6 +1204,9 @@ class AppModule(AppModule):
 		if msg is not None:
 			ui.message(msg)
 
+	@scriptHandler.script(
+		**speakOnDemand,
+	)
 	def script_reportSecondSelectionTimer(self, gesture):
 		stopTaskTimer()
 		if not self.inMainWindow(api.getFocusObject()):
@@ -1194,6 +1216,9 @@ class AppModule(AppModule):
 		if msg is not None:
 			ui.message(_("Selection: ") + msg)
 
+	@scriptHandler.script(
+		**speakOnDemand,
+	)
 	def script_reportFirstSelectionTimer(self, gesture):
 		stopTaskTimer()
 		if not self.inMainWindow(api.getFocusObject()):
@@ -1203,6 +1228,9 @@ class AppModule(AppModule):
 		if msg is not None:
 			ui.message(_("Selection: ") + msg)
 
+	@scriptHandler.script(
+		**speakOnDemand,
+	)
 	def script_reportSelectionLimits(self, gesture):
 		stopTaskTimer()
 		if not self.inMainWindow(api.getFocusObject()):
@@ -1212,6 +1240,9 @@ class AppModule(AppModule):
 		if msg is not None:
 			ui.message(msg)
 
+	@scriptHandler.script(
+		**speakOnDemand,
+	)
 	def script_reportSelection(self, gesture):
 		global GB_taskTimer
 		stopTaskTimer()
@@ -1219,12 +1250,15 @@ class AppModule(AppModule):
 			return
 		count = scriptHandler.getLastScriptRepeatCount()
 		if count == 0:
-			GB_taskTimer = wx.CallLater(200, self.script_reportSelectionLimits, gesture)
+			GB_taskTimer = wx.CallLater(200, executeWithSpeakOnDemand, self.script_reportSelectionLimits, gesture)
 		elif count == 1:
-			GB_taskTimer = wx.CallLater(200, self.script_reportFirstSelectionTimer, gesture)
+			GB_taskTimer = wx.CallLater(200, executeWithSpeakOnDemand, self.script_reportFirstSelectionTimer, gesture)
 		else:
 			self.script_reportSecondSelectionTimer(gesture)
 
+	@scriptHandler.script(
+		**speakOnDemand,
+	)
 	def script_reportTransportButtonsState(self, gesture):
 		stopTaskTimer()
 		if not self.inMainWindow(api.getFocusObject()):
@@ -1236,7 +1270,6 @@ class AppModule(AppModule):
 			# Translators: message to user when button record is pressed.
 			ui.message(_("record button pressed"))
 			pressed = True
-
 		if au_objects.isAvailable("play") and au_objects.isPressed("play"):
 			# Translators: message to the user when play button is pressed.
 			ui.message(_("play button pressed"))
@@ -1245,11 +1278,13 @@ class AppModule(AppModule):
 			# Translators: message to the user when pause button is pressed.
 			ui.message(_("Pause button pressed"))
 			pressed = True
-
 		if not pressed:
 			# Translators: message to the user when no button is pressed.
 			ui.message(_("No button pressed"))
 
+	@scriptHandler.script(
+		**speakOnDemand,
+	)
 	def script_reportPlaybackSpeed(self, gesture):
 		stopTaskTimer()
 		if not self.inMainWindow(api.getFocusObject()):
@@ -1257,24 +1292,36 @@ class AppModule(AppModule):
 		playbackSpeedSliderObject = au_objects.playbackSpeedSliderObject()
 		ui.message("%s: %s" % (playbackSpeedSliderObject .name, playbackSpeedSliderObject .value))
 
+	@scriptHandler.script(
+		**speakOnDemand,
+	)
 	def script_reportPlayMeterPeak(self, gesture):
 		stopTaskTimer()
 		if not self.inMainWindow(api.getFocusObject()):
 			return
 		PlayMeterPeak().reportLevel()
 
+	@scriptHandler.script(
+		**speakOnDemand,
+	)
 	def script_reportRecordMeterPeak(self, gesture):
 		stopTaskTimer()
 		if not self.inMainWindow(api.getFocusObject()):
 			return
 		RecordMeterPeak().reportLevel()
 
+	@scriptHandler.script(
+		**speakOnDemand,
+	)
 	def script_reportRecordingSlider(self, gesture):
 		stopTaskTimer()
 		if not self.inMainWindow(api.getFocusObject()):
 			return
 		RecordingSlider().reportLevel()
 
+	@scriptHandler.script(
+		**speakOnDemand,
+	)
 	def script_reportPlaybackSlider(self, gesture):
 		stopTaskTimer()
 		if not self.inMainWindow(api.getFocusObject()):
