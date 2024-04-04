@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: audacityAccessEnhancement 3.0-dev29\n"
 "Report-Msgid-Bugs-To: paulber19\n"
 "POT-Creation-Date: 2023-11-23 17:33+0100\n"
-"PO-Revision-Date: 2024-01-08 10:00+0300\n"
+"PO-Revision-Date: 2024-03-26 12:46+0300\n"
 "Last-Translator: paulber19 <paulber19@laposte.net>\n"
 "Language-Team: Danil Kostenkov <danilkostenkov38@gmail.com>\n"
 "Language: ru\n"
@@ -58,11 +58,11 @@ msgstr ""
 "* скрипт для сообщения о состоянии кнопок \"Пауза\", \"Воспроизведение\" и "
 "\"Запись\",\n"
 "* автоматические сообщения об изменении позиции звука,\n"
-"* автоматические сообщения об изменении выделения (может быть отключен),\n"
+"* автоматические сообщения об изменении выделения (можно отключить),\n"
 "* поддержка редактирования управления таймером,\n"
 "* использование пробела для нажатия кнопки,\n"
 "* скрипт, сообщающий о пиковом уровне воспроизведения/записи,\n"
-"* скрипт для отчета об уровне ползунка воспроизведения/записи,\n"
+"* скрипт, сообщающий об уровне ползунка воспроизведения/записи,\n"
 "* скрипт, сообщающий о скорости воспроизведения,\n"
 "* скрипт для отображения руководства пользователя дополнения,\n"
 "* скрипт для отображения руководства по audacity, написанного Дэвидом "
@@ -97,8 +97,8 @@ msgid ""
 "The configuration file of the add-on contains errors. The configuration has "
 "been  reset to factory defaults"
 msgstr ""
-"Конфигурационный файл дополнения содержит ошибки. Конфигурация была сброшена "
-"к настройкам по умолчанию"
+"Файл настроек дополнения содержит ошибки. Конфигурация была сброшена к "
+"настройкам по умолчанию"
 
 #. Translators: title of message box
 #: shared\au_addonConfigManager.py:179 appModules\audacity\__init__.py:884
@@ -232,7 +232,7 @@ msgstr "0 семпл"
 #. to inform that audio position is at track start.
 #: appModules\audacity\au_timerControl.py:190
 msgid "Audio position at start of track"
-msgstr "Положение звука в начале дорожки"
+msgstr "Положение звука в начале трека"
 
 #. Translators: message to the user
 #. to inform that the  audio position is at selection start.
@@ -289,7 +289,7 @@ msgstr "%s недоступно"
 #. Translators: message to user that there is no track in tracks view.
 #: appModules\audacity\__init__.py:328
 msgid "No track"
-msgstr "Нет дорожки"
+msgstr "Нет трека"
 
 #. Translators:  name of a digit in  selection format.
 #: appModules\audacity\__init__.py:455
@@ -522,7 +522,7 @@ msgstr "Сообщает состояние нажатых кнопок пауз
 #. for report playback meter peak command.
 #: appModules\audacity\__init__.py:844
 msgid "Reports the current level of playback meter peak"
-msgstr "Сообщает текущий пиковый уровень счетчика воспроизведения"
+msgstr "Сообщает текущий пиковый уровень счётчика воспроизведения"
 
 #. Translators: Input help mode message
 #. for report record meter peak command.
@@ -602,7 +602,7 @@ msgstr "Не сообщать автоматически об изменении
 #. Translators: message to the user when object is not in tracks view.
 #: appModules\audacity\__init__.py:1160
 msgid "Not in tracks view"
-msgstr "Не в режиме просмотра дорожки"
+msgstr "Не в режиме вид трека"
 
 #. Translators: message to the user when play button is pressed.
 #: appModules\audacity\__init__.py:1242
@@ -717,7 +717,7 @@ msgstr "Ошибка при загрузке обновления {name}."
 #: globalPlugins\audacityAccessEnhancement\updateHandler\update_check.py:162
 msgid "Cannot update {name} - missing file or invalid file format"
 msgstr ""
-"Не удается обновить {name} - отсутствует файл или неверный формат файла"
+"Не удаётся обновить {name} - отсутствует файл или неверный формат файла"
 
 #. Translators: The title of the dialog
 #. presented while an Addon is being updated.
@@ -771,8 +771,7 @@ msgstr ""
 "Новая версия {0} доступна.\n"
 "Но несовместима с данной версией NVDA: minimum version requred = {1}, last "
 "version tested = {2}.\n"
-"Вы хотите проигнорировать эту несовместимость и все равно загрузить её "
-"сейчас?"
+"Вы хотите проигнорировать эту несовместимость и загрузить её сейчас?"
 
 #: globalPlugins\audacityAccessEnhancement\updateHandler\update_check.py:361
 #, python-format
