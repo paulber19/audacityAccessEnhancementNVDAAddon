@@ -12,8 +12,8 @@
 %!PostProc: ADDON_NAME audacityAccessEnhancement
 %!PostProc: ADDON_REPOSITORY_NAME audacityAccessEnhancementNVDAAddon
 % current stable version
-%!PostProc (html):ADDON_CUR_VERSION 3.0.1
-%!PostProc (html):MINIMUM_NVDA_VERSION  2022.1
-%!PostProc (html):LAST_TESTED_NVDA_VERSION  2023.3
+%!PostProc (html):ADDON_CUR_VERSION 3.1
+%!PostProc (html):MINIMUM_NVDA_VERSION  2022.1.1
+%!PostProc (html):LAST_TESTED_NVDA_VERSION  2024.1
 %previous stable version
-%!PostProc (html):ADDON_PREV_VERSION 2.9
+%!PostProc (html):ADDON_PREV_VERSION 3.0.2

@@ -449,7 +449,7 @@ msgstr "{addonSummary} - {dialogTitle}"
 
 #: buildVars.py:24
 msgid "Audacity multi-track editor: accessibility enhancement"
-msgstr "Éditeur multi-piste Audacity: complément d'accessibilité"
+msgstr "Éditeur multipiste Audacity: complément d'accessibilité"
 
 #: buildVars.py:28
 msgid ""

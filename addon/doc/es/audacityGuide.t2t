@@ -1468,6 +1468,7 @@ Por lo tanto, por ejemplo, para agregar un efecto en tiempo real a la pista enfo
 - Tabular hasta el botón "Añadir efecto", pulsar sobre él y elija un efecto en el menú. El efecto se agrega a la lista de los efectos, por lo que los tres controles antes del botón  "Añadir efecto" son ahora el botón "Encendido", el botón "Efecto" y el botón "Reemplazar efecto" para el efecto añadido.
 - Por lo tanto, para abrir el cuadro de diálogo para el efecto añadido, pulsar dos veces  Mayúscula  + Tab para acceder al botón "Efecto", luego pulsar sobre él. Se abre un cuadro de diálogo Efecto en tiempo real y su estructura se describe en la siguiente sección.
 
+
 ++ Cuadro de diálogo Efecto en tiempo real ++
 El título de un cuadro de diálogo Efecto en tiempo real consiste en el nombre del efecto, seguido de un guión, seguido del nombre de la pista.
 Y el cuadro de diálogo contiene los siguientes controles:
@@ -1658,7 +1659,7 @@ En las versiones de Audacity 2.1.3 y anteriores, los atajos "r" y "mayúscula + 
 - Para iniciar la grabación, y añadir el audio sobre el audio de una  pista existente, pulsar "mayúscula + r", o en el menú "Reproducción", abrir el submenú "Grabación" y elige "Añadir grabación".
 
 
-++ Ajuste del nivel de grabación ++
+++ Ajuste del nivel de grabación ++[HDR-RecordLevel]
 En la herramienta "Medidor de grabación" del panel superior de la barra de herramientas de la ventana principal de Audacity, hay el vúmetro de grabación para ayudar a establecer el nivel de grabación.
 El vúmetro contiene un botón desplegable que se puede alcanzar pulsando "control + F6" dos veces para ser colocado en el panel superior de barras de herramientas, luego pulsando "Tab" hasta alcanzarlo.
 

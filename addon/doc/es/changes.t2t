@@ -14,6 +14,17 @@ Descarga:
 - [Versiones de desarrollo ADDON_DEV_URL]
 
 
++ v3.1 (23/03/2024) +
+Compatibilidad con NVDA 2024.1
+
+Nuevas características:
+- se toma en cuenta un nuevo modo de "voz a petición" introducido en nvda 2024.1:   todos los scripts que anuncien información verbalizarán esta información. En este modo, todos los demás scripts permanecerán en silencio.
+
+
+Corrección de fallos:
+- el botón de opción que te permite elegir el tipo de exportación (exportar todo el proyecto, exportación de múltiples archivos, ...) ahora es accesible.
+
+
 + v3.0 (23/11/2023) +
 Nuevas características:
 - nominación de los paneles de las barras de herramientas en "Panel inferior" y "Panel superior".
