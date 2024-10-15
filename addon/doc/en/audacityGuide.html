@@ -1,10 +1,10 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-GB" lang="en-GB"><head>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-GB" xml:lang="en-GB"><head>
 	<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
 	<meta name="viewport" content="width=device-width, initial-scale = 1">
-	<title>Audacity 3.3.0 to 3.3.3 Guide</title>
+	<title>Audacity 3.6.2 to 3.6.4 Guide</title>
 	
-	<meta name="description" content="A guide to Audacity 3.3.0 to 3.3.3 for users of
+	<meta name="description" content="A guide to Audacity 3.6.2 to 3.6.4 for users of
 	the Jaws, NVDA, and Narrator screen readers.">
 
 	<style type="text/css">
@@ -90,7 +90,7 @@
 <body>
 <div id="page">
 
-	<h1>Audacity 3.3.0 to 3.3.3 Guide</h1>
+	<h1>Audacity 3.6.2 to 3.6.4 Guide</h1>
 	
 	<p>A guide for users of the Jaws, NVDA, and Narrator screen readers, written by David Bailes.
 	More guides are available on the
@@ -116,6 +116,7 @@
 		<li><a href="#labels">Labels</a></li>
 		<li><a href="#clips">Clips</a></li>
 		<li><a href="#realtime-effects">Realtime effects</a></li>
+		<li><a href="#editing-music">Editing music</a></li>
 		<li><a href="#metadata-tags-editor">Metadata tags editor</a></li>		
 		<li><a href="#recording">Recording</a></li>
 		<li><a href="#plugins">Plugins</a></li>
@@ -124,33 +125,32 @@
 		<li><a href="#keystrokes">Keystrokes</a></li>		
 	</ul>
 
+
 	
 	<h2 id="introduction">Introduction</h2>
 
-	<p>This is a guide for versions 3.3.0 to 3.3.3 of Audacity, which is a free
+	<p>This is a guide for versions 3.6.2 to 3.6.4 of Audacity, which is a free
 	multi-track audio editor. You can use it for recording, simple editing
 	of single tracks, or more advanced editing involving multiple tracks.</p>
 
-	<p>Audacity 3.3.3 is available as either a 64 bit or 32 bit version. It's
+	<p>Audacity 3.6.4 is available as either a 64 bit or 32 bit version. It's
 	recommended to install the 64 bit version, unless you have a particular reason
 	for needing the 32 bit version. Note that if you're going to install
 	the 64 bit version, and you have a 32 bit version of Audacity installed,
 	you should uninstall this before installing the 64 bit version.</p>
 
-	<p>You can download the 64 bit version of Audacity 3.3.3 using the following link
-	<a href="https://github.com/audacity/audacity/releases/download/Audacity-3.3.3/audacity-win-3.3.3-x64.exe">Audacity 3.3.3 64 bit installer</a>
+	<p>You can download the 64 bit version of Audacity 3.6.4 using the following link
+	<a href="https://github.com/audacity/audacity/releases/download/Audacity-3.6.4/audacity-win-3.6.4-64bit.exe">Audacity 3.6.4 64 bit installer</a>
 	and the 32 bit version using the following link
-	<a href="https://github.com/audacity/audacity/releases/download/Audacity-3.3.3/audacity-win-3.3.3-x32.exe">Audacity 3.3.3 32 bit installer</a>.
+	<a href="https://github.com/audacity/audacity/releases/download/Audacity-3.6.4/audacity-win-3.6.4-32bit.exe">Audacity 3.6.4 32 bit installer</a>.
 	</p>
 
 	<p>The remaining sections of the introduction are as follows. There are introductions
 	to Projects and the cursor in Audacity, and descriptions of some message boxes which
 	can be shown at startup,
 	and how to get help. There is then an outline of some new features and
-	changes which were introduced in Audacity 3.3.0, a section on Audacity's
-	two sets of default shortcuts, some advice
-	if you are using a non US/UK keyboard,
-	and details of where to get the Jaws script for Audacity.</p>
+	changes, a section on Audacity's two sets of default shortcuts, and some advice
+	if you are using a non US/UK keyboard.</p>
 
 		
 	<h3>Projects</h3>
@@ -254,35 +254,27 @@
 
 	<h3>New features and changes</h3>
 
-	<p>The new features and changes which were introduced in Audacity 3.3.0
+	<p>The new features and changes which were introduced in Audacity 3.6.0 to 3.6.2
 	include the following:</p>
 
 	<ul>
-		<li>Some of Audacity's built in effects can now be used as
-		<a href="#realtime-effects">realtime effects</a>. These are:
-		Bass and Treble, Distortion, Phaser, Reverb and Wahwah.</li>
+		<li>In addition to being able to add realtime effects to individual
+		tracks, you can now add realtime effect to the mix of all the tracks,
+		and Audacity refers to these as master effects. For more details,
+		see the <a href="#realtime-effects">Realtime effects section</a>.</li>
 
-		<li>There have been changes to some of the toolbars in the
-		<a href="#lower-toolbars">Lower toolbars</a> section of the
-		main window. This includes that in the Selection toolbar,
-		the details of the selection which are shown is now set using
-		a menu button, rather than a combo box.</li>
+		<li>There are new Compressor and Limiter effects, which can be used
+		as realtime effects. The previous versions of these effects are still
+		available, and have been renamed Legacy Compressor and Legacy Limiter.</li>
 
-		<li>When pasting audio from a different project, there are now
-		options for how much data in copied into the current project.
-		This is described in the
-		<a href="https://vip.chowo.co.uk/wp-content/uploads/jaws/pasting-audio-from-different-project">Pasting audio
-		from a different project section</a> of the Preferences
-		section.</li>
-
-		<li>In the Preferences dialog, the Devices category has been renamed the
-		Audio settings category.</li>
-
-		<li>Unfortunately, this version of Audacity causes more of the
-		functionality of the <a href="https://vip.chowo.co.uk/wp-content/uploads/jaws/jaws-script">Jaws script for Audacity</a>
-		to no longer work.</li>
+		<li>Unlike in all prior versions of Audacity, the value of the playback
+		level slider now affects the value of peak level which is included when screen readers read
+		the name of the playback meter button in the upper toolbars. The value of the
+		peak level is only equal to the peak level of the audio which would be exported to an audio
+		file if the value of the playback slider is 100%. So if you want to make use of the
+		peak value given by the playback meter, set the
+		slider to 100%, and adjust the playback device's volume slider in Windows.</li>
 	</ul>
-
 
 
 	<h3>Default shortcuts</h3>
@@ -303,23 +295,6 @@
 	To fix this, see the
 	<a href="#the-and-shortcuts">The left and right bracket shortcuts on keyboards
 	other than US, UK or Irish section</a>, which is in the Customizing section.</p>
-	
-	
-	<h3 id="jaws-script">Jaws Script</h3>
-	
-	<p>There's a Jaws script for Audacity, and its uses include giving additional feedback, and providing
-	convenient ways of obtaining information. Full details of its functionality can be found on the
-	<a href="https://github.com/campg2j003/JAWS-Script-for-Audacity">Jaws Script for Audacity website</a>.
-	A direct link to the installer for a beta version of version 2.2.2 of this script is:
-	<a href="https://github.com/campg2j003/JAWS-Script-for-Audacity/releases/download/rel2.2.2-beta-2020-06-21/Jaws-Script-for-Audacity_2_2_2-beta-2020-06-21.exe">Jaws-Script-for-Audacity_2_2_2-beta-2020-06-21.exe</a>.</p>
-	
-	<p>Because this script has not been updated recently, some of the functionality does
-	not work with the current version of Audacity. For example, the keystrokes <strong>G</strong>,
-	and <strong>H</strong> no longer read the peak values of the recording and playback meters.
-	In addition, the keystrokes for reading the start and end of the selection no longer work.</p>
-	
-	<p>Note that for those using Jaws, the remainder of the guide does not assume that this
-	script is installed.</p>
 	
 	
 	
@@ -416,9 +391,7 @@
 	format, or one of the standard audio formats, as described in the following sections.
 	The Audacity project format preserves all the tracks in the project.
 	You only need to save a project in the audacity project format
-	if you intend to continue working on the project in the future.
-	In contrast, when you save in one of the standard audio formats,
-	Audacity automatically mixes all the tracks down to a single track.</p>
+	if you intend to continue working on the project in the future.</p>
 	
 	<p>When you close Audacity, if you haven't saved your changes to
 	an Audacity project file, then a Save changes? dialog opens asking
@@ -431,14 +404,25 @@
 	<h3>Saving audio in the audacity project format</h3>
 	
 	<p>To save in this format, open the File menu, open the Save Project
-	sub menu, and choose Save Project (<strong>Ctrl + S</strong>). The first
-	time you do this, you get a Warning dialog box telling you that
-	only Audacity can read these project files. The dialog box contains
+	sub menu, and choose Save Project (<strong>Ctrl + S</strong>).</p>
+	
+	<p>By default, a dialog opens asking you how you would like to save.
+	It contains the buttons “Save to cloud” and “Save
+	to Computer”, and a “Remember my choice and don't show again”
+	check box. Assuming that you'll normally, if not always want to
+	save to your computer, first check the check box, and then press
+	the Save to computer button. You can always save a specific project to
+	Audio.com cloud storage by opening the File menu, and choosing
+	Save to cloud.</p>
+	
+	<p>When you save to your computer, then by default you get a
+	Warning dialog box telling you that only Audacity can read these
+	project files. The dialog box contains
 	a check box which you can check if you don't want this warning again.
 	If you press the OK button, you then get a Save Project As dialog.</p>
 	
 	
-	<h3>Saving audio in one of the standard audio formats</h3>
+	<h3 id="exporting-audio">Saving audio in one of the standard audio formats</h3>
 	
 	<p>The default installation of Audacity can save in the following
 	standard formats: WAV, FLAC, MP3, Ogg Vorbis, and MP2. In addition,
@@ -447,66 +431,77 @@
 	with Audacity because of legal issues with patents. Details of
 	how to do this are given in the
 	<a href="#ffmpeg-library">FFmpeg library section</a>.</p>
-		
-	<p>To save audio in one of the standard audio formats:</p>
-	
-	<ol>
-		<li>To save all the audio, open the File menu, open the Export
-        sub menu, and choose Export Audio (<strong>Ctrl + Shift + E</strong>).
-		Alternatively, to save only the selected audio, choose Export Selected
-		Audio from the same sub menu.</li>	
-		
-		<li>The Export Audio dialog opens, and its structure is very
-		similar to a standard Windows XP Save As dialog. The folder where
-		the file will be saved is shown in the Save in combo box
-		(<strong>Alt + I</strong>). When the dialog opens this folder is
-		set to the folder which you used last time you exported audio.
-		If it's the first time, then the folder is an Audacity folder
-		in your documents folder, which is automatically created for
-		you by Audacity. If necessary change the folder where the
-		file will be saved.</li>
-		
-		<li>To set the file format which you want to use for saving
-		the audio, there's a Save as type combo box, which is the next
-		control after the File name edit box.
-		Note that all the formats which use the FFmpeg library, have
-		FFmpeg in parenthesis after their name.</li>
-		
-		<li>Optionally, after choosing the file format, you can set the options for
-		the encoding used by that format by tabbing to the controls which
-		appear after the Cancel button.</li>
 
-		<li>In the File name edit box type a name for the file, and then
-		press the Save button (<strong>Alt + S</strong>). An Edit Metadata tags
-		dialog opens.</li>
-		
-		<li>This dialog enables you to edit
-		various items of information about the audio data, such as the
-		Artist name, and the Track title, and is described in detail in the
-		<a href="#metadata-tags-editor">Metadata tags editor section</a> later in the guide.
-		If you don't want to edit any of the information, then you
-		can just press <strong>Enter</strong> to press the default OK button.
-		Note that if you cancel the dialog,
-		as well as cancelling any edits in this dialog, this also cancels the saving
-		of the audio. If you don't want the Edit Metadata tags dialog to automatically
-		open each time you save audio, then you can turn this option
-		off, as described in the
-		<a href="#edit-metadata-tags-dialog-opens-during-export">Edit Metadata Tags dialog opens during export section</a>,
-		which is in the Preferences section.</li>
-		
-		<li>Note that if you've tried to save
-		in any of the formats included in the FFmpeg library, then a message
-		box opens telling you that it needs to be configured.</li>			
-	</ol>
+	<p>To save audio in one of the standard formats, open the File menu,
+	and choose Export Audio (<strong>Ctrl + Shift + E</strong>).</p>
 	
-	<p>The Export (or the Save Other) sub menu on the File menu also contains commands for opening dialogs for
-	Exporting as MP3, Wav, and OGG. These commands open the Export Audio dialog with the
-	Save as type combo box already set to the appropriate format. However, given that the Export
-	Audio dialog remembers the last format that was used, and that the more specific commands
-	do not have default shortcuts, you may find is more convenient just to use the Export Audio
-	dialog.</p>
+	<p>By default, a dialog opens asking you whether you would like to share your audio to
+	Audio.com, or export it to your computer. Assuming that you will always
+	want the latter, <strong>Tab</strong> to the Don't show
+	again check box, and check it. Then <strong>Tab</strong> to the
+	Export to computer button, and press it. You can always share
+	your audio on Audio.com by opening the File menu, and choosing
+	Share audio.</p>
 
-	
+	<p>The Export Audio dialog opens, and using this you can save either the entire
+	project or any selected audio to a single file, or save the project
+	to multiple files, either by track, or by time ranges specified by
+	labels. The dialog contains the following controls which enable
+	you to do this:</p>
+
+	<ul>
+		<li>The first four controls of the dialog enable you to specify
+		the name, folder, and type of the exported file. There are File name
+		and Folder edit boxes, a Browse button, and a Format combo box.
+		The Browse button provides an alternative to using the other three
+		controls. It opens a standard Save as dialog, which allows you to
+		specify the name, folder, and type of the exported file. After
+		you press the Save button in this dialog, you are returned to
+		the Export audio dialog, and the other three controls will have
+		been updated. Note that pressing the Save button does not
+		actually save the audio to a file. This only happens when you
+		press the Export button in this dialog.</li>
+
+		<li>Following the Format combo box, there are a group of audio options
+		which are appropriate for the selected format. You may well find that
+		the default settings of these options are fine in most cases.</li>
+
+		<li>A group of three radio buttons for specifying the audio to be exported.
+		If the Export entire project radio button is selected, then Audacity
+		mixes all the audio tracks down to a single track, and this is exported.
+		If the Export current selection radio button
+		is selected, then only the selected audio is mixed down to a single track,
+		and then exported. If no audio is selected, then this option is not available.
+		If the Export multiple files radio button is selected, then additional
+		controls are shown later in the dialog which allow you to further
+		specify this option.</li>
+
+		<li>A Trim blank space before first clip check box. This setting only
+		affects projects where the first audio data (the first clip) starts after
+		time zero. When the check box is not checked, then the exported file
+		contains silence for the time before the first clip. When checked,
+		the exported audio starts at the time of the first clip.</li>
+
+		<li>An Edit metadata button, which opens the Edit Metadata Tags dialog,
+		where you can edit various items of information about the audio data,
+		such as the Artist name, and the Track title, and is described in detail in the
+		<a href="#metadata-tags-editor">Metadata tags editor section</a> later
+		in the guide.</li>
+
+		<li>Cancel and Export buttons, the latter being the dialog's default button.</li>
+	</ul>
+
+	<p>When the Export Audio dialog opens, in the group of three radio buttons
+	for specifying which audio is exported, the selected radio button is
+	the button which was selected during the previous export of audio, except for
+	two cases. If the previous selection was Export current selection, and there
+	is now no selected audio, then the Export entire project radio button
+	is selected. And if the previous selection was Export multiple files, and there
+	are now no labels and not more than a single audio track, then again, the
+	Export entire project radio button is selected. So if you select anything other
+	than Export entire project, then next time you export some audio, you may
+	need to check which of these radio buttons is selected.</p>
+		
 	
 	<h2 id="playback">Playback</h2>
 
@@ -535,6 +530,14 @@
 	volume is determined by both Audacity's playback volume, and the playback
 	device's volume slider, which can be set in Windows.</p>
 
+	<p>Warning. As of Audacity 3.6.0 the value of the playback
+	level slider affects the value of peak level which is included when screen readers read
+	the name of the playback meter button in the upper toolbars. The value of the
+	peak level is only equal to the peak level of the audio which would be exported to an audio
+	file if the value of the playback slider is 100%. So if you want to make use of the
+	peak value given by the playback meter, set the
+	slider to 100%, and adjust the playback device's volume slider in Windows.</p>
+
 	<p>To change the value of the playback level slider, assuming that the Track
 	view is the current focus:</p>
 
@@ -546,6 +549,8 @@
 
 		<li>Press <strong>Ctrl + F6</strong> to return to the Track view.</li>
 	</ol>
+
+
 
 
 	<h3>Playback commands and keystrokes</h3>
@@ -729,9 +734,14 @@
 	<h3 id="lower-toolbars">Lower toolbars</h3>
 
 	<p>By default , the Lower toolbars section of the main window contains the
-	following toolbars, which are all described in the following sections:</p>
+	following toolbars, which apart from the Time signature toolbar are described
+	in the following sections:</p>
 
 	<ul>
+		<li>Time signature toolbar, which contains controls for the project's
+		tempo and time signature, and which is described later in the
+		<a href="#editing-music">Editing music section</a> of this guide.</li>
+
 		<li>Snapping toolbar</li>
 
 		<li>The Time toolbar.</li>
@@ -768,7 +778,10 @@
 	<a href="#step-size">Step size of the left and right arrow keys section</a>,
 	later in this guide. When snapping is on, this is modified as follows. The new
 	positions are rounded to the nearest unit specified by the Snap to combo box.
-	In addition, the minimum step size is the unit specifies by the Snap combo box.</p>
+	In addition, the minimum step size is the unit specifies by the Snap combo box.
+	If you set the zoom level to normal (<strong>Ctrl + 2</strong>), then for
+	almost all the options available for the snap to combo box, the step size
+	is the snapping unit, and not multiples of the snapping unit.</p>
 
 
 	<h3 id="time-toolbar">Time toolbar</h3>
@@ -1575,11 +1588,7 @@
 		allows you to hear a short sample of the effect applied to the
 		selected audio. The default length of the preview is 6 seconds,
 		but you can change this in the Preferences dialog, where in the Playback
-		category, in the Effects Preview group, there's a Length edit box.
-		Note that in version 3.3.0 of Audacity, but not in later versions,
-		for a small number of  effects, after you press the Preview button it changes
-		to a Stop preview button, which allows you to stop the preview
-		when you want.</li>
+		category, in the Effects Preview group, there's a Length edit box.</li>
 
 		<li>A Preview button, which
 		allows you to hear a short sample of the effect applied to the
@@ -1652,11 +1661,11 @@
 
 	<h3 id="loop-playback">Loop playback</h3>
 
-	<p>In Audacity 3.1.0, there is now a loop range which controls loop playback,
+	<p>There's a loop range which controls loop playback,
 	and which is independent of the selected time range. The options and commands for
 	looping can be found on the Looping sub menu of the Transport menu.</p>
 
-	<p>If the Loop On/Off option on the Looping sub menu is not checked,
+	<p>If the Enable Looping option on the Looping sub menu is not checked,
 	then as you might expect, playback
 	proceeds as normal, and there is no looping. If the option is checked,
 	playback starts as the position of the cursor, or the start of the selected
@@ -1670,7 +1679,7 @@
 		<li>You can select a selected time range, and then set the loop range to be
 		the same as the selected time range. To do this, on the Transport menu
 		open the Looping sub menu and choose Set Loop to Selection 
-		(Shift + L, only in version 3.1.3 or later).</li>
+		(Shift + L).</li>
 
 		<li>When playback is stopped, you can set the start and end of the
 		loop, by using the Loop in and Loop out commands, which are on the
@@ -1684,9 +1693,7 @@
 
 	<p>You can play the audio between the start and end of the loop once by
 	opening the Transport menu, opening the playback sub menu and choosing
-	Play Once/Stop (<strong>Shift + Spacebar</strong>). Note that in versions
-	of Audacity before 3.1.0, <strong>Shift + Spacebar</strong> was the
-	default shortcut to the command Loop play, which has been removed.</p>
+	Play Once/Stop (<strong>Shift + Spacebar</strong>).</p>
 
 	<p>If you want to update the loop range without stopping playback, you can
 	do this using the selection start and end time controls on the selection
@@ -1729,7 +1736,7 @@
 	time range.</p>
 
 
-	<h3>Track Mute and Solo</h3>
+	<h3 id="track-mute-and-solo">Track Mute and Solo</h3>
 
 	<p>Each track can be muted and soloed. These settings are used to
 	control which tracks contribute to playback, and to the audio
@@ -1774,12 +1781,12 @@
 	the mute setting:</p>
 	
 	<ul>
-		<li>Simple, which is the default. When you solo
+		<li>Simple. When you solo
 		a track, then the mute and solo settings of the tracks are adjusted so that
 		the soloed track is not muted, and the remaining tracks are muted and not soloed.
 		If you unsolo a soloed track, then all the remaining tracks are unmuted.</li>
 		
-		<li>Multi-track. The mute and solo settings are completely independent, and
+		<li>Multi-track, which is the default. The mute and solo settings are completely independent, and
 		any number of tracks can be soloed.</li>
 		
 		<li>None. For keyboard users, this is incorrectly just the same as Multi-track.</li>
@@ -1822,7 +1829,7 @@
 	<p>On the <a href="#track-menu">Track menu</a> there are commands for moving
 	a track up, down, to the top, and to the bottom of the tracks. By default,
 	these commands to not have keystrokes assigned to them, but you can assign
-	your own keystrokes in the keyboard category of Preferences, which is described
+	your own keystrokes in the Shortcuts category of Preferences, which is described
 	in the
 	<a href="#keyboard-shortcuts">Keyboard shortcuts section</a>, which is in
 	the Preferences section. The names of
@@ -1960,7 +1967,8 @@
 	<p>The Auto Duck effect reduces the volume in the selected audio during the
 	periods in which the level of another track, known as the control track,
 	exceeds a certain threshold. The track which is used as the control track
-	is the last unselected track which is immediately below a selected track.</p>
+	is the unselected track which is immediately below the last selected track
+	in the project.</p>
 	
 	<p>So, for example, if you've got one music track, and one voice track in
 	the project, and you want to reduce the volume of the music when there's
@@ -2109,7 +2117,9 @@
 	track at the cursor position, then silence, with the same duration as the pasted audio,
 	is pasted into the unselected track at the cursor position.</p>
 	
-	<p>You switch sync lock tracks on and off in the tracks menu, and by default it's off.
+	<p>You can turn sync lock tracks on and off using the “Keep tracks synchronized”
+	menu item on the Tracks menu, which can either be not checked or checked, and is not
+	checked by default.
 	If there are only audio tracks in the project, then there's just one group of sync-locked
 	tracks. The tracks in a project can be divided up into more than one group using label
 	tracks. Each audio track which follows immediately after a label track starts a new group.</p>
@@ -2224,7 +2234,7 @@
 	
 	<p>The uses of the Edit labels dialog include renaming a label, deleting a label, and as an
 	alternative to the move to label commands. To open
-	the dialog, open the Edit menu, open the Labels sub menu, and choose Edit Labels.
+	the dialog, open the Edit menu, open the Labels sub menu, and choose Label Editor.
 	The dialog includes the following controls:</p>
 	
 	<ul>
@@ -2427,10 +2437,10 @@
 		<li>Often the name of the clip is simply the name of the track.</li>
 
 		<li>When you record, the name of the clip containing the recording is the
-		name of the track, followed by #n, where n is number of times you have
+		name of the track, followed by point n, where n is number of times you have
 		recorded in that track.</li>
 
-		<li>If you split a clip using one of the the split commands which are
+		<li>If you split a clip using one of the split commands which are
 		described below, then any newly created clips have the same name
 		as the original clip.</li>
 	</ul>
@@ -2438,6 +2448,9 @@
 	<p>In addition to these automatically generated names, you can also rename
 	a clip to anything that you want, as described in the renaming clips section
 	below.</p>
+
+	<p>Each clip also has a speed and pitch change, as described in the
+	<a href="#clip-speed-and-pitch">Clip speed and pitch section</a> below.</p>
 	
 		
 	<h3>Moving the cursor</h3>
@@ -2514,16 +2527,85 @@
 
 	<p>To rename a clip:</p>
 
-	<ul>
+	<ol>
 		<li>Select a clip, using the commands for selecting the previous or next
 		clip (<strong>Alt + Comma</strong> or <strong>Alt + Period</strong>).</li>
 
-		<li>On the Edit menu, choose Rename Clip (<strong>Ctrl + F2</strong>). A Set Wave
+		<li>On the Edit menu, open the Audio Clips sub menu, and  choose
+		Rename Clip (<strong>Ctrl + F2</strong>). A Set Wave
 		Clip Name dialog opens, and the contents of the name edit box are initially selected.</li>
 
 		<li>Type in a name, and press <strong>Enter</strong>.</li>
+	</ol>
+
+
+	<h3 id="clip-speed-and-pitch">Clip speed and pitch</h3>
+
+	<p>Each clip has a speed and a pitch change. The default value
+	of the speed is 100%, and when this is changed, the pitch remains
+	unchanged. The speed is sometimes automatically changed, for
+	example, when you change the project's tempo, as described in the
+	<a href="#editing-music">Editing music section</a>. But you
+	you can also manually change a clip's speed by using the
+	Pitch and speed dialog which is described in the next section.</p>
+
+	<p>The pitch of a selected clip can be changed either by using the
+	Pitch and speed dialog, or by using the Pitch Up and Pitch Down
+	commands which change the clip's pitch by one semitone.
+	These can be found on the Audio clips sub menu on
+	the Edit menu, and they have the default shortcuts
+	<strong>Alt + Up arrow</strong> and <strong>Alt + Down arrow</strong>.
+	These commands can be used during playback.</p>
+
+	<p>Note that when a clip's speed or pitch is changed, this doesn't
+	change the original audio data for that clip. Instead, the change of
+	speed or pitch is calculated when needed, for example, for playback.
+	This means that you can change the speed or pitch
+	of a clip as many times as you like, without slowly reducing the
+	quality of the audio.</p>
+	
+
+	<h4>Pitch and Speed dialog</h4>
+
+	<p>After you have selected a clip, to open this dialog, open the Edit menu, open the Audio Clips
+	sub menu, and choose Pitch and Speed (<strong>Ctrl + Shift  P</strong>). The title of the dialog
+	is Pitch and Speed, then a dash, then the name of the clip. It contains the following controls:</p>
+
+	<ul>
+		<li>A Clip Pitch grouping contains two edit spin boxes: semitones and cents. These controls
+		allow you to change the pitch of the clip. This is specified in semitones and cents, where
+		a cent is one hundredth of a semitone. The default values of these controls are zero.</li>
+
+		<li>A Clip Speed grouping containing a speed % edit spin box.</li>
+
+		<li>A General grouping containing an Optimize for voice check box, which is unchecked by default.
+		The setting of this check box affects both the pitch adjustment and any change in speed.
+		</li>
 	</ul>
 
+	<p>Note that when you <strong>Tab</strong> to one of the edit spin boxes, the text is not
+	initially selected. So if you want to overwrite the text, you need to do something like
+	pressing <strong>Ctrl + A</strong> before typing your new text. For all the edit spin
+	boxes you can increase of decrease its value by one by pressing <strong>Up arrow</strong>
+	or <strong>Down arrow</strong> respectively. In addition, for the speed % edit
+	spin box, you can increase or decrease its value by ten by pressing <strong>Page up</strong>
+	or <strong>Page down</strong> respectively.</p>
+
+	<p>Note that the dialog doesn't have OK and Cancel buttons. Pressing <strong>Esc</strong>
+	closes the dialog.</p>
+
+	<p>The Pitch and speed dialog can be used during playback, but note the following points:</p>
+
+	<ul>
+		<li>The clip's speed cannot be changed during playback, and so the speed % edit spin
+		box is not available.</li>
+
+		<li>If you change either of the clip pitch edit spin boxes by using the <strong>Up or Down arrow</strong>
+		keys, or change the state of the check box, then this has an immediate effect on the playback.
+		However, if you edit the text of one of the clip pitch edit spin boxes, you need to
+		<strong>Tab</strong> away from the control before the playback reflects the changed
+		value.</li>
+	</ul>
 
 
 	<h3>Various split commands</h3>
@@ -2626,9 +2708,6 @@
 	the amount of movement depends on the Zoom setting, and the step size can be adjusted,
 	as described in the <a href="#step-size">Step size of the left and right arrow keys section</a>
 	of the Moving the Cursor section.</p>
-
-	<p>Bug warning. Unfortunately these commands caused Audacity 3.1.0 to crash,
-	but this problem was fixed in Audacity 3.1.1.</p>
 	
 	
 	<h4>Moving a single clip</h4>
@@ -2698,30 +2777,37 @@
 
 	<h2 id="realtime-effects">Realtime effects</h2>
 
-	<p>You can now add one or more realtime effects to a track. Unlike when you apply an effect
+    <p>You can now add one or more realtime effects either to a track, or to the mix of all
+    the tracks.</p>
+
+	<p>Unlike when you apply an effect
 	using the Effects menu, adding a realtime effect to a track doesn't change any of the audio
-	data in the track. Rather, when you you playback the track, the these effects are applied
+	data in the track. Rather, when you you playback the track, these effects are applied
 	in realtime. This means that you can change the parameters of any of these effects during
 	playback and hear the effect of this. And, in addition, at any point in your editing you can
 	come back to a track's realtime effects, and change parameters, or add or remove effects.</p>
 
-	<p>Using this version of Audacity, you can use a number of Audacity's built in effects as
-	realtime effects: Bass and treble, Distortion, Phaser, Reverb and Wahwah.
+	<p>Audacity refers to the realtime effects which are applied to the mix of all the tracks
+	as Master effects. If you wanted to add some reverb to all the tracks, then you could just
+	add a realtime reverb effect to the Master effects, rather than having to add it to all
+	the individual tracks.</p>
+
+	<p>You can use a number of Audacity's built in effects as
+	realtime effects: Bass and treble, Compressor, Distortion, Limiter, Phaser, Reverb and Wahwah.
 	In addition, you can use a number of effect plugins, notably both VST and VST3 effect plugins.
 	Using VST and VST3 plugins using a screen reader is described in the
 	<a href="#plugins">Plugins section</a>.</p>
 
-	<p>You add and manage the realtime effects for the focused track using the Realtime effects
-	pane, which is described in the next section.</p>
+	<p>You add and manage the realtime effects for the focused track or the mix of all the tracks
+    using the Realtime effects pane, which is described in the next section.</p>
 
 
 	<h3>Realtime effects pane</h3>
 
 	<p>You can open the realtime effects pane by opening the Effects menu and choosing
 	Add Realtime effects, or using the default shortcut, which is the letter <strong>E</strong>.
-	Visually, the pane is shown to the left of the track view. It contains a list of
-	any realtime effects which have be added to the focused track, and you can use
-	it for adding and removing effects, and changing effect parameters. To close
+	Visually, the pane is shown to the left of the track view, and its contents are described
+	below. To close
 	the pane, and move to the track view, you can either use the same command that you used
 	to open it, or press the Close button (<strong>Escape</strong>). Note, that when the pane
 	is open, you can use the keystrokes <strong>Ctrl + F6</strong> and
@@ -2729,7 +2815,8 @@
 	window without closing the pane, but you may not find the need to do that very often.</p>
 
 
-	<p>The Realtime effects pane contains the following controls:</p>
+	<p>The Realtime effects pane consisted of two sections. The first is for the realtime
+	effects applied to the focused track, and contains the following controls:</p>
 
 	<ul>
 		<li>A power toggle button, which controls whether any of the effects in the list of
@@ -2742,7 +2829,7 @@
 		for that effect; and a replace effect button, which opens a menu for either removing the effect
 		or replacing it with another effect.</li>
 
-		<li>An Add effect button. This opens a menu in which, by default, the the effects are
+		<li>An Add effect button. This opens a menu in which, by default, the effects are
 		grouped by type and publisher. However, there are a number of other options
 		for how the menu is organized, and the setting for this can be found in the
 		Effects category of the Preferences dialog, where in the Effect options grouping,
@@ -2752,13 +2839,27 @@
 		effects.</li>
 	</ul>
 
+	<p>The second section of the realtime effects pane is for the master effects, that is,
+	the effects which are applied to the mix of all the tracks. It contains the following
+	controls:</p>
+
+	<ul>
+		<li>A power toggle button, which controls whether any of the effects in the list of
+		effects are enabled.</li>
+
+		<li>A list of effects, which has the same structure as the list of effects for
+		a focused track which was described above.</li>
+
+		<li>An Add effect button.</li>
+	</ul>
+
 	<p>So, for example, to add a realtime effect to the focused track:</p>
 
 	<ol>
 		<li>Open the Effects menu, and choose Add realtime effects (<strong>E</strong>). The
 		realtime effects pane opens, and becomes the focus.</li>
 
-		<li><strong>Tab</strong> to the Add effect button, press it, and choose an effect
+		<li><strong>Tab</strong> to the first Add effect button, press it, and choose an effect
 		from the menu. The effect is added to the list of effects, so the three
 		controls before the add effect button are now the power toggle button,
 		the effect button, and the replace effect button for the added effect.</li>
@@ -2818,7 +2919,169 @@
 	the Audacity main window and any open modeless dialogs by pressing <strong>Alt + F6</strong>.</p>
 		
 
+
+	<h2 id="editing-music">Editing Music</h2>
+
+	<p>The features in Audacity for editing music are definitely work in progress,
+	and additional functionality will be added in future releases.
+	Currently the following features are available:</p>
+
+	<ul>
+		<li>The projects's tempo and time signature, which can be set in
+		the Time signature toolbar, as described in the next section.</li>
+
+		<li>Positions and lengths, such as the start and length of a selection
+		can be formatted in musical units, as described in a following section.</li>
+
+		<li><a href="#clip-speed-and-pitch">Clip speed and pitch</a>. Each clip has a speed,
+		and a pitch change.</li>
+
+		<li><a href="#automatic-tempo-detection">Automatic tempo detection</a>,
+		which is described in a following section.</li>
+	</ul>
+
+	<p>Although a project's tempo is often referred to as having units
+	of beats per minute, it is actually the number of quarter notes per minute,
+	and is independent of the time signature.</p>
+
+	<p>If you change the project's tempo, then the speeds of all
+	the clips in the project will be changed proportionally.
+	So, for example, if you half the tempo,
+	then the speed of each clip in the project will be halved.
+	So this means that the values of positions in the projects,
+	when measured in bars and beats, will remain unchanged when
+	the tempo is changed.</p>
+
+	<p>If you copy a clip from one project, and paste it into
+	another project, then the speed of the pasted clip will be
+	modified if the projects have different tempi. Say for example that
+	the speed the clip in the original project is 30%, and the
+	tempo of the project into which it is pasted is twice the
+	tempo of the original project. Then the speed of the pasted
+	clip will be 60%.</p>
+
+
+	<h3 id="time-signature-toolbar">Time Signature toolbar</h3>
+
+	<p>The Time Signature toolbar contains three controls:</p>
+
+	<ul>
+		<li>Tempo edit spin box, which contains the project's tempo.
+		Note that when you <strong>Tab</strong> to this control,
+		the text is not selected by default, and the first digit is normally
+		the current character. So if you want to overwrite the number you can
+		either press <strong>Delete</strong> a few times or press
+		<strong>Shift + End</strong> to select all the digits before typing
+		in the number. Be aware that pressing <strong>Ctrl + A</strong>,
+		selects all the audio in the project, rather than selecting
+		the contents of the edit box. In addition to typing in a number,
+		you can also use the <strong>Up arrow</strong> and
+		<strong>Down arrow</strong> keys to increase or decrease the tempo by
+		one, and the <strong>Page up</strong> or <strong>Page down</strong>
+		keys to increase or decrease the tempo by 10.</li>
+
+		<li>Upper time signature edit spin box, which contains the upper
+		number of the time signature, the number of beats in a bar.
+		You can change its value using any of the methods described
+		above for the Tempo edit spin box.</li>
+
+		<li>Lower time signature combo box, which contains the lower number
+		of the time signature, which indicates the note value of each beat.</li>
+	</ul>
+
+
+	<h3>Musical units for positions and lengths</h3>
+
+	<p>The values of a number of positions and lengths can be shown
+	or set in musical units as well as time units. These are
+	all in the lower toolbars:</p>
+
+	<ul>
+		<li>Two of the controls in the
+		<a href="#selection-toolbar">Selection toolbar</a>, for example the start and end
+		of the selection. If you open the context menu of one of these two
+		controls, then the menu includes two musical formats: bar:beat and
+		bar:beat:tick, where is tick is equal to a sixteenth note. If you change
+		the format of one of these two time controls, this also changes the format
+		of the other control, and the default format of the Set left/right selection
+		boundary dialogs.</li>
+
+		<li>The audio position control in the <a href="#time-toolbar">Time toolbar</a>,
+		which shows the playback position during
+		playback or recording, or the position at which playback would start. In
+		a similar manner to the time controls in the Selection toolbar, you
+		can change its format to either bar:beat or bar:beat:tick.</li>
+
+		<li>The Snap to combo box in the <a href="#snapping-toolbar">Snapping toolbar</a>,
+		which is available when the Snap check box is checked, has options which
+		include bar, one half, one quarter and so on. So with snapping enabled,
+		you can use the left and right arrow keys to move to the previous or
+		next bar or note value.</li>
+	</ul>
+
+
+	<h3 id="automatic-tempo-detection">Automatic tempo detection</h3>
+
+	<p>In some cases, the tempo of audio files which you open or import can
+	be detected. Then depending on the context, and user preference,
+	this can used to either adjust the project's tempo so that it's the same
+	as the clip's tempo, or to change the clip's tempo so that it's the
+	same as the project tempo.</p>
+
+	<p>If a tempo is detected, then one of the factors that determines what
+	action is taken is the Timeline view. The Timeline is a ruler which
+	runs across the main window immediately above the tracks. It allows
+	sighted users to see the positions of items in the tracks, and so normally
+	is of little interest to users of screen readers. The Timeline can
+	have two views, which can be set using the Timeline sub menu on the
+	View menu. These two views are Minutes and seconds, which is the default,
+	and Beats and measures.</p>
+
+	<p>These are the methods used to try and detect the tempo of an audio file,
+	and they are used in the following order:</p>
+
+	<ol>
+		<li>The file's metadata (tags) are checked to see if a tempo is specified.</li>
+
+		<li>The filename, and its path are checked to see if it contains the tempo. The
+		format must be a number followed by bpm. An example of such a filename is
+		fred60bpm.mp3.</li>
+
+		<li>The file's audio is analysed, but this is only done if the length of
+		the audio in the file is no more than 60 seconds.</li>
+	</ol>
+
+	<p>If a tempo is detected, and the project contains one or more audio tracks,
+	then if the Timeline view is is set to minutes and seconds, then nothing is done.
+	However, if the Timeline view is set to
+	beats and measures, then the clip's speed is adjusted so that clip's tempo is
+	the same as the project's tempo.</p>
+
+	<p>If a tempo is detected, and the project contains no audio tracks,
+	then by default a Music import dialog opens,
+	informing you of the tempo which it has detected in the file, and asking you if you if you
+	want to enable music view, and set the project tempo to the detected value. By enabling music
+	view, it means setting the Timeline view to Beats and measures. Also, even if the Timeline
+	view is already set to Beats and measures, the same question is asked.</p>
 	
+	<ul>
+		<li>If you press the Yes button, then the project tempo is changed, and the clip's tempo
+		is not changed.</li>
+
+		<li>If you press the No button, then if the Timeline view is set to Beats and measures,
+		then the clip's speed is adjusted so that the clip's tempo is the same as the project's
+		tempo. But if the Timeline view is set to Minutes and seconds, then nothing is done.
+		This is the same behaviour as when a tempo is detected when there are already some
+		audio tracks in the project.</li>
+	</ul>
+
+	<p>The Music import dialog also contains a “Don't ask me again“ check box. If you
+	check this before pressing either the Yes of the No button, then this sets the appropriate
+	option for a setting in the Import/Export category of the Preferences dialog. For more
+	details, see the
+	<a href="#automatic-tempo-detection-options">Automatic tempo detection options section</a>.</p>
+
+
 	
 	<h2 id="metadata-tags-editor">Metadata tags editor</h2>
 	
@@ -2829,10 +3092,8 @@
 	of preset tags, and also to create your own custom tags.</p>
 	
 	<p>You can open the Edit Metadata Tags dialog at any time by choosing
-	Metadata from the Edit menu. In addition, if you save audio
-	in one of the standard formats, then unless you've turned the
-	appropriate option off, the Edit Metadata Tags dialog
-	automatically opens, as described in the
+	Metadata Editor from the Edit menu. In addition, you can also open
+	this dialog from the Export Audio dialog, as described in the
 	<a href="#saving-audio">Saving audio section</a> above.</p>
 	
 	<p>The Edit Metadata Tags dialog contains the following controls:</p>
@@ -3104,15 +3365,15 @@
 	
 	<h4>Overdub option</h4>
 	
-    <p>The Overdub option controls whether Audacity plays any
+    <p>The Hear other tracks while recording option controls whether Audacity plays any
     existing tracks while recording a new one. You can check or
     uncheck this option either on the Transport Options sub menu on the Transport menu,
 	or in the Recording category of the Preferences dialog.</p>
 	
 	
-	<h4>Software Playthrough option</h4>
+	<h4>Input monitoring option</h4>
 	
-    <p>The Software Playthrough option controls whether Audacity
+    <p>The Audible input monitoring option controls whether Audacity
     plays the new track while it is being recorded. Normally this
     option should be off, but it's useful if you want to hear what
     you're recording from a device such a USB turntable. It can
@@ -3201,11 +3462,11 @@
 	of the recording level:</p>
 
 	<ol>
-		<li>Press the record meter drop down button, and choose Start monitoring.</li>
+		<li>Press the record meter drop down button, and choose Enable silent monitoring.</li>
 		
 		<li>Make some representative sounds for a short while.</li>
 		
-		<li>Press the record meter drop down button, and choose Stop monitoring. The
+		<li>Press the record meter drop down button, and choose Disable silent monitoring. The
 		name of the drop down button includes the peak level of this monitoring
 		session.</li>
 	</ol>
@@ -3540,11 +3801,6 @@
 	<p>Nearly all VST and VST3 effects have by default a custom graphical user interface
 	for changing the values of its settings which is not accessible for keyboard users.
 	However, Audacity provides an alternative interface which is accessible.</p>
-
-	<p>Bug warning. Unfortunately, Audacity versions 3.3.0 to 3.3.3 don't provide
-	an accessible interface for VST plugins - the setting of the enable graphical interface
-	check box described below has no effect. Fortunately, VST3 plugins are not affected,
-	and most VST plugins are now available as VST3 plugins.</p>
 	
 	<p>When you first open a VST or VST3 effect, its custom graphical user interface is
 	used, and you will only be able to tab to a small number of controls, such as the
@@ -3571,9 +3827,9 @@
 	to a slider, your screen reader reads the parameter's name,  the parameter's value,
 	and the slider's position, a number in the range 0 to 100. When you change the value
 	of a slider, using the standard keystrokes such as <strong>Left arrow</strong>
-	and <strong>Right arrow</strong>, only the new position of the the slider is read.
+	and <strong>Right arrow</strong>, only the new position of the slider is read.
 	To read the new parameter value depends on which screen reader you're using. If
-	you're using NVDA or Narrator, you can simple press the keystroke to read the
+	you're using NVDA or Narrator, you can simply press the keystroke to read the
 	current line. However, if you do this using Jaws, Jaws unfortunately reads a
 	parameter value which is incorrect. To read a correct value, you have to
 	<strong>Tab</strong> away from the control, and then <strong>Shift + Tab</strong>
@@ -3607,7 +3863,7 @@
 	with the toolbars.</p>
 	
 	<p>You can change whether or not this menu is shown either by using the
-	Extra menus option in the View menu, or by using a setting in Preferences:</p>
+	Enable Extra menus option in the View menu, or by using a setting in Preferences:</p>
 	
 	<ol>
 		<li>In the Audacity Preferences dialog, select the Interface category.</li>
@@ -3703,22 +3959,6 @@
 
 	<p>Note that there are no issues with having both versions of the FFmpeg
 	library installed at the same time.</p>
-		
-	
-	<h3 id="edit-metadata-tags-dialog-opens-during-export">Edit Metadata Tags dialog opens
-	during export</h3>
-	
-	<p>To set whether the Edit Metadata Tags dialog automatically opens each
-	time you export audio:</p>
-	
-	<ol>
-		<li>In the Audacity Preferences dialog, select the Import/Export
-		category.</li>
-
-		<li>In the When exporting tracks to an audio file group, there's
-		a “Show Metadata tags Editor prior to export” check box,
-		which is checked by default.</li>
-	</ol>
 
 
 	<h3 id="default-folders">Default folders</h3>
@@ -3852,7 +4092,58 @@
 		<li>Realtime effect organization combo box, which by default is set to
 		Group by type and publisher.</li>
 	</ul>
-	
+
+
+	<h3 id="automatic-tempo-detection-options">Automatic tempo detection options</h3>
+
+	<p>As described in the <a href="#automatic-tempo-detection">Automatic tempo detection section</a>,
+	if a project contains no audio tracks, and an audio file is opened or imported, and a tempo
+	is detected, then by default a Music import dialog opens. The Import/Export category of
+	the Preferences dialog, contains a group of radio buttons which you can use to change
+	this behaviour. The name of this group is “When Audacity detects music in file
+	imported on empty project”, but Jaws reads it as just “Music imports”.</p>
+
+	<ul>
+		<li>Ask me each time, which is the default. A Music import dialog opens, informing you
+		of the tempo which it has detected in the file, and asking you if you if you want
+		to enable music view, and set the project tempo to the detected value. There's also
+		a Don't ask me again check box, and if checked, then when you press the Yes or No button,
+		this preference is updated appropriately.</li>
+
+		<li>Switch view to Beats and Measures and align with musical grid. This is equivalent
+		to answering Yes to the question in the Music import dialog.</li>
+
+		<li>Do nothing. This is equivalent to answering No to the question in the Music
+		import dialog.</li>
+	</ul>
+
+
+	<h3 id="how-would-you-like-to-save">How would you like to save</h3>
+
+	<p>When you save an Audacity project, then by default a dialog
+	opens, asking you whether you want to store the project on Audio.com cloud storage or
+	on your computer. Options for that behaviour are available in the
+	Cloud category of preferences, where there is a Save behaviour
+	group of radio buttons:</p>
+
+	<ul>
+		<li>Always ask.</li>
+
+		<li>Always save to cloud.</li>
+
+		<li>Always save to the computer.</li>
+	</ul>
+
+
+	<h3 id="how-would-you-like-to-export">How would you like to export</h3>
+
+	<p>When you export audio, then by default a dialog
+	opens, asking you whether you want to share your audio on Audio.com or
+	export to your computer. An option for that behaviour i available in the
+	Cloud category of preferences, where there is a Export behaviour
+	group which contains a “Show How would you like to export dialog”
+	check box.</p>
+
 	
 	<h3>Recording options</h3>
 	
@@ -3864,18 +4155,10 @@
 	
 	<h3 id="keyboard-shortcuts">Keyboard shortcuts</h3>
 	
-	<p>The controls in the Keyboard category of Preferences enable you to
+	<p>The controls in the Shortcuts category of Preferences enable you to
 	manage the keyboard shortcuts for all the commands available in Audacity.</p>
-
-	<p>As well as the standard way of accessing these controls by opening the preferences
-	dialog and selecting the keyboard category, there is an additional method which you
-	may find convenient. If you select a command on one of the menus on the
-	menu bar, and press <strong>Shift + Enter</strong> rather than the usual <strong>Enter</strong>
-	then a dialog opens which has the title Preferences: keyboard. In the tree view or list
-	which are described below, the command is already selected. Note that this method
-	does not work if the command in the menu is unavailable.</p>
 	
-	<p>The first three controls in the keyboard category are:</p>
+	<p>The first three controls in the Shortcuts category are:</p>
 	
 	<ul>
 		<li>A group of radio buttons which controls how the commands and
@@ -3997,7 +4280,7 @@
 	<p>To reset all the shortcuts to either the standard or full set of defaults:</p>
 	
 	<ul>
-		<li>In the Audacity Preferences dialog, select the Keyboard category.</li>
+		<li>In the Audacity Preferences dialog, select the Shortcuts category.</li>
 		
 		<li>Tab to the Defaults button and press it. A menu opens.</li>
 		
@@ -4232,7 +4515,7 @@
 		</tr>
 		<tr>
 			<td>Set the loop range to the selected time range</td>
-			<td>Shift + L, available in 3.1.3 and later</td>
+			<td>Shift + L</td>
 		</tr>
 		<tr>
 			<td>Play the looping range once</td>
@@ -4589,6 +4872,18 @@
 		<tr>
 			<td>Rename selected clip</td>
 			<td>Ctrl + F2</td>
+		</tr>
+		<tr>
+			<td>Open Pitch and speed dialog for the selected clip</td>
+			<td>Ctrl + Shift + P</td>
+		</tr>
+		<tr>
+			<td>Increase the pitch of the selected clip by one semitone</td>
+			<td>Alt + Up arrow</td>
+		</tr>
+		<tr>
+			<td>Decrease the pitch of the selected clip by one semitone</td>
+			<td>Alt + Down arrow</td>
 		</tr>
 		<tr>
 			<td>Split</td>

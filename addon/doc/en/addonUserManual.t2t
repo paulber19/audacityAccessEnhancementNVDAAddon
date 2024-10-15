@@ -76,7 +76,9 @@ In the case of an automatic update and if a new version is detected, the "Update
 In the case of an automatic update and if a new version is detected, the "Update" dialog box is displayed to suggest:
 
 ++ Compatibility ++
-This add-on has been tested with Audacity version 3.4, 3.3.0 and 3.3.3. It is not compatible with versions prior to version 3.3.0.
+- This version of the extension has been tested with audacity 3.6.4 x64, 3.6.2 x64, 3.5.1 x64, 3.4.2 x64, 3.3.3 and 3.3.0. It should also be compatible with versions 3.3.1 and 3.3.2, but no testing has been done.
+- Compatibility with versions prior to 3.3.0 is not guaranteed.
+- Some features are not available under Audacity versions 3.3.x.
 
 
 ++ Necessary configuration ++

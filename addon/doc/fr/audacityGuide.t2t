@@ -24,7 +24,7 @@ Auteur: paulber19 (paulber19@laposte.net)
 %%toc
 
 + Introduction +
-Ceci est la traduction du [guide https://vip.chowo.co.uk/wp-content/uploads/jaws/Audacity-3.3.0-Guide.html] pour les utilisateurs des lecteurs d'écran Jaws, NVDA et Narrateur, écrit par David Bailes, concernant les versions 3.3.0 à 3.3.3 d'Audacity.
+Ceci est la traduction du [guide https://vip.chowo.co.uk/wp-content/uploads/jaws/Audacity-3.3.0-Guide.html] pour les utilisateurs des lecteurs d'écran Jaws, NVDA et Narrateur, écrit par David Bailes, concernant les versions 3.6.2 à 3.6.4 d'Audacity.
 
 D'autres guides sont disponibles sur la page [Jaws Guides http://vip.chowo.co.uk/jaws-guides/] du site Web "VIP Software Guides". Bien que ceux-ci soient écrits spécifiquement pour les utilisateurs du lecteur d'écran Jaws, beaucoup d'entre eux peuvent également être utiles aux utilisateurs d'autres lecteurs d'écran
 
@@ -34,7 +34,7 @@ Vous pouvez utiliser Audacity pour l'enregistrement, l'édition simple dune pist
 Le logiciel Audacity peut être téléchargé à partir de la page d'accueil du site [Audacity http://audacityteam.org/].
 
 
-Audacity 3.3.3 est disponible en version 64 bits ou 32 bits. Il est recommandé d'installer la version 64 bits, sauf si vous avez une raison particulière d'avoir besoin de la version 32 bits.
+Audacity 3.6.4 est disponible en version 64 bits ou 32 bits. Il est recommandé d'installer la version 64 bits, sauf si vous avez une raison particulière d'avoir besoin de la version 32 bits.
 
 
 Notez que si vous voulez installer la version 64 bits et que vous avez installé une version 32 bits d'Audacity, vous devez la désinstaller avant d'installer la version 64 bits.
@@ -98,19 +98,15 @@ Après avoir fait votre demande par l'une ou l'autre méthode, vous recevrez un 
 
 
 ++ Nouvelles fonctionnalités et modifications ++
-Les nouvelles fonctionnalités et changements qui ont été introduits dans Audacity 3.3.0 incluent ce qui suit :
-- Certains des effets intégrés d'Audacity peuvent désormais être utilisés comme [effets en temps réel]. Ce sont : Bass et Treble, Distorsion, Phaser, Reverb et Wahwah.
-- Certaines barres d'outils ont été modifiées dans la section [Barres d'outils inférieures] de la fenêtre principale. Cela inclut que dans la barre d'outils de sélection, les détails de la sélection qui sont affichés sont désormais définis à l'aide d'un bouton de menu, plutôt que d'une zone de liste déroulante.
-- Lorsque vous collez de l'audio à partir d'un projet différent, il existe désormais des options pour la quantité de données copiées dans le projet en cours. Ceci est décrit au chapitre [Coller l'audio d'un projet différent] du chapitre "Préférences". 
-- Dans la boîte de dialogue "Préférences", la catégorie Périphériques a été renommée en "Paramètres audio". 
-- Malheureusement, les changements de cette version d'Audacity font que certaines fonctionnalités du script Jaws ne fonctionnent plus.
-
-
+Les nouvelles fonctionnalités et modifications introduites dans Audacity 3.6.0 à 3.6.2 sont les suivantes :
+- En plus de pouvoir ajouter des effets en temps réel à des pistes individuelles, vous pouvez désormais ajouter des effets en temps réel au mixage de toutes les pistes, et Audacity les appelle "effets principaux". Pour plus de détails, consultez le chapitre ["Effets en temps réel" #hdr-realTimeEffects].
+- Il existe de nouveaux effets de compresseur et de limiteur, qui peuvent être utilisés comme effets en temps réel. Les versions précédentes de ces effets sont toujours disponibles et ont été renommées Legacy Compressor et Legacy Limiter.
+- Contrairement à toutes les versions précédentes d'Audacity, la valeur du curseur de niveau de lecture affecte désormais la valeur du niveau de crête qui est inclus lorsque les lecteurs d'écran lisent le nom du bouton de l'indicateur de lecture dans les barres d'outils supérieures. La valeur du niveau de crête n'est égale au niveau de crête de l'audio qui serait exporté vers un fichier audio que si la valeur du curseur de lecture est de 100 %. Donc, si vous souhaitez utiliser la valeur de crête donnée par l'indicateur de lecture, réglez le curseur sur 100 % et ajustez le curseur de volume du périphérique de lecture dans Windows.
 
 
 ++ Raccourcis par défaut ++
 Depuis la version 2.2, Audacity installe, par défaut, un minimum de raccourcis.
-Vous pouvez changer cela et installer un jeu complet de raccourcis. Ceci est décrit au chapitre [Jeu de raccourcis standard ou complet #HDR-DefaultShortcutsSet]".
+Vous pouvez changer cela et installer un jeu complet de raccourcis. Ceci est décrit au chapitre ["Jeu de raccourcis standard ou complet" #HDR-DefaultShortcutsSet]".
 
 Le reste de ce guide suppose que vous avez installé le jeu complet.
 
@@ -119,16 +115,6 @@ Le reste de ce guide suppose que vous avez installé le jeu complet.
 Si vous utilisez un clavier d'un autre type que QWERTY, quelques commandes clavier ne fonctionnent pas si vous utilisez Audacity avec les paramètres par défaut.
 
 Pour résoudre ce problème, voir le chapitre ["Les raccourcis gênants" #HDR-BracketShortcuts].
-
-++ Script Jaws ++
-Il existe un script Jaws pour Audacity, et son utilisation apporte la fourniture de commentaires supplémentaires et de moyens pratiques d'obtenir des informations.
-Tous les détails de ses fonctionnalités sont disponibles sur le site Web [Jaws Script for Audacity https://github.com/campg2j003/JAWS-Script-for-Audacity].
-Un lien direct vers le programme d'installation pour une version bêta de la version 2.2.2 de ce script est : [Jaws-Script-for-Audacity_2_2_2-beta-2020-05-10.exe https://github.com/campg2j003/JAWS-Script-for-Audacity/releases/download/rel2.2.2-beta-2020-05-10/Jaws-Script-for-Audacity_2_2_2-beta-2020-05-10.exe].
-
-Parce que ce script n'a pas été mis à jour récemment, certaines fonctionnalités ne fonctionnent pas avec la version actuelle d'Audacity. Par exemple, les frappes G et H ne lisent plus les valeurs de crête des compteurs d'enregistrement et de lecture
-
-Notez que pour ceux qui utilisent Jaws, le reste du guide ne suppose pas que ce script est installé
-
 + Fenêtre principale +
 ++ Principaux composants de la fenêtre ++
 Les principaux composants de la fenêtre principale d'Audacity sont :
@@ -195,28 +181,32 @@ Le bouton par défaut est Oui., Mais si vous souhaitez sauvegarder le projet com
 ++ Sauvegarde dans le format de projet audacity ++
 Pour sauvegarder dans ce format, utilisez le sous-menu "Sauvegarder le projet" du sous-menu "Sauvegarder le projet" du menu "Fichier" ou utilisez le raccourci "control + s".
 
-La première fois que vous faites cela, vous obtenez une boîte de dialogue d'Avertissement vous indiquant que seul Audacity peut lire ces fichiers de projet. La boîte de dialogue contient une case à cocher qui vous permet de choisir si vous ne voulez plus cet avertissement à nouveau. Si vous appuyez sur le bouton OK, vous obtenez alors le dialogue "Sauvegarder le Projet sous".
+Par défaut, une boîte de dialogue s'ouvre vous demandant comment vous souhaitez enregistrer. Il contient les boutons « Enregistrer sur le cloud » et « Enregistrer sur l'ordinateur », ainsi qu'une Case à cocher « Mémoriser mon choix et ne plus afficher ». En supposant que
+vous souhaiterez normalement, sinon toujours, enregistrer d'abord sur votre ordinateur cochez la case, puis appuyez sur le bouton Enregistrer sur l'ordinateur. Vous pouvez enregistrez toujours un projet spécifique sur le stockage cloud Audio.com en ouvrant le
+Menu Fichier et en choisissant Enregistrer dans le cloud.
+
+Lorsque vous enregistrez sur votre ordinateur, vous obtenez par défaut une boîte de dialogue d'avertissement vous indiquant que seul Audacity peut lire ces fichiers projet.
+La boîte de dialogue contient une case à cocher que vous pouvez cocher si vous ne souhaitez pas avoir à nouveau cet avertissement. Si vous appuyez sur le bouton OK, vous obtenez alors le dialogue "Sauvegarder le Projet sous".
 
 ++ Sauvegarde dans des formats audio ++
 L'installation par défaut d'Audacity peut enregistrer dans les formats standard suivants : WAV, FLAC, MP3, Ogg Vorbis et MP2.
 
 En outre, vous pouvez enregistrer dans des formats y compris les formats wma et m4a si vous téléchargez et installez la bibliothèque FFmpeg, qui n'est pas incluse avec Audacity en raison de problèmes juridiques, voir le chapitre ["Bibliothèque FFmpeg" #HDR-FFMPEGLibrary].
 
-Pour enregistrer l'audio dans l'un des formats audio standards :
-- Si vous voulez sauvegarder tout l'audio, utilisez le sous-menu "Exporter sous" du menu "Fichier" et choisissez le sous-menu "Exporter l'Audio" (raccourci "control + majuscule +E"). Sinon et si vous voulez sauvegarder uniquement les données audio sélectionnées, choisissez plutôt le sous-menu "Exporter l'Audio Sélectionné" à partir du même sous-menu.
-- La boîte de dialogue "Exportation Audio" s'ouvre et a une structure très similaire à la boîte de dialogue "Enregistrer sous" classique de Windows. Si c'est la première fois, alors le dossier est un dossier Audacity dans votre dossier de documents, qui est automatiquement créé pour vous par Audacity. Si nécessaire, changez le dossier où le fichier sera enregistré
-- Pour définir le format de fichier que vous voulez utiliser pour l'enregistrement de l'audio, utilisez la zone de liste déroulante "type", situé après la zone d'édition du nom du fichier. Notez que tous les formats qui utilisent la bibliothèque FFmpeg, ont "FFmpeg" entre parenthèses après leur nom.
-- éventuellement, Après avoir choisi le format de fichier, vous pouvez définir les options pour l'encodage utilisé par le format à l'aide des éléments qui apparaissent après le bouton Annuler et que l'on atteint par tabulation.
-- Dans la zone d'édition Nom de fichier, tapez un nom pour le fichier, puis appuyez sur le bouton Enregistrer (Alt + S). La boite de dialogue "Édition des balises de Métadonnées" s'ouvre automatiquement. Cela vous permet d'éditer divers éléments d'information sur les données audio, comme le nom de l'Artiste et le titre de la Piste. Elle est décrite en détail dans le chapitre ["édition des balises de métadonnées" #HDR-MetaDataTags].
-- Si vous ne souhaitez pas modifier ces informations, vous pouvez appuyer simplement sur "Entrée" ou sur le bouton "OK" (bouton par défaut).
-Attention : si vous annulez ce dialogue, cela entrainera l'annulation de l'enregistrement de l'audio. Si vous ne voulez pas d'édition de métadonnées à chaque fois que vous sauvegarder de l'audio, vous pouvez désactiver cette fonctionnalité comme décrit dans le chapitre ["édition des balises de métadonnées" #HDR-MetaDataTags].
-- Notez que si vous essayez d'enregistrer dans un des formats inclues dans la bibliothèque FFmpeg, une boîte de message s'ouvre vous indiquant que celle-ci doit être configurée
+Pour enregistrer l'audio dans l'un des formats standard, ouvrez le menu "Fichier" et choisissez "Exporter l'audio" (raccourci Ctrl + Maj + E).
+Par défaut, une boîte de dialogue s'ouvre vous demandant si vous souhaitez partager votre audio sur Audio.com ou l'exporter sur votre ordinateur.
+En supposant que vous souhaiterez toujours ce dernier, cochez la case à cocher "Ne plus afficher".
+Tabulez ensuite sur le bouton "Exporter vers l'ordinateur" et appuyez dessus.
+Vous pouvez toujours partager votre audio sur Audio.com en ouvrant le menu "Fichier" et en choisissant "Partager l'audio".
+La boîte de dialogue "Exporter l'audio" s'ouvre et, en utilisant celle-ci, vous pouvez enregistrer l'intégralité du projet ou tout audio sélectionné, dans un seul fichier ou dans plusieurs fichiers, soit par piste, soit par plages de temps spécifiées par les étiquettes.
+La boîte de dialogue contient les commandes suivantes qui vous permettent de faire cela :
+- Les quatre premières commandes de la boîte de dialogue vous permettent de spécifier le nom, le dossier et le type du fichier exporté. Il existe des zones d'édition Nom de fichier et Dossier, un bouton "Parcourir" et une zone de liste déroulante "Format". Le bouton "Parcourir" offre une alternative à l’utilisation des trois autres contrôles. Il ouvre une boîte de dialogue standard "Enregistrer sous", qui vous permet de spécifier le nom, le dossier et le type du fichier exporté. Après avoir appuyé sur le bouton "Enregistrer" dans cette boîte de dialogue, vous revenez à la boîte de dialogue "Exporter l'audio" et les trois autres commandes auront été mises à jour. Notez qu'appuyer sur le bouton "Enregistrer" n'enregistre pas réellement l'audio dans un fichier. Cela ne se produit que lorsque vous appuyez sur le bouton "Exporter" dans cette boîte de dialogue.
+- Après la zone de liste déroulante Format, il existe un groupe d'options audio appropriées au format sélectionné. Vous constaterez peut-être que les paramètres par défaut de ces options conviennent dans la plupart des cas.
+- Un groupe de trois boutons radio pour spécifier l'audio à exporter. Si le bouton radio "Exporter l'intégralité du projet" est sélectionné, Audacity mélange toutes les pistes audio en une seule piste, qui est exportée. Si le bouton radio "Exporter la sélection actuelle" est sélectionné, alors seul l'audio sélectionné est mixé sur une seule piste, puis exporté. Si il n'y a pas d'audio sélectionné, cette option n’est pas disponible. Si le bouton radio "Exporter plusieurs fichiers" est sélectionné, des commandes supplémentaires s'affichent plus tard dans la boîte de dialogue et vous permettent de spécifier davantage cette option.
+- Une case à cocher "Couper l'espace vide avant le premier clip". Ce paramètre affecte uniquement les projets dans lesquels les premières données audio (le premier clip) démarrent après le temps zéro. Lorsque la case n'est pas cochée, le fichier exporté contient du silence pour la période précédant le premier clip. Lorsque cette case est cochée, l'audio exporté démarre au moment du premier clip.
+- Un bouton "Modifier les métadonnées", qui ouvre la boîte de dialogue "Modifier les balises de métadonnées", dans laquelle vous pouvez modifier divers éléments d'informations sur les données audio, telles que le nom de l'artiste et le titre de la piste. Elle est décrite en détail dans le chapitre ["édition des balises de métadonnées" #HDR-MetaDataTags].
+- les boutons "Annuler" et "Exporter", ce dernier étant le bouton par défaut de la boîte de dialogue. Lorsque la boîte de dialogue "Exporter l'audio" s'ouvre, dans le groupe de trois boutons radio permettant de spécifier quel audio est exporté, le bouton radio sélectionné est le bouton qui a été sélectionné lors de l'exportation précédente de l'audio, sauf dans deux cas. Si la sélection précédente était "Exporter la sélection actuelle" et qu'aucun audio n'est désormais sélectionné, le bouton radio "Exporter l'intégralité du projet" est sélectionné. Et si la sélection précédente était "Exporter plusieurs fichiers" et qu'il n'y a plus d'étiquettes et pas plus d'une seule piste audio, là encore, le bouton radio "Exporter l'intégralité du projet" est sélectionné. Donc, si vous sélectionnez autre chose que "Exporter le projet entier," la prochaine fois que vous exporterez de l'audio, vous devrez peut-être vérifier lequel de ces boutons radio est sélectionné.
 
-
-Le sous-menu "exporter sous" contient d'autres commandes pour exporter sous des formats comme "mp3", "wav" ou "OGG".
-Ces commandes ouvrent la boîte de dialogue "Exporter l'Audio" avec le type déjà défini sur le format approprié.
-
-Toutefois, étant donné que la boite de dialogue d'Exportation Audio se souvient du dernier format utilisé et que les commandes n'ont pas de raccourcis par défaut, vous pourrez trouver plus commode d'utiliser la boîte de dialogue Exporter l'Audio qui possède un raccourci.
 
 + Lecture audio +[HDR-AudioPlayback]
 ++ Paramètres de lecture ++
@@ -233,6 +223,8 @@ Si vous avez besoin de changer le périphérique de lecture d'Audacity, voici un
 
 Le volume de la lecture est contrôlé par le curseur du potentiomètre de volume de lecture qui se trouve dans le panneau supérieur de barres d'outils de la fenêtre principale d'Audacity.
 Le volume de lecture total est déterminé à la fois par le volume de lecture d'Audacity et par le curseur de volume de l'appareil de lecture, qui peut être défini dans Windows.
+
+Avertissement. Depuis Audacity 3.6.0, la valeur du curseur de niveau de lecture affecte la valeur du niveau de crête qui est incluse lorsque les lecteurs d'écran lisent le nom du bouton de l'indicateur de lecture dans les barres d'outils du panneau supérieur. La valeur du niveau de crête n'est égale qu'au niveau de crête de l'audio qui serait exporté vers un fichier audio si la valeur du curseur de lecture est de 100 %. Donc, si vous souhaitez utiliser la valeur de crête donnée par l'indicateur de lecture, réglez le curseur sur 100 % et ajustez le curseur de volume du périphérique de lecture dans Windows.
 
 Pour modifier l'un de ces paramètres de cette barre d'outils et en supposant que le tableau "Vue de piste" a le focus :
 - Appuyez deux fois sur Ctrl + F6 pour atteindre le panneau supérieur de barres d'outils.
@@ -272,7 +264,7 @@ Une piste audio est un conteneur pour les données audio qui sont affichées sou
 Souvent, les données audio démarrent à l'instant zéro, mais après l'édition, ce n'est plus forcément le cas.
 
 À la gauche de la fin de la piste audio, il y a une petite zone contenant différents éléments qui comprennent un menu, les commandes pour le gain et le panoramique de la piste.
-L'utilisation de ces commandes est décrite dans la section ["Édition audio avec plusieurs pistes" #HDR-ADvancedEdition] de ce guide.
+L'utilisation de ces commandes est décrite au chapitre ["Édition audio avec plusieurs pistes" #HDR-ADvancedEdition] de ce guide.
 
 Le Curseur s'affiche dans le tableau "Vue de piste" comme une ligne verticale. C'est la position de départ de la lecture.
 
@@ -315,9 +307,9 @@ Notez que vous ne pouvez appuyer sur les boutons des barres d'outils qu'en appuy
 Vous ne pouvez pas utiliser la barre d'espace, car cette touche est utilisée pour démarrer et arrêter la lecture.
 
 
+
 Vous pouvez afficher et masquer toutes ces barres d'outils à l'aide du sous-menu "Barres d'outils" du menu "Affichage".
 L'affichage des seules barres d'outils que vous trouvez utiles a l'avantage de réduire considérablement le nombre de Tabulations nécessaires pour trouver un contrôle particulier.
-
 
 Le reste de ce chapitre sur les barres d'outils contient des sous-chapitres sur les panneaux de barres d'outils supérieures et inférieures, puis des sous-chapitres sur certaines barres d'outils individuelles comme la barre d'outils "Sélection", la barre d'outils "Temps" et la barre d'outils "Lecture à la vitesse".
 
@@ -326,13 +318,17 @@ Les barres d'outils qui sont affichés par défaut sont :
 - la barre d'outils "Transport" : elle contient les boutons pour la lecture et l'enregistrement (tous les éléments sont également disponibles dans le menu "Transport" avec des raccourcis clavier).
 - la barre d'outils "outils" : elle contient des boutons pour différents outils d'édition qui impliquent l'utilisation de la souris.
 - la barre d'outils "édition" : elle contient des boutons pour Couper, Coller, etc. Ces commandes sont aussi disponibles sur l'Edition ou dans le menu Affichage, et tous ont des raccourcis clavier.
-- La barre d'outils de configuration audio, qui contient un bouton de configuration audio. Cela ouvre un menu permettant de définir les périphériques que vous souhaitez utiliser pour l'enregistrement et la lecture. Pour les utilisateurs de clavier, il existe des moyens plus pratiques de modifier ces paramètres, par exemple dans la catégorie des périphériques de la boîte de dialogue Préférences
+- La barre d'outils de configuration audio, qui contient un bouton de configuration audio. Cela ouvre un menu permettant de définir les périphériques que vous souhaitez utiliser pour l'enregistrement et la lecture. Pour les utilisateurs de clavier, il existe des moyens plus pratiques de modifier ces paramètres, par exemple dans la catégorie "Réglage de l'audio" de la boîte de dialogue "Préférences".
 - La barre d'outils Partager l'audio, qui contient un bouton Partager l'audio. Cela vous permet de partager de l'audio avec d'autres utilisateurs en utilisant un service fourni par la même société qui possède Audacity. Ce n'est pas couvert dans ce guide
-- Barres d'outils mesureur d'enregistrement et mesureur de lecture. Chacun d'eux contient un bouton qui ouvre un menu pour contrôler un mesureur et un potentiomètre pour régler le niveau. Dans les versions d'Audacity antérieures à la version 3.2.0, une barre de périphérique était également affichée par défaut dans ce panneau de barre d'outils. Cette barre d'outils est toujours disponible pour ceux qui veulent l'utiliser, il suffit de l'activer à l'aide du sous-menu barres d'outils du menu "Affichage". Cependant, dans ce guide, elle ne sera pas utilisée
+- Barres d'outils mesureur d'enregistrement et mesureur de lecture. Chacun d'eux contient un bouton qui ouvre un menu pour contrôler un mesureur et un potentiomètre pour régler le niveau.
+
+
+Dans les versions d'Audacity antérieures à la version 3.2.0, une barre de périphérique était également affichée par défaut dans ce panneau de barre d'outils. Cette barre d'outils est toujours disponible pour ceux qui veulent l'utiliser, il suffit de l'activer à l'aide du sous-menu barres d'outils du menu "Affichage". Cependant, dans ce guide, elle ne sera pas utilisée
 
 
 ++ Panneau inférieur de Barres d'outils ++
-Par défaut, le panneau inférieur de Barres d'outils contient :
+Par défaut, le panneau inférieur de Barres d'outils de la fenêtre principale contient les barres d'outils suivantes, qui, outre la barre d'outils de signature temporelle, sont décrites dans les sections suivantes
+- la Barre d'outils " signature temporelle", qui contient des commandes pour le tempo et la signature rythmique du projet, et qui est décrite plus loin au chapitre ["Édition de musique" #hdr-musicEditing] de ce guide.
 - la barre d'outils "Snapping",
 - la barre d'outils "Temps",
 - la barre d'outils "Sélection",
@@ -340,19 +336,19 @@ Par défaut, le panneau inférieur de Barres d'outils contient :
 
 
 ++ Barre d'outils "Snapping" ++
-
-La barre d'outils d'"Snapping" contient deux commandes :
-- Une case à cocher "Snap", qui est utilisée pour activer ou désactiver l'accrochage (snapping en anglais), et qui par défaut n'est pas cochée. Notez que dans la fenêtre principale d'Audacity, la barre d'espace démarre ou arrête toujours la lecture. Les raccourcis clavier que vous pouvez utiliser pour modifier l'état de la case à cocher incluent "Contrôle + espace" et "Entrée".
-- Une zone de liste déroulante "snap to", qui spécifie l'unité utilisée pour l'accrochage, comme décrit ci-dessous. Ce contrôle n'est disponible que lorsque la case "Snapping" est cochée.
+La barre d'outils "Snapping" contient deux commandes :
+- Une case à cocher "Se coller à", qui est utilisée pour activer ou désactiver l'accrochage (snapping en anglais), et qui par défaut n'est pas cochée. Notez que dans la fenêtre principale d'Audacity, la barre d'espace démarre ou arrête toujours la lecture. Les raccourcis clavier que vous pouvez utiliser pour modifier l'état de la case à cocher incluent "Contrôle + espace" et "Entrée".
+- Une zone de liste déroulante "Snap to" (non traduit), qui spécifie l'unité utilisée pour l'accrochage, comme décrit ci-dessous. Ce contrôle n'est disponible que lorsque la case "Se coller à" est cochée.
 
 
 Pour les utilisateurs de clavier, l'accrochage affecte les commandes permettant de déplacer légèrement le curseur et les commandes permettant de déplacer légèrement le début ou la fin de la sélection.
 
 Ce sont les commandes qui ont par défaut les touches "Flèche gauche/droite", "Majuscule + flèche gauche/droite" et "Contrôle + Majuscule + flèche gauche/droite".
 Toutes ces commandes sont décrites plus loin dans le guide.
-Lorsque le snapping est désactivé, la taille du pas de ces commandes dépend du niveau de zoom, comme décrit dans la section Taille du pas des touches fléchées gauche et droite, plus loin dans ce guide.
+Lorsque le snapping est désactivé, la taille du pas de ces commandes dépend du niveau de zoom, comme décrit au chapitre "Taille du pas des touches fléchées gauche et droite", plus loin dans ce guide.
 
 Lorsque le snapping est activé, cela est modifié comme suit. Les nouvelles positions sont arrondies à l'unité la plus proche spécifiée par la zone de liste déroulante "Snap to". De plus, la taille de pas minimale est l'unité spécifiée par la zone de liste déroulante "Snap to".
+Si vous réglez le niveau de zoom sur normal ( raccourci Ctrl + 2), puis pour presque toutes les options disponibles pour la liste déroulante "Snap to", la taille du pas est l'unité de capture, et non des multiples de l'unité de capture.
 
 ++ Barre d'outils "temps" ++
 La barre d'outils "temps" contient un seul contrôle, la boite de sélection numérique "Position audio".
@@ -362,15 +358,12 @@ Sinon, elle indique le temps du moment où vous avez tapez sur la barre d'espace
 Notez que contrairement aux boites de sélection numérique de la barre d'outils "Sélection", vous ne pouvez pas modifier le temps affiché par la boite de sélection numérique "Position audio", vous pouvez uniquement lire sa valeur.
 
 Le format par défaut de la boite de sélection numérique "Position audio" est hh: mm: ss.
-Vous pouvez changer cela en utilisant le menu contextuel de cette boite, mais malheureusement il y a un bug qui provoque la réinitialisation du format à la valeur par défaut si vous ouvrez la boîte de dialogue Préférences et appuyez sur le bouton OK.
-
+Vous pouvez changer cela en utilisant le menu contextuel de cette boite.
 
 ++ Barre d'outils "Sélection" ++[HDR-SelectionBar]
 La barre d'outils de sélection contient les commandes suivantes :
-- Un bouton de configuration de cette barre d'outils. Il ouvre un menu qui contient les options pour définir la nature de la plage de temps qui est affichés dans les deux boîtes de sélection numérique, qui sont les deux contrôles suivants dans la barre d'outils. Ces options sont : début et fin, début et durée, durée et fin, et durée et centre.
+- Un bouton de configuration de cette barre d'outils. Il ouvre un menu qui contient les options pour définir la nature de la plage de temps qui est affichés dans les deux boîtes de sélection numérique, qui sont les deux contrôles suivants dans la barre d'outils. Ces options sont : début et fin de la sélection, début et durée de la sélection, durée et fin de la sélection, et durée et centre de la sélection.
 - Deux boîtes de sélection numérique, qui donnent les détails de la plage de temps sélectionnée, qui ont été spécifiés par le menu du bouton de configuration précédent.
-
-
 Si aucune plage de temps n'est sélectionnée, les boite de sélection numérique fléchés de début, de fin ou du centre donnent la position du curseur
 
 
@@ -474,7 +467,7 @@ La seconde façon de lire la position du curseur est d'utiliser la boite de dial
 ++ Déplacement du curseur à l'aide de la boite de sélection numérique "Début" ++[HDR-MovingCursorWithSelectionStart]
 - Appuyez sur "control + F6" pour amener le focus dans le panneau inférieur de barre d'outils où la barre d'outils "Sélection" est la première.
 - tapez "Tab" pour atteindre le bouton de configuration de la barre d'outils de sélection et assurez-vous que l'option "Début et durée de la sélection" est sélectionnée. Si elle est définie sur "Début et fin de la sélection", vous pouvez accidentellement sélectionnez une plage de temps au lieu de déplacer le curseur, comme décrit ci-dessous.
-- appuyez sur "Tab" pour atteindre la boite de sélection numérique "Début", et changer sa valeur, comme décrit au chapitre [Boites de sélection numérique #HDR-EditSpinBoxes].
+- appuyez sur "Tab" pour atteindre la boite de sélection numérique "Début", et changer sa valeur, comme décrit au chapitre ["Boites de sélection numérique" #HDR-EditSpinBoxes].
 - Pour revenir au tableau "Vue de piste", appuyez sur "control + F6" deux fois ou simplement sur "control+majuscule+f6".
 
 
@@ -561,7 +554,7 @@ L'utilisation de l'interface WASAPI vous donnera le positionnement le plus préc
 Dans la description ci-dessus, il a été dit que lorsque l'une des touches de frottement est relâchée, le curseur est positionné au temps où la touche est relâchée.
 Cependant, il y a une exception à cela si la touche "[" ou "]" a été enfoncée pendant la lecture.
 Dans ce cas, la sélection de temps présente lorsque la touche de frottement est relâchée est conservée.
-Ce comportement permet le frottement avec l'une des options décrites dans le chapitre [Méthode générale de sélection d'un intervalle de temps #HDR-GeneralTimeRangeSelection].
+Ce comportement permet le frottement avec l'une des options décrites dans le chapitre ["Méthode générale de sélection d'un intervalle de temps" #HDR-GeneralTimeRangeSelection].
 
 + Sélection audio +[HDR-AudioSelection]
 Dans le cas d'un éditeur audio qui ne peut éditer qu'une seule piste audio, la sélection de l'audio consiste simplement en spécifiant le début et la fin de la période de l'audio que vous souhaitez sélectionner. C'est une plage de temps.
@@ -614,7 +607,7 @@ Vous pouvez utiliser l'une des méthodes suivantes pour fixer l'autre extrémit�
 - De même, vous pouvez définir le début de la sélection à l'aide de la touche "[", tout en faisant défiler vers l'arrière. Maintenez la touche "u" enfoncée pour faire défiler vers l'arrière. Appuyez sur la touche "[" au moment où vous souhaitez placer le début de la sélection, puis relâchez la touche "u".
 - Avec le curseur à l'endroit où vous voulez le début de la sélection et pour définir la fin de la sélection à la fin de tout l'audio, appuyez sur majuscule + fin".
 - Avec le curseur positionné à l'endroit où vous voulez la fin de la sélection et pour définir le début de la sélection au début des pistes (temps zéro), appuyez sur "majuscule+ début".
-- À l'aide des boites de sélection numériques de la barre d'outils "Sélection", tel que décrite dans la section suivante.
+- À l'aide des boites de sélection numériques de la barre d'outils "Sélection", tel que décrite au chapitre suivant.
 - avec "majuscule + Flèche Gauche" ou "majuscule + Flèche Droite" : Avec le curseur placé à l'endroit où vous souhaitez que le début de la sélection soit, vous pouvez appuyer sur "majuscule + Flèche Droite" une ou plusieurs fois pour déplacer la fin de la sélection vers la droite en petites étapes. De même, avec le curseur positionné où vous souhaitez la fin de la sélection, vous pouvez appuyer sur "majuscule + Flèche Gauche" une ou plusieurs fois pour déplacer le point de départ de la sélection vers la gauche.
 Le réglage des longueurs des pas est décrit au chapitre ["Longueur des sauts faits avec les flèches droite et gauche" #HDR-JumpSize].
 
@@ -624,7 +617,7 @@ Notez que le tableau "Vue de piste" doit être sous le focus pour l'utilisation 
 
 ++++ Exemples ++++
 Dans les exemples suivants, on suppose qu'une seule piste est sélectionnée.
-- Pour sélectionner une plage de temps qui couvre tout l'audio dans la Piste : Appuyez sur "J" pour déplacer le curseur au début de l'audio, puis appuyez sur "majuscule + k" pour définir la fin de la sélection à la fin de l'audio. 
+- Pour sélectionner une plage de temps qui couvre tout l'audio dans la Piste : Appuyez sur "J" pour déplacer le curseur au début de l'audio, puis appuyez sur "majuscule + k" pour définir la fin de la sélection à la fin de l'audio.
 Une alternative évidente serait d'appuyer sur "k", puis sur "majuscule + j".
 - Pour sélectionner quelques secondes au début de l'audio de la piste sélectionnée : Appuyez d'abord sur "j" pour déplacer le curseur au début de l'audio, puis appuyez sur la barre d'espace pour démarrer la lecture.
 Lorsque vous arrivez au point où vous voulez être la fin de la plage de temps, appuyez sur "x" pour arrêter la lecture et déplacez le curseur sur ce point.
@@ -767,9 +760,7 @@ Certains des éléments du menu, comme le fondu d'entrée ou le fondu de sortie,
 
 Dans une boîte de dialogue d'effet, après les commandes des différents paramètres, il y a trois boutons :
 - Un bouton Préréglages et paramètres, qui ouvre un menu qui comprend des commandes pour tous les préréglages d'usine et utilisateur.
-
-- Un bouton Aperçu, qui vous permet d'entendre un court échantillon de l'effet appliqué à l'audio sélectionné. La durée par défaut de l'aperçu est de 6 secondes, mais vous pouvez la modifier dans la boîte de dialogue "Préférences", où dans la catégorie "Lecture", dans le groupe "Aperçu des effet"s, il y a une zone d'édition Longueur. Notez que dans la version 3.3.0 d'Audacity, mais pas dans les versions ultérieures, pour un petit nombre d'effets, après avoir appuyé sur le bouton Aperçu, il se transforme en un bouton Arrêter l'aperçu, ce qui vous permet d'arrêter l'aperçu quand vous le souhaitez.
-
+- Un bouton Aperçu, qui vous permet d'entendre un court échantillon de l'effet appliqué à l'audio sélectionné. La durée par défaut de l'aperçu est de 6 secondes, mais vous pouvez la modifier dans la boîte de dialogue "Préférences", où dans la catégorie "Lecture", dans le groupe "Aperçu des effet"s, il y a une zone d'édition "Longueur".
 - Un bouton Appliquer, qui est le bouton par défaut de la boite de dialogue. Bien qu'il n'y ait pas de bouton "Annuler", vous pouvez toujours quitter la boîte de dialogue en appuyant sur "Échap".
 
 
@@ -807,26 +798,22 @@ Afin d'éviter l'introduction de clics :
 
 
 ++ Lecture en boucle ++[HDR-LoopPlayback]
-Depuis Audacity 3.1.0, il y a une plage de boucle qui contrôle la lecture en boucle, et qui est indépendante de la plage de temps sélectionnée.
 
-Les options et commandes de bouclage se trouvent dans le sous-menu "Bouclage" ("looping") du menu "Transport".
-
-Si l'option "Boucle activée/désactivée" du sous-menu "Bouclage" n'est pas cochée, alors, comme vous pouvez vous y attendre, la lecture se déroule normalement et non pas en boucle.
-
-Si l'option est cochée, la lecture commence à la position du curseur ou au début de la plage de temps sélectionnée, s'il y en a une. La lecture continue jusqu'à ce qu'elle atteigne la fin de la boucle.
-
+Il existe une plage de boucle qui contrôle la lecture en boucle et qui est indépendante de la plage temporelle sélectionnée.
+Les options et commandes de bouclage se trouvent dans le sous-menu "Bouclage"du menu "Transport".
+Si l'option "Activation du bouclage" du sous-menu "Bouclage" n'est pas cochée, alors comme vous pouvez vous y attendre, la lecture se déroule normalement et il n'y a pas de boucle. Si l'option est cochée, la lecture démarre à la position du curseur, ou au début de la plage horaire sélectionnée, s'il y en a une.
+La lecture se poursuit jusqu'à ce qu'elle atteigne la fin de la boucle.
 À ce stade, la lecture revient au début de la boucle, et la boucle est ensuite lue de manière répétée jusqu'à ce que vous arrêtiez la lecture.
+Il existe plusieurs façons de définir la plage de boucle :
+- Vous pouvez sélectionner une plage de temps sélectionnée, puis définir la plage de temps. la plage de boucle doit être la même que la plage de temps sélectionnée. Pour ce faire, dans le menu "Transport", ouvrez le sous-menu "bouclage" et choisissez "Paramétrer la boucle sur la sélection" (raccourci majuscule + L).
+- Lorsque la lecture est arrêtée, vous pouvez définir le début et la fin de la boucle, en utilisant les sous-menus "Paramétrer le zoom avant"et "Paramétrer le zoom arrière"( mauvaise traduction" de loop in et loop out)commandes, qui se trouvent dans le sous-menu "Bouclage" du menu "Transport".
+Chacune de ces commandes ouvre une boîte de dialogue contenant une zone de sélection numérique d'édition qui peut être utilisée pour définir la position.
+La manière d'utiliser ces boîtes à sélection numérique d'édition a été décrite au chapitre ["Boites de sélection numérique" #HDR-EditSpinBoxes].
+Ces commandes peuvent également être utilisées pour connaître les valeurs actuelles du début et de la fin de la boucle.
+Vous pouvez lire l'audio entre le début et la fin de la boucle une fois en ouvrant le menu "Transport", en ouvrant le sous-menu "lecture" et en choisissant "Lire une fois. /Stop" (raccourci Majuscule + Barre d'espace).
+Si vous souhaitez mettre à jour la plage de boucle sans arrêter la lecture, vous pouvez le faire en utilisant les commandes d'heure de début et de fin de sélection sur la barre d'outils de sélection.
+Modifiez simplement l'une des valeurs, puis dans le menu "Transport", ouvrez le sous-menu "Bouclage" et choisissez "Paramétrer la boucle sur la sélection".
 
-Il existe plusieurs façons de régler la plage de boucle :
-- Vous pouvez sélectionner une plage de temps sélectionnée, puis définir la plage de boucle pour qu'elle soit identique à la plage de temps sélectionnée. Pour ce faire, dans le menu "Transport", ouvrez le sous-menu "Bouclage" et choisissez Définir la boucle sur la sélection (Maj + L, uniquement dans la version 3.1.3 ou ultérieure).
-- Lorsque la lecture est arrêtée, vous pouvez définir le début et la fin de la boucle, en utilisant les commandes "Loop in" et "Loop out", qui se trouvent dans le sous-menu "bouclage" du menu "Transport". Chacune de ces commandes ouvre une boîte de dialogue qui contient une boite de sélection numérique qui peut être utilisée pour définir la position.
-L'utilisation de ces boites de sélection numérique a été décrite au chapitre ["Boites de sélection numérique " #HDR-EditSpinBoxes] du chapitre "Barres d'outils".
-Ces commandes peuvent également être utilisées pour trouver les valeurs actuelles du début et de la fin de la boucle. 
-
-
-Vous pouvez lire l'audio entre le début et la fin de la boucle une fois en utilisant le menu "Transport", en ouvrant le sous-menu "Lecture" et en choisissant "Lire une fois /Stop" (Maj + Barre d'espace).
-
-Notez que dans les versions d'Audacity antérieures à la 3.1.0, "Maj + Espace" était le raccourci par défaut de la commande Lecture en boucle, qui a été supprimée. Si vous souhaitez mettre à jour la plage de la boucle sans arrêter la lecture, vous pouvez le faire en utilisant le début de la sélection et les commandes de temps de fin dans la barre d'outils de sélection. Modifiez simplement l'une des valeurs, puis dans le menu "Transport", ouvrez le sous-menu "Bouclage" et choisissez "Définir la boucle sur la sélection".
 
 + Édition audio avec plusieurs pistes +[HDR-AdvancedEdition]
 Ce chapitre décrit certaines commandes et certains paramètres qui sont pertinents lorsque vous souhaitez travailler sur un projet contenant plusieurs pistes.
@@ -875,16 +862,15 @@ Vous pouvez modifier le paramètre "Muet" d'une piste ou les paramètres de tout
 Toutes à l'exception de la première de ces commandes se trouvent dans le sous-menu "Silencer/désilencer" du menu "Pistes".
 
 +++ Solo +++
-Si une ou plusieurs pistes ont leur paramètre "solo" activé, seules ces pistes contribuent à la lecture, indépendamment du paramètre "Muet" des autres pistes. Pour basculer le réglage du Solo de la piste sous le focus, appuyez sur "majuscule + S".
+Si une ou plusieurs pistes sont mises en solo, alors seules ces pistes contribuent à la lecture ou à l'audio enregistré dans l'un des formats standards, quels que soient les paramètres Mute de toutes les pistes.
+Pour choisir si la piste sélectionnée est ou non mise en solo, appuyez sur "majuscule + S".
+Il existe un certain nombre d'options pour le réglage solo et son interaction avec le réglage mute :
+- Simple. Lorsque vous mettez une piste en solo, les paramètres de sourdine et de solo des pistes sont ajustés de manière à ce que la piste mise en solo ne soit pas coupée et que les pistes restantes soient coupées et non mises en solo. Si vous annulez le solo d'une piste en solo, toutes les pistes restantes sont réactivées.
+- Multi-piste, qui est la valeur par défaut. Les réglages de sourdine et de solo sont complètement indépendants et n'importe quel nombre de pistes peut être mis en solo.
+- Aucun. Pour les utilisateurs de clavier, c'est à tort la même chose que Multi-piste.
 
-Il y a trois options possibles pour le paramètre "Solo" qui impacte son interaction avec le paramètre "muet" :
-- simple (valeur par défaut) : lorsque vous activez le paramètre "Solo" d'une piste, le paramètre "Muet" et le paramètre "Solo" de cette piste sont ajustés. Ainsi le paramètre "Muet" de cette piste est éteint et le paramètre "muet" des autres pistes est allumé et leur paramètre "solo" est inactif. Si le paramètre "solo" d'une piste redevient inactif, le paramètre "muet" de toutes les autres pistes passe à éteint.
-- Multipiste : Le paramètre "muet" et le paramètre "solo" sont complétement indépendants.
-- Aucun : Il n'y a pas de paramètre "solo", il faut se contenter du seul paramètre "muet".
 
-
-Le choix de L'option pour ce paramètre "solo" se fait à l'aide d'un bouton dans la sous-rubrique "comportement des pistes" de la catégorie "Piste" des préférences d'Audacity.
-
+Le paramètre qui propose ces options peut être trouvé en accédant à la catégorie "Comportements des pistes" de la boîte de dialogue "Préférences", où se trouve une zone de liste déroulante du bouton "Solo".
 ++ Gain de la piste ++
 Pour modifier le gain de la piste, appuyez sur majuscule + G".
 
@@ -916,7 +902,7 @@ Les commandes pour déplacer la position de la piste sous le focus sont : dépla
 
 Par défaut, ces commandes n'ont pas de raccourci associé, mais vous pouvez en assigner sans problème en utilisant la boite de dialogue "Préférences" d'Audacity.
 
-Elles se trouvent dans la catégorie "Clavier", rubrique "Piste" et sous les noms suivants :
+Elles se trouvent dans la catégorie "Raccourcis", rubrique "Piste" et sous les noms suivants :
 - "Déplacer la piste visée vers le haut",
 - "Déplacer la piste visée vers le bas",
 - "Déplacer la piste visée tout en haut",
@@ -992,8 +978,8 @@ Les effets de fondu montant et descendant ont déjà été mentionnés dans le g
 Les deux sections suivantes décrivent les effets Auto Duck et Adjustable Fade, qui vous permettent d'effectuer des fondus plus complexes.
 
 +++ Effet Auto Duck +++
-L'effet Auto Duck réduit le volume de l'audio sélectionné pendant les périodes où le niveau d'une autre piste, dépasse un certain seuil.
-La piste utilisée comme piste de contrôle est la dernière piste non sélectionnée qui se trouve juste en dessous d'une piste sélectionnée.
+L'effet Auto Duck réduit le volume de l'audio sélectionné pendant les périodes pendant lesquelles le niveau d'une autre piste, appelée piste de contrôle, dépasse un certain seuil.
+La piste utilisée comme piste de contrôle est la piste non sélectionnée qui se trouve immédiatement en dessous de la dernière piste sélectionnée dans le projet.
 Ainsi, par exemple, si vous avez une piste musicale et une piste vocale dans le projet, et que vous souhaitez réduire le volume de la musique lorsqu'il y a de la parole dans la piste vocale :
 - Assurez-vous que la piste musicale est la première piste. Si ce n'est pas le cas, vous pouvez déplacer une piste vers le haut ou vers le bas de la table des pistes en ouvrant son menu et en choisissant Déplacer la piste vers le haut ou Déplacer la piste vers le bas respectivement.
 - Assurez-vous que la piste vocale n'est pas sélectionnée.
@@ -1040,29 +1026,14 @@ Comme exemple d'utilisation de cet effet, disons que vous voulez réduire l'audi
 
 
 ++ Verrouillage de la synchronisation des pistes ++[HDR-TrackSyncLock]
-L'idée de verrouillage de la synchronisation des pistes est d'essayer et de garder un groupe de pistes qui se synchronisent les unes avec les autres lors de certaines opérations, comme la suppression d'audio, qui affecte le placement de l'audio d'une des pistes dans le groupe de pistes.
-
-Supposez que vous ayez deux pistes audio et que leur synchronisation a été verrouillé :
-
-Si vous sélectionnez une plage de temps dans une des pistes et que vous supprimiez l'audio de cette plage, l'audio de l'autre piste sera aussi supprimé dans la même plage.
-
-Tout le reste de l'audio des deux pistes est toujours synchronisé.
-
-De la même façon avec seulement deux pistes qui sont verrouillées en synchronisation :
-
-Si vous sélectionnez une piste, et que vous colliez des fichiers audio dans cette piste à la position du curseur, alors un silence de même durée que l'audio collé est collé dans l'autre piste à la position du curseur.
-
-Le commutateur de verrouillage de synchronisation se configure à l'aide du sous-menu "Synchro-verrouiller les pistes (marche/arrêt)" du menu "Pistes".
-
-Il est désactivé par défaut.
-
-S'il n'y a que des pistes audio dans le projet, alors il n'y a qu'un seul groupe de verrouillage de synchronisation.
-
-Les pistes du projet peuvent être divisée en plusieurs groupes à l'aide de d'un marqueur de piste.
-
-Chaque piste audio qui suit immédiatement un marqueur de piste démarre un nouveau groupe de pistes.
-
-Lorsque plusieurs pistes sont verrouillées en synchronisation, une icône correspondante est affichée dans la piste et l'indication "verrouillage de synchronisation sélectionné" est ajouté au nom de la piste.
+L'idée des pistes synchronisées est d'essayer de garder un groupe de pistes synchronisées les unes avec les autres lorsqu'une opération, telle que la suppression, affecte le timing d'une ou plusieurs pistes du groupe.
+Supposons que vous ayez juste deux pistes audio, et ils étaient synchronisés. Si vous sélectionnez une piste et une plage temporelle et supprimez l'audio sélectionné, alors l'audio de cette plage temporelle dans la piste non sélectionnée est également supprimé, de sorte que tout l'audio restant dans les deux pistes soit toujours synchronisé l'une avec l'autre.
+De même, avec seulement deux pistes dont la synchronisation est verrouillée, si vous sélectionnez une piste et collez de l'audio dans cette piste à la position du curseur, alors le silence, avec la même durée que l'audio collé, est collé dans la piste non sélectionnée au niveau du curseur.
+Vous pouvez activer et désactiver le verrouillage de synchronisation des pistes à l'aide de l'élément de menu « Garder les pistes synchronisées » dans le menu "Piste"s, qui peut être soit non coché, soit coché, et n'est pas coché par défaut.
+S'il n'y a que des pistes audio dans le projet, il n'y a qu'un seul groupe de pistes synchronisées.
+Les pistes d'un projet peuvent être divisées en plusieurs groupes à l'aide de pistes d'étiquette.
+Chaque piste audio qui suit immédiatement une piste d'étiquette démarre un nouveau groupe.
+Lorsque vous sélectionnez une ou plusieurs pistes dans un groupe verrouillé par synchronisation, une icône appropriée s'affiche dans la piste pour les utilisateurs voyants et la phrase "synchronisée verrouillée" est ajoutée au nom du groupe de la piste pour les utilisateurs de lecteurs d'écran.
 
 + Marqueurs +[HDR-Labels]
 Un Marqueur représente un temps précis ou une plage de temps spécifique, et peut être nommé.
@@ -1071,7 +1042,7 @@ Un marqueur représentant un temps est appelé marqueur de position, un marqueur
 
 Les marqueurs sont stockés dans une piste des marqueurs. Il peut y avoir plusieurs pistes de marqueurs dans un projet, mais normalement une seule piste suffit.
 
-Vous pouvez marquer une position ou une plage de temps comme décrit dans la section suivante pour y revenir plus tard en utilisant les commandes de déplacement dans les marqueurs (voir chapitre ["Déplacement à un marqueur" #HDR-MovingToLabel]).
+Vous pouvez marquer une position ou une plage de temps comme décrit au chapitre suivant pour y revenir plus tard en utilisant les commandes de déplacement dans les marqueurs (voir chapitre ["Déplacement à un marqueur" #HDR-MovingToLabel]).
 
 De plus, un certain nombre d'outils dans le menu "analyse" vous permet d'ajouter une piste de marqueurs au projet qui contient leurs résultats d'analyse. Par exemple, l'outil "Trouveur de pulsations" génère une piste de marqueurs contenant des marqueurs à des points où l'audio a une pulsation.
 
@@ -1141,15 +1112,15 @@ Note que si une piste de marqueurs est sous le focus, "Tab" et "majuscule + Tab"
 
 Si vous avez accidentellement utilisé l'une de ces touches, alors vous pouvez fermer la boîte d'édition en appuyant sur "Entrée".
 
-Si vous avez besoin de modifier le nom du marqueur, vous pouvez utiliser la boîte de dialogue "Éditer les marqueurs", décrite dans la section suivante.
+Si vous avez besoin de modifier le nom du marqueur, vous pouvez utiliser la boîte de dialogue "Éditer les marqueurs", décrite au chapitre suivant.
 
 ++ Édition des marqueurs ++
 L'utilisation de la boite de dialogue "Edition des marqueurs" permet le renommage d'un marqueur, la suppression d'un marqueur, et éventuellement être une alternative de déplacement d'un marqueur.
 
-Pour ouvrir la boîte de dialogue, ouvrez le menu "Edition", ouvrez le sous-menu "Marqueurs», puis choisissez "Éditer les marqueurs".
+Pour ouvrir la boîte de dialogue, ouvrez le menu "Edition", ouvrez le sous-menu "Marqueurs», puis choisissez "Édition de marqueur".
 
 La boîte de dialogue comporte les éléments suivants :
-- Un tableau qui contient les détails des marqueurs de toutes les pistes de marqueurs du projet (décrit dans la section suivante).
+- Un tableau qui contient les détails des marqueurs de toutes les pistes de marqueurs du projet (décrit au chapitre suivant).
 - les boutons "Insérer avant", "Insérer après " et "Supprimer".
 - les boutons "Importer" et "Exporter" pour l'importation de marqueur à partir ou l'exportation de marqueurs dans un fichier texte.
 
@@ -1245,8 +1216,7 @@ Peu importe que la piste de marqueur elle-même soit sélectionnée ou non.
 
 
 + Clips +[HDR-Clips]
-Dans le reste de ce document, il a été supposé qu'une piste audio ne contient qu'un seul tronçon de données audio.
-
+Dans la majeure partie du reste de ce guide, il a été supposé qu'une piste audio contient une seule section de données audio.
 Toutefois, une piste audio peut contenir plusieurs tronçons distincts et ils sont appelées clips.
 
 Dans Audacity, les clips ne peuvent pas se chevaucher.
@@ -1260,11 +1230,13 @@ Il y a plusieurs situations où vous pouvez vous retrouver avec plus d'un clip s
 Chaque clip peut avoir un nom, et lorsqu'un clip est créé, un nom lui est automatiquement attribué.
 Voici quelques unes des règles pour la génération de ces noms :
 - Souvent, le nom du clip est simplement le nom de la piste.
-- Lorsque vous enregistrez, le nom du clip contenant l'enregistrement est le nom de la piste, suivi de #n, où n est le nombre de fois que vous avez enregistré sur cette piste.
+- Lorsque vous enregistrez, le nom du clip contenant l'enregistrement est le nom de la piste, suivi de point n, où n est le nombre de fois que vous avez enregistré sur cette piste.
 - Si vous divisez un clip à l'aide de l'une des commandes de division décrites ci-dessous, tous les clips nouvellement créés portent le même nom que le clip d'origine.
 
 
-De plus à ces noms générés automatiquement, vous pouvez également renommer un clip comme vous le souhaitez, comme décrit au chapitre ["Renommage d'un clip #HDR-ClipRenaming] ci-dessous.
+De plus avecces ces noms générés automatiquement, vous pouvez également renommer un clip comme vous le souhaitez, comme décrit au chapitre ["Renommage d'un clip #HDR-ClipRenaming] ci-dessous.
+
+Chaque clip a également un changement de vitesse et de hauteur, comme décrit au chapitre "Vitesse et hauteur du clip" ci-aprè.
 
 ++ Déplacement de curseur ++
 Il y a des commandes pour le déplacement aux limites du clip précédent ou suivant que l'on trouve dans le sous-menu "Petit saut de curseur à" du menu "Transport". Ce sont :
@@ -1310,16 +1282,49 @@ Lorsque le début ou la fin de la plage de temps sélectionnée est défini sur 
 
 
 +++ Renommage d'un clip +++[HDR-ClipRenaming]
-Comme dans le cas de nommer une nouvelle étiquette, pour renommer un clip, il y a une option pour savoir si cela est fait en utilisant une boîte d'édition dans une boîte de dialogue, ou une boîte d'édition dans la piste.
-Et encore une fois, l'utilisation de la boîte de dialogue est beaucoup plus accessible pour les utilisateurs de lecteurs d'écran, et il est donc recommandé d'utiliser l'option de boîte de dialogue.
-En fait, l'option est définie en utilisant le même paramètre que celui utilisé pour déterminer si une boîte de dialogue est utilisée pour le nom d'une nouvelle étiquette.
-Dans les Préférences, dans la catégorie "Comportements des pistes", il y a une case à cocher "Utiliser la boîte de dialogue pour le nom d'un nouveau label", qui n'est pas cochée par défaut, mais que vous pouvez cocher.
+Comme dans le cas du nom d'une nouvelle étiquette, pour renommer un clip, il existe une option indiquant si cela se fait en utilisant une zone d'édition dans une boîte de dialogue ou une zone d'édition dans la piste.
+Et encore une fois, l'utilisation de la boîte de dialogue est beaucoup plus accessible aux utilisateurs de lecteurs d'écran, et il est donc recommandé d'utiliser l'option de la boîte de dialogue.
+En fait, l'option est définie en utilisant le même paramètre que celui utilisé pour savoir si une boîte de dialogue est utilisée pour le nom d'une nouvelle étiquette.
+Dans les Préférences, dans la catégorie "Comportements des pistes", il y a une case à cocher « Utiliser la boîte de dialogue pour le nom d'un nouveau label », qui n'est pas cochée par défaut, mais que vous pouvez cocher.
 
-Pour renommer un clip :
-- Sélectionnez un clip, à l'aide des commandes de sélection du clip précédent ou suivant (Alt + virgule ou Alt + point).
-- Dans le menu Edition, choisissez Renommer le clip (Ctrl + F2).
-Une boîte de dialogue Set Wave Clip Name s'ouvre et le contenu de la zone d'édition du nom est initialement sélectionné.
-- Tapez un nom et appuyez sur Entrée.
+Pour renommer un clip :
+- Sélectionnez un clip à l'aide des commandes permettant de sélectionner le clip précédent ou suivant (raccourcis "Alt + Virgule" ou "Alt + Point").
+- Dans le menu "Edition", ouvrez le sous-menu "Clips audio" et choisissez "Renommer le clip " (raccourci Ctrl + F2"). Une boîte de dialogue "Définir le nom du clip d'onde" s'ouvre et le contenu de la zone d'édition du nom est initialement sélectionné.
+- Tapez un nom et appuyez sur "Entrée".
+
+
+++ Vitesse et hauteur du clip ++
+Chaque clip a une vitesse et un changement de hauteur.
+La valeur par défaut de la vitesse est de 100 %, et lorsque celle-ci est modifiée, la hauteur reste inchangée.
+La vitesse est parfois modifiée automatiquement, par exemple lorsque vous modifiez le tempo du projet, comme décrit au chapitre ["Édition de musique" #editingMusic].
+Mais vous pouvez également modifier manuellement la vitesse d'un clip en utilisant la boîte de dialogue Hauteur et vitesse décrite au chapitre suivant.
+
+La hauteur d'un clip sélectionné peut être modifiée soit à l'aide de la boîte de dialogue Hauteur et vitesse, soit en utilisant les commandes "Pitch Up" et "Pitch Down" qui modifient la hauteur du clip d'un demi-ton.
+Celles-ci se trouvent dans le sous-menu "Clips audio" du menu "Édition" et disposent des raccourcis par défaut "Alt + Flèche haut" et "Alt + Flèche bas".
+Ces commandes peuvent être utilisées pendant la lecture.
+
+Notez que lorsque la vitesse ou la hauteur d'un clip est modifiée, cela ne modifie pas les données audio d'origine de ce clip.
+Au lieu de cela, le changement de vitesse ou de hauteur est calculé lorsque cela est nécessaire, par exemple pour la lecture.
+Cela signifie que vous pouvez modifier la vitesse ou la hauteur d'un clip autant de fois que vous le souhaitez, sans réduire lentement la qualité de l'audio.
+
++++ Boîte de dialogue Hauteur et vitesse +++
+Après avoir sélectionné un clip, pour ouvrir cette boîte de dialogue, ouvrez le menu "Édition", puis dans le sous-menu "Clips audio", choisissez "Hauteur et vitesse" (raccourci "Ctrl + Majuscule + P").
+Le titre de la boîte de dialogue est "Pitch and Speed", puis un tiret, puis le nom du clip.
+Il contient les commandes suivantes :
+- un groupe Clip Pitch contient deux zones d'édition : demi-tons et cents. Ces commandes vous permettent de modifier la hauteur du clip. Ceci est spécifié en demi-tons et en cents, où un cent équivaut à un centième de demi-ton. Les valeurs par défaut de ces contrôles sont zéro.
+- Un groupe Vitesse de clip contenant une boîte de sélection de pourcentage de vitesse.
+- Un groupe Général contenant une case à cocher Optimiser pour la voix, qui est décochée par défaut. Le réglage de cette case à cocher affecte à la fois le réglage du pas et tout changement de vitesse.
+
+
+Notez que lorsque vous accédez à l'une des zones de sélection numérique d'édition, le texte n'est pas initialement sélectionné. Donc, si vous souhaitez écraser le texte, vous devez faire quelque chose comme appuyer sur "Ctrl + A" avant de taper votre nouveau texte. Pour toutes les zones d'édition, vous pouvez augmenter ou diminuer sa valeur de un en appuyant respectivement sur la flèche vers le haut ou sur la flèche vers le bas. De plus, pour la zone de sélection du pourcentage de vitesse, vous pouvez augmenter ou diminuer sa valeur de dix en appuyant respectivement sur "Page précédente" ou "Page suivante".
+
+Notez que la boîte de dialogue ne comporte pas de boutons "OK" et "Annuler". Appuyer sur "Échap" ferme la boîte de dialogue.
+
+La boîte de dialogue Hauteur et vitesse peut être utilisée pendant la lecture, mais notez les points suivants :
+- La vitesse du clip ne peut pas être modifiée pendant la lecture et la boîte de sélection du pourcentage de vitesse n'est donc pas disponible.
+- Si vous modifiez l'une ou l'autre des boîtes de sélection de hauteur de clip à l'aide des touches fléchées Haut ou Bas, ou modifiez l'état de la case à cocher, cela a un effet immédiat sur la lecture. Cependant, si vous modifiez le texte de l'une des boîtes de sélection de hauteur de clip,vous devez vous éloigner du contrôle avant que la lecture ne reflète la valeur modifiée.
+
+
 
 
 ++ Diverses commandes de découpe ++
@@ -1412,45 +1417,50 @@ En fait, la règle est plus générale que cela. Pour tout clip, s'il existe une
 
 
 + Effets en temps réel +[HDR-RealTimeEffects]
-Vous pouvez désormais ajouter un ou plusieurs effets en temps réel à une piste.
-Contrairement à l'application d'un effet à l'aide du menu Effets, l'ajout d'un effet en temps réel à une piste ne modifie aucune des données audio de la piste.
+Vous pouvez désormais ajouter un ou plusieurs effets en temps réel soit à une piste, soit au mixage de toutes les pistes.
+Contrairement à l'application d'un effet à l'aide du menu "Effets", l'ajout d'un effet en temps réel à une piste ne modifie aucune des données audio dans la piste.
 Au contraire, lorsque vous lisez la piste, ces effets sont appliqués en temps réel.
 Cela signifie que vous pouvez modifier les paramètres de n'importe lequel de ces effets pendant la lecture et en entendre l'effet.
-Et, en plus, à tout moment de votre montage, vous pouvez revenir aux effets en temps réel d'une piste et modifier les paramètres, ou ajouter ou supprimer des effets.
-En utilisant cette version d'Audacity, vous pouvez utiliser un certain nombre d'effets intégrés d'Audacity comme effets en temps réel : Basses et aigus, Distorsion, Phaser, Reverb et Wahwah.
-
+De plus, à tout moment de votre montage, vous pouvez revenir aux effets en temps réel d'une piste et modifier des paramètres, ou ajouter ou supprimer des effets.
+Audacity fait référence aux effets en temps réel qui sont appliqués au mixage de toutes les pistes en tant qu'effets maîtres.
+Si vous souhaitez ajouter de la réverbération à toutes les pistes, vous pouvez simplement ajouter un effet de réverbération en temps réel aux effets principaux, plutôt que de devoir l'ajouter à toutes les pistes individuelles.
+Vous pouvez utiliser un certain nombre d'effets intégrés d'Audacity comme effets en temps réel : Graves et aigus, Compresseur, Distorsion, Limiteur, Phaser, Reverb et Wahwah.
 De plus, vous pouvez utiliser un certain nombre de plugins d'effets, notamment les plugins d'effets VST et VST3.
-L'utilisation des plugins VST et VST3 à l'aide d'un lecteur d'écran est décrite au chapitre ["Plugins" #HDR-Plugins].
+L'utilisation des plugins VST et VST3 à l'aide d'un lecteur d'écran est décrite au chapitre ["Plugins" #hdr-plugins].
+Vous ajoutez et gérez les effets en temps réel pour la piste ciblée ou le mixage de toutes les pistes à l'aide du volet "Effets en temps réel", décrit au chapitre suivant.
 
-Vous ajoutez et gérez les effets en temps réel pour la piste ciblée à l'aide du "volet effets en temps réel", qui est décrit au chapitre suivant.
 
 ++ Volet des effets en temps réel ++
 Vous pouvez ouvrir le volet des effets en temps réel en ouvrant le menu "Effets" et en choisissant "Ajouter des effets en temps réel", ou en utilisant le raccourci par défaut, qui est la lettre "E".
+Visuellement, le volet est affiché à gauche de la vue de piste et son contenu est décrit ci-dessous.
+Pour fermer le volet et accéder à la vue des pistes, vous pouvez soit utiliser la même commande que celle utilisée pour l'ouvrir, soit appuyer sur le bouton "Fermer" (Échap).
+Notez que lorsque le volet est ouvert, vous pouvez utiliser les touches "Ctrl + F6" et "Ctrl + Majuscule + F6" pour accéder aux autres sections principales de la fenêtre Audacity sans fermer le volet, mais vous n'en ressentirez peut-être pas souvent la nécessité.
 
-Visuellement, le volet s'affiche à gauche de la vue des pistes.
-Il contient une liste de tous les effets en temps réel qui ont été ajoutés à la piste ciblée, et vous pouvez l'utiliser pour ajouter et supprimer des effets et modifier les paramètres d'effet.
-
-Pour fermer le volet et passer à la vue des pistes, vous pouvez soit utiliser la même commande que vous avez utilisée pour l'ouvrir, soit appuyer sur le bouton Fermer (ou la touche "Échap)".
-
-Notez que lorsque le volet est ouvert, vous pouvez utiliser les touches "Contrôle + F6" et "Contrôle + Majuscule + F6" pour passer aux autres sections principales de la fenêtre Audacity sans fermer le volet, mais vous ne trouverez peut-être pas le besoin de le faire très souvent.
-
-Le volet Effets en temps réel contient les commandes suivantes :
-- Un bouton "Power", qui contrôle si l'un des effets de la liste des effets est activé.
-- Un bouton de fermeture (Échap), qui ferme le volet, la vue de piste reprenant le focus.
-- Une liste d'effets. Pour chaque effet, il y a trois boutons : un bouton "Power" qui contrôle uniquement cet effet ; un bouton qui porte le nom de l'effet et qui ouvre une boîte de dialogue pour cet effet ; et un bouton "Remplacer l'effet", qui ouvre un menu permettant de supprimer l'effet ou de le remplacer par un autre effet.
-- Un bouton "Ajouter un effet". Cela ouvre un menu dans lequel, par défaut, les effets sont regroupés par type et par éditeur. Cependant, il existe un certain nombre d'autres options pour la façon dont le menu est organisé, et le réglage pour cela peut être trouvé dans la catégorie "Effets" de la boîte de dialogue "Préférences", où dans le groupement des options d'effet, il y a une liste déroulante "Organisation des effets en temps réel"
+Le volet des effets en temps réel se composait de deux sections.
+La première concerne les effets en temps réel appliqués à la piste ciblée et contient les commandes suivantes :
+- le bouton bascule "Power", qui contrôle si l'un des effets de la liste d'effets est activé.
+- le bouton "Fermer" (touche "Échap"), qui ferme le volet, la vue de piste prenant le focus.
+- la liste d'effets. Pour chaque effet, il y a trois boutons : un bouton bascule d'activation qui contrôle uniquement cet effet ; un bouton qui porte le nom de l'effet et qui ouvre une boîte de dialogue pour cet effet ; et un bouton de remplacement d'effet, qui ouvre un menu permettant soit de supprimer l'effet, soit de le remplacer par un autre effet.
+- Un bouton Ajouter un effet. Cela ouvre un menu dans lequel, par défaut, les effets sont regroupés par type et éditeur. Cependant, il existe un certain nombre d'autres options quant à la manière dont le menu est organisé, et les paramètres correspondants peuvent être trouvés dans la catégorie "Effets" de la boîte de dialogue "Préférences", où dans le groupe "Options d'effe"t se trouve une zone de liste déroulante "Organisation des effets en temps réel".
 - Si aucun effet n'a été ajouté, il existe un lien pour regarder une vidéo sur les effets en temps réel.
 
-Ainsi, pour exemple, pour ajouter un effet en temps réel à la piste focalisée :
-- Ouvrez le menu Effets et choisissez Ajouter des effets en temps réel. Le volet des effets en temps réel s'ouvre et devient le focus.
-- Tabulez jusqu'au bouton Ajouter un effet, appuyez dessus et choisissez un effet dans le menu. L'effet est ajouté à la liste des effets, de sorte que les trois commandes avant le bouton d'ajout d'effet sont maintenant le bouton "Power", le bouton d'effet et le bouton de remplacement d'effet pour l'effet ajouté.
-- Donc, pour ouvrir la boîte de dialogue pour l'effet ajouté, appuyez deux fois sur Majuscule + Tab pour accéder au bouton d'effet, puis appuyez dessus. Une boîte de dialogue d'effet en temps réel s'ouvre et sa structure est décrite dans la section suivante.
+
+La deuxième section du volet des effets en temps réel concerne les effets principaux, c'est-à-dire les effets appliqués au mixage de toutes les pistes. Il contient les commandes suivantes :
+- Un bouton bascule "Power", qui contrôle si l'un des effets de la liste d'effets est activé.
+- la liste d'effets, qui a la même structure que la liste d'effets pour une piste ciblée qui a été décrite. ci-dessus.
+ le bouton "Ajouter un effet".
+
+
+Ainsi, par exemple, pour ajouter un effet en temps réel à la piste ciblée :
+- Ouvrez le menu "Effets" et choisissez "Ajouter des effets en temps réel" (touche "E"). Le volet des effets en temps réel s'ouvre et prend le focus.
+- Accédez au premier bouton "Ajouter un effet", appuyez dessus et choisissez un effet dans le menu. L'effet est ajouté à la liste des effets, donc les trois commandes avant le bouton d'ajout d'effet sont désormais le bouton "Power", le bouton d'effet et le bouton de remplacement d'effet pour l'effet ajouté.
+- enfin pour ouvrir la boîte de dialogue de l'effet ajouté, appuyez deux fois sur "Majuscule + Tab" afin d'accéder au bouton d'effet et appuyez dessus. Une boîte de dialogue d'effet en temps réel s'ouvre et sa structure est décrite au chapitre suivant.
 
 
 ++ Boîte de dialogue d'effet en temps réel ++
 Le titre d'une boîte de dialogue d'effet en temps réel se compose du nom de l'effet, suivi d'un tiret, suivi du nom de la piste.
 Et la boîte de dialogue contient les commandes suivantes :
-- Un bouton bascule "Activer", qui a le même état que le bouton "Power" de l'effet dans le "volet des effets en temps réel". 
+- Un bouton bascule "Activer", qui a le même état que le bouton "Power" de l'effet dans le "volet des effets en temps réel".
 - Les commandes pour l'effet particulier.
 - Bien qu'il n'y ait pas de bouton Fermer, vous pouvez fermer la boîte de dialogue en appuyant sur "Échap".
 
@@ -1472,6 +1482,79 @@ Après avoir ouvert l'une de ces boîtes de dialogue d'effets en temps réel, vo
 Les boîtes de dialogue avec ce comportement sont appelées boîtes de dialogue non modales.
 Vous pouvez parcourir la fenêtre principale d'Audacity et toutes les boîtes de dialogue ouvertes sans mode en appuyant sur "Alt + F6".
 
++ Édition de musique +[hdr-musicEditing]
+Les fonctionnalités d'Audacity pour l'édition de musique sont définitivement en cours de travail et des fonctionnalités supplémentaires seront ajoutées dans les prochaines versions.
+Actuellement, les fonctionnalités suivantes sont disponibles :
+- Le tempo et la signature temporelle des projets, qui peuvent être définis dans la barre d'outils Signature temporelle, comme décrit au chapitre suivant.
+- Les positions et les durées, telles que le début et la durée d'une sélection, peuvent être formatées en unités musicales, comme décrit au chapitre suivant.
+- Vitesse et hauteur du clip. Chaque clip a une vitesse et un changement de hauteur.
+- Détection automatique du tempo, décrite au chapitre suivant.
+
+
+Bien que le tempo d'un projet soit souvent appelé unités de battements par minute, il s'agit en réalité du nombre de noires par minute et est indépendant de la signature rythmique.
+
+Si vous modifiez le tempo du projet, les vitesses de tous les clips du projet seront modifiées proportionnellement.
+Ainsi, par exemple, si vous réduisez de moitié le tempo, la vitesse de chaque clip du projet sera réduite de moitié.
+Cela signifie donc que les valeurs des positions dans les projets, mesurées en mesures et en temps, resteront inchangées lorsque le tempo est modifié.
+
+Si vous copiez un clip d'un projet et que vous le collez dans un autre projet, la vitesse du clip collé sera modifié si les projets ont des tempos différents.
+
+Supposons par exemple que la vitesse du clip dans le projet d'origine soit de 30 % et que le tempo du projet dans lequel il est collé soit deux fois supérieur au tempo du projet d'origine. Ensuite, la vitesse du clip collé sera de 60 %.
+
+
+
+++ Barre d'outils de signature rythmique ++
+La barre d'outils de signature rythmique contient trois commandes :
+- zone d'édition numérique du tempo, qui contient le tempo du projet. Notez que lorsque vous accédez à ce contrôle par "Tab", le texte n'est pas sélectionné par défaut et le premier chiffre est normalement le caractère actuel. Donc, si vous souhaitez écraser le numéro, vous pouvez soit appuyer plusieurs fois sur "Supprimer", soit appuyer sur "Majuscule + Fin" pour sélectionner tous les chiffres avant de saisir le numéro. Sachez qu'appuyer sur "Ctrl + A" sélectionne tout l'audio du projet, plutôt que de sélectionner le contenu de la zone d'édition. En plus de saisir un nombre, vous pouvez également utiliser les touches Flèche haut et Flèche bas pour augmenter ou diminuer le tempo de un, et les touches "Page précédente" ou "Page suivante" pour augmenter ou diminuer le tempo de 10.
+- zone de sélection numérique pour la partie supérieur de la signature temporelle qui contient le numéro supérieur de la signature rythmique, le nombre de temps dans une mesure. Vous pouvez modifier sa valeur en utilisant l'une des méthodes décrites ci-dessus pour la boîte à sélection numérique d'édition du tempo.
+- liste déroulante pour la partie inférieur de la Signature temporelle qui contient le numéro inférieur de la signature rythmique, qui indique la valeur de note de chaque temps.
+
+
+++ Unités musicales pour les positions et longueurs ++
+Les valeurs d'un certain nombre de positions et de longueurs peuvent être affichées ou définies en unités musicales ainsi qu'en unités de temps. Ceux-ci se trouvent tous dans les barres d'outils inférieures :
+- Deux des contrôles de la barre d'outils Sélection, par exemple le début et la fin de la sélection. Si vous ouvrez le menu contextuel d'un de ces deux contrôles, alors le menu comprend deux formats musicaux : bar:beat et bar:beat:tick, où son tick est égal à une double croche. Si vous modifiez le format de l'un de ces deux contrôles temporels, cela modifie également le format de l'autre contrôle et le format par défaut des boîtes de dialogue Définir la limite de sélection gauche/droite.
+- Le contrôle de position audio dans la barre d'outils Temps, qui affiche la position de lecture pendant la lecture ou l’enregistrement, ou la position à laquelle la lecture commencerait. De la même manière que pour les contrôles temporels de la barre d'outils Sélection, vous pouvez modifier son format en bar:beat ou bar:beat:tick.
+- La zone de liste déroulante "Snap to" dans la barre d'outils "Snapping", disponible lorsque la case à cocher "Snap" est cochée, propose des options qui incluent la barre, la moitié, le quart, etc.
+Ainsi, lorsque le snapping est activé, vous pouvez utiliser les touches fléchées gauche et droite pour passer à la mesure ou à la valeur de note précédente ou suivante.
+
+
+++ Détection automatique du tempo ++[hdr-tempoDetect]
+Dans certains cas, le tempo des fichiers audio que vous ouvrez ou importez peut être détecté.
+Ainsi, en fonction du contexte et des préférences de l'utilisateur, cela peut être utilisé soit pour ajuster le tempo du projet afin qu'il soit identique à celui du clip, soit pour modifier le tempo du clip afin qu'il soit identique à celui du projet.
+
+Si un tempo est détecté , l'un des facteurs déterminant l'action à entreprendre est la vue Chronologie.
+
+La Timeline est une règle qui traverse la fenêtre principale immédiatement au-dessus des pistes.
+Elle permet aux utilisateurs voyants de voir la position des éléments dans les traces et présente donc normalement peu d'intérêt pour les utilisateurs de lecteurs d'écran.
+
+La Timeline peut avoir deux vues,qui peuvent être défini à l’aide du sous-menu "Chronologie" du menu "Affichage".
+
+Ces deux vues sont Minutes et secondes, qui est la valeur par défaut, et Battements et mesures.
+
+Ce sont les méthodes utilisées pour tenter de détecter le tempo d'un fichier audio, et elles sont utilisées dans l'ordre suivant :
+- Les métadonnées (balises) du fichier sont vérifiées pour voir si un tempo est spécifié.
+- Le nom du fichier et son chemin sont vérifiés pour voir s'il contient le tempo. Le format doit être un nombre suivi de bpm. Un exemple d'un tel nom de fichier est fred60bpm.mp3.3.
+- L'audio du fichier est analysé, mais cela n'est effectué que si la durée de l'audio dans le fichier ne dépasse pas 60 secondes.
+
+
+Si un tempo est détecté et que le projet contient une ou plusieurs pistes audio, alors si la vue Timeline est réglé sur minutes et secondes, alors rien n'est fait.
+
+Cependant, si la vue Timeline est définie sur les battements et les mesures, la vitesse du clip est ajustée de sorte que le tempo du clip soit le même que celui du projet.
+
+Si un tempo est détecté et que le projet ne contient aucune piste audio, alors par défaut La boîte de dialogue d'importation de musique s'ouvre, vous informant du tempo qu'elle a détecté dans le fichier et vous demande si vous souhaitez activer la visualisation de la musique et définir le tempo du projet sur la valeur détectée.
+
+En activant la visualisation de la musique, cela signifie définir l'affichage Timeline sur battements et mesures.
+
+De plus, même si la vue Timeline est déjà définie sur Battements et mesures, la même question est posée.
+- Si vous appuyez sur le bouton Oui, le tempo du projet est modifié et le tempo du clip n'est pas modifié.
+- Si vous appuyez sur le bouton Non, puis si la vue Timeline est définie sur Battements et mesures, alors la vitesse du clip est ajustée de sorte que le tempo du clip soit le même que celui du projet.
+Mais si la vue Chronologie est définie sur Minutes et secondes, rien n'est fait.
+C'est le même comportement que lorsqu'un tempo est détecté alors qu'il y a déjà des pistes audio dans le projet.
+
+
+La boîte de dialogue d'importation de musique contient également une case à cocher « Ne plus me demander ». Si vous cochez cette case avant d'appuyer sur le bouton Oui ou Non, cela définit l'option appropriée pour un paramètre dans la catégorie "Importer/Exporter" de la boîte de dialogue "Préférences".
+Pour plus de détails, consultez le chapitre ["Options de détection automatique du tempo" #hdr-detectOption].
+
 + Édition des Balises de métadonnées +[HDR-MetaDataTags]
 Les Métadonnées sont des données qui décrivent d'autres données et les métadonnées pour les fichiers audio se compose d'un certain nombre de balises, où chaque balise est définie par une étiquette et par une valeur.
 
@@ -1479,8 +1562,8 @@ L'éditeur de balises de Métadonnées d'Audacity vous permet de modifier les va
 
 Vous pouvez ouvrir l'éditeur de balises de Métadonnées à tout moment en choisissant le sous-menu "Métadonnées " du menu "Edition".
 
-En outre, si vous enregistrez de l'audio dans l'un des formats standard, alors à moins d'avoir désactivé l'option appropriée,
-L'éditeur de balises de Métadonnées s'ouvre automatiquement, comme décrit au chapitre ["Sauvegarde audio" #HDR-SavingAudio] ci-dessus.
+De plus, vous pouvez également ouvrir cette boîte de dialogue à partir de la boîte de dialogue "Exporter l'audio", comme décrit au chapitre ["Sauvegarde audio" #HDR-SavingAudio] ci-dessus.
+
 
 L'éditeur de balises de Métadonnées contient les éléments suivants :
 - Un tableau qui contient les étiquettes et les valeurs des balises (décrit au chapitre suivant).
@@ -1610,14 +1693,15 @@ Si vous enregistrez à partir d'une entrée de ligne, d'un mixage stéréo ou de
 
 
 +++ Option Doublage (Overdub) +++
-L'option "Doublage" contrôle si Audacity doit jouer toutes les pistes existantes lors d'un nouvel enregistrement.
-Vous pouvez cocher ou décocher cette option avec le sous-menu "Doublage" du sous-menu "Options de transport" du menu "Transport", ou avec la case à cocher "Doublage" de la catégorie "Enregistrement" de la boite de dialogue "Préférences".
+L'option "Écouter les autres pistes pendant l'enregistrement" contrôle si Audacity lit les pistes existantes lors de l'enregistrement d'une nouvelle piste.
+Vous pouvez cocher ou décocher cette option soit dans le sous-menu "Options de transport" du menu "Transport", soit dans la catégorie "Enregistrement" de la boîte de dialogue "Préférences".
 
 
-+++ Option Lecture à travers le logiciel +++
-Cette option contrôle si Audacity doit jouer la nouvelle piste alors qu'il est en cours d'enregistrement. Normalement, cette option doit être désactivée, mais c'est utile si vous voulez entendre ce que vous enregistrez à partir d'un périphérique.
++++ Option de surveillance des entrées sonores +++
+L'option de surveillance des entrées sonores contrôle si Audacity lit la nouvelle piste pendant son enregistrement.
+Normalement, cette option devrait être désactivée, mais elle est utile si vous souhaitez entendre ce que vous enregistrez à partir d'un appareil tel qu'une platine vinyle USB.
 
-Cette option peut être cochée ou décochée en utilisant le sous-menu "Passage audio logiciel" du sous-menu "Options de transport" du menu "Transport", ou la case à cocher "Lecture à travers le logiciel" de la catégorie "Enregistrement" de la boite de dialogue "Préférences".
+Elle peut être cochée ou décochée soit dans le sous-menu "Options de transport" du menu "Transport", soit dans la catégorie "Enregistrement" de la boîte de dialogue "Préférences".
 
 
 ++ Commandes d'enregistrement ++[HDR-RecordControls]
@@ -1640,7 +1724,6 @@ Dans les versions d'Audacity 2.1.3 et antérieures, les raccourcis "r" et "majus
 Dans l'outil "Mesureur d'enregistrement" du panneau supérieur de barre d'outils de la fenêtre principale d'Audacity, il y a le vumètre d'Enregistrement pour aider à définir le niveau d'enregistrement.
 Le vumètre contient un bouton déroulant que vous pouvez atteindre en appuyant sur "control + F6" deux fois pour se placer dans le panneau supérieur de barres d'outils, puis en appuyant sur "Tab" jusqu'à l'atteindre.
 
-
 Si vous appuyez sur ce bouton en appuyant sur "Entrée", un menu s'ouvre, contenant des commandes pour contrôler le mesureur.
 
 Vous pouvez démarrer et arrêter la surveillance du signale d'entrée pendant l'enregistrement à l'aide de ce menu.
@@ -1651,9 +1734,9 @@ Pour que ce mesureur soit accessible pour les utilisateurs de lecteurs d'écran,
 
 
 Pour vérifier quel est le niveau de crête d'un enregistrement qui est à peu près susceptible d'être avec le réglage actuel du niveau d'enregistrement :
-- Appuyez sur le bouton déroulant du mesureur "vumètre d'enregistrement" et choisissez "Démarrer le monitoring".
-- Faites quelques sons représentatifs pendant un court instant.
-- Appuyez de nouveau sur le bouton déroulant et choisissez "Arrêter le monitoring"Le nom du bouton déroulant inclut le niveau de crête pendant cette surveillance.
+- Appuyez sur le bouton déroulant du mesureur d'enregistrement et choisissez Activer le mode de surveillance silencieuse.
+- Émettez quelques sons représentatifs pendant un court instant.
+- appuyez sur le bouton déroulant du compteur d'enregistrement et choisissez Désactiver la surveillance silencieuse. Le nom du bouton déroulant inclut le niveau de crête de cette session de surveillance
 
 
 Normalement, une bonne valeur du niveau de crête à viser est d'environ -6 dB. Cela devrait garantir que le niveau d'enregistrement est à la fois suffisamment bas pour qu'il n'y ait pas de distorsion ou d'écrêtage, et suffisamment élevé pour que vous n'obteniez pas une quantité de bruit inutile.
@@ -1683,7 +1766,7 @@ Ce qui suit est un aperçu de l'enregistrement "Punch and roll" dans Audacity:
 
 En utilisant l'enregistrement "Punch and roll", vous basez le timing du nouvel enregistrement sur l'écoute de la lecture de l'audio avant le point de punch in.
 Cependant, dans Audacity, il existe un délai entre l'audio lu et l'enregistrement. Il existe une compensation par défaut pour cela, et cela peut être suffisant.
-Si la synchronisation de l'audio près du point de punch-in ne sonne pas correctement, indiquant que la compensation n'est pas assez bonne, consultez la section Compensation de latence ci-dessous pour plus de détails sur ce retard et comment ajuster sa compensation.
+Si la synchronisation de l'audio près du point de punch-in ne sonne pas correctement, indiquant que la compensation n'est pas assez bonne, consultez le chapitre "Compensation de latence" ci-dessous pour plus de détails sur ce retard et comment ajuster sa compensation.
 
 Une description plus détaillée de l'enregistrement Punch and Roll est la suivante.
 Vous enregistrez et réalisez que vous venez de faire une erreur. Arrêtez l'enregistrement en appuyant sur la barre d'espace ou sur "X".
@@ -1797,7 +1880,7 @@ Ceci est un lien vers la liste des [plugins d'effets Nyquist https://plugins.aud
 
 Voici un exemple d'effet utile.
 
-Installez un effet Nyquist que vous avez téléchargé : 
+Installez un effet Nyquist que vous avez téléchargé :
 - Dans le menu Outils, choisissez le programme d'installation du plug-in Nyquist. Une boîte de dialogue avec ce nom s'ouvre.
 - "Tab" jusqu'au bouton "Parcourir" et appuyez dessus. Une boîte de dialogue Sélectionner un ou plusieurs fichiers s'ouvre. Sélectionnez le fichier du plugin et appuyez sur le bouton Ouvrir. Vous êtes renvoyé à la boîte de dialogue du programme d'installation du plug-in Nyquist.
 - Appuyez sur le bouton Appliquer. Une boîte de message du programme d'installation du plugin Nyquist devrait s'ouvrir avec des nouvelles de succès et quelques détails. Appuyez sur le bouton OK.
@@ -1805,61 +1888,38 @@ Installez un effet Nyquist que vous avez téléchargé :
 
 
 ++ Plugins d'effets VST et VST3 ++
-Les plugins Virtual Studio Technology (VST) utilisent une interface entre le plugin et un programme tel qu'Audacity qui a été développé par la société Steinberg.
-Il existe quelques versions de l'interface actuellement utilisées, VST2 (qui est également connu sous le nom de VST) et VST3.
-Les deux peuvent être utilisés dans Audacity.
+Les plugins Virtual Studio Technology (VST) utilisent une interface entre le plugin et un programme tel qu'Audacity développé par la société Steinberg.
+Il existe actuellement quelques versions de l'interface utilisées, VST2 (également connue sous le nom de VST) et VST3.
+Ces deux éléments peuvent être utilisés dans Audacity.
 
-En plus des plugins d'effets VST, il existe également des plugins d'instruments VST, mais ceux-ci ne peuvent actuellement pas être utilisés dans Audacity, n'étant pas accessible aux utilisateurs de clavier.
+En plus des plugins d'effets VST, il existe également des plugins d'instruments VST, mais ceux-ci ne peuvent actuellement pas être utilisés dans Audacity.
 
-Cependant, Audacity fournit une interface alternative accessible.
-Pour les effets VST, il y a un curseur pour chaque paramètre, et pour les effets VST 3, il y a soit un curseur, soit une case à cocher pour chaque paramètre.
-Lorsqu'un curseur est utilisé pour un paramètre, sa valeur peut être, par exemple, une fréquence ou un niveau, ou une option, telle que mono ou stéréo, pas seulement un simple pourcentage.
-Pour les lecteurs d'écran, la valeur du paramètre est ajoutée au nom du paramètre. Ainsi, lorsque vous accédez à un curseur par tabulation, votre lecteur d'écran lit le nom du paramètre, la valeur du paramètre et la position du curseur, un nombre compris entre 0 et 100.
-Lorsque vous modifiez la valeur d'un curseur, à l'aide des touches standard telles que Flèche gauche et Flèche droite, seule la nouvelle position du curseur est lue.
-La lecture de la nouvelle valeur de paramètre dépend du lecteur d'écran que vous utilisez.
-Si vous utilisez NVDA ou Narrator, vous pouvez simplement appuyer sur la touche pour lire la ligne actuelle.
-Cependant, si vous faites cela en utilisant Jaws, Jaws lit malheureusement une valeur de paramètre qui est incorrecte.
-Pour lire une valeur correcte, il faut "faire Tab" loin du contrôle, puis "Majuscule + Tab".
++++ Interface dans la boîte de dialogue des effets +++
+Presque tous les effets VST et VST3 ont par défaut une interface utilisateur graphique personnalisée pour modifier les valeurs de ses paramètres qui n’est pas accessible aux utilisateurs de clavier
 
-Lorsque vous ouvrez un effet VST ou VST3 pour la première fois, son interface utilisateur graphique personnalisée est utilisée.
-Vous ne pourrez accéder qu'à un petit nombre de commandes, telles que le bouton Préréglages et paramètres.
+ Cependant, Audacity propose une interface alternative qui est accessible.
 
-Pour passer à l'utilisation d'une interface utilisateur accessible par clavier :
-- Appuyez sur le bouton Préréglages et paramètres et choisissez Options. Une boîte de dialogue d'options d'effet s'ouvre.
-- Tabulez jusqu'à la case à cocher "Activer l'interface graphique", puis décochez-la.
+
+Lorsque vous ouvrez pour la première fois un effet VST ou VST3, son interface utilisateur graphique personnalisée est utilisée et vous ne pourrez accéder qu'à un petit nombre de commandes, telles que le bouton "Préréglages et paramètres".
+
+Pour passer à l'utilisation d'une interface utilisateur accessible au clavier :
+- Appuyez sur le bouton "Préréglages et paramètres" et choisissez "Options".
+Une boîte de dialogue d'options d'effet s'ouvre.
+- Cliquez sur la case à cocher "Activer l'interface graphique", puis décochez-la.
 - Appuyez sur "Entrée" pour appuyer sur le bouton "OK" par défaut.
-- Pour que le changement d'interface prenne effet, vous devez alors fermer la boîte de dialogue d'effet, puis la rouvrir.
-
-
-++ Dialogue d'interface dans l'effet ++
-Presque tous les effets VST et VST3 ont par défaut une interface utilisateur graphique personnalisée pour modifier les valeurs de ses paramètres qui n'est pas accessible aux utilisateurs de clavier.
-Cependant, Audacity fournit une interface alternative accessible.
-Avertissement de bug: Malheureusement, les versions 3.3.0 à 3.3.3 d'Audacity ne fournissent pas d'interface accessible pour les plugins VST - le réglage de la case à cocher activer l'interface graphique décrite ci-dessous n'a aucun effet.
-
-Heureusement, les plug-ins VST3 ne sont pas affectés et la plupart des plug-ins VST sont désormais disponibles en tant que plug-ins VST3.
-
-Lorsque vous ouvrez un effet VST ou VST3 pour la première fois, son interface utilisateur graphique personnalisée est utilisée et vous ne pourrez accéder qu'à un petit nombre de commandes d'effets,
-telles que le bouton Préréglages et paramètres.
-Pour passer à l'utilisation d'une interface utilisateur accessible par clavier :
-- Appuyez sur le bouton Préréglages et paramètres et choisissez "Options". Une boîte de dialogue d'options d'effet s'ouvre.
-- Tabulez jusqu'à la case à cocher "activer l'interface graphique", puis décochez-la.
-- Appuyez sur "Entrée" pour appuyer sur le bouton "OK" par défaut.
-- Pour que le changement d'interface prenne effet, vous devez alors fermer la boîte de dialogue de l'effet, puis la rouvrir.
+- Pour que le changement d'interface prenne effet, vous devez ensuite fermer la boîte de dialogue des effets, puis la rouvrir.
 
 
 Lorsque vous utilisez l'interface utilisateur accessible au clavier, pour les effets VST, il y a un curseur pour chaque paramètre, et pour les effets VST 3, il y a soit un curseur ou une case à cocher pour chaque paramètre.
+Lorsqu'un curseur est utilisé pour un paramètre, sa valeur peut être par exemple une fréquence ou un niveau, ou une option, telle que mono ou stéréo, et pas seulement un simple pourcentage.
+Pour les lecteurs d'écran, la valeur du paramètre est ajoutée au nom du paramètre.
+Ainsi, lorsque vous appuyez sur un curseur, votre lecteur d'écran lit le nom du paramètre, la valeur du paramètre et la position du curseur, un nombre compris entre 0 et 100.
 
-Lorsqu'un curseur est utilisé pour un paramètre, sa valeur peut être, par exemple, une fréquence ou un niveau, ou une option, telle que mono ou stéréo, et pas simplement un simple pourcentage.
-
-Pour les lecteurs d'écran, la valeur du paramètre est ajoutée au nom du paramètre. Ainsi, lorsque vous accédez à un curseur par tabulation, votre lecteur d'écran lit le nom du paramètre, la valeur du paramètre et la position du curseur, un nombre compris entre 0 et 100.
-
-Lorsque vous modifiez la valeur d'un curseur, à l'aide des touches standard telles que Flèche gauche et Flèche droite, seule la nouvelle position du curseur est lue.
-
-La lecture de la nouvelle valeur de paramètre dépend du lecteur d'écran que vous utilisez. Si vous utilisez NVDA ou Narrator, vous pouvez simplement appuyer sur la touche pour lire la ligne actuelle.
-
-Cependant, si vous faites cela en utilisant Jaws, Jaws lit malheureusement une valeur de paramètre qui est incorrecte. Pour lire une valeur correcte, vous devez taper "Tab" loin du contrôle, puis "Majuscule + Tab" à nouveau.
-
-
+Lorsque vous modifiez la valeur d'un curseur, en utilisant les touches standard telles que  Flèche gauche et Flèche Droite, seule la nouvelle position du curseur est lue.
+La lecture de la nouvelle valeur du paramètre dépend du lecteur d'écran que vous utilisez.
+Si vous utilisez NVDA ou Narrateur, vous pouvez simplement appuyer sur la touche pour lire la ligne actuelle.
+Cependant, si vous effectuez cette opération à l'aide de Jaws, Jaws lit malheureusement une valeur de paramètre incorrecte.
+Pour lire une valeur correcte, vous devez tabuler en dehors du contrôle, puis y revenir en arrière.
 
 + Préférences +[HDR-Preferences]
 La boite de dialogue "Préférences" d'Audacity vous permet de régler beaucoup de paramètres dans Audacity. Après une brève description de la boîte de dialogue, les chapitres suivants décrivent les paramètres les plus courants.
@@ -1870,10 +1930,12 @@ Pour ouvrir cette boîte de dialogue, choisissez le sous-menu "Préférences" du
 
 Sur Le côté gauche de la boîte de dialogue se trouve une vue en arborescence qui contient une liste de catégories. À la droite de cette arborescence se trouvent des commandes pour le réglage des options qui correspondent à la catégorie sélectionnée dans l'arborescence. Le bouton par défaut de la boîte de dialogue est le bouton "OK".
 
-++ Menus Extra ++[HDR-ExtraMenus]
-Ce menu n'est pas affiché, par défaut, dans la barre de menu à l'installation d'Audacity.
+++ Menu "Extra" ++[HDR-ExtraMenus]
+Le menu "Extra", qui n'est pas affiché par défaut, contient des commandes qui ne sont pas affichées dans les menus standards. Il comprend des commandes associées aux barres d'outils.
 
-Vous pouvez faire afficher ou pas ce menu à l'aide du sous-menu "Menu Extra (marche/arrêt)" du menu "Affichage" ou de la case à cocher "Afficher les menus supplémentaires" de la catégorie "Interface" de la boite de dialogue "Préférences".
+Vous pouvez modifier l'affichage ou non de ce menu en utilisant l'option "Activer les menus supplémentaires" dans le menu "Affichage" ou en utilisant un paramètre dans "Préférences" : 
+- Dans la boîte de dialogue "Préférences" Audacity, sélectionnez la catégorie "Interface".
+- Dans le groupe "Options", il y a une case à cocher "Afficher les menus supplémentaires", qui est décochée par défaut.
 
 
 ++ Sauts temporels ++[HDR-SeekTimes]
@@ -1920,12 +1982,6 @@ Les instructions pour télécharger et installer l'une ou l'autre version de la 
 
 
 Notez qu'il n'y a aucun problème à avoir les deux versions installées en même temps.
-
-++ Ouverture automatique de l'éditeur de Balises de métadonnées à l'exportation audio ++[HDR-MetaDataTagEditor]
-Pour que l'éditeur de balises de Métadonnées s'ouvre automatiquement à chaque exportation audio:
-- Dans la boite de dialogue "Préférences" d'Audacity, sélectionnez la catégorie "Import/Export".
-- trouvez la case à cocher "Ouvrir l'éditeur de balises de métadonnées avant d'exporter". Cette case est cochée par défaut.
-
 
 ++ Dossiers par défaut ++
 Par défaut, lorsque vous exécutez l'une des commandes ouvrir, enregistrer, importer ou exporter, et qu'une boîte de dialogue s'ouvre pour vous permettre de choisir un fichier, le dossier par défaut est défini comme étant le dernier dossier que vous avez utilisé pour cette commande.
@@ -1988,23 +2044,40 @@ Lorsque l'option n'est pas activée, alors si de l'audio est ajouté ou supprim�
 Dans Audacity, les clips ne peuvent pas se chevaucher, donc si vous essayez d'ajouter de l'audio qui dépasserait le début du clip suivant, vous obtiendrez une boîte de dialogue d'avertissement vous indiquant qu'il n'y a pas assez de place disponible pour coller la sélection ou générer l'audio.
 
 
-++ Tri ou regroupement du menu Effet ++[HDR-SortEffectMenu]
-Il existe un certain nombre d'options possibles pour la manière dont les effets du menu "Effet" sont regroupés ou triés.
-L'option par défaut pour les effets qui sont inclus avec Audacity est "Grouper par type", et tous les plugins d'effets supplémentaires est "Grouper par éditeur".
-Dans la catégorie "Effets" de la boîte de dialogue "Préférences", dans le groupement "Options d'effet", il y a une liste déroulante "Trier ou Grouper», qui est défini par défaut sur l'option par défaut décrite ci-dessus.
-Les options alternatives incluent "Trier par nom d'effet", qui était en fait la valeur par défaut avant la version 3.2.0 d'Audacity.
+++ Organisations des menus des effets ++[HDR-SortEffectMenu]
 
+Il existe des paramètres pour l'organisation du menu "Effet" et du menu qui s'ouvre lorsque vous appuyez sur le bouton "Ajouter un effet" dans le panneau "Effets" en temps réel.
+Ces deux paramètres se trouvent dans la catégorie "Effets" de la boîte de dialogue "Préférences", où se trouve un groupe d'options d'effet qui contient deux zones de liste déroulante :
+- Zone de liste déroulante d'organisation du menu "Effet", qui est définie par défaut sur "Regrouper par catégorie". Les alternatives incluent "Trier par nom d'effet".
+- Zone de liste déroulante "Organisation des effets en temps réel", définie par défaut sur "Regrouper par type et éditeur".
+
+
+++ Options de détection automatique du tempo ++[hdr-detectOption]
+Comme décrit au chapitre ["Détection automatique du tempo" #hdr-tempoDetect], si un projet ne contient aucune piste audio et un fichier audio est ouvert ou importé et qu'un tempo est détecté, alors par défaut une boîte de dialogue d'importation de musique s'ouvre. La catégorie "Importer/Exporter" de la boîte de dialogue "Préférences" contient un groupe de boutons radio que vous pouvez utiliser pour modifier ce comportement .
+Le nom de ce groupe est «When Audacity detects music in file imported on empty project" (non traduit) .
+- Demandez-moi à chaque fois, quelle est la valeur par défaut. Une boîte de dialogue d'importation de musique s'ouvre, vous informant du tempo détecté dans le fichier et vous demandant si vous souhaitez activer la visualisation de la musique et définir le tempo du projet sur la valeur détectée.
+Il existe également une case à cocher "Ne plus me demander", et si elle est cochée, lorsque vous appuyez sur le bouton "Oui" ou "Non", cette préférence est mise à jour de manière appropriée.
+- ""Switch view to Beats and Measures and align with musical grid" (non traduit). Cela équivaut à répondre "Oui" à la question dans la boîte de dialogue "Importation de musique".
+- "Ne rien faire". Cela équivaut à répondre "Non" à la question dans la boîte de dialogue "Importation de musique".
+
+
+++ Comment souhaitez-vous enregistrer ++
+Lorsque vous enregistrez un projet Audacity, une boîte de dialogue s'ouvre par défaut, vous demandant si vous souhaitez stocker le projet sur le stockage cloud Audio.com ou sur votre ordinateur.
+Les options pour ce comportement sont disponibles dans la catégorie "Cloud" de la boite de dialogue "Préférences", où se trouve le groupe de radio boutons "Save behavior" :
+- "Always ask" non traduit) pour toujours demander.
+- "Always save to cloud." (non traduit) pour Toujours enregistrer sur le cloud.
+- "Always save to the computer." (non traduit) pour Toujours enregistrer sur l'ordinateur.
+
+
+++ Comment souhaitez-vous exporter ++
+Lorsque vous exportez de l'audio , par défaut, une boîte de dialogue s'ouvre vous demandant si vous souhaitez partager votre audio sur Audio.com ou l'exporter vers votre ordinateur.
+Une option pour ce comportement est disponible dans la catégorie "Cloud" de la boite de dialogue "Préférences", où se trouve le groupe "Export behavior" (non traduit) qui contient une case à cocher «How would you like to export dialog” » (non traduit).
 
 ++ Options d'enregistrement ++
 Les options d'enregistrement sont configurables dans la boîte de dialogue "Préférences" et elles sont décrites au chapitre ["Paramètres d'enregistrements" #HDR-RecordSettings] du chapitre ["Enregistrement" #HDR-Recording].
 
-++ Modification ou création de raccourcis clavier ++
-La catégorie "Clavier" de la boite de dialogue "Préférences" d'Audacity vous permet de changer les raccourci clavier des commandes d'Audacity.
-
-Outre la manière standard d'accéder à ces commandes en ouvrant la boîte de dialogue "Préférences" et en sélectionnant la catégorie "Clavier", il existe une méthode supplémentaire qui peut vous être utile.
-Si vous sélectionnez une commande dans l'un des menus de la barre de menus et appuyez sur "majuscule+ Entrée" plutôt que sur la touche "Entrée" habituelle, une boîte de dialogue s'ouvre avec le titre "Préférences : clavier".
-Dans l'arborescence ou la liste décrite ci-dessous, la commande est déjà sélectionnée.
-Notez que cette méthode ne fonctionne pas si la commande du menu n'est pas disponible.
+++ Raccourcis clavier ++
+La catégorie "Raccourcis" de la boite de dialogue "Préférences" d'Audacity vous permet de changer les raccourci clavier des commandes d'Audacity.
 
 Les trois premiers éléments de cette catégorie sont les suivants :
 - Un groupe de boutons radio qui contrôle la façon dont les commandes et les raccourcis sont affichés : Vue en arborescence, vue par nom, vue par touche. Ils sont décrits dans les trois prochaines sections.
@@ -2063,7 +2136,7 @@ Si Audacity 2.2.0 ou version ultérieure est exécuté avec un compte utilisateu
 
 
 Pour réinitialiser tous les raccourcis de l'ensemble standard ou complet aux valeurs par défaut :
-- Dans la boite de dialogue "Préférences" d'Audacity, sélectionnez la catégorie "Clavier".
+- Dans la boite de dialogue "Préférences" d'Audacity, sélectionnez la catégorie "Raccourcis".
 - tabulez jusqu'au bouton "Défaut" et appuyez dessus. Un menu s'ouvre.
 - Choisissez Standard ou Complet
 
@@ -2177,7 +2250,7 @@ Pour plus d'informations sur ces deux jeux de raccourcis installés par défaut 
 | Grand saut arrière pendant la lecture | majuscule + Flèche gauche |
 | Grand saut avant pendant la lecture | majuscule + Flèche Droite |
 | Basculer entre la lecture en boucle et la lecture standard | l |
-| Définir la plage de boucle sur la plage de temps sélectionnée | majuscule + l (disponible dans 3.1.3 et versions ultérieures) |
+| Définir la plage de boucle sur la plage de temps sélectionnée | majuscule + l |
 | Jouer la plage en boucle une fois | majuscule + barre d'espace |
 | Boite de dialogue "Sélection du Périphérique de Lecture" | majuscule + O |
 | Jouer l'aperçu de coupe/suppression | C |
@@ -2272,6 +2345,9 @@ Pour plus d'informations sur ces deux jeux de raccourcis installés par défaut 
 | Sélectionner le clip précédent | Alt + , |
 | Sélectionner le clip suivant | Alt + . |
 | Renommer le clip sélectionné | contrôle + F2 |
+| Ouvrir la boîte de dialogue Hauteur et vitesse du clip sélectionné | Ctrl + Maj + P |
+| Augmenter la hauteur du clip sélectionné d'un demi-ton | Alt + Flèche vers le haut |
+| Diminuer la hauteur du clip sélectionné d'un demi-ton | Alt + Flèche vers le bas |
 | Scinder | control + I |
 | supprimer - séparer | control + Alt + K |
 | couper - séparer | control + Alt + X |

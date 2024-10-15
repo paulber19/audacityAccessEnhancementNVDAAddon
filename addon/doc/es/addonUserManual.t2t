@@ -71,12 +71,9 @@ En el caso de una actualización automática, y si se detecta una nueva versión
 Para una actualización de una versión estable, el botón "Qué hay de nuevo" ofrece la posibilidad, de abrir en el navegador, el historial del complemento y asi poder conocer las novedades de la versión propuesta.
 
 ++ Compatibilidad ++
-- Este complemento ha sido probado con la versión de Audacity 3.4, 3.3.0 
-y 3.3.3. También debería ser compatible con las versiones 3.3.1 y 3.3.2, 
-pero no se han realizado pruebas.
+- Este complemento ha sido probado con la versión de Audacity 3.6.4 x64, 3.6.2 x64, 3.5.1 x64, 3.4.2 x64, 3.3.3 y 3.3.0. También debería ser compatible con las versiones 3.3.1 y 3.3.2, pero no se han realizado pruebas.
 - Las versiones de Audacity anteriores a la 3.3.0 ya no son soportadas.
 - Algunas funciones no están disponibles en las versiones 3.3.x de Audacity.
-
 
 
 ++ Recomendaciones de configuración ++

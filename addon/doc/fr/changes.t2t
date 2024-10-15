@@ -14,6 +14,13 @@ Téléchargement :
 - [versions de développement ADDON_DEV_URL]
 
 
+
++ v3.2 (11/10/2024) +
+- compatibilité avec NVDA 2024.2, 2024.3 et 2024.4.
+- compatibilité et tests avec Audacity 3.6.4 x64, 3.6.2 x64 et 3.5.1 x64.
+- mise à niveau du guide d'introduction à Audacity.
+
+
 + v3.1 (23/03/2024) +
 Compatibilité avec NVDA 2024.1
 

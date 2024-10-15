@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Audacity AppModule\n"
 "Report-Msgid-Bugs-To: paulber19\n"
-"POT-Creation-Date: 2023-11-23 17:32+0100\n"
-"PO-Revision-Date: 2023-11-23 17:33+0100\n"
+"POT-Creation-Date: 2024-09-04 19:04+0200\n"
+"PO-Revision-Date: 2024-09-04 19:06+0200\n"
 "Last-Translator: paulber19 <paulber19@laposte.net>\n"
 "Language-Team: paul from scriptNVDA <paulber19@laposte.net>\n"
 "Language: fr_FR\n"
@@ -13,180 +13,180 @@ msgstr ""
 "X-Poedit-KeywordsList: _;gettext;gettext_noop\n"
 "X-Poedit-Basepath: ../../..\n"
 "X-Poedit-SourceCharset: UTF-8\n"
-"X-Generator: Poedit 3.2.2\n"
+"X-Generator: Poedit 3.4.4\n"
 "X-Poedit-Bookmarks: -1,-1,-1,96,-1,-1,-1,-1,-1,-1\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: appModules/audacity/__init__.py:101
+#: appModules/audacity/__init__.py:112
 msgid "Recording stopped"
 msgstr "Enregistrement arrêté"
 
-#: appModules/audacity/__init__.py:104
+#: appModules/audacity/__init__.py:115
 msgid "Recording"
 msgstr "Enregistrement"
 
-#: appModules/audacity/__init__.py:198
+#: appModules/audacity/__init__.py:209
 msgid "selection: "
 msgstr "sélection : "
 
-#: appModules/audacity/__init__.py:247 appModules/audacity/__init__.py:287
+#: appModules/audacity/__init__.py:256 appModules/audacity/__init__.py:296
 #, python-format
 msgid "%s not available"
 msgstr "%s non disponible"
 
-#: appModules/audacity/__init__.py:328
+#: appModules/audacity/__init__.py:337
 msgid "No track"
 msgstr "Aucune piste"
 
-#: appModules/audacity/__init__.py:455
+#: appModules/audacity/__init__.py:467
 msgid "units of hours"
 msgstr "unités des heures"
 
-#: appModules/audacity/__init__.py:457
+#: appModules/audacity/__init__.py:469
 msgid "dozens of hours"
 msgstr "dizaines des heures"
 
-#: appModules/audacity/__init__.py:459
+#: appModules/audacity/__init__.py:471
 msgid "units of minutes"
 msgstr "unités des minutes"
 
-#: appModules/audacity/__init__.py:461
+#: appModules/audacity/__init__.py:473
 msgid "dozens of minutes"
 msgstr "dizaines des minutes"
 
-#: appModules/audacity/__init__.py:463
+#: appModules/audacity/__init__.py:475
 msgid "units of seconds"
 msgstr "unités des secondes"
 
-#: appModules/audacity/__init__.py:465
+#: appModules/audacity/__init__.py:477
 msgid "dozens of seconds"
 msgstr "dizaines des secondes"
 
-#: appModules/audacity/__init__.py:467
+#: appModules/audacity/__init__.py:479
 msgid "hundreds of seconds"
 msgstr "centaines des secondes"
 
-#: appModules/audacity/__init__.py:469
+#: appModules/audacity/__init__.py:481
 msgid "thounsands of seconds"
 msgstr "milliers des secondes"
 
-#: appModules/audacity/__init__.py:471
+#: appModules/audacity/__init__.py:483
 msgid "tens thousands of seconds"
 msgstr "dizaines de milliers des secondes"
 
-#: appModules/audacity/__init__.py:473
+#: appModules/audacity/__init__.py:485
 msgid "hundreds thousands of seconds"
 msgstr "centaines de milliers des secondes"
 
-#: appModules/audacity/__init__.py:475
+#: appModules/audacity/__init__.py:487
 msgid "tenths of seconds"
 msgstr "dizième des secondes"
 
-#: appModules/audacity/__init__.py:477
+#: appModules/audacity/__init__.py:489
 msgid "hundredths of seconds"
 msgstr "centièmes des secondes"
 
-#: appModules/audacity/__init__.py:479
+#: appModules/audacity/__init__.py:491
 msgid "thousandths of seconds"
 msgstr "millièmes des secondes"
 
-#: appModules/audacity/__init__.py:481
+#: appModules/audacity/__init__.py:493
 msgid "units of days"
 msgstr "unités des jours"
 
-#: appModules/audacity/__init__.py:483
+#: appModules/audacity/__init__.py:495
 msgid "dozens of days"
 msgstr "dizaines des jours"
 
-#: appModules/audacity/__init__.py:485
+#: appModules/audacity/__init__.py:497
 msgid "units"
 msgstr "unités"
 
-#: appModules/audacity/__init__.py:487
+#: appModules/audacity/__init__.py:499
 msgid "dozens"
 msgstr "dizaines"
 
-#: appModules/audacity/__init__.py:489
+#: appModules/audacity/__init__.py:501
 msgid "hundreds"
 msgstr "centaines"
 
-#: appModules/audacity/__init__.py:491
+#: appModules/audacity/__init__.py:503
 msgid "thousands"
 msgstr "milliers"
 
-#: appModules/audacity/__init__.py:493
+#: appModules/audacity/__init__.py:505
 msgid "tens of thousands"
 msgstr "dizaines de milliers des secondes"
 
-#: appModules/audacity/__init__.py:495
+#: appModules/audacity/__init__.py:507
 msgid "hundreds of thousands"
 msgstr "centaines de milliers des secondes"
 
-#: appModules/audacity/__init__.py:497
+#: appModules/audacity/__init__.py:509
 msgid "millions"
 msgstr "millions"
 
-#: appModules/audacity/__init__.py:499
+#: appModules/audacity/__init__.py:511
 msgid "units of samples"
 msgstr "unités des échantillonsunités des jours"
 
-#: appModules/audacity/__init__.py:501
+#: appModules/audacity/__init__.py:513
 msgid "dozens of samples"
 msgstr "dizaines des échantillons"
 
-#: appModules/audacity/__init__.py:503
+#: appModules/audacity/__init__.py:515
 msgid "hundreds of samples"
 msgstr "centaines des échantillons"
 
-#: appModules/audacity/__init__.py:505
+#: appModules/audacity/__init__.py:517
 msgid "thounsands of samples"
 msgstr "milliers des échantillons"
 
-#: appModules/audacity/__init__.py:507
+#: appModules/audacity/__init__.py:519
 msgid "tens thousands of samples"
 msgstr "dizaines de milliers des échantillons"
 
-#: appModules/audacity/__init__.py:509
+#: appModules/audacity/__init__.py:521
 msgid "hundreds thousands of samples"
 msgstr "centaines de milliers des échantillons"
 
-#: appModules/audacity/__init__.py:514
+#: appModules/audacity/__init__.py:526
 msgid "hours"
 msgstr "heures"
 
-#: appModules/audacity/__init__.py:516
+#: appModules/audacity/__init__.py:528
 msgid "minutes"
 msgstr "minutes"
 
-#: appModules/audacity/__init__.py:518
+#: appModules/audacity/__init__.py:530
 msgid "thousands seconds"
 msgstr "milles secondes"
 
-#: appModules/audacity/__init__.py:520
+#: appModules/audacity/__init__.py:532
 msgid "seconds"
 msgstr "secondes"
 
-#: appModules/audacity/__init__.py:522
+#: appModules/audacity/__init__.py:534
 msgid "hundredths seconds"
 msgstr "centièmes de secondes"
 
-#: appModules/audacity/__init__.py:524
+#: appModules/audacity/__init__.py:536
 msgid "milliseconds"
 msgstr "millisecondes"
 
-#: appModules/audacity/__init__.py:526
+#: appModules/audacity/__init__.py:538
 msgid "days"
 msgstr "jours"
 
-#: appModules/audacity/__init__.py:528
+#: appModules/audacity/__init__.py:540
 msgid "thousand samples"
 msgstr "mille échantillons"
 
-#: appModules/audacity/__init__.py:530
+#: appModules/audacity/__init__.py:542
 msgid "samples"
 msgstr "échantillons"
 
-#: appModules/audacity/__init__.py:821
+#: appModules/audacity/__init__.py:836
 msgid ""
 "Report the selection. Twice: report selection's first time. Third: report "
 "selection's second time"
@@ -194,70 +194,70 @@ msgstr ""
 "Annoncer la sélection. Deux appuis: annoncer son premier temps. Trois "
 "appuis: annoncer son second temps"
 
-#: appModules/audacity/__init__.py:825
+#: appModules/audacity/__init__.py:840
 msgid "Report the selection"
 msgstr "Annoncer la sélection"
 
-#: appModules/audacity/__init__.py:828
+#: appModules/audacity/__init__.py:843
 msgid "Report selection's first time"
 msgstr "Annoncer le premier temps de la sélection"
 
-#: appModules/audacity/__init__.py:831
+#: appModules/audacity/__init__.py:846
 msgid "Report selection's second time"
 msgstr "Annoncer le second temps de la sélection"
 
-#: appModules/audacity/__init__.py:834
+#: appModules/audacity/__init__.py:849
 msgid "Report audio position"
 msgstr "Annoncer la position du curseur audio"
 
-#: appModules/audacity/__init__.py:838
+#: appModules/audacity/__init__.py:853
 msgid "Enable or disable automatic report of selection's changes"
 msgstr ""
 "Activer ou désactiver l'annonce automatique  des changements de sélection"
 
-#: appModules/audacity/__init__.py:841
+#: appModules/audacity/__init__.py:856
 msgid "Report the pressed state of Pause , Play and  Record buttons"
 msgstr ""
 "Annoncer l'état pressé des boutons \"lecture\", \"Pause\", et "
 "\"Enregistrement\""
 
-#: appModules/audacity/__init__.py:844
+#: appModules/audacity/__init__.py:859
 msgid "Reports the current level of playback meter peak"
 msgstr "Annoncer le niveau courant du vu-mètre de crète  en lecture"
 
-#: appModules/audacity/__init__.py:847
+#: appModules/audacity/__init__.py:862
 msgid "Reports the current recording meter peak   level"
 msgstr "Annoncer le niveau courant du vu-mètre de crète  en enregistrement"
 
-#: appModules/audacity/__init__.py:850
+#: appModules/audacity/__init__.py:865
 msgid "Reports the playback level"
 msgstr "Annoncer le niveau de lecture"
 
-#: appModules/audacity/__init__.py:853
+#: appModules/audacity/__init__.py:868
 msgid "Reports the recording level"
 msgstr "Annoncer le niveau d'enregistrement"
 
-#: appModules/audacity/__init__.py:856
+#: appModules/audacity/__init__.py:871
 msgid "Reports the current playback speed level"
 msgstr "Annoncer la vitesse courante de lecture"
 
-#: appModules/audacity/__init__.py:859
+#: appModules/audacity/__init__.py:874
 msgid "Display add-on user manual"
 msgstr "Afficher le manuel utilisateur de l'extension"
 
-#: appModules/audacity/__init__.py:862
+#: appModules/audacity/__init__.py:877
 msgid "Display audacity guide"
 msgstr "Afficher le guide d'Audacity"
 
-#: appModules/audacity/__init__.py:865
+#: appModules/audacity/__init__.py:880
 msgid "Launch  command shell"
 msgstr "Lancer l'interpréteur de commande"
 
-#: appModules/audacity/__init__.py:868
+#: appModules/audacity/__init__.py:883
 msgid "Display shell scripts's list"
 msgstr "Afficher la liste des  scripts de l'interpréteur de commande"
 
-#: appModules/audacity/__init__.py:881 appModules/audacity/__init__.py:887
+#: appModules/audacity/__init__.py:896 appModules/audacity/__init__.py:902
 msgid ""
 "The addon audacityAccessEnhancement is not compatible with this version of "
 "Audacity. The application module will be temporarily disabled."
@@ -265,70 +265,70 @@ msgstr ""
 "L'extension audacityAccessEnhancement n'est pas compatible avec cette "
 "version d'Audacity. Le module d'application sera temporairement désactivé."
 
-#: appModules/audacity/__init__.py:884 shared/au_addonConfigManager.py:179
+#: appModules/audacity/__init__.py:899 shared/au_addonConfigManager.py:179
 msgid "Warning"
 msgstr "Avertissement"
 
-#: appModules/audacity/__init__.py:997
+#: appModules/audacity/__init__.py:1013
 #, python-format
 msgid "(command: %s)"
 msgstr "(commande: %s)"
 
-#: appModules/audacity/__init__.py:1150
+#: appModules/audacity/__init__.py:1166
 #: globalPlugins/audacityAccessEnhancement/au_configGui.py:28
 msgid "Report automaticaly selection's changes"
 msgstr "Annoncer automatiquement les changements de sélection"
 
-#: appModules/audacity/__init__.py:1153
+#: appModules/audacity/__init__.py:1169
 msgid "Don't report automaticaly selection change"
 msgstr "Ne pas Annoncer automatiquement les changements de sélection"
 
-#: appModules/audacity/__init__.py:1160
+#: appModules/audacity/__init__.py:1176
 msgid "Not in tracks view"
 msgstr "Pas dans la vue de piste"
 
-#: appModules/audacity/__init__.py:1195 appModules/audacity/__init__.py:1204
+#: appModules/audacity/__init__.py:1217 appModules/audacity/__init__.py:1229
 #: appModules/audacity/au_timerControl.py:267
 msgid "Selection: "
 msgstr "Sélection: "
 
-#: appModules/audacity/__init__.py:1237 appModules/audacity/au_objects.py:391
+#: appModules/audacity/__init__.py:1271 appModules/audacity/au_objects.py:391
 msgid "record button pressed"
 msgstr "bouton enregistrement enfoncé"
 
-#: appModules/audacity/__init__.py:1242
+#: appModules/audacity/__init__.py:1275
 msgid "play button pressed"
 msgstr "bouton lecture enfoncé"
 
-#: appModules/audacity/__init__.py:1246
+#: appModules/audacity/__init__.py:1279
 msgid "Pause button pressed"
 msgstr "Bouton pause enfoncé"
 
-#: appModules/audacity/__init__.py:1251 appModules/audacity/au_objects.py:404
+#: appModules/audacity/__init__.py:1283 appModules/audacity/au_objects.py:404
 msgid "No button pressed"
 msgstr "Aucun bouton enfoncé"
 
-#: appModules/audacity/__init__.py:1297
+#: appModules/audacity/__init__.py:1344
 msgid "Please wait ..."
 msgstr "Veuillez patienter ..."
 
-#: appModules/audacity/__init__.py:1320
+#: appModules/audacity/__init__.py:1367
 msgid "Error: Add-on user manual is not found"
 msgstr "Erreur: le manuel utilisateur de l'extension"
 
-#: appModules/audacity/__init__.py:1341
+#: appModules/audacity/__init__.py:1388
 msgid "Error: audacity guide is not found"
 msgstr "Erreur: le guide d'audacity  n'est pas disponible"
 
-#: appModules/audacity/__init__.py:1362
+#: appModules/audacity/__init__.py:1409
 msgid "Shell's scripts"
 msgstr "Scripts de l'interpréteur de commandes"
 
-#: appModules/audacity/__init__.py:1395
+#: appModules/audacity/__init__.py:1442
 msgid "Scripts:"
 msgstr "Scripts :"
 
-#: appModules/audacity/__init__.py:1412
+#: appModules/audacity/__init__.py:1459
 msgid "&Run script"
 msgstr "&Lancer le script"
 
@@ -437,12 +437,12 @@ msgstr "Position audio en début de sélection"
 msgid "no selection"
 msgstr "aucune sélection"
 
-#: appModules/audacity/au_utils.py:28
+#: appModules/audacity/au_utils.py:34
 #, python-format
 msgid "%s dialog is allready open"
 msgstr "%s dialogue est déjà ouvert"
 
-#: appModules/audacity/au_utils.py:37
+#: appModules/audacity/au_utils.py:43
 #, python-brace-format
 msgid "{addonSummary}'s add-on - {dialogTitle}"
 msgstr "{addonSummary} - {dialogTitle}"
@@ -470,8 +470,8 @@ msgid ""
 "* script to display audacity guide written by David Bailes.\n"
 "\n"
 "\n"
-"This addon's version has been tested with audacity 3.4, 3.4.2, 3.3.0 and "
-"3.3.3.\n"
+"This addon's version has been tested with audacity 3.6.2 x64, 3.5.1 x64, "
+"3.4.2 x64, 3.3.3 and 3.3.0.\n"
 "Prior  versions of Audacity are not  supported.\n"
 msgstr ""
 "Cette extension améliore l'accessiblité du logiciel Audacity en apportant:\n"
@@ -494,8 +494,8 @@ msgstr ""
 "* un script pour afficher le guide d'audacity écrit par  David Bailes.\n"
 "\n"
 "\n"
-"Cette version de l'extension a été testée avec audacity 3.4, 3.4.2, 3.3.0 et "
-"3.3.3.\n"
+"Cette version de l'extension a été testée avec audacity 3.6.2 x64, 3.5.1 "
+"x64, 3.4.2 x64, 3.3.3 et 3.3.0.\n"
 "Les versions d'Audacity antérieures à la 3.3.0 ne sont pas supportées.\n"
 
 #: globalPlugins/audacityAccessEnhancement/au_configGui.py:22
@@ -516,7 +516,7 @@ msgid "EnhancedAnnouncement  of edit spin boxes"
 msgstr "Améliorer l'annonce des boites de sélection numérique"
 
 #: globalPlugins/audacityAccessEnhancement/au_configGui.py:82
-#: globalPlugins/audacityAccessEnhancement/updateHandler/update_check.py:85
+#: globalPlugins/audacityAccessEnhancement/updateHandler/update_check.py:83
 msgid "Update"
 msgstr "Mise à jour"
 
@@ -541,47 +541,47 @@ msgstr "&Voir l'historique"
 msgid "Settings"
 msgstr "Paramètres"
 
-#: globalPlugins/audacityAccessEnhancement/updateHandler/update_check.py:88
+#: globalPlugins/audacityAccessEnhancement/updateHandler/update_check.py:86
 #, python-brace-format
 msgid "Downloading {name}"
 msgstr "Téléchargement de {name} en cours"
 
-#: globalPlugins/audacityAccessEnhancement/updateHandler/update_check.py:103
+#: globalPlugins/audacityAccessEnhancement/updateHandler/update_check.py:101
 #, python-brace-format
 msgid "Error downloading update for {name}."
 msgstr "Erreur lors du téléchargement de la mise à jour de {name}."
 
-#: globalPlugins/audacityAccessEnhancement/updateHandler/update_check.py:162
+#: globalPlugins/audacityAccessEnhancement/updateHandler/update_check.py:155
 #, python-brace-format
 msgid "Cannot update {name} - missing file or invalid file format"
 msgstr ""
 "Impossible de mettre à jour {name} - fichier manquant ou format de fichier "
 "incorrect"
 
-#: globalPlugins/audacityAccessEnhancement/updateHandler/update_check.py:179
+#: globalPlugins/audacityAccessEnhancement/updateHandler/update_check.py:172
 msgid "Updating"
 msgstr "Mise à jour en cours"
 
-#: globalPlugins/audacityAccessEnhancement/updateHandler/update_check.py:181
+#: globalPlugins/audacityAccessEnhancement/updateHandler/update_check.py:174
 msgid "Please wait while the add-on is being updated."
 msgstr "Veuillez patienter durant la mise à jour de l'extension."
 
-#: globalPlugins/audacityAccessEnhancement/updateHandler/update_check.py:200
+#: globalPlugins/audacityAccessEnhancement/updateHandler/update_check.py:195
 #, python-brace-format
 msgid "Failed to update {name} add-on"
 msgstr "Échec de la mise à jour de l'extension {name}"
 
-#: globalPlugins/audacityAccessEnhancement/updateHandler/update_check.py:255
+#: globalPlugins/audacityAccessEnhancement/updateHandler/update_check.py:247
 #, python-brace-format
 msgid "{summary} - update"
 msgstr "{summary} - mise à jour"
 
-#: globalPlugins/audacityAccessEnhancement/updateHandler/update_check.py:265
+#: globalPlugins/audacityAccessEnhancement/updateHandler/update_check.py:257
 msgid "The service is temporarily under maintenance. Please, try again later."
 msgstr ""
 "Le service est momentanément en maintenance. Veuillez réessayer plus tard."
 
-#: globalPlugins/audacityAccessEnhancement/updateHandler/update_check.py:293
+#: globalPlugins/audacityAccessEnhancement/updateHandler/update_check.py:285
 #, python-brace-format
 msgid ""
 "The update is not compatible with this version of NVDA. Minimum NVDA "
@@ -591,14 +591,14 @@ msgstr ""
 "minimum de NVDA : {minYear}.{minMajor}, dernière version testée : "
 "{testedYear}.{testedMajor}."
 
-#: globalPlugins/audacityAccessEnhancement/updateHandler/update_check.py:337
+#: globalPlugins/audacityAccessEnhancement/updateHandler/update_check.py:329
 #, python-format
 msgid "New version%s is available. Do you want to download it now?"
 msgstr ""
 "La nouvelle version %s est disponible. Voulez-vous la télécharger "
 "maintenant ?"
 
-#: globalPlugins/audacityAccessEnhancement/updateHandler/update_check.py:341
+#: globalPlugins/audacityAccessEnhancement/updateHandler/update_check.py:333
 #, python-brace-format
 msgid ""
 "New version{0} is available.\n"
@@ -612,30 +612,30 @@ msgstr ""
 "Voulez-vous ignorer cette incompatibilité et la télécharger quand même "
 "maintenant ?"
 
-#: globalPlugins/audacityAccessEnhancement/updateHandler/update_check.py:361
+#: globalPlugins/audacityAccessEnhancement/updateHandler/update_check.py:353
 #, python-format
 msgid "You are up-to-date. %s is the latest version."
 msgstr "Vous êtes à jour, %s est la dernière version."
 
-#: globalPlugins/audacityAccessEnhancement/updateHandler/update_check.py:368
+#: globalPlugins/audacityAccessEnhancement/updateHandler/update_check.py:360
 msgid "Oops! There was a problem checking for updates. Please retry later"
 msgstr ""
 "Oups! Il y a un problème pour rechercher les mises à jour. Réessayer "
 "ultérieurement"
 
-#: globalPlugins/audacityAccessEnhancement/updateHandler/update_check.py:523
+#: globalPlugins/audacityAccessEnhancement/updateHandler/update_check.py:515
 msgid "&Yes"
 msgstr "&Oui"
 
-#: globalPlugins/audacityAccessEnhancement/updateHandler/update_check.py:528
+#: globalPlugins/audacityAccessEnhancement/updateHandler/update_check.py:520
 msgid "&No"
 msgstr "&Non"
 
-#: globalPlugins/audacityAccessEnhancement/updateHandler/update_check.py:533
+#: globalPlugins/audacityAccessEnhancement/updateHandler/update_check.py:525
 msgid "&Later"
 msgstr "&Plus tard"
 
-#: globalPlugins/audacityAccessEnhancement/updateHandler/update_check.py:537
+#: globalPlugins/audacityAccessEnhancement/updateHandler/update_check.py:529
 msgid "Wha&t's new"
 msgstr "Quoi &de neuf"
 

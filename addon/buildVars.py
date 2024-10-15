@@ -41,12 +41,12 @@ addon_info = {
 * script to display audacity guide written by David Bailes.
 
 
-This addon's version has been tested with audacity 3.4, 3.4.2, 3.3.0 and 3.3.3.
+This addon's version has been tested with audacity 3.6.2 x64, 3.5.1 x64, 3.4.2 x64, 3.3.3 and 3.3.0.
 Prior  versions of Audacity are not  supported.
 """),
 
 	# version
-	"addon_version": "3.1.1",
+	"addon_version": "3.2",
 	# Author(s)
 	"addon_author": "paulber19",
 	# URL for the add-on documentation support
@@ -58,7 +58,7 @@ Prior  versions of Audacity are not  supported.
 	# Minimum NVDA version supported (e.g. "2018.3")
 	"addon_minimumNVDAVersion": "2022.1",
 	# Last NVDA version supported/tested (e.g. "2018.4", ideally more recent than minimum version)
-	"addon_lastTestedNVDAVersion": "2024.1",
+	"addon_lastTestedNVDAVersion": "2024.4",
 	# Add-on update channel (default is stable or None)
 	"addon_updateChannel": None,
 	# Add-on license such as GPL 2

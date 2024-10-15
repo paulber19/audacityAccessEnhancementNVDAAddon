@@ -15,6 +15,13 @@ Download:
 
 Sorry, but this document is an automatic translation from french language.
 
+
++ v3.2 (October/11/2024) +
+- compatibility with NVDA 2024.2, 2024.3 and 2024.4.
+- compatibility and tests with Audacity 3.6.4 x64,3.6.2 x64 and 3.5.1 x64.
+- upgraded the Audacity  guide written by David Bailes.
+
+
 + v3.1 (March/23/2024) +
 Compatibility with NVDA 2024.1
 
