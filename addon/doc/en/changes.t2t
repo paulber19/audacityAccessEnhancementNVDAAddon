@@ -15,6 +15,16 @@ Download:
 
 Sorry, but this document is an automatic translation from french language.
 
++ v3.5 (July/22/2026) +
+Bug Fixes:
+- checking for extension updates can be done now even if an SSL certificate error occurs.
+
+
+Development:
+- compliance with the NVAcess extension template (addonTemplate)
+- removed the use of buildVars.py in the install.py module
+- using yaml instead of pickle to manage update check state.
+
 
 + V3.4 (February/26/2026) +
 Compatibility with NVDA 2026.1.

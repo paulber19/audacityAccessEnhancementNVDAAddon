@@ -89,9 +89,7 @@ _scriptCategory = str(_addonSummary)
 
 
 def monitorAudioAndSelectionChanges():
-	global GB_monitorTimer, GB_audioPosition
-	global GB_selection, GB_recordButtonIsPressed
-
+	global GB_monitorTimer
 	if GB_monitorTimer is not None:
 		GB_monitorTimer.Stop()
 		GB_monitorTimer = None
@@ -1029,7 +1027,7 @@ class AppModule(AppModule):
 
 	def event_appModule_gainFocus(self):
 		global GB_monitorTimer
-		global GB_audioPosition, GB_selection, GB_recordButtonIsPressed, _winInputHookKeyDownCallback
+		global GB_audioPosition, GB_selection, GB_recordButtonIsPressed
 		self.installAudacityRole()
 		GB_audioPosition = None
 		GB_selection = None
@@ -1403,7 +1401,7 @@ class AppModule(AppModule):
 			tc = TimerControl(o.parent, editFormat)
 		else:
 			tc = TimerControl(o, editFormat)
-		(l, t) = tc.getLabelAndTime()
+		(label, t) = tc.getLabelAndTime()
 		msg = getTimeMessage(t)
 		ui.message(msg)
 		if o.childCount != 0:

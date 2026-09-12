@@ -14,6 +14,16 @@ Descarga:
 - [Versiones de desarrollo ADDON_DEV_URL]
 
 
++ v3.5 (22/07/2026) +
+Corrección de fallos:
+- ahora se puede buscar actualizaciones de complementos incluso si se produce un error de certificado SSL.
+
+
+Desarrolladores:
+- puesta en conformidad con el modelo del complemento NVAcess (addonTemplate)
+- eliminación del uso del buildVars.py en el módulo install.py
+- uso de json en lugar de pickle para gestionar el estado de verificación de actualización.
+
 
 + v3.4  (24/02/2026) +
 Compatibilidad con NVDA 2026.1

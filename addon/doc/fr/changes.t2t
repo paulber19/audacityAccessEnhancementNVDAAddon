@@ -14,6 +14,17 @@ Téléchargement :
 - [versions de développement ADDON_DEV_URL]
 
 
++ v3.5 (22/07/2026) +
+Correction de bogues:
+- la recherche de mise à jour de l'extension peut se faire maintenant même si une erreur de certificat SSL se produit.
+
+
+Développement :
+- mise en conformité avec le modèle d'extension de NVAcess (addonTemplate)
+- suppression de l'utilisation de buildVars.py dans le module install.py
+- utilisation de yaml à la place de pickle pour gérer l'état de recherche de mise à jour.
+
+
 + v3.4 (24/02/2026) +
 Compatibilité avec NVDA 2026.1.
 

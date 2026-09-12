@@ -4,10 +4,7 @@
 # This file is covered by the GNU General Public License.
 
 import addonHandler
-import api
 import ui
-import winUser
-import time
 import queueHandler
 import speech.speech
 

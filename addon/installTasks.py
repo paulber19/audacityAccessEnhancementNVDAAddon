@@ -1,7 +1,7 @@
 # -*- coding: UTF-8 -*-
 # install.py
 # a part of audacityAccessEnhancement add-on
-# Copyright 2018-2025 paulber19
+# Copyright 2018-2026 paulber19
 # This file is covered by the GNU General Public License.
 
 
@@ -13,6 +13,18 @@ addonHandler.initTranslation()
 
 PREVIOUSCONFIGURATIONFILE_SUFFIX = ".prev"
 DELETECONFIGURATIONFILE_SUFFIX = ".delete"
+
+
+def getAddonName():
+	curModuleFilePath = os.path.dirname(__file__)
+	manifestPath = os.path.join(curModuleFilePath, addonHandler.MANIFEST_FILENAME)
+	if not os.path.exists(manifestPath):
+		log.warning("There is not manifest.ini for this module")
+		return None
+	with open(manifestPath) as f:
+		manifest = addonHandler.AddonManifest(f)
+		addonName = manifest.get("name")
+	return addonName
 
 
 def renameFile(file, dest):
@@ -53,8 +65,7 @@ def keepPreviousSettingsConfirmation(addonSummary):
 def onInstall():
 	import globalVars
 	curPath = os.path.dirname(__file__)
-	from addonHandler import _availableAddons
-	addon = _availableAddons[curPath]
+	addon = addonHandler._availableAddons[curPath]
 	addonName = addon.manifest["name"]
 	addonSummary = addon.manifest["summary"]
 	# save old configuration
@@ -86,12 +97,9 @@ def deleteFile(theFile):
 
 def deleteAddonConfig():
 	import globalVars
-	import sys
-	curPath = os.path.dirname(__file__)
-	sys.path.append(curPath)
-	import buildVars
-	addonName = buildVars.addon_info["addon_name"]
-	del sys.path[-1]
+	addonName = getAddonName()
+	if not addonName:
+		return
 	configFile = os.path.join(
 		globalVars.appArgs.configPath, "%sAddon.ini" % addonName)
 	deleteFile(configFile)

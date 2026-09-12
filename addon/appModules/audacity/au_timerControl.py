@@ -80,7 +80,7 @@ _selectionFormats = {
 	"hh:mm:ss + film frames (24 fps)": None,
 	"film frames (24 fps)": None,  # 000,000 frames
 	"hh:mm:ss + NTSC drop frames": None,  # 00 h 00 m 00 s+00 frames
-	"hh:mm:ss + NTSC drop frames": None,  # 00 h 00 m 00 s+000 frames
+	# "hh:mm:ss + NTSC drop frames": None,  # 00 h 00 m 00 s+000 frames
 	"NTSC frames": None,  # 000,030 frames
 	"hh:mm:ss + PAL frames (25 fps)": None,  # 00 h 00 m 01 s+01 frames
 	"PAL frames (25 fps)": None,  # 000,026 frames
